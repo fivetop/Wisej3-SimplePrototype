@@ -1,0 +1,79 @@
+﻿<Window x:Class="pa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:pa"
+        Closed="MetroWindow_Closed"
+        Title="SimplePA EM Server" Height="500" Width="800" 
+        Loaded="MetroWindow_Loaded" 
+        WindowStartupLocation="CenterScreen" Deactivated="MetroWindow_Deactivated" Closing="MetroWindow_Closing" 
+        ResizeMode="CanResizeWithGrip" IsTabStop="True" >
+ 
+    <!--#region // 본문 내용 -->
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid Margin="4">
+                        <Border BorderThickness="1" BorderBrush="Gray">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" Margin="5">
+                                    <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Text="발생 시각 : " TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" FontSize="20" />
+                                        <TextBlock x:Name="_write_time" Text="{Binding write_time, ConverterCulture='ko-KR', StringFormat={}{0:yyyy-MM-dd (ddd) HH:mm:ss}}" FontSize="22" TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="1" Margin="5">
+                                    <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Text="발생 장소 : " TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" FontSize="20" />
+                                        <TextBlock x:Name="_event_text" Text="{Binding event_text}" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Left" VerticalAlignment="Center" FontSize="22" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="2" Margin="5">
+                                    <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Text="발생 내용 : " FontSize="20" TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" />
+                                        <TextBlock x:Name="_event_content" Text="발생내용" FontSize="22" VerticalAlignment="Center" FontWeight="Bold" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="3" Margin="5">
+                                    <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Horizontal">
+                                        <TextBlock Text="통신 상태 : " FontSize="20" TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" />
+                                        <TextBlock x:Name="_comm_state" Text="정상" FontSize="22" VerticalAlignment="Center" FontWeight="Bold" />
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>                        
+                        </Border>
+                    </Grid>
+                </Grid>
+                
+                <Grid Grid.Row="1" Margin="4">
+                        <ListView x:Name="_mlog" ItemsSource="{Binding mlog, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}}" MouseDoubleClick="_mlog_MouseDoubleClick" />
+                </Grid>
+            </Grid>
+
+            <StatusBar Grid.Row="1" Height="40">
+                <StatusBarItem x:Name="_Status1" Content="설정" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" MouseDoubleClick="_Status_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
+                <!--
+                <StatusBarItem x:Name="_Status6" Content="R형할당" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Right" MouseDoubleClick="_Status6_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
+                -->
+                <StatusBarItem x:Name="_Status5" Content="LoopBackTest" FontSize="16" Foreground="Black"  HorizontalAlignment="Right" MouseDoubleClick="_Status5_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
+                <StatusBarItem x:Name="_Status6" Content="GPIO Test" FontSize="16" Foreground="Black"  HorizontalAlignment="Right" MouseDoubleClick="_Status6_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
+                <StatusBarItem x:Name="_Status7" Content="Test" FontSize="16" Foreground="Black"  HorizontalAlignment="Right" MouseDoubleClick="_Status7_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
+                <StatusBarItem x:Name="_Status2" Content="진단" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Right" MouseDoubleClick="_Status2_MouseDoubleClick"></StatusBarItem>
+            </StatusBar>
+        </Grid>
+    </Grid>
+</Window>

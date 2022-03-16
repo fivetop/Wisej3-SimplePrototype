@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.3.min.js"></script>
+    <script src="Scripts/chatClient.js"></script>
+</head>
+<body>
+    <h1>Simple Chat Platform</h1>
+    <div>
+        <span>Connection status: </span>
+        <span name="connectionStatus" id="connectionStatus">CONNECTING</span>
+    </div>
+    <div style="background-color:gray; padding: 10px; max-width: 200px;">
+        <div>
+            <span>Alias: </span>
+            <input type="text" id="alias" />
+        </div>
+        </br>
+        <div>
+            <span>Message: </span>
+            <input type="text" id="message" />
+        </div>
+        <input type="button" id="sendButton" value="Send" />
+    </div>
+    <div id="messageHistory">
+        <p>[Messages will appear here]</p>
+        <p>----------------------------------------</p>
+    </div>
+</body>
+</html>

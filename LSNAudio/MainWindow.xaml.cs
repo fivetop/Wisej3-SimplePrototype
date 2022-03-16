@@ -1,0 +1,316 @@
+﻿using System;
+using System.Windows;
+using NAudio.Wave.SampleProviders;
+using System.Runtime.InteropServices;
+using System.Windows.Interop;
+using gClass;
+using System.Collections.Generic;
+using pa;
+using System.Linq;
+
+namespace LSNAudio
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        NAudioEngine soundEngine;
+
+        public const uint HWND_BROADCAST = 0xffff;
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        internal static extern uint RegisterWindowMessage(string lpString);
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        internal static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        internal static extern bool PostMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
+
+        public string[] e1;
+
+        System.Collections.Generic.List<Music> m1 = new System.Collections.Generic.List<Music>();
+
+        private uint message;
+        private int playcnt = -1;
+
+        SimpleMulti cur_play = null;
+
+        DBSqlite dBSqlite = new DBSqlite();
+        public MainWindow()
+        {
+            InitializeComponent();
+            // 엔진 초기화 
+            soundEngine = NAudioEngine.Instance;
+            // 스펙트럼 처리 
+            spectrumAnalyzer.RegisterSoundPlayer(soundEngine);
+            message = RegisterWindowMessage("MultiSound");
+            soundEngine.PlaybackStopped += PlaybackStopped;
+            ComponentDispatcher.ThreadFilterMessage += ComponentDispatcher_ThreadFilterMessage;
+            dBSqlite.DBInit();
+        }
+
+        // 4. 한 음악이 끝나면 다음 음악으로 넘어가기 처리 
+        private void PlaybackStopped(object sender, EventArgs e)
+        {
+            if (stopflag)
+            {
+                playcnt = 0;
+                stopflag = false;
+                cur_play.gstree.child.Clear();
+                cur_play.music.Clear();
+                cur_play = null;
+                this.WindowState = WindowState.Minimized;
+                soundEngine.Dispose();
+                return;
+            }
+            // 다음 진행 처리 
+            playcnt++;
+            int musiccnt = m1.Count;
+
+            if (playcnt >= musiccnt)
+            {
+                cur_play.gstree.child.Clear();
+                cur_play.music.Clear();
+                cur_play = null;
+                string str11 = e1[0];
+                IntPtr t2 = new IntPtr(Audiochno);
+                PostMessage((IntPtr)HWND_BROADCAST, message, t2, new IntPtr(5000)); // 
+                //Close();
+                this.WindowState = WindowState.Minimized;
+                soundEngine.Dispose();
+                return;
+            }
+            string fn = m1[playcnt].FileName;
+            string str1 = gl.appPathServer_music + fn;
+
+            if (!System.IO.File.Exists(str1))
+                str1 = gl.appPathServer_music + "띠링.mp3";
+            soundEngine.OpenFile(str1, null, Audiodev);
+            soundEngine.Play();
+            FileText.Text = fn;
+        }
+
+        int Audiochno = 0;
+        int Audiodev = 0;
+
+        // 1. 초기 위도우 살때 오디오 채널 셋팅 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            SoundCard soundCard = null;
+
+            g1.XMLSimpleSoundCard(true);
+
+            soundEngine.DeviceCombo();
+            _combo.ItemsSource = g1._SoundCardList.child;
+
+            string str1 = e1[0];
+            Audiochno = Int32.Parse(str1);
+            IntPtr t2 = new IntPtr(Audiochno);
+
+            if (Audiochno < 5)
+            {
+                int ch = Audiochno - 1;
+                this.Left = 100;
+                this.Top = Audiochno * 180;
+            }
+            else
+            {
+                int ch = Audiochno - 4;
+                this.Left = 420;
+                this.Top = ch * 180;
+            }
+
+            if (g1._SoundCardList.child.Count < 1)
+                _combo.SelectedIndex = -1;
+            else if (g1._SoundCardList.child.Count > 7)
+            {
+                soundCard = g1._SoundCardList.child.Find(p => p.no == Audiochno);
+                _combo.SelectedItem = soundCard;
+                Audiodev = soundCard.deviceid;
+            }
+            if (_combo.SelectedIndex == -1)
+                Audiodev = 0;
+
+            this.WindowState = WindowState.Minimized;
+
+            string strid = e1[1];
+            idno = Int32.Parse(strid);
+            statetext();
+        }
+
+        private void statetext()
+        {
+            _State.Text = "다중방송" + Audiochno.ToString() + ":" + idno.ToString() + ":" + Audiodev.ToString();
+        }
+
+        private void ReadMulti()
+        {
+            m1.Clear();
+            dBSqlite.dm1.BSTreeTableAdapter.Fill(dBSqlite.ds1.BSTree);
+            dBSqlite.dm1.MusicsTableAdapter.Fill(dBSqlite.ds1.Musics);
+            var t1 = dBSqlite.ds1.BSTree.Where(p => p.chno == idno);
+            var t3 = dBSqlite.ds1.Musics;
+
+            var t2 = from p in t1
+                     join p2 in t3 on p.MusicId equals p2.MusicId 
+                     select new Music
+                     {
+                         FileName = p2.FileName,
+                         MusicId = (int)p2.MusicId,
+                          FileContent = p2.FileContent,
+                     };
+            m1 = t2.ToList();
+
+            if (m1.Count < 1)
+                return;
+            cur_play = new SimpleMulti();
+            cur_play.music = m1;
+
+            /*
+                        if (idno < 100000) return;
+
+                        gl.XMLSchedule(true);
+                        gl.XMLSimplePAMulti(true);
+
+                        var t1 = gl._SimpleMultiList.child.Find(p => p.idno == idno);
+                        var t2 = gl._SimpleMultiListSch.child.Find(p => p.idno == idno);
+                        if (t1 != null) cur_play = t1;
+                        if (t2 != null) cur_play = t2;
+            */
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            string str1 = e1[0];
+            IntPtr t2 = new IntPtr(Int16.Parse(str1));
+            PostMessage((IntPtr)HWND_BROADCAST, message, t2, new IntPtr(5000)); // 
+        }
+
+        // 2. 방송 아이디를 받으면 플레이 처리 
+        private bool Loadid()
+        {
+            if (cur_play != null) return false;
+            SoundCard soundCard = null;
+            IntPtr t2 = new IntPtr(Audiochno);
+
+            ReadMulti();
+
+            if (cur_play == null)
+            {
+                statetext();
+                return false;
+            }
+            m1 = cur_play.music;
+
+            playcnt = 0;
+            string fn = m1[playcnt].FileName;
+            string str2 = gl.appPathServer_music + fn;
+            if (!System.IO.File.Exists(str2))
+                str2 = gl.appPathServer_music + "띠링.mp3";
+
+            soundCard = g1._SoundCardList.child.Find(p => p.no == Audiochno);
+            Audiodev = soundEngine.getSoundCard(soundCard.devicename);
+
+            soundEngine.OpenFile(str2, Audiodev); // debug
+            if (!soundEngine.CanPlay)
+            {
+                string str11 = e1[0];
+                IntPtr t12 = new IntPtr(Int16.Parse(str11));
+                PostMessage((IntPtr)HWND_BROADCAST, message, t12, new IntPtr(5000)); // 
+
+                g1.Log("Naudio err : CanPlay = false : " + str11);
+                //Close();
+                return false;
+            }
+            statetext();
+            Title = _State.Text;
+            FileText.Text = fn;
+            return true;
+        }
+
+
+        // wparam 99 lparam 1000 ~ 5000
+        // rcv play message  99, 2000
+
+        // 3. 방송 아이디는 서버로 부터 받음 채널번호 : 방송 아이디 
+        int idno = 0;
+        bool stopflag = false;
+
+        private void ComponentDispatcher_ThreadFilterMessage(ref MSG msg, ref bool handled)
+        {
+            if (message != msg.message)
+                return;
+            int s1 = msg.wParam.ToInt32();
+            if (s1 != Audiochno)
+                return;
+
+            if (soundEngine == null) return;
+            idno = msg.lParam.ToInt32();
+            // 중지 인경우 처리 
+            if (idno == 1) 
+            {
+                Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
+                {
+                    stopflag = true;
+                    soundEngine.Stop();
+                }));
+                return;
+            }
+
+            if (idno < 100000) return;
+
+            // data error 
+            _State.Text = (msg.message.ToString() + ":" + s1.ToString() + ":" + idno.ToString());
+
+            Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
+            {
+                if (Loadid())
+                {
+                    stopflag = false;
+                    soundEngine.Play();
+                    this.WindowState = WindowState.Normal;
+                    //GC.Collect();
+                    IntPtr t2 = new IntPtr(Audiochno);
+                    PostMessage((IntPtr)HWND_BROADCAST, message, t2, new IntPtr(1000));
+                }
+            }));
+
+
+            /*
+            switch (s1)
+            {
+                case 2000:
+                    int t1 = msg.wParam.ToInt32();
+                    Title = t1.ToString();
+                    if (t1 == 99)
+                    {
+                        if (soundEngine == null) return;
+                        if (soundEngine.CanPlay)
+                        {
+                            soundEngine.Play();
+                        }
+                    }
+                    break;
+            }
+            */
+        }
+
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            return;
+            if (soundEngine == null) return;
+            if (soundEngine.CanPlay)
+                soundEngine.Play();
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            if (soundEngine == null) return;
+            soundEngine.Dispose();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+    }
+}

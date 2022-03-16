@@ -1,0 +1,163 @@
+@title Getting Started
+@previewBell(){
+  <svg style="width:24px;height:24px;">
+    <path fill="#6F6F6F" d="M14 20C14 21.1046 13.1046 22 12 22C10.8954 22 10 21.1046 10 20L14 20ZM12 2C12.5523 2 13 2.44772 13 3L13 4.08298C15.8377 4.55905 18 7.02702 18 10L18 16L21 19L3 19L6 16L6 10C6 7.02698 8.1623 4.55902 11 4.08294L11 3C11 2.44772 11.4477 2 12 2Z"></path>
+  </svg>
+}
+@previewOverlay(){
+  <svg style="width:24px;height:24px;">
+    <path fill="#000" d="M12 4C14.2091 4 16 5.79086 16 8C16 10.2091 14.2091 12 12 12C9.79086 12 8 10.2091 8 8C8 5.79086 9.79086 4 12 4ZM12 14C16.4183 14 20 15.7909 20 18L20 20L4 20L4 18C4 15.7909 7.58172 14 12 14Z"></path>
+    <path fill="#D74933" d="M12 0C18.6274 0 24 5.37259 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37259 5.37258 0 12 0ZM12 2C6.47715 2 2 6.47716 2 12C2 14.4013 2.84636 16.6049 4.25705 18.3287L18.3287 4.25706C16.6049 2.84637 14.4013 2 12 2ZM12 22C17.5228 22 22 17.5228 22 12C22 9.59873 21.1536 7.39514 19.7429 5.67127L5.67127 19.7429C7.39514 21.1536 9.59873 22 12 22Z"></path>
+  </svg>
+}
+@download(text, url){
+  <button class="btn" onclick="window.location = '@url'" style="vertical-align:top;background:transparent;border:0;color:#333;">
+    <svg>
+      <path fill="#2196F3" d="M 5,3L 19,3L 20.7359,6L 20.7304,6C 20.9018,6.29149 21,6.63428 21,7L 21,19C 21,20.1046 20.1046,21 19,21L 5,21C 3.89543,21 3,20.1046 3,19L 3,7C 3,6.638 3.09618,6.29846 3.26437,6L 3.26135,6L 5,3 Z M 5.57294,4L 5,5L 5,5L 19,5L 18.4303,4L 5.57294,4 Z M 7,12L 12,17L 17,12L 14,12L 14,10L 10,10L 10,12L 7,12 Z "></path>
+    </svg>
+    @text
+  </button>
+}
+@boostrapInfo(){
+  <div class="boostrap-specific">
+    <a href="/bootstrap">
+      <span>Bootstrap</span>
+      <small>Getting Started</small>
+    </a>
+  </div>
+}
+
+# @title
+
+@boostrapInfo() There are many different ways you can consume the Material Design Icons in your projects. The most common uses are listed below. Boostrap has a seperate guide that can be viewed [here](/bootstrap).
+
+## Webfont @download(Download the Webfont, https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip)
+
+For those targetting the web your best option is to use the webfont (bower `bower install mdi` or npm `npm install mdi`). Files should match the file structure below.
+
+```text File Structure
+fonts
+  /materialdesignicons-webfont.eot
+  /materialdesignicons-webfont.svg
+  /materialdesignicons-webfont.ttf
+  /materialdesignicons-webfont.woff
+  /materialdesignicons-webfont.woff2
+css
+  /materialdesignicons.min.css            - Minified CSS
+  /materialdesignicons.min.css.map        - Developer Tools Map
+preview.html                              - Preview the font files
+```
+
+To reference the icons add the line below into the `head` tag.
+
+```html Reference the CSS
+<link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+```
+
+To use the icons inline use the syntax below. Preview these in the `preview.html` provided.
+
+```html Webfont Example
+<i class="mdi mdi-bell"></i>  <!-- bell -->
+```
+
+@previewBell()
+
+## Inline SVG
+
+The webfont is not the only way to use the icons. They can also be included inline with the `svg` tag. Right click any icon on the site and click the 'View SVG' item in the context menu for example code.
+
+```html SVG Inline Exmaple
+<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#000000" d="M ... Z" /> <!-- account -->
+</svg>
+```
+
+SVGs like the webfont can be overlayed and combined.
+
+```html Overlay Example
+<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#000000" d="M ... Z" /> <!-- account -->
+    <path fill="#990000" d="M ... Z" /> <!-- block-helper -->
+</svg>
+```
+
+@previewOverlay()
+
+SVGs can also be styled with CSS similar to HTML elements and assigned classes.
+
+```css Examples
+svg.example:hover path {
+    fill: #900;
+    fill-opacity: 0.5;
+}
+```
+
+## SASS
+
+Use the characters in custom SASS use the method below.
+
+```
+@function mdi($name) {
+    @return char(nth($hexes, index($names, $name)));
+}
+.custom:before {
+    font: normal normal normal 24px/1 MaterialDesignIcons;
+    content: mdi('account');
+}
+```
+
+## Android (Vector Drawable)
+
+Android uses the Vector Drawable format that is similar to SVG. Right click any icon to download or view the vector drawable syntax.
+
+## WPF / Windows / Windows Phone
+
+Windows uses the vector XAML format. Right click any icon on the site and click the "View XAML" item in the context menu.
+
+## Angular Material @download(Download for Angular Material v1 'mdi.svg', /api/download/angularmaterial/38EF63D0-4744-11E4-B3CF-842B2B6CFE1B)
+
+The `mdi.svg` contains all the icons provided on the site. Use inline with [$mdIconProvider](https://material.angularjs.org/latest/api/service/$mdIconProvider).
+
+```javascript Configure
+app.config(function($mdIconProvider) {
+  $mdIconProvider
+    .defaultIconSet('my/app/mdi.svg')
+});
+```
+
+Usage:
+
+```html Example Usage
+<md-icon md-svg-icon="android"></md-icon>
+<md-button aria-label="Android" class="md-icon-button">
+    <md-icon md-svg-icon="android"></md-icon>
+</md-button>
+```
+
+## Polymer @download(Download for Polymer v0.5 'mdi.html', /api/download/polymer/38EF63D0-4744-11E4-B3CF-842B2B6CFE1B) @download(Download for Polymer v1.0 'mdi.html', /api/download/polymer/v1/38EF63D0-4744-11E4-B3CF-842B2B6CFE1B)
+
+The `mdi.html` contains all the icons provided on the site. Use inline with the following code.
+
+```html Polymer Example
+<core-icon icon="mdi:account"></core-icon>
+```
+
+Learn more about custom icons in the [polymer documentation for v0.5](https://www.polymer-project.org/docs/elements/icons.html#roll-your-own) and for Polymer v1.0 [iron-iconset-svg](https://elements.polymer-project.org/elements/iron-iconset-svg).
+
+## Cordova
+
+Due to a "bug" in Cordova you will need to manually edit the css file to remove the version query string. [Read More](https://github.com/Templarian/MaterialDesign/issues/760).
+
+## Symbols for Adobe Illustrator
+
+[Download Symbols for Adobe Illustrator](https://github.com/danielhickman/MaterialDesign/tree/master/Symbols/Templarian) by Daniel Hickman. This GitHub repo also includes the steps to keep the symbol library updated with the latest.
+
+## Grunt `grunt-webfont`
+
+Creating subsets of the font can be done with the [grunt-webfont](https://github.com/sapegin/grunt-webfont) package.
+
+... explain step by step here...
+
+## License
+
+These fonts and designs are covered by the [license.txt](https://github.com/Templarian/MaterialDesign/blob/master/license.txt) located in the root of the git repo on GitHub.

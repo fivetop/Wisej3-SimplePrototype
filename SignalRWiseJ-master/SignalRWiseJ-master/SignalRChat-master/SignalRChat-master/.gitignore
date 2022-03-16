@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HTMLChatClient/bin
+/HTMLChatClient/obj/Debug
+/SignalRChatSelfHost/bin/Debug
+/SignalRChatSelfHost/obj/Debug
+/SignalRChatSystem/bin
+/SignalRChatSystem/obj/Debug

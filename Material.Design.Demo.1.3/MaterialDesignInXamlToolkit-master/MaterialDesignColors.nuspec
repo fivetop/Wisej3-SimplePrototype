@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MaterialDesignColors</id>
+    <version>1.1.2</version>
+    <title>Material Design Colors XAML Resources</title>
+    <authors>James Willock</authors>
+    <owners>James Willock</owners>
+    <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
+    <projectUrl>https://github.com/ButchersBoy/MaterialDesignInXamlToolkit</projectUrl>    
+    <iconUrl>http://materialdesigninxaml.net/images/MD4XAML32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ResourceDictionary instances containing standard Google Material Design swatches, for inclusion in a XAML application.</description>
+    <releaseNotes>https://github.com/ButchersBoy/MaterialDesignInXamlToolkit/releases</releaseNotes>
+    <copyright>Copyright 2015 James Willock/Mulholland Software Ltd</copyright>
+    <tags>WPF XAML WinRT Material Design Colour Color UI UX</tags>
+  </metadata>
+  <files>
+    <file src="MaterialDesignColors.Wpf\bin\Release\MaterialDesignColors.dll" target="lib\net45" />
+  </files>  
+</package>
