@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Nancy.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Script.Serialization;
-using Wisej.Web;
 
 namespace Wisej.CodeProject
 {

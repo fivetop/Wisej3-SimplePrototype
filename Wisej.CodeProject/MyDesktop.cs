@@ -3,14 +3,7 @@ using Wisej.Web;
 using System.Threading;
 using Wisej.CodeProject.Examples;
 using Wisej.CodeProject.Setup;
-using System.Data.SQLite;
-using System.Data.Linq;
-using System.Data;
 using Wisej.ChatServer;
-using Microsoft.AspNet.SignalR.Client;
-using System.Threading.Tasks;
-using System.Windows.Threading;
-using Wisej.CodeProject.SignalR;
 
 namespace Wisej.CodeProject
 {

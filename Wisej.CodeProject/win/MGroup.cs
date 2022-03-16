@@ -16,7 +16,6 @@ namespace Wisej.CodeProject
 		// 콤보 처리용 
 		DataList DataList { get; set; } = new DataList();
 		// 선택된 차일드 
-		AssetsDataTable seldt { get; set; }
 
 		public MGroup()
 		{
@@ -75,14 +74,9 @@ namespace Wisej.CodeProject
 			if (asset == null)
 				return;
 			textBox1.Text = asset.Name;
-//			seldt = assetBasesTableAdapter.GetDataByAssetGroupId(asset.AssetGroupId);
-//			bindingSource2.DataSource = seldt;
-//			SetStatusText("Loaded " + this.bindingSource2.Count + " records.");
 
 			this.dataSet1.Assets.ForEach(p => p.chk = 0);
-
 			var s1 = this.dataSet1.AssetGroups.Where(p => p.Name == textBox1.Text && p.AssetId != 0).ToList();
-
 			var s2 = (from q1 in this.dataSet1.Assets
 					  join q2 in s1
 					  on q1.AssetId equals q2.AssetId
@@ -92,19 +86,6 @@ namespace Wisej.CodeProject
 			{
 				t1.chk = 1;
 			}
-
-
-			//dataGridView1.SuspendLayout();
-			//bindingSource2.SuspendBinding();
-			//dataGridView1.DataSource = null;
-			//this.assetBasesTableAdapter.Fill(dt);
-
-			//this.dataGridView1.CellValueChanged -= new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-			//this.dataGridView1.CellValueChanged += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-
-			//dataGridView1.DataSource = bindingSource2;
-			//bindingSource2.ResumeBinding();
-			//dataGridView1.ResumeLayout();
 		}
 
 		#endregion
@@ -217,7 +198,7 @@ namespace Wisej.CodeProject
 
 				foreach (var s2 in s1)
 				{
-					this.dataSet1.AssetGroups.RemoveAssetGroupsRow(s2);
+					s2.Delete();
 					cnt++;
 				}
 				this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
