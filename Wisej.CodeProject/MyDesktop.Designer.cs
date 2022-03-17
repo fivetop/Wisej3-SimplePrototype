@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry10 = new Wisej.Web.ImageListEntry("imgs\\dPanel1.jpg", "dPanel1");
-            Wisej.Web.ImageListEntry imageListEntry11 = new Wisej.Web.ImageListEntry("imgs\\dPanel2.jpg", "dPanel2");
-            Wisej.Web.ImageListEntry imageListEntry12 = new Wisej.Web.ImageListEntry("imgs\\dPanel3.jpg", "dPanel3");
+            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("imgs\\dPanel1.jpg", "dPanel1");
+            Wisej.Web.ImageListEntry imageListEntry5 = new Wisej.Web.ImageListEntry("imgs\\dPanel2.jpg", "dPanel2");
+            Wisej.Web.ImageListEntry imageListEntry6 = new Wisej.Web.ImageListEntry("imgs\\dPanel3.jpg", "dPanel3");
             this.desktopStart = new Wisej.Web.DesktopTaskBarItem();
             this.desktopDateTime = new Wisej.Web.DesktopTaskBarItemDateTime();
             this.justGage1 = new Wisej.Web.Ext.JustGage.JustGage();
@@ -86,9 +86,9 @@
             // customWallpaper1
             // 
             this.customWallpaper1.Images = new Wisej.Web.ImageListEntry[] {
-        imageListEntry10,
-        imageListEntry11,
-        imageListEntry12};
+        imageListEntry4,
+        imageListEntry5,
+        imageListEntry6};
             // 
             // panel1
             // 
@@ -224,8 +224,7 @@
             this.desktopCPU,
             this.desktopDateTime});
             this.Name = "MyDesktop";
-            this.Size = new System.Drawing.Size(876, 416);
-            this.Wallpaper = "imgs/login2.jpg";
+            this.Size = new System.Drawing.Size(807, 417);
             this.Load += new System.EventHandler(this.MyDesktop_Load);
             this.Activated += new System.EventHandler(this.MyDesktop_Activated);
             this.ItemClick += new Wisej.Web.DesktopTaskBarItemClickEventHandler(this.MyDesktop_ItemClick);

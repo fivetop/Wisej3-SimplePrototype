@@ -36,8 +36,8 @@
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
             this.musicsTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.MusicsTableAdapter();
             this.dataGridView2 = new Wisej.Web.DataGridView();
-            this.pMusicSelBindingSource = new Wisej.Web.BindingSource(this.components);
             this.파일명 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.pMusicSelBindingSource = new Wisej.Web.BindingSource(this.components);
             this.panel1 = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -100,11 +100,6 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.파일명});
-            // 
-            // pMusicSelBindingSource
-            // 
-            this.pMusicSelBindingSource.DataMember = "bind";
-            this.pMusicSelBindingSource.DataSource = typeof(Wisej.CodeProject.PMusicSel);
             this.dataGridView2.DataSource = this.pMusicSelBindingSource;
             this.dataGridView2.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView2.Location = new System.Drawing.Point(316, 75);
@@ -121,6 +116,11 @@
             this.파일명.DataPropertyName = "FileName";
             this.파일명.HeaderText = "파일명";
             this.파일명.Name = "파일명";
+            // 
+            // pMusicSelBindingSource
+            // 
+            this.pMusicSelBindingSource.DataMember = "bind";
+            this.pMusicSelBindingSource.DataSource = typeof(Wisej.CodeProject.PMusicSel);
             // 
             // panel1
             // 
@@ -160,8 +160,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pMusicSelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pMusicSelBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

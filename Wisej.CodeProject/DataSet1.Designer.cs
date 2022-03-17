@@ -24,8 +24,6 @@ namespace Wisej.CodeProject {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1 : global::System.Data.DataSet {
         
-        private AssetBasesDataTable tableAssetBases;
-        
         private AssetGroupsDataTable tableAssetGroups;
         
         private AssetsDataTable tableAssets;
@@ -80,9 +78,6 @@ namespace Wisej.CodeProject {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["AssetBases"] != null)) {
-                    base.Tables.Add(new AssetBasesDataTable(ds.Tables["AssetBases"]));
-                }
                 if ((ds.Tables["AssetGroups"] != null)) {
                     base.Tables.Add(new AssetGroupsDataTable(ds.Tables["AssetGroups"]));
                 }
@@ -138,16 +133,6 @@ namespace Wisej.CodeProject {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AssetBasesDataTable AssetBases {
-            get {
-                return this.tableAssetBases;
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -347,9 +332,6 @@ namespace Wisej.CodeProject {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["AssetBases"] != null)) {
-                    base.Tables.Add(new AssetBasesDataTable(ds.Tables["AssetBases"]));
-                }
                 if ((ds.Tables["AssetGroups"] != null)) {
                     base.Tables.Add(new AssetGroupsDataTable(ds.Tables["AssetGroups"]));
                 }
@@ -422,12 +404,6 @@ namespace Wisej.CodeProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAssetBases = ((AssetBasesDataTable)(base.Tables["AssetBases"]));
-            if ((initTable == true)) {
-                if ((this.tableAssetBases != null)) {
-                    this.tableAssetBases.InitVars();
-                }
-            }
             this.tableAssetGroups = ((AssetGroupsDataTable)(base.Tables["AssetGroups"]));
             if ((initTable == true)) {
                 if ((this.tableAssetGroups != null)) {
@@ -516,8 +492,6 @@ namespace Wisej.CodeProject {
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAssetBases = new AssetBasesDataTable();
-            base.Tables.Add(this.tableAssetBases);
             this.tableAssetGroups = new AssetGroupsDataTable();
             base.Tables.Add(this.tableAssetGroups);
             this.tableAssets = new AssetsDataTable();
@@ -544,12 +518,6 @@ namespace Wisej.CodeProject {
             base.Tables.Add(this.tableFloorbases);
             this.tableFloormaps = new FloormapsDataTable();
             base.Tables.Add(this.tableFloormaps);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeAssetBases() {
-            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -686,9 +654,6 @@ namespace Wisej.CodeProject {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void AssetBasesRowChangeEventHandler(object sender, AssetBasesRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void AssetGroupsRowChangeEventHandler(object sender, AssetGroupsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -726,462 +691,6 @@ namespace Wisej.CodeProject {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void FloormapsRowChangeEventHandler(object sender, FloormapsRowChangeEvent e);
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AssetBasesDataTable : global::System.Data.TypedTableBase<AssetBasesRow> {
-            
-            private global::System.Data.DataColumn columnAssetBaseId;
-            
-            private global::System.Data.DataColumn columnip;
-            
-            private global::System.Data.DataColumn columnGroupName;
-            
-            private global::System.Data.DataColumn columnZoneName;
-            
-            private global::System.Data.DataColumn columnSpeakerName;
-            
-            private global::System.Data.DataColumn columnpath;
-            
-            private global::System.Data.DataColumn columnfloor;
-            
-            private global::System.Data.DataColumn columnDeviceName;
-            
-            private global::System.Data.DataColumn columnstate;
-            
-            private global::System.Data.DataColumn columnstate_old;
-            
-            private global::System.Data.DataColumn columnchk;
-            
-            private global::System.Data.DataColumn columnseq;
-            
-            private global::System.Data.DataColumn columnAssetGroupId;
-            
-            private global::System.Data.DataColumn columnwtime;
-            
-            private global::System.Data.DataColumn columnch;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AssetBasesDataTable() {
-                this.TableName = "AssetBases";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AssetBasesDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected AssetBasesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AssetBaseIdColumn {
-                get {
-                    return this.columnAssetBaseId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ipColumn {
-                get {
-                    return this.columnip;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn GroupNameColumn {
-                get {
-                    return this.columnGroupName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ZoneNameColumn {
-                get {
-                    return this.columnZoneName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SpeakerNameColumn {
-                get {
-                    return this.columnSpeakerName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn pathColumn {
-                get {
-                    return this.columnpath;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn floorColumn {
-                get {
-                    return this.columnfloor;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DeviceNameColumn {
-                get {
-                    return this.columnDeviceName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn stateColumn {
-                get {
-                    return this.columnstate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn state_oldColumn {
-                get {
-                    return this.columnstate_old;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn chkColumn {
-                get {
-                    return this.columnchk;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn seqColumn {
-                get {
-                    return this.columnseq;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AssetGroupIdColumn {
-                get {
-                    return this.columnAssetGroupId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn wtimeColumn {
-                get {
-                    return this.columnwtime;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn chColumn {
-                get {
-                    return this.columnch;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AssetBasesRow this[int index] {
-                get {
-                    return ((AssetBasesRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AssetBasesRowChangeEventHandler AssetBasesRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AssetBasesRowChangeEventHandler AssetBasesRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AssetBasesRowChangeEventHandler AssetBasesRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AssetBasesRowChangeEventHandler AssetBasesRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddAssetBasesRow(AssetBasesRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AssetBasesRow AddAssetBasesRow(string ip, string GroupName, string ZoneName, string SpeakerName, string path, string floor, string DeviceName, string state, string state_old, long chk, long seq, long AssetGroupId, System.DateTime wtime, long ch) {
-                AssetBasesRow rowAssetBasesRow = ((AssetBasesRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        ip,
-                        GroupName,
-                        ZoneName,
-                        SpeakerName,
-                        path,
-                        floor,
-                        DeviceName,
-                        state,
-                        state_old,
-                        chk,
-                        seq,
-                        AssetGroupId,
-                        wtime,
-                        ch};
-                rowAssetBasesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAssetBasesRow);
-                return rowAssetBasesRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AssetBasesRow FindByAssetBaseId(long AssetBaseId) {
-                return ((AssetBasesRow)(this.Rows.Find(new object[] {
-                            AssetBaseId})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                AssetBasesDataTable cln = ((AssetBasesDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new AssetBasesDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnAssetBaseId = base.Columns["AssetBaseId"];
-                this.columnip = base.Columns["ip"];
-                this.columnGroupName = base.Columns["GroupName"];
-                this.columnZoneName = base.Columns["ZoneName"];
-                this.columnSpeakerName = base.Columns["SpeakerName"];
-                this.columnpath = base.Columns["path"];
-                this.columnfloor = base.Columns["floor"];
-                this.columnDeviceName = base.Columns["DeviceName"];
-                this.columnstate = base.Columns["state"];
-                this.columnstate_old = base.Columns["state_old"];
-                this.columnchk = base.Columns["chk"];
-                this.columnseq = base.Columns["seq"];
-                this.columnAssetGroupId = base.Columns["AssetGroupId"];
-                this.columnwtime = base.Columns["wtime"];
-                this.columnch = base.Columns["ch"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnAssetBaseId = new global::System.Data.DataColumn("AssetBaseId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAssetBaseId);
-                this.columnip = new global::System.Data.DataColumn("ip", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnip);
-                this.columnGroupName = new global::System.Data.DataColumn("GroupName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroupName);
-                this.columnZoneName = new global::System.Data.DataColumn("ZoneName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnZoneName);
-                this.columnSpeakerName = new global::System.Data.DataColumn("SpeakerName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSpeakerName);
-                this.columnpath = new global::System.Data.DataColumn("path", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpath);
-                this.columnfloor = new global::System.Data.DataColumn("floor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfloor);
-                this.columnDeviceName = new global::System.Data.DataColumn("DeviceName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeviceName);
-                this.columnstate = new global::System.Data.DataColumn("state", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstate);
-                this.columnstate_old = new global::System.Data.DataColumn("state_old", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstate_old);
-                this.columnchk = new global::System.Data.DataColumn("chk", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnchk);
-                this.columnseq = new global::System.Data.DataColumn("seq", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnseq);
-                this.columnAssetGroupId = new global::System.Data.DataColumn("AssetGroupId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAssetGroupId);
-                this.columnwtime = new global::System.Data.DataColumn("wtime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnwtime);
-                this.columnch = new global::System.Data.DataColumn("ch", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnch);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnAssetBaseId}, true));
-                this.columnAssetBaseId.AutoIncrement = true;
-                this.columnAssetBaseId.AutoIncrementSeed = 1;
-                this.columnAssetBaseId.AllowDBNull = false;
-                this.columnAssetBaseId.Unique = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AssetBasesRow NewAssetBasesRow() {
-                return ((AssetBasesRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AssetBasesRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(AssetBasesRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.AssetBasesRowChanged != null)) {
-                    this.AssetBasesRowChanged(this, new AssetBasesRowChangeEvent(((AssetBasesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.AssetBasesRowChanging != null)) {
-                    this.AssetBasesRowChanging(this, new AssetBasesRowChangeEvent(((AssetBasesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.AssetBasesRowDeleted != null)) {
-                    this.AssetBasesRowDeleted(this, new AssetBasesRowChangeEvent(((AssetBasesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.AssetBasesRowDeleting != null)) {
-                    this.AssetBasesRowDeleting(this, new AssetBasesRowChangeEvent(((AssetBasesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveAssetBasesRow(AssetBasesRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AssetBasesDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1951,8 +1460,6 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnEventVMId;
             
-            private global::System.Data.DataColumn columnbase_text;
-            
             private global::System.Data.DataColumn columnwrite_time;
             
             private global::System.Data.DataColumn columnevent_text;
@@ -2003,14 +1510,6 @@ namespace Wisej.CodeProject {
             public global::System.Data.DataColumn EventVMIdColumn {
                 get {
                     return this.columnEventVMId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn base_textColumn {
-                get {
-                    return this.columnbase_text;
                 }
             }
             
@@ -2099,11 +1598,10 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EventvmRow AddEventvmRow(string base_text, System.DateTime write_time, string event_text, string ip, string path, string DeviceName, string state) {
+            public EventvmRow AddEventvmRow(System.DateTime write_time, string event_text, string ip, string path, string DeviceName, string state) {
                 EventvmRow rowEventvmRow = ((EventvmRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        base_text,
                         write_time,
                         event_text,
                         ip,
@@ -2140,7 +1638,6 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnEventVMId = base.Columns["EventVMId"];
-                this.columnbase_text = base.Columns["base_text"];
                 this.columnwrite_time = base.Columns["write_time"];
                 this.columnevent_text = base.Columns["event_text"];
                 this.columnip = base.Columns["ip"];
@@ -2154,8 +1651,6 @@ namespace Wisej.CodeProject {
             private void InitClass() {
                 this.columnEventVMId = new global::System.Data.DataColumn("EventVMId", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventVMId);
-                this.columnbase_text = new global::System.Data.DataColumn("base_text", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbase_text);
                 this.columnwrite_time = new global::System.Data.DataColumn("write_time", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnwrite_time);
                 this.columnevent_text = new global::System.Data.DataColumn("event_text", typeof(string), null, global::System.Data.MappingType.Element);
@@ -4934,7 +4429,7 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnmobile;
             
-            private global::System.Data.DataColumn columnSimplePAId;
+            private global::System.Data.DataColumn columnemail;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -5027,9 +4522,9 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SimplePAIdColumn {
+            public global::System.Data.DataColumn emailColumn {
                 get {
-                    return this.columnSimplePAId;
+                    return this.columnemail;
                 }
             }
             
@@ -5070,7 +4565,7 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UserTreesRow AddUserTreesRow(string user_group, string user_name, string login_id, string login_password, string login_password2, string mobile, long SimplePAId) {
+            public UserTreesRow AddUserTreesRow(string user_group, string user_name, string login_id, string login_password, string login_password2, string mobile, string email) {
                 UserTreesRow rowUserTreesRow = ((UserTreesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5080,7 +4575,7 @@ namespace Wisej.CodeProject {
                         login_password,
                         login_password2,
                         mobile,
-                        SimplePAId};
+                        email};
                 rowUserTreesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUserTreesRow);
                 return rowUserTreesRow;
@@ -5117,7 +4612,7 @@ namespace Wisej.CodeProject {
                 this.columnlogin_password = base.Columns["login_password"];
                 this.columnlogin_password2 = base.Columns["login_password2"];
                 this.columnmobile = base.Columns["mobile"];
-                this.columnSimplePAId = base.Columns["SimplePAId"];
+                this.columnemail = base.Columns["email"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5137,8 +4632,8 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columnlogin_password2);
                 this.columnmobile = new global::System.Data.DataColumn("mobile", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmobile);
-                this.columnSimplePAId = new global::System.Data.DataColumn("SimplePAId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSimplePAId);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnUserTreeId}, true));
                 this.columnUserTreeId.AutoIncrement = true;
@@ -6837,424 +6332,6 @@ namespace Wisej.CodeProject {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AssetBasesRow : global::System.Data.DataRow {
-            
-            private AssetBasesDataTable tableAssetBases;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AssetBasesRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableAssetBases = ((AssetBasesDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long AssetBaseId {
-                get {
-                    return ((long)(this[this.tableAssetBases.AssetBaseIdColumn]));
-                }
-                set {
-                    this[this.tableAssetBases.AssetBaseIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ip {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.ipColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'ip\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.ipColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string GroupName {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.GroupNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'GroupName\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.GroupNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ZoneName {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.ZoneNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'ZoneName\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.ZoneNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string SpeakerName {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.SpeakerNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'SpeakerName\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.SpeakerNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string path {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.pathColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'path\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.pathColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string floor {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.floorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'floor\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.floorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DeviceName {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.DeviceNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'DeviceName\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.DeviceNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string state {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.stateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'state\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.stateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string state_old {
-                get {
-                    try {
-                        return ((string)(this[this.tableAssetBases.state_oldColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'state_old\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.state_oldColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long chk {
-                get {
-                    try {
-                        return ((long)(this[this.tableAssetBases.chkColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'chk\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.chkColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long seq {
-                get {
-                    try {
-                        return ((long)(this[this.tableAssetBases.seqColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'seq\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.seqColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long AssetGroupId {
-                get {
-                    try {
-                        return ((long)(this[this.tableAssetBases.AssetGroupIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'AssetGroupId\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.AssetGroupIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime wtime {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableAssetBases.wtimeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'wtime\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.wtimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long ch {
-                get {
-                    try {
-                        return ((long)(this[this.tableAssetBases.chColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetBases\' 테이블의 \'ch\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableAssetBases.chColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsipNull() {
-                return this.IsNull(this.tableAssetBases.ipColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetipNull() {
-                this[this.tableAssetBases.ipColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsGroupNameNull() {
-                return this.IsNull(this.tableAssetBases.GroupNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetGroupNameNull() {
-                this[this.tableAssetBases.GroupNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsZoneNameNull() {
-                return this.IsNull(this.tableAssetBases.ZoneNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetZoneNameNull() {
-                this[this.tableAssetBases.ZoneNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSpeakerNameNull() {
-                return this.IsNull(this.tableAssetBases.SpeakerNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSpeakerNameNull() {
-                this[this.tableAssetBases.SpeakerNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IspathNull() {
-                return this.IsNull(this.tableAssetBases.pathColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetpathNull() {
-                this[this.tableAssetBases.pathColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsfloorNull() {
-                return this.IsNull(this.tableAssetBases.floorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetfloorNull() {
-                this[this.tableAssetBases.floorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDeviceNameNull() {
-                return this.IsNull(this.tableAssetBases.DeviceNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDeviceNameNull() {
-                this[this.tableAssetBases.DeviceNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsstateNull() {
-                return this.IsNull(this.tableAssetBases.stateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetstateNull() {
-                this[this.tableAssetBases.stateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isstate_oldNull() {
-                return this.IsNull(this.tableAssetBases.state_oldColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setstate_oldNull() {
-                this[this.tableAssetBases.state_oldColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IschkNull() {
-                return this.IsNull(this.tableAssetBases.chkColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetchkNull() {
-                this[this.tableAssetBases.chkColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsseqNull() {
-                return this.IsNull(this.tableAssetBases.seqColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetseqNull() {
-                this[this.tableAssetBases.seqColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsAssetGroupIdNull() {
-                return this.IsNull(this.tableAssetBases.AssetGroupIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetAssetGroupIdNull() {
-                this[this.tableAssetBases.AssetGroupIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IswtimeNull() {
-                return this.IsNull(this.tableAssetBases.wtimeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetwtimeNull() {
-                this[this.tableAssetBases.wtimeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IschNull() {
-                return this.IsNull(this.tableAssetBases.chColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetchNull() {
-                this[this.tableAssetBases.chColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class AssetGroupsRow : global::System.Data.DataRow {
             
             private AssetGroupsDataTable tableAssetGroups;
@@ -7790,22 +6867,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string base_text {
-                get {
-                    try {
-                        return ((string)(this[this.tableEventvm.base_textColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Eventvm\' 테이블의 \'base_text\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableEventvm.base_textColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime write_time {
                 get {
                     return ((global::System.DateTime)(this[this.tableEventvm.write_timeColumn]));
@@ -7893,18 +6954,6 @@ namespace Wisej.CodeProject {
                 set {
                     this[this.tableEventvm.stateColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isbase_textNull() {
-                return this.IsNull(this.tableEventvm.base_textColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setbase_textNull() {
-                this[this.tableEventvm.base_textColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9949,17 +8998,17 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long SimplePAId {
+            public string email {
                 get {
                     try {
-                        return ((long)(this[this.tableUserTrees.SimplePAIdColumn]));
+                        return ((string)(this[this.tableUserTrees.emailColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'UserTrees\' 테이블의 \'SimplePAId\' 열의 값이 DBNull입니다.", e);
+                        throw new global::System.Data.StrongTypingException("\'UserTrees\' 테이블의 \'email\' 열의 값이 DBNull입니다.", e);
                     }
                 }
                 set {
-                    this[this.tableUserTrees.SimplePAIdColumn] = value;
+                    this[this.tableUserTrees.emailColumn] = value;
                 }
             }
             
@@ -10037,14 +9086,14 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSimplePAIdNull() {
-                return this.IsNull(this.tableUserTrees.SimplePAIdColumn);
+            public bool IsemailNull() {
+                return this.IsNull(this.tableUserTrees.emailColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSimplePAIdNull() {
-                this[this.tableUserTrees.SimplePAIdColumn] = global::System.Convert.DBNull;
+            public void SetemailNull() {
+                this[this.tableUserTrees.emailColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11113,40 +10162,6 @@ namespace Wisej.CodeProject {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class AssetBasesRowChangeEvent : global::System.EventArgs {
-            
-            private AssetBasesRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AssetBasesRowChangeEvent(AssetBasesRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AssetBasesRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class AssetGroupsRowChangeEvent : global::System.EventArgs {
             
             private AssetGroupsRow eventRow;
@@ -11588,949 +10603,6 @@ namespace Wisej.CodeProject {
 }
 namespace Wisej.CodeProject.DataSet1TableAdapters {
     
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AssetBasesTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::Devart.Data.SQLite.SQLiteDataAdapter _adapter;
-        
-        private global::Devart.Data.SQLite.SQLiteConnection _connection;
-        
-        private global::System.Data.Common.DbTransaction _transaction;
-        
-        private global::Devart.Data.SQLite.SQLiteCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public AssetBasesTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::Devart.Data.SQLite.SQLiteDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::Devart.Data.SQLite.SQLiteConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::Devart.Data.SQLite.SQLiteCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.Common.DbTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::Devart.Data.SQLite.SQLiteCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::Devart.Data.SQLite.SQLiteDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AssetBases";
-            tableMapping.ColumnMappings.Add("AssetBaseId", "AssetBaseId");
-            tableMapping.ColumnMappings.Add("ip", "ip");
-            tableMapping.ColumnMappings.Add("GroupName", "GroupName");
-            tableMapping.ColumnMappings.Add("ZoneName", "ZoneName");
-            tableMapping.ColumnMappings.Add("SpeakerName", "SpeakerName");
-            tableMapping.ColumnMappings.Add("path", "path");
-            tableMapping.ColumnMappings.Add("floor", "floor");
-            tableMapping.ColumnMappings.Add("DeviceName", "DeviceName");
-            tableMapping.ColumnMappings.Add("state", "state");
-            tableMapping.ColumnMappings.Add("state_old", "state_old");
-            tableMapping.ColumnMappings.Add("chk", "chk");
-            tableMapping.ColumnMappings.Add("seq", "seq");
-            tableMapping.ColumnMappings.Add("AssetGroupId", "AssetGroupId");
-            tableMapping.ColumnMappings.Add("wtime", "wtime");
-            tableMapping.ColumnMappings.Add("ch", "ch");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"main\".\"AssetBases\" WHERE ((\"AssetBaseId\" = :Original_AssetBaseId))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_AssetBaseId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "AssetBaseId";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""AssetBases"" (""AssetBaseId"", ""ip"", ""GroupName"", ""ZoneName"", ""SpeakerName"", ""path"", ""floor"", ""DeviceName"", ""state"", ""state_old"", ""chk"", ""seq"", ""AssetGroupId"", ""ch"", ""wtime"") VALUES (:AssetBaseId, :ip, :GroupName, :ZoneName, :SpeakerName, :path, :floor, :DeviceName, :state, :state_old, :chk, :seq, :AssetGroupId, :ch, :wtime)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "AssetBaseId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "AssetBaseId";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ip";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "ip";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "GroupName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "GroupName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ZoneName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "ZoneName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SpeakerName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "SpeakerName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "path";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "path";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "floor";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "floor";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "DeviceName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "DeviceName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "state";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "state";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "state_old";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "state_old";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "chk";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "chk";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "seq";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "seq";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "AssetGroupId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "AssetGroupId";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ch";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "ch";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "wtime";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "wtime";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""AssetBases"" SET ""AssetBaseId"" = :AssetBaseId, ""ip"" = :ip, ""GroupName"" = :GroupName, ""ZoneName"" = :ZoneName, ""SpeakerName"" = :SpeakerName, ""path"" = :path, ""floor"" = :floor, ""DeviceName"" = :DeviceName, ""state"" = :state, ""state_old"" = :state_old, ""chk"" = :chk, ""seq"" = :seq, ""AssetGroupId"" = :AssetGroupId, ""ch"" = :ch, ""wtime"" = :wtime WHERE ((""AssetBaseId"" = :Original_AssetBaseId))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "AssetBaseId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "AssetBaseId";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ip";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "ip";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "GroupName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "GroupName";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ZoneName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "ZoneName";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SpeakerName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "SpeakerName";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "path";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "path";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "floor";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "floor";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "DeviceName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "DeviceName";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "state";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "state";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "state_old";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "state_old";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "chk";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "chk";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "seq";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "seq";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "AssetGroupId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "AssetGroupId";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ch";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "ch";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "wtime";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "wtime";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_AssetBaseId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "AssetBaseId";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::Devart.Data.SQLite.SQLiteConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[4];
-            this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  AssetBaseId, ip, GroupName, ZoneName, SpeakerName, path, floor, DeviceNam" +
-                "e, state, state_old, chk, seq, AssetGroupId, ch, wtime\r\nFROM     AssetBases";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM AssetBases\r\nWHERE  (AssetGroupId = :Original_AssetGroupId)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Original_AssetGroupId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.Size = 8;
-            param.IsNullable = true;
-            param.SourceColumn = "AssetGroupId";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT  AssetBaseId, id, logicid, ip, GroupName, ZoneName, SpeakerName, path, flo" +
-                "or, DeviceName, state, state_old, chk, seq, AssetGroupId\r\nFROM     AssetBases\r\nW" +
-                "HERE  (AssetGroupId = @AssetGroupId)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "AssetGroupId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            this._commandCollection[2].Parameters.Add(param);
-            this._commandCollection[3] = new global::Devart.Data.SQLite.SQLiteCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"INSERT INTO ""main"".""AssetBases"" (""ip"", ""GroupName"", ""ZoneName"", ""SpeakerName"", ""path"", ""floor"", ""DeviceName"", ""state"", ""state_old"", ""chk"", ""seq"", ""AssetGroupId"") VALUES (:ip, :GroupName, :ZoneName, :SpeakerName, :path, :floor, :DeviceName, :state, :state_old, :chk, :seq, :AssetGroupId)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ip";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "ip";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "GroupName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "GroupName";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "ZoneName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "ZoneName";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SpeakerName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "SpeakerName";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "path";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "path";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "floor";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "floor";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "DeviceName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "DeviceName";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "state";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "state";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "state_old";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = "state_old";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "chk";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.Size = 8;
-            param.IsNullable = true;
-            param.SourceColumn = "chk";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "seq";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.Size = 8;
-            param.IsNullable = true;
-            param.SourceColumn = "seq";
-            this._commandCollection[3].Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "AssetGroupId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.Size = 8;
-            param.IsNullable = true;
-            param.SourceColumn = "AssetGroupId";
-            this._commandCollection[3].Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.AssetBasesDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.AssetBasesDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.AssetBasesDataTable dataTable = new DataSet1.AssetBasesDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.AssetBasesDataTable GetDataByAssetGroupId(long AssetGroupId) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(AssetGroupId));
-            DataSet1.AssetBasesDataTable dataTable = new DataSet1.AssetBasesDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.AssetBasesDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "AssetBases");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_AssetBaseId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_AssetBaseId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long AssetBaseId, string ip, string GroupName, string ZoneName, string SpeakerName, string path, string floor, string DeviceName, string state, string state_old, global::System.Nullable<long> chk, global::System.Nullable<long> seq, global::System.Nullable<long> AssetGroupId, global::System.Nullable<long> ch, global::System.Nullable<global::System.DateTime> wtime) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(AssetBaseId));
-            if ((ip == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ip));
-            }
-            if ((GroupName == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(GroupName));
-            }
-            if ((ZoneName == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ZoneName));
-            }
-            if ((SpeakerName == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(SpeakerName));
-            }
-            if ((path == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(path));
-            }
-            if ((floor == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(floor));
-            }
-            if ((DeviceName == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(DeviceName));
-            }
-            if ((state == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(state));
-            }
-            if ((state_old == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(state_old));
-            }
-            if ((chk.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((long)(chk.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((seq.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((long)(seq.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((AssetGroupId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((long)(AssetGroupId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((ch.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((long)(ch.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((wtime.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((System.DateTime)(wtime.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    long AssetBaseId, 
-                    string ip, 
-                    string GroupName, 
-                    string ZoneName, 
-                    string SpeakerName, 
-                    string path, 
-                    string floor, 
-                    string DeviceName, 
-                    string state, 
-                    string state_old, 
-                    global::System.Nullable<long> chk, 
-                    global::System.Nullable<long> seq, 
-                    global::System.Nullable<long> AssetGroupId, 
-                    global::System.Nullable<long> ch, 
-                    global::System.Nullable<global::System.DateTime> wtime, 
-                    long Original_AssetBaseId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(AssetBaseId));
-            if ((ip == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ip));
-            }
-            if ((GroupName == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(GroupName));
-            }
-            if ((ZoneName == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ZoneName));
-            }
-            if ((SpeakerName == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(SpeakerName));
-            }
-            if ((path == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(path));
-            }
-            if ((floor == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(floor));
-            }
-            if ((DeviceName == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(DeviceName));
-            }
-            if ((state == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(state));
-            }
-            if ((state_old == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(state_old));
-            }
-            if ((chk.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(chk.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((seq.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(seq.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((AssetGroupId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(AssetGroupId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((ch.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(ch.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((wtime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(wtime.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((long)(Original_AssetBaseId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ip, string GroupName, string ZoneName, string SpeakerName, string path, string floor, string DeviceName, string state, string state_old, global::System.Nullable<long> chk, global::System.Nullable<long> seq, global::System.Nullable<long> AssetGroupId, global::System.Nullable<long> ch, global::System.Nullable<global::System.DateTime> wtime, long Original_AssetBaseId) {
-            return this.Update(Original_AssetBaseId, ip, GroupName, ZoneName, SpeakerName, path, floor, DeviceName, state, state_old, chk, seq, AssetGroupId, ch, wtime, Original_AssetBaseId);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(global::System.Nullable<long> Original_AssetGroupId) {
-            global::Devart.Data.SQLite.SQLiteCommand command = this.CommandCollection[1];
-            if ((Original_AssetGroupId.HasValue == true)) {
-                command.Parameters[0].Value = ((long)(Original_AssetGroupId.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string ip, string GroupName, string ZoneName, string SpeakerName, string path, string floor, string DeviceName, string state, string state_old, global::System.Nullable<long> chk, global::System.Nullable<long> seq, global::System.Nullable<long> AssetGroupId) {
-            global::Devart.Data.SQLite.SQLiteCommand command = this.CommandCollection[3];
-            if ((ip == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(ip));
-            }
-            if ((GroupName == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(GroupName));
-            }
-            if ((ZoneName == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(ZoneName));
-            }
-            if ((SpeakerName == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(SpeakerName));
-            }
-            if ((path == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[4].Value = ((string)(path));
-            }
-            if ((floor == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[5].Value = ((string)(floor));
-            }
-            if ((DeviceName == null)) {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[6].Value = ((string)(DeviceName));
-            }
-            if ((state == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[7].Value = ((string)(state));
-            }
-            if ((state_old == null)) {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[8].Value = ((string)(state_old));
-            }
-            if ((chk.HasValue == true)) {
-                command.Parameters[9].Value = ((long)(chk.Value));
-            }
-            else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((seq.HasValue == true)) {
-                command.Parameters[10].Value = ((long)(seq.Value));
-            }
-            else {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((AssetGroupId.HasValue == true)) {
-                command.Parameters[11].Value = ((long)(AssetGroupId.Value));
-            }
-            else {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -13884,7 +11956,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Eventvm";
             tableMapping.ColumnMappings.Add("EventVMId", "EventVMId");
-            tableMapping.ColumnMappings.Add("base_text", "base_text");
             tableMapping.ColumnMappings.Add("write_time", "write_time");
             tableMapping.ColumnMappings.Add("event_text", "event_text");
             tableMapping.ColumnMappings.Add("ip", "ip");
@@ -13906,9 +11977,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Eventvm\" (\"EventVMId\", \"base_text\", \"write_time\", \"event_text" +
-                "\", \"ip\", \"path\", \"DeviceName\", \"state\") VALUES (:EventVMId, :base_text, :write_t" +
-                "ime, :event_text, :ip, :path, :DeviceName, :state)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Eventvm\" (\"EventVMId\", \"write_time\", \"event_text\", \"ip\", \"pat" +
+                "h\", \"DeviceName\", \"state\") VALUES (:EventVMId, :write_time, :event_text, :ip, :p" +
+                "ath, :DeviceName, :state)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "EventVMId";
@@ -13918,14 +11989,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "EventVMId";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "base_text";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "base_text";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "write_time";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "write_time";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -13961,10 +12027,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Eventvm\" SET \"EventVMId\" = :EventVMId, \"base_text\" = :base_text, \"" +
-                "write_time\" = :write_time, \"event_text\" = :event_text, \"ip\" = :ip, \"path\" = :pat" +
-                "h, \"DeviceName\" = :DeviceName, \"state\" = :state WHERE ((\"EventVMId\" = :Original_" +
-                "EventVMId))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Eventvm\" SET \"EventVMId\" = :EventVMId, \"write_time\" = :write_time," +
+                " \"event_text\" = :event_text, \"ip\" = :ip, \"path\" = :path, \"DeviceName\" = :DeviceN" +
+                "ame, \"state\" = :state WHERE ((\"EventVMId\" = :Original_EventVMId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "EventVMId";
@@ -13974,14 +12039,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "EventVMId";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "base_text";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "base_text";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "write_time";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "write_time";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -14038,8 +12098,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EventVMId, base_text, write_time, event_text, ip, path, DeviceName, state " +
-                "FROM \"main\".Eventvm";
+            this._commandCollection[0].CommandText = "SELECT  EventVMId, write_time, event_text, ip, path, DeviceName, state\r\nFROM     " +
+                "Eventvm";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -14122,49 +12182,38 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long EventVMId, string base_text, string write_time, string event_text, string ip, string path, string DeviceName, string state) {
+        public virtual int Insert(long EventVMId, System.DateTime write_time, string event_text, string ip, string path, string DeviceName, string state) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(EventVMId));
-            if ((base_text == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(base_text));
-            }
-            if ((write_time == null)) {
-                throw new global::System.ArgumentNullException("write_time");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(write_time));
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(write_time));
             if ((event_text == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(event_text));
+            }
+            if ((ip == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(event_text));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ip));
             }
-            if ((ip == null)) {
+            if ((path == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ip));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(path));
             }
-            if ((path == null)) {
+            if ((DeviceName == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(path));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DeviceName));
             }
-            if ((DeviceName == null)) {
+            if ((state == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(DeviceName));
-            }
-            if ((state == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(state));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(state));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14186,51 +12235,40 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long EventVMId, string base_text, string write_time, string event_text, string ip, string path, string DeviceName, string state, long Original_EventVMId) {
+        public virtual int Update(long EventVMId, System.DateTime write_time, string event_text, string ip, string path, string DeviceName, string state, long Original_EventVMId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(EventVMId));
-            if ((base_text == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(base_text));
-            }
-            if ((write_time == null)) {
-                throw new global::System.ArgumentNullException("write_time");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(write_time));
-            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(write_time));
             if ((event_text == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(event_text));
+            }
+            if ((ip == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(event_text));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ip));
             }
-            if ((ip == null)) {
+            if ((path == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ip));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(path));
             }
-            if ((path == null)) {
+            if ((DeviceName == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(path));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DeviceName));
             }
-            if ((DeviceName == null)) {
+            if ((state == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(DeviceName));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(state));
             }
-            if ((state == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(state));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_EventVMId));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(Original_EventVMId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14251,8 +12289,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string base_text, string write_time, string event_text, string ip, string path, string DeviceName, string state, long Original_EventVMId) {
-            return this.Update(Original_EventVMId, base_text, write_time, event_text, ip, path, DeviceName, state, Original_EventVMId);
+        public virtual int Update(System.DateTime write_time, string event_text, string ip, string path, string DeviceName, string state, long Original_EventVMId) {
+            return this.Update(Original_EventVMId, write_time, event_text, ip, path, DeviceName, state, Original_EventVMId);
         }
     }
     
@@ -18059,7 +16097,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("login_password", "login_password");
             tableMapping.ColumnMappings.Add("login_password2", "login_password2");
             tableMapping.ColumnMappings.Add("mobile", "mobile");
-            tableMapping.ColumnMappings.Add("SimplePAId", "SimplePAId");
+            tableMapping.ColumnMappings.Add("email", "email");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -18075,7 +16113,10 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""UserTrees"" (""UserTreeId"", ""user_group"", ""user_name"", ""login_id"", ""login_password"", ""login_password2"", ""mobile"", ""SimplePAId"") VALUES (:UserTreeId, :user_group, :user_name, :login_id, :login_password, :login_password2, :mobile, :SimplePAId)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"UserTrees\" (\"UserTreeId\", \"user_group\", \"user_name\", \"login_i" +
+                "d\", \"login_password\", \"login_password2\", \"mobile\", \"email\") VALUES (:UserTreeId," +
+                " :user_group, :user_name, :login_id, :login_password, :login_password2, :mobile," +
+                " :email)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "UserTreeId";
@@ -18121,15 +16162,14 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "mobile";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SimplePAId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.ParameterName = "email";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SimplePAId";
+            param.SourceColumn = "email";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""UserTrees"" SET ""UserTreeId"" = :UserTreeId, ""user_group"" = :user_group, ""user_name"" = :user_name, ""login_id"" = :login_id, ""login_password"" = :login_password, ""login_password2"" = :login_password2, ""mobile"" = :mobile, ""SimplePAId"" = :SimplePAId WHERE ((""UserTreeId"" = :Original_UserTreeId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""UserTrees"" SET ""UserTreeId"" = :UserTreeId, ""user_group"" = :user_group, ""user_name"" = :user_name, ""login_id"" = :login_id, ""login_password"" = :login_password, ""login_password2"" = :login_password2, ""mobile"" = :mobile, ""email"" = :email WHERE ((""UserTreeId"" = :Original_UserTreeId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "UserTreeId";
@@ -18175,11 +16215,10 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "mobile";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SimplePAId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
+            param.ParameterName = "email";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SimplePAId";
+            param.SourceColumn = "email";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Original_UserTreeId";
@@ -18204,8 +16243,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UserTreeId, user_group, user_name, login_id, login_password, login_passwor" +
-                "d2, mobile, SimplePAId FROM \"main\".UserTrees";
+            this._commandCollection[0].CommandText = "SELECT  UserTreeId, user_group, user_name, login_id, login_password, login_passwo" +
+                "rd2, mobile, email\r\nFROM     UserTrees";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18288,7 +16327,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long UserTreeId, string user_group, string user_name, string login_id, string login_password, string login_password2, string mobile, global::System.Nullable<long> SimplePAId) {
+        public virtual int Insert(long UserTreeId, string user_group, string user_name, string login_id, string login_password, string login_password2, string mobile, string email) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(UserTreeId));
             if ((user_group == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -18326,11 +16365,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(mobile));
             }
-            if ((SimplePAId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((long)(SimplePAId.Value));
+            if ((email == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(email));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -18352,7 +16391,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long UserTreeId, string user_group, string user_name, string login_id, string login_password, string login_password2, string mobile, global::System.Nullable<long> SimplePAId, long Original_UserTreeId) {
+        public virtual int Update(long UserTreeId, string user_group, string user_name, string login_id, string login_password, string login_password2, string mobile, string email, long Original_UserTreeId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(UserTreeId));
             if ((user_group == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -18390,11 +16429,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(mobile));
             }
-            if ((SimplePAId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(SimplePAId.Value));
+            if ((email == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(email));
             }
             this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(Original_UserTreeId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -18417,8 +16456,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string user_group, string user_name, string login_id, string login_password, string login_password2, string mobile, global::System.Nullable<long> SimplePAId, long Original_UserTreeId) {
-            return this.Update(Original_UserTreeId, user_group, user_name, login_id, login_password, login_password2, mobile, SimplePAId, Original_UserTreeId);
+        public virtual int Update(string user_group, string user_name, string login_id, string login_password, string login_password2, string mobile, string email, long Original_UserTreeId) {
+            return this.Update(Original_UserTreeId, user_group, user_name, login_id, login_password, login_password2, mobile, email, Original_UserTreeId);
         }
     }
     
@@ -20650,8 +18689,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private AssetBasesTableAdapter _assetBasesTableAdapter;
-        
         private AssetGroupsTableAdapter _assetGroupsTableAdapter;
         
         private AssetsTableAdapter _assetsTableAdapter;
@@ -20690,20 +18727,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public AssetBasesTableAdapter AssetBasesTableAdapter {
-            get {
-                return this._assetBasesTableAdapter;
-            }
-            set {
-                this._assetBasesTableAdapter = value;
             }
         }
         
@@ -20908,10 +18931,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._assetBasesTableAdapter != null) 
-                            && (this._assetBasesTableAdapter.Connection != null))) {
-                    return this._assetBasesTableAdapter.Connection;
-                }
                 if (((this._assetGroupsTableAdapter != null) 
                             && (this._assetGroupsTableAdapter.Connection != null))) {
                     return this._assetGroupsTableAdapter.Connection;
@@ -20977,9 +18996,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._assetBasesTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._assetGroupsTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -21030,15 +19046,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._assetBasesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AssetBases.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._assetBasesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._assetGroupsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.AssetGroups.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -21166,14 +19173,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._assetBasesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AssetBases.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._assetBasesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._assetGroupsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.AssetGroups.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -21392,14 +19391,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._assetBasesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AssetBases.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._assetBasesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -21438,10 +19429,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._assetBasesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._assetBasesTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
             }
             if (((this._assetGroupsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._assetGroupsTableAdapter.Connection) == false))) {
@@ -21526,15 +19513,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._assetBasesTableAdapter != null)) {
-                    revertConnections.Add(this._assetBasesTableAdapter, this._assetBasesTableAdapter.Connection);
-                    this._assetBasesTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
-                    this._assetBasesTableAdapter.Transaction = ((global::System.Data.Common.DbTransaction)(workTransaction));
-                    if (this._assetBasesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._assetBasesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._assetBasesTableAdapter.Adapter);
-                    }
-                }
                 if ((this._assetGroupsTableAdapter != null)) {
                     revertConnections.Add(this._assetGroupsTableAdapter, this._assetGroupsTableAdapter.Connection);
                     this._assetGroupsTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(workConnection));
@@ -21709,10 +19687,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._assetBasesTableAdapter != null)) {
-                    this._assetBasesTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._assetBasesTableAdapter]));
-                    this._assetBasesTableAdapter.Transaction = null;
                 }
                 if ((this._assetGroupsTableAdapter != null)) {
                     this._assetGroupsTableAdapter.Connection = ((global::Devart.Data.SQLite.SQLiteConnection)(revertConnections[this._assetGroupsTableAdapter]));

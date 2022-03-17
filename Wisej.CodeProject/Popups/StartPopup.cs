@@ -23,16 +23,10 @@ namespace Wisej.CodeProject.Popups
 
 		private void btnIntegration_Click(object sender, EventArgs e)
 		{
-			var example = new Examples.HtmlEditorExample();
-			this.ExampleCreated?.Invoke(example, EventArgs.Empty);
-			example.Show();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			var example = new Examples.MediaExample();
-			this.ExampleCreated?.Invoke(example, EventArgs.Empty);
-			example.Show();
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -41,9 +35,6 @@ namespace Wisej.CodeProject.Popups
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			var example = new Examples.CustomPainting();
-			this.ExampleCreated?.Invoke(example, EventArgs.Empty);
-			example.Show();
 		}
 
 		private void button4_Click(object sender, EventArgs e)

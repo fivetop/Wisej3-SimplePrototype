@@ -576,6 +576,7 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="gClass.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -635,30 +636,6 @@
     </Compile>
     <Compile Include="Examples\BackgroundTasks.Designer.cs">
       <DependentUpon>BackgroundTasks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Examples\CustomPainting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Examples\CustomPainting.Designer.cs">
-      <DependentUpon>CustomPainting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Examples\HtmlEditorExample.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Examples\HtmlEditorExample.Designer.cs">
-      <DependentUpon>HtmlEditorExample.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Examples\MandelbrotPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Examples\MandelbrotPanel.designer.cs">
-      <DependentUpon>MandelbrotPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Examples\MediaExample.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Examples\MediaExample.Designer.cs">
-      <DependentUpon>MediaExample.cs</DependentUpon>
     </Compile>
     <Compile Include="g.cs" />
     <Compile Include="Helper.cs" />
@@ -842,6 +819,9 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="Wisej.Ext.MaterialDesign">
+      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Ext.MaterialDesign.dll</HintPath>
+    </Reference>
     <Reference Include="Wisej.Framework">
       <HintPath>..\..\..\..\wisej\Development\2.0\bin\Wisej.Framework.dll</HintPath>
     </Reference>
@@ -868,18 +848,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Examples\BackgroundTasks.resx">
       <DependentUpon>BackgroundTasks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Examples\CustomPainting.resx">
-      <DependentUpon>CustomPainting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Examples\HtmlEditorExample.resx">
-      <DependentUpon>HtmlEditorExample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Examples\MandelbrotPanel.resx">
-      <DependentUpon>MandelbrotPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Examples\MediaExample.resx">
-      <DependentUpon>MediaExample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyDesktop.resx">
       <DependentUpon>MyDesktop.cs</DependentUpon>

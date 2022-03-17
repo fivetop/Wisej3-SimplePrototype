@@ -183,7 +183,7 @@ namespace pa
             {
                 string str1 = event_text + "~" + type1 + "~" + log + type1 + prowdata;
                 g.Log(str1);
-                dBSqlite.Eventvm(type1, event_text, log + type1 + prowdata);
+                dBSqlite.Eventvm(event_text, type1, log + type1 + prowdata);
             }
             catch (Exception e1)
             {

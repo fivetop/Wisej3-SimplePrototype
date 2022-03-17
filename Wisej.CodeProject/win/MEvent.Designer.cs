@@ -33,6 +33,7 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colEventvmid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colWrite_Time = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -42,7 +43,6 @@
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
             this.eventvmTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.EventvmTableAdapter();
-            this.colWrite_Time = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.dataGridView1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -51,8 +51,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom)
-            | Wisej.Web.AnchorStyles.Left)
+            this.dataGridView1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
@@ -60,9 +60,9 @@
             this.colWrite_Time,
             this.colEvent_Text,
             this.colPath,
+            this.colState,
             this.colDevicename,
-            this.colIp,
-            this.colState});
+            this.colIp});
             this.dataGridView1.Controls.Add(this.statusBar1);
             this.dataGridView1.DataSource = this.bindingSource1;
             this.dataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
@@ -83,6 +83,16 @@
             this.colEventvmid.HeaderText = "No";
             this.colEventvmid.Name = "colEventvmid";
             this.colEventvmid.Width = 60;
+            // 
+            // colWrite_Time
+            // 
+            this.colWrite_Time.DataPropertyName = "write_time";
+            dataGridViewCellStyle1.Format = "f";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colWrite_Time.HeaderText = "발생일자";
+            this.colWrite_Time.Name = "colWrite_Time";
+            this.colWrite_Time.Width = 180;
             // 
             // colEvent_Text
             // 
@@ -141,24 +151,12 @@
             // 
             this.eventvmTableAdapter.ClearBeforeFill = true;
             // 
-            // colWrite_Time
-            // 
-            this.colWrite_Time.DataPropertyName = "write_time";
-            dataGridViewCellStyle1.Format = "f";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colWrite_Time.HeaderText = "발생일자";
-            this.colWrite_Time.Name = "colWrite_Time";
-            this.colWrite_Time.Width = 120;
-            // 
             // MEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 610);
             this.Controls.Add(this.dataGridView1);
-            this.IconSource = "resource.wx/Wisej.Ext.MaterialDesign/server-rack-with-three-levels.svg?color=#BF3" +
-    "F3F";
             this.Name = "MEvent";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterParent;
             this.Text = "알람이벤트";

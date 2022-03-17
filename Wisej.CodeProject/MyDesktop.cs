@@ -13,10 +13,7 @@ namespace Wisej.CodeProject
 		public event EventHandler ExampleCreated;
 
 		Main MainWin { get; set; }
-		HtmlEditorExample example2 { get; set; }
-		MediaExample example3 { get; set; }
-		CustomPainting example5 { get; set; }
-
+		BackgroundTasks example2 { get; set; }
 
 		public MyDesktop()
 		{
@@ -66,9 +63,14 @@ namespace Wisej.CodeProject
 			this.startPopup.ExampleCreated += StartPopup_ExampleCreated;
 
 			this.customWallpaper1.RotationInterval = 5000;
+
+			Application.Session["isloggedon"] = "true";
+			Application.Session["user"] = "Admin";
+
+			var t1 = Application.Session["user"];
 		}
 
-        internal void RcvSigR(SignalRMsg msg)
+		internal void RcvSigR(SignalRMsg msg)
         {
 			AlertBox.Show(msg.message);
 			switch (msg.Msgtype)
@@ -103,8 +105,6 @@ namespace Wisej.CodeProject
 					case "desktopStart":
 						MainWin.WindowState = FormWindowState.Minimized;
 						example2.WindowState = FormWindowState.Minimized;
-						example3.WindowState = FormWindowState.Minimized;
-						example5.WindowState = FormWindowState.Minimized;
 
 						break;
 					case "desktopTaskBarItemCompras":
@@ -136,21 +136,13 @@ namespace Wisej.CodeProject
 			SatrtUpdatingGageItem();
 
 			MainWin = new Main();
-			example2 = new Examples.HtmlEditorExample();
-			example3 = new Examples.MediaExample();
-			example5 = new Examples.CustomPainting();
+			example2 = new Examples.BackgroundTasks();
 			this.ExampleCreated?.Invoke(MainWin, EventArgs.Empty);
 			this.ExampleCreated?.Invoke(example2, EventArgs.Empty);
-			this.ExampleCreated?.Invoke(example3, EventArgs.Empty);
-			this.ExampleCreated?.Invoke(example5, EventArgs.Empty);
 			MainWin.Show(); // .Active = true; // .Activate();
 			example2.Show();
-			example3.Show();
-			example5.Show();
 			MainWin.WindowState = FormWindowState.Minimized;
 			example2.WindowState = FormWindowState.Minimized;
-			example3.WindowState = FormWindowState.Minimized;
-			example5.WindowState = FormWindowState.Minimized;
 
 			g.signalRClient.owner = this;
 			g.signalRClient.ConnectToSignalR();
@@ -162,8 +154,6 @@ namespace Wisej.CodeProject
 				return;
 			MainWin.WindowState = FormWindowState.Maximized;
 			example2.WindowState = FormWindowState.Maximized;
-			example3.WindowState = FormWindowState.Maximized;
-			example5.WindowState = FormWindowState.Maximized;
 		}
 
 		private void SatrtUpdatingGageItem()
@@ -277,8 +267,6 @@ namespace Wisej.CodeProject
 			MainWin.Invalidate(); // .re .re .WindowState = FormWindowState.Minimized;
 			//example1.WindowState = FormWindowState.Minimized;
 			example2.WindowState = FormWindowState.Minimized;
-			example3.WindowState = FormWindowState.Minimized;
-			example5.WindowState = FormWindowState.Minimized;
 			this.ResizeRedraw = true;
 			this.Invalidate();
 		}

@@ -164,18 +164,6 @@ namespace LSNAudio
                 return;
             cur_play = new SimpleMulti();
             cur_play.music = m1;
-
-            /*
-                        if (idno < 100000) return;
-
-                        gl.XMLSchedule(true);
-                        gl.XMLSimplePAMulti(true);
-
-                        var t1 = gl._SimpleMultiList.child.Find(p => p.idno == idno);
-                        var t2 = gl._SimpleMultiListSch.child.Find(p => p.idno == idno);
-                        if (t1 != null) cur_play = t1;
-                        if (t2 != null) cur_play = t2;
-            */
         }
 
         private void Window_Closed(object sender, EventArgs e)

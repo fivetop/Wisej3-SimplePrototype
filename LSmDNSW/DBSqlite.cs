@@ -28,7 +28,6 @@ namespace LSmDNSW
                 ds1 = new DataSet1();
                 dm1 = new TableAdapterManager()
                 {
-                    AssetBasesTableAdapter = new AssetBasesTableAdapter(),
                     AssetsTableAdapter = new AssetsTableAdapter(),
                     AssetGroupsTableAdapter = new AssetGroupsTableAdapter(),
                     BSTreeTableAdapter = new BSTreeTableAdapter(),
@@ -43,7 +42,6 @@ namespace LSmDNSW
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
                     UserTreesTableAdapter = new UserTreesTableAdapter(),
                 };
-                dm1.AssetBasesTableAdapter.Fill(ds1.AssetBases);
                 dm1.AssetsTableAdapter.Fill(ds1.Assets);
                 dm1.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
                 dm1.BSTreeTableAdapter.Fill(ds1.BSTree);
@@ -187,11 +185,11 @@ namespace LSmDNSW
             dm1.BSTreeTableAdapter.Update(ds1.BSTree);
             ds1.BSTree.AcceptChanges();
 
-            var ab1 = ds1.AssetBases.Where(a1 => msg.assetsRows.Contains(a1.AssetBaseId));
+            var ab1 = ds1.Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
             var p1 = from p in ab1
                      select new AssetBase
                      {
-                         AssetBaseId = (int)p.AssetBaseId,
+                         AssetBaseId = (int)p.AssetId,
                          ip = p.ip,
                          GroupName = p.GroupName,
                          ZoneName = p.ZoneName,

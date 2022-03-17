@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ComponentTool componentTool7 = new Wisej.Web.ComponentTool();
-            Wisej.Web.ComponentTool componentTool8 = new Wisej.Web.ComponentTool();
-            Wisej.Web.ComponentTool componentTool9 = new Wisej.Web.ComponentTool();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colAssetbaseid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.chk = new Wisej.Web.DataGridViewCheckBoxColumn();
@@ -47,6 +44,9 @@
             this.assetGroupsTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.AssetGroupsTableAdapter();
             this.assetsTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.AssetsTableAdapter();
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
+            this.button1 = new Wisej.Web.Button();
+            this.button2 = new Wisej.Web.Button();
+            this.button3 = new Wisej.Web.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.dataGridView1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
@@ -57,7 +57,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
@@ -67,11 +68,11 @@
             this.dataGridView1.Controls.Add(this.statusBar1);
             this.dataGridView1.DataSource = this.bindingSource2;
             this.dataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 79);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 114);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ShowFocusCell = false;
-            this.dataGridView1.Size = new System.Drawing.Size(485, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(485, 335);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -102,7 +103,7 @@
             // statusBar1
             // 
             this.statusBar1.BackgroundImageLayout = Wisej.Web.ImageLayout.Zoom;
-            this.statusBar1.Location = new System.Drawing.Point(0, 346);
+            this.statusBar1.Location = new System.Drawing.Point(0, 311);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.ShowPanels = false;
             this.statusBar1.Size = new System.Drawing.Size(483, 22);
@@ -125,23 +126,12 @@
             this.textBox1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.textBox1.AutoSize = false;
-            this.textBox1.Location = new System.Drawing.Point(250, 27);
+            this.textBox1.Location = new System.Drawing.Point(250, 34);
             this.textBox1.Margin = new Wisej.Web.Padding(8);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 25);
+            this.textBox1.Size = new System.Drawing.Size(226, 24);
             this.textBox1.TabIndex = 1;
-            componentTool7.ImageSource = "menu-overflow";
-            componentTool7.Name = "Update";
-            componentTool8.ImageSource = "Resources\\save-button.svg?color=#3FBF47";
-            componentTool8.Name = "Save";
-            componentTool9.ImageSource = "Resources\\rubbish-bin-delete-button.svg";
-            componentTool9.Name = "Del";
-            this.textBox1.Tools.AddRange(new Wisej.Web.ComponentTool[] {
-            componentTool7,
-            componentTool8,
-            componentTool9});
             this.textBox1.Watermark = "Enter a name";
-            this.textBox1.ToolClick += new Wisej.Web.ToolClickEventHandler(this.textBox1_ToolClick);
             // 
             // label1
             // 
@@ -150,7 +140,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new Wisej.Web.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 19);
+            this.label1.Size = new System.Drawing.Size(242, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "그룹명";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,9 +152,9 @@
             this.label2.Location = new System.Drawing.Point(242, 0);
             this.label2.Margin = new Wisej.Web.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 19);
+            this.label2.Size = new System.Drawing.Size(242, 26);
             this.label2.TabIndex = 2;
-            this.label2.Text = "신규등록";
+            this.label2.Text = "신규 그룹명(등록)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comboBox1
@@ -174,10 +164,10 @@
             this.comboBox1.AutoSize = false;
             this.comboBox1.DisplayMember = "Name";
             this.comboBox1.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
-            this.comboBox1.Location = new System.Drawing.Point(8, 27);
+            this.comboBox1.Location = new System.Drawing.Point(8, 34);
             this.comboBox1.Margin = new Wisej.Web.Padding(8);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(226, 25);
+            this.comboBox1.Size = new System.Drawing.Size(226, 24);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.ValueMember = "Name";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -198,9 +188,9 @@
             this.tableLayoutPanel1.Margin = new Wisej.Web.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 32.47F));
-            this.tableLayoutPanel1.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 67.53F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(484, 60);
+            this.tableLayoutPanel1.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(484, 66);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.TabStop = true;
             // 
@@ -216,11 +206,41 @@
             // 
             this.bindingSource1.DataSource = typeof(Model.DataList);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(178, 81);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 27);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "저장";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(284, 81);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 27);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "등록";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(387, 81);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 27);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "삭제";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // MGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 467);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MGroup";
@@ -255,5 +275,8 @@
         private Web.DataGridViewCheckBoxColumn chk;
         private Web.BindingSource bindingSource2;
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
+        private Web.Button button1;
+        private Web.Button button2;
+        private Web.Button button3;
     }
 }

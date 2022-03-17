@@ -28,5 +28,5 @@
 {
   "url": "Default.html",
   "startup": "Wisej.CodeProject.Program.Main, Wisej.CodeProject",
-  //"mainWindow": "Wisej.LoginSample.LoginPage, Wisej.LoginSample"
+  //"mainWindow": "Wisej.CodeProject.LoginPage, Wisej.CodeProject"
 }

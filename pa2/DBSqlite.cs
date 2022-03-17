@@ -27,7 +27,6 @@ namespace pa
                 ds1 = new DataSet1();
                 dm1 = new TableAdapterManager()
                 {
-                    AssetBasesTableAdapter = new AssetBasesTableAdapter(),
                     AssetsTableAdapter = new AssetsTableAdapter(),
                     AssetGroupsTableAdapter = new AssetGroupsTableAdapter(),
                     BSTreeTableAdapter = new BSTreeTableAdapter(),
@@ -41,7 +40,6 @@ namespace pa
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
                     UserTreesTableAdapter = new UserTreesTableAdapter(),
                 };
-                dm1.AssetBasesTableAdapter.Fill(ds1.AssetBases);
                 dm1.AssetsTableAdapter.Fill(ds1.Assets);
                 dm1.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
                 dm1.BSTreeTableAdapter.Fill(ds1.BSTree);
@@ -67,8 +65,8 @@ namespace pa
             {
                 foreach (var t1 in ds1.Assets)
                 {
-                    AssetBasesRow m1 = ds1.AssetBases.NewAssetBasesRow();
-                    m1.AssetGroupId = 1;
+                    AssetsRow m1 = ds1.Assets.NewAssetsRow();
+                    m1.AssetId = 1;
                     m1.ch = 1;
                     m1.chk = t1.chk;
                     m1.DeviceName = t1.DeviceName;
@@ -81,9 +79,9 @@ namespace pa
                     m1.state = t1.state;
                     m1.state_old = t1.state_old;
                     m1.ZoneName = t1.ZoneName;
-                    ds1.AssetBases.Rows.Add(m1);
+                    ds1.Assets.Rows.Add(m1);
                 }
-                dm1.AssetBasesTableAdapter.Update(ds1.AssetBases);
+                dm1.AssetsTableAdapter.Update(ds1.Assets);
 
                 foreach (var t1 in gl._MusicList.music)
                 {
@@ -144,11 +142,11 @@ namespace pa
             dm1.BSTreeTableAdapter.Update(ds1.BSTree);
             ds1.BSTree.AcceptChanges();
 
-            var ab1 = ds1.AssetBases.Where(a1 => msg.assetsRows.Contains(a1.AssetBaseId));
+            var ab1 = ds1.Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
             var p1 = from p in ab1
                      select new AssetBase
                      {
-                         AssetBaseId = (int)p.AssetBaseId,
+                         AssetBaseId = (int)p.AssetId,
                          ip = p.ip,
                          GroupName = p.GroupName,
                          ZoneName = p.ZoneName,
@@ -245,12 +243,12 @@ namespace pa
             dm1.SimplepaTableAdapter.Update(ds1.Simplepa);
         }
 
-        internal void Eventvm(string base_text, string event_text, string state)
+        internal void Eventvm(string event_text, string base_text, string state)
         {
             EventvmRow em = ds1.Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
-            em.base_text = base_text;
             em.event_text = event_text;
+            em.path = base_text;
             em.state = state;
             Save(em);
         }

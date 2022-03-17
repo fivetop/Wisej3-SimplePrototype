@@ -13,8 +13,6 @@ namespace Wisej.CodeProject
 			InitializeComponent();
 		}
 
-		private string dbFilePath;
-
 		private void DataBinding_Load(object sender, EventArgs e)
 		{
 			var t1 = this.userTreesTableAdapter; // .Connection = new System.Data.SQLite.SQLiteConnection("data source=" + targetPath + ";Pooling=False");
@@ -29,41 +27,9 @@ namespace Wisej.CodeProject
 			this.userTreesTableAdapter.Connection.Close();
 			this.userTreesTableAdapter.Connection.Dispose();
 			this.userTreesTableAdapter.Adapter.Dispose();
-			try
-			{
-				File.Delete(this.dbFilePath);
-			}
-			catch { }
 		}
 
-		private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-		{
-			this.dataGridView1.Tools["Save"].Enabled = true;
-		}
-
-		private void dataGridView1_ToolClick(object sender, ToolClickEventArgs e)
-		{
-			switch (e.Tool.Name)
-			{
-				case "Save":
-					SaveData();
-					break;
-
-				case "Add":
-					AddNewRecord();
-					break;
-
-				case "Delete":
-					DeleteRecord();
-					break;
-
-				case "Reload":
-					LoadData();
-					break;
-			}
-		}
-
-		private void DeleteRecord()
+        private void DeleteRecord()
 		{
 			// this method shows server-side modal.
 
@@ -72,14 +38,11 @@ namespace Wisej.CodeProject
 				var row = this.dataGridView1.CurrentRow?.Index ?? -1;
 				if (row > -1)
 				{
-					if (MessageBox.Show(
-						"Are you sure you want to delete this record?", 
-						icon:MessageBoxIcon.Question, 
+					if (MessageBox.Show("삭제 하시겠습니까?",icon:MessageBoxIcon.Question, 
 						buttons:MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
 					{
 						this.bindingSource1.RemoveCurrent();
 						var count = this.userTreesTableAdapter.Update(this.dataSet1.UserTrees);
-
 						SetStatusText("Deleted 1 record.");
 					}
 				}
@@ -94,9 +57,18 @@ namespace Wisej.CodeProject
 		{
 			try
 			{
+				if (textloginid.Text == "" || textusername.Text == "")
+				{
+					AlertBox.Show("데이터를 확인 바랍니다.");
+					return;
+				}
+				if (textpassword.Text != textpassword2.Text)
+				{
+					AlertBox.Show("Check Password!");
+					return;
+				}
 				this.bindingSource1.EndEdit();
 				var count = this.userTreesTableAdapter.Update(this.dataSet1.UserTrees);
-				this.dataGridView1.Tools["Save"].Enabled = false;
 
 				AlertBox.Show("Saved!");
 				SetStatusText("Saved " + count + " records.");
@@ -126,51 +98,23 @@ namespace Wisej.CodeProject
 
 		private void LoadData()
 		{
-			this.dataGridView1.CellValueChanged -= new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
 			this.userTreesTableAdapter.Fill(this.dataSet1.UserTrees);
-			this.dataGridView1.CellValueChanged += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-
-
 			SetStatusText("Loaded " + this.bindingSource1.Count + " records.");
 		}
 
-		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-		{
-			this.dataGridView1.Tools["Delete"].Enabled = this.dataGridView1.CurrentRow != null;
-		}
-
-		private void dataGridView1_CellToolClick(object sender, DataGridViewToolClickEventArgs e)
-		{
-			AlertBox.Show("You clicked the sun tool. Nice work.");
-		}
-
-		private void textBox3_ToolClick(object sender, ToolClickEventArgs e)
-		{
-			if (String.IsNullOrEmpty(this.textBox3.Text))
-				AlertBox.Show("Cannot send an email to an empty address! ", icon: MessageBoxIcon.Error);
-			else
-				AlertBox.Show("I'm sending an email to " + this.textBox3.Text);
-		}
-
-		private void textBox2_ToolClick(object sender, ToolClickEventArgs e)
-		{
-			AlertBox.Show("This tool button does't do anything.");
-		}
-
-		private void dateTimePicker1_ToolClick(object sender, ToolClickEventArgs e)
-		{
-			AlertBox.Show("You clicked the sun tool. Nice work.");
-		}
-
-		private void dataGridView1_Enter(object sender, EventArgs e)
-		{
-			//this.bindingSource1.
-			this.bindingSource1.EndEdit();
-		}
-
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+			SaveData();
+		}
 
-        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+			AddNewRecord();
+		}
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+			DeleteRecord();
+		}
     }
 }

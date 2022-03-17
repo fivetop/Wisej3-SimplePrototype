@@ -91,23 +91,6 @@ namespace Wisej.CodeProject
 		#endregion
 
 
-		private void textBox1_ToolClick(object sender, ToolClickEventArgs e)
-        {
-			switch (e.Tool.Name)
-			{
-				case "Update":
-					UpGroup();
-					break;
-				case "Save":
-					AddGroup();
-					break;
-				case "Del":
-					DeleteGroup();
-					break;
-			}
-
-		}
-
         private void UpGroup()
         {
 			int cnt = 0;
@@ -230,25 +213,21 @@ namespace Wisej.CodeProject
 				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = false;
 			}
 			dataGridView1.EndEdit();
-
-			/*
-						if(checkedCell.Selected)
-							checkedCell.Value = 0;
-						else
-							checkedCell.Value = 1;
-			*/
-
-			/*
-			bool isEnabled = false;
-			if (checkedCell.AccessibilityObject.State.HasFlag(AccessibleStates.Checked))
-			{
-				isEnabled = true;
-			}
-			if (isEnabled)
-			{
-				// do your business process;
-			}
-			*/
 		}
-	}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			UpGroup();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+        {
+			AddGroup();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+			DeleteGroup();
+        }
+    }
 }

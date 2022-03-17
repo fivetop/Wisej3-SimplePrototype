@@ -20,6 +20,7 @@ namespace Wisej.CodeProject
 			//Capture original request and response
 			//Enabling Attribute Routing, e.g domain.com/api/product/1
 			GlobalConfiguration.Configure(WebApiConfig.Register);
+			//LoginPage loginPage = new LoginPage();
 			Application.Desktop = new MyDesktop();
 		}
 

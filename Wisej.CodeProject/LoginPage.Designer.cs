@@ -28,17 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new Wisej.Web.Panel();
             this.linkLabel1 = new Wisej.Web.LinkLabel();
             this.button1 = new Wisej.Web.Button();
             this.textBox2 = new Wisej.Web.TextBox();
             this.textBox1 = new Wisej.Web.TextBox();
+            this.dataSet1 = new Wisej.CodeProject.DataSet1();
+            this.userTreesBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.userTreesTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.UserTreesTableAdapter();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userTreesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = Wisej.Web.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Dotted;
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button1);
@@ -47,7 +54,7 @@
             this.panel1.HeaderAlignment = Wisej.Web.HorizontalAlignment.Center;
             this.panel1.HeaderBackColor = System.Drawing.Color.FromArgb(255, 167, 0);
             this.panel1.HeaderSize = 40;
-            this.panel1.Location = new System.Drawing.Point(193, 78);
+            this.panel1.Location = new System.Drawing.Point(193, 36);
             this.panel1.Name = "panel1";
             this.panel1.ShowCloseButton = false;
             this.panel1.ShowHeader = true;
@@ -95,15 +102,32 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Watermark = "User Name";
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userTreesBindingSource
+            // 
+            this.userTreesBindingSource.DataMember = "UserTrees";
+            this.userTreesBindingSource.DataSource = this.dataSet1;
+            // 
+            // userTreesTableAdapter
+            // 
+            this.userTreesTableAdapter.ClearBeforeFill = true;
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "LoginPage";
-            this.Size = new System.Drawing.Size(807, 500);
+            this.Size = new System.Drawing.Size(807, 417);
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userTreesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -115,5 +139,8 @@
         private Web.Button button1;
         private Web.TextBox textBox2;
         private Web.TextBox textBox1;
+        private DataSet1 dataSet1;
+        private Web.BindingSource userTreesBindingSource;
+        private DataSet1TableAdapters.UserTreesTableAdapter userTreesTableAdapter;
     }
 }
