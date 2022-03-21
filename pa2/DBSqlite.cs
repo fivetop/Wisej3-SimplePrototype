@@ -90,9 +90,6 @@ namespace pa
                     m1.FileContent = t1.FileContent;
                     m1.FileName = t1.FileName;
                     m1.FilePlay = t1.FilePlay;
-                    m1.InfoTreeId = 0;
-                    //m1.MusicId = t1.MusicId;
-                    m1.SimpleMultiId = 0;
                     ds1.Musics.Rows.Add(m1);
                 }
                 dm1.MusicsTableAdapter.Update(ds1.Musics);

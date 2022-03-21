@@ -76,7 +76,7 @@
             this.progressCircle1.LineWidth = 20;
             this.progressCircle1.Location = new System.Drawing.Point(234, 241);
             this.progressCircle1.Name = "progressCircle1";
-            this.progressCircle1.Size = new System.Drawing.Size(349, 233);
+            this.progressCircle1.Size = new System.Drawing.Size(567, 227);
             this.progressCircle1.Value = 20;
             // 
             // label1
@@ -87,7 +87,7 @@
             this.label1.BorderStyle = Wisej.Web.BorderStyle.Solid;
             this.label1.Location = new System.Drawing.Point(234, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 123);
+            this.label1.Size = new System.Drawing.Size(567, 123);
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
             // 
@@ -95,14 +95,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 502);
+            this.ClientSize = new System.Drawing.Size(823, 496);
             this.CloseBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressCircle1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.IconSource = "resource.wx/Wisej.Ext.MaterialDesign/settings-cogwheel-button.svg?color=#FFD700";
             this.MaximizeBox = false;
             this.Name = "BackgroundTasks";
             this.Text = "메인화면";

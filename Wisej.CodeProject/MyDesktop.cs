@@ -67,7 +67,6 @@ namespace Wisej.CodeProject
 			Application.Session["isloggedon"] = "true";
 			Application.Session["user"] = "Admin";
 
-			var t1 = Application.Session["user"];
 		}
 
 		internal void RcvSigR(SignalRMsg msg)
@@ -146,6 +145,10 @@ namespace Wisej.CodeProject
 
 			g.signalRClient.owner = this;
 			g.signalRClient.ConnectToSignalR();
+
+			var t1 = Application.Session["user"];
+			AlertBox.Show("Log-In : " + t1);
+
 		}
 
 		private void MyDesktop_SizeChanged(object sender, EventArgs e)
@@ -255,8 +258,9 @@ namespace Wisej.CodeProject
 
         private void MyDesktop_Resize(object sender, EventArgs e)
         {
+			//MyDesktop.AutoHideTaskbar = true
 
-        }
+		}
 
         private void MyDesktop_Activated(object sender, EventArgs e)
         {

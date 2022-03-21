@@ -225,11 +225,9 @@
             this.ClientSize = new System.Drawing.Size(479, 432);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
-            this.IconSource = "resource.wx/Wisej.Ext.MaterialDesign/server-rack-with-three-levels.svg?color=#BF3" +
-    "F3F";
             this.Name = "MMusic";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterParent;
-            this.Text = "휴일관리";
+            this.Text = "음원관리";
             this.Load += new System.EventHandler(this.DataBinding_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.dataGridView1.ResumeLayout(false);

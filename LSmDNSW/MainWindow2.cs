@@ -1,6 +1,5 @@
 ﻿using gClass;
 using LSmDNS;
-using MahApps.Metro.Controls;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ using static Wisej.CodeProject.DataSet1;
 
 namespace LSmDNSW
 {
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : Window
     {
         //=======================================================================================
         // 선번장 등록 부분 

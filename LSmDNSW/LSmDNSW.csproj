@@ -115,14 +115,6 @@
       <Project>{23c763ca-380f-4b1f-b6f3-6f3b86590b88}</Project>
       <Name>LScap</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MahApps.Metro.Resources\MahApps.Metro.Resources.csproj">
-      <Project>{e708ac99-605b-42a0-8d20-abca8fe42dd2}</Project>
-      <Name>MahApps.Metro.Resources</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MahApps.Metro\MahApps.Metro.NET45.csproj">
-      <Project>{942d11c4-29f5-46c4-8c14-4b976d56c637}</Project>
-      <Name>MahApps.Metro.NET45</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Wisej.CodeProject\Wisej.CodeProject.csproj">
       <Project>{ba22ee1e-c853-40b1-a5c1-ed2b10300ac8}</Project>
       <Name>Wisej.CodeProject</Name>

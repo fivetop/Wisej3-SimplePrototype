@@ -1,6 +1,5 @@
 ﻿using gClass;
 using LSmDNS;
-using MahApps.Metro.Controls;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -32,7 +31,7 @@ namespace LSmDNSW
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : Window
     {
         static udpClient udpc1 = null;
         static bool running = false;

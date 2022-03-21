@@ -10,6 +10,9 @@ namespace Wisej.CodeProject
 {
 	public partial class PMusicSel : Form
 	{
+		public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
+
+
 		public PMusicSel()
 		{
 			InitializeComponent();
@@ -34,26 +37,26 @@ namespace Wisej.CodeProject
 		private void LoadData()
 		{
 			this.musicsTableAdapter.Fill(this.dataSet1.Musics);
-			bind.DataSource = g.SelMusic;
+			bind.DataSource = SelMusic;
 			this.dataGridView2.DataSource = bind;
 		}
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 			var t1 = this.dataGridView1.CurrentRow.DataBoundItem;
-			g.SelMusic.Add((MusicsRow)((System.Data.DataRowView)t1).Row);
+			SelMusic.Add((MusicsRow)((System.Data.DataRowView)t1).Row);
 			this.dataGridView2.DataSource = null;
 			this.dataGridView2.DataSource = bind;
 		}
 
 		private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-			if (g.SelMusic.Count == 0)
+			if (SelMusic.Count == 0)
 				return;
 			try
 			{
 				var t1 = this.dataGridView2.CurrentRow.DataBoundItem;
-				g.SelMusic.Remove((MusicsRow)t1);
+				SelMusic.Remove((MusicsRow)t1);
 				//this.dataGridView2.DataSource = null;
 				//this.dataGridView2.DataSource = bind;
 				dataGridView2.Refresh();

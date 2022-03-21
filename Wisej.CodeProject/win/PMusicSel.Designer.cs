@@ -151,8 +151,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.IconSource = "resource.wx/Wisej.Ext.MaterialDesign/server-rack-with-three-levels.svg?color=#BF3" +
-    "F3F";
             this.Name = "PMusicSel";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterParent;
             this.Text = "음원파일선택";

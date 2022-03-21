@@ -220,8 +220,6 @@
             this.ClientSize = new System.Drawing.Size(479, 432);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
-            this.IconSource = "resource.wx/Wisej.Ext.MaterialDesign/server-rack-with-three-levels.svg?color=#BF3" +
-    "F3F";
             this.Name = "MHoliday";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterParent;
             this.Text = "휴일관리";

@@ -352,7 +352,7 @@
             this.textBox3.DataBindings.Add(new Wisej.Web.Binding("Text", this.bindingSource1, "email", true));
             this.textBox3.Location = new System.Drawing.Point(405, 91);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(324, 35);
+            this.textBox3.Size = new System.Drawing.Size(324, 27);
             this.textBox3.TabIndex = 11;
             componentTool1.ImageSource = "resource.wx/Wisej.Ext.MaterialDesign/write-email-envelope-button.svg";
             componentTool1.Name = "Send Email";
@@ -400,8 +400,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
-            this.IconSource = "resource.wx/Wisej.Ext.MaterialDesign/server-rack-with-three-levels.svg?color=#BF3" +
-    "F3F";
             this.Name = "MUser";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterParent;
             this.Text = "사용자 관리";

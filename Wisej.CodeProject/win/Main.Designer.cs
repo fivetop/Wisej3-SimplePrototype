@@ -266,11 +266,9 @@
             this.CloseBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.IconSource = "resource.wx/Wisej.Ext.MaterialDesign/settings-cogwheel-button.svg?color=#FFD700";
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "메인화면";
-            this.ToolTipText = "메인화면";
             this.WindowState = Wisej.Web.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);

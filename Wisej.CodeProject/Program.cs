@@ -7,6 +7,7 @@ using System;
 using System.Threading;
 using System.Web.Http;
 using Wisej.Web;
+using System.Diagnostics;
 
 namespace Wisej.CodeProject
 {
@@ -61,17 +62,24 @@ namespace Wisej.CodeProject
 
         public static void Register(HttpConfiguration config)
         {
-            // Attribute routing.
-            config.MapHttpAttributeRoutes();
+			try 
+			{ 
+				// Attribute routing.
+				config.MapHttpAttributeRoutes();
 
-            // Convention-based routing.
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional },
-                constraints: null,
-                handler: new MessageHandler()
-            );
+				// Convention-based routing.
+				config.Routes.MapHttpRoute(
+					name: "DefaultApi",
+					routeTemplate: "api/{controller}/{id}",
+					defaults: new { id = RouteParameter.Optional },
+					constraints: null,
+					handler: new MessageHandler()
+				);
+			}
+			catch (Exception e1)
+			{
+				Debug.WriteLine(e1.Message);
+			}
         }
     }
 

@@ -60,8 +60,6 @@
     <Content Include="index2.html" />
     <Content Include="Properties\DataSources\Wisej.CodeProject.Jeremy.Data.DataItem.datasource" />
     <Content Include="Files\Wisej-Datasheet-V2.3.pdf" />
-    <Content Include="App_Data\chinook.db" />
-    <Content Include="App_Data\chinook.master.db" />
     <Content Include="packages.config" />
     <Content Include="Scripts\chatClient.js" />
     <Content Include="Properties\DataSources\PMusicSel.datasource" />
@@ -552,7 +550,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <EmbeddedResource Include="Setup\Window1.resx">
+    <EmbeddedResource Include="win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -658,10 +656,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Setup\Window1.cs">
+    <Compile Include="win\Window1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Setup\Window1.Designer.cs">
+    <Compile Include="win\Window1.Designer.cs">
       <DependentUpon>Window1.cs</DependentUpon>
     </Compile>
     <Compile Include="SignalR\SignalRClient.cs" />

@@ -1805,15 +1805,11 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnHolidayId;
             
-            private global::System.Data.DataColumn columnid;
-            
             private global::System.Data.DataColumn columnhDate;
             
             private global::System.Data.DataColumn columnUserName;
             
             private global::System.Data.DataColumn columnDescription;
-            
-            private global::System.Data.DataColumn columnSimplePAId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1858,14 +1854,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn hDateColumn {
                 get {
                     return this.columnhDate;
@@ -1885,14 +1873,6 @@ namespace Wisej.CodeProject {
             public global::System.Data.DataColumn DescriptionColumn {
                 get {
                     return this.columnDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SimplePAIdColumn {
-                get {
-                    return this.columnSimplePAId;
                 }
             }
             
@@ -1933,15 +1913,13 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HolidaysRow AddHolidaysRow(string id, System.DateTime hDate, string UserName, string Description, long SimplePAId) {
+            public HolidaysRow AddHolidaysRow(System.DateTime hDate, string UserName, string Description) {
                 HolidaysRow rowHolidaysRow = ((HolidaysRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        id,
                         hDate,
                         UserName,
-                        Description,
-                        SimplePAId};
+                        Description};
                 rowHolidaysRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHolidaysRow);
                 return rowHolidaysRow;
@@ -1972,11 +1950,9 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnHolidayId = base.Columns["HolidayId"];
-                this.columnid = base.Columns["id"];
                 this.columnhDate = base.Columns["hDate"];
                 this.columnUserName = base.Columns["UserName"];
                 this.columnDescription = base.Columns["Description"];
-                this.columnSimplePAId = base.Columns["SimplePAId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1984,16 +1960,12 @@ namespace Wisej.CodeProject {
             private void InitClass() {
                 this.columnHolidayId = new global::System.Data.DataColumn("HolidayId", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHolidayId);
-                this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
                 this.columnhDate = new global::System.Data.DataColumn("hDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhDate);
                 this.columnUserName = new global::System.Data.DataColumn("UserName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserName);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
-                this.columnSimplePAId = new global::System.Data.DataColumn("SimplePAId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSimplePAId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnHolidayId}, true));
                 this.columnHolidayId.AutoIncrement = true;
@@ -2452,8 +2424,6 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnMusicId;
             
-            private global::System.Data.DataColumn columnid;
-            
             private global::System.Data.DataColumn columnFileName;
             
             private global::System.Data.DataColumn columnFileContent;
@@ -2463,10 +2433,6 @@ namespace Wisej.CodeProject {
             private global::System.Data.DataColumn columndeletable;
             
             private global::System.Data.DataColumn columnduration;
-            
-            private global::System.Data.DataColumn columnInfoTreeId;
-            
-            private global::System.Data.DataColumn columnSimpleMultiId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2506,14 +2472,6 @@ namespace Wisej.CodeProject {
             public global::System.Data.DataColumn MusicIdColumn {
                 get {
                     return this.columnMusicId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
                 }
             }
             
@@ -2559,22 +2517,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn InfoTreeIdColumn {
-                get {
-                    return this.columnInfoTreeId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SimpleMultiIdColumn {
-                get {
-                    return this.columnSimpleMultiId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2610,18 +2552,15 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MusicsRow AddMusicsRow(string id, string FileName, string FileContent, long FilePlay, string deletable, string duration, long InfoTreeId, long SimpleMultiId) {
+            public MusicsRow AddMusicsRow(string FileName, string FileContent, long FilePlay, string deletable, string duration) {
                 MusicsRow rowMusicsRow = ((MusicsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        id,
                         FileName,
                         FileContent,
                         FilePlay,
                         deletable,
-                        duration,
-                        InfoTreeId,
-                        SimpleMultiId};
+                        duration};
                 rowMusicsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMusicsRow);
                 return rowMusicsRow;
@@ -2652,14 +2591,11 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnMusicId = base.Columns["MusicId"];
-                this.columnid = base.Columns["id"];
                 this.columnFileName = base.Columns["FileName"];
                 this.columnFileContent = base.Columns["FileContent"];
                 this.columnFilePlay = base.Columns["FilePlay"];
                 this.columndeletable = base.Columns["deletable"];
                 this.columnduration = base.Columns["duration"];
-                this.columnInfoTreeId = base.Columns["InfoTreeId"];
-                this.columnSimpleMultiId = base.Columns["SimpleMultiId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2667,8 +2603,6 @@ namespace Wisej.CodeProject {
             private void InitClass() {
                 this.columnMusicId = new global::System.Data.DataColumn("MusicId", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMusicId);
-                this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
                 this.columnFileName = new global::System.Data.DataColumn("FileName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFileName);
                 this.columnFileContent = new global::System.Data.DataColumn("FileContent", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2679,10 +2613,6 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columndeletable);
                 this.columnduration = new global::System.Data.DataColumn("duration", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnduration);
-                this.columnInfoTreeId = new global::System.Data.DataColumn("InfoTreeId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInfoTreeId);
-                this.columnSimpleMultiId = new global::System.Data.DataColumn("SimpleMultiId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSimpleMultiId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMusicId}, true));
                 this.columnMusicId.AutoIncrement = true;
@@ -7044,22 +6974,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id {
-                get {
-                    try {
-                        return ((string)(this[this.tableHolidays.idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Holidays\' 테이블의 \'id\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableHolidays.idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime hDate {
                 get {
                     return ((global::System.DateTime)(this[this.tableHolidays.hDateColumn]));
@@ -7103,34 +7017,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long SimplePAId {
-                get {
-                    try {
-                        return ((long)(this[this.tableHolidays.SimplePAIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Holidays\' 테이블의 \'SimplePAId\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableHolidays.SimplePAIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tableHolidays.idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidNull() {
-                this[this.tableHolidays.idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsUserNameNull() {
                 return this.IsNull(this.tableHolidays.UserNameColumn);
             }
@@ -7151,18 +7037,6 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDescriptionNull() {
                 this[this.tableHolidays.DescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSimplePAIdNull() {
-                return this.IsNull(this.tableHolidays.SimplePAIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSimplePAIdNull() {
-                this[this.tableHolidays.SimplePAIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7331,22 +7205,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id {
-                get {
-                    try {
-                        return ((string)(this[this.tableMusics.idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Musics\' 테이블의 \'id\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableMusics.idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string FileName {
                 get {
                     try {
@@ -7422,50 +7280,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long InfoTreeId {
-                get {
-                    try {
-                        return ((long)(this[this.tableMusics.InfoTreeIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Musics\' 테이블의 \'InfoTreeId\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableMusics.InfoTreeIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long SimpleMultiId {
-                get {
-                    try {
-                        return ((long)(this[this.tableMusics.SimpleMultiIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Musics\' 테이블의 \'SimpleMultiId\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableMusics.SimpleMultiIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tableMusics.idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidNull() {
-                this[this.tableMusics.idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFileNameNull() {
                 return this.IsNull(this.tableMusics.FileNameColumn);
             }
@@ -7510,30 +7324,6 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdurationNull() {
                 this[this.tableMusics.durationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsInfoTreeIdNull() {
-                return this.IsNull(this.tableMusics.InfoTreeIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetInfoTreeIdNull() {
-                this[this.tableMusics.InfoTreeIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSimpleMultiIdNull() {
-                return this.IsNull(this.tableMusics.SimpleMultiIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSimpleMultiIdNull() {
-                this[this.tableMusics.SimpleMultiIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12416,11 +12206,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Holidays";
             tableMapping.ColumnMappings.Add("HolidayId", "HolidayId");
-            tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("hDate", "hDate");
             tableMapping.ColumnMappings.Add("UserName", "UserName");
             tableMapping.ColumnMappings.Add("Description", "Description");
-            tableMapping.ColumnMappings.Add("SimplePAId", "SimplePAId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -12436,9 +12224,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Holidays\" (\"HolidayId\", \"id\", \"hDate\", \"UserName\", \"Descripti" +
-                "on\", \"SimplePAId\") VALUES (:HolidayId, :id, :hDate, :UserName, :Description, :Si" +
-                "mplePAId)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Holidays\" (\"HolidayId\", \"hDate\", \"UserName\", \"Description\") V" +
+                "ALUES (:HolidayId, :hDate, :UserName, :Description)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "HolidayId";
@@ -12448,14 +12235,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "HolidayId";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "id";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "id";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "hDate";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "hDate";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -12471,18 +12253,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "Description";
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SimplePAId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "SimplePAId";
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Holidays\" SET \"HolidayId\" = :HolidayId, \"id\" = :id, \"hDate\" = :hDa" +
-                "te, \"UserName\" = :UserName, \"Description\" = :Description, \"SimplePAId\" = :Simple" +
-                "PAId WHERE ((\"HolidayId\" = :Original_HolidayId))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Holidays\" SET \"HolidayId\" = :HolidayId, \"hDate\" = :hDate, \"UserNam" +
+                "e\" = :UserName, \"Description\" = :Description WHERE ((\"HolidayId\" = :Original_Hol" +
+                "idayId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "HolidayId";
@@ -12492,14 +12267,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "HolidayId";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "id";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "id";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "hDate";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "hDate";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -12514,13 +12284,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Description";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SimplePAId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "SimplePAId";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Original_HolidayId";
@@ -12545,8 +12308,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT HolidayId, id, hDate, UserName, Description, SimplePAId FROM \"main\".Holida" +
-                "ys";
+            this._commandCollection[0].CommandText = "SELECT HolidayId, hDate, UserName, Description FROM Holidays";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12629,37 +12391,20 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long HolidayId, string id, string hDate, string UserName, string Description, global::System.Nullable<long> SimplePAId) {
+        public virtual int Insert(long HolidayId, System.DateTime hDate, string UserName, string Description) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(HolidayId));
-            if ((id == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(id));
-            }
-            if ((hDate == null)) {
-                throw new global::System.ArgumentNullException("hDate");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(hDate));
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(hDate));
             if ((UserName == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(UserName));
+            }
+            if ((Description == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(UserName));
-            }
-            if ((Description == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Description));
-            }
-            if ((SimplePAId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((long)(SimplePAId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Description));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12681,39 +12426,22 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long HolidayId, string id, string hDate, string UserName, string Description, global::System.Nullable<long> SimplePAId, long Original_HolidayId) {
+        public virtual int Update(long HolidayId, System.DateTime hDate, string UserName, string Description, long Original_HolidayId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(HolidayId));
-            if ((id == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(id));
-            }
-            if ((hDate == null)) {
-                throw new global::System.ArgumentNullException("hDate");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(hDate));
-            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(hDate));
             if ((UserName == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(UserName));
+            }
+            if ((Description == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(UserName));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Description));
             }
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Description));
-            }
-            if ((SimplePAId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(SimplePAId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_HolidayId));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_HolidayId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12734,8 +12462,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string id, string hDate, string UserName, string Description, global::System.Nullable<long> SimplePAId, long Original_HolidayId) {
-            return this.Update(Original_HolidayId, id, hDate, UserName, Description, SimplePAId, Original_HolidayId);
+        public virtual int Update(System.DateTime hDate, string UserName, string Description, long Original_HolidayId) {
+            return this.Update(Original_HolidayId, hDate, UserName, Description, Original_HolidayId);
         }
     }
     
@@ -13279,14 +13007,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Musics";
             tableMapping.ColumnMappings.Add("MusicId", "MusicId");
-            tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("FileName", "FileName");
             tableMapping.ColumnMappings.Add("FileContent", "FileContent");
             tableMapping.ColumnMappings.Add("FilePlay", "FilePlay");
             tableMapping.ColumnMappings.Add("deletable", "deletable");
             tableMapping.ColumnMappings.Add("duration", "duration");
-            tableMapping.ColumnMappings.Add("InfoTreeId", "InfoTreeId");
-            tableMapping.ColumnMappings.Add("SimpleMultiId", "SimpleMultiId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -13302,10 +13027,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Musics\" (\"MusicId\", \"id\", \"FileName\", \"FileContent\", \"FilePla" +
-                "y\", \"deletable\", \"duration\", \"InfoTreeId\", \"SimpleMultiId\") VALUES (:MusicId, :i" +
-                "d, :FileName, :FileContent, :FilePlay, :deletable, :duration, :InfoTreeId, :Simp" +
-                "leMultiId)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Musics\" (\"MusicId\", \"FileName\", \"FileContent\", \"FilePlay\", \"d" +
+                "eletable\", \"duration\") VALUES (:MusicId, :FileName, :FileContent, :FilePlay, :de" +
+                "letable, :duration)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "MusicId";
@@ -13315,12 +13039,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "MusicId";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "id";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "id";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "FileName";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
@@ -13351,23 +13069,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "duration";
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "InfoTreeId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "InfoTreeId";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SimpleMultiId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "SimpleMultiId";
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""Musics"" SET ""MusicId"" = :MusicId, ""id"" = :id, ""FileName"" = :FileName, ""FileContent"" = :FileContent, ""FilePlay"" = :FilePlay, ""deletable"" = :deletable, ""duration"" = :duration, ""InfoTreeId"" = :InfoTreeId, ""SimpleMultiId"" = :SimpleMultiId WHERE ((""MusicId"" = :Original_MusicId))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Musics\" SET \"MusicId\" = :MusicId, \"FileName\" = :FileName, \"FileCon" +
+                "tent\" = :FileContent, \"FilePlay\" = :FilePlay, \"deletable\" = :deletable, \"duratio" +
+                "n\" = :duration WHERE ((\"MusicId\" = :Original_MusicId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "MusicId";
@@ -13377,12 +13083,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "MusicId";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "id";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "id";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "FileName";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
@@ -13412,20 +13112,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
             param.SourceColumn = "duration";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "InfoTreeId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "InfoTreeId";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "SimpleMultiId";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "SimpleMultiId";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Original_MusicId";
@@ -13450,8 +13136,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MusicId, id, FileName, FileContent, FilePlay, deletable, duration, InfoTre" +
-                "eId, SimpleMultiId FROM \"main\".Musics";
+            this._commandCollection[0].CommandText = "SELECT MusicId, FileName, FileContent, FilePlay, deletable, duration FROM Musics";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13534,50 +13219,37 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long MusicId, string id, string FileName, string FileContent, long FilePlay, string deletable, string duration, global::System.Nullable<long> InfoTreeId, global::System.Nullable<long> SimpleMultiId) {
+        public virtual int Insert(long MusicId, string FileName, string FileContent, global::System.Nullable<long> FilePlay, string deletable, string duration) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(MusicId));
-            if ((id == null)) {
+            if ((FileName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(id));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(FileName));
             }
-            if ((FileName == null)) {
+            if ((FileContent == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FileName));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FileContent));
             }
-            if ((FileContent == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((FilePlay.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((long)(FilePlay.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FileContent));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((long)(FilePlay));
             if ((deletable == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(deletable));
+            }
+            if ((duration == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(deletable));
-            }
-            if ((duration == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(duration));
-            }
-            if ((InfoTreeId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((long)(InfoTreeId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((SimpleMultiId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((long)(SimpleMultiId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(duration));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13599,52 +13271,39 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long MusicId, string id, string FileName, string FileContent, long FilePlay, string deletable, string duration, global::System.Nullable<long> InfoTreeId, global::System.Nullable<long> SimpleMultiId, long Original_MusicId) {
+        public virtual int Update(long MusicId, string FileName, string FileContent, global::System.Nullable<long> FilePlay, string deletable, string duration, long Original_MusicId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(MusicId));
-            if ((id == null)) {
+            if ((FileName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(id));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(FileName));
             }
-            if ((FileName == null)) {
+            if ((FileContent == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FileName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FileContent));
             }
-            if ((FileContent == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((FilePlay.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(FilePlay.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(FileContent));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(FilePlay));
             if ((deletable == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(deletable));
+            }
+            if ((duration == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(deletable));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(duration));
             }
-            if ((duration == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(duration));
-            }
-            if ((InfoTreeId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(InfoTreeId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((SimpleMultiId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(SimpleMultiId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(Original_MusicId));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_MusicId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13665,8 +13324,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string id, string FileName, string FileContent, long FilePlay, string deletable, string duration, global::System.Nullable<long> InfoTreeId, global::System.Nullable<long> SimpleMultiId, long Original_MusicId) {
-            return this.Update(Original_MusicId, id, FileName, FileContent, FilePlay, deletable, duration, InfoTreeId, SimpleMultiId, Original_MusicId);
+        public virtual int Update(string FileName, string FileContent, global::System.Nullable<long> FilePlay, string deletable, string duration, long Original_MusicId) {
+            return this.Update(Original_MusicId, FileName, FileContent, FilePlay, deletable, duration, Original_MusicId);
         }
     }
     
@@ -16240,12 +15899,24 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
+            this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[2];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT  UserTreeId, user_group, user_name, login_id, login_password, login_passwo" +
                 "rd2, mobile, email\r\nFROM     UserTrees";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.SQLite.SQLiteCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT  UserTreeId, user_group, user_name, login_id, login_password, login_passwo" +
+                "rd2, mobile, email\r\nFROM     UserTrees\r\nWHERE  (login_id = :login_id )";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "login_id";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "login_id";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16267,6 +15938,42 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1.UserTreesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.UserTreesDataTable dataTable = new DataSet1.UserTreesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DataSet1.UserTreesDataTable dataTable, string login_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((login_id == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(login_id));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.UserTreesDataTable GetDataBy(string login_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((login_id == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(login_id));
+            }
             DataSet1.UserTreesDataTable dataTable = new DataSet1.UserTreesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

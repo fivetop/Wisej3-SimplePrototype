@@ -6,11 +6,16 @@ using System.Drawing;
 using System.Linq;
 using static Wisej.CodeProject.DataSet1;
 using System.Data;
+using System.Collections.Generic;
 
 namespace Wisej.CodeProject
 {
 	public partial class Main : Form
 	{
+		public List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
+		public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
+
+
 		public Main()
 		{
 			var t1 = new Wisej.Web.MenuItem();
@@ -35,17 +40,17 @@ namespace Wisej.CodeProject
 		#region // 버튼 처리 
 		private void button1_Click(object sender, EventArgs e)
         {
-			g.SelAsset.Clear();
+			SelAsset.Clear();
 			foreach (DataGridViewRow row in dataGridView1.Rows)
 			{
 				if (row.Cells["chk"].Value.ToString() != "0")
 				{
 					var t1 = row.DataBoundItem;
-					g.SelAsset.Add((AssetsRow)((System.Data.DataRowView)t1).Row);
+					SelAsset.Add((AssetsRow)((System.Data.DataRowView)t1).Row);
 				}
 			}
 
-			if (g.SelAsset.Count() < 1 || g.SelMusic.Count() < 1)
+			if (SelAsset.Count() < 1 || SelMusic.Count() < 1)
 			{
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Error, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Hand, true, ContentAlignment.MiddleCenter);
@@ -56,7 +61,7 @@ namespace Wisej.CodeProject
 				return;
 			}
 
-            g.sendSigR("Play", eSignalRMsgType.ePlay ,g.SelAsset, g.SelMusic);
+            g.sendSigR("Play", eSignalRMsgType.ePlay ,SelAsset, SelMusic);
             this.button1.Enabled = false;
             this.button2.Enabled = true;
         }
@@ -132,6 +137,7 @@ namespace Wisej.CodeProject
 				{
 					PMusicSel win = new PMusicSel();
                     win.EventMusic += Win_EventMusic;
+					win.SelMusic = SelMusic;
 					win.Show();
 				};
 
@@ -154,7 +160,7 @@ namespace Wisej.CodeProject
 
         private void Win_EventMusic(object sender, EventArgs e)
 		{
-			this.dataGridView2.DataSource = g.SelMusic;
+			this.dataGridView2.DataSource = SelMusic;
 			this.dataGridView2.Refresh();
 
 		}

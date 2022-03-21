@@ -29,9 +29,9 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("imgs\\dPanel1.jpg", "dPanel1");
-            Wisej.Web.ImageListEntry imageListEntry5 = new Wisej.Web.ImageListEntry("imgs\\dPanel2.jpg", "dPanel2");
-            Wisej.Web.ImageListEntry imageListEntry6 = new Wisej.Web.ImageListEntry("imgs\\dPanel3.jpg", "dPanel3");
+            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry("imgs\\dPanel1.jpg", "dPanel1");
+            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry("imgs\\dPanel2.jpg", "dPanel2");
+            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry("imgs\\dPanel3.jpg", "dPanel3");
             this.desktopStart = new Wisej.Web.DesktopTaskBarItem();
             this.desktopDateTime = new Wisej.Web.DesktopTaskBarItemDateTime();
             this.justGage1 = new Wisej.Web.Ext.JustGage.JustGage();
@@ -86,15 +86,14 @@
             // customWallpaper1
             // 
             this.customWallpaper1.Images = new Wisej.Web.ImageListEntry[] {
-        imageListEntry4,
-        imageListEntry5,
-        imageListEntry6};
+        imageListEntry1,
+        imageListEntry2,
+        imageListEntry3};
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(9, 255, 255, 255);
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Solid;
-            this.panel1.CollapseSide = Wisej.Web.HeaderPosition.Left;
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button8);
@@ -224,7 +223,7 @@
             this.desktopCPU,
             this.desktopDateTime});
             this.Name = "MyDesktop";
-            this.Size = new System.Drawing.Size(807, 417);
+            this.Size = new System.Drawing.Size(731, 435);
             this.Load += new System.EventHandler(this.MyDesktop_Load);
             this.Activated += new System.EventHandler(this.MyDesktop_Activated);
             this.ItemClick += new Wisej.Web.DesktopTaskBarItemClickEventHandler(this.MyDesktop_ItemClick);

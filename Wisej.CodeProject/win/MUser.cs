@@ -3,11 +3,14 @@ using Wisej.Web;
 using System.IO;
 using System.Drawing;
 using System.Configuration;
+using System.Linq;
+using System.Data;
 
 namespace Wisej.CodeProject
 {
 	public partial class MUser : Form
 	{
+		int add = 0; // add =1. update =2
 		public MUser()
 		{
 			InitializeComponent();
@@ -32,6 +35,16 @@ namespace Wisej.CodeProject
         private void DeleteRecord()
 		{
 			// this method shows server-side modal.
+			if (textloginid.Text == "" || textusername.Text == "" || maskedTextBox1.Text == "")
+			{
+				AlertBox.Show("데이터를 확인 바랍니다.");
+				return;
+			}
+			if (textpassword.Text != textpassword2.Text)
+			{
+				AlertBox.Show("Check Password!");
+				return;
+			}
 
 			try
 			{
@@ -57,7 +70,7 @@ namespace Wisej.CodeProject
 		{
 			try
 			{
-				if (textloginid.Text == "" || textusername.Text == "")
+				if (textloginid.Text == "" || textusername.Text == "" || maskedTextBox1.Text == "")
 				{
 					AlertBox.Show("데이터를 확인 바랍니다.");
 					return;
@@ -66,6 +79,13 @@ namespace Wisej.CodeProject
 				{
 					AlertBox.Show("Check Password!");
 					return;
+				}
+
+				if (add == 1)
+				{ 
+					var t1 = this.dataSet1.UserTrees.Where(p=>p.login_id == textloginid.Text).FirstOrDefault() ;//.Select( .where . Select(); .ffin .GetDataBy(textloginid.Text);
+					if (t1 != null)
+						return;
 				}
 				this.bindingSource1.EndEdit();
 				var count = this.userTreesTableAdapter.Update(this.dataSet1.UserTrees);
@@ -105,16 +125,21 @@ namespace Wisej.CodeProject
         private void button1_Click(object sender, EventArgs e)
         {
 			SaveData();
+			add = 0;
 		}
 
         private void button2_Click(object sender, EventArgs e)
         {
+			if (add == 1) return;
+			add = 1;
 			AddNewRecord();
 		}
 
-        private void button3_Click(object sender, EventArgs e)
+		private void button3_Click(object sender, EventArgs e)
         {
+			add = 2;
 			DeleteRecord();
+			add = 0;
 		}
-    }
+	}
 }

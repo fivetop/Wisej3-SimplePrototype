@@ -14,27 +14,6 @@ namespace Wisej.CodeProject
     {
         public static SignalRClient signalRClient { get; set; } = new SignalRClient();
 
-        public static List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
-        public static List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
-
-
-        public static DataTable ToDataTable<T>(this IList<T> data)
-        {
-            PropertyDescriptorCollection properties =
-                TypeDescriptor.GetProperties(typeof(T));
-            DataTable table = new DataTable();
-            foreach (PropertyDescriptor prop in properties)
-                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-            foreach (T item in data)
-            {
-                DataRow row = table.NewRow();
-                foreach (PropertyDescriptor prop in properties)
-                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
-                table.Rows.Add(row);
-            }
-            return table;
-        }
-
         internal static void sendSigR(string v)
         {
             SignalRMsg msg1 = new SignalRMsg();

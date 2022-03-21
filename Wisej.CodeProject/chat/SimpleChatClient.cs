@@ -165,5 +165,10 @@ namespace Wisej.ChatServer
 		{
 			// do nothing, Wisej will update everything that was pending.
 		}
-	}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			this.Hide();
+        }
+    }
 }

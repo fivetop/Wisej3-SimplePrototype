@@ -41,6 +41,7 @@
             this.errorProvider = new Wisej.Web.ErrorProvider(this.components);
             this.label1 = new Wisej.Web.Label();
             this.updateTimer = new Wisej.Web.Timer(this.components);
+            this.button1 = new Wisej.Web.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,14 +52,14 @@
             this.textBoxName.AutoSize = false;
             this.textBoxName.Location = new System.Drawing.Point(88, 89);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(0, 46);
+            this.textBoxName.Size = new System.Drawing.Size(192, 46);
             this.textBoxName.TabIndex = 1;
             this.textBoxName.Watermark = "Name";
             // 
             // buttonJoin
             // 
             this.buttonJoin.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.buttonJoin.Location = new System.Drawing.Point(30, 89);
+            this.buttonJoin.Location = new System.Drawing.Point(222, 89);
             this.buttonJoin.Name = "buttonJoin";
             this.buttonJoin.Size = new System.Drawing.Size(236, 46);
             this.buttonJoin.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             this.buttonLeave.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.buttonLeave.Enabled = false;
-            this.buttonLeave.Location = new System.Drawing.Point(291, 89);
+            this.buttonLeave.Location = new System.Drawing.Point(483, 89);
             this.buttonLeave.Name = "buttonLeave";
             this.buttonLeave.Size = new System.Drawing.Size(236, 46);
             this.buttonLeave.TabIndex = 3;
@@ -84,7 +85,7 @@
             this.listBoxMessage.HorizontalScrollbar = true;
             this.listBoxMessage.Location = new System.Drawing.Point(88, 163);
             this.listBoxMessage.Name = "listBoxMessage";
-            this.listBoxMessage.Size = new System.Drawing.Size(439, 27);
+            this.listBoxMessage.Size = new System.Drawing.Size(631, 133);
             this.listBoxMessage.TabIndex = 4;
             componentTool1.ImageSource = "tab-close";
             componentTool1.Name = "Clear";
@@ -103,9 +104,9 @@
             | Wisej.Web.AnchorStyles.Right)));
             this.textBoxMessage.AutoSize = false;
             this.textBoxMessage.Enabled = false;
-            this.textBoxMessage.Location = new System.Drawing.Point(88, 219);
+            this.textBoxMessage.Location = new System.Drawing.Point(88, 325);
             this.textBoxMessage.Name = "textBoxMessage";
-            this.textBoxMessage.Size = new System.Drawing.Size(178, 46);
+            this.textBoxMessage.Size = new System.Drawing.Size(370, 46);
             this.textBoxMessage.TabIndex = 5;
             componentTool3.ImageSource = "tab-close";
             componentTool3.Name = "Clear";
@@ -119,7 +120,7 @@
             // 
             this.buttonSend.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Right)));
             this.buttonSend.Enabled = false;
-            this.buttonSend.Location = new System.Drawing.Point(291, 219);
+            this.buttonSend.Location = new System.Drawing.Point(483, 325);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(236, 46);
             this.buttonSend.TabIndex = 6;
@@ -145,6 +146,15 @@
             // 
             this.updateTimer.Tick += new System.EventHandler(this.updateTimer_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(715, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 46);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Close";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SimpleChatClient
             // 
             this.Accelerators = new Wisej.Web.Keys[] {
@@ -152,6 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textBoxMessage);
             this.Controls.Add(this.listBoxMessage);
@@ -159,7 +170,7 @@
             this.Controls.Add(this.buttonJoin);
             this.Controls.Add(this.textBoxName);
             this.Name = "SimpleChatClient";
-            this.Size = new System.Drawing.Size(615, 346);
+            this.Size = new System.Drawing.Size(807, 452);
             this.Text = "SimpleChat";
             this.Load += new System.EventHandler(this.SimpleChatClient_Load);
             this.Accelerator += new Wisej.Web.AcceleratorEventHandler(this.SimpleChatClient_Accelerator);
@@ -179,6 +190,7 @@
 		private Web.ErrorProvider errorProvider;
 		private Web.Label label1;
 		private Web.Timer updateTimer;
-	}
+        private Web.Button button1;
+    }
 }
 
