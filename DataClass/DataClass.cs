@@ -26,7 +26,7 @@ namespace DataClass
         eUnknown = 0,
     }
 
-    public class PlayItemSig
+    public class PlayItem
     {
         public bool playflag_onair { get; set; } // 방송중인 상태 
         public int idno { get; set; } // 방송 idno
@@ -40,8 +40,10 @@ namespace DataClass
         public TimeSpan current { get; set; } // 현재 위치
         public TimeSpan duration { get; set; } // 총 뮤직 플레이 시간 
         public bool p_run { get; set; } // 프로세스 러닝인가? 
+        public List<AssetBase> playGroup { get; set; }
+        //public ICollection<Asset> playGroup { get; set; }
 
-        public PlayItemSig()
+        public PlayItem()
         {
             playflag_onair = false;
             chno = 0;
@@ -54,6 +56,7 @@ namespace DataClass
             playcnt = 0;
             current = new TimeSpan();
             p_run = false;
+            playGroup = new List<AssetBase>();
         }
     }
 
@@ -66,7 +69,7 @@ namespace DataClass
         public int state { get; set; }                  // 상태 코드
         public List<long> assetsRows { get; set; }      // 선택된 스피커 ID
         public List<long> musicsRows { get; set; }      // 선택된 음원 ID
-        public List<PlayItemSig> play8sig { get; set; } // 8채널의 현재 상태 
+        public List<PlayItem> play8sig { get; set; } // 8채널의 현재 상태 
         public string user { get; set; }                // 유저명 
 
         public Guid Guid { get; set; }
@@ -81,7 +84,7 @@ namespace DataClass
             state = 0;
             assetsRows = new List<long>();
             musicsRows = new List<long>();
-            play8sig = new List<PlayItemSig>();
+            play8sig = new List<PlayItem>();
         }
     }
 

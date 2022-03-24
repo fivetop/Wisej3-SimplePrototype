@@ -110,7 +110,7 @@ namespace pa
         internal void StopMBS(int idno, int chno)
         {
             SetDSPSpeakerOFF(idno);
-            g.play8ch[chno] = new PlayItemSig();
+            g.play8ch[chno] = new PlayItem();
 
             GlobalMessage.Send(RegisterMessage2, chno, 1); // 중지처리 
 
@@ -165,7 +165,7 @@ namespace pa
         {
             if (lockF) return;
             lockF = true;
-            foreach (PlayItemSig pl1 in g.play8ch)
+            foreach (PlayItem pl1 in g.play8ch)
             {
                 if (pl1.p_run)
                     continue;
@@ -183,7 +183,7 @@ namespace pa
             lockF = false;
         }
 
-        public void playMBS(PlayItemSig sch_play)
+        public void playMBS(PlayItem sch_play)
         {
             // 1번채널 방송중인지 체크 
             if (CheckPlayItem(sch_play) == false)
@@ -215,7 +215,7 @@ namespace pa
         }
 
         // 1번 채널이 방송중인 상테에서 다원방송이 들어온 경우 사용자에게 알림처리 
-        private bool CheckPlayItem(PlayItemSig sch_play)
+        private bool CheckPlayItem(PlayItem sch_play)
         {
             bool rlt = true;
 

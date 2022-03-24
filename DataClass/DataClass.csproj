@@ -48,11 +48,10 @@
     <Compile Include="Device.cs" />
     <Compile Include="dsp_packet.cs" />
     <Compile Include="EmSpeakerPosition.cs" />
-    <Compile Include="gClass.cs" />
+    <Compile Include="DataClass.cs" />
     <Compile Include="GlobalMessage.cs" />
     <Compile Include="msg.cs" />
     <Compile Include="NetworkCard.cs" />
-    <Compile Include="PlayItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimplePA.cs" />
     <Compile Include="typeRClass.cs" />

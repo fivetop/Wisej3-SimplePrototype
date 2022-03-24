@@ -69,7 +69,7 @@ namespace pa
 
         private void ChSet(int chno)
         {
-            g.play8ch[chno] = new PlayItemSig();
+            g.play8ch[chno] = new PlayItem();
             g.play8ch[chno].p_run = true;
             g.play8ch[chno].idno = 100000 + chno;
             g.play8ch[chno].state = "대기";
@@ -82,7 +82,7 @@ namespace pa
             int rlt = 0;
             for (int i = 2; i < 8; i++)
             {
-                PlayItemSig pl1 = g.play8ch[i];
+                PlayItem pl1 = g.play8ch[i];
                 if (pl1.p_run)
                     continue;
                 if (pl1.chno != 0 || pl1.idno != 0)

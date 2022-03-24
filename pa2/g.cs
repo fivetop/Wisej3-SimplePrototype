@@ -32,9 +32,9 @@ namespace pa
         static public MainWindow mainWindow { get; set; }
 
         // 현재 방송중인 내용
-        static public List<PlayItemSig> play8ch { get; set; } = new List<PlayItemSig>(new PlayItemSig[9]);
+        static public List<PlayItem> play8ch { get; set; } = new List<PlayItem>(new PlayItem[9]);
 
-        static public PlayItemSig curr_play { get; set; } = new PlayItemSig();
+        static public PlayItem curr_play { get; set; } = new PlayItem();
 
         static public int em_status { get; set; } = 0;  // 화재 1,2 시험 알람 3,4 가스 5,6  
         // 컬러데이터 정의 , 이벤트 처리시 활용 
@@ -60,7 +60,7 @@ namespace pa
 
             for (int i = 0; i < 8; i++)
             {
-                play8ch[i] = new PlayItemSig();
+                play8ch[i] = new PlayItem();
             }
             g.Log("Start PA2");
         }
@@ -120,7 +120,7 @@ namespace pa
         #endregion
 
         // 방송 디비에서 해당 음원과 지역 데이터를 가져온다. 
-        public static List<AssetBase> GetAssetList(PlayItemSig play1)
+        public static List<AssetBase> GetAssetList(PlayItem play1)
         {
             ICollection<AssetBase> ret = new List<AssetBase>();
 
@@ -195,7 +195,7 @@ namespace pa
 
         // 동일 시간 예약이나 방송 송출시 지역 점검 
         // 같은 지역인지 비교 처리 
-        public static bool CheckSpace(PlayItemSig curr_play, PlayItemSig sch_play)
+        public static bool CheckSpace(PlayItem curr_play, PlayItem sch_play)
         {
             List<AssetBase> cur = g.GetAssetList(curr_play);
             List<AssetBase> res = g.GetAssetList(sch_play);
