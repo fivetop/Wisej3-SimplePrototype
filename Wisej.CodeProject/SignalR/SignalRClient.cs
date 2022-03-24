@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.SignalR.Client;
+﻿using DataClass;
+using Microsoft.AspNet.SignalR.Client;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

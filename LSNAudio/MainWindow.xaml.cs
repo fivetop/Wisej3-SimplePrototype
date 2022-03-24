@@ -27,14 +27,11 @@ namespace LSNAudio
 
         public string[] e1;
 
-        System.Collections.Generic.List<Music> m1 = new System.Collections.Generic.List<Music>();
+        System.Collections.Generic.List<Music> m1 { get; set; } = new System.Collections.Generic.List<Music>();
 
         private uint message;
         private int playcnt = -1;
 
-        SimpleMulti cur_play = null;
-
-        DBSqlite dBSqlite = new DBSqlite();
         public MainWindow()
         {
             InitializeComponent();
@@ -45,7 +42,7 @@ namespace LSNAudio
             message = RegisterWindowMessage("MultiSound");
             soundEngine.PlaybackStopped += PlaybackStopped;
             ComponentDispatcher.ThreadFilterMessage += ComponentDispatcher_ThreadFilterMessage;
-            dBSqlite.DBInit();
+            g1.dBSqlite.DBInit();
         }
 
         // 4. 한 음악이 끝나면 다음 음악으로 넘어가기 처리 
@@ -55,9 +52,7 @@ namespace LSNAudio
             {
                 playcnt = 0;
                 stopflag = false;
-                cur_play.gstree.child.Clear();
-                cur_play.music.Clear();
-                cur_play = null;
+                m1.Clear();
                 this.WindowState = WindowState.Minimized;
                 soundEngine.Dispose();
                 return;
@@ -68,9 +63,7 @@ namespace LSNAudio
 
             if (playcnt >= musiccnt)
             {
-                cur_play.gstree.child.Clear();
-                cur_play.music.Clear();
-                cur_play = null;
+                m1.Clear();
                 string str11 = e1[0];
                 IntPtr t2 = new IntPtr(Audiochno);
                 PostMessage((IntPtr)HWND_BROADCAST, message, t2, new IntPtr(5000)); // 
@@ -145,25 +138,20 @@ namespace LSNAudio
         private void ReadMulti()
         {
             m1.Clear();
-            dBSqlite.dm1.BSTreeTableAdapter.Fill(dBSqlite.ds1.BSTree);
-            dBSqlite.dm1.MusicsTableAdapter.Fill(dBSqlite.ds1.Musics);
-            var t1 = dBSqlite.ds1.BSTree.Where(p => p.chno == idno);
-            var t3 = dBSqlite.ds1.Musics;
+            g1.dBSqlite.dm1.BSTreeTableAdapter.Fill(g1.dBSqlite.ds1.BSTree);
+            g1.dBSqlite.dm1.MusicsTableAdapter.Fill(g1.dBSqlite.ds1.Musics);
+            var t1 = g1.dBSqlite.ds1.BSTree.Where(p => p.chno == idno);
+            var t3 = g1.dBSqlite.ds1.Musics;
 
             var t2 = from p in t1
                      join p2 in t3 on p.MusicId equals p2.MusicId 
                      select new Music
                      {
-                         FileName = p2.FileName,
-                         MusicId = (int)p2.MusicId,
-                          FileContent = p2.FileContent,
+                        FileName = p2.FileName,
+                        FileContent = p2.FileContent,
+                        duration = p2.duration,
                      };
             m1 = t2.ToList();
-
-            if (m1.Count < 1)
-                return;
-            cur_play = new SimpleMulti();
-            cur_play.music = m1;
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -176,18 +164,16 @@ namespace LSNAudio
         // 2. 방송 아이디를 받으면 플레이 처리 
         private bool Loadid()
         {
-            if (cur_play != null) return false;
             SoundCard soundCard = null;
             IntPtr t2 = new IntPtr(Audiochno);
 
             ReadMulti();
 
-            if (cur_play == null)
+            if (m1.Count < 1)
             {
                 statetext();
                 return false;
             }
-            m1 = cur_play.music;
 
             playcnt = 0;
             string fn = m1[playcnt].FileName;

@@ -11,7 +11,8 @@ using System.Windows.Threading;
 
 namespace pa.Windows
 {
-using gClass;
+    using DataClass;
+    using gClass;
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
     /// </summary>
@@ -26,7 +27,7 @@ using gClass;
         public LoopbackWindow()
         {
             InitializeComponent();
-            comPort = "COM3";// System.IO.File.ReadAllText("iniEMSRC.ini");
+            comPort = "COM3";
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

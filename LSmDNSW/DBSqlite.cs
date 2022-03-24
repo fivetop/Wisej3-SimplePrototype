@@ -1,4 +1,5 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -128,38 +129,7 @@ namespace LSmDNSW
 
         public void ReadFloor()
         {
-            // 폴더에서 자동으로 파일 확인후 디비에 등록 처리 
-            var directoryInfo = new DirectoryInfo(gl.appPathServer + "Image");
-            if (directoryInfo.Exists)
-            {
-                var files = directoryInfo.GetFiles("*.png").Concat(directoryInfo.GetFiles("*.svg"));
 
-                foreach (var fileInfo in files)
-                {
-                    var aa = fileInfo.Name.Split(' ');
-                    if (aa.Count() < 2)
-                        continue;
-                    var aa2 = aa[2].Split('.');
-                    int aai = int.Parse(aa[0]);
-                    var m3 = ds1.Floorbases.FirstOrDefault(p => p.buildingname == aa[1] && p.floor == aa2[0]);
-
-                    if (m3 == null)
-                    {
-                        FloorbasesRow m2 = ds1.Floorbases.NewFloorbasesRow();
-                        m2.buildingname = aa[1];
-                        m2.floor = aa2[0];
-                        m2.floororder = aai;
-                        m2.filename = fileInfo.Name;
-                        ds1.Floorbases.Rows.Add(m2);
-                    }
-                    else
-                    {
-                        m3.floororder = aai;
-                        m3.filename = fileInfo.Name;
-                    }
-                    dm1.FloorbasesTableAdapter.Update(ds1.Floorbases);
-                }
-            }
         }
 
         // 나중에 디비는 모두 몰기 
@@ -201,7 +171,7 @@ namespace LSmDNSW
                          state_old = p.state_old,
                          chk = true,
                          seq = (int)p.seq,
-                         ch = (p.ch == null) ? "0" : p.ch.ToString(),
+                         ch = p.ch,
                      };
             var t3 = ab1.ToList();
             play = p1.ToList();

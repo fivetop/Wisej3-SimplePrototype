@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace gClass
+namespace DataClass
 {
     [Serializable]
     public class SimplePA
     {
-        public int SimplePAId { get; set; }
-
         public int TileWidth { get; set; }  // 안내방송 타일 폭 지정 
         public int MapX { get; set; }       // 도면 폭 
         public int MapY { get; set; }       // 도면 높이 
@@ -15,7 +13,6 @@ namespace gClass
         public int debug { get; set; }      // 디버깅 0이면 로그인 안함 
         public int SpeakerIconSize { get; set; }      // 65 -> 120 
         public string UserName { get; set; } // 사용자 이름 
-        public string EMServerIP { get; set; } // EM Server IP
         public string ServerIP { get; set; }
         public string ServerPort { get; set; }
         public string Reserved1 { get; set; } // 개별방송 , 방송명 저장용 
@@ -35,8 +32,6 @@ namespace gClass
         public string Reserved15 { get; set; } // 사운드 드라이버
         public string Reserved16 { get; set; } // R형 수신기 회사명 
         public int Jigsangbalhwa { get; set; } // 5층 이상건물 // 5층 이상 연면적 3.000m 일때 2, 아니면 1 // 콤보 처리를 위함 
-        public List<UserTree> user { get; set; } // 사용자 기초데이터 
-        public List<Holiday> holiday { get; set; } // 공휴일 기초데이터 
         public int SpeakerTimer { get; set; } // 스피커인지 타이머  기본 10초 
         public double inputvolume { get; set; } // 입력볼륨
         public double outputvolume { get; set; } // 출력볼륨
@@ -46,11 +41,6 @@ namespace gClass
         public string SoundDeviceName { get; set; } // 사운드 드라이버 이름
         public int Reserved17 { get; set; } // 미리듣기 드라이버 번호 
 
-        public double scalelength { get; set; }
-        public double length { get; set; }
-        public double scale { get; set; }
-        public int noise1 { get; set; }
-        public int noise2 { get; set; }
         public int dsp_vol { get; set; }  // 전체 스피커에 할당된 일반 볼륨 
         public int dsp_vol_em { get; set; } // 전체 스피커에 할당된 비상 방송 볼륨 
 
@@ -68,7 +58,6 @@ namespace gClass
             MapY = 4000;
             Zoom = 0.2;
             TileWidth = 180;
-            EMServerIP = "127.0.0.1";
             Reserved1 = "0";
             Reserved2 = "0";
             Reserved3 = "0";
@@ -87,8 +76,6 @@ namespace gClass
             Reserved16 = "";
             Reserved17 = 0;
             Jigsangbalhwa = 1;
-            user = new List<UserTree>();
-            holiday = new List<Holiday>();
             inputvolume = 0.5f;
             outputvolume = 0.5f;
             disp = 1;

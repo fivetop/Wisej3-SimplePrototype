@@ -9,6 +9,7 @@ using System.Net.NetworkInformation;
 using System.Collections;               // for ArrayList
 using LSmDNS;
 using gClass;
+using DataClass;
 
 namespace LSmDNS
 {

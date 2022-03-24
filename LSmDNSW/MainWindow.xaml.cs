@@ -1,6 +1,9 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using LSmDNS;
 using Microsoft.Win32;
+using SharpPcap;
+using SharpPcap.LibPcap;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -44,7 +47,6 @@ namespace LSmDNSW
         public List<string> purpose { get; set; } = new List<string>() { "예약가능", "중앙방송", "다원방송", "개별방송", "비상방송", "PRESET", "1번연동" };
         public List<string> division { get; set; } = new List<string>() { "일반","Dante"};// 구분 일반/단테
 
-        DBSqlite dBSqlite = new DBSqlite();
         public MainWindow()
         {
             InitializeComponent();
@@ -53,13 +55,11 @@ namespace LSmDNSW
             Title = "System Master " + gl.version;
             gl.XMLDanteDevice(true);
 
-            dBSqlite.DBInit();
-            dBSqlite.DBCopy();
+            g.dBSqlite.DBInit();
+            g.dBSqlite.DBCopy();
 
             init();
             initLeft();
-            // 위치 등록 
-            initLeft2();
         }
 
         private void init()
@@ -157,57 +157,32 @@ namespace LSmDNSW
         int cardno = 0;
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            gl.NetWorkCardFind();
 
-            if (System.IO.File.Exists("inifile.ini") == false)
+            List<string> cl = new List<string>();
+
+            foreach (var t1 in gl.networkCardList)
             {
-                System.IO.File.WriteAllText("inifile.ini", "11");
+                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName );
             }
-            string ini = System.IO.File.ReadAllText("inifile.ini");
-            cardno = int.Parse(ini);
+            _combo.ItemsSource = cl.ToList();
 
-            //g.XMLDanteDevice(true);
-            //Main2();
-            //return;
-            //g.Log("Select Interface No..");
+            var t2 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
+            if (t2 == null)
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo.SelectedIndex = 0;
+                return;
+            }
+            else
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo.SelectedItem = t2.NetworkCardNo.ToString() + ":" + t2.NetworkCardmDNS.ToString() + ":" + t2.NetworkCardName;
+            }
+
             try
             { 
-                Resolver.intfindx = cardno;
-                g.Log("Start LS mDNS Server !!");
-                g.Log("mDNS Card No : " + cardno.ToString());
-                g.BestInterfaceIndex();
-
-                List<string> cl = new List<string>();
-
-                foreach (var t1 in g.networkCardList)
-                {
-                    cl.Add(t1.Index.ToString() +":" +t1.nicname);
-
-                }
-                _combo.ItemsSource = cl.ToList();
-
-                List<string> cl2 = new List<string>();
-                LScap.g.getCardNo2(cl2);
-                _combo2.ItemsSource = cl2.ToList();
-                _combo2.SelectedIndex = 0;
-
-                var t2 = g.networkCardList.Find(p => p.Index == cardno); // cl.f .Find(p=>p.in);
-                if (t2 == null)
-                {
-                    // 캡처 카드 인덱스 찾기 
-                    LScap.g.NetworkCardName = "이더넷";
-                    _combo.SelectedIndex = 0;
-                }
-                else
-                {
-                    // 캡처 카드 인덱스 찾기 
-                    LScap.g.NetworkCardName = t2.nicname;
-                    LScap.g.getCardNo();
-                    g.Log("LScap Card No :" + LScap.g.NetworkCardNo);
-                    _combo.SelectedItem = t2.Index.ToString() + ":" + t2.nicname;
-                }
-
-                // 캡처 카드 인덱스 찾기 
-                Resolver.intfindx = cardno;
+                Resolver.intfindx = t2.NetworkCardmDNS;
                 Resolver.localIP = t2.ipv4;
 
                 g.Log("Local IP :" + t2.ipv4);
@@ -219,40 +194,24 @@ namespace LSmDNSW
 
                 udpc1 = new udpClient();
                 udpc1.udp.Client.Bind(ReceiveEndPoint1);
-                //udpc1.udp.Client.Bind(IPv4.ReceiveEndPoint);
-
-                /*
-                                udpc1.udp.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-                                udpc1.udp.Client.Bind(IPv4.ReceiveEndPoint);
-
-                                int ttl = 255;  // local network packets - rfc3171
-                                udpc1.udp.Client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.MulticastTimeToLive, ttl);
-
-                                //int intfindx = BestInterfaceIndex();
-                                var options = new MulticastOption(IPv4.Address, LSmDNS.Resolver.intfindx);
-                                udpc1.udp.Client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, options);
-                */
                 udpc1.option(IPAddress.Parse("239.16.0.8"), LSmDNS.Resolver.intfindx);
                 udpc1.OnReceiveMessage += Udpc1_OnReceiveMessage;
                 udpc1.buf2.Clear();
                 udpc1.rcv();
-
             }
             catch (Exception e1)
             {
-                g.Log(e1.Message + " :card  " + ini);
             }
-
 // 유지보수에서 사용 
             ReadAssetList();
-            cboType.ItemsSource = ts;
-            cboType.SelectedIndex = 0;
 
         }
 
+
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            udpc1.Close();
+            if(udpc1 != null)
+                udpc1.Close();
 
         }
 
@@ -392,7 +351,7 @@ namespace LSmDNSW
             Thread.Sleep(1000);
 
             string str1 = "a55a100000000000011200010000000000000000000000000000000000000000";
-            byte[] bytes1 = g.etc.hexatobyte(str1);
+            byte[] bytes1 = gl.hexatobyte(str1);
             udpc1.send("239.16.0.8", 6001, bytes1);
             Thread.Sleep(3000);
 
@@ -505,7 +464,7 @@ namespace LSmDNSW
                 t1.ip_dspctrl = dsp1[dspno].ip_dspctrl;
                 g.Log("Speaker Assign DSP Name Ch :" + t1.dsp_name + " : " + t1.dsp_chno.ToString());
 
-                byte[] b1 = g.etc.hexatobyte(dsp1[dspno].dsp_out_ch1[chno - 1]);
+                byte[] b1 = gl.hexatobyte(dsp1[dspno].dsp_out_ch1[chno - 1]);
                 // 단테 컨트롤러 스피커 무브 
                 // 스피커 IP, 포트번호, DSP Ch Out -> 271d~~
                 udpc1.send(t1.ip, 4440, b1);
@@ -574,7 +533,7 @@ namespace LSmDNSW
 
                     Console.WriteLine("DSP Input Move : " + t1.ip + "/" + chno[j]);
                     string str2 = tt1.make_DSPin();
-                    byte[] b1 = g.etc.hexatobyte(str2);
+                    byte[] b1 = gl.hexatobyte(str2);
                     // DSP IP, port no, 2729
                     udpc1.send(t1.ip, 4440, b1);
                     Thread.Sleep(3000);
@@ -588,26 +547,11 @@ namespace LSmDNSW
             string t1 = (string)_combo.SelectedValue;
 
             var t2 = t1.Split(':');
-            int t3 = int.Parse(t2[0]);
-            if (t3 == cardno) return;
+            string t3 = t2[2];
+            if (t3 == "이더넷") return;
 
-            cardno = t3;
-            System.IO.File.WriteAllText("inifile.ini", cardno.ToString());
-            g.Log("Change mDNS Card no : " + cardno.ToString());
-        }
-
-        private void _combo2_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string t1 = (string)_combo2.SelectedValue;
-
-            var t2 = t1.Split(':');
-            int t3 = int.Parse(t2[0]);
-            if (t3 == LScap.g.NetworkCardNo) return;
-
-            LScap.g.NetworkCardNo = t3;
-            System.IO.File.WriteAllText("inifileCap.ini", LScap.g.NetworkCardNo.ToString());
-            g.Log("Change Capture Card no : " + LScap.g.NetworkCardNo.ToString());
-
+            System.IO.File.WriteAllText("NetworkCardName.ini", t1);
+            g.Log("Change Network : " + t3);
         }
 
         // DSP 찾기
@@ -639,12 +583,5 @@ namespace LSmDNSW
             g.Log("DSP 출력 채널에 앰프 할당을 종료 하였습니다.");
         }
 
-    }
-
-    static class NativeMethods
-    {
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool AllocConsole();
     }
 }

@@ -36,9 +36,9 @@
             this.colWrite_Time = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             this.statusBar1 = new Wisej.Web.StatusBar();
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
@@ -66,10 +66,12 @@
             this.dataGridView1.Controls.Add(this.statusBar1);
             this.dataGridView1.DataSource = this.bindingSource1;
             this.dataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView1.Margin = new Wisej.Web.Padding(10);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(869, 569);
+            this.dataGridView1.RowHeadersWidth = 14;
+            this.dataGridView1.Size = new System.Drawing.Size(648, 297);
             this.dataGridView1.TabIndex = 1;
             componentTool1.ImageSource = "resource.wx/Wisej.Ext.MaterialDesign/refresh-button.svg?color=#003EFF";
             componentTool1.Name = "Reload";
@@ -108,6 +110,12 @@
             this.colPath.Name = "colPath";
             this.colPath.Width = 150;
             // 
+            // colState
+            // 
+            this.colState.DataPropertyName = "state";
+            this.colState.HeaderText = "상태";
+            this.colState.Name = "colState";
+            // 
             // colDevicename
             // 
             this.colDevicename.DataPropertyName = "DeviceName";
@@ -120,19 +128,13 @@
             this.colIp.HeaderText = "IP정보";
             this.colIp.Name = "colIp";
             // 
-            // colState
-            // 
-            this.colState.DataPropertyName = "state";
-            this.colState.HeaderText = "상태";
-            this.colState.Name = "colState";
-            // 
             // statusBar1
             // 
             this.statusBar1.BackgroundImageLayout = Wisej.Web.ImageLayout.Zoom;
-            this.statusBar1.Location = new System.Drawing.Point(0, 545);
+            this.statusBar1.Location = new System.Drawing.Point(0, 273);
             this.statusBar1.Name = "statusBar1";
             this.statusBar1.ShowPanels = false;
-            this.statusBar1.Size = new System.Drawing.Size(867, 22);
+            this.statusBar1.Size = new System.Drawing.Size(646, 22);
             this.statusBar1.SizingGrip = false;
             this.statusBar1.TabIndex = 0;
             this.statusBar1.Text = "statusBar1";
@@ -155,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 610);
+            this.ClientSize = new System.Drawing.Size(668, 317);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MEvent";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterParent;

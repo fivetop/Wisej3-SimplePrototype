@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 
-namespace gClass
+namespace DataClass
 {
 
     public static class GlobalMessage

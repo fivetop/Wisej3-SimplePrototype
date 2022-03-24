@@ -1,4 +1,5 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using LSmDNS;
 using Microsoft.Win32;
 using System;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using Wisej.CodeProject;
 using static Wisej.CodeProject.DataSet1;
 
 namespace LSmDNSW
@@ -37,10 +39,9 @@ namespace LSmDNSW
                 string str3 = di2.FullName + t1.array[0] +" "+ t1.array[1] + " 층고유이름";
                 System.IO.File.Create(str3);
 
-                dBSqlite.SaveAssets(t1);
+                g.dBSqlite.SaveAssets(t1);
             }
             _txtBlock.Text = gl.appPathServer_speaker + gl._emspl.child.Count.ToString() + "개 파일 생성이 완료 되었습니다.";
-            gl.XMLEmSpeakerPositionList(false);
         }
 
         private void _btnFile_Click(object sender, RoutedEventArgs e)
@@ -70,38 +71,6 @@ namespace LSmDNSW
             }
         }
 
-        //=====================================================================================
-        // 위치 등록 부분 
-        //
-
-        public List<string> floor { get; set; } = new List<string>() { };
-
-        #region init 로직
-        private void initLeft2()
-        {
-            if (gl.danteDevice._DanteDevice.Count < 1)
-                return;
-            dBSqlite.ReadFloor();
-
-            dataGrid4.ItemsSource = null;
-            dataGrid4.ItemsSource = dBSqlite.ds1.Assets.ToList();
-
-            //floor = new ObservableCollection<string>() {};
-            floor.Clear();
-            foreach (var o in dBSqlite.ds1.Floorbases)
-            {
-                string t1 = "";
-                t1 = o.buildingname + "/" + o.floor;
-                floor.Add(t1);
-            }
-            ComboBoxColumn41.ItemsSource = null;
-            ComboBoxColumn41.ItemsSource = floor;
-        }
-
-        //이미지 폴더에서 가져와 층 디비 생성 
-        #endregion
-
-
         #region add, edit save 로직, delete 로직
         private void _btnSave_Click(object sender, RoutedEventArgs e)
         {
@@ -113,128 +82,35 @@ namespace LSmDNSW
 
         private bool saveLeft()
         {
-            foreach (Asset mAsset in dataGrid4.Items.SourceCollection)
-            {
-                if (mAsset.floor == null || mAsset.floor == "")
-                    continue;
-
-                var sAsset = dBSqlite.ds1.Assets.FirstOrDefault(p => p.path == mAsset.path);
-                if (sAsset != null)
-                {
-                    var a1 = mAsset.floor.Split('/');
-                    var floorInfo = dBSqlite.ds1.Floorbases.FirstOrDefault(p => p.buildingname == a1[0] && p.floor == a1[1]);
-
-                    var floorMap = dBSqlite.ds1.Floormaps.FirstOrDefault(p => p.assetname == sAsset.path);
-                    if (floorMap == null)
-                    {
-                        FloormapsRow nfloormap = dBSqlite.ds1.Floormaps.NewFloormapsRow();
-                        nfloormap.assetname = sAsset.path;
-                        nfloormap.buildingname = floorInfo.buildingname;
-                        nfloormap.floor = floorInfo.floor;
-                        nfloormap.content = "Speaker1";
-                        nfloormap.filename = floorInfo.filename;
-                        nfloormap.floororder = floorInfo.floororder;
-                        nfloormap.left = floorInfo.left;
-                        nfloormap.top = floorInfo.top;
-                        dBSqlite.ds1.Floormaps.Rows.Add(nfloormap);
-
-                        sAsset.floor = nfloormap.buildingname + "/" + nfloormap.floor;
-                    }
-                    else
-                    {
-                        floorMap.buildingname = floorInfo.buildingname;
-                        floorMap.floor = floorInfo.floor;
-                        floorMap.content = "Speaker1";
-                        floorMap.filename = floorInfo.filename;
-                        floorMap.floororder = floorInfo.floororder;
-
-                        sAsset.floor = floorMap.buildingname + "/" + floorMap.floor;
-                    }
-                }
-            }
-            dBSqlite.dm1.AssetsTableAdapter.Update(dBSqlite.ds1.Assets);
-            dBSqlite.dm1.FloormapsTableAdapter.Update(dBSqlite.ds1.Floormaps);
             return true;
         }
 
         // 디바이스 정보에 몇층에 설치 되는지정보를 등록함 
         private void MakeDeviceFloor()
         {
-            gl.XMLEmSpeakerPositionList(true);
             gl.XMLDanteDevice(true);
-            foreach (var t1 in gl._emspl.child)
+            foreach (var t1 in g.dBSqlite.ds1.Assets)
             {
                 var dv1 = gl.danteDevice._DanteDevice.Find(p => p.DeviceName == t1.DeviceName);
                 if (dv1 == null)
                     continue;
-                dv1.emData = t1.emData;
-                int v1 = int.Parse(t1.array[7]);
-                dv1.floor_em = v1; // 층정보 등록 
-
+                if (t1.em3 == null) continue;
+                dv1.floor_em = (int)t1.em3; // 층정보 등록 
             }
             gl.XMLDanteDevice(false);
         }
 
         #endregion
 
-        private void _btnAuto_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBox.Show("장치명을 보고 해당 층에 자동으로 할당 하시겠습니까?", "자동할당", MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
-                return;
-
-            foreach (Asset mAsset in dataGrid4.Items.SourceCollection)
-            {
-                var sAsset = dBSqlite.ds1.Assets.FirstOrDefault(p => p.path == mAsset.path);
-
-                if (sAsset == null)
-                    continue;
-
-                var floorInfo = dBSqlite.ds1.Floorbases.FirstOrDefault(p => p.buildingname == mAsset.GroupName);
-
-                if (floorInfo == null)
-                    continue;
-                var floorMap = dBSqlite.ds1.Floormaps.FirstOrDefault(p => p.assetname == sAsset.path);
-
-                if (floorMap == null)
-                {
-                    FloormapsRow nfloormap = dBSqlite.ds1.Floormaps.NewFloormapsRow();
-                    nfloormap.assetname = sAsset.path;
-                    nfloormap.buildingname = floorInfo.buildingname;
-                    nfloormap.floor = floorInfo.floor;
-                    nfloormap.content = "Speaker1";
-                    nfloormap.filename = floorInfo.filename;
-                    nfloormap.floororder = floorInfo.floororder;
-                    nfloormap.left = floorInfo.left;
-                    nfloormap.top = floorInfo.top;
-                    dBSqlite.ds1.Floormaps.Rows.Add(nfloormap);
-
-                    sAsset.floor = nfloormap.buildingname + "/" + nfloormap.floor;
-                }
-                else
-                {
-                    floorMap.buildingname = floorInfo.buildingname;
-                    floorMap.floor = floorInfo.floor;
-                    floorMap.content = "Speaker1";
-                    floorMap.filename = floorInfo.filename;
-                    floorMap.floororder = floorInfo.floororder;
-
-                    sAsset.floor = floorMap.buildingname + "/" + floorMap.floor;
-                }
-            }
-            dBSqlite.dm1.AssetsTableAdapter.Update(dBSqlite.ds1.Assets);
-            dBSqlite.dm1.FloormapsTableAdapter.Update(dBSqlite.ds1.Floormaps);
-            initLeft2();
-        }
-
         //=====================================================================================
         // 유지보수 부분 
         //
 
-        List<string> ts = new List<string>();
         string oldfile = "";
 
         private void ReadAssetList()
         {
+            List<string> ts  = new List<string>();
             // 폴더에서 자동으로 파일 확인후 디비에 등록 처리 
             var directoryInfo = new DirectoryInfo(gl.appPathServer + "Speaker");
             if (directoryInfo.Exists)
@@ -248,6 +124,8 @@ namespace LSmDNSW
                     ts.Add(fileInfo.Name);
                 }
             }
+            cboType.ItemsSource = ts;
+            cboType.SelectedIndex = 0;
         }
 
         private void _btnUpdae_Click(object sender, RoutedEventArgs e)
@@ -289,10 +167,9 @@ namespace LSmDNSW
             // SimpleSpeaker.xml
 
             gl.XMLDanteDevice(true);
-            gl.XMLSimpleSpeaker(true);
 
             Device tt1 = new Device();
-            Asset tt2 = new Asset();
+            AssetBase tt2 = new AssetBase();
 
             foreach (var t1 in gl.danteDevice._DanteDevice)
             {
@@ -304,17 +181,8 @@ namespace LSmDNSW
             }
             gl.danteDevice._DanteDevice.Remove(tt1);
 
-            foreach (var t1 in gl._SpeakerList.asset)
-            {
-                if (t1.DeviceName == od[3])
-                {
-                    tt2 = t1;
-                    break;
-                }
-            }
-            gl._SpeakerList.asset.Remove(tt2);
-
-            foreach (var t1 in dBSqlite.ds1.Floormaps)
+            // romee asset 조정 처리 
+            foreach (var t1 in g.dBSqlite.ds1.Floormaps)
             {
                 if (t1.assetname == od[3])
                 {
@@ -322,10 +190,9 @@ namespace LSmDNSW
                     break;
                 }
             }
-            dBSqlite.dm1.FloormapsTableAdapter.Update(dBSqlite.ds1.Floormaps);
+            g.dBSqlite.dm1.FloormapsTableAdapter.Update(g.dBSqlite.ds1.Floormaps);
 
             gl.XMLDanteDevice(false);
-            gl.XMLSimpleSpeaker(false);
 
             MessageBox.Show("완료 되었습니다. 장비검색에서 변경된 장치 검색/확인 바랍니다.", "관리자 전용", MessageBoxButton.OK);
 
@@ -380,17 +247,28 @@ namespace LSmDNSW
         // 채널 조정 
         //
 
+        public string sel(string deviceName, long chspk)
+        {
+            string ret = "통신실";
+            if (deviceName == "")
+                return ret;
+            var ret1 = g.dBSqlite.ds1.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
+            if (ret1 == null)
+                return ret;
+            ret = ret1.path;
+            return ret;
+        }
+
 
         private void initLeft()
         {
             gl.XMLDanteDevice(true);
-            gl.XMLSimpleSpeaker(true);
 
             MakeSpeakerIP();
 
             foreach (var t1 in gl.danteDevice._DanteDevice)
             {
-                t1.path = gl.sel(t1.DeviceName, t1.chspk);
+                t1.path = sel(t1.DeviceName, t1.chspk);
             }
             var t2 = gl.danteDevice._DanteDevice.FindAll(p => p.device == 0);
             _lv2.ItemsSource = null;
@@ -399,7 +277,7 @@ namespace LSmDNSW
 
         private static void MakeSpeakerIP()
         {
-            foreach (Asset t1 in gl._SpeakerList.asset)
+            foreach (var t1 in g.dBSqlite.ds1.Assets)
             {
                 if (t1.DeviceName == "")
                 {
@@ -407,7 +285,7 @@ namespace LSmDNSW
                     continue;
                 }
 
-                if (t1.ch != "1")
+                if (t1.ch != 1)
                 {
                     var t4 = gl.danteDevice._DanteDevice.Find(p => p.name == t1.DeviceName || p.DeviceName == t1.DeviceName);
                     if (t4 == null)
@@ -428,7 +306,7 @@ namespace LSmDNSW
                 {
                     t1.state = "On-Line";
                     t1.ip = t2.ip;
-                    t1.Device = t2;
+                    //t1.Device = t2;
                     //AliveChk(t1.ip);
                 }
                 else
@@ -483,11 +361,11 @@ namespace LSmDNSW
             {
                 chno2 = chno - dsp1.dsp_out_ch1.Count;
             }
-            byte[] b1 = g.etc.hexatobyte(dsp1.dsp_out_ch1[chno2 - 1]);
+            byte[] b1 = gl.hexatobyte(dsp1.dsp_out_ch1[chno2 - 1]);
 
-            if (src1.chspk != "1")
+            if (src1.chspk != 1)
             {
-                b1[13] = (byte)int.Parse(src1.chspk);
+                b1[13] = (byte)src1.chspk;
             }
             udpc1.send(src1.ip, 4440, b1);
             Thread.Sleep(3000);

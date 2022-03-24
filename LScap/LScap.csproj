@@ -62,5 +62,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gClass\gClass.csproj">
+      <Project>{a3148c58-60fe-4ab4-87e7-c30534ca7f6d}</Project>
+      <Name>gClass</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

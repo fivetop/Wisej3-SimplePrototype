@@ -573,7 +573,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="gClass.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -635,7 +634,6 @@
     <Compile Include="Examples\BackgroundTasks.Designer.cs">
       <DependentUpon>BackgroundTasks.cs</DependentUpon>
     </Compile>
-    <Compile Include="g.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="MyDesktop.cs">
       <SubType>UserControl</SubType>
@@ -858,6 +856,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataClass\DataClass.csproj">
+      <Project>{40d7c7ab-a585-49d9-b9a1-0a499eec5067}</Project>
+      <Name>DataClass</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

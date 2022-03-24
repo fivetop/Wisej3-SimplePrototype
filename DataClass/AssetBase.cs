@@ -1,26 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace gClass
+namespace DataClass
 {
 
     [Serializable]
-    public class Asset
+    public class AssetBase
     {
-        [Key]
-        public int AssetId { get; set; }
+        public int AssetBaseId { get; set; }
         public Guid id { get; set; }
         public Guid logicid { get; set; }
         public string ip { get; set; }
         public string GroupName { get; set; }
         public string ZoneName { get; set; }
         public string SpeakerName { get; set; }
-        public string ch { get; set; }
+        public long ch { get; set; }
         public string path { get; set; }
         public string floor { get; set; }
         public string DeviceName { get; set; }
@@ -28,12 +22,9 @@ namespace gClass
         public string state_old { get; set; } // On-Line , Off-Line
         public bool chk { get; set; }
         public int seq { get; set; }
-
-        public int AssetGroupId { get; set; }
-        public AssetGroup assetGroup { get; set; }
         public Device Device { get; set; }
 
-        public Asset()
+        public AssetBase()
         {
             //id = Guid.NewGuid();
             ip = "";

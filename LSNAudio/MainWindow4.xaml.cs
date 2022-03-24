@@ -6,6 +6,7 @@ using System.Windows.Interop;
 using gClass;
 using System.Collections.Generic;
 using pa;
+using System.Linq;
 
 namespace LSNAudio
 {
@@ -33,6 +34,8 @@ namespace LSNAudio
 
         bool cur_play = false;
 
+        DBSqlite dBSqlite { get; set; } = new DBSqlite();
+
         public MainWindow4()
         {
             InitializeComponent();
@@ -55,8 +58,11 @@ namespace LSNAudio
                 //soundEngine.Dispose();
                 return;
             }
+            
+            g1.dBSqlite.dm1.SimplepaTableAdapter.Fill(g1.dBSqlite.ds1.Simplepa);
+            var _BaseData = g1.dBSqlite.ds1.Simplepa.FirstOrDefault();
+            string fn = _BaseData.EmMusic;
 
-            string fn = gl._BaseData.Reserved14;
             if (!System.IO.File.Exists(fn))
                 fn = @"재난위험경보(3분).mp3";
 
@@ -128,7 +134,10 @@ namespace LSNAudio
             SoundCard soundCard = null;
             IntPtr t2 = new IntPtr(Audiochno);
 
-            string fn = gl._BaseData.Reserved14;
+            g1.dBSqlite.dm1.SimplepaTableAdapter.Fill(g1.dBSqlite.ds1.Simplepa);
+            var _BaseData = g1.dBSqlite.ds1.Simplepa.FirstOrDefault();
+            string fn = _BaseData.EmMusic;
+
             if (!System.IO.File.Exists(fn))
                 fn = @"재난위험경보(3분).mp3";
 

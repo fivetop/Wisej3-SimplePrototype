@@ -12,9 +12,18 @@ using System.Windows.Media;
 
 namespace pa
 {
+    public class Music
+    {
+        public string FileName { get; set; }
+        public string FileContent { get; set; }
+        public string duration { get; set; }
+    }
+
     public static class g1
     {
         static public SoundCardList _SoundCardList { get; set; } = new SoundCardList(); // 
+
+        static public DBSqlite dBSqlite { get; set; } = new DBSqlite();
 
         static public void XMLSimpleSoundCard(bool rd)
         {

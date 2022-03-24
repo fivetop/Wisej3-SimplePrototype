@@ -10,7 +10,7 @@
         Title="LS_mDNSW v0.1" Height="700" Width="900" Icon="i2.ico">
 
     <ContentControl>
-        <Grid>
+        <Grid Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -23,6 +23,7 @@
                     </StackPanel>
                 </Border>
             </Grid>
+            
             <Grid Grid.Row="1">
                 <TabControl SelectionChanged="TabControl_SelectionChanged">
                     <TabItem Header="선번장등록">
@@ -85,15 +86,9 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
-                                    <TextBlock Text="Capture Card No" TextAlignment="Right"/>
+                                    <TextBlock Text="Network Card" TextAlignment="Right"/>
                                 </Grid>
                                 <Grid Grid.Column="1">
-                                    <ComboBox x:Name="_combo2" Background="Transparent" SelectionChanged="_combo2_SelectionChanged" />
-                                </Grid>
-                                <Grid Grid.Column="2">
-                                    <TextBlock Text="mDNS Card No" TextAlignment="Right"/>
-                                </Grid>
-                                <Grid Grid.Column="3">
                                     <ComboBox x:Name="_combo" Background="Transparent" SelectionChanged="_combo_SelectionChanged" />
                                 </Grid>
                             </Grid>
@@ -113,35 +108,6 @@
                                         <Button Content="DSP Out AGN." FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="Button_Click_3" Margin="10,0,0,0"></Button>
                                     </StackPanel>
                                 </Border>
-                            </Grid>
-                        </Grid>
-                    </TabItem>
-
-                    <TabItem Header="위치등록">
-                        <Grid>
-                            <Grid Margin="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="50"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Row="0">
-                                    <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
-                                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Right" Grid.Column="2">
-                                            <Button x:Name="_btnAuto" Content="자동할당"  Width="100" Margin="0,0,36,0" Click="_btnAuto_Click"/>
-                                            <Button x:Name="_btnSave" Content="저장"  Width="60" Margin="0,0,6,0" Click="_btnSave_Click" />
-                                        </StackPanel>
-                                    </Border>
-                                </Grid>
-                                <Grid Grid.Row="1">
-                                    <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
-                                        <DataGrid AutoGenerateColumns="False" Name="dataGrid4" VerticalAlignment="Top"  CanUserAddRows="False">
-                                            <DataGrid.Columns>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn41" Header="장치명" Binding="{Binding path}" Width="250" IsReadOnly="True"/>
-                                                <DataGridComboBoxColumn x:Name="ComboBoxColumn41" Header="위치" Width="300" SelectedItemBinding="{Binding floor}"/>
-                                            </DataGrid.Columns>
-                                        </DataGrid>
-                                    </Border>
-                                </Grid>
                             </Grid>
                         </Grid>
                     </TabItem>
@@ -262,8 +228,9 @@
 
                 </TabControl>
             </Grid>
+            
             <StatusBar Grid.Row="2" Height="40">
-                <StatusBarItem x:Name="_Status" Content="DSP 입출력 설정시 사용합니다." FontSize="14" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Left"></StatusBarItem>
+                <StatusBarItem x:Name="_Status" Content="DSP 입출력 설정시 사용합니다." FontSize="14"></StatusBarItem>
             </StatusBar>
         </Grid>
     </ContentControl>

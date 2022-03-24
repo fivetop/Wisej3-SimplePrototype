@@ -1,4 +1,5 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using pa.classes;
 using pa.Windows;
 using System;
@@ -36,7 +37,6 @@ namespace pa
         SerialPort spP { get; set; } = new SerialPort(); // P형 화재 수신기 통신용 
         SerialPort spR { get; set; } = new SerialPort(); // R형 화재 수신기 통신용 
         private bool alarmtest { get; set; } = false;
-        List<Device> dsp1 { get; set; } = new List<Device>();
         EM_MODE eM_MODE { get; set; } = EM_MODE.전체복구;
         pktr run_pktr { get; set; }
 
@@ -44,8 +44,11 @@ namespace pa
         System.Timers.Timer AliveTimer { get; set; } = new System.Timers.Timer(1000 * 60 * 5);
         // GPIO 타이머 5초 마다 상태 점검 처리 
         public int GPIOResponse { get; set; }
-        ExtProcess SpeakerChecker { get; set; } = new ExtProcess("Checker.exe");
-        DBSqlite dBSqlite { get; set; } = new DBSqlite();
+        public DBSqlite dBSqlite { get; set; } = new DBSqlite();
+        DataSet1 ds1 { get; set; }
+        TableAdapterManager dm1 { get; set; }
+
+        SpeakerChecker speakerChecker { get; set; } = new SpeakerChecker();
 
         public MainWindow()
         {
@@ -57,7 +60,17 @@ namespace pa
             Title = "EM Svr "+ gl.version;
 
             dBSqlite.DBInit();
+            ds1 = dBSqlite.ds1;
+            dm1 = dBSqlite.dm1;
+
+            dBSqlite.MakeSpeakerIP();
+            dBSqlite.ReadMusic();
+
+            g._BaseData = ds1.Simplepa.FirstOrDefault();
+            if (g._BaseData == null)
+                dBSqlite.Init();
             g.Log("DataBase Initial..");
+
             //BSqlite.DBCopy();
         }
 
@@ -66,7 +79,6 @@ namespace pa
         // 종료시 처리 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            SpeakerChecker.Kill();
             BSThreadClass.Stop();
 
             //e.Cancel = true; // alt F4 막기 
@@ -90,6 +102,7 @@ namespace pa
 
         public void Init()
         {
+            g.Load("SimplePA EM Server가 로딩중입니다..");
             g.dsp.OnReceiveMessage += Dsp_OnReceiveMessage;
 
             // 시리얼 통신 처리 
@@ -99,18 +112,7 @@ namespace pa
             OpenR();
             _tray = new TrayIcon();
 
-            try
-            {
-                dsp1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2).ToList();
-
-                if (dsp1[0].ip == "")
-                    dsp1.RemoveAt(0);
-            }
-            catch (Exception e1)
-            {
-                g.Log("Check Dante Devices.." + e1.Data);
-            }
-
+            DSPDeviceCheck();
             g.Log("SpeakerCheck/MultiSound/Alive Inter Message Initial..");
             IPC();
 
@@ -122,9 +124,6 @@ namespace pa
             // DSP thread start
             BSThreadClass.Start();
 
-            g.Log("Speaker Checker Initial..");
-            SpeakerChecker.Start();
-
             g.Log("Volume Initial..");
             // 볼륨 초기화 처리  
             InitVolume();
@@ -132,8 +131,35 @@ namespace pa
             g.Log("multiBS Initial..");
             // 다중 방송 초기화 처리 
             InitMultiBS();
-
+            gl.NetWorkCardFind();
+            g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName );
             g.Log("Initialize OK..");
+
+            if (gl.NetworkCardName != "이더넷")
+            { 
+                speakerChecker.CheckStart();
+            }
+            //g.Log("LScap No : " + speakerChecker.card.ToString());
+            speakerChecker.OnAliveChk += SpeakerChecker_OnAliveChk;
+            speakerChecker.OnSpeakerCheck += SpeakerChecker_OnSpeakerCheck;
+        }
+
+        // IP 가 없는 디바이스 삭제 처리 
+        private void DSPDeviceCheck()
+        {
+            List<Device> dsp1 = new List<Device>();
+            dsp1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2).ToList();
+
+            try
+            {
+                if (dsp1[0].ip == "")
+                    dsp1.RemoveAt(0);
+            }
+            catch (Exception e1)
+            {
+                g.Log("Check Dante Devices.." + e1.Data);
+            }
+
         }
 
         int[,] MatrixState { get; set; } = new int[32, 32];
@@ -169,6 +195,7 @@ namespace pa
 
         private void MetroWindow_Closed(object sender, EventArgs e)
         {
+            speakerChecker.Close();
         }
 
         private void MetroWindow_Deactivated(object sender, EventArgs e)
@@ -216,14 +243,36 @@ namespace pa
             }));
         }
 
+        private async void _Status7_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.message = "Play";
+            msg1.user = "Admin";
+            msg1.Guid = new Guid();
+            msg1.Msgtype = eSignalRMsgType.ePlay;
+            msg1.assetsRows.Add(1);
+            msg1.musicsRows.Add(5);
+            await g.mainWindow.RcvSigR(msg1);
+        }
+
+        private void _Status8_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.message = "Stop";
+            msg1.Msgtype = eSignalRMsgType.eStop;
+            g.mainWindow.RcvSigR(msg1);
+        }
+
+        #region // 스피커 온라인 감시 처리 
+
         // 상태가 변경되었을 경우만 디스플레이
         private void SpeakerCheck(string str2, int v)
         {
-            var t4 = gl._SpeakerList.asset.Where(p => p.ip == str2);
+            var t4 = ds1.Assets.Where(p => p.ip == str2);
             if (t4.Count() == 0)
                 return;
 
-            var t3 = gl._SpeakerList.asset.First(p => p.ip == str2);
+            var t3 = ds1.Assets.First(p => p.ip == str2);
             if (t3 == null)
                 return;
 
@@ -231,14 +280,14 @@ namespace pa
             {
                 if (t3.state == "On-Line") return;
                 t3.state = "On-Line";
-                g.Log("EM LED On:" + str2);
+                g.Log("On-Line :" + str2);
             }
             else
             {
                 if (t3.state == "") return;
                 t3.state = "";
                 t3.state_old = "";
-                g.Log("EM LED Off:" + str2);
+                g.Log("Off-Line:" + str2);
             }
 
             dBSqlite.EventvmIP(t3);
@@ -247,36 +296,88 @@ namespace pa
             //    _T6.dispFloorMap();
         }
 
-        private async void _Status7_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        bool check1 = false; // 재 실행 방지 
+        bool check2 = false; // 재 실행 방지 
+
+        private void SpeakerChecker_OnSpeakerCheck(object sender, EventArgs e)
         {
-            SignalRMsg msg1 = new SignalRMsg();
-            msg1.message = "Play";
-            msg1.Msgtype = eSignalRMsgType.ePlay;
-            msg1.assetsRows.Add(4);
-            msg1.assetsRows.Add(6);
-            msg1.musicsRows.Add(5);
-            await g.mainWindow.RcvSigR(msg1);
-
-            /*
-            //Call();
-
-            // simplepa table 초기화 처리 삭제후 신규처리
-            g.Log("DB Creat..");
-
-            Simplepa s2 = new Simplepa();
-
-            try
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
             {
-                s2 = dbContext.Simplepa.First();
-                dBSqlite.Remove(s2);
-            }
-            catch
-            { 
-            }
-            dBSqlite.Init(s2);
-            dBSqlite.Save(s2);
-            */
+                if (check1 || check2) return;
+                check1 = true;
+
+                try
+                {
+                    LScap.g.capData.Clear();
+                    LSmDNS.Resolver.intfindx = gl.NetworkCardmDNS;
+                    LSmDNS.g.GetCard();
+                    LSmDNS.g.GetMain();
+                }
+                catch (Exception e1)
+                {
+                    //Console.WriteLine(e1.Message);
+                }
+                check1 = false;
+            }));
         }
+
+        private void SpeakerChecker_OnAliveChk(object sender, EventArgs e)
+        {
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
+            {
+                if (check2) return;
+                check2 = true;
+                var t2 = LScap.g.capData;
+
+                try
+                {
+                    g.Log("Device Check : " + t2.Count.ToString());
+                    foreach (var t1 in ds1.Assets)
+                    {
+                        if (t1.state != t1.state_old)
+                            t1.state_old = t1.state;
+                        t1.state = ""; // "Off-Line";
+                    }
+
+                    foreach (var t3 in ds1.Assets)
+                    {
+                        var t4 = t2.Contains(t3.ip);
+                        if (t4)
+                        {
+                            //g.Log("Alive IP.. : " + t3.ip);
+                            t3.state = "On-Line";
+                            // 올드가 오프라인이면 
+                            if (t3.state_old == "")
+                            {
+                                SpeakerCheck(t3.ip, 1);
+                            }
+                        }
+                        else
+                        {
+                            // 온라인이었다가 오프라인이면 
+                            if (t3.state != t3.state_old)
+                            {
+                                SpeakerCheck(t3.ip, 0);
+                            }
+                        }
+                    }
+
+                    if (t2.Count < 2)
+                    {
+                        speakerChecker.T2chktimer.Start();
+                        //LSCap.Refresh();
+                    }
+
+                }
+                catch (Exception e1)
+                {
+                    //Console.WriteLine(e1.Message);
+
+                }
+                check2 = false;
+            }));
+        }
+        #endregion
 
     }
 }

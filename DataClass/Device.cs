@@ -1,11 +1,12 @@
-﻿using System;
+﻿using DataClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace gClass
+namespace DataClass
 {
 
 	[Serializable]
@@ -23,7 +24,7 @@ namespace gClass
 		public string DanteModelName { get; set; }
 		public string dsp_off_ch1 { get; set; }
 		public string dsp_off_ch2 { get; set; }
-		public string chspk { get; set; }
+		public long chspk { get; set; }
 		public List<String> domain { get; set; }
 		public List<String> dsp_out_ch1 = new List<String>();
 		public List<String> dsp_out_ch2 = new List<String>();

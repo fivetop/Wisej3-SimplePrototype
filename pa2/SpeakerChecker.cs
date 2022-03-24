@@ -7,30 +7,18 @@ using System.Threading;
 using System.Timers;
 using System.Windows.Threading;
 
-namespace Checker
+namespace pa
 {
     class SpeakerChecker
     {
         public System.Timers.Timer T1chktimer = new System.Timers.Timer(1000 * 5);
         public System.Timers.Timer T2chktimer = new System.Timers.Timer(1000 * 5);
         int T1chktimer_cnt = 0;
-        public event EventHandler OnSpeakerChecker;
 
         System.Diagnostics.Process process = null;
 
-        public int card { get; set; } = 0;
-        public int mdnsno { get; set; } = 0;
         public SpeakerChecker()
         {
-
-
-            if (System.IO.File.Exists("inifile.ini") == false)
-            {
-                System.IO.File.WriteAllText("inifile.ini", "11");
-            }
-            string ini2 = System.IO.File.ReadAllText("inifile.ini");
-            mdnsno = int.Parse(ini2);
-
         }
 
         bool processFlag = false;
@@ -39,7 +27,7 @@ namespace Checker
         {
             if (processFlag == true) return;
             processFlag = true;
-            Console.WriteLine("WireShark Running......");
+            g.Log("WireShark Running......");
             if (process != null)
             {
                 if (process.HasExited == false)
@@ -73,17 +61,7 @@ namespace Checker
 
         public void CheckStart()
         {
-            T1chktimeron();
-
-            if(LScap.g.LSpcapStart() == false)
-                g.Log("Card initial err.."); // opencap
-        }
-
-        #region // 통신 처리, 스피터 상태 파악 
-
-
-        private void T1chktimeron()
-        {
+            g.Log("Device Check : Running.."); // opencap
             // 타이머 가동 
             T1chktimer = new System.Timers.Timer(1000);
             T1chktimer.Elapsed += T1chktimer_Elapsed;
@@ -93,13 +71,23 @@ namespace Checker
             T2chktimer = new System.Timers.Timer(5000);
             T2chktimer.Elapsed += T2chktimer_Elapsed;
             //T2chktimer.AutoReset = true;
+            if (LScap.g.LSpcapStart() == false)
+            { 
+                g.Log("Card initial err.."); // opencap
+            }
         }
+
+        #region // 통신 처리, 스피터 상태 파악 
+
 
         private void T2chktimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             T2chktimer.Stop();
             wireshark();
         }
+
+        public event EventHandler OnAliveChk;
+        public event EventHandler OnSpeakerCheck;
 
         private void T1chktimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
@@ -108,21 +96,14 @@ namespace Checker
 
             if (T1chktimer_cnt == 2)
             {
-                g.MainWindow.SpeakerCheck();
+                this.OnSpeakerCheck?.Invoke(null, null);
             }
-            if (T1chktimer_cnt > 10)
+            if (T1chktimer_cnt > 15)
             {
                 T1chktimer_cnt = 0;
-                g.MainWindow.AliveChk();
-                this.OnSpeakerChecker?.Invoke(null, null);
-
+                this.OnAliveChk?.Invoke(null, null);
             }
         }
-
-
-
         #endregion
-
-
     }
 }

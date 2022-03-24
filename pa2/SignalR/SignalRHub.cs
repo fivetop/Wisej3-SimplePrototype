@@ -1,4 +1,5 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using Microsoft.AspNet.SignalR;
 using System;
 using System.Threading.Tasks;

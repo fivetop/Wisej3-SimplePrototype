@@ -1,4 +1,5 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using pa.Windows;
 using System;
 using System.Collections.Generic;
@@ -76,16 +77,7 @@ namespace pa
                     else
                     {
                         pktr pktr1 = new pktr(pkt.src);
-
-                        var dv1 = gl._emspl.child.Find(p => p.emData == pktr1.log);
-                        if (dv1 == null)
-                        {
-                            event_text = "0F";
-                        }
-                        else
-                        {
-                            event_text = pktr1.log; // dv1.array[2];
-                        }
+                        event_text = pktr1.log; // dv1.array[2];
                     }
                     //FireEventDisplay();
                     g.SendR(pkt.src, eSignalRMsgType.eEM_FIRE, 1, int.Parse(v3));
@@ -203,7 +195,7 @@ namespace pa
                 spP.Close();
                 //return;
             }
-            spP.PortName = gl._BaseData.GPIOPort; // .sim "COM3";
+            spP.PortName = g._BaseData.GPIOPort; // .sim "COM3";
             spP.BaudRate = 115200;
             spP.DataBits = 8;
             spP.Parity = Parity.None;
@@ -426,7 +418,7 @@ namespace pa
                     }
 
                     // 12 ~ 19 P형 수신기 포트수 12~15 10자리, 16~19 단자리  
-                    if (gl._BaseData.Pport == 0 && gl._BaseData.Rport == "")
+                    if (g._BaseData.Pport == 0 && g._BaseData.Rport == "")
                     {
                         switch (chk)
                         {
@@ -435,7 +427,7 @@ namespace pa
                                 int i1 = int.Parse(st1) * 10;
                                 string st2 = str1[4].ToString();
                                 int i2 = int.Parse(st2);
-                                gl._BaseData.Pport = i1 + i2;
+                                g._BaseData.Pport = i1 + i2;
                                 break;
                         }
                     }
@@ -504,7 +496,8 @@ namespace pa
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : Off");
                         sh = sh + cnt.ToString();
-                        var t1 = gl._AssetGroupList.child.Find(p => p.Name == sh);
+                        dm1.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
+                        var t1 = ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
                             g.Log("Check : 프리셋 그룹");
@@ -517,7 +510,8 @@ namespace pa
                             //case 3: _a4.IsChecked = false; break;
                             //case 4: _a5.IsChecked = false; break;
                         }
-                        g.DSP_MakeGroupSpeaker(t1.child.ToList(), 0, BS_DSP_STATE.PRESET);
+                        // make asset array to assetbase 
+                        //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 0, BS_DSP_STATE.PRESET);
                         Preset_chk();
                         g.SendR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
                         dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : Off", "OFF");
@@ -526,7 +520,8 @@ namespace pa
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : On");
                         sh = sh + cnt.ToString();
-                        var t1 = gl._AssetGroupList.child.Find(p => p.Name == sh);
+                        dm1.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
+                        var t1 = ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
                             g.Log("Check : 프리셋 그룹");
@@ -539,7 +534,8 @@ namespace pa
                             //case 3: _a4.IsChecked = true; break;
                             //case 4: _a5.IsChecked = true; break;
                         }
-                        g.DSP_MakeGroupSpeaker(t1.child.ToList(), 1, BS_DSP_STATE.PRESET);
+                        // make asset array to assetbase 
+                        //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 1, BS_DSP_STATE.PRESET);
                         g.SendR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
                         dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : On", "ON");
                     }
@@ -630,7 +626,7 @@ namespace pa
             }
 
             // 직상 발화가 아닌경우 
-            if (gl._BaseData.Jigsangbalhwa != 2)
+            if (g._BaseData.Jigsangbalhwa != 2)
             {
                 foreach (var t1 in cur_embs_device)
                 {
@@ -697,7 +693,7 @@ namespace pa
 
         public void OpenR()
         {
-            if (gl._BaseData.Rport == "")
+            if (g._BaseData.Rport == "")
             {
                 g.Log("R형 없음..");
                 return;
@@ -707,7 +703,7 @@ namespace pa
                 spR.Close();
                 //return;
             }
-            spR.PortName = gl._BaseData.Rport;  // .sim "COM3";
+            spR.PortName = g._BaseData.Rport;  // .sim "COM3";
             spR.BaudRate = 9600;                // R형 수신기 9600
             spR.DataBits = 8;
             spR.Parity = Parity.None;

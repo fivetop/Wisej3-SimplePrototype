@@ -1,4 +1,5 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -36,6 +37,13 @@ namespace pa
                     if (chno == 0) return false;
                     play = dBSqlite.db2List(msg, chno);
                     ChSet(chno);
+
+                    var play8 =  g.play8ch[chno];
+                    {
+                        play8.chno = chno;
+                        play8.idno = 100000 + chno;
+                    }
+
                     // 스피커 셋팅후 플레이 처리 
                     g.DSP_MakeGroupSpeaker(play, 1, BS_DSP_STATE.MUL_BS, 1);
                     PlayChildProcess(chno, 100000 + chno);
@@ -72,7 +80,7 @@ namespace pa
         private int EmptyChFind()
         {
             int rlt = 0;
-            for (int i = 3; i < 8; i++)
+            for (int i = 2; i < 8; i++)
             {
                 PlayItemSig pl1 = g.play8ch[i];
                 if (pl1.p_run)

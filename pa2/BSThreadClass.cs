@@ -1,4 +1,5 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -195,6 +196,8 @@ namespace pa
                     case BS_DSP_STATE.MUL_BS:
                         Console.WriteLine("MUL_BS" + " : " + data.onoff.ToString());
                         g.dsp.BufferClear();
+                        int[] MetrixChIn = { 16, 17, 18, 19, 20, 21, 22, 23 }; // 입력채널 번호 
+
                         foreach (AssetBase t1 in data.child)
                         {
                             try
@@ -204,7 +207,7 @@ namespace pa
                                 if (sst1 == null) continue;
                                 if (sst1.ip == "" || sst1.ip_dspctrl == "") continue;
                                 Console.WriteLine("--" + "DSP Metrix Out ==> In :" + sst1.ip_dspctrl + " : " + t1.path + " : " + data.onoff.ToString());
-                                g.dsp.Matrix(g.MetrixChIn[data.chno], sst1.dsp_chno, data.onoff, sst1.ip_dspctrl);
+                                g.dsp.Matrix(MetrixChIn[data.chno], sst1.dsp_chno, data.onoff, sst1.ip_dspctrl);
                                 //g.dsp.makeVolumn(sst1.dsp_chno, sst1.dsp_vol, sst1.ip_dspctrl);
                             }
                             catch (Exception e1)

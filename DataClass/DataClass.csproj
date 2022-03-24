@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD75AC37-42B8-4390-8D7D-8E0CCF7B1771}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>sigr_client</RootNamespace>
-    <AssemblyName>sigr_client</AssemblyName>
+    <ProjectGuid>{40D7C7AB-A585-49D9-B9A1-0A499EEC5067}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataClass</RootNamespace>
+    <AssemblyName>DataClass</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,15 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.4.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.4.3\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,26 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AssetBase.cs" />
+    <Compile Include="Dante.cs" />
+    <Compile Include="DanteDeviceChannel.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="dsp_packet.cs" />
+    <Compile Include="EmSpeakerPosition.cs" />
+    <Compile Include="gClass.cs" />
+    <Compile Include="GlobalMessage.cs" />
+    <Compile Include="msg.cs" />
+    <Compile Include="NetworkCard.cs" />
+    <Compile Include="PlayItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataClass\DataClass.csproj">
-      <Project>{40d7c7ab-a585-49d9-b9a1-0a499eec5067}</Project>
-      <Name>DataClass</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\gClass\gClass.csproj">
-      <Project>{a3148c58-60fe-4ab4-87e7-c30534ca7f6d}</Project>
-      <Name>gClass</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Wisej.CodeProject\Wisej.CodeProject.csproj">
-      <Project>{ba22ee1e-c853-40b1-a5c1-ed2b10300ac8}</Project>
-      <Name>Wisej.CodeProject</Name>
-    </ProjectReference>
+    <Compile Include="SimplePA.cs" />
+    <Compile Include="typeRClass.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

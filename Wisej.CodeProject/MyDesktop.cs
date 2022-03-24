@@ -4,6 +4,12 @@ using System.Threading;
 using Wisej.CodeProject.Examples;
 using Wisej.CodeProject.Setup;
 using Wisej.ChatServer;
+using Wisej.CodeProject.SignalR;
+using System.Collections.Generic;
+using static Wisej.CodeProject.DataSet1;
+using System.Linq;
+using Microsoft.Ajax.Utilities;
+using DataClass;
 
 namespace Wisej.CodeProject
 {
@@ -14,6 +20,9 @@ namespace Wisej.CodeProject
 
 		Main MainWin { get; set; }
 		BackgroundTasks example2 { get; set; }
+
+		public static SignalRClient signalRClient { get; set; } = new SignalRClient();
+
 
 		public MyDesktop()
 		{
@@ -136,15 +145,13 @@ namespace Wisej.CodeProject
 
 			MainWin = new Main();
 			example2 = new Examples.BackgroundTasks();
-			this.ExampleCreated?.Invoke(MainWin, EventArgs.Empty);
-			this.ExampleCreated?.Invoke(example2, EventArgs.Empty);
 			MainWin.Show(); // .Active = true; // .Activate();
 			example2.Show();
 			MainWin.WindowState = FormWindowState.Minimized;
 			example2.WindowState = FormWindowState.Minimized;
 
-			g.signalRClient.owner = this;
-			g.signalRClient.ConnectToSignalR();
+			signalRClient.owner = this;
+			signalRClient.ConnectToSignalR();
 
 			var t1 = Application.Session["user"];
 			AlertBox.Show("Log-In : " + t1);
@@ -177,7 +184,6 @@ namespace Wisej.CodeProject
         private void button1_Click(object sender, EventArgs e)
         {
 			var win1 = new MSet();
-			this.ExampleCreated?.Invoke(win1, EventArgs.Empty);
 			win1.Show();
 		}
 
@@ -186,7 +192,6 @@ namespace Wisej.CodeProject
 		private void button2_Click(object sender, EventArgs e)
         {
 			var win1 = new MHoliday();
-			this.ExampleCreated?.Invoke(win1, EventArgs.Empty);
 			win1.Show();
 
 		}
@@ -195,7 +200,6 @@ namespace Wisej.CodeProject
 		private void button3_Click(object sender, EventArgs e)
         {
 			var win1 = new MGroup();
-			this.ExampleCreated?.Invoke(win1, EventArgs.Empty);
 			win1.Show();
 
 		}
@@ -204,7 +208,6 @@ namespace Wisej.CodeProject
 		private void button4_Click(object sender, EventArgs e)
         {
 			var win1 = new MMusic();
-			this.ExampleCreated?.Invoke(win1, EventArgs.Empty);
 			win1.Show();
 		}
 
@@ -212,7 +215,6 @@ namespace Wisej.CodeProject
 		private void button5_Click(object sender, EventArgs e)
         {
 			var win1 = new MEvent();
-			this.ExampleCreated?.Invoke(win1, EventArgs.Empty);
 			win1.Show();
 
 		}
@@ -220,7 +222,7 @@ namespace Wisej.CodeProject
 		// 방송 이력 
 		private void button6_Click(object sender, EventArgs e)
         {
-			g.sendSigR("Hello Server..");
+			sendSigR("Hello Server..");
 			//AlertBox.Show(msg1.em_status);
 		}
 
@@ -234,7 +236,6 @@ namespace Wisej.CodeProject
         private void button8_Click(object sender, EventArgs e)
         {
 			var win1 = new Window1();
-			this.ExampleCreated?.Invoke(win1, EventArgs.Empty);
 			win1.Show();
 
 		}
@@ -243,7 +244,6 @@ namespace Wisej.CodeProject
 		private void button9_Click(object sender, EventArgs e)
         {
 			var win1 = new SimpleChatClient();
-			this.ExampleCreated?.Invoke(win1, EventArgs.Empty);
 			win1.Show();
 
 		}
@@ -251,7 +251,6 @@ namespace Wisej.CodeProject
 		private void button10_Click(object sender, EventArgs e)
         {
 			var win1 = new MUser();
-			this.ExampleCreated?.Invoke(win1, EventArgs.Empty);
 			win1.Show();
 
 		}
@@ -274,5 +273,39 @@ namespace Wisej.CodeProject
 			this.ResizeRedraw = true;
 			this.Invalidate();
 		}
-	}
+
+
+		internal void sendSigR(string v)
+		{
+			SignalRMsg msg1 = new SignalRMsg();
+			msg1.message = v;
+			if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+				signalRClient.proxy.Invoke("MessageC2S2", msg1);
+		}
+
+		internal void sendSigR(string v, eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
+		{
+			SignalRMsg msg1 = new SignalRMsg();
+			msg1.user = Application.Session["user"];
+			msg1.Guid = new Guid();
+			msg1.message = v;
+			msg1.Msgtype = v1;
+			//msg1.assetsRows = selAsset;
+			//var t1 = selMusic.Select(p => new { p.MusicId }).ToList();
+			var t1 = selMusic.Select(p => new { p.MusicId });
+			msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
+
+			var t2 = selAsset.Select(p => new { p.AssetId });
+			msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
+
+			try
+			{
+				if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+					signalRClient.proxy.Invoke("MessageC2S2", msg1);
+			}
+			catch (Exception e1)
+			{
+			}
+		}
+    }
 }

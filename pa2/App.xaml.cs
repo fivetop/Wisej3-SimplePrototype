@@ -80,11 +80,7 @@ namespace pa
             var directoryInfo = new DirectoryInfo(str1 + "\\" + "Log");
             if (directoryInfo.Exists == false)
                 directoryInfo.Create();
-            directoryInfo = new DirectoryInfo(str1 + "\\" + "Log_Server");
-            if (directoryInfo.Exists == false)
-                directoryInfo.Create();
 
-            //g.Log(CultureInfo.CurrentCulture.Name);
             g.ReadConfig();
             g.XMLRead();
             g.Log("XMLRead");
@@ -113,8 +109,6 @@ namespace pa
         private void Application_Exit(object sender, ExitEventArgs e)
         {
             t2.Abort();
-            g.XMLWrite();
-
         }
     }
 }

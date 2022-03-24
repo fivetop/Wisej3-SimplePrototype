@@ -31,35 +31,11 @@ namespace LSNAudio
         private uint message;
         private int playcnt = -1;
 
-        SimpleMulti cur_play = null;
-
-        // 시스템에 설정된 버철 사운드 카드 디바이스 번호
-        // 시스템마다 다르므로 파일로 관리 
-        
-        // int[] device = { 0, 4, 1, 9, 10, 8, 6, 7 };
-
-        // my pc
-        //int[] device = { 0, 0, -1, -1, 1, -1, 0, 0, 0, 0, 0, 0 };
 
 
         public MainWindow3()
         {
             InitializeComponent();
-/*
-            // 파일저장 및 읽기 
-            string str1 = string.Join(",", device);
-            if (System.IO.File.Exists("SoundCardini.ini") == false)
-            {
-                System.IO.File.WriteAllText("SoundCardini.ini", str1);
-            }
-            string ini = System.IO.File.ReadAllText("SoundCardini.ini");
-            string[] card = ini.Split(',');
-
-            for (int i=0; i < 8; i++)
-            {
-                device[i] = int.Parse(card[i]);
-            }
-*/
             // 엔진 초기화 
             soundEngine = NAudioEngine.Instance;
             // 스펙트럼 처리 

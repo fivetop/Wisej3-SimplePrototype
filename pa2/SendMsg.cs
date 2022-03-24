@@ -50,17 +50,17 @@ namespace pa
         */
         public bool Send_sms()
         {
-            if (gl._BaseData.sms_rcvno == "")
+            if (g._BaseData.sms_rcvno == "")
                 return false;
             //if (g.sms_use != 1)
             //    return false;
             //Creating the Web Request.
-            HttpWebRequest httpWebRequest = HttpWebRequest.Create(gl._BaseData.sms_server) as HttpWebRequest;
+            HttpWebRequest httpWebRequest = HttpWebRequest.Create(g._BaseData.sms_server) as HttpWebRequest;
             httpWebRequest.Method = "POST";
             //Data to Post to the Page, itis key value pairs; separated by "&"
-            string data1 = string.Format("userid={0}&password={1}", gl._BaseData.sms_id, gl._BaseData.sms_pw);
+            string data1 = string.Format("userid={0}&password={1}", g._BaseData.sms_id, g._BaseData.sms_pw);
             string data2 = string.Format("{0}&msgcnt=1&msg1={1}", data1, subject);
-            string data3 = string.Format("{0}&receivers={1}&sender=01000000000", data2, gl._BaseData.sms_rcvno);
+            string data3 = string.Format("{0}&receivers={1}&sender=01000000000", data2, g._BaseData.sms_rcvno);
             //Setting the content type, it is required, otherwise it will not work.
             httpWebRequest.ContentType = "application/x-www-form-urlencoded";
             //Getting the request stream and writing the post data

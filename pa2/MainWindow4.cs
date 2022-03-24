@@ -7,6 +7,7 @@ using System.Windows;
 
 namespace pa
 {
+    using DataClass;
     using gClass;
     // v2 update ok
     public partial class MainWindow : Window
@@ -43,7 +44,7 @@ namespace pa
             var sst1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
 
             // 직상층 발화 조건이 있으면 
-            if (gl._BaseData.Jigsangbalhwa == 2 && run_pktr != null)
+            if (g._BaseData.Jigsangbalhwa == 2 && run_pktr != null)
             {
                 var emd = run_pktr.em_Data;
                 emd.getemData();

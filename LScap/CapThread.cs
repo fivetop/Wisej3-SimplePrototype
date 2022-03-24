@@ -1,4 +1,5 @@
-﻿using PacketDotNet;
+﻿using gClass;
+using PacketDotNet;
 using SharpPcap;
 using SharpPcap.LibPcap;
 using System;
@@ -26,9 +27,6 @@ namespace LScap
         private static DateTime LastStatisticsOutput = DateTime.Now;
         private static TimeSpan LastStatisticsInterval = new TimeSpan(0, 0, 2);
 
-        public static string NetworkCardName = "이더넷";
-        public static int NetworkCardNo = 0;
-
         public static bool OpenCap()
         {
             if (device != null) return false;
@@ -44,47 +42,15 @@ namespace LScap
         }
 
         // 인터페이스에 아이피가 있으면 처리 하기 
-        public static void getCardNo()
+        public static int getCardNo()
         {
-            int no = 0;
-            foreach (var t1 in CaptureDeviceList.Instance)
-            {
-                string str1 = t1.ToString();
-                Console.WriteLine("Card No : " + no.ToString() + " : " + str1);
-
-                var t2 = ((LibPcapLiveDevice)t1).Interface.FriendlyName;
-
-                if (t2 == NetworkCardName)
-                {
-                    NetworkCardNo = no;
-                    System.IO.File.WriteAllText("inifileCap.ini", NetworkCardNo.ToString());
-                    return;
-                }
-                no++;
-            }
-        }
-
-        // 인터페이스에 아이피가 있으면 처리 하기 
-        public static void getCardNo2(List<string> cl)
-        {
-            int no = 0;
-            foreach (var t1 in CaptureDeviceList.Instance)
-            {
-                string str1 = t1.ToString();
-                Console.WriteLine("Card No : " + no.ToString() + " : " + str1);
-
-                var t2 = no.ToString() + " : " + ((LibPcapLiveDevice)t1).Interface.FriendlyName;
-                cl.Add(t2);
-                no++;
-            }
+            return 0;
         }
 
         public static bool LSpcapStart()
         {
-            string ini = System.IO.File.ReadAllText("inifileCap.ini");
-            NetworkCardNo = int.Parse(ini);
-
-            device = CaptureDeviceList.Instance[NetworkCardNo];
+            gl.NetWorkCardFind();
+            device = CaptureDeviceList.Instance[gl.NetworkCardNo];
             if (device == null)
                 return false;
             device.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
@@ -110,12 +76,6 @@ namespace LScap
             return true;
         }
 
-        public static bool Refresh()
-        {
-            device.StopCapture();
-            device.StartCapture();
-            return true;
-        }
 
         /// <summary>
         /// received packet

@@ -7,6 +7,7 @@ using System.Diagnostics;
 
 namespace pa
 {
+    using DataClass;
     /*
 <sms_server>http://sms.nicesms.co.kr/cpsms_utf8/cpsms.aspx</sms_server>
 <sms_id>lstest</sms_id>
@@ -14,18 +15,20 @@ namespace pa
 
 * */
     using gClass;
+    using pa.Windows;
+    using System.ComponentModel;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Reflection;
+    using System.Threading;
     using Wisej.CodeProject;
+    using static Wisej.CodeProject.DataSet1;
 
     public static class g
     {
         #region // 글로벌 변수 선언 
         static public string appPath { get; set; } = @"C:\SimplePA\";
-        static public Device MainDSP { get; set; } = new Device();
         public static signalr _hub { get; set; } = null;
-
         static public MainWindow mainWindow { get; set; }
 
         // 현재 방송중인 내용
@@ -35,222 +38,31 @@ namespace pa
 
         static public int em_status { get; set; } = 0;  // 화재 1,2 시험 알람 3,4 가스 5,6  
         // 컬러데이터 정의 , 이벤트 처리시 활용 
-        public static MakeBasic makeBasic { get; set; } = new MakeBasic();
-
 
         // DSP 제어을 위함 
         public static DSPControll dsp { get; set; } = new DSPControll(); // 볼륨과 뮤트 처리용 
-        public static int[] MetrixChIn { get; set; } = { 16, 17, 18, 19, 20, 21, 22, 23 }; // 입력채널 번호 
 
         // 알람 종류 0 없음, 1 시험 알람 , 2 PR 형 알람 
         public static int Alarm { get; internal set; } = 0; // 계속적인 발생을 관리 
         public static bool TestAlarm { get; internal set; } = false;
 
+        public static SimplepaRow _BaseData { get; set; }
         #endregion
 
         #region // XML 처리 
         static public void XMLRead()
         {
-            //LoadSQLLiteAssembly();
-            if (System.IO.File.Exists("EM_ServerIP.ini") == false)
-            {
-                System.IO.File.WriteAllText("EM_ServerIP.ini", "127.0.0.1");
-            }
-            string ini = System.IO.File.ReadAllText("EM_ServerIP.ini");
-            gl._BaseData.EMServerIP = ini;
-            // 타임서버 연동 처리 
-            //SyncLocalTime();
-
             // 기초디비, 스피커 디비
-            gl.XMLSimplePA(true);
-            gl._BaseData.EMServerIP = ini;
-
             gl.XMLDanteDevice(true);
-            gl.XMLSimpleMusic(true);
-            gl.XMLSimpleSpeaker(true);
-            gl.XMLEMList(true);
-
             g.Log("Start PA");
 
-            // 디렉토리에서 읽기 , 기초디비, 음원디비, 스피커, 스피커 그룹, 층 도면 
-            gl.ReadSimplePA();
-            makeBasic.ReadMusic(gl._MusicList);
-            // 새로만들기 포함 처리 - 디비 변경시 변경 처리 요망 
-            makeBasic.ReadAssetList(gl._SpeakerList);
-            makeBasic.ReadFloor(gl._FloorBase);
-            gl.XMLFloor(false);
-
-            g.Log("Start PA1");
-            // 이벤트 기초 데이터 처리를 위한 테스트 모듈 
-            //ReadScheduleTestData(); 
-            //g._SchTreeList.child = XMLRW(_SchTreeList, true, "BSSchedule.xml").child;
-            gl.XMLSchedule(true);
-            gl.XMLSimplePAMulti(true);
-            gl.XMLAssetGroupList(true);
-            
-            if (gl._AssetGroupList.child.Count == 0)
-            {
-                MakePreset();
-            }
-            gl.XMLBS1Tree(true);
-            gl.XMLInfoTree(true);
-            gl.XMLFloor(true);
-            gl.XMLFloorTree(true);
-            gl.XMLSimpleHistory(true);
-            UpdateTree();
-
-            g.Log("Start PA2");
-            MakeMainDSP();
-            MakeSpeakerIP();
-            UpdateFloorTree();
-            UpdateFloorSpeak();
-
-            g.Log("Start PA3");
             // 초기 셋팅한거 저장하기 
-            gl.XMLSimplePA(false);
-            gl.XMLEMList(false);
-            gl.XMLSimpleMusic(false);
-            gl.XMLSimpleSpeaker(false);
 
-            g.Log("Start PA4");
-
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 8; i++)
             {
                 play8ch[i] = new PlayItemSig();
             }
-        }
-
-        public static void LoadSQLLiteAssembly()
-        {
-            Uri dir = new Uri(Assembly.GetExecutingAssembly().CodeBase);
-            FileInfo fi = new FileInfo(dir.AbsolutePath);
-            string appropriateFile = Path.Combine(fi.Directory.FullName, GetAppropriateSQLLiteAssembly());
-            Assembly.LoadFrom(appropriateFile);
-        }
-
-        private static string GetAppropriateSQLLiteAssembly()
-        {
-            string pa = Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE");
-            string arch = ((String.IsNullOrEmpty(pa) || String.Compare(pa, 0, "x86", 0, 3, true) == 0) ? "32" : "64");
-            return "System.Data.SQLite.x" + arch + ".DLL";
-        }
-
-        private static void MakePreset()
-        {
-        }
-
-
-        // 층 도면에는 있는데 스피커에는 없는경우 데이터 일치 안됨 => 일치 시키기 
-        private static void UpdateFloorSpeak()
-        {
-            foreach (FloorMap t1 in gl._FloorTreeList.Child)
-            {
-                if (t1.content != "Speaker1")
-
-                    continue;
-                var sAsset = gl._SpeakerList.asset.Find(p => p.path == t1.assetname);
-                if (sAsset != null)
-                {
-                    if(sAsset.floor == "")
-                    sAsset.floor =  t1.buildingname + "/" + t1.floor;
-                }
-
-            }
-        }
-
-        // 층에 있는 스피커 데이터가 파일에 없으면 예전 데이터라 삭제 처리 
-        private static void UpdateFloorTree()
-        {
-            List<FloorMap> a1 = new List<FloorMap>();
-
-            foreach (FloorMap t1 in gl._FloorTreeList.Child)
-            {
-                if (t1.content != "Speaker1")
-                    continue;
-
-                string str1;
-                str1 = @"C:\SimplePA\Speaker\" + t1.assetname;
-                if (!System.IO.File.Exists(str1))
-                {
-                    a1.Add(t1);
-                }
-            }
-
-            foreach (FloorMap t1 in a1)
-            {
-                gl._FloorTreeList.Child.Remove(t1);
-            }
-
-        }
-
-        // 스피커 자산이 추가시 기존 디비 갱신용 
-        // child -> AssetList ret 
-        // 기존 child 는 참조용 
-        private static void UpdateTree()
-        {
-        }
-
-        private static List<Asset> makeAssetSync(List<Asset> child, List<Asset> assetList)
-        {
-            List<Asset> ret = new List<Asset>();
-            ret = ObjectCopier.Clone(assetList);
-
-            foreach (Asset t1 in child)
-            {
-                if (t1.chk)
-                {
-                    var t5 = ret.Where(p => p.path == t1.path).FirstOrDefault();
-                    if (t5 != null)
-                    {
-                        t5.chk = t1.chk;
-                    }
-                }
-            }
-            return ret;
-        }
-
-        private static void MakeMainDSP()
-        {
-            var t2 = gl.danteDevice._DanteDevice.Find(p => p.DeviceName == gl._BaseData.ServerIP);
-            if (t2 != null)
-            {
-                if(MainDSP.DeviceName == "")
-                    MainDSP = t2;
-            }
-        }
-
-        private static void MakeSpeakerIP()
-        {
-            foreach (Asset t1 in gl._SpeakerList.asset)
-            {
-                if (t1.DeviceName == "")
-                {
-                    t1.state = ""; // "Off-Line";
-                    continue;
-                }
-                var t2 = gl.danteDevice._DanteDevice.Find(p=>p.name == t1.DeviceName || p.DeviceName == t1.DeviceName);
-                if (t2 != null)
-                {
-                    t1.state = "On-Line";
-                    t1.ip = t2.ip;
-                    // 4440 포트는 사용치 않을 예정임  2021.01.26 romee
-                    //AliveChk(t1.ip);
-                }
-                else
-                {
-                    t1.state = ""; // "Off-Line";
-                }
-            }
-            //timeron();
-        }
-
-
-        // 나갈떼 저장 처리용
-        static public void XMLWrite()
-        {
-            gl.XMLSimpleHistory(false);
-            gl.XMLSimpleSpeaker(false);
-            gl.XMLSimplePA(false);
+            g.Log("Start PA2");
         }
         #endregion
 
@@ -274,9 +86,6 @@ namespace pa
         static string old_string = "";
         public static void Log(string str1)
         {
-            if (gl._BaseData.Reserved4 != "1")
-                return;
-
             if (str1 == old_string)
                 return;
             old_string = str1;
@@ -327,27 +136,11 @@ namespace pa
             }
             else if (play1.kind == "예약방송")
             {
-                SimpleMulti t1 = gl._SimpleMultiListSch.child.Find(p => p.idno == play1.idno);
-                ret = ObjectCopier.Clone(t1.gstree.child);
             }
             else if (play1.kind == "정규방송")
             {
-                SimpleMulti t1 = gl._SimpleMultiList.child.Find(p => p.idno == play1.idno);
-                ret = ObjectCopier.Clone(t1.gstree.child);
             }
             return ret.ToList();
-        }
-
-        // 스피커의 현재 상태 체크 
-        public static int getSpeakerState(string path)
-        {
-            var sAsset = gl._SpeakerList.asset.Find(p => p.path == path);
-            if (sAsset != null)
-            {
-                if (sAsset.state == "On-Line")
-                    return 1;
-            }
-            return 0;
         }
 
         // 다원방송 사용한 메트릭스 초기화 처리 
@@ -449,6 +242,54 @@ namespace pa
             g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
         }
 
+        public static void Load(string info)
+        {
+            g.DoWorkWithModal(progress =>
+            {
+                progress.Report(info);
+                Thread.Sleep(1000);//placeholder for real work;
+            });
+        }
+
+        public static void Info(string info)
+        {
+            if (mainWindow.ActualHeight == 0)
+                return;
+            g.DoWorkWithModal(progress =>
+            {
+                progress.Report(info);
+                Thread.Sleep(300);//placeholder for real work;
+                progress.Report(info);
+                Thread.Sleep(300);//placeholder for real work;
+            });
+        }
+        public static void DoWorkWithModal(Action<IProgress<string>> work)
+        {
+            ProgressBarDialog4 splash = new ProgressBarDialog4();
+
+            splash.Loaded += (_, args) =>
+            {
+                BackgroundWorker worker = new BackgroundWorker();
+
+                Progress<string> progress = new Progress<string>(
+                    data => splash._txtStatus.Text = data);
+
+                worker.DoWork += (s, workerArgs) => work(progress);
+
+                worker.RunWorkerCompleted +=
+                    (s, workerArgs) => splash.Close();
+
+                worker.RunWorkerAsync();
+            };
+
+            try
+            {
+                splash.ShowDialog();
+            }
+            catch (Exception e1)
+            {
+            }
+        }
 #if DEBUG2
         public static void dbcopy(mainEntities db)
         {

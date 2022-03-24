@@ -36,6 +36,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PacketDotNet, Version=0.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\1 다운로드\0 소스\WPF\0 network\SharpPcap-4.2.0.bin\SharpPcap-4.2.0.src\SharpPcap\PacketDotNet\PacketDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpPcap, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\ts\LScap\bin\Debug\SharpPcap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -78,9 +86,7 @@
   <ItemGroup>
     <Compile Include="MainWindow2.cs" />
     <Compile Include="mDNS.cs" />
-    <Compile Include="NetworkCard.cs" />
     <Compile Include="packet.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,6 +113,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataClass\DataClass.csproj">
+      <Project>{40d7c7ab-a585-49d9-b9a1-0a499eec5067}</Project>
+      <Name>DataClass</Name>
+    </ProjectReference>
     <ProjectReference Include="..\gClass\gClass.csproj">
       <Project>{a3148c58-60fe-4ab4-87e7-c30534ca7f6d}</Project>
       <Name>gClass</Name>

@@ -1,4 +1,5 @@
-﻿using PacketDotNet;
+﻿using gClass;
+using PacketDotNet;
 using SharpPcap;
 using SharpPcap.LibPcap;
 using System;
@@ -25,14 +26,10 @@ namespace LScap
             Console.WriteLine("----------------------------------------------------");
             Console.WriteLine();
 
-            if (System.IO.File.Exists("inifileCap.ini") == false)
-            {
-                System.IO.File.WriteAllText("inifileCap.ini", "0");
-            }
-            string ini = System.IO.File.ReadAllText("inifileCap.ini");
-            g.NetworkCardNo = int.Parse(ini);
+            gl.NetWorkCardFind();
 
-            g.getCardNo();
+            Console.WriteLine(gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName);
+
             g.OpenCap();
             Console.ReadLine();
             g.CloseCap();

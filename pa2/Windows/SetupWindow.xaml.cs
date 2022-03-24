@@ -7,33 +7,23 @@ using System.Linq;
 
 namespace pa.Windows
 {
-using gClass;
+    using DataClass;
+    using gClass;
+    using Wisej.CodeProject;
+    using static Wisej.CodeProject.DataSet1;
+
     /// <summary>
     /// Interaction logic for IconsWindow.xaml
     /// </summary>
     public partial class SetupWindow : Window
     {
-        public static RoutedCommand CancelCommand = new RoutedCommand();
         public List<int> dsp_vol { get; set; } = new List<int>() { };
 
         public SetupWindow()
         {
-            this.DataContext = gl._BaseData;
+            this.DataContext = g._BaseData;
             InitializeComponent();
         }
-
-        #region CRUD 신규,삭제 등 버튼 처리 로직
-
-        private void _cmdCancel_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
-        private void _cmdCancel_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            Close();
-        }
-        #endregion
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -41,19 +31,20 @@ using gClass;
             cboType.ItemsSource = t1;
             cboType.DisplayMemberPath = "DeviceName";
             cboType.SelectedValuePath = "name";
-            cboType.SelectedValue = gl._BaseData.ServerIP;
+            cboType.SelectedValue = g._BaseData.ServerIP;
 
-            var t2 = gl._MusicList.music.ToList();
+            g.mainWindow.dBSqlite.dm1.MusicsTableAdapter.Fill(g.mainWindow.dBSqlite.ds1.Musics);
+            var mt2 = g.mainWindow.dBSqlite.ds1.Musics.ToList();
 
-            cboType2.ItemsSource = t2;
+            cboType2.ItemsSource = mt2;
             cboType2.DisplayMemberPath = "FileName";
             cboType2.SelectedValuePath = "FileName";
-            cboType2.SelectedValue = gl._BaseData.Reserved14;
+            cboType2.SelectedValue = g._BaseData.EmMusic;
 
             var t3 = new string[] { "R형 자동 검출", "R형 제조사 10", "R형 제조사 12"};
 
             cboType1.ItemsSource = t3;
-            cboType1.SelectedValue = gl._BaseData.Reserved16;
+            cboType1.SelectedValue = g._BaseData.Reserved16;
 
             for (int i = 1; i < 11; i++)
             {
@@ -61,15 +52,38 @@ using gClass;
             }
             cboType3.ItemsSource = null;
             cboType3.ItemsSource = dsp_vol;
-            cboType3.SelectedIndex = gl._BaseData.dsp_vol-1;
+            cboType3.SelectedIndex = (int)(g._BaseData.dsp_vol-1);
             cboType4.ItemsSource = null;
             cboType4.ItemsSource = dsp_vol;
-            cboType4.SelectedIndex = gl._BaseData.dsp_vol_em-1;
+            cboType4.SelectedIndex = (int)(g._BaseData.dsp_vol_em-1);
 
             var t4 = new string[] { "5층 이하, 연면적 3,000 이하", "5층 이상, 연면적 3,000 이상" };
             cboType6.ItemsSource = null;
             cboType6.ItemsSource = t4;
-            cboType6.SelectedIndex = gl._BaseData.Jigsangbalhwa - 1;
+            cboType6.SelectedIndex = (int)(g._BaseData.Jigsangbalhwa - 1);
+
+            List<string> cl = new List<string>();
+
+            foreach (var n1 in gl.networkCardList)
+            {
+                cl.Add(n1.NetworkCardNo.ToString() + ":" + n1.NetworkCardmDNS.ToString() + ":" + n1.NetworkCardName);
+            }
+            _combo2.ItemsSource = cl.ToList();
+
+            var t2 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
+            if (t2 == null)
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo2.SelectedIndex = 0;
+                return;
+            }
+            else
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo2.SelectedItem = t2.NetworkCardNo.ToString() + ":" + t2.NetworkCardmDNS.ToString() + ":" + t2.NetworkCardName;
+            }
+
+
         }
 
         private void cboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -77,15 +91,15 @@ using gClass;
             Device t1 = (Device) e.AddedItems[0];
             if (t1 == null)
                 return;
-            gl._BaseData.ServerIP = t1.DeviceName;
+            g._BaseData.ServerIP = t1.DeviceName;
         }
 
         private void cboType2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Music t1 = (Music)e.AddedItems[0];
+            MusicsRow t1 = (MusicsRow)e.AddedItems[0];
             if (t1 == null)
                 return;
-            gl._BaseData.Reserved14 = t1.FileName;
+            g._BaseData.EmMusic = t1.FileName;
 
         }
 
@@ -94,7 +108,7 @@ using gClass;
             string t1 = (string)e.AddedItems[0];
             if (t1 == null)
                 return;
-            gl._BaseData.Reserved16 = t1;
+            g._BaseData.Reserved16 = t1;
 
         }
 
@@ -112,8 +126,7 @@ using gClass;
             {
                 dsp.dsp_vol = t1;
             }
-            gl._BaseData.dsp_vol = t1;
-            gl.XMLSimplePA(false);
+            g._BaseData.dsp_vol = t1;
             gl.XMLDanteDevice(false);
             msg pkt = new msg("V", "0", "V", "1","");
             ///g.mainWindow.s1.Send(pkt.pkt);
@@ -133,8 +146,7 @@ using gClass;
             {
                 dsp.dsp_vol_em = t1;
             }
-            gl._BaseData.dsp_vol_em = t1;
-            gl.XMLSimplePA(false);
+            g._BaseData.dsp_vol_em = t1;
             gl.XMLDanteDevice(false);
             msg pkt = new msg("V", "0", "V", "2", "");
             //g.mainWindow.s1.Send(pkt.pkt);
@@ -143,39 +155,38 @@ using gClass;
         private void cboType6_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int t1 = cboType6.SelectedIndex + 1;
-            gl._BaseData.Jigsangbalhwa = t1;
+            g._BaseData.Jigsangbalhwa = t1;
         }
 
-        private void _btnMake_Click(object sender, RoutedEventArgs e)
+        private void _combo2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            /*
-            if (MessageBox.Show("R형 수신기에 적용된 동, 층, 계단을 등록합니다.(최초 1회). 적용하시겠습니까?", "적용", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
-                return;
+            string t1 = (string)_combo2.SelectedValue;
+            var t2 = t1.Split(':');
+            string t3 = t2[2];
+            if (t3 == "이더넷") return;
 
-            int d1 = int.Parse(txt21.Text) +1;
-            int k1 = int.Parse(txt22.Text) +1;
-            int f1 = int.Parse(txt23.Text) +1;
+            System.IO.File.WriteAllText("NetworkCardName.ini", t1);
+            g.Log("Change Network : " + t3);
+        }
 
-            g._emList.child.Clear();
-            if (g._emList.child.Count == 0)
-            {
-                for (int d = 1; d < d1; d++)
-                {
-                    for (int k = 0; k < k1; k++)
-                    {
-                        for (int f = 0; f < f1; f++)
-                        {
-                            EM_Data t1 = new EM_Data();
-                            t1.AA = d.ToString("D2");
-                            t1.BB = k.ToString("D2");
-                            t1.CC = f.ToString("D2");
-                            t1.CMD = "F";
-                            g._emList.child.Add(t1);
-                        }
-                    }
-                }
-            }
-            */
+        private void _btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            g.mainWindow.dBSqlite.dm1.SimplepaTableAdapter.Update(g.mainWindow.dBSqlite.ds1.Simplepa);
+            Close();
+        }
+
+        private void cboType3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int t1 = cboType3.SelectedIndex + 1;
+            g._BaseData.dsp_vol = t1;
+
+        }
+
+        private void cboType4_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int t1 = cboType4.SelectedIndex + 1;
+            g._BaseData.dsp_vol_em = t1;
+
         }
     }
 

@@ -1,9 +1,12 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Wisej.CodeProject;
 using Wisej.CodeProject.DataSet1TableAdapters;
@@ -82,21 +85,77 @@ namespace pa
                     ds1.Assets.Rows.Add(m1);
                 }
                 dm1.AssetsTableAdapter.Update(ds1.Assets);
-
-                foreach (var t1 in gl._MusicList.music)
-                {
-                    MusicsRow m1 = ds1.Musics.NewMusicsRow();
-                    m1.duration = t1.duration;
-                    m1.FileContent = t1.FileContent;
-                    m1.FileName = t1.FileName;
-                    m1.FilePlay = t1.FilePlay;
-                    ds1.Musics.Rows.Add(m1);
-                }
-                dm1.MusicsTableAdapter.Update(ds1.Musics);
             }
             catch (Exception e1)
             {
                 Console.WriteLine(e1.Message);
+            }
+        }
+
+        public void MakeSpeakerIP()
+        {
+            foreach (var t1 in ds1.Assets)
+            {
+                if (t1.DeviceName == "")
+                {
+                    t1.state = ""; // "Off-Line";
+                    continue;
+                }
+                var t2 = gl.danteDevice._DanteDevice.Find(p => p.name == t1.DeviceName || p.DeviceName == t1.DeviceName);
+                if (t2 != null)
+                {
+                    t1.state = "On-Line";
+                    t1.ip = t2.ip;
+                    // 4440 포트는 사용치 않을 예정임  2021.01.26 romee
+                    //AliveChk(t1.ip);
+                }
+                else
+                {
+                    t1.state = ""; // "Off-Line";
+                }
+            }
+            dm1.AssetsTableAdapter.Update(ds1.Assets);
+        }
+
+
+        // 음원 폴더에서 가져와 디비 생성 
+        // 듀레이션은 시간이 걸리므로 타이머 쓰레드 처리 
+        public void ReadMusic()
+        {
+            // 폴더에서 자동으로 파일 확인후 디비에 등록 처리
+            //_BaseData.music.Clear();
+
+            dm1.MusicsTableAdapter.Fill(ds1.Musics);
+
+            var directoryInfo = new DirectoryInfo(gl.appPathServer + "Music");
+            if (directoryInfo.Exists)
+            {
+                var files = directoryInfo.GetFiles("*.mp3");
+
+                foreach (var fileInfo in files)
+                {
+                    var mu1 = TagLib.File.Create(fileInfo.FullName);
+                    var m3 = ds1.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
+                    if (m3 != null)
+                    {
+                    }
+                    else
+                    {
+                        MusicsRow m1 = ds1.Musics.NewMusicsRow();
+                        string str1 = "00:00:00";
+                        var r1 = mu1.Properties.Duration;
+                        m1.FileName = fileInfo.Name;
+                        m1.FileContent = "";
+                        m1.deletable = "N";
+                        Thread.Sleep(50);
+                        str1 = r1.ToString(@"hh\:mm\:ss");
+                        if (str1 == "00:00:00")
+                            str1 = "00:00:01";
+                        m1.duration = str1;
+                        ds1.Musics.Rows.Add(m1);
+                        dm1.MusicsTableAdapter.Update(ds1.Musics);
+                    }
+                }
             }
         }
 
@@ -155,7 +214,7 @@ namespace pa
                          state_old = p.state_old,
                          chk = true,
                          seq = (int)p.seq,
-                         ch = (p.ch == null) ? "0" : p.ch.ToString(),
+                         ch = p.ch,
                      };
             var t3 = ab1.ToList();
             play = p1.ToList();
@@ -189,8 +248,12 @@ namespace pa
             }
         }
 
-        internal void Init(SimplepaRow s)
+        internal void Init()
         {
+            SimplepaRow s = ds1.Simplepa.NewSimplepaRow();
+
+            s.UserName = "엘에스전선";
+            s.ServerIP = "192.168.1.1";
             s.SimplePAId = 1;
             s.SpeakerIconSize = 120;
             s.debug = 0;
@@ -212,7 +275,7 @@ namespace pa
             s.Reserved11 = "0";
             s.GPIOPort = "COM3";
             s.Rport = "COM4";
-            s.Reserved14 = "재난위험경보(3분).mp3";
+            s.EmMusic = "재난위험경보(3분).mp3";
             s.Reserved15 = "";
             s.Reserved16 = "";
             s.Reserved17 = 0;
@@ -232,6 +295,9 @@ namespace pa
             s.sms_pw = "3ef5afb7e743196d9e0726dba16b02d9";
             s.sms_rcvno = "";
             s.Pport = 0;
+            ds1.Simplepa.Rows.Add(s);
+            dm1.SimplepaTableAdapter.Update(ds1.Simplepa);
+
         }
 
         internal void Remove(SimplepaRow s2)
@@ -249,7 +315,7 @@ namespace pa
             em.state = state;
             Save(em);
         }
-        internal void EventvmIP(Asset t3)
+        internal void EventvmIP(AssetsRow t3)
         {
             EventvmRow em = ds1.Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
@@ -259,6 +325,19 @@ namespace pa
             em.state = t3.state;
             this.Save(em);
         }
+
+        // 스피커의 현재 상태 체크 
+        public int getSpeakerState(string path)
+        {
+            var sAsset = ds1.Assets.First(p => p.path == path);
+            if (sAsset != null)
+            {
+                if (sAsset.state == "On-Line")
+                    return 1;
+            }
+            return 0;
+        }
+
 
         /*
         var t1 = dbContext.AssetBases.Where(a1 => msg.assetsRows.Contains(a1.AssetBaseId));

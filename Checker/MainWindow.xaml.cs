@@ -31,7 +31,6 @@ namespace Checker
 
             g.MainWindow = this;
 
-            gl.XMLSimplePA(true);
             gl.XMLSimpleSpeaker(true);
             gl.XMLDanteDevice(true);
 
@@ -163,7 +162,7 @@ namespace Checker
                 try
                 {
                     g.Log(t2.Count.ToString());
-                    foreach (Asset t1 in gl._SpeakerList.asset)
+                    foreach (AssetBase t1 in gl._SpeakerList.asset)
                     {
                         if (t1.state != t1.state_old)
                             t1.state_old = t1.state;

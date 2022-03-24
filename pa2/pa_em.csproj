@@ -144,6 +144,10 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="taglib-sharp, Version=2.0.3.7, Culture=neutral, PublicKeyToken=c53c4f4e5583d68c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\taglib-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +155,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BSAsset.cs" />
     <Compile Include="BSThreadClass.cs" />
     <Compile Include="classes\common.cs" />
     <Compile Include="classes\dbclass.cs" />
@@ -165,11 +170,12 @@
     <Compile Include="MainWindow6.cs" />
     <Compile Include="SendMsg.cs" />
     <Compile Include="SignalR\SignalRHub.cs" />
+    <Compile Include="SpeakerChecker.cs" />
     <Compile Include="Windows\LoopbackWindow.xaml.cs">
       <DependentUpon>LoopbackWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\EMMappingWindow.xaml.cs">
-      <DependentUpon>EMMappingWindow.xaml</DependentUpon>
+    <Compile Include="Windows\ProgressBarDialog4.xaml.cs">
+      <DependentUpon>ProgressBarDialog4.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SetupWindow.xaml.cs">
       <DependentUpon>SetupWindow.xaml</DependentUpon>
@@ -195,7 +201,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Windows\EMMappingWindow.xaml">
+    <Page Include="Windows\ProgressBarDialog4.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -253,13 +259,17 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Checker\Checker.csproj">
-      <Project>{2d36e4d4-b848-4e7d-900a-d9d9a70e9701}</Project>
-      <Name>Checker</Name>
+    <ProjectReference Include="..\DataClass\DataClass.csproj">
+      <Project>{40d7c7ab-a585-49d9-b9a1-0a499eec5067}</Project>
+      <Name>DataClass</Name>
     </ProjectReference>
     <ProjectReference Include="..\gClass\gClass.csproj">
       <Project>{a3148c58-60fe-4ab4-87e7-c30534ca7f6d}</Project>
       <Name>gClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LScap\LScap.csproj">
+      <Project>{23c763ca-380f-4b1f-b6f3-6f3b86590b88}</Project>
+      <Name>LScap</Name>
     </ProjectReference>
     <ProjectReference Include="..\LSmDNSW\LSmDNSW.csproj">
       <Project>{4ad65a81-ad70-41c8-9bab-5b4aa9dcb233}</Project>

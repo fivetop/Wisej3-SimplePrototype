@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,34 +8,6 @@ using System.Windows.Data;
 
 namespace gClass
 {
-    /*
-    [Serializable]
-    public class EMEventLIST
-    {
-        public List<EventVm> child { get; set; }
-        public EMEventLIST()
-        {
-            child = new List<EventVm>();
-        }
-
-        public void Add(EventVm em)
-        {
-            child.Add(em);
-        }
-    }
-
-    public class EventVm
-    {
-        public string write_time { get; set; } = "";  // 발생시각 
-        public string event_text { get; set; } = "";  // 발생위치
-        public string base_text { get; set; } = "";  // 발생내용 
-        public string state { get; set; } = "";  // 상태 
-
-        public EventVm()
-        {
-        }
-    }
-    */
     public class EMLIST
     {
         public List<EM_Data> child { get; set; }

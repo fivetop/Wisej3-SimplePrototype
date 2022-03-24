@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using static Wisej.CodeProject.DataSet1;
 
-namespace Wisej.CodeProject
+namespace DataClass
 {
     public enum eSignalRMsgType
     {
@@ -68,9 +67,13 @@ namespace Wisej.CodeProject
         public List<long> assetsRows { get; set; }      // 선택된 스피커 ID
         public List<long> musicsRows { get; set; }      // 선택된 음원 ID
         public List<PlayItemSig> play8sig { get; set; } // 8채널의 현재 상태 
+        public string user { get; set; }                // 유저명 
+
+        public Guid Guid { get; set; }
 
         public SignalRMsg()
         {
+            //Guid = new Guid();
             message = "";
             Msgtype = eSignalRMsgType.eEM;
             event_code = eEventCode.eAddUser;
@@ -79,6 +82,20 @@ namespace Wisej.CodeProject
             assetsRows = new List<long>();
             musicsRows = new List<long>();
             play8sig = new List<PlayItemSig>();
+        }
+    }
+
+    // 예약 방송 중복 점검을 위한 
+    public class timerevent
+    {
+        public TimeSpan t1 { get; set; } // 남은시간
+        public PlayItem item1 { get; set; } // 남은시간
+        public PlayItem item2 { get; set; } // 남은시간
+        public timerevent()
+        {
+            t1 = new TimeSpan(0, 0, 0);
+            item1 = new PlayItem();
+            item2 = new PlayItem();
         }
     }
 }

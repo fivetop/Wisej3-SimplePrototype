@@ -7,6 +7,7 @@ using System.Linq;
 using static Wisej.CodeProject.DataSet1;
 using System.Data;
 using System.Collections.Generic;
+using DataClass;
 
 namespace Wisej.CodeProject
 {
@@ -15,6 +16,7 @@ namespace Wisej.CodeProject
 		public List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
 		public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
 
+		MyDesktop myDesktop { get; set; }
 
 		public Main()
 		{
@@ -25,6 +27,7 @@ namespace Wisej.CodeProject
 			this.button2.Enabled = false;
 
 			this.WindowState = FormWindowState.Maximized;
+			myDesktop  = (MyDesktop)Application.Desktop;
 		}
 
 		private void Main_Load(object sender, EventArgs e)
@@ -61,7 +64,7 @@ namespace Wisej.CodeProject
 				return;
 			}
 
-            g.sendSigR("Play", eSignalRMsgType.ePlay ,SelAsset, SelMusic);
+            myDesktop.sendSigR("Play", eSignalRMsgType.ePlay ,SelAsset, SelMusic);
             this.button1.Enabled = false;
             this.button2.Enabled = true;
         }
@@ -69,7 +72,7 @@ namespace Wisej.CodeProject
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			g.sendSigR("Stop");
+			myDesktop.sendSigR("Stop");
 			this.button1.Enabled = true;
 			this.button2.Enabled = false;
 		}

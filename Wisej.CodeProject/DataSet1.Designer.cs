@@ -1325,6 +1325,9 @@ namespace Wisej.CodeProject {
                 this.columnAssetId.AutoIncrementSeed = 1;
                 this.columnAssetId.AllowDBNull = false;
                 this.columnAssetId.Unique = true;
+                this.columnem1.DefaultValue = ((long)(0));
+                this.columnem2.DefaultValue = ((long)(0));
+                this.columnem3.DefaultValue = ((long)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1807,8 +1810,6 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnhDate;
             
-            private global::System.Data.DataColumn columnUserName;
-            
             private global::System.Data.DataColumn columnDescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1862,14 +1863,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn UserNameColumn {
-                get {
-                    return this.columnUserName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn DescriptionColumn {
                 get {
                     return this.columnDescription;
@@ -1913,12 +1906,11 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HolidaysRow AddHolidaysRow(System.DateTime hDate, string UserName, string Description) {
+            public HolidaysRow AddHolidaysRow(System.DateTime hDate, string Description) {
                 HolidaysRow rowHolidaysRow = ((HolidaysRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         hDate,
-                        UserName,
                         Description};
                 rowHolidaysRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHolidaysRow);
@@ -1951,7 +1943,6 @@ namespace Wisej.CodeProject {
             internal void InitVars() {
                 this.columnHolidayId = base.Columns["HolidayId"];
                 this.columnhDate = base.Columns["hDate"];
-                this.columnUserName = base.Columns["UserName"];
                 this.columnDescription = base.Columns["Description"];
             }
             
@@ -1962,8 +1953,6 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columnHolidayId);
                 this.columnhDate = new global::System.Data.DataColumn("hDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhDate);
-                this.columnUserName = new global::System.Data.DataColumn("UserName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUserName);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -2428,8 +2417,6 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnFileContent;
             
-            private global::System.Data.DataColumn columnFilePlay;
-            
             private global::System.Data.DataColumn columndeletable;
             
             private global::System.Data.DataColumn columnduration;
@@ -2493,14 +2480,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FilePlayColumn {
-                get {
-                    return this.columnFilePlay;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn deletableColumn {
                 get {
                     return this.columndeletable;
@@ -2552,13 +2531,12 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MusicsRow AddMusicsRow(string FileName, string FileContent, long FilePlay, string deletable, string duration) {
+            public MusicsRow AddMusicsRow(string FileName, string FileContent, string deletable, string duration) {
                 MusicsRow rowMusicsRow = ((MusicsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         FileName,
                         FileContent,
-                        FilePlay,
                         deletable,
                         duration};
                 rowMusicsRow.ItemArray = columnValuesArray;
@@ -2593,7 +2571,6 @@ namespace Wisej.CodeProject {
                 this.columnMusicId = base.Columns["MusicId"];
                 this.columnFileName = base.Columns["FileName"];
                 this.columnFileContent = base.Columns["FileContent"];
-                this.columnFilePlay = base.Columns["FilePlay"];
                 this.columndeletable = base.Columns["deletable"];
                 this.columnduration = base.Columns["duration"];
             }
@@ -2607,8 +2584,6 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columnFileName);
                 this.columnFileContent = new global::System.Data.DataColumn("FileContent", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFileContent);
-                this.columnFilePlay = new global::System.Data.DataColumn("FilePlay", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFilePlay);
                 this.columndeletable = new global::System.Data.DataColumn("deletable", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndeletable);
                 this.columnduration = new global::System.Data.DataColumn("duration", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2619,7 +2594,6 @@ namespace Wisej.CodeProject {
                 this.columnMusicId.AutoIncrementSeed = 1;
                 this.columnMusicId.AllowDBNull = false;
                 this.columnMusicId.Unique = true;
-                this.columnFilePlay.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3407,8 +3381,6 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnRport;
             
-            private global::System.Data.DataColumn columnReserved14;
-            
             private global::System.Data.DataColumn columnReserved15;
             
             private global::System.Data.DataColumn columnReserved16;
@@ -3454,6 +3426,8 @@ namespace Wisej.CodeProject {
             private global::System.Data.DataColumn columnsms_rcvno;
             
             private global::System.Data.DataColumn columnPport;
+            
+            private global::System.Data.DataColumn columnEmMusic;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3682,14 +3656,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Reserved14Column {
-                get {
-                    return this.columnReserved14;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn Reserved15Column {
                 get {
                     return this.columnReserved15;
@@ -3874,6 +3840,14 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EmMusicColumn {
+                get {
+                    return this.columnEmMusic;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3934,7 +3908,6 @@ namespace Wisej.CodeProject {
                         string Reserved11, 
                         string GPIOPort, 
                         string Rport, 
-                        string Reserved14, 
                         string Reserved15, 
                         string Reserved16, 
                         long Jigsangbalhwa, 
@@ -3957,7 +3930,8 @@ namespace Wisej.CodeProject {
                         string sms_id, 
                         string sms_pw, 
                         string sms_rcvno, 
-                        long Pport) {
+                        long Pport, 
+                        string EmMusic) {
                 SimplepaRow rowSimplepaRow = ((SimplepaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SimplePAId,
@@ -3984,7 +3958,6 @@ namespace Wisej.CodeProject {
                         Reserved11,
                         GPIOPort,
                         Rport,
-                        Reserved14,
                         Reserved15,
                         Reserved16,
                         Jigsangbalhwa,
@@ -4007,7 +3980,8 @@ namespace Wisej.CodeProject {
                         sms_id,
                         sms_pw,
                         sms_rcvno,
-                        Pport};
+                        Pport,
+                        EmMusic};
                 rowSimplepaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSimplepaRow);
                 return rowSimplepaRow;
@@ -4061,7 +4035,6 @@ namespace Wisej.CodeProject {
                 this.columnReserved11 = base.Columns["Reserved11"];
                 this.columnGPIOPort = base.Columns["GPIOPort"];
                 this.columnRport = base.Columns["Rport"];
-                this.columnReserved14 = base.Columns["Reserved14"];
                 this.columnReserved15 = base.Columns["Reserved15"];
                 this.columnReserved16 = base.Columns["Reserved16"];
                 this.columnJigsangbalhwa = base.Columns["Jigsangbalhwa"];
@@ -4085,6 +4058,7 @@ namespace Wisej.CodeProject {
                 this.columnsms_pw = base.Columns["sms_pw"];
                 this.columnsms_rcvno = base.Columns["sms_rcvno"];
                 this.columnPport = base.Columns["Pport"];
+                this.columnEmMusic = base.Columns["EmMusic"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4138,8 +4112,6 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columnGPIOPort);
                 this.columnRport = new global::System.Data.DataColumn("Rport", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRport);
-                this.columnReserved14 = new global::System.Data.DataColumn("Reserved14", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved14);
                 this.columnReserved15 = new global::System.Data.DataColumn("Reserved15", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReserved15);
                 this.columnReserved16 = new global::System.Data.DataColumn("Reserved16", typeof(string), null, global::System.Data.MappingType.Element);
@@ -4186,6 +4158,8 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columnsms_rcvno);
                 this.columnPport = new global::System.Data.DataColumn("Pport", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPport);
+                this.columnEmMusic = new global::System.Data.DataColumn("EmMusic", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmMusic);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSimplePAId}, true));
                 this.columnSimplePAId.AllowDBNull = false;
@@ -5056,6 +5030,8 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnemData;
             
+            private global::System.Data.DataColumn columnchspk1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DeviceDataTable() {
@@ -5227,6 +5203,14 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn chspk1Column {
+                get {
+                    return this.columnchspk1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5271,14 +5255,15 @@ namespace Wisej.CodeProject {
                         string DanteModelName, 
                         string dsp_off_ch1, 
                         string dsp_off_ch2, 
-                        string chspk, 
+                        long chspk, 
                         string dsp_name, 
                         long dsp_chno, 
                         long dsp_vol, 
                         long dsp_vol_em, 
                         string path, 
                         long floor_em, 
-                        string emData) {
+                        string emData, 
+                        long chspk1) {
                 DeviceRow rowDeviceRow = ((DeviceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5297,7 +5282,8 @@ namespace Wisej.CodeProject {
                         dsp_vol_em,
                         path,
                         floor_em,
-                        emData};
+                        emData,
+                        chspk1};
                 rowDeviceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDeviceRow);
                 return rowDeviceRow;
@@ -5344,6 +5330,7 @@ namespace Wisej.CodeProject {
                 this.columnpath = base.Columns["path"];
                 this.columnfloor_em = base.Columns["floor_em"];
                 this.columnemData = base.Columns["emData"];
+                this.columnchspk1 = base.Columns["chspk1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5367,7 +5354,7 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columndsp_off_ch1);
                 this.columndsp_off_ch2 = new global::System.Data.DataColumn("dsp_off_ch2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndsp_off_ch2);
-                this.columnchspk = new global::System.Data.DataColumn("chspk", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnchspk = new global::System.Data.DataColumn("chspk", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnchspk);
                 this.columndsp_name = new global::System.Data.DataColumn("dsp_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndsp_name);
@@ -5383,12 +5370,15 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columnfloor_em);
                 this.columnemData = new global::System.Data.DataColumn("emData", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemData);
+                this.columnchspk1 = new global::System.Data.DataColumn("chspk1", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnchspk1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDeviceId}, true));
                 this.columnDeviceId.AutoIncrement = true;
                 this.columnDeviceId.AutoIncrementSeed = 1;
                 this.columnDeviceId.AllowDBNull = false;
                 this.columnDeviceId.Unique = true;
+                this.columnchspk1.Caption = "chspk";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6985,22 +6975,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string UserName {
-                get {
-                    try {
-                        return ((string)(this[this.tableHolidays.UserNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Holidays\' 테이블의 \'UserName\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableHolidays.UserNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Description {
                 get {
                     try {
@@ -7013,18 +6987,6 @@ namespace Wisej.CodeProject {
                 set {
                     this[this.tableHolidays.DescriptionColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsUserNameNull() {
-                return this.IsNull(this.tableHolidays.UserNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetUserNameNull() {
-                this[this.tableHolidays.UserNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7232,17 +7194,6 @@ namespace Wisej.CodeProject {
                 }
                 set {
                     this[this.tableMusics.FileContentColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long FilePlay {
-                get {
-                    return ((long)(this[this.tableMusics.FilePlayColumn]));
-                }
-                set {
-                    this[this.tableMusics.FilePlayColumn] = value;
                 }
             }
             
@@ -8062,22 +8013,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Reserved14 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved14Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved14\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved14Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Reserved15 {
                 get {
                     try {
@@ -8366,6 +8301,22 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string EmMusic {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.EmMusicColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'EmMusic\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.EmMusicColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsUserNameNull() {
                 return this.IsNull(this.tableSimplepa.UserNameColumn);
             }
@@ -8570,18 +8521,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsReserved14Null() {
-                return this.IsNull(this.tableSimplepa.Reserved14Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetReserved14Null() {
-                this[this.tableSimplepa.Reserved14Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsReserved15Null() {
                 return this.IsNull(this.tableSimplepa.Reserved15Column);
             }
@@ -8662,6 +8601,18 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setsms_rcvnoNull() {
                 this[this.tableSimplepa.sms_rcvnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEmMusicNull() {
+                return this.IsNull(this.tableSimplepa.EmMusicColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEmMusicNull() {
+                this[this.tableSimplepa.EmMusicColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9129,10 +9080,10 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string chspk {
+            public long chspk {
                 get {
                     try {
-                        return ((string)(this[this.tableDevice.chspkColumn]));
+                        return ((long)(this[this.tableDevice.chspkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'chspk\' 열의 값이 DBNull입니다.", e);
@@ -9252,6 +9203,22 @@ namespace Wisej.CodeProject {
                 }
                 set {
                     this[this.tableDevice.emDataColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long chspk1 {
+                get {
+                    try {
+                        return ((long)(this[this.tableDevice.chspk1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'chspk1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevice.chspk1Column] = value;
                 }
             }
             
@@ -9445,6 +9412,18 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetemDataNull() {
                 this[this.tableDevice.emDataColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Ischspk1Null() {
+                return this.IsNull(this.tableDevice.chspk1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setchspk1Null() {
+                this[this.tableDevice.chspk1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -12207,7 +12186,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.DataSetTable = "Holidays";
             tableMapping.ColumnMappings.Add("HolidayId", "HolidayId");
             tableMapping.ColumnMappings.Add("hDate", "hDate");
-            tableMapping.ColumnMappings.Add("UserName", "UserName");
             tableMapping.ColumnMappings.Add("Description", "Description");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
@@ -12224,8 +12202,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Holidays\" (\"HolidayId\", \"hDate\", \"UserName\", \"Description\") V" +
-                "ALUES (:HolidayId, :hDate, :UserName, :Description)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Holidays\" (\"HolidayId\", \"hDate\", \"Description\") VALUES (:Holi" +
+                "dayId, :hDate, :Description)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "HolidayId";
@@ -12242,12 +12220,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "hDate";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "UserName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "UserName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Description";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
@@ -12255,9 +12227,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Holidays\" SET \"HolidayId\" = :HolidayId, \"hDate\" = :hDate, \"UserNam" +
-                "e\" = :UserName, \"Description\" = :Description WHERE ((\"HolidayId\" = :Original_Hol" +
-                "idayId))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Holidays\" SET \"HolidayId\" = :HolidayId, \"hDate\" = :hDate, \"Descrip" +
+                "tion\" = :Description WHERE ((\"HolidayId\" = :Original_HolidayId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "HolidayId";
@@ -12272,12 +12243,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "hDate";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "UserName";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "UserName";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Description";
@@ -12308,7 +12273,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT HolidayId, hDate, UserName, Description FROM Holidays";
+            this._commandCollection[0].CommandText = "SELECT HolidayId, hDate, Description FROM Holidays";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12391,20 +12356,14 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long HolidayId, System.DateTime hDate, string UserName, string Description) {
+        public virtual int Insert(long HolidayId, System.DateTime hDate, string Description) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(HolidayId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(hDate));
-            if ((UserName == null)) {
+            if ((Description == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(UserName));
-            }
-            if ((Description == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Description));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Description));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -12426,22 +12385,16 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long HolidayId, System.DateTime hDate, string UserName, string Description, long Original_HolidayId) {
+        public virtual int Update(long HolidayId, System.DateTime hDate, string Description, long Original_HolidayId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(HolidayId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(hDate));
-            if ((UserName == null)) {
+            if ((Description == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(UserName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Description));
             }
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Description));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_HolidayId));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_HolidayId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12462,8 +12415,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime hDate, string UserName, string Description, long Original_HolidayId) {
-            return this.Update(Original_HolidayId, hDate, UserName, Description, Original_HolidayId);
+        public virtual int Update(System.DateTime hDate, string Description, long Original_HolidayId) {
+            return this.Update(Original_HolidayId, hDate, Description, Original_HolidayId);
         }
     }
     
@@ -13009,7 +12962,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("MusicId", "MusicId");
             tableMapping.ColumnMappings.Add("FileName", "FileName");
             tableMapping.ColumnMappings.Add("FileContent", "FileContent");
-            tableMapping.ColumnMappings.Add("FilePlay", "FilePlay");
             tableMapping.ColumnMappings.Add("deletable", "deletable");
             tableMapping.ColumnMappings.Add("duration", "duration");
             this._adapter.TableMappings.Add(tableMapping);
@@ -13027,9 +12979,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Musics\" (\"MusicId\", \"FileName\", \"FileContent\", \"FilePlay\", \"d" +
-                "eletable\", \"duration\") VALUES (:MusicId, :FileName, :FileContent, :FilePlay, :de" +
-                "letable, :duration)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"main\".\"Musics\" (\"MusicId\", \"FileName\", \"FileContent\", \"deletable\", \"" +
+                "duration\") VALUES (:MusicId, :FileName, :FileContent, :deletable, :duration)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "MusicId";
@@ -13051,13 +13002,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "FileContent";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "FilePlay";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "FilePlay";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "deletable";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
@@ -13072,8 +13016,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE \"main\".\"Musics\" SET \"MusicId\" = :MusicId, \"FileName\" = :FileName, \"FileCon" +
-                "tent\" = :FileContent, \"FilePlay\" = :FilePlay, \"deletable\" = :deletable, \"duratio" +
-                "n\" = :duration WHERE ((\"MusicId\" = :Original_MusicId))";
+                "tent\" = :FileContent, \"deletable\" = :deletable, \"duration\" = :duration WHERE ((\"" +
+                "MusicId\" = :Original_MusicId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "MusicId";
@@ -13093,13 +13037,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
             param.SourceColumn = "FileContent";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "FilePlay";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
-            param.IsNullable = true;
-            param.SourceColumn = "FilePlay";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "deletable";
@@ -13136,7 +13073,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MusicId, FileName, FileContent, FilePlay, deletable, duration FROM Musics";
+            this._commandCollection[0].CommandText = "SELECT MusicId, FileName, FileContent, deletable, duration FROM Musics";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13219,7 +13156,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long MusicId, string FileName, string FileContent, global::System.Nullable<long> FilePlay, string deletable, string duration) {
+        public virtual int Insert(long MusicId, string FileName, string FileContent, string deletable, string duration) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(MusicId));
             if ((FileName == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -13233,23 +13170,17 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FileContent));
             }
-            if ((FilePlay.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((long)(FilePlay.Value));
-            }
-            else {
+            if ((deletable == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((deletable == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(deletable));
+            }
+            if ((duration == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(deletable));
-            }
-            if ((duration == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(duration));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(duration));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13271,7 +13202,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long MusicId, string FileName, string FileContent, global::System.Nullable<long> FilePlay, string deletable, string duration, long Original_MusicId) {
+        public virtual int Update(long MusicId, string FileName, string FileContent, string deletable, string duration, long Original_MusicId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(MusicId));
             if ((FileName == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -13285,25 +13216,19 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FileContent));
             }
-            if ((FilePlay.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(FilePlay.Value));
-            }
-            else {
+            if ((deletable == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((deletable == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(deletable));
+            }
+            if ((duration == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(deletable));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(duration));
             }
-            if ((duration == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(duration));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_MusicId));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_MusicId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13324,8 +13249,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string FileName, string FileContent, global::System.Nullable<long> FilePlay, string deletable, string duration, long Original_MusicId) {
-            return this.Update(Original_MusicId, FileName, FileContent, FilePlay, deletable, duration, Original_MusicId);
+        public virtual int Update(string FileName, string FileContent, string deletable, string duration, long Original_MusicId) {
+            return this.Update(Original_MusicId, FileName, FileContent, deletable, duration, Original_MusicId);
         }
     }
     
@@ -14316,7 +14241,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Reserved11", "Reserved11");
             tableMapping.ColumnMappings.Add("GPIOPort", "GPIOPort");
             tableMapping.ColumnMappings.Add("Rport", "Rport");
-            tableMapping.ColumnMappings.Add("Reserved14", "Reserved14");
             tableMapping.ColumnMappings.Add("Reserved15", "Reserved15");
             tableMapping.ColumnMappings.Add("Reserved16", "Reserved16");
             tableMapping.ColumnMappings.Add("Jigsangbalhwa", "Jigsangbalhwa");
@@ -14340,6 +14264,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("sms_pw", "sms_pw");
             tableMapping.ColumnMappings.Add("sms_rcvno", "sms_rcvno");
             tableMapping.ColumnMappings.Add("Pport", "Pport");
+            tableMapping.ColumnMappings.Add("EmMusic", "EmMusic");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -14355,7 +14280,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""Simplepa"" (""SimplePAId"", ""TileWidth"", ""MapX"", ""MapY"", ""Zoom"", ""debug"", ""SpeakerIconSize"", ""UserName"", ""EMServerIP"", ""ServerIP"", ""ServerPort"", ""Reserved1"", ""Reserved2"", ""Reserved3"", ""Reserved4"", ""Reserved5"", ""Reserved6"", ""Reserved7"", ""Reserved8"", ""Reserved9"", ""Reserved10"", ""Reserved11"", ""GPIOPort"", ""Rport"", ""Reserved14"", ""Reserved15"", ""Reserved16"", ""Jigsangbalhwa"", ""SpeakerTimer"", ""inputvolume"", ""outputvolume"", ""disp"", ""Multi_Ch"", ""SoundDeviceNum"", ""SoundDeviceName"", ""Reserved17"", ""scalelength"", ""length"", ""scale"", ""noise1"", ""noise2"", ""dsp_vol"", ""dsp_vol_em"", ""sms_server"", ""sms_id"", ""sms_pw"", ""sms_rcvno"", ""Pport"") VALUES (:SimplePAId, :TileWidth, :MapX, :MapY, :Zoom, :debug, :SpeakerIconSize, :UserName, :EMServerIP, :ServerIP, :ServerPort, :Reserved1, :Reserved2, :Reserved3, :Reserved4, :Reserved5, :Reserved6, :Reserved7, :Reserved8, :Reserved9, :Reserved10, :Reserved11, :GPIOPort, :Rport, :Reserved14, :Reserved15, :Reserved16, :Jigsangbalhwa, :SpeakerTimer, :inputvolume, :outputvolume, :disp, :Multi_Ch, :SoundDeviceNum, :SoundDeviceName, :Reserved17, :scalelength, :length, :scale, :noise1, :noise2, :dsp_vol, :dsp_vol_em, :sms_server, :sms_id, :sms_pw, :sms_rcvno, :Pport)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""Simplepa"" (""SimplePAId"", ""TileWidth"", ""MapX"", ""MapY"", ""Zoom"", ""debug"", ""SpeakerIconSize"", ""UserName"", ""EMServerIP"", ""ServerIP"", ""ServerPort"", ""Reserved1"", ""Reserved2"", ""Reserved3"", ""Reserved4"", ""Reserved5"", ""Reserved6"", ""Reserved7"", ""Reserved8"", ""Reserved9"", ""Reserved10"", ""Reserved11"", ""GPIOPort"", ""Rport"", ""Reserved15"", ""Reserved16"", ""Jigsangbalhwa"", ""SpeakerTimer"", ""inputvolume"", ""outputvolume"", ""disp"", ""Multi_Ch"", ""SoundDeviceNum"", ""SoundDeviceName"", ""Reserved17"", ""scalelength"", ""length"", ""scale"", ""noise1"", ""noise2"", ""dsp_vol"", ""dsp_vol_em"", ""sms_server"", ""sms_id"", ""sms_pw"", ""sms_rcvno"", ""Pport"", ""EmMusic"") VALUES (:SimplePAId, :TileWidth, :MapX, :MapY, :Zoom, :debug, :SpeakerIconSize, :UserName, :EMServerIP, :ServerIP, :ServerPort, :Reserved1, :Reserved2, :Reserved3, :Reserved4, :Reserved5, :Reserved6, :Reserved7, :Reserved8, :Reserved9, :Reserved10, :Reserved11, :GPIOPort, :Rport, :Reserved15, :Reserved16, :Jigsangbalhwa, :SpeakerTimer, :inputvolume, :outputvolume, :disp, :Multi_Ch, :SoundDeviceNum, :SoundDeviceName, :Reserved17, :scalelength, :length, :scale, :noise1, :noise2, :dsp_vol, :dsp_vol_em, :sms_server, :sms_id, :sms_pw, :sms_rcvno, :Pport, :EmMusic)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "SimplePAId";
@@ -14509,12 +14434,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "Rport";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Reserved14";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Reserved14";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Reserved15";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
@@ -14668,9 +14587,15 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "Pport";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "EmMusic";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "EmMusic";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""Simplepa"" SET ""SimplePAId"" = :SimplePAId, ""TileWidth"" = :TileWidth, ""MapX"" = :MapX, ""MapY"" = :MapY, ""Zoom"" = :Zoom, ""debug"" = :debug, ""SpeakerIconSize"" = :SpeakerIconSize, ""UserName"" = :UserName, ""EMServerIP"" = :EMServerIP, ""ServerIP"" = :ServerIP, ""ServerPort"" = :ServerPort, ""Reserved1"" = :Reserved1, ""Reserved2"" = :Reserved2, ""Reserved3"" = :Reserved3, ""Reserved4"" = :Reserved4, ""Reserved5"" = :Reserved5, ""Reserved6"" = :Reserved6, ""Reserved7"" = :Reserved7, ""Reserved8"" = :Reserved8, ""Reserved9"" = :Reserved9, ""Reserved10"" = :Reserved10, ""Reserved11"" = :Reserved11, ""GPIOPort"" = :GPIOPort, ""Rport"" = :Rport, ""Reserved14"" = :Reserved14, ""Reserved15"" = :Reserved15, ""Reserved16"" = :Reserved16, ""Jigsangbalhwa"" = :Jigsangbalhwa, ""SpeakerTimer"" = :SpeakerTimer, ""inputvolume"" = :inputvolume, ""outputvolume"" = :outputvolume, ""disp"" = :disp, ""Multi_Ch"" = :Multi_Ch, ""SoundDeviceNum"" = :SoundDeviceNum, ""SoundDeviceName"" = :SoundDeviceName, ""Reserved17"" = :Reserved17, ""scalelength"" = :scalelength, ""length"" = :length, ""scale"" = :scale, ""noise1"" = :noise1, ""noise2"" = :noise2, ""dsp_vol"" = :dsp_vol, ""dsp_vol_em"" = :dsp_vol_em, ""sms_server"" = :sms_server, ""sms_id"" = :sms_id, ""sms_pw"" = :sms_pw, ""sms_rcvno"" = :sms_rcvno, ""Pport"" = :Pport WHERE ((""SimplePAId"" = :Original_SimplePAId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""Simplepa"" SET ""SimplePAId"" = :SimplePAId, ""TileWidth"" = :TileWidth, ""MapX"" = :MapX, ""MapY"" = :MapY, ""Zoom"" = :Zoom, ""debug"" = :debug, ""SpeakerIconSize"" = :SpeakerIconSize, ""UserName"" = :UserName, ""EMServerIP"" = :EMServerIP, ""ServerIP"" = :ServerIP, ""ServerPort"" = :ServerPort, ""Reserved1"" = :Reserved1, ""Reserved2"" = :Reserved2, ""Reserved3"" = :Reserved3, ""Reserved4"" = :Reserved4, ""Reserved5"" = :Reserved5, ""Reserved6"" = :Reserved6, ""Reserved7"" = :Reserved7, ""Reserved8"" = :Reserved8, ""Reserved9"" = :Reserved9, ""Reserved10"" = :Reserved10, ""Reserved11"" = :Reserved11, ""GPIOPort"" = :GPIOPort, ""Rport"" = :Rport, ""Reserved15"" = :Reserved15, ""Reserved16"" = :Reserved16, ""Jigsangbalhwa"" = :Jigsangbalhwa, ""SpeakerTimer"" = :SpeakerTimer, ""inputvolume"" = :inputvolume, ""outputvolume"" = :outputvolume, ""disp"" = :disp, ""Multi_Ch"" = :Multi_Ch, ""SoundDeviceNum"" = :SoundDeviceNum, ""SoundDeviceName"" = :SoundDeviceName, ""Reserved17"" = :Reserved17, ""scalelength"" = :scalelength, ""length"" = :length, ""scale"" = :scale, ""noise1"" = :noise1, ""noise2"" = :noise2, ""dsp_vol"" = :dsp_vol, ""dsp_vol_em"" = :dsp_vol_em, ""sms_server"" = :sms_server, ""sms_id"" = :sms_id, ""sms_pw"" = :sms_pw, ""sms_rcvno"" = :sms_rcvno, ""Pport"" = :Pport, ""EmMusic"" = :EmMusic WHERE ((""SimplePAId"" = :Original_SimplePAId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "SimplePAId";
@@ -14824,12 +14749,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "Rport";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "Reserved14";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Reserved14";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Reserved15";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
@@ -14984,6 +14903,12 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             param.SourceColumn = "Pport";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "EmMusic";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "EmMusic";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "Original_SimplePAId";
             param.DbType = global::System.Data.DbType.Int64;
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
@@ -15006,7 +14931,10 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT SimplePAId, TileWidth, MapX, MapY, Zoom, debug, SpeakerIconSize, UserName, EMServerIP, ServerIP, ServerPort, Reserved1, Reserved2, Reserved3, Reserved4, Reserved5, Reserved6, Reserved7, Reserved8, Reserved9, Reserved10, Reserved11, GPIOPort, Rport, Reserved14, Reserved15, Reserved16, Jigsangbalhwa, SpeakerTimer, inputvolume, outputvolume, disp, Multi_Ch, SoundDeviceNum, SoundDeviceName, Reserved17, scalelength, length, ""scale"", noise1, noise2, dsp_vol, dsp_vol_em, sms_server, sms_id, sms_pw, sms_rcvno, Pport FROM ""main"".Simplepa";
+            this._commandCollection[0].CommandText = @"SELECT  SimplePAId, TileWidth, MapX, MapY, Zoom, debug, SpeakerIconSize, UserName, EMServerIP, ServerIP, ServerPort, Reserved1, Reserved2, Reserved3, Reserved4, Reserved5, Reserved6, 
+               Reserved7, Reserved8, Reserved9, Reserved10, Reserved11, GPIOPort, Rport, Reserved15, Reserved16, Jigsangbalhwa, SpeakerTimer, inputvolume, outputvolume, disp, Multi_Ch, 
+               SoundDeviceNum, SoundDeviceName, Reserved17, scalelength, length, ""scale"", noise1, noise2, dsp_vol, dsp_vol_em, sms_server, sms_id, sms_pw, sms_rcvno, Pport, EmMusic
+FROM     Simplepa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15114,7 +15042,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string Reserved11, 
                     string GPIOPort, 
                     string Rport, 
-                    string Reserved14, 
                     string Reserved15, 
                     string Reserved16, 
                     long Jigsangbalhwa, 
@@ -15137,7 +15064,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string sms_id, 
                     string sms_pw, 
                     string sms_rcvno, 
-                    long Pport) {
+                    long Pport, 
+                    string EmMusic) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(SimplePAId));
             this.Adapter.InsertCommand.Parameters[1].Value = ((long)(TileWidth));
             this.Adapter.InsertCommand.Parameters[2].Value = ((long)(MapX));
@@ -15247,70 +15175,70 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[23].Value = ((string)(Rport));
             }
-            if ((Reserved14 == null)) {
+            if ((Reserved15 == null)) {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(Reserved14));
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(Reserved15));
             }
-            if ((Reserved15 == null)) {
+            if ((Reserved16 == null)) {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(Reserved15));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(Reserved16));
             }
-            if ((Reserved16 == null)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(Reserved16));
-            }
-            this.Adapter.InsertCommand.Parameters[27].Value = ((long)(Jigsangbalhwa));
-            this.Adapter.InsertCommand.Parameters[28].Value = ((long)(SpeakerTimer));
-            this.Adapter.InsertCommand.Parameters[29].Value = ((double)(inputvolume));
-            this.Adapter.InsertCommand.Parameters[30].Value = ((double)(outputvolume));
-            this.Adapter.InsertCommand.Parameters[31].Value = ((long)(disp));
-            this.Adapter.InsertCommand.Parameters[32].Value = ((long)(Multi_Ch));
-            this.Adapter.InsertCommand.Parameters[33].Value = ((long)(SoundDeviceNum));
+            this.Adapter.InsertCommand.Parameters[26].Value = ((long)(Jigsangbalhwa));
+            this.Adapter.InsertCommand.Parameters[27].Value = ((long)(SpeakerTimer));
+            this.Adapter.InsertCommand.Parameters[28].Value = ((double)(inputvolume));
+            this.Adapter.InsertCommand.Parameters[29].Value = ((double)(outputvolume));
+            this.Adapter.InsertCommand.Parameters[30].Value = ((long)(disp));
+            this.Adapter.InsertCommand.Parameters[31].Value = ((long)(Multi_Ch));
+            this.Adapter.InsertCommand.Parameters[32].Value = ((long)(SoundDeviceNum));
             if ((SoundDeviceName == null)) {
-                this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(SoundDeviceName));
+                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(SoundDeviceName));
             }
-            this.Adapter.InsertCommand.Parameters[35].Value = ((long)(Reserved17));
-            this.Adapter.InsertCommand.Parameters[36].Value = ((double)(scalelength));
-            this.Adapter.InsertCommand.Parameters[37].Value = ((double)(length));
-            this.Adapter.InsertCommand.Parameters[38].Value = ((double)(scale));
-            this.Adapter.InsertCommand.Parameters[39].Value = ((long)(noise1));
-            this.Adapter.InsertCommand.Parameters[40].Value = ((long)(noise2));
-            this.Adapter.InsertCommand.Parameters[41].Value = ((long)(dsp_vol));
-            this.Adapter.InsertCommand.Parameters[42].Value = ((long)(dsp_vol_em));
+            this.Adapter.InsertCommand.Parameters[34].Value = ((long)(Reserved17));
+            this.Adapter.InsertCommand.Parameters[35].Value = ((double)(scalelength));
+            this.Adapter.InsertCommand.Parameters[36].Value = ((double)(length));
+            this.Adapter.InsertCommand.Parameters[37].Value = ((double)(scale));
+            this.Adapter.InsertCommand.Parameters[38].Value = ((long)(noise1));
+            this.Adapter.InsertCommand.Parameters[39].Value = ((long)(noise2));
+            this.Adapter.InsertCommand.Parameters[40].Value = ((long)(dsp_vol));
+            this.Adapter.InsertCommand.Parameters[41].Value = ((long)(dsp_vol_em));
             if ((sms_server == null)) {
+                this.Adapter.InsertCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[42].Value = ((string)(sms_server));
+            }
+            if ((sms_id == null)) {
                 this.Adapter.InsertCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[43].Value = ((string)(sms_server));
+                this.Adapter.InsertCommand.Parameters[43].Value = ((string)(sms_id));
             }
-            if ((sms_id == null)) {
+            if ((sms_pw == null)) {
                 this.Adapter.InsertCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(sms_id));
+                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(sms_pw));
             }
-            if ((sms_pw == null)) {
+            if ((sms_rcvno == null)) {
                 this.Adapter.InsertCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(sms_pw));
+                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(sms_rcvno));
             }
-            if ((sms_rcvno == null)) {
-                this.Adapter.InsertCommand.Parameters[46].Value = global::System.DBNull.Value;
+            this.Adapter.InsertCommand.Parameters[46].Value = ((long)(Pport));
+            if ((EmMusic == null)) {
+                this.Adapter.InsertCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(sms_rcvno));
+                this.Adapter.InsertCommand.Parameters[47].Value = ((string)(EmMusic));
             }
-            this.Adapter.InsertCommand.Parameters[47].Value = ((long)(Pport));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15356,7 +15284,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string Reserved11, 
                     string GPIOPort, 
                     string Rport, 
-                    string Reserved14, 
                     string Reserved15, 
                     string Reserved16, 
                     long Jigsangbalhwa, 
@@ -15380,6 +15307,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string sms_pw, 
                     string sms_rcvno, 
                     long Pport, 
+                    string EmMusic, 
                     long Original_SimplePAId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(SimplePAId));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(TileWidth));
@@ -15490,70 +15418,70 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Rport));
             }
-            if ((Reserved14 == null)) {
+            if ((Reserved15 == null)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Reserved14));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Reserved15));
             }
-            if ((Reserved15 == null)) {
+            if ((Reserved16 == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Reserved15));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Reserved16));
             }
-            if ((Reserved16 == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Reserved16));
-            }
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((long)(Jigsangbalhwa));
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((long)(SpeakerTimer));
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((double)(inputvolume));
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((double)(outputvolume));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((long)(disp));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((long)(Multi_Ch));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((long)(SoundDeviceNum));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((long)(Jigsangbalhwa));
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((long)(SpeakerTimer));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((double)(inputvolume));
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((double)(outputvolume));
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((long)(disp));
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((long)(Multi_Ch));
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((long)(SoundDeviceNum));
             if ((SoundDeviceName == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(SoundDeviceName));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(SoundDeviceName));
             }
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((long)(Reserved17));
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((double)(scalelength));
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((double)(length));
-            this.Adapter.UpdateCommand.Parameters[38].Value = ((double)(scale));
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((long)(noise1));
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((long)(noise2));
-            this.Adapter.UpdateCommand.Parameters[41].Value = ((long)(dsp_vol));
-            this.Adapter.UpdateCommand.Parameters[42].Value = ((long)(dsp_vol_em));
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((long)(Reserved17));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((double)(scalelength));
+            this.Adapter.UpdateCommand.Parameters[36].Value = ((double)(length));
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((double)(scale));
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((long)(noise1));
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((long)(noise2));
+            this.Adapter.UpdateCommand.Parameters[40].Value = ((long)(dsp_vol));
+            this.Adapter.UpdateCommand.Parameters[41].Value = ((long)(dsp_vol_em));
             if ((sms_server == null)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(sms_server));
+            }
+            if ((sms_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(sms_server));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(sms_id));
             }
-            if ((sms_id == null)) {
+            if ((sms_pw == null)) {
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(sms_id));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(sms_pw));
             }
-            if ((sms_pw == null)) {
+            if ((sms_rcvno == null)) {
                 this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(sms_pw));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(sms_rcvno));
             }
-            if ((sms_rcvno == null)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[46].Value = ((long)(Pport));
+            if ((EmMusic == null)) {
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(sms_rcvno));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(EmMusic));
             }
-            this.Adapter.UpdateCommand.Parameters[47].Value = ((long)(Pport));
             this.Adapter.UpdateCommand.Parameters[48].Value = ((long)(Original_SimplePAId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -15599,7 +15527,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string Reserved11, 
                     string GPIOPort, 
                     string Rport, 
-                    string Reserved14, 
                     string Reserved15, 
                     string Reserved16, 
                     long Jigsangbalhwa, 
@@ -15623,8 +15550,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string sms_pw, 
                     string sms_rcvno, 
                     long Pport, 
+                    string EmMusic, 
                     long Original_SimplePAId) {
-            return this.Update(Original_SimplePAId, TileWidth, MapX, MapY, Zoom, debug, SpeakerIconSize, UserName, EMServerIP, ServerIP, ServerPort, Reserved1, Reserved2, Reserved3, Reserved4, Reserved5, Reserved6, Reserved7, Reserved8, Reserved9, Reserved10, Reserved11, GPIOPort, Rport, Reserved14, Reserved15, Reserved16, Jigsangbalhwa, SpeakerTimer, inputvolume, outputvolume, disp, Multi_Ch, SoundDeviceNum, SoundDeviceName, Reserved17, scalelength, length, scale, noise1, noise2, dsp_vol, dsp_vol_em, sms_server, sms_id, sms_pw, sms_rcvno, Pport, Original_SimplePAId);
+            return this.Update(Original_SimplePAId, TileWidth, MapX, MapY, Zoom, debug, SpeakerIconSize, UserName, EMServerIP, ServerIP, ServerPort, Reserved1, Reserved2, Reserved3, Reserved4, Reserved5, Reserved6, Reserved7, Reserved8, Reserved9, Reserved10, Reserved11, GPIOPort, Rport, Reserved15, Reserved16, Jigsangbalhwa, SpeakerTimer, inputvolume, outputvolume, disp, Multi_Ch, SoundDeviceNum, SoundDeviceName, Reserved17, scalelength, length, scale, noise1, noise2, dsp_vol, dsp_vol_em, sms_server, sms_id, sms_pw, sms_rcvno, Pport, EmMusic, Original_SimplePAId);
         }
     }
     
@@ -16692,7 +16620,6 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("DanteModelName", "DanteModelName");
             tableMapping.ColumnMappings.Add("dsp_off_ch1", "dsp_off_ch1");
             tableMapping.ColumnMappings.Add("dsp_off_ch2", "dsp_off_ch2");
-            tableMapping.ColumnMappings.Add("chspk", "chspk");
             tableMapping.ColumnMappings.Add("dsp_name", "dsp_name");
             tableMapping.ColumnMappings.Add("dsp_chno", "dsp_chno");
             tableMapping.ColumnMappings.Add("dsp_vol", "dsp_vol");
@@ -16700,6 +16627,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("path", "path");
             tableMapping.ColumnMappings.Add("floor_em", "floor_em");
             tableMapping.ColumnMappings.Add("emData", "emData");
+            tableMapping.ColumnMappings.Add("chspk", "chspk1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -16775,7 +16703,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "chspk";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
             param.SourceColumn = "chspk";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -16887,7 +16816,8 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "chspk";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Int64;
             param.IsNullable = true;
             param.SourceColumn = "chspk";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -16957,13 +16887,19 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
+            this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[2];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT  DeviceId, device, ip, ip_dspctrl, name, DeviceName, DanteModelName, dsp_o" +
                 "ff_ch1, dsp_off_ch2, chspk, dsp_name, dsp_chno, dsp_vol, dsp_vol_em, path, floor" +
                 "_em, emData\r\nFROM     Device";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.SQLite.SQLiteCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT  DeviceId, device, ip, ip_dspctrl, name, DeviceName, DanteModelName, dsp_o" +
+                "ff_ch1, dsp_off_ch2, chspk, dsp_name, dsp_chno, dsp_vol, dsp_vol_em, path, floor" +
+                "_em, emData\r\nFROM     Device";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16985,6 +16921,30 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1.DeviceDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.DeviceDataTable dataTable = new DataSet1.DeviceDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DataSet1.DeviceDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.DeviceDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             DataSet1.DeviceDataTable dataTable = new DataSet1.DeviceDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -17055,7 +17015,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string DanteModelName, 
                     string dsp_off_ch1, 
                     string dsp_off_ch2, 
-                    string chspk, 
+                    global::System.Nullable<long> chspk, 
                     string dsp_name, 
                     global::System.Nullable<long> dsp_chno, 
                     global::System.Nullable<long> dsp_vol, 
@@ -17112,11 +17072,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(dsp_off_ch2));
             }
-            if ((chspk == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((chspk.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((long)(chspk.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(chspk));
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((dsp_name == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
@@ -17190,7 +17150,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string DanteModelName, 
                     string dsp_off_ch1, 
                     string dsp_off_ch2, 
-                    string chspk, 
+                    global::System.Nullable<long> chspk, 
                     string dsp_name, 
                     global::System.Nullable<long> dsp_chno, 
                     global::System.Nullable<long> dsp_vol, 
@@ -17248,11 +17208,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(dsp_off_ch2));
             }
-            if ((chspk == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((chspk.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(chspk.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(chspk));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((dsp_name == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
@@ -17326,7 +17286,7 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     string DanteModelName, 
                     string dsp_off_ch1, 
                     string dsp_off_ch2, 
-                    string chspk, 
+                    global::System.Nullable<long> chspk, 
                     string dsp_name, 
                     global::System.Nullable<long> dsp_chno, 
                     global::System.Nullable<long> dsp_vol, 

@@ -4,19 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LSmDNSW
+namespace DataClass
 {
     public class NetworkCard
     {
         public NetworkCard(int index, string name, string ipv4)
         {
-            this.Index = index;
-            this.nicname = name;
+            this.NetworkCardmDNS = index;
+            this.NetworkCardName = name;
             this.ipv4 = ipv4;
+            this.NetworkCardNo = 0;
         }
 
-        public int Index { get; set; }
-        public string nicname { get; set; }
+        public int NetworkCardmDNS { get; set; }
+        public string NetworkCardName { get; set; }
         public string ipv4 { get; set; }
+        public int NetworkCardNo { get; set; }
     }
 }

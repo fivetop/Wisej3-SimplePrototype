@@ -22,14 +22,13 @@ using System.ComponentModel;
 using System.Diagnostics;
 using Wisej.CodeProject;
 using static Wisej.CodeProject.DataSet1;
+using DataClass;
 
 namespace pa
 {
     // 다원 방송 처리 및 윈도우 메시지 처리 
     public partial class MainWindow : Window
     {
-        // Speaker Checker 
-        uint RegisterMessage;
         // UserMessage 
         uint RegisterMessage2;
         long old_wParam { get; set; }
@@ -236,82 +235,13 @@ namespace pa
 
         private bool SetDSPSpeakerON(int idno)
         {
-            bool rlt = false;
-            SimpleMulti cur_play = null;
-            List<AssetBase> play = new List<AssetBase>();
-
-            var t11 = gl._SimpleMultiList.child.Find(p => p.idno == idno);
-            var t21 = gl._SimpleMultiListSch.child.Find(p => p.idno == idno);
-            if (t11 != null) cur_play = t11;
-            if (t21 != null) cur_play = t21;
-
-            foreach (AssetBase t1 in cur_play.gstree.child)
-            {
-                if (t1.ip == "")
-                {
-                    g.Log("Speaker IP.. " + t1.path + " : " + t1.DeviceName);
-                    continue;
-                }
-                var sst2 = gl._SpeakerList.asset.First(p => p.DeviceName == t1.DeviceName && p.ch == t1.ch);
-                if (sst2.state == "")
-                {
-                    //g.Log("Speaker Off.. " + t1.path + " : " + t1.DeviceName);
-                    //continue;
-                }
-                
-                var sst = gl.danteDevice._DanteDevice.Where(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
-                if (sst.Count() < 1)
-                {
-                    g.Log("DaneDevice.. " + t1.path + " : " + t1.DeviceName);
-                    continue;
-                }
-                var sst1 = sst.First(p => p.DeviceName == t1.DeviceName);
-                if (sst1 == null) continue;
-                if (sst1.ip == "" || sst1.ip_dspctrl == "") continue;
-                Console.WriteLine("DSP Metrix Out ==> In :" + sst1.ip_dspctrl + " : " + t1.path + " : " + t1.id);
-                play.Add(t1);
-                // 스피커가 하나라도 있으면 처리 
-                rlt = true;
-            }
-
-            if (play.Count > 0)
-            {
-                g.DSP_MakeGroupSpeaker(play, 1, BS_DSP_STATE.MUL_BS, cur_play.chno - 1);
-            }
+            bool rlt = true;
             return rlt;
         }
 
         private bool SetDSPSpeakerOFF(int idno)
         {
             bool rlt = false;
-            SimpleMulti cur_play = null;
-            List<AssetBase> play = new List<AssetBase>();
-
-            var t11 = gl._SimpleMultiList.child.Find(p => p.idno == idno);
-            var t21 = gl._SimpleMultiListSch.child.Find(p => p.idno == idno);
-            if (t11 != null) cur_play = t11;
-            if (t21 != null) cur_play = t21;
-
-            if (cur_play == null)
-                return rlt;
-            foreach (AssetBase t1 in cur_play.gstree.child)
-            {
-                if (t1.ip == "") continue;
-
-                var sst = gl.danteDevice._DanteDevice.Where(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
-                if (sst.Count() < 1) continue;
-                var sst1 = sst.First(p => p.DeviceName == t1.DeviceName);
-                if (sst1 == null) continue;
-                if (sst1.ip == "" || sst1.ip_dspctrl == "") continue;
-                play.Add(t1);
-                // 스피커가 하나라도 있으면 처리 
-                rlt = true;
-            }
-
-            if (play.Count > 0)
-            {
-                g.DSP_MakeGroupSpeaker(play, 0, BS_DSP_STATE.MUL_BS, cur_play.chno - 1);
-            }
             return rlt;
         }
 
@@ -322,7 +252,6 @@ namespace pa
 
         public void IPC()
         {
-            RegisterMessage = GlobalMessage.Register("SpeakerCheck");
             RegisterMessage2 = GlobalMessage.Register("MultiSound");
             ComponentDispatcher.ThreadFilterMessage += ComponentDispatcher_ThreadFilterMessage;
         }
@@ -338,7 +267,7 @@ namespace pa
 
         private void ComponentDispatcher_ThreadFilterMessage(ref MSG msg, ref bool handled)
         {
-            if (!((RegisterMessage == msg.message) || (RegisterMessage2 == msg.message)))
+            if (!(RegisterMessage2 == msg.message))
                 return;
             long s1 = msg.wParam.ToInt64();
             long s2 = msg.lParam.ToInt64();
@@ -349,25 +278,6 @@ namespace pa
             //    return;
             old_wParam = s1;
             old_lParam = s2;
-
-            switch (s1)
-            {
-                case 200: // Off -> On
-                    Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
-                    {
-                        string str2 = gl.long2IPstring(s2);
-                        SpeakerCheck(str2, 1);
-                    }));
-                    break;
-                case 300: // On -> Off
-                    Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
-                    {
-                        string str3 = gl.long2IPstring(s2);
-                        SpeakerCheck(str3, 0);
-                    }));
-                    break;
-            }
-
 
             // wparam 99 lparam 1000 ~ 5000
             // rcv play message  chno, 2000
@@ -398,9 +308,7 @@ namespace pa
                     }));
                     break;
             }
-
         }
-
         #endregion
 
     }

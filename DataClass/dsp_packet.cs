@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace gClass
+namespace DataClass
 {
 	public class Dante_DSP_PACKET
 	{

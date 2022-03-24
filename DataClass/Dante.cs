@@ -7,7 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace gClass
+namespace DataClass
 {
 	[Serializable]
 	public class DSPChnnel

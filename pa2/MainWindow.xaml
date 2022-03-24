@@ -71,7 +71,8 @@
                 -->
                 <StatusBarItem x:Name="_Status5" Content="LoopBackTest" FontSize="16" Foreground="Black"  HorizontalAlignment="Right" MouseDoubleClick="_Status5_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
                 <StatusBarItem x:Name="_Status6" Content="GPIO Test" FontSize="16" Foreground="Black"  HorizontalAlignment="Right" MouseDoubleClick="_Status6_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
-                <StatusBarItem x:Name="_Status7" Content="Test" FontSize="16" Foreground="Black"  HorizontalAlignment="Right" MouseDoubleClick="_Status7_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
+                <StatusBarItem x:Name="_Status7" Content="Test(Play)" FontSize="16" Foreground="Black"  HorizontalAlignment="Right" MouseDoubleClick="_Status7_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
+                <StatusBarItem x:Name="_Status8" Content="Test(Stop)" FontSize="16" Foreground="Black"  HorizontalAlignment="Right" MouseDoubleClick="_Status8_MouseDoubleClick" Margin="10,0,0,0"></StatusBarItem>
                 <StatusBarItem x:Name="_Status2" Content="진단" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Right" MouseDoubleClick="_Status2_MouseDoubleClick"></StatusBarItem>
             </StatusBar>
         </Grid>

@@ -124,10 +124,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Checker\Checker.csproj">
-      <Project>{2d36e4d4-b848-4e7d-900a-d9d9a70e9701}</Project>
-      <Name>Checker</Name>
-    </ProjectReference>
     <ProjectReference Include="..\gClass\gClass.csproj">
       <Project>{a3148c58-60fe-4ab4-87e7-c30534ca7f6d}</Project>
       <Name>gClass</Name>

@@ -19,8 +19,6 @@ namespace gClass
 		public List<string> muteOutOFF = new List<string>();
 		public List<string> vol = new List<string>();
 
-		ETC etc = new ETC();
-
 
 		public DSPControll()
         {
@@ -141,7 +139,7 @@ namespace gClass
 		{ 
 			foreach (var str1 in muteInON)
             { 
-                byte[] bytes1 = etc.hexatobyte(str1);
+                byte[] bytes1 = gl.hexatobyte(str1);
 				udpc1.send(v, 50000, bytes1);
                 Thread.Sleep(sleeptime);
             }
@@ -151,7 +149,7 @@ namespace gClass
 		{
 			foreach (var str1 in muteInOFF)
 			{
-				byte[] bytes1 = etc.hexatobyte(str1);
+				byte[] bytes1 = gl.hexatobyte(str1);
 				udpc1.send(v, 50000, bytes1);
 				Thread.Sleep(sleeptime);
 			}
@@ -162,7 +160,7 @@ namespace gClass
 		{
 			foreach (var str1 in muteOutON)
 			{
-				byte[] bytes1 = etc.hexatobyte(str1);
+				byte[] bytes1 = gl.hexatobyte(str1);
 				udpc1.send(v, 50000, bytes1);
 				Thread.Sleep(sleeptime);
 			}
@@ -173,7 +171,7 @@ namespace gClass
 		{
 			foreach (var str1 in muteOutOFF)
 			{
-				byte[] bytes1 = etc.hexatobyte(str1);
+				byte[] bytes1 = gl.hexatobyte(str1);
 				udpc1.send(v, 50000, bytes1);
 				Thread.Sleep(sleeptime);
 			}
@@ -193,7 +191,7 @@ namespace gClass
 			string str2 = String.Format("{0:x4}", no);
 			string str3 = str1 + str2 + "00" + vol[v1];
 
-			byte[] bytes1 = etc.hexatobyte(str3);
+			byte[] bytes1 = gl.hexatobyte(str3);
 			udpc1.send(ip, 50000, bytes1);
 			Thread.Sleep(sleeptime);
 			
@@ -215,7 +213,7 @@ namespace gClass
 			string str2 = String.Format("{0:x4}", no);
 			string str3 = str1 + str2 + "00" + vol[v1];
 
-			byte[] bytes1 = etc.hexatobyte(str3);
+			byte[] bytes1 = gl.hexatobyte(str3);
 			udpc1.send(ip, 50000, bytes1);
 			Thread.Sleep(sleeptime);
 
@@ -243,7 +241,7 @@ namespace gClass
 				gl.SvsR.Add(str6);
 				gl.MetrixCount++;
 			}
-			byte[] bytes1 = etc.hexatobyte(str5);
+			byte[] bytes1 = gl.hexatobyte(str5);
 			udpc1.send(ip, 50000, bytes1);
 			Thread.Sleep(sleeptime);
 
