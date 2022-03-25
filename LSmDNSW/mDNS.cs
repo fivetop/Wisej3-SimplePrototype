@@ -7,11 +7,10 @@ using System.Net;
 using System.Net.Sockets;
 using System.Net.NetworkInformation;
 using System.Collections;               // for ArrayList
-using LSmDNS;
 using gClass;
 using DataClass;
 
-namespace LSmDNS
+namespace LSmDNSW
 {
     #region // class 
 
@@ -633,7 +632,7 @@ namespace LSmDNS
 
 		public IPAddress[] GetA( string domain ) 
 		{
-			LSmDNS.Request request = new LSmDNS.Request( new LSmDNS.QueryA(domain) );
+			LSmDNSW.Request request = new LSmDNSW.Request( new LSmDNSW.QueryA(domain) );
 			request.Transmit( this );
 			GatherResources();
 			return As( domain );
@@ -641,7 +640,7 @@ namespace LSmDNS
 
 		public string[] GetCNAME(string domain)
 		{
-			LSmDNS.Request request = new LSmDNS.Request(new LSmDNS.QueryCNAME(domain));
+			LSmDNSW.Request request = new LSmDNSW.Request(new LSmDNSW.QueryCNAME(domain));
 			request.Transmit(this);
 			GatherResources();
 			return CNAMEs(domain);
@@ -649,7 +648,7 @@ namespace LSmDNS
 
 		public string[] GetAAAA(string domain)
 		{
-			LSmDNS.Request request = new LSmDNS.Request(new LSmDNS.QueryAAAA(domain));
+			Request request = new Request(new QueryAAAA(domain));
 			request.Transmit(this);
 			GatherResources();
 			return AAAAs(domain);
@@ -657,14 +656,14 @@ namespace LSmDNS
 
 		public string[] GetPTR(string domain)
 		{
-			LSmDNS.Request request = new LSmDNS.Request(new LSmDNS.QueryPTR(domain));
+			Request request = new Request(new QueryPTR(domain));
 			request.Transmit(this);
 			GatherResources();
 			return PTRs(domain);
 		}
 		public Service[] GetSRV( string domain ) 
 		{
-			LSmDNS.Request request = new LSmDNS.Request( new LSmDNS.QuerySRV(domain) );
+			Request request = new Request( new QuerySRV(domain) );
 			request.Transmit( this );
 			GatherResources();
 			return SRVs( domain );
@@ -965,7 +964,7 @@ namespace LSmDNS
 		public string[] GetPTR2(string domain)
 		{
 			//g.Log("PTR Send.. ");
-			LSmDNS.Request request = new LSmDNS.Request(new LSmDNS.QueryPTR(domain));
+			Request request = new Request(new QueryPTR(domain));
 			request.Transmit(this);
 			//StartListening();
 			//Thread.Sleep(4000);

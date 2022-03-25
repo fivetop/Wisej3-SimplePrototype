@@ -64,17 +64,22 @@ namespace Wisej.CodeProject
 				return;
 			}
 
-            myDesktop.sendSigR("Play", eSignalRMsgType.ePlay ,SelAsset, SelMusic);
+            guid = myDesktop.sendSigR(eSignalRMsgType.ePlay ,SelAsset, SelMusic, Guid.Empty);
             this.button1.Enabled = false;
             this.button2.Enabled = true;
         }
 
+		Guid guid { get; set; } = Guid.Empty;
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			myDesktop.sendSigR("Stop");
 			this.button1.Enabled = true;
 			this.button2.Enabled = false;
+			if (guid != Guid.Empty)
+			{ 
+				myDesktop.sendSigR(eSignalRMsgType.eStop, null, null, guid);
+				guid = Guid.Empty;
+			}
 		}
 		#endregion
 

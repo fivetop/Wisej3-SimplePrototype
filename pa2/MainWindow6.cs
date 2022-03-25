@@ -14,6 +14,9 @@ using static Wisej.CodeProject.DataSet1;
 
 namespace pa
 {
+    //
+    // 리시브 시그날알 처리 
+    //
 
     public partial class MainWindow : Window
     {
@@ -38,33 +41,51 @@ namespace pa
                     play = dBSqlite.db2List(msg, chno);
                     ChSet(chno);
 
-                    var play8 =  g.play8ch[chno];
+                    var p =  g.play8ch[chno];
                     {
-                        play8.chno = chno;
-                        play8.idno = 100000 + chno;
+                        p.chno = chno;
+                        p.idno = 100000 + chno;
+                        p.Play = play;
+                        p.Guid = msg.Guid;
                     }
 
                     // 스피커 셋팅후 플레이 처리 
-                    g.DSP_MakeGroupSpeaker(play, 1, BS_DSP_STATE.MUL_BS, 1);
-                    PlayChildProcess(chno, 100000 + chno);
+                    g.DSP_MakeGroupSpeaker(p.Play, 1, BS_DSP_STATE.MUL_BS, p.chno);
+                    PlayChildProcess(p.chno, p.idno);
 
                     string line1 = string.Join(",", msg.assetsRows.ToArray());
                     string line2 = string.Join(",", msg.musicsRows.ToArray());
 
                     string line = line1 + ";" + line2;
-
-                    g.Log("다원방송:" + chno.ToString() + ";" + line);
-                    dBSqlite.Eventvm("다원방송 시작", chno.ToString() + "번 채널", line);
-
+                    string l1 = "다원시작 : ";
+                    g.Log(l1 + p.chno.ToString() + ";" + line);
+                    dBSqlite.Eventvm(l1, p.chno.ToString() + "번 채널", line);
+                    // window3 처리 
                     break;
                 case eSignalRMsgType.ePlayEnd:
                     break;
                 case eSignalRMsgType.ePlaying:
                     break;
                 case eSignalRMsgType.eStop:
+                    chno = getplay(msg.Guid);
+                    MBSStop(chno);
                     break;
             }
             return true;
+        }
+
+        private int getplay(Guid guid)
+        {
+            int rlt = 0;
+            for (int i = 2; i < 9; i++)
+            {
+                PlayItem pl1 = g.play8ch[i];
+                if (pl1.Guid == guid)
+                { 
+                    return i;
+                }
+            }
+            return rlt;
         }
 
         private void ChSet(int chno)
@@ -80,7 +101,7 @@ namespace pa
         private int EmptyChFind()
         {
             int rlt = 0;
-            for (int i = 2; i < 8; i++)
+            for (int i = 2; i < 9; i++)
             {
                 PlayItem pl1 = g.play8ch[i];
                 if (pl1.p_run)

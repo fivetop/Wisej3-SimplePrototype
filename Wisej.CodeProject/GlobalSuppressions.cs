@@ -7,3 +7,4 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE1006:명명 스타일", Justification = "<보류 중>", Scope = "member", Target = "~M:Wisej.CodeProject.g.sendSigR(System.String)")]
 [assembly: SuppressMessage("Style", "IDE0017:개체 초기화 단순화", Justification = "<보류 중>", Scope = "member", Target = "~M:Wisej.CodeProject.g.sendSigR(System.String)")]
+[assembly: SuppressMessage("Style", "IDE0017:개체 초기화 단순화", Justification = "<보류 중>", Scope = "member", Target = "~M:Wisej.CodeProject.MyDesktop.sendSigR(System.String)")]

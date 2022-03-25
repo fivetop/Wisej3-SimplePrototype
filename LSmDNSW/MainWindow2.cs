@@ -1,6 +1,5 @@
 ﻿using DataClass;
 using gClass;
-using LSmDNS;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -31,7 +30,7 @@ namespace LSmDNSW
             if (di2.Exists == false)
                 di2.Create();
 
-            foreach (var t1 in gl._emspl.child)
+            foreach (var t1 in g._emspl.child)
             {
                 string str2 = di1.FullName + t1.file;
                 System.IO.File.Create(str2);
@@ -41,7 +40,7 @@ namespace LSmDNSW
 
                 g.dBSqlite.SaveAssets(t1);
             }
-            _txtBlock.Text = gl.appPathServer_speaker + gl._emspl.child.Count.ToString() + "개 파일 생성이 완료 되었습니다.";
+            _txtBlock.Text = gl.appPathServer_speaker + g._emspl.child.Count.ToString() + "개 파일 생성이 완료 되었습니다.";
         }
 
         private void _btnFile_Click(object sender, RoutedEventArgs e)
@@ -57,16 +56,16 @@ namespace LSmDNSW
 
                 string[] d1 = System.IO.File.ReadAllLines(dlg.FileName, Encoding.GetEncoding(949));
 
-                gl._emspl.child.Clear();
+                g._emspl.child.Clear();
                 foreach (var d2 in d1)
                 {
                     EmSpeakerPosition em1 = new EmSpeakerPosition();
                     em1.array = d2.Split(',');
                     em1.file = em1.getfile();
-                    gl._emspl.child.Add(em1);
+                    g._emspl.child.Add(em1);
                 }
                 _lvLeft4.ItemsSource = null;
-                _lvLeft4.ItemsSource = gl._emspl.child;
+                _lvLeft4.ItemsSource = g._emspl.child;
                 _lvLeft4.Items.Refresh();
             }
         }

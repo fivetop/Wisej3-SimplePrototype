@@ -26,11 +26,13 @@ using DataClass;
 
 namespace pa
 {
+    //
     // 다원 방송 처리 및 윈도우 메시지 처리 
+    //
     public partial class MainWindow : Window
     {
         // UserMessage 
-        uint RegisterMessage2;
+        uint MultiSoundReg { get; set; }
         long old_wParam { get; set; }
         long old_lParam { get; set; }
 
@@ -73,62 +75,43 @@ namespace pa
         }
 
         #region // 다원방송 처리 로직  2 ~ 8
-        private void dispMBSRun(int p1)
+        private void MBSRun(int p1)
         {
-            int po1 = p1;
+            int chno = p1;
             //Console.WriteLine("dispMBSRun : " + po1.ToString()); 
-            if (po1 < 2 || po1 > 8) return;
-            var t1 = g.play8ch[po1];
+            if (chno < 2 || chno > 8) return;
+            var t1 = g.play8ch[chno];
             if (t1.state == "방송중") return;
             t1.state = "방송중";
             //_T3.SchBS(t1.idno);
-            g.SendR("PLAYING", eSignalRMsgType.ePlaying, po1, 0);
+            g.SendR("PLAYING", eSignalRMsgType.ePlaying, chno, 0);
         }
 
         // **방송종료처리 - 다원 방송 종료
-        public void dispMBSStop(int p1)
+        public void MBSStop(int p1)
         {
-            int po1 = p1;
-            if (po1 < 2 || po1 > 8) return;
-            if (po1 == 8) 
+            int chno = p1;
+            if (chno < 2 || chno > 8) return;
             {}
-            var t1 = g.play8ch[po1];
+            var t1 = g.play8ch[chno];
             if (t1 == null) return;
             if (t1.state != "방송중") return;
             t1.state = "종료";
             //_T3.SchBS(t1.idno);
-            StopMBS(t1.idno, po1);
+            // 현재 방송 중지 처리 
+            g.DSP_MakeGroupSpeaker(t1.Play, 0, BS_DSP_STATE.MUL_BS, t1.chno);
+            GlobalMessage.Send(MultiSoundReg, chno, 1); // 중지처리 
             t1.p_run = false;
-            g.Log("다원방송 종료 처리.." +t1.chno.ToString() + " : "+ t1.idno.ToString());
 
+            string l1 = "다원종료 : ";
+
+            g.Log(l1 +t1.chno.ToString() + " : "+ t1.idno.ToString());
             dBSqlite.Delete(t1.idno);
-            dBSqlite.Eventvm("다원방송 종료", t1.chno.ToString() + "번 채널", t1.idno.ToString());
+            dBSqlite.Eventvm(l1, t1.chno.ToString() + "번 채널", t1.idno.ToString());
             g.SendR("PLAYEND", eSignalRMsgType.ePlayEnd , 0, 0);
-        }
-
-        // 현재 방송 중지 처리 
-        internal void StopMBS(int idno, int chno)
-        {
-            SetDSPSpeakerOFF(idno);
             g.play8ch[chno] = new PlayItem();
-
-            GlobalMessage.Send(RegisterMessage2, chno, 1); // 중지처리 
-
-            /*
-            ExtProcess del = null;
-            foreach (ExtProcess p1 in BSpro)
-            {
-                if (p1.id == idno)
-                {
-                    del = p1;
-                    break;
-                }
-            }
-            if (del == null) return;
-            del.Kill();
-            BSpro.Remove(del);
-            */
         }
+
 
         // 다원방송 종료 처리시 
         internal void StopMBSEM()
@@ -145,7 +128,7 @@ namespace pa
                     if(t2.chno > 1)
                     {
                         g.DSP_metrix_initial(t2.chno);
-                        GlobalMessage.Send(RegisterMessage2, t2.chno, 1); // 중지처리 
+                        GlobalMessage.Send(MultiSoundReg, t2.chno, 1); // 중지처리 
                     }
                 }
             }
@@ -239,20 +222,13 @@ namespace pa
             return rlt;
         }
 
-        private bool SetDSPSpeakerOFF(int idno)
-        {
-            bool rlt = false;
-            return rlt;
-        }
-
-
         #endregion
 
         #region // IPC 처리 
 
         public void IPC()
         {
-            RegisterMessage2 = GlobalMessage.Register("MultiSound");
+            MultiSoundReg = GlobalMessage.Register("MultiSound");
             ComponentDispatcher.ThreadFilterMessage += ComponentDispatcher_ThreadFilterMessage;
         }
         private void PlayChildProcess()
@@ -261,13 +237,13 @@ namespace pa
         }
         private void PlayChildProcess(int chno, int id)
         {
-            GlobalMessage.Send(RegisterMessage2, chno, id);
+            GlobalMessage.Send(MultiSoundReg, chno, id);
         }
 
 
         private void ComponentDispatcher_ThreadFilterMessage(ref MSG msg, ref bool handled)
         {
-            if (!(RegisterMessage2 == msg.message))
+            if (!(MultiSoundReg == msg.message))
                 return;
             long s1 = msg.wParam.ToInt64();
             long s2 = msg.lParam.ToInt64();
@@ -282,7 +258,7 @@ namespace pa
             // wparam 99 lparam 1000 ~ 5000
             // rcv play message  chno, 2000
 
-            if (RegisterMessage2 != msg.message)
+            if (MultiSoundReg != msg.message)
                 return;
 
             int p1 = msg.wParam.ToInt32();
@@ -293,7 +269,7 @@ namespace pa
                 case 1000:
                     Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
                     {
-                        dispMBSRun(p1);
+                        MBSRun(p1);
                     }));
 
                     break;
@@ -304,7 +280,7 @@ namespace pa
                     //Console.WriteLine(msg.wParam.ToString() + " " + msg.lParam.ToString());
                     Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
                     {
-                        dispMBSStop(p1);
+                        MBSStop(p1);
                     }));
                     break;
             }

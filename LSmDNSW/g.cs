@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LSmDNS
+namespace LSmDNSW
 {
 	static public class g
 	{
@@ -23,11 +23,14 @@ namespace LSmDNS
 		static public string _netaudio_chan = "_netaudio-chan._udp.local";
 		static public string _netaudio_cmc = "_netaudio-cmc._udp.local";
 
-		static public LSmDNS.Resolver resolver;
+		static public Resolver resolver;
 
 		static public MainWindow MainWindow = null;
 
 		static public DBSqlite dBSqlite { get; set; } = new DBSqlite();
+
+		// 동수. 계단수, 층수 초기화 필요 
+		static public EmSpeakerPositionList _emspl { get; set; } = new EmSpeakerPositionList();
 
 		static public void Log(string log)
 		{

@@ -28,8 +28,6 @@ namespace gClass
         static public string appPathServer_image { get; set; } = @"C:\SimplePA\Image";
         // dante 
         static public DanteDevice danteDevice { get; set; } = new DanteDevice();
-        // 동수. 계단수, 층수 초기화 필요 
-        static public EmSpeakerPositionList _emspl { get; set; } = new EmSpeakerPositionList();
         // 앰프 메트릭스 명령후 실행 안됨 메트릭스 찾기 
         public static object QueueLock { get; set; } = new object();
         // 실행 안됨 명령 모음 

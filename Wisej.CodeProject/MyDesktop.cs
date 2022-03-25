@@ -283,20 +283,31 @@ namespace Wisej.CodeProject
 				signalRClient.proxy.Invoke("MessageC2S2", msg1);
 		}
 
-		internal void sendSigR(string v, eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
+		internal Guid sendSigR(eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic, Guid guid)
 		{
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.user = Application.Session["user"];
-			msg1.Guid = new Guid();
-			msg1.message = v;
-			msg1.Msgtype = v1;
-			//msg1.assetsRows = selAsset;
-			//var t1 = selMusic.Select(p => new { p.MusicId }).ToList();
-			var t1 = selMusic.Select(p => new { p.MusicId });
-			msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
 
-			var t2 = selAsset.Select(p => new { p.AssetId });
-			msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
+			switch (v1)
+			{
+				case eSignalRMsgType.ePlay:
+					msg1.Guid = Guid.NewGuid();
+					msg1.message = "Play";
+					msg1.Msgtype = v1;
+					//msg1.assetsRows = selAsset;
+					//var t1 = selMusic.Select(p => new { p.MusicId }).ToList();
+					var t1 = selMusic.Select(p => new { p.MusicId });
+					msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
+
+					var t2 = selAsset.Select(p => new { p.AssetId });
+					msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
+					break;
+				case eSignalRMsgType.eStop:
+					msg1.Guid = guid;
+					msg1.message = "Stop";
+					msg1.Msgtype = v1;
+					break;
+			}
 
 			try
 			{
@@ -306,6 +317,7 @@ namespace Wisej.CodeProject
 			catch (Exception e1)
 			{
 			}
+			return msg1.Guid;
 		}
     }
 }

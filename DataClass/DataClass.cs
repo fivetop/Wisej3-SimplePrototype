@@ -40,8 +40,9 @@ namespace DataClass
         public TimeSpan current { get; set; } // 현재 위치
         public TimeSpan duration { get; set; } // 총 뮤직 플레이 시간 
         public bool p_run { get; set; } // 프로세스 러닝인가? 
-        public List<AssetBase> playGroup { get; set; }
+        public List<AssetBase> Play { get; set; }
         //public ICollection<Asset> playGroup { get; set; }
+        public Guid Guid { get; set; }
 
         public PlayItem()
         {
@@ -56,7 +57,7 @@ namespace DataClass
             playcnt = 0;
             current = new TimeSpan();
             p_run = false;
-            playGroup = new List<AssetBase>();
+            Play = new List<AssetBase>();
         }
     }
 

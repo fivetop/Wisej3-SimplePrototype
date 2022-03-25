@@ -2,28 +2,23 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using pa.classes;
 using System.Diagnostics;
+using DataClass;
+using gClass;
+using pa.Windows;
+using System.ComponentModel;
+using System.Threading;
+using static Wisej.CodeProject.DataSet1;
 
-namespace pa
-{
-    using DataClass;
-    /*
+/*
 <sms_server>http://sms.nicesms.co.kr/cpsms_utf8/cpsms.aspx</sms_server>
 <sms_id>lstest</sms_id>
 <sms_pw>FFo0DXm9fvE9LBlkZIsO+IIhNQINR+1SM2KV2uCr3BY=</sms_pw>
 
 * */
-    using gClass;
-    using pa.Windows;
-    using System.ComponentModel;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Reflection;
-    using System.Threading;
-    using Wisej.CodeProject;
-    using static Wisej.CodeProject.DataSet1;
 
+namespace pa
+{
     public static class g
     {
         #region // 글로벌 변수 선언 
@@ -58,7 +53,7 @@ namespace pa
 
             // 초기 셋팅한거 저장하기 
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 1; i < 9; i++)
             {
                 play8ch[i] = new PlayItem();
             }
@@ -148,27 +143,26 @@ namespace pa
         public static void DSP_metrix_initial(int chno)
         {
             BSAsset bsa = new BSAsset();
-            bsa.id = BS_DSP_STATE.INIT;
+            bsa.bS_DSP_STATE = BS_DSP_STATE.INIT;
             bsa.onoff = 0;
             bsa.chno = chno;
             BSThreadClass.AddData(bsa);
         }
 
         // 선택된 특정 스피커만 처리 하기  
-        public static void DSP_MakeGroupSpeaker(List<AssetBase> child, int v, BS_DSP_STATE k, int chno = 0)
+        public static void DSP_MakeGroupSpeaker(List<AssetBase> child, int onoff, BS_DSP_STATE bS_DSP_STATE, int chno = 0)
         {
             BSAsset bsa = new BSAsset();
 
-            bsa.onoff = v;
-            bsa.id = k;
+            bsa.onoff = onoff;
+            bsa.bS_DSP_STATE = bS_DSP_STATE;
             bsa.chno = chno;
 
             if (child != null)
             {
-                foreach (AssetBase t1 in child)
+                foreach (var t1 in child)
                 {
-                    if (t1.chk) //  = v == 1 ? true : false;
-                        bsa.child.Add(t1);
+                    bsa.child.Add(t1);
                 }
             }
             BSThreadClass.AddData(bsa);
@@ -179,7 +173,7 @@ namespace pa
             BSAsset bsa = new BSAsset();
 
             bsa.onoff = v;
-            bsa.id = k;
+            bsa.bS_DSP_STATE = k;
             bsa.chno = chno;
 
             if (child != null)
@@ -227,19 +221,40 @@ namespace pa
             return false;
         }
 
-        internal static void SendR(string v1, eSignalRMsgType t1, int s1, int s2) // s1 = seq, s2=state
+        internal static void SendR(string t1, eSignalRMsgType v1, int s1, int s2) // s1 = seq, s2=state
         {
-            SignalRMsg signalRMsg = new SignalRMsg();
-            
-            signalRMsg.message = v1;
-            signalRMsg.Msgtype = t1;
-            signalRMsg.seqno = s1;
-            signalRMsg.state = s2;
-            signalRMsg.play8sig = g.play8ch;
+            SignalRMsg msg1 = new SignalRMsg();
+
+            msg1.user = "Server";
+            msg1.message = t1;
+            msg1.Msgtype = v1;
+            msg1.seqno = s1;
+            msg1.state = s2;
+            msg1.play8sig = g.play8ch;
+
+            switch (v1)
+            {
+                case eSignalRMsgType.eEM:
+                    break;
+                case eSignalRMsgType.eEM_FIRE:
+                    break;
+                case eSignalRMsgType.eEM_PRESET_SW:
+                    break;
+                case eSignalRMsgType.ePlay:
+                    break;
+                case eSignalRMsgType.eStop:
+                    break;
+                case eSignalRMsgType.ePlaying:
+                    msg1.message = "ePlaying";
+                    break;
+                case eSignalRMsgType.ePlayEnd:
+                    msg1.message = "ePlayEnd";
+                    break;
+            }
 
             if (g._hub != null)
-                g._hub.MessageS2C2(signalRMsg);
-            g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
+                g._hub.MessageS2C2(msg1);
+            //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
         }
 
         public static void Load(string info)

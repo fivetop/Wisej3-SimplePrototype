@@ -21,6 +21,8 @@ namespace pa
         private static bool EMClear { get; set; } = false;
         private static BS_STATE Cur_bS_STATE { get; set; } = BS_STATE.STOP;
 
+        private static int[] MetrixChIn = { 0, 16, 17, 18, 19, 20, 21, 22, 23 }; // 입력채널 번호 
+
         public static void Start()
         {
             BackgroundThreadStop = false;
@@ -49,13 +51,13 @@ namespace pa
         {
             lock (QueueLock)
             {
-                if (data.id == BS_DSP_STATE.PRESET_ALL && DataQueue.Count > 1)
+                if (data.bS_DSP_STATE == BS_DSP_STATE.PRESET_ALL && DataQueue.Count > 1)
                 {
                     // 전체처리가 중복되면 최종 데이터만 처리 
-                    var t2 = DataQueue.Where(p => p.id == BS_DSP_STATE.PRESET_ALL);
+                    var t2 = DataQueue.Where(p => p.bS_DSP_STATE == BS_DSP_STATE.PRESET_ALL);
                     if (t2.Count() > 0)
                     { 
-                        var t1 = DataQueue.Last(p => p.id == BS_DSP_STATE.PRESET_ALL);
+                        var t1 = DataQueue.Last(p => p.bS_DSP_STATE == BS_DSP_STATE.PRESET_ALL);
                         if (t1 == null)
                         {
                             DataQueue.Add(data);
@@ -121,7 +123,7 @@ namespace pa
 
                     foreach (var data in ourQueue)
                     {
-                        //DataAnalyzer(data);
+                        DataAnalyzer(data);
                     }
                 }
             }
@@ -131,7 +133,7 @@ namespace pa
         {
             try
             {
-                switch (data.id)
+                switch (data.bS_DSP_STATE)
                 {
                     case BS_DSP_STATE.EM_BS_ON:
                     case BS_DSP_STATE.EM_BS_OFF:
@@ -196,9 +198,14 @@ namespace pa
                     case BS_DSP_STATE.MUL_BS:
                         Console.WriteLine("MUL_BS" + " : " + data.onoff.ToString());
                         g.dsp.BufferClear();
-                        int[] MetrixChIn = { 16, 17, 18, 19, 20, 21, 22, 23 }; // 입력채널 번호 
 
-                        foreach (AssetBase t1 in data.child)
+                        if (data.onoff == 0)
+                        { 
+                            chClear(data);
+                            return;
+                        }
+
+                        foreach (var t1 in data.child)
                         {
                             try
                             {
@@ -218,7 +225,7 @@ namespace pa
                     case BS_DSP_STATE.GEN_BS:
                         Console.WriteLine("GEN_BS" + " : " + data.onoff.ToString());
                         g.dsp.BufferClear();
-                        foreach (AssetBase t1 in data.child)
+                        foreach (var t1 in data.child)
                         {
                             try
                             {
@@ -314,6 +321,17 @@ namespace pa
             catch (Exception e1)
             {
                 Console.WriteLine("--" + e1.Message);
+            }
+        }
+
+        private static void chClear(BSAsset data)
+        {
+            var s2 = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
+            foreach (var t1 in s2)
+            {
+                if (t1.ip == "" || t1.ip_dspctrl == "") continue;
+                for (int j = 1; j < 32; j++)
+                    g.dsp.Matrix(MetrixChIn[data.chno], j, 0, t1.ip_dspctrl);
             }
         }
     }

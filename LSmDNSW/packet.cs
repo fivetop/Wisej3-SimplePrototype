@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Collections;               // for ArrayList
 
-namespace LSmDNS 
+namespace LSmDNSW
 {
 
     class Label 
