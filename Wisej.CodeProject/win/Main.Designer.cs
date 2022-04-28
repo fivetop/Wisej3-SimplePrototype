@@ -71,7 +71,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.ShowCloseButton = false;
-            this.panel1.Size = new System.Drawing.Size(823, 80);
+            this.panel1.Size = new System.Drawing.Size(838, 80);
             this.panel1.TabIndex = 8;
             this.panel1.TabStop = true;
             // 
@@ -113,8 +113,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.TabStop = true;
-            this.splitContainer1.Size = new System.Drawing.Size(813, 406);
-            this.splitContainer1.SplitterDistance = 378;
+            this.splitContainer1.Size = new System.Drawing.Size(828, 416);
+            this.splitContainer1.SplitterDistance = 385;
             this.splitContainer1.TabIndex = 9;
             // 
             // dataGridView1
@@ -133,7 +133,7 @@
             this.dataGridView1.RowHeadersWidth = 14;
             this.dataGridView1.RowHeadersWidthSizeMode = Wisej.Web.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ShowFocusCell = false;
-            this.dataGridView1.Size = new System.Drawing.Size(378, 406);
+            this.dataGridView1.Size = new System.Drawing.Size(385, 416);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -188,8 +188,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.TabStop = true;
-            this.splitContainer2.Size = new System.Drawing.Size(429, 406);
-            this.splitContainer2.SplitterDistance = 175;
+            this.splitContainer2.Size = new System.Drawing.Size(437, 416);
+            this.splitContainer2.SplitterDistance = 179;
             this.splitContainer2.TabIndex = 0;
             // 
             // dataGridView2
@@ -203,7 +203,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 14;
-            this.dataGridView2.Size = new System.Drawing.Size(429, 175);
+            this.dataGridView2.Size = new System.Drawing.Size(437, 179);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellMouseClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseClick);
             // 
@@ -254,19 +254,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Padding = new Wisej.Web.Padding(4);
             this.panel3.ShowCloseButton = false;
-            this.panel3.Size = new System.Drawing.Size(823, 416);
+            this.panel3.Size = new System.Drawing.Size(838, 426);
             this.panel3.TabIndex = 7;
             this.panel3.TabStop = true;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 496);
+            this.ClientSize = new System.Drawing.Size(838, 506);
             this.CloseBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "메인화면";
             this.WindowState = Wisej.Web.FormWindowState.Maximized;

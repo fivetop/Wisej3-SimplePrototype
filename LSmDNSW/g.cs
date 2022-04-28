@@ -1,4 +1,5 @@
-﻿using DataClass;
+﻿using CosineKitty.ZeroConfigWatcher;
+using DataClass;
 using gClass;
 using LSmDNSW;
 using System;
@@ -23,7 +24,7 @@ namespace LSmDNSW
 		static public string _netaudio_chan = "_netaudio-chan._udp.local";
 		static public string _netaudio_cmc = "_netaudio-cmc._udp.local";
 
-		static public Resolver resolver;
+		static public Resolver resolver { get; set; } = new Resolver();
 
 		static public MainWindow MainWindow = null;
 
@@ -85,6 +86,20 @@ namespace LSmDNSW
 
 			return true;
 		}
+
+		static public bool GetDevice()
+		{
+			try
+			{
+				g.resolver.ResolveServiceName3(g._netaudio_arc);
+				g.resolver.GetDevice();
+			}
+			catch (Exception e)
+			{
+			}
+			return true;
+		}
+
 		internal static void division()
 		{
 			// 디바이스 타입 번호 할당 
@@ -105,7 +120,6 @@ namespace LSmDNSW
 				t2.FindSoundCard();
 			}
 		}
-
 	}
 
 }

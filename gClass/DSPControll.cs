@@ -19,6 +19,12 @@ namespace gClass
 		public List<string> muteOutOFF = new List<string>();
 		public List<string> vol = new List<string>();
 
+		// 앰프 메트릭스 명령후 실행 안됨 메트릭스 찾기 
+		public object QueueLock { get; set; } = new object();
+		// 실행 안됨 명령 모음 
+		public List<string> SvsR { get; set; } = new List<string>();
+		// 실행할 메트릭스 카운트
+		public int MetrixCount { get; set; } = 0;
 
 		public DSPControll()
         {
@@ -39,11 +45,11 @@ namespace gClass
 		// 통신전 버퍼 클리어 
 		public void BufferClear()
 		{
-			lock (gl.QueueLock)
+			lock (QueueLock)
 			{ 
 				udpc1.buf2.Clear();
-				gl.SvsR.Clear();
-				gl.MetrixCount = 0;
+				SvsR.Clear();
+				MetrixCount = 0;
 			}
 		}
 
@@ -53,9 +59,9 @@ namespace gClass
 		private void Udpc1_OnReceiveMessage(string message)
         {
 			//Console.WriteLine(message);
-			lock (gl.QueueLock)
+			lock (QueueLock)
 			{
-				if (gl.SvsR.Count == 0)
+				if (SvsR.Count == 0)
 					return;
 				try
 				{
@@ -64,7 +70,7 @@ namespace gClass
 						string m1 = gl.bytetostring(b1);
 						string m2 = m1.ToUpper();
 						string m3 = gl.RePlaceAt(m2, 6, 2, "00");
-						if (gl.SvsR.Remove(m3))
+						if (SvsR.Remove(m3))
 						{
 							//if(gl.SvsR.Count > 0)
 							//	Console.WriteLine(gl.MetrixCount.ToString() +" / "+ gl.SvsR.Count().ToString());
@@ -234,12 +240,12 @@ namespace gClass
 			string str4 = String.Format("{0:x2}", onoff); // on off
 			string str5 = str1 + str2 + str3 + str4 + "00";
 
-			lock (gl.QueueLock)
+			lock (QueueLock)
 			{
 				string str6 = str5.ToUpper();
 				//Console.WriteLine(str6);
-				gl.SvsR.Add(str6);
-				gl.MetrixCount++;
+				SvsR.Add(str6);
+				MetrixCount++;
 			}
 			byte[] bytes1 = gl.hexatobyte(str5);
 			udpc1.send(ip, 50000, bytes1);

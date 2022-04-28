@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
@@ -15,18 +16,18 @@ namespace DataClass
         ePlaying = 5,           // 방송중    S2C  
         eStop = 6,              // 방송중지  C2S
         ePlayEnd = 7,           // 방송종료  S2C
+        eLoginUser = 8,         // 로그인    S2C
+        eLogoutUser = 9,        // 로그아웃  S2C
     }
 
     public enum eEventCode
     {
-        eLoginUser = 1090001,   // 
-        eLogoutUser = 1090002,  //
         eAddUser = 1090003,     //    
         eDeleteUser = 1090004,  //
         eUnknown = 0,
     }
 
-    public class PlayItem
+    public class PlayItem : INotifyPropertyChanged
     {
         public bool playflag_onair { get; set; } // 방송중인 상태 
         public int idno { get; set; } // 방송 idno
@@ -59,6 +60,17 @@ namespace DataClass
             p_run = false;
             Play = new List<AssetBase>();
         }
+
+        #region INotifyPropertyChanged Members
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        #endregion
     }
 
     public class SignalRMsg
@@ -70,7 +82,7 @@ namespace DataClass
         public int state { get; set; }                  // 상태 코드
         public List<long> assetsRows { get; set; }      // 선택된 스피커 ID
         public List<long> musicsRows { get; set; }      // 선택된 음원 ID
-        public List<PlayItem> play8sig { get; set; } // 8채널의 현재 상태 
+        public List<PlayItem> play8sig { get; set; }    // 8채널의 현재 상태 
         public string user { get; set; }                // 유저명 
 
         public Guid Guid { get; set; }

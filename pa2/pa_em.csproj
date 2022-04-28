@@ -155,6 +155,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AThread.cs" />
     <Compile Include="BSThreadClass.cs" />
     <Compile Include="classes\common.cs" />
     <Compile Include="classes\TrayIcon.cs" />

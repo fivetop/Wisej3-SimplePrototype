@@ -34,8 +34,6 @@ namespace LSNAudio
 
         bool cur_play = false;
 
-        DBSqlite dBSqlite { get; set; } = new DBSqlite();
-
         public MainWindow4()
         {
             InitializeComponent();
@@ -46,6 +44,8 @@ namespace LSNAudio
             message = RegisterWindowMessage("MultiSound");
             soundEngine.PlaybackStopped += PlaybackStopped;
             ComponentDispatcher.ThreadFilterMessage += ComponentDispatcher_ThreadFilterMessage;
+            g1.dBSqlite.DBInit();
+
         }
 
         // 4. 한 음악이 끝나면 다음 음악으로 넘어가기 처리 
@@ -137,9 +137,6 @@ namespace LSNAudio
             g1.dBSqlite.dm1.SimplepaTableAdapter.Fill(g1.dBSqlite.ds1.Simplepa);
             var _BaseData = g1.dBSqlite.ds1.Simplepa.FirstOrDefault();
             string fn = _BaseData.EmMusic;
-
-            if (!System.IO.File.Exists(fn))
-                fn = @"재난위험경보(3분).mp3";
 
             string str2 = gl.appPathServer_music + fn;
             if (!System.IO.File.Exists(str2))

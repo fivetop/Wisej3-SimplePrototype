@@ -1,0 +1,19 @@
+{
+  "appearances": 
+  {
+    "button": 
+    {
+      "inherit": "button",
+      "states": 
+      {
+        "checked": 
+        {
+          "properties": 
+          {
+            "textColor": "yellow"
+          }
+        }
+      }
+    }
+  }
+}

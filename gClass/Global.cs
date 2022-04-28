@@ -28,12 +28,7 @@ namespace gClass
         static public string appPathServer_image { get; set; } = @"C:\SimplePA\Image";
         // dante 
         static public DanteDevice danteDevice { get; set; } = new DanteDevice();
-        // 앰프 메트릭스 명령후 실행 안됨 메트릭스 찾기 
-        public static object QueueLock { get; set; } = new object();
-        // 실행 안됨 명령 모음 
-        public static List<string> SvsR { get; set; } = new List<string>();
-        // 실행할 메트릭스 카운트
-        public static int MetrixCount { get; set; } = 0;
+
 
         static public List<NetworkCard> networkCardList { get; set; } = new List<NetworkCard>();
         static public string NetworkCardName { get; set; } = "이더넷";
@@ -180,7 +175,7 @@ namespace gClass
             }
             catch (Exception e)
             {
-                Log(e.Data.ToString());
+                Log("XMLDanteDevice" + e.Message);
             }
         }
 

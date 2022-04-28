@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "UnitTests": {
+      "commandName": "Project",
+      "commandLineArgs": "-v all"
+    }
+  }
+}

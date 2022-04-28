@@ -188,6 +188,7 @@ namespace LSmDNSW
 
                 g.resolver = new Resolver();
                 g.resolver.OnReceiveMessage += Resolver_OnReceiveMessage;
+                g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice; 
 
                 IPEndPoint ReceiveEndPoint1 = new IPEndPoint(System.Net.IPAddress.Parse(t2.ipv4), 6001);
 
@@ -204,8 +205,13 @@ namespace LSmDNSW
 // 유지보수에서 사용 
             ReadAssetList();
 
+            //g.Main2();
+
         }
 
+        private void Resolver_OnEventNewDevice(object o)
+        {
+        }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -255,6 +261,7 @@ namespace LSmDNSW
                 g.Log(t2.ip.ToString() + " : " + t2.DeviceName + " : " + t2.name + " : " + t2.device.ToString() + " : " + t2.ip_dspctrl);
             }
         }
+
 
         // 네트웍 탐색 시작 
         private void _Status2_Click(object sender, RoutedEventArgs e)

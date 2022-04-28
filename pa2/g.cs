@@ -25,39 +25,24 @@ namespace pa
         static public string appPath { get; set; } = @"C:\SimplePA\";
         public static signalr _hub { get; set; } = null;
         static public MainWindow mainWindow { get; set; }
-
         // 현재 방송중인 내용
-        static public List<PlayItem> play8ch { get; set; } = new List<PlayItem>(new PlayItem[9]);
-
-        static public PlayItem curr_play { get; set; } = new PlayItem();
-
-        static public int em_status { get; set; } = 0;  // 화재 1,2 시험 알람 3,4 가스 5,6  
-        // 컬러데이터 정의 , 이벤트 처리시 활용 
-
+        static public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
         // DSP 제어을 위함 
         public static DSPControll dsp { get; set; } = new DSPControll(); // 볼륨과 뮤트 처리용 
-
-        // 알람 종류 0 없음, 1 시험 알람 , 2 PR 형 알람 
-        public static int Alarm { get; internal set; } = 0; // 계속적인 발생을 관리 
-        public static bool TestAlarm { get; internal set; } = false;
-
         public static SimplepaRow _BaseData { get; set; }
         #endregion
 
         #region // XML 처리 
         static public void XMLRead()
         {
+            for (int i = 1; i < 9; i++)
+            {
+                playItems[i] = new PlayItem();
+                playItems[i].chno = i;
+            }
             // 기초디비, 스피커 디비
             gl.XMLDanteDevice(true);
             g.Log("Start PA");
-
-            // 초기 셋팅한거 저장하기 
-
-            for (int i = 1; i < 9; i++)
-            {
-                play8ch[i] = new PlayItem();
-            }
-            g.Log("Start PA2");
         }
         #endregion
 
@@ -75,9 +60,6 @@ namespace pa
             }
         }
 
-        // 네트웍 상태와 DSP 연결 이상 유무 파악 용 
-        public static bool NetworkChk = false;
-
         static string old_string = "";
         public static void Log(string str1)
         {
@@ -87,7 +69,7 @@ namespace pa
 
             try
             {
-                string fn = "svr_" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString();
+                string fn = "svr_" + DateTime.Now.ToString("yyyy_MM_dd");
                 StreamWriter writer = new StreamWriter(File.Open("C:\\SimplePA\\Log\\" + fn + ".txt", FileMode.Append));
                 TextWriterTraceListener listener = new TextWriterTraceListener(writer);
                 //Debug.Listeners.Add(listener);
@@ -221,7 +203,7 @@ namespace pa
             return false;
         }
 
-        internal static void SendR(string t1, eSignalRMsgType v1, int s1, int s2) // s1 = seq, s2=state
+        internal static void SendSigR(string t1, eSignalRMsgType v1, int s1, int s2) // s1 = seq, s2=state
         {
             SignalRMsg msg1 = new SignalRMsg();
 
@@ -230,7 +212,7 @@ namespace pa
             msg1.Msgtype = v1;
             msg1.seqno = s1;
             msg1.state = s2;
-            msg1.play8sig = g.play8ch;
+            msg1.play8sig = g.playItems;
 
             switch (v1)
             {
@@ -250,8 +232,15 @@ namespace pa
                 case eSignalRMsgType.ePlayEnd:
                     msg1.message = "ePlayEnd";
                     break;
+                case eSignalRMsgType.eLoginUser:
+                    msg1.user = "Server";
+                    break;
+                case eSignalRMsgType.eLogoutUser:
+                    msg1.user = "Server";
+                    break;
             }
 
+            msg1.play8sig = playItems;
             if (g._hub != null)
                 g._hub.MessageS2C2(msg1);
             //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
@@ -305,97 +294,7 @@ namespace pa
             {
             }
         }
-#if DEBUG2
-        public static void dbcopy(mainEntities db)
-        {
-            int i = 1;
 
-            /*
-            gLibary.ReadXML();
-
-            List<Asset> ab1 = new List<Asset>();
-            ab1 = gl._SpeakerList.asset;
-            db.Assets.AddRange(gl._SpeakerList.asset);
-
-            List<AssetGroup> ag1 = new List<AssetGroup>();
-
-            for (i = 1; i < 5; i++)
-            {
-                AssetGroup v3 = new AssetGroup();
-                v3.Name = "PRESET" + i.ToString();
-                v3.add(ab1);
-                ag1.Add(v3);
-            }
-            db.AssetGroups.AddRange(ag1);
-
-            List<EventVM> e1 = new List<EventVM>();
-            e1 = gl._event_list.child;
-            db.Eventvm.AddRange(e1);
-
-            List<Holiday> child = new List<Holiday>();
-            child = gl._BaseData.holiday;
-            db.Holidays.AddRange(child);
-
-            List<FloorBase> f1 = new List<FloorBase>();
-            i = 1;
-            foreach (var t1 in gl._FloorBase.Child)
-            {
-                FloorBase fl1 = new FloorBase();
-                fl1.FloorBaseId = i++;
-                fl1.assetname = t1.assetname;
-                fl1.buildingname = t1.buildingname;
-                fl1.content = t1.content;
-                fl1.filename = t1.filename;
-                fl1.floor = t1.floor;
-                fl1.floororder = t1.floororder;
-                fl1.Id = t1.Id;
-                fl1.left = t1.left;
-                fl1.logicid = t1.logicid;
-                fl1.top = t1.top;
-                f1.Add(fl1);
-            }
-            db.Floorbases.AddRange(f1);
-
-            List<FloorMap> f2 = new List<FloorMap>();
-            f2 = gl._FloorTreeList.Child;
-            db.Floormaps.AddRange(f2);
-
-            List<InfoTree> i1 = new List<InfoTree>();
-            i1 = gl._InfoTreeList.child;
-            db.InfoTrees.AddRange(i1);
-
-            List<Music> m1 = new List<Music>();
-            m1 = gl._MusicList.music;
-            db.Musics.AddRange(m1);
-
-            List<SimpleMulti> s1 = new List<SimpleMulti>();
-            s1 = gl._SimpleMultiList.child;
-            db.SimpleMultis.AddRange(s1);
-
-
-            List<UserTree> u1 = new List<UserTree>();
-            u1 = gl._BaseData.user;
-            db.UserTrees.AddRange(u1);
-            */
-
-            Simplepa s2 = new Simplepa();
-            s2.SimplePAId = 1;
-            //db.Simplepa.AddRange((IEnumerable<Simplepa>)s2);
-            db.Simplepa.AddOrUpdate(s2);
-
-            db.SaveChanges();
-            //            var db1 = serviceProvider.GetService<LiraryService>();
-            //            var t1 = db1.FindUser("1");
-
-            /*
-                        List<PlayItem> p1 = new List<PlayItem>();
-                        p1 = gl.playHistory.child;
-                        db.PlayItems.AddRange(p1);
-
-                        db.SaveChanges();
-            */
-        }
-#endif
     }
 
 }

@@ -17,7 +17,7 @@
             </Grid.RowDefinitions>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="200" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
@@ -30,25 +30,25 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Grid Grid.Row="0" Margin="5">
+                                <Grid Grid.Row="0" Margin="2">
                                     <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Horizontal">
                                         <TextBlock Text="발생 시각 : " TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" FontSize="20" />
                                         <TextBlock x:Name="_write_time" Text="{Binding write_time, ConverterCulture='ko-KR', StringFormat={}{0:yyyy-MM-dd (ddd) HH:mm:ss}}" FontSize="22" TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Grid>
-                                <Grid Grid.Row="1" Margin="5">
+                                <Grid Grid.Row="1" Margin="2">
                                     <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Horizontal">
                                         <TextBlock Text="발생 장소 : " TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" FontSize="20" />
                                         <TextBlock x:Name="_event_text" Text="{Binding event_text}" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Left" VerticalAlignment="Center" FontSize="22" />
                                     </StackPanel>
                                 </Grid>
-                                <Grid Grid.Row="2" Margin="5">
+                                <Grid Grid.Row="2" Margin="2">
                                     <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Horizontal">
                                         <TextBlock Text="발생 내용 : " FontSize="20" TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" />
                                         <TextBlock x:Name="_event_content" Text="발생내용" FontSize="22" VerticalAlignment="Center" FontWeight="Bold" />
                                     </StackPanel>
                                 </Grid>
-                                <Grid Grid.Row="3" Margin="5">
+                                <Grid Grid.Row="3" Margin="2">
                                     <StackPanel Margin="5" VerticalAlignment="Center" Orientation="Horizontal">
                                         <TextBlock Text="통신 상태 : " FontSize="20" TextWrapping="Wrap"  TextAlignment="Left" VerticalAlignment="Center" />
                                         <TextBlock x:Name="_comm_state" Text="정상" FontSize="22" VerticalAlignment="Center" FontWeight="Bold" />

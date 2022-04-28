@@ -2,10 +2,13 @@
 using Microsoft.AspNet.SignalR.Client;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using System.Windows.Threading;
 using Wisej.Web;
 
 namespace Wisej.CodeProject.SignalR
@@ -14,21 +17,23 @@ namespace Wisej.CodeProject.SignalR
     {
 		public IHubProxy proxy;
         public MyDesktop owner { get; set; } = null;
-
 		private HubConnection hubConnection;
+        private bool Hub_Disconnect_Flag = false;
 
         public SignalRClient()
 		{
 		}
 
+        public void HubDisconnect()
+        {
+            hubConnection.Dispose();
+        }
 
         public async Task ConnectToSignalR()
 		{
             hubConnection = new HubConnection("http://localhost:8080/signalr");
 
 			proxy = hubConnection.CreateHubProxy("signalr");
-			await hubConnection.Start();
-
 
             hubConnection.Received += Connection_Received;
             hubConnection.Reconnected += Connection_Reconnected;
@@ -37,7 +42,14 @@ namespace Wisej.CodeProject.SignalR
             hubConnection.Error += connection_Error;
             hubConnection.ConnectionSlow += connectionhubConnectionSlow;
             hubConnection.Closed += Connection_Closed;
+            // 아래 코드는 디버그가 필요한 경우 사용  -- romee/jake
+            hubConnection.TraceLevel = TraceLevels.All;
+            hubConnection.TraceWriter = Console.Out;
+            hubConnection.Headers.Add("user_id", Application.Session["user"]);
 
+            await hubConnection.Start();
+
+            owner.LabelON(true);
             proxy.On<string>("sendMessageToClients", async (str1) =>
 			{
 				Console.WriteLine(str1);
@@ -48,7 +60,14 @@ namespace Wisej.CodeProject.SignalR
             {
                 Application.Update(owner, () =>
                 {
-                    owner.RcvSigR(msg);
+                    try 
+                    {
+                        owner.RcvSigR(msg);
+                    }
+                    catch (Exception e1)
+                    {
+                        Console.WriteLine(e1.Message);
+                    }
                 });
             });
 
@@ -68,7 +87,6 @@ namespace Wisej.CodeProject.SignalR
             {
                 try
                 {
-                    // GS_DEL 단일 유저 접속 처리 
                 }
                 catch (Exception e)
                 {
@@ -134,14 +152,7 @@ namespace Wisej.CodeProject.SignalR
                     ConnectionEvent.Invoke(false);
             }
             Console.WriteLine(string.Format("connection_StateChanged New State:" + hubConnection.State + " " + hubConnection.ConnectionId));
-            // romee 2015/05/07 서버가 끈어지면 타이머를 돌려 1분마다 재시도 처리 필요 // 부산 주택금융공사 
-            // 여기서 처리 요망 
-
         }
-
-        // 타이머 처리 
-
-
         // 커넥션이 다시 되는 경우 
         void Connection_Reconnecting()
         {
@@ -156,7 +167,13 @@ namespace Wisej.CodeProject.SignalR
         // 커넥션이 종료된 경우 -> 디버깅시 발생 
         private void Connection_Closed()
         {
+            owner.LabelON(false);
             Console.WriteLine("SignalR Client Disconnected.");
+            //if (!Hub_Disconnect_Flag)
+            {
+                Thread.Sleep(30000);
+                ConnectToSignalR();
+            }
         }
 
         // 서버와 연결/해제 되면 해당 색상이 바뀜
@@ -168,41 +185,6 @@ namespace Wisej.CodeProject.SignalR
                 //g.main_window._colorConnect.DarkColor = color;
                 //g.main_window._colorConnect.LightColor = color;
             });
-        }
-
-        public void send(SignalRMsg msg)
-        {
-            try
-            {
-                proxy.Invoke("Send", new object[] { msg });
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error={0}, Message={1}", e.HResult, e.Message);
-            }
-        }
-        // 수신 메시지 처리 
-        private async Task<bool> process_msg(SignalRMsg msg)
-        {
-            eSignalRMsgType type = msg.Msgtype;
-            switch (type)
-            {
-                case eSignalRMsgType.eEM:
-                    break;
-            }
-            return true;
-        }
-        // 자산 변경시 서버로 시그날 전송 
-        public void send_asset_to_signalr()
-        {
-            SignalRMsg msg = new SignalRMsg()
-            {
-                Msgtype = eSignalRMsgType.eEM,
-                message = string.Format("Hello Server")
-            };
-            if (proxy == null)
-                return;
-            send(msg);
         }
 
     }

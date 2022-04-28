@@ -10,6 +10,8 @@ using static Wisej.CodeProject.DataSet1;
 using System.Linq;
 using Microsoft.Ajax.Utilities;
 using DataClass;
+using System.Drawing;
+using Wisej.CodeProject.win;
 
 namespace Wisej.CodeProject
 {
@@ -18,89 +20,44 @@ namespace Wisej.CodeProject
 		private Popups.StartPopup startPopup;
 		public event EventHandler ExampleCreated;
 
-		Main MainWin { get; set; }
-		BackgroundTasks example2 { get; set; }
-
+		Main Main { get; set; } = new Main();
+		Main1 Main1 { get; set; } = new Main1();
+		Main2 Main2 { get; set; } = new Main2();
+		Main3 Main3 { get; set; } = new Main3();
+		Main4 Main4 { get; set; } = new Main4();
 		public static SignalRClient signalRClient { get; set; } = new SignalRClient();
-
+		public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
 
 		public MyDesktop()
 		{
 			InitializeComponent();
-
-/*
-			string connStr = @"Data Source=E:\0 신사업\demo\webPA\newrep\wisej\0 use\0 CodeProject\Wisej.CodeProject\bin\simplepaw.db;Pooling=true;FailIfMissing=false";
-
-			try 
-			{ 
-				conn = new SQLiteConnection(connStr);
-				conn.Open();
-
-				// 테이블 유무 검사
-				SQLiteCommand command = new SQLiteCommand(conn);
-				command.CommandText = "SELECT COUNT(*) FROM sqlite_master WHERE type = 'table';";
-				command.CommandType = CommandType.Text;
-				int RowCount = 0;
-				RowCount = Convert.ToInt32(command.ExecuteScalar());
-
-				// 데이터 조회
-				String SelectSQL = "SELECT * FROM sqlite_master WHERE type='table';";
-				SQLiteCommand cmd = new SQLiteCommand(SelectSQL, conn);
-				//var rdr = cmd.ExecuteScalar();
-				//var rdr = cmd.ExecuteReaderAsync();
-				SQLiteDataReader rdr = cmd.ExecuteReader();
-				while (rdr.Read())
-				{
-					Console.WriteLine($"{rdr.GetString(0)} {rdr.GetString(1)} {rdr.GetString(2)}");
-				}
-				command.Dispose();
-
-				DataContext db = new DataContext(conn);
-
-				//var t2 = db.GetTable<UserTrees>();
-			}
-			catch (Exception e1)
+			
+			for (int i = 1; i < 9; i++)
 			{
-				Console.WriteLine(e1.Message);
+				playItems[i] = new PlayItem();
+				playItems[i].chno = i;
 			}
 
-*/
 			this.startPopup = new Popups.StartPopup()
 			{
 				Alignment = Placement.TopLeft
 			};
-			this.startPopup.ExampleCreated += StartPopup_ExampleCreated;
-
 			this.customWallpaper1.RotationInterval = 5000;
 
-			Application.Session["isloggedon"] = "true";
-			Application.Session["user"] = "Admin";
-
-		}
-
-		internal void RcvSigR(SignalRMsg msg)
-        {
-			AlertBox.Show(msg.message);
-			switch (msg.Msgtype)
+			string t1 = Application.Session["user"];
+			if (t1 == null)
 			{
-				case eSignalRMsgType.eEM:
-					break;
-				case eSignalRMsgType.eEM_FIRE:
-					break;
-				case eSignalRMsgType.eEM_PRESET_SW:
-					break;
-				case eSignalRMsgType.ePlay:
-					break;
-				case eSignalRMsgType.ePlayEnd:
-					break;
-				case eSignalRMsgType.ePlaying:
-					break;
-				case eSignalRMsgType.eStop:
-					break;
+				Application.Session["isloggedon"] = "true";
+				Application.Session["user"] = "Admin";
+				Application.Session["user_name"] = "관리자";
 			}
-			MainWin.RcvSigR(msg);
+
+			Main22();
 		}
 
+		#region // Main
+
+		bool show = false;
         private void MyDesktop_ItemClick(object sender, DesktopTaskBarItemClickEventArgs e)
 		{
 			panel1.TabIndex = 100; // .Show();
@@ -110,10 +67,21 @@ namespace Wisej.CodeProject
 				switch (e.Item.Name)
 				{
 					case "desktopDateTime":
+						break;
 					case "desktopStart":
-						MainWin.WindowState = FormWindowState.Minimized;
-						example2.WindowState = FormWindowState.Minimized;
-
+						if (show)
+						{
+							Main.WindowState = FormWindowState.Maximized;
+						}
+						else
+						{ 
+							Main.WindowState = FormWindowState.Minimized;
+							Main1.WindowState = FormWindowState.Minimized;
+							Main2.WindowState = FormWindowState.Minimized;
+							Main3.WindowState = FormWindowState.Minimized;
+							Main4.WindowState = FormWindowState.Minimized;
+						}
+						show = !show;
 						break;
 					case "desktopTaskBarItemCompras":
 						break;
@@ -128,44 +96,82 @@ namespace Wisej.CodeProject
 			}
 		}
 
-		private void justGage1_Click(object sender, EventArgs e)
-		{
-		}
-
-		private void StartPopup_ExampleCreated(object sender, EventArgs e)
-		{
-		}
-
-
 		private void MyDesktop_Load(object sender, EventArgs e)
 		{
 
 			// start gage background task.
 			SatrtUpdatingGageItem();
 
-			MainWin = new Main();
-			example2 = new Examples.BackgroundTasks();
-			MainWin.Show(); // .Active = true; // .Activate();
-			example2.Show();
-			MainWin.WindowState = FormWindowState.Minimized;
-			example2.WindowState = FormWindowState.Minimized;
+			Main.Show(); // .Active = true; // .Activate();
+			Main1.Show();
+			Main2.Show();
+			Main3.Show();
+			Main4.Show();
+
+			Main.WindowState = FormWindowState.Maximized;
+			Main1.WindowState = FormWindowState.Maximized;
+			Main2.WindowState = FormWindowState.Maximized;
+			Main3.WindowState = FormWindowState.Maximized;
+			Main4.WindowState = FormWindowState.Maximized;
+
+			Main.Show(); // .Active = true; // .Activate();
+			Call("dockWindows");
 
 			signalRClient.owner = this;
 			signalRClient.ConnectToSignalR();
 
 			var t1 = Application.Session["user"];
-			AlertBox.Show("Log-In : " + t1);
+			var t2 = Application.Session["user_name"];
 
+			AlertBox.Show("Log-In : " + t2 + t1);
+
+            Application.LoadTheme("Blue-1");
+			//Application.LoadTheme("Blue-2");
+			//Application.LoadTheme("Blue-3");
+			//Application.LoadTheme("Classic-2");
+			//Application.LoadTheme("Clear-1");
+			//Application.LoadTheme("Clear-2");
+			//Application.LoadTheme("Clear-3");
+			//Application.LoadTheme("Graphite-3");
+			//Application.LoadTheme("Material-3");
+			//Application.LoadTheme("Vista-2");
+
+			Main_Load22(sender, e);
+			Main_Load42(sender, e);
+			Main_Load62(sender, e);
 		}
+
 
 		private void MyDesktop_SizeChanged(object sender, EventArgs e)
 		{
-			if (MainWin == null)
+			if (Main == null)
 				return;
-			MainWin.WindowState = FormWindowState.Maximized;
-			example2.WindowState = FormWindowState.Maximized;
+			//Main.WindowState = FormWindowState.Maximized;
+			//Main1.WindowState = FormWindowState.Maximized;
 		}
 
+		private void MyDesktop_Resize(object sender, EventArgs e)
+		{
+			//MyDesktop.AutoHideTaskbar = true
+
+		}
+
+		private void MyDesktop_Activated(object sender, EventArgs e)
+		{
+			if (Main == null)
+				return;
+			this.MyDesktop_SizeChanged(null, null);
+
+			//Main.Invalidate(); // .re .re .WindowState = FormWindowState.Minimized;
+								  //example1.WindowState = FormWindowState.Minimized;
+			//Main1.WindowState = FormWindowState.Minimized;
+			//this.ResizeRedraw = true;
+			this.Invalidate();
+		}
+
+		#endregion
+
+		#region // button 
 		private void SatrtUpdatingGageItem()
 		{
 			Application.StartTask(() =>
@@ -173,7 +179,7 @@ namespace Wisej.CodeProject
 
 				while (!Application.IsTerminated)
 				{
-					this.justGage1.Value = Program.CPU;
+					//this.justGage1.Value = Program.CPU;
 					Application.Update(this);
 					Thread.Sleep(1000);
 				}
@@ -181,7 +187,7 @@ namespace Wisej.CodeProject
 		}
 
 		// 환경설정
-        private void button1_Click(object sender, EventArgs e)
+		private void button1_Click(object sender, EventArgs e)
         {
 			var win1 = new MSet();
 			win1.Show();
@@ -222,17 +228,38 @@ namespace Wisej.CodeProject
 		// 방송 이력 
 		private void button6_Click(object sender, EventArgs e)
         {
+			Page2 p1 = new Page2();
+			p1.Show();
+
+			Page2 p2 = new Page2();
+			p2.Show();
+			//Application.Call("dockTwins");
+
+			//Call("dock2");
+			//Call("dockWindows");
+
+			/*
+			bslamp1.LabelOn(9, true);
 			sendSigR("Hello Server..");
-			//AlertBox.Show(msg1.em_status);
+			AlertBox.Show("aaa");
+			bslamp1.LabelOn(1, true);
+			bslamp1.LabelOn(3, true);
+			bslamp1.LabelOn(5, true);
+			bslamp1.LabelOn(7, true);
+			*/
 		}
 
 		// 비상방송 이력 
 		private void button7_Click(object sender, EventArgs e)
         {
+			SignalRMsg msg1 = new SignalRMsg();
+			msg1.play8sig[2].p_run = true;
+			msg1.play8sig[5].p_run = true;
+			playItems = msg1.play8sig;
+			PlayItemDisplay();
+		}
 
-        }
-
-		// 스피커 볼륨 조정 
+        // 스피커 볼륨 조정 
         private void button8_Click(object sender, EventArgs e)
         {
 			var win1 = new Window1();
@@ -255,69 +282,37 @@ namespace Wisej.CodeProject
 
 		}
 
-        private void MyDesktop_Resize(object sender, EventArgs e)
+        #endregion
+
+
+
+        private void MyDesktop_WidgetEvent(object sender, WidgetEventArgs e)
         {
-			//MyDesktop.AutoHideTaskbar = true
 
-		}
+        }
 
-        private void MyDesktop_Activated(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)
         {
-			if (MainWin == null)
-				return;
-			this.MyDesktop_SizeChanged(null,null);
+			Main.Close();
+			Main1.Close();
+			Main2.Close();
+			Main3.Close();
+			Main4.Close();
 
-			MainWin.Invalidate(); // .re .re .WindowState = FormWindowState.Minimized;
-			//example1.WindowState = FormWindowState.Minimized;
-			example2.WindowState = FormWindowState.Minimized;
-			this.ResizeRedraw = true;
-			this.Invalidate();
-		}
+			Application.Session["isloggedon"] = "false";
+			Application.Session["user"] = "";
+			Application.Session["user_name"] = "";
+
+			LoginPage loginPage = new LoginPage();
+			loginPage.Show();
+			this.Dispose(true);
+        }
+
+        private void tabPage1_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
 
 
-		internal void sendSigR(string v)
-		{
-			SignalRMsg msg1 = new SignalRMsg();
-			msg1.message = v;
-			if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-				signalRClient.proxy.Invoke("MessageC2S2", msg1);
-		}
-
-		internal Guid sendSigR(eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic, Guid guid)
-		{
-			SignalRMsg msg1 = new SignalRMsg();
-			msg1.user = Application.Session["user"];
-
-			switch (v1)
-			{
-				case eSignalRMsgType.ePlay:
-					msg1.Guid = Guid.NewGuid();
-					msg1.message = "Play";
-					msg1.Msgtype = v1;
-					//msg1.assetsRows = selAsset;
-					//var t1 = selMusic.Select(p => new { p.MusicId }).ToList();
-					var t1 = selMusic.Select(p => new { p.MusicId });
-					msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
-
-					var t2 = selAsset.Select(p => new { p.AssetId });
-					msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
-					break;
-				case eSignalRMsgType.eStop:
-					msg1.Guid = guid;
-					msg1.message = "Stop";
-					msg1.Msgtype = v1;
-					break;
-			}
-
-			try
-			{
-				if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-					signalRClient.proxy.Invoke("MessageC2S2", msg1);
-			}
-			catch (Exception e1)
-			{
-			}
-			return msg1.Guid;
-		}
     }
 }

@@ -55,12 +55,14 @@ namespace pa
 
         bool check1 = false; // 재 실행 방지 
         bool check2 = false; // 재 실행 방지 
+        bool check3 = false; // 재 실행 방지 
 
-        private void SpeakerChecker_OnSpeakerCheck(object sender, EventArgs e)
+        // DNS 송신후 패킷 캡처 하기 
+        private void AThread_OnSpeakerCheck(object sender, EventArgs e)
         {
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
             {
-                if (check1 || check2) return;
+                if (check1 || check2 || check3) return;
                 check1 = true;
 
                 try
@@ -78,11 +80,12 @@ namespace pa
             }));
         }
 
-        private void SpeakerChecker_OnAliveChk(object sender, EventArgs e)
+        // 캡처된 내용 분석 하기 
+        private void AThread_OnAliveChk(object sender, EventArgs e)
         {
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
             {
-                if (check2) return;
+                if (check1 || check2 || check3) return;
                 check2 = true;
                 var t2 = LScap.g.capData;
 
@@ -121,7 +124,8 @@ namespace pa
 
                     if (t2.Count < 2)
                     {
-                        speakerChecker.T2chktimer.Start();
+                        // 패킷이 잘 안잡히면 재 시동 
+                        wireShark.T2chktimer.Start();
                         //LSCap.Refresh();
                     }
 
@@ -132,6 +136,17 @@ namespace pa
 
                 }
                 check2 = false;
+            }));
+        }
+
+        private void AThread_OnGetDevice(object sender, EventArgs e)
+        {
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
+            {
+                if (check1 || check2 || check3) return;
+                check3 = true;
+                //LSmDNSW.g.GetDevice();
+                check3 = false;
             }));
         }
         #endregion

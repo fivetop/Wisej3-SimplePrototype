@@ -8,6 +8,7 @@ using System.Threading;
 using System.Web.Http;
 using Wisej.Web;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Wisej.CodeProject
 {
@@ -21,7 +22,12 @@ namespace Wisej.CodeProject
 			//Capture original request and response
 			//Enabling Attribute Routing, e.g domain.com/api/product/1
 			GlobalConfiguration.Configure(WebApiConfig.Register);
-			//LoginPage loginPage = new LoginPage();
+			
+			/*
+			LoginPage loginPage = new LoginPage();
+			loginPage.Show();
+			// */
+			
 			Application.Desktop = new MyDesktop();
 		}
 
@@ -32,6 +38,30 @@ namespace Wisej.CodeProject
 		//static void Main(NameValueCollection args)
 		//{
 		//}
+
+		internal static event EventHandler ClientListChanged;
+		private static List<string> _clientList = new List<string>();
+
+		internal static void AddClient(string name)
+		{
+			lock (_clientList)
+			{
+				if (!_clientList.Contains(name))
+				{
+					_clientList.Add(name);
+
+					ClientListChanged?.Invoke(null, EventArgs.Empty);
+				}
+			}
+		}
+
+		internal static string[] GetList()
+		{
+			lock (_clientList)
+			{
+				return _clientList.ToArray();
+			}
+		}
 
 		internal static float CPU
 		{

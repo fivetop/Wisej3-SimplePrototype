@@ -2,6 +2,7 @@
 using gClass;
 using Microsoft.AspNet.SignalR;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 using Wisej.CodeProject;
@@ -9,9 +10,11 @@ using Wisej.CodeProject;
 namespace pa
 {
     //[HubName("signalr")]
-    
+
     public class signalr : Hub
     {
+        public string user_id { get; set; }
+
         public signalr()
         {
             g._hub = this;
@@ -19,13 +22,17 @@ namespace pa
 
         public override Task OnConnected()
         {
-            g.Log("SigR Connected : " + Context.ConnectionId.ToString());
+            user_id = Context.Headers["user_id"];
+            g.Log("SigR Connected : " + user_id + " : "+ Context.ConnectionId.ToString());
+            g.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
             return base.OnConnected();
         }
 
         public override Task OnDisconnected(bool b1)
         {
-            g.Log("SigR DisConnected : " + Context.ConnectionId.ToString());
+            user_id = Context.Headers["user_id"];
+            g.Log("SigR DisConnected : " + user_id + " : " + Context.ConnectionId.ToString());
+            g.SendSigR(user_id, eSignalRMsgType.eLogoutUser, 0, 0);
             return base.OnDisconnected(true);
         }
 

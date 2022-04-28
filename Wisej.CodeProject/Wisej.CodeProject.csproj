@@ -58,12 +58,18 @@
     <Content Include="imgs\login2.jpg" />
     <Content Include="imgs\signature-kr.png" />
     <Content Include="index2.html" />
+    <Content Include="Wisej.CodeProject.js" />
     <Content Include="Properties\DataSources\Wisej.CodeProject.Jeremy.Data.DataItem.datasource" />
     <Content Include="Files\Wisej-Datasheet-V2.3.pdf" />
     <Content Include="packages.config" />
     <Content Include="Scripts\chatClient.js" />
     <Content Include="Properties\DataSources\PMusicSel.datasource" />
     <Content Include="libman.json" />
+    <Content Include="Properties\DataSources\MyDesktop.datasource" />
+    <Content Include="Properties\DataSources\DataClass.PlayItem.datasource" />
+    <Content Include="Properties\DataSources\Wisej.CodeProject.SignalR.SignalRClient.datasource" />
+    <Content Include="Properties\DataSources\Wisej.CodeProject.SignalR.ConnectFlag.datasource" />
+    <Content Include="Handler1.ashx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -86,6 +92,17 @@
     <Content Include="Properties\DataSources\Model.DataList.datasource" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Themes\Clear-1.theme" />
+    <Content Include="Themes\App.mixin.theme" />
+    <Content Include="Themes\Blue-1.theme" />
+    <Content Include="Themes\Blue-2.theme" />
+    <Content Include="Themes\Blue-3.theme" />
+    <Content Include="Themes\Classic-2.theme" />
+    <Content Include="Themes\Clear-2.theme" />
+    <Content Include="Themes\Clear-3.theme" />
+    <Content Include="Themes\Graphite-3.theme" />
+    <Content Include="Themes\Material-3.theme" />
+    <Content Include="Themes\Vista-2.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,11 +111,41 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Control\bslamp.resx">
+      <DependentUpon>bslamp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chat\SimpleChatClient.resx">
       <DependentUpon>SimpleChatClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\ListviewCTL.resx">
+      <DependentUpon>ListviewCTL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\DeviceCTL.resx">
+      <DependentUpon>DeviceCTL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page2.resx">
+      <DependentUpon>Page2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\EventEditor.resx">
+      <DependentUpon>EventEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\Main4.resx">
+      <DependentUpon>Main4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\Main3.resx">
+      <DependentUpon>Main3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\Main2.resx">
+      <DependentUpon>Main2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\Main1.resx">
+      <DependentUpon>Main1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win\MGroup.resx">
       <DependentUpon>MGroup.cs</DependentUpon>
@@ -555,6 +602,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\bslamp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\bslamp.Designer.cs">
+      <DependentUpon>bslamp.cs</DependentUpon>
+    </Compile>
     <Compile Include="chat\SimpleChatClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -564,6 +617,25 @@
     <Compile Include="chat\SimpleChatServer.cs" />
     <Compile Include="chat\SimpleChatServerEventArgs.cs" />
     <Compile Include="chat\SimpleChatServerEventHandler.cs" />
+    <Compile Include="Control\ListviewCTL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ListviewCTL.Designer.cs">
+      <DependentUpon>ListviewCTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\DeviceCTL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DeviceCTL.designer.cs">
+      <DependentUpon>DeviceCTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserControl1.designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data1List.cs" />
     <Compile Include="DataList.cs" />
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -574,11 +646,68 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Handler1.ashx.cs">
+      <DependentUpon>Handler1.ashx</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDesktop1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Page2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page2.Designer.cs">
+      <DependentUpon>Page2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\EventEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="win\EventEditor.Designer.cs">
+      <DependentUpon>EventEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\Main4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="win\Main4.Designer.cs">
+      <DependentUpon>Main4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\Main3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="win\Main3.Designer.cs">
+      <DependentUpon>Main3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\Main2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="win\Main2.Designer.cs">
+      <DependentUpon>Main2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\Main1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="win\Main1.Designer.cs">
+      <DependentUpon>Main1.cs</DependentUpon>
     </Compile>
     <Compile Include="win\MGroup.cs">
       <SubType>Form</SubType>
@@ -665,9 +794,7 @@
     <Compile Include="webapi\Encryption.cs" />
     <Compile Include="webapi\MessageHandler.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Themes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="Devart.Data, Version=5.0.2806.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -806,6 +933,7 @@
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
@@ -817,6 +945,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="Wisej.Ext.MaterialDesign">
       <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Ext.MaterialDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Ext.ModernUI">
+      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Ext.ModernUI.dll</HintPath>
     </Reference>
     <Reference Include="Wisej.Framework">
       <HintPath>..\..\..\..\wisej\Development\2.0\bin\Wisej.Framework.dll</HintPath>
@@ -832,14 +963,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.CustomWallpaper.dll</HintPath>
     </Reference>
-    <Reference Include="Wisej.Web.Ext.JustGage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.JustGage.dll</HintPath>
-    </Reference>
+    <Reference Include="Wisej.Web.Ext.GoogleMaps, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
     <Reference Include="Wisej.Web.Ext.ProgressCircle, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.ProgressCircle.dll</HintPath>
     </Reference>
+    <Reference Include="Wisej.Web.Ext.RibbonBar, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Examples\BackgroundTasks.resx">
@@ -862,10 +991,17 @@
       <Project>{40d7c7ab-a585-49d9-b9a1-0a499eec5067}</Project>
       <Name>DataClass</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Wisej.Web.Ext.FullCalendar\Wisej.Web.Ext.FullCalendar.csproj">
+      <Project>{ac4ea38a-3c62-4eb6-a194-ebb5f64e27ff}</Project>
+      <Name>Wisej.Web.Ext.FullCalendar</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using static Wisej.CodeProject.DataSet1;
 
-namespace Model
+namespace Wisej.CodeProject
 {
     public class DataList : INotifyPropertyChanged
     {

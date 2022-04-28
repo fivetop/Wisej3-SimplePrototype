@@ -204,7 +204,7 @@
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataSource = typeof(Model.DataList);
+            this.bindingSource1.DataSource = typeof(DataList);
             // 
             // button1
             // 

@@ -731,6 +731,8 @@ namespace LSmDNSW
 			return null;
 		}
 
+		public delegate void EventNewDevice(object o);
+		public event EventNewDevice OnEventNewDevice;
 
 		public void GetDevice()
 		{
@@ -762,6 +764,7 @@ namespace LSmDNSW
 							t2.name = a.domain.Split('.')[0];
 						gl.danteDevice._DanteDevice.Add(t2);
 						g.Log("new Device : " + t2.ip.ToString() + " : " + t2.name);
+						OnEventNewDevice?.Invoke(t2);
 					}
 					else
 					{
@@ -971,33 +974,7 @@ namespace LSmDNSW
 			//GatherResources2();
 			return null;
 		}
-
-		public void GatherResources2()
-		{
-			try
-			{
-				Thread thread = new Thread(ReceiverThread2);
-				thread.Start(this);
-				//Thread.Sleep(5000);
-				//thread.Abort();
-				//thread.Join();
-			}
-			catch (Exception e1)
-			{
-			}
-		}
-
-		private static void ReceiverThread2(Object arg)
-		{
-			Thread.CurrentThread.Name = "ResolveListenerThread";
-			Resolver receiver = (Resolver)arg;
-			receiver.GatherResponses();
-		}
-
-
 	}
-
-
 	#endregion
 }
 

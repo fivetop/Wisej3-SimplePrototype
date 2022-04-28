@@ -85,6 +85,7 @@ namespace pa
             g.XMLRead();
             g.Log("XMLRead");
 
+
             Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
             // 로긴 후에 데이터 준비 기간 동안 프로그래스 바를 보여준다.

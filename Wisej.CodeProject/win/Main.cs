@@ -4,10 +4,10 @@ using System.Threading;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
-using static Wisej.CodeProject.DataSet1;
 using System.Data;
 using System.Collections.Generic;
 using DataClass;
+using static Wisej.CodeProject.DataSet1;
 
 namespace Wisej.CodeProject
 {
@@ -139,7 +139,7 @@ namespace Wisej.CodeProject
 				var menu3 = ctxMenu.MenuItems.Add("인터넷방송추가");
 				var menu4 = ctxMenu.MenuItems.Add("미리듣기");
 				var position = grid.PointToClient(Cursor.Position);
-				ctxMenu.Show((Control)sender, position);
+				ctxMenu.Show((Web.Control)sender, position);
 
 				menu1.Click += (s, e1) =>
 				{

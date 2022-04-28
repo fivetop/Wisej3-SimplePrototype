@@ -40,9 +40,9 @@ namespace pa
         {
             string event_text = "";
             string log = "";
-            g.em_status = em_status;
+            em_status = em_status;
             CommState("");
-            msg pkt = new msg("F", g.em_status.ToString(), v2, v3, prowdata);
+            msg pkt = new msg("F", em_status.ToString(), v2, v3, prowdata);
             //s1.Send(pkt.pkt);
             run_pktr = t1;
 
@@ -61,14 +61,15 @@ namespace pa
                 prowdata = "";
             }
 
+            string str1;
+
             switch (em_status)
             {
                 case 1:
-                    g.TestAlarm = false;
-                    g.Alarm = g.Alarm + 1;
+                    TestAlarm = false;
+                    Alarm = Alarm + 1;
                     write_ini(true);
 
-                    g.Log("화재발생 신호를 수신하였습니다." + pkt.pkt);
                     if (v2 == "1")
                     {
                         event_text = v3 + "층";
@@ -80,20 +81,26 @@ namespace pa
                         event_text = pktr1.log; // dv1.array[2];
                     }
                     //FireEventDisplay();
-                    g.SendR(pkt.src, eSignalRMsgType.eEM_FIRE, 1, int.Parse(v3));
+                    str1 = "화재발생 신호를 수신하였습니다." + pkt.src;
+                    g.Log(str1);
+
+                    g.SendSigR(str1, eSignalRMsgType.eEM_FIRE, 1, int.Parse(v3));
                     EMBSOn();
                     break;
                 case 2:
-                    g.TestAlarm = false;
+                    TestAlarm = false;
 
-                    if (g.Alarm > 0)
+                    if (Alarm > 0)
                     {
-                        g.Alarm = 0;
+                        Alarm = 0;
                         write_ini(true);
                         EMBSOff();
                         // 볼륨 초기화 처리  
                         InitVolume();
-                        g.SendR(pkt.src, eSignalRMsgType.eEM_FIRE, 2, 0);
+
+                        str1 = "화재복구 신호를 수신하였습니다." + pkt.src;
+                        g.Log(str1);
+                        g.SendSigR(str1, eSignalRMsgType.eEM_FIRE, 2, 0);
                     }
 
                     if (run_pktr == null)
@@ -124,27 +131,30 @@ namespace pa
                     break;
                 case 3:
                     //if (g.Alarm) return;
-                    g.TestAlarm = true;
+                    TestAlarm = true;
                     write_ini(true);
-                    g.Log("시험용 화재발생 신호를 수신하였습니다." + pkt.pkt);
+                    str1 = "시험용 화재발생 신호를 수신하였습니다." + pkt.pkt;
+                    g.Log(str1);
                     event_text = "0층 시험용";
                     UpdateStatusbar("0층", "시험용", "정상");
                     log = "발생:";
                     EMBSOn();
-                    g.SendR("0층 시험용", eSignalRMsgType.eEM_FIRE, 3, 0);
+                    g.SendSigR(str1, eSignalRMsgType.eEM_FIRE, 3, 0);
                     //FireEventDisplay();
                     break;
                 case 4:
-                    if (g.TestAlarm)
+                    if (TestAlarm)
                     {
-                        g.TestAlarm = false;
+                        TestAlarm = false;
                         // 테스트 버튼 복구시 비상방송도 복구 ??
-                        g.Alarm = 0;
+                        Alarm = 0;
                         write_ini(true);
                         EMBSOff();
                         // 볼륨 초기화 처리  
                         InitVolume();
-                        g.SendR("0층 시험용", eSignalRMsgType.eEM_FIRE, 4, 0);
+                        str1 = "시험용 화재복구 신호를 수신하였습니다." + pkt.pkt;
+                        g.Log(str1);
+                        g.SendSigR(str1, eSignalRMsgType.eEM_FIRE, 4, 0);
                     }
                     log = "복구:";
                     event_text = "0층 시험용";
@@ -173,8 +183,8 @@ namespace pa
 
             try
             {
-                string str1 = event_text + "~" + type1 + "~" + log + type1 + prowdata;
-                g.Log(str1);
+                string str2 = event_text + "~" + type1 + "~" + log + type1 + prowdata;
+                //g.Log(str2);
                 dBSqlite.Eventvm(event_text, type1, log + type1 + prowdata);
             }
             catch (Exception e1)
@@ -474,7 +484,7 @@ namespace pa
                         //_a1.IsChecked = false;
                         g.DSP_MakeGroupSpeaker(null, 0, BS_DSP_STATE.PRESET_ALL);
                         Preset_chk();
-                        g.SendR("All 프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, 0, 0);
+                        g.SendSigR("All 프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, 0, 0);
                         dBSqlite.Eventvm("eEM_PRESET_SW", "All 프리셋 버튼 : Off", "OFF");
                     }
                     else
@@ -482,7 +492,7 @@ namespace pa
                         g.Log("All 프리셋 버튼 : On");
                         //_a1.IsChecked = true;
                         g.DSP_MakeGroupSpeaker(null, 1, BS_DSP_STATE.PRESET_ALL);
-                        g.SendR("All 프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, 0, 1);
+                        g.SendSigR("All 프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, 0, 1);
                         dBSqlite.Eventvm("eEM_PRESET_SW", "All 프리셋 버튼 : On", "ON");
                     }
                     break;
@@ -513,7 +523,7 @@ namespace pa
                         // make asset array to assetbase 
                         //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 0, BS_DSP_STATE.PRESET);
                         Preset_chk();
-                        g.SendR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
+                        g.SendSigR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
                         dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : Off", "OFF");
                     }
                     else
@@ -536,7 +546,7 @@ namespace pa
                         }
                         // make asset array to assetbase 
                         //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 1, BS_DSP_STATE.PRESET);
-                        g.SendR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
+                        g.SendSigR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
                         dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : On", "ON");
                     }
                     break;
@@ -589,13 +599,13 @@ namespace pa
                 case 7:
                     if (GetBit(newbstr, chk) == 1)
                         break;
-                    if (g.TestAlarm) // 실행중이면 리턴 
+                    if (TestAlarm) // 실행중이면 리턴 
                         return;
                     Fire_Alarm(3, "T", "0", str1, null);
                     break;
                 // EM Test Recovery 화재 LED Off
                 case 8:
-                    if (g.TestAlarm == false) // 종료 상태면 리턴 
+                    if (TestAlarm == false) // 종료 상태면 리턴 
                         return;
                     Fire_Alarm(4, "T", "0", str1, null);
                     g.Log(chk.ToString() + " 복구");
@@ -892,7 +902,7 @@ namespace pa
                             break;
                         case "e":
                             eM_MODE = EM_MODE.연동정상;
-                            g.Alarm = 0;
+                            Alarm = 0;
                             _event_text.Text = "연동정상";
                             _event_content.Text = "연동복구";
 
@@ -944,7 +954,7 @@ namespace pa
         bool first = true;
         private void _Status2_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            g.SendR("Hello Client", eSignalRMsgType.eEM, 0, 0);
+            g.SendSigR("Hello Client", eSignalRMsgType.eEM, 0, 0);
 
             alarmtest = !alarmtest;
 
@@ -1139,7 +1149,7 @@ namespace pa
             return;
             if (rw)
             {
-                string str1 = g.Alarm.ToString() + "," + g.TestAlarm.ToString();
+                string str1 = Alarm.ToString() + "," + TestAlarm.ToString();
                 if (System.IO.File.Exists("pa.ini") == false)
                 {
                     System.IO.File.WriteAllText("pa.ini", str1);
@@ -1147,8 +1157,8 @@ namespace pa
                 System.IO.File.WriteAllText("pa.ini", str1);
                 string ini = System.IO.File.ReadAllText("pa.ini");
                 string[] ar = ini.Split(',');
-                g.Alarm = int.Parse(ar[0]);
-                g.TestAlarm = bool.Parse(ar[1]);
+                Alarm = int.Parse(ar[0]);
+                TestAlarm = bool.Parse(ar[1]);
             }
             else
             {
@@ -1158,8 +1168,8 @@ namespace pa
                 }
                 string ini = System.IO.File.ReadAllText("pa.ini");
                 string[] ar = ini.Split(',');
-                g.Alarm = int.Parse(ar[0]);
-                g.TestAlarm = bool.Parse(ar[1]);
+                Alarm = int.Parse(ar[0]);
+                TestAlarm = bool.Parse(ar[1]);
             }
         }
         /*

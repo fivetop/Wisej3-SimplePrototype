@@ -41,7 +41,7 @@ namespace pa
                     play = dBSqlite.db2List(msg, chno);
                     ChSet(chno);
 
-                    var p =  g.play8ch[chno];
+                    var p =  g.playItems[chno];
                     {
                         p.chno = chno;
                         p.idno = 100000 + chno;
@@ -56,9 +56,9 @@ namespace pa
                     string line1 = string.Join(",", msg.assetsRows.ToArray());
                     string line2 = string.Join(",", msg.musicsRows.ToArray());
 
-                    string line = line1 + ";" + line2;
+                    string line = line1 + " : " + line2;
                     string l1 = "다원시작 : ";
-                    g.Log(l1 + p.chno.ToString() + ";" + line);
+                    g.Log(l1 + p.chno.ToString() + " : " + line);
                     dBSqlite.Eventvm(l1, p.chno.ToString() + "번 채널", line);
                     // window3 처리 
                     break;
@@ -79,7 +79,7 @@ namespace pa
             int rlt = 0;
             for (int i = 2; i < 9; i++)
             {
-                PlayItem pl1 = g.play8ch[i];
+                PlayItem pl1 = g.playItems[i];
                 if (pl1.Guid == guid)
                 { 
                     return i;
@@ -90,11 +90,11 @@ namespace pa
 
         private void ChSet(int chno)
         {
-            g.play8ch[chno] = new PlayItem();
-            g.play8ch[chno].p_run = true;
-            g.play8ch[chno].idno = 100000 + chno;
-            g.play8ch[chno].state = "대기";
-            g.play8ch[chno].chno = chno;
+            g.playItems[chno] = new PlayItem();
+            g.playItems[chno].p_run = true;
+            g.playItems[chno].idno = 100000 + chno;
+            g.playItems[chno].state = "대기";
+            g.playItems[chno].chno = chno;
         }
 
         // 빈채널 찾기 
@@ -103,10 +103,10 @@ namespace pa
             int rlt = 0;
             for (int i = 2; i < 9; i++)
             {
-                PlayItem pl1 = g.play8ch[i];
+                PlayItem pl1 = g.playItems[i];
                 if (pl1.p_run)
                     continue;
-                if (pl1.chno != 0 || pl1.idno != 0)
+                if (pl1.idno != 0)
                     continue;
                 if (pl1.state != "대기")
                     continue;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace sig_svr_wpf
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SignalRMsg s1 = new SignalRMsg();
+            s1.message = "hi";
+            App._hub.MessageS2C2(s1);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SignalRMsg s1 = new SignalRMsg();
+            s1.message = "hi2";
+            App._hub.MessageS2C2(s1);
+
         }
     }
 }

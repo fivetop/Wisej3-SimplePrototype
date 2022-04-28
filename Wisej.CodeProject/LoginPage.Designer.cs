@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             this.panel1 = new Wisej.Web.Panel();
             this.linkLabel1 = new Wisej.Web.LinkLabel();
             this.button1 = new Wisej.Web.Button();
-            this.textBox2 = new Wisej.Web.TextBox();
-            this.textBox1 = new Wisej.Web.TextBox();
+            this.tloginpw = new Wisej.Web.TextBox();
+            this.tloginid = new Wisej.Web.TextBox();
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
             this.userTreesBindingSource = new Wisej.Web.BindingSource(this.components);
             this.userTreesTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.UserTreesTableAdapter();
@@ -49,58 +50,58 @@
             this.panel1.BorderStyle = Wisej.Web.BorderStyle.Dotted;
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tloginpw);
+            this.panel1.Controls.Add(this.tloginid);
             this.panel1.HeaderAlignment = Wisej.Web.HorizontalAlignment.Center;
             this.panel1.HeaderBackColor = System.Drawing.Color.FromArgb(255, 167, 0);
             this.panel1.HeaderSize = 40;
-            this.panel1.Location = new System.Drawing.Point(193, 36);
+            this.panel1.Location = new System.Drawing.Point(272, 34);
             this.panel1.Name = "panel1";
             this.panel1.ShowCloseButton = false;
             this.panel1.ShowHeader = true;
-            this.panel1.Size = new System.Drawing.Size(421, 344);
+            this.panel1.Size = new System.Drawing.Size(421, 265);
             this.panel1.TabIndex = 1;
             this.panel1.TabStop = true;
-            this.panel1.Text = "LOGIN";
+            this.panel1.Text = "SimplePA v1.0";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(247, 240);
+            this.linkLabel1.Location = new System.Drawing.Point(247, 192);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(101, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(83, 13);
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.Text = "Forgot password";
             this.linkLabel1.LinkClicked += new Wisej.Web.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(63, 172);
+            this.button1.Location = new System.Drawing.Point(63, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(292, 38);
             this.button1.TabIndex = 2;
             this.button1.Text = "LOGIN";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // tloginpw
             // 
-            this.textBox2.AutoSize = false;
-            this.textBox2.InputType.Type = Wisej.Web.TextBoxType.Password;
-            this.textBox2.Location = new System.Drawing.Point(63, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(292, 38);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Watermark = "Password";
+            this.tloginpw.AutoSize = false;
+            this.tloginpw.InputType.Type = Wisej.Web.TextBoxType.Password;
+            this.tloginpw.Location = new System.Drawing.Point(63, 70);
+            this.tloginpw.Name = "tloginpw";
+            this.tloginpw.PasswordChar = '*';
+            this.tloginpw.Size = new System.Drawing.Size(292, 38);
+            this.tloginpw.TabIndex = 1;
+            this.tloginpw.Watermark = "Log-In Password";
             // 
-            // textBox1
+            // tloginid
             // 
-            this.textBox1.AutoSize = false;
-            this.textBox1.Location = new System.Drawing.Point(63, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 38);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Watermark = "User Name";
+            this.tloginid.AutoSize = false;
+            this.tloginid.Location = new System.Drawing.Point(63, 20);
+            this.tloginid.Name = "tloginid";
+            this.tloginid.Size = new System.Drawing.Size(292, 38);
+            this.tloginid.TabIndex = 0;
+            this.tloginid.Watermark = "Log-In ID";
             // 
             // dataSet1
             // 
@@ -118,11 +119,13 @@
             // 
             // LoginPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
             this.Controls.Add(this.panel1);
             this.Name = "LoginPage";
-            this.Size = new System.Drawing.Size(807, 417);
+            this.Size = new System.Drawing.Size(965, 412);
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -137,8 +140,8 @@
         private Web.Panel panel1;
         private Web.LinkLabel linkLabel1;
         private Web.Button button1;
-        private Web.TextBox textBox2;
-        private Web.TextBox textBox1;
+        private Web.TextBox tloginpw;
+        private Web.TextBox tloginid;
         private DataSet1 dataSet1;
         private Web.BindingSource userTreesBindingSource;
         private DataSet1TableAdapters.UserTreesTableAdapter userTreesTableAdapter;

@@ -3,6 +3,7 @@ using Wisej.Web;
 using System.IO;
 using System.Drawing;
 using System.Configuration;
+using System.Web;
 
 namespace Wisej.CodeProject
 {
@@ -13,10 +14,18 @@ namespace Wisej.CodeProject
 			InitializeComponent();
 		}
 
-		private string dbFilePath;
-
 		private void DataBinding_Load(object sender, EventArgs e)
 		{
+			this.upload1.CreateControl();
+
+			this.button2.Eval(
+	   String.Format(@"
+            this.uploadButton = Wisej.Core.getComponent(""id_{0}"");
+            this.addListener(""execute"", function(e)
+              {{
+                 this.uploadButton.upload();
+              }});", this.upload1.Handle));
+
 			Application.ApplicationExit += Application_ApplicationExit;
 			LoadData();
 		}
@@ -31,32 +40,10 @@ namespace Wisej.CodeProject
 
 		private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
 		{
-			this.dataGridView1.Tools["Save"].Enabled = true;
+			//this.dataGridView1.Tools["Save"].Enabled = true;
 		}
 
-		private void dataGridView1_ToolClick(object sender, ToolClickEventArgs e)
-		{
-			switch (e.Tool.Name)
-			{
-				case "Save":
-					SaveData();
-					break;
-
-				case "Add":
-					AddNewRecord();
-					break;
-
-				case "Delete":
-					DeleteRecord();
-					break;
-
-				case "Reload":
-					LoadData();
-					break;
-			}
-		}
-
-		private void DeleteRecord()
+        private void DeleteRecord()
 		{
 			// this method shows server-side modal.
 
@@ -128,27 +115,37 @@ namespace Wisej.CodeProject
 
 		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
 		{
-			this.dataGridView1.Tools["Delete"].Enabled = this.dataGridView1.CurrentRow != null;
 		}
 
-		private void dataGridView1_CellToolClick(object sender, DataGridViewToolClickEventArgs e)
-		{
-			AlertBox.Show("You clicked the sun tool. Nice work.");
-		}
-
-		private void dateTimePicker1_ToolClick(object sender, ToolClickEventArgs e)
-		{
-			AlertBox.Show("You clicked the sun tool. Nice work.");
-		}
-
-		private void dataGridView1_Enter(object sender, EventArgs e)
-		{
-			this.bindingSource1.EndEdit();
-		}
-
-        private void label3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+			SaveData();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+			//this.upload1.UploadFiles();
+			//AddNewRecord();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+			DeleteRecord();
+        }
+
+        private void upload1_Uploaded(object sender, UploadedEventArgs e)
+        {
+			string strExeDir = Path.GetDirectoryName(Application.ExecutablePath);
+			string strFileUploadPath = strExeDir + "\\Uploaded_Files\\";
+			if (!Directory.Exists(strExeDir + "\\Uploaded_Files"))
+			{
+				Directory.CreateDirectory(strExeDir + "\\Uploaded_Files");
+				strFileUploadPath = strExeDir + "\\Uploaded_Files\\";
+			}
+			e.Files[0].SaveAs(strFileUploadPath + e.Files[0].FileName);
+
+			//e.Files[0].SaveAs("C:\\Test-upload" + e.Files[0].FileName);
+		}
     }
 }

@@ -29,7 +29,7 @@ namespace pa
             InitVolume(true);
 
             // 연속적인 알람은 
-            if (g.Alarm == 1 || g.TestAlarm)
+            if (Alarm == 1 || TestAlarm)
             {
                 PlayChildProcess(1, 999999);
             }
@@ -144,11 +144,11 @@ namespace pa
             //_T3.txt_Duration.Text = "";
 
             PlayChildProcess(1, 1);
-            g.em_status = 4;
-            CommState(g.em_status.ToString());
+            em_status = 4;
+            CommState(em_status.ToString());
             alarmtest = false;
-            g.Alarm = g.Alarm - 1;
-            if (g.Alarm < 0) g.Alarm = 0;
+            Alarm = Alarm - 1;
+            if (Alarm < 0) Alarm = 0;
             //write_ini(true);
             //CloseFlyControlEM();
             EMMetrixChOff();

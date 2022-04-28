@@ -23,9 +23,9 @@
                     </StackPanel>
                 </Border>
             </Grid>
-            
+
             <Grid Grid.Row="1">
-                <TabControl SelectionChanged="TabControl_SelectionChanged">
+                <TabControl SelectionChanged="TabControl_SelectionChanged" FontSize="16">
                     <TabItem Header="선번장등록">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -43,7 +43,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock x:Name="txtFileName" Margin="0,8,0,0" Text="File Name"/>
                                         </StackPanel>
-                                        <Button x:Name="_btnFile" Content="파일선택" Width="60" Click="_btnFile_Click" HorizontalAlignment="Right"/>
+                                        <Button x:Name="_btnFile" Content="파일선택" Width="100" Click="_btnFile_Click" HorizontalAlignment="Right"/>
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
@@ -59,8 +59,8 @@
                                     <Grid Grid.Row="2" Margin="4">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                             <TextBlock x:Name="_txtBlock"  Margin="0,8,0,0" Text=""/>
-                                        <Button x:Name="_btnMake" Content="데이터 파일 생성" Click="_btnMake_Click" HorizontalAlignment="Right"/>
-<!--
+                                            <Button x:Name="_btnMake" Content="데이터 파일 생성" Click="_btnMake_Click" HorizontalAlignment="Right"/>
+                                            <!--
                                             <Button x:Name="_btnTest" Content="테스트" Click="_btnTest_Click" HorizontalAlignment="Right"/>
                                             -->
                                         </StackPanel>
@@ -69,7 +69,7 @@
                             </Border>
                         </Grid>
                     </TabItem>
-                    
+
                     <TabItem Header="장비검색">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -81,14 +81,15 @@
                             <Grid Grid.Row="0" Margin="4">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="120"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="55*"/>
+                                    <ColumnDefinition Width="463*"/>
                                     <ColumnDefinition Width="120"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="120"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0">
                                     <TextBlock Text="Network Card" TextAlignment="Right"/>
                                 </Grid>
-                                <Grid Grid.Column="1">
+                                <Grid Grid.Column="1" Grid.ColumnSpan="2">
                                     <ComboBox x:Name="_combo" Background="Transparent" SelectionChanged="_combo_SelectionChanged" />
                                 </Grid>
                             </Grid>
@@ -100,7 +101,7 @@
                             <Grid Grid.Row="2" Margin="2">
                                 <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
                                     <StackPanel Orientation="Horizontal"  Margin="2">
-                                        <Button x:Name="_Status1" Content="List" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="_Status1_Click" Margin="10,0,0,0"></Button>
+                                        <Button x:Name="_Status1" Content="List" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="_Status1_Click" Margin="10,0,0,0" Height="25" VerticalAlignment="Top"></Button>
                                         <Button x:Name="_Status2" Content="Network" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="_Status2_Click" Margin="10,0,0,0"></Button>
                                         <Button x:Name="_Status3" Content="Save" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="_Status3_Click" Margin="10,0,0,0"></Button>
                                         <Button Content="Find DSP" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="Button_Click" Margin="10,0,0,0"></Button>
@@ -195,15 +196,15 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="70"/>
                                             <ColumnDefinition Width="70"/>
                                         </Grid.ColumnDefinitions>
 
                                         <StackPanel Orientation="Vertical" Margin="5" Grid.Column="0">
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="DSP 선택" Margin="0,8,0,0" HorizontalAlignment="Right"/>
-                                                <ComboBox  x:Name="cboType3" Margin="4" ToolTip="선택된 DSP" Width="140" SelectionChanged="cboType3_SelectionChanged"/>
-                                                <Button x:Name="_btn1" Content="변경내용 전체적용" Margin="4" Click="_btn1_Click" FontWeight="Normal" FontFamily="Malgun Gothic" FontSize="12"></Button>
+                                                <ComboBox  x:Name="cboType3" Margin="4" ToolTip="선택된 DSP" MinWidth="160" SelectionChanged="cboType3_SelectionChanged"/>
+                                                <Button x:Name="_btn1" Content="변경내용 전체적용" Margin="4" Click="_btn1_Click"></Button>
                                             </StackPanel>
                                         </StackPanel>
 
@@ -228,7 +229,7 @@
 
                 </TabControl>
             </Grid>
-            
+
             <StatusBar Grid.Row="2" Height="40">
                 <StatusBarItem x:Name="_Status" Content="DSP 입출력 설정시 사용합니다." FontSize="14"></StatusBarItem>
             </StatusBar>

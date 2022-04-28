@@ -48,8 +48,13 @@ namespace pa
         DataSet1 ds1 { get; set; }
         TableAdapterManager dm1 { get; set; }
 
-        SpeakerChecker speakerChecker { get; set; } = new SpeakerChecker();
+        WireSharkRunning wireShark { get; set; } = new WireSharkRunning();
 
+        int em_status { get; set; } = 0;  // 화재 1,2 시험 알람 3,4 가스 5,6  
+        int Alarm { get; set; } = 0; // 계속적인 발생을 관리 
+        bool TestAlarm { get; set; } = false;
+
+        public AThreadClass AThread { get; set; } = new AThreadClass();
         public MainWindow()
         {
             g.mainWindow = this;
@@ -79,7 +84,13 @@ namespace pa
         // 종료시 처리 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            //g.Info("Em Server 종료 처리중...");
+
+            AThread.Stop();
+            Thread.Sleep(1000);
+
             BSThreadClass.Stop();
+            Thread.Sleep(500);
 
             //e.Cancel = true; // alt F4 막기 
             if (spP.IsOpen) spP.Close();
@@ -97,6 +108,11 @@ namespace pa
                 _tray.Dispose();
                 _tray = null;
             }
+            LScap.g.LSpcapStop();// .LSpcap .CloseCap();
+            Thread.Sleep(1000);
+        }
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
             GC.SuppressFinalize(this);
         }
 
@@ -113,7 +129,7 @@ namespace pa
             _tray = new TrayIcon();
 
             DSPDeviceCheck();
-            g.Log("SpeakerCheck/MultiSound/Alive Inter Message Initial..");
+            g.Log("MultiSound/Alive Inter Message Initial..");
             IPC();
 
             AliveTimerJob();
@@ -128,20 +144,37 @@ namespace pa
             // 볼륨 초기화 처리  
             InitVolume();
 
-            g.Log("multiBS Initial..");
+            g.Log("multiBS Thread running..");
             // 다중 방송 초기화 처리 
             InitMultiBS();
             gl.NetWorkCardFind();
             g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName );
-            g.Log("Initialize OK..");
 
             if (gl.NetworkCardName != "이더넷")
             {
-                return;
-                speakerChecker.OnAliveChk += SpeakerChecker_OnAliveChk;
-                speakerChecker.OnSpeakerCheck += SpeakerChecker_OnSpeakerCheck;
-                speakerChecker.CheckStart();
+                if (LScap.g.LSpcapStart() == false)
+                {
+                    g.Log("Card initial err.."); // opencap
+                }
+                else 
+                { 
+                    g.Log("Device Check Thread running..");
+                    AThread.OnSpeakerCheck += AThread_OnSpeakerCheck;
+                    AThread.OnAliveChk += AThread_OnAliveChk;
+                    AThread.OnGetDevice += AThread_OnGetDevice;
+                    AThread.DeviceChktime = 40; // 장비가 많아지면 시간 늘리기 
+                    AThread.Start();
+                    wireShark.CheckStart();
+
+                    LSmDNSW.Resolver.intfindx = gl.NetworkCardmDNS;
+                    LSmDNSW.g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
+                }
             }
+            g.Log("Initialize OK..");
+        }
+
+        private void Resolver_OnEventNewDevice(object o)
+        {
         }
 
         // IP 가 없는 디바이스 삭제 처리 
@@ -179,7 +212,7 @@ namespace pa
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
             this.MinHeight = this.ActualHeight;
-            this.MinWidth = this.ActualWidth;
+            this.MinWidth = this.ActualWidth/2;
 
             if (firsttime)
             {
@@ -193,10 +226,6 @@ namespace pa
 //                _tray.MinimizeToTray();
         }
 
-        private void MetroWindow_Closed(object sender, EventArgs e)
-        {
-            speakerChecker.Close();
-        }
 
         private void MetroWindow_Deactivated(object sender, EventArgs e)
         {

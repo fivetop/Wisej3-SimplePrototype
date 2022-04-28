@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using DataClass;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using Microsoft.Owin;
@@ -30,30 +31,33 @@ namespace sig_svr_wpf
         {
             Console.WriteLine("Hub AddMessage {0} {1}\n", name, message);
             Clients.All.addMessage(name, message);
+            Console.WriteLine(message);
         }
 
         public void Send(string name, string message)
         {
             Clients.All.broadcastMessage(name, message);
             sendMessageToClients("ssssssssssssssssss");
+            Console.WriteLine(message);
         }
         public void sendMessageToClients(string message)
         {
             Clients.All.sendMessageToClients(message);
+            Console.WriteLine(message);
         }
-        /*
-                public void MessageS2C(msg message)
+        ///*
+        public void MessageS2C2(SignalRMsg message)
                 {
-                    Clients.All.MessageS2C(message);
-                    g.Log(message.em_status);
+                    Clients.All.MessageS2C2(message);
+                    Console.WriteLine(message.message);
                 }
 
-                public void MessageC2S(msg message)
+                public void MessageC2S2(SignalRMsg message)
                 {
-                    Clients.All.MessageC2S(message);
-                    g.Log(message.em_status);
+                    Clients.All.MessageS2C2(message);
+                    Console.WriteLine(message.message);
                 }
-        */
+        //*/
     }
 
     // Signal R 쓰레드 진입점 

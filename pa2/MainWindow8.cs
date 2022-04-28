@@ -80,11 +80,11 @@ namespace pa
             int chno = p1;
             //Console.WriteLine("dispMBSRun : " + po1.ToString()); 
             if (chno < 2 || chno > 8) return;
-            var t1 = g.play8ch[chno];
+            var t1 = g.playItems[chno];
             if (t1.state == "방송중") return;
             t1.state = "방송중";
             //_T3.SchBS(t1.idno);
-            g.SendR("PLAYING", eSignalRMsgType.ePlaying, chno, 0);
+            g.SendSigR("PLAYING", eSignalRMsgType.ePlaying, chno, 0);
         }
 
         // **방송종료처리 - 다원 방송 종료
@@ -93,7 +93,7 @@ namespace pa
             int chno = p1;
             if (chno < 2 || chno > 8) return;
             {}
-            var t1 = g.play8ch[chno];
+            var t1 = g.playItems[chno];
             if (t1 == null) return;
             if (t1.state != "방송중") return;
             t1.state = "종료";
@@ -108,8 +108,8 @@ namespace pa
             g.Log(l1 +t1.chno.ToString() + " : "+ t1.idno.ToString());
             dBSqlite.Delete(t1.idno);
             dBSqlite.Eventvm(l1, t1.chno.ToString() + "번 채널", t1.idno.ToString());
-            g.SendR("PLAYEND", eSignalRMsgType.ePlayEnd , 0, 0);
-            g.play8ch[chno] = new PlayItem();
+            g.SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd , 0, 0);
+            g.playItems[chno] = new PlayItem();
         }
 
 
@@ -117,7 +117,7 @@ namespace pa
         internal void StopMBSEM()
         {
             //g.play8ch[po1] = new PlayItem();
-            foreach (var t2 in g.play8ch)
+            foreach (var t2 in g.playItems)
             {
                 t2.p_run = false;
                 if (t2.state == "방송중")
@@ -148,7 +148,7 @@ namespace pa
         {
             if (lockF) return;
             lockF = true;
-            foreach (PlayItem pl1 in g.play8ch)
+            foreach (PlayItem pl1 in g.playItems)
             {
                 if (pl1.p_run)
                     continue;
@@ -169,12 +169,8 @@ namespace pa
         public void playMBS(PlayItem sch_play)
         {
             // 1번채널 방송중인지 체크 
-            if (CheckPlayItem(sch_play) == false)
-            {
-                g.Log(sch_play.idno.ToString() + "번의 방송은 동일지역 방송으로 취소됩니다.");
-                return;
-            }
-            if (g.em_status == 1 || g.em_status == 3 || g.em_status == 5)
+            //
+            if (em_status == 1 || em_status == 3 || em_status == 5)
             {
                 sch_play.state = "취소";
                 //_T3.SchBS(sch_play.idno);
@@ -195,25 +191,6 @@ namespace pa
             ExtProcess ep1 = new ExtProcess(sch_play.idno, sch_play.chno);
             BSpro.Add(ep1);
             */
-        }
-
-        // 1번 채널이 방송중인 상테에서 다원방송이 들어온 경우 사용자에게 알림처리 
-        private bool CheckPlayItem(PlayItem sch_play)
-        {
-            bool rlt = true;
-
-            if (g.curr_play.state == "방송중")
-            {
-                if (g.CheckSpace(g.curr_play, sch_play) == true)
-                {
-                    // 클라이언트로 알리기 처리 
-                    //Timerevent.item1 = g.curr_play;
-                    //Timerevent.item2 = sch_play;
-                    //updateEvent();
-                    return false;
-                }
-            }
-            return rlt;
         }
 
         private bool SetDSPSpeakerON(int idno)

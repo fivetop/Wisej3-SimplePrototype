@@ -15836,7 +15836,8 @@ FROM     Simplepa";
             this._commandCollection[1] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT  UserTreeId, user_group, user_name, login_id, login_password, login_passwo" +
-                "rd2, mobile, email\r\nFROM     UserTrees\r\nWHERE  (login_id = :login_id )";
+                "rd2, mobile, email\r\nFROM     UserTrees\r\nWHERE  (login_id = :login_id) AND (login" +
+                "_password = :login_pw)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.SQLite.SQLiteParameter param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "login_id";
@@ -15844,6 +15845,13 @@ FROM     Simplepa";
             param.Size = 2147483647;
             param.IsNullable = true;
             param.SourceColumn = "login_id";
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Devart.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "login_pw";
+            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "login_password";
             this._commandCollection[1].Parameters.Add(param);
         }
         
@@ -15875,13 +15883,19 @@ FROM     Simplepa";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSet1.UserTreesDataTable dataTable, string login_id) {
+        public virtual int FillBy(DataSet1.UserTreesDataTable dataTable, string login_id, string login_pw) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((login_id == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(login_id));
+            }
+            if ((login_pw == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(login_pw));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -15894,13 +15908,19 @@ FROM     Simplepa";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.UserTreesDataTable GetDataBy(string login_id) {
+        public virtual DataSet1.UserTreesDataTable GetDataBy(string login_id, string login_pw) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((login_id == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(login_id));
+            }
+            if ((login_pw == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(login_pw));
             }
             DataSet1.UserTreesDataTable dataTable = new DataSet1.UserTreesDataTable();
             this.Adapter.Fill(dataTable);

@@ -31,7 +31,7 @@ namespace sigr_client
 
             proxy.On<SignalRMsg>("MessageS2C2", async (msg) =>
             {
-                Console.WriteLine(msg.message);
+                Console.WriteLine("<"+msg.message);
             });
 
             proxy.On<SignalRMsg>("MessageC2S2", async (msg) =>
@@ -47,6 +47,9 @@ namespace sigr_client
                 SignalRMsg t1 = new SignalRMsg();
                 t1.message = MyMessage;
                 proxy.Invoke("MessageC2S2", t1);
+                //proxy.Invoke("Send", "das");
+                //proxy.Invoke("AddMessage", "das");
+                //proxy.Invoke("sendMessageToClients", "sdfasd");
                 System.Threading.Thread.Sleep(10);
             }
         }
