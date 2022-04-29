@@ -135,41 +135,14 @@
     <EmbeddedResource Include="win\EventEditor.resx">
       <DependentUpon>EventEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\Main4.resx">
-      <DependentUpon>Main4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\Main3.resx">
-      <DependentUpon>Main3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\Main2.resx">
-      <DependentUpon>Main2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\Main1.resx">
-      <DependentUpon>Main1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\MGroup.resx">
-      <DependentUpon>MGroup.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\MMusic.resx">
-      <DependentUpon>MMusic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\MHoliday.resx">
-      <DependentUpon>MHoliday.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win\MEvent.resx">
       <DependentUpon>MEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\MSet.resx">
-      <DependentUpon>MSet.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="win\MUser.resx">
       <DependentUpon>MUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\add-alarm-button.svg" />
     <EmbeddedResource Include="Resources\add-button-inside-black-circle.svg" />
@@ -658,6 +631,30 @@
     <Compile Include="MyDesktop1.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="MyDesktop61.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop62.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop63.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop64.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop65.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop71.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyDesktop9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="MyDesktop2.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -685,53 +682,11 @@
     <Compile Include="win\EventEditor.Designer.cs">
       <DependentUpon>EventEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\Main4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\Main4.Designer.cs">
-      <DependentUpon>Main4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win\Main3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\Main3.Designer.cs">
-      <DependentUpon>Main3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win\Main2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\Main2.Designer.cs">
-      <DependentUpon>Main2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win\Main1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\Main1.Designer.cs">
-      <DependentUpon>Main1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win\MGroup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\MGroup.Designer.cs">
-      <DependentUpon>MGroup.cs</DependentUpon>
-    </Compile>
     <Compile Include="win\PMusicSel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="win\PMusicSel.Designer.cs">
       <DependentUpon>PMusicSel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win\MMusic.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\MMusic.Designer.cs">
-      <DependentUpon>MMusic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win\MHoliday.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\MHoliday.Designer.cs">
-      <DependentUpon>MHoliday.cs</DependentUpon>
     </Compile>
     <Compile Include="win\MEvent.cs">
       <SubType>Form</SubType>
@@ -739,23 +694,11 @@
     <Compile Include="win\MEvent.Designer.cs">
       <DependentUpon>MEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MSet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\MSet.Designer.cs">
-      <DependentUpon>MSet.cs</DependentUpon>
-    </Compile>
     <Compile Include="win\MUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="win\MUser.Designer.cs">
       <DependentUpon>MUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Examples\BackgroundTasks.cs">
       <SubType>Form</SubType>

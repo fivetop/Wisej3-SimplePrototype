@@ -10,33 +10,17 @@ using System.Linq;
 using Microsoft.Ajax.Utilities;
 using DataClass;
 using System.Drawing;
-using Wisej.CodeProject.win;
 using System;
 
 namespace Wisej.CodeProject
 {
-    // 메인화면 처리 
+    // 개별방송
     public partial class MyDesktop : Desktop
     {
 
         public List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
         public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
         Guid guid { get; set; } = Guid.Empty;
-
-        public void Main22()
-        {
-            this.btnStart.Enabled = true;
-            this.btnStop.Enabled = false;
-        }
-
-        private void Main_Load22(object sender, EventArgs e)
-        {
-            var t1 = this.dataSet1.Assets.ToList();
-            //this.dataGridView1.DataSource = null;
-            //this.dataGridView1.DataSource = assetsBindingSource;
-            this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-            this.dataGridView2.RowCount = 10;
-        }
 
         private void btnStart_Click(object sender, EventArgs e)
         {

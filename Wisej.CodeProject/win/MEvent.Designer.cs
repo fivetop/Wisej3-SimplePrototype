@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             Wisej.Web.ComponentTool componentTool1 = new Wisej.Web.ComponentTool();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
-            this.dataGridView1 = new Wisej.Web.DataGridView();
+            this.evdataGridView1 = new Wisej.Web.DataGridView();
             this.colEventvmid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colWrite_Time = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -39,23 +39,21 @@
             this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.statusBar1 = new Wisej.Web.StatusBar();
-            this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
+            this.Eventbs = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
             this.eventvmTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.EventvmTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.dataGridView1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.evdataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // evdataGridView1
             // 
-            this.dataGridView1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            this.evdataGridView1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
             | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
+            this.evdataGridView1.AutoGenerateColumns = false;
+            this.evdataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colEventvmid,
             this.colWrite_Time,
             this.colEvent_Text,
@@ -63,20 +61,19 @@
             this.colState,
             this.colDevicename,
             this.colIp});
-            this.dataGridView1.Controls.Add(this.statusBar1);
-            this.dataGridView1.DataSource = this.bindingSource1;
-            this.dataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView1.Margin = new Wisej.Web.Padding(10);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 14;
-            this.dataGridView1.Size = new System.Drawing.Size(648, 297);
-            this.dataGridView1.TabIndex = 1;
+            this.evdataGridView1.DataSource = this.Eventbs;
+            this.evdataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
+            this.evdataGridView1.Location = new System.Drawing.Point(10, 10);
+            this.evdataGridView1.Margin = new Wisej.Web.Padding(10);
+            this.evdataGridView1.MultiSelect = false;
+            this.evdataGridView1.Name = "evdataGridView1";
+            this.evdataGridView1.RowHeadersWidth = 14;
+            this.evdataGridView1.Size = new System.Drawing.Size(648, 297);
+            this.evdataGridView1.TabIndex = 1;
             componentTool1.ImageSource = "resource.wx/Wisej.Ext.MaterialDesign/refresh-button.svg?color=#003EFF";
             componentTool1.Name = "Reload";
             componentTool1.Position = Wisej.Web.LeftRightAlignment.Left;
-            this.dataGridView1.Tools.AddRange(new Wisej.Web.ComponentTool[] {
+            this.evdataGridView1.Tools.AddRange(new Wisej.Web.ComponentTool[] {
             componentTool1});
             // 
             // colEventvmid
@@ -128,21 +125,10 @@
             this.colIp.HeaderText = "IP정보";
             this.colIp.Name = "colIp";
             // 
-            // statusBar1
+            // Eventbs
             // 
-            this.statusBar1.BackgroundImageLayout = Wisej.Web.ImageLayout.Zoom;
-            this.statusBar1.Location = new System.Drawing.Point(0, 273);
-            this.statusBar1.Name = "statusBar1";
-            this.statusBar1.ShowPanels = false;
-            this.statusBar1.Size = new System.Drawing.Size(646, 22);
-            this.statusBar1.SizingGrip = false;
-            this.statusBar1.TabIndex = 0;
-            this.statusBar1.Text = "statusBar1";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Eventvm";
-            this.bindingSource1.DataSource = this.dataSet1;
+            this.Eventbs.DataMember = "Eventvm";
+            this.Eventbs.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
@@ -155,17 +141,16 @@
             // 
             // MEvent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 317);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.evdataGridView1);
             this.Name = "MEvent";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterParent;
             this.Text = "알람이벤트";
             this.Load += new System.EventHandler(this.DataBinding_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.dataGridView1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.evdataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
@@ -173,15 +158,14 @@
 
         #endregion
 
-        private Web.DataGridView dataGridView1;
-        private Web.StatusBar statusBar1;
+        private Web.DataGridView evdataGridView1;
         private Web.DataGridViewTextBoxColumn colEventvmid;
         private Web.DataGridViewTextBoxColumn colEvent_Text;
         private Web.DataGridViewTextBoxColumn colIp;
         private Web.DataGridViewTextBoxColumn colPath;
         private Web.DataGridViewTextBoxColumn colDevicename;
         private Web.DataGridViewTextBoxColumn colState;
-        private Web.BindingSource bindingSource1;
+        private Web.BindingSource Eventbs;
         private DataSet1 dataSet1;
         private DataSet1TableAdapters.EventvmTableAdapter eventvmTableAdapter;
         private Web.DataGridViewTextBoxColumn colWrite_Time;

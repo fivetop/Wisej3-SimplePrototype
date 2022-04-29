@@ -1,6 +1,6 @@
-﻿namespace Wisej.CodeProject
+﻿namespace Wisej.CodeProject.Control
 {
-    partial class Page2
+    partial class UserControl2
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,35 +29,20 @@
         private void InitializeComponent()
         {
             this.button1 = new Wisej.Web.Button();
-            this.button2 = new Wisej.Web.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(46, 63);
+            this.button1.Location = new System.Drawing.Point(23, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 64);
+            this.button1.Size = new System.Drawing.Size(100, 24);
             this.button1.TabIndex = 0;
-            this.button1.Text = "hidden";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Text = "button1";
             // 
-            // button2
+            // UserControl2
             // 
-            this.button2.Location = new System.Drawing.Point(215, 63);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 64);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "size";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // Page2
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
-            this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Page2";
-            this.Size = new System.Drawing.Size(786, 495);
+            this.Name = "UserControl2";
             this.ResumeLayout(false);
 
         }
@@ -65,6 +50,5 @@
         #endregion
 
         private Web.Button button1;
-        private Web.Button button2;
     }
 }

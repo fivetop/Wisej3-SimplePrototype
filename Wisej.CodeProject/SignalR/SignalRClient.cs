@@ -49,7 +49,7 @@ namespace Wisej.CodeProject.SignalR
 
             await hubConnection.Start();
 
-            owner.LabelON(true);
+            owner.LabelON(9, true);
             proxy.On<string>("sendMessageToClients", async (str1) =>
 			{
 				Console.WriteLine(str1);
@@ -167,7 +167,7 @@ namespace Wisej.CodeProject.SignalR
         // 커넥션이 종료된 경우 -> 디버깅시 발생 
         private void Connection_Closed()
         {
-            owner.LabelON(false);
+            owner.LabelON(9, false);
             Console.WriteLine("SignalR Client Disconnected.");
             //if (!Hub_Disconnect_Flag)
             {

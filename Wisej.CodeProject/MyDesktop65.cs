@@ -1,34 +1,24 @@
-﻿using System;
-using Wisej.Web;
-using System.IO;
-using System.Drawing;
-using System.Configuration;
+﻿using Wisej.Web;
+using System.Threading;
+using Wisej.CodeProject.Examples;
+using Wisej.CodeProject.Setup;
+using Wisej.ChatServer;
+using Wisej.CodeProject.SignalR;
+using System.Collections.Generic;
+using static Wisej.CodeProject.DataSet1;
 using System.Linq;
-using System.Data;
+using Microsoft.Ajax.Utilities;
+using DataClass;
+using System.Drawing;
+using System;
 
 namespace Wisej.CodeProject
 {
-	public partial class MUser : Form
-	{
+    // 개별 앵커 방송
+    public partial class MyDesktop : Desktop
+    {
 		int add = 0; // add =1. update =2
-		public MUser()
-		{
-			InitializeComponent();
-		}
 
-		private void DataBinding_Load(object sender, EventArgs e)
-		{
-			this.userTreesTableAdapter.Fill(this.dataSet1.UserTrees);
-		}
-		/*
-				private void Application_ApplicationExit(object sender, EventArgs e)
-				{
-					// delete the session-cloned db file.
-					this.userTreesTableAdapter.Connection.Close();
-					this.userTreesTableAdapter.Connection.Dispose();
-					this.userTreesTableAdapter.Adapter.Dispose();
-				}
-		*/
 		private void uDeleteRecord()
 		{
 			// this method shows server-side modal.
@@ -48,12 +38,11 @@ namespace Wisej.CodeProject
 				var row = this.udataGridView1.CurrentRow?.Index ?? -1;
 				if (row > -1)
 				{
-					if (MessageBox.Show("삭제 하시겠습니까?",icon:MessageBoxIcon.Question, 
-						buttons:MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+					if (MessageBox.Show("삭제 하시겠습니까?", icon: MessageBoxIcon.Question,
+						buttons: MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
 					{
 						this.ubindingSource1.RemoveCurrent();
 						var count = this.userTreesTableAdapter.Update(this.dataSet1.UserTrees);
-						SetStatusText("Deleted 1 record.");
 					}
 				}
 			}
@@ -79,8 +68,8 @@ namespace Wisej.CodeProject
 				}
 
 				if (add == 1)
-				{ 
-					var t1 = this.dataSet1.UserTrees.Where(p=>p.login_id == utextloginid.Text).FirstOrDefault() ;//.Select( .where . Select(); .ffin .GetDataBy(textloginid.Text);
+				{
+					var t1 = this.dataSet1.UserTrees.Where(p => p.login_id == utextloginid.Text).FirstOrDefault();//.Select( .where . Select(); .ffin .GetDataBy(textloginid.Text);
 					if (t1 != null)
 						return;
 				}
@@ -88,7 +77,6 @@ namespace Wisej.CodeProject
 				var count = this.userTreesTableAdapter.Update(this.dataSet1.UserTrees);
 
 				AlertBox.Show("Saved!");
-				SetStatusText("Saved " + count + " records.");
 			}
 			catch (Exception ex)
 			{
@@ -108,27 +96,21 @@ namespace Wisej.CodeProject
 			}
 		}
 
-		private void SetStatusText(string text)
+		private void ubutton1_Click(object sender, EventArgs e)
 		{
-			//this.statusBar1.Text = text;
-		}
-
-
-        private void ubutton1_Click(object sender, EventArgs e)
-        {
 			uSaveData();
 			add = 0;
 		}
 
-        private void ubutton2_Click(object sender, EventArgs e)
-        {
+		private void ubutton2_Click(object sender, EventArgs e)
+		{
 			if (add == 1) return;
 			add = 1;
 			uAddNewRecord();
 		}
 
 		private void ubutton3_Click(object sender, EventArgs e)
-        {
+		{
 			add = 2;
 			uDeleteRecord();
 			add = 0;
