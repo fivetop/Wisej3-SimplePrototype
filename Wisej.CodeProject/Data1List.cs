@@ -6,6 +6,8 @@ using System.Web;
 
 namespace Wisej.CodeProject
 {
+
+
     public class Data1List : INotifyPropertyChanged
     {
         public List<data1> child { get; set; } = new List<data1>();
@@ -26,4 +28,6 @@ namespace Wisej.CodeProject
         public string Title { get; internal set; }
 
     }
+
+
 }

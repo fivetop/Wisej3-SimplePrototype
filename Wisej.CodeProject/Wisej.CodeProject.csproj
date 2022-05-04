@@ -52,6 +52,14 @@
     <Content Include="Default.html" />
     <Content Include="Default.json" />
     <Content Include="hubs\q.txt" />
+    <Content Include="Images\giftcard20.png" />
+    <Content Include="Images\giftcardempty.png" />
+    <Content Include="Images\hdd.png" />
+    <Content Include="Images\headphones.jpg" />
+    <Content Include="Images\laptop.jpg" />
+    <Content Include="Images\monitor.png" />
+    <Content Include="Images\phone.png" />
+    <Content Include="Images\router.png" />
     <Content Include="imgs\dPanel1.jpg" />
     <Content Include="imgs\dPanel2.jpg" />
     <Content Include="imgs\dPanel3.jpg" />
@@ -70,6 +78,7 @@
     <Content Include="Properties\DataSources\Wisej.CodeProject.SignalR.SignalRClient.datasource" />
     <Content Include="Properties\DataSources\Wisej.CodeProject.SignalR.ConnectFlag.datasource" />
     <Content Include="Handler1.ashx" />
+    <Content Include="Properties\DataSources\bsroom.datasource" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -137,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\MEvent.resx">
-      <DependentUpon>MEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win\MUser.resx">
       <DependentUpon>MUser.cs</DependentUpon>
@@ -575,6 +581,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bsroom.cs" />
     <Compile Include="Control\bslamp.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -687,12 +694,6 @@
     </Compile>
     <Compile Include="win\PMusicSel.Designer.cs">
       <DependentUpon>PMusicSel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win\MEvent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\MEvent.Designer.cs">
-      <DependentUpon>MEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="win\MUser.cs">
       <SubType>Form</SubType>

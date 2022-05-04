@@ -10,31 +10,17 @@ namespace Wisej.CodeProject
     {
         public EventHandler UserControlClick;
 
-        private AssetsRow _data1;
-        public AssetsRow data1 
-        {
-            get 
-            {
-                return this._data1;
-            }
-            set
-            {
-                _data1 = value;
-                this.Title = _data1.path;
-                this.Chk = _data1.chk == 0 ? false:true;
-            }
-        } 
-
+        bool _chk;
         public bool Chk 
         {
             get 
-            {
-                return this.data1.chk == 0 ? false : true;
+            {   
+                return _chk;
             } 
             set 
             {
-                this.data1.chk = value == false ? 0 : 1;
-                if (this.data1.chk == 1)
+                _chk = value;
+                if (_chk == true)
                 {
                     this.label1.ForeColor = Color.Black;
                     this.BackColor = Color.OrangeRed;
@@ -46,16 +32,18 @@ namespace Wisej.CodeProject
                 }
             }
         }
+
+        string _path;
         public string Title
         {
             get 
             {
-                return this.data1.path; 
+                return _path; 
             }
             set 
             {
-                this.data1.path = value;
-                label1.Text = this.data1.path; 
+                _path = value;
+                label1.Text = _path; 
             }
         }
 

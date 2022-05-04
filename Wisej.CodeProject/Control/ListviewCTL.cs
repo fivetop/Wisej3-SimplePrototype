@@ -24,10 +24,10 @@ namespace Wisej.CodeProject.Control
 				};
 
 				var item = new UserControl1();
-				item.data1 = list[i];
+				item.Title = list[i].path;
+				item.Chk = list[i].chk == 0 ? false : true;
 				item.UserControlClick += userControlClick;
 				//item.Dock = DockStyle.Left;
-
 				
 				lviResultat.Control = item;
 				listView1.Items.Add(lviResultat);

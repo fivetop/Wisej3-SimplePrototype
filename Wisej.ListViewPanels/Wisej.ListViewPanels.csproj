@@ -47,6 +47,7 @@
     <Content Include="Default.json" />
     <Content Include="favicon.ico" />
     <EmbeddedResource Include="Themes\Button_Checked.mixin.theme" />
+    <Content Include="Properties\DataSources\ProductModel.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -55,9 +56,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\giftcard20.png" />
+    <Content Include="Images\giftcardempty.png" />
+    <Content Include="Images\hdd.png" />
+    <Content Include="Images\headphones.jpg" />
+    <Content Include="Images\laptop.jpg" />
+    <Content Include="Images\monitor.png" />
+    <Content Include="Images\phone.png" />
+    <Content Include="Images\router.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customers.cs" />
     <Compile Include="Data1List.cs" />
     <Compile Include="Page1.cs">
       <SubType>Form</SubType>
