@@ -23,6 +23,9 @@ namespace Wisej.CodeProject
 		{
 			LabelON(9,true);
 			AlertBox.Show(msg1.message);
+			
+			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+			evdataGridView1.Refresh();
 
 			switch (msg1.Msgtype)
 			{
@@ -35,6 +38,7 @@ namespace Wisej.CodeProject
 						LabelON(1, false);
 					break;
 				case eSignalRMsgType.eEM_PRESET_SW:
+					presetdisp(msg1);
 					break;
 				case eSignalRMsgType.ePlay:
 					break;
@@ -56,7 +60,36 @@ namespace Wisej.CodeProject
 				PlayItemDisplay();
 		}
 
-		public void LabelON(int id, bool v)
+
+		// 프리셋 메시지 올 경우 화면 출력용 
+        private void presetdisp(SignalRMsg msg1)
+        {
+			if (msg1.state == 1)
+			{
+				switch (msg1.seqno)
+				{
+					case 0: radioButton1.Checked = true; break;
+					case 1: radioButton2.Checked = true; break;
+					case 2: radioButton3.Checked = true; break;
+					case 3: radioButton4.Checked = true; break;
+					case 4: radioButton5.Checked = true; break;
+				}
+			}
+			else
+			{
+				switch (msg1.seqno)
+				{
+					case 0: radioButton1.Checked = false; break;
+					case 1: radioButton2.Checked = false; break;
+					case 2: radioButton3.Checked = false; break;
+					case 3: radioButton4.Checked = false; break;
+					case 4: radioButton5.Checked = false; break;
+				}
+			}
+		}
+
+		// 8채널과 링크 출력용 
+        public void LabelON(int id, bool v)
 		{
 			if(bslamp1 != null)
 				bslamp1.LabelOn(id, v);
@@ -107,6 +140,7 @@ namespace Wisej.CodeProject
 			return msg1.Guid;
 		}
 
+		// 8채널 출력용 
 		private void PlayItemDisplay()
 		{
 			bslamp1.LabelOn(2, playItems[2].p_run);

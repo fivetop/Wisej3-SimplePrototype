@@ -1,22 +1,19 @@
-﻿using Wisej.Web;
-using System.Threading;
-using Wisej.CodeProject.Examples;
-using Wisej.CodeProject.Setup;
-using Wisej.ChatServer;
-using Wisej.CodeProject.SignalR;
-using System.Collections.Generic;
-using static Wisej.CodeProject.DataSet1;
-using System.Linq;
-using Microsoft.Ajax.Utilities;
-using DataClass;
-using System.Drawing;
-using System;
+﻿using System;
+using Wisej.Web;
 
-namespace Wisej.CodeProject
+namespace Wisej.CodeProject.win
 {
-    // 개별 앵커 방송
-    public partial class MyDesktop : Desktop
+    public partial class MHolidayManager : Wisej.Web.UserControl
     {
+        public MHolidayManager()
+        {
+            InitializeComponent();
+        }
+		private void MHolidayManager_Load(object sender, EventArgs e)
+		{
+			hLoadData();
+		}
+
 		private void hdataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
 		{
 			this.hdataGridView1.Tools["Save"].Enabled = true;
@@ -119,6 +116,5 @@ namespace Wisej.CodeProject
 			this.holidaybindingSource2.EndEdit();
 		}
 
-
-	}
+    }
 }

@@ -1722,6 +1722,7 @@ namespace Wisej.CodeProject {
                 this.columnEventVMId.AllowDBNull = false;
                 this.columnEventVMId.Unique = true;
                 this.columnwrite_time.AllowDBNull = false;
+                this.columnalarm.DefaultValue = ((long)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

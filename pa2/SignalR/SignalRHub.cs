@@ -23,7 +23,11 @@ namespace pa
         public override Task OnConnected()
         {
             user_id = Context.Headers["user_id"];
-            g.Log("SigR Connected : " + user_id + " : "+ Context.ConnectionId.ToString());
+            string str1= Context.ConnectionId.ToString();
+            string l1 = "사용자 로그인";
+            g.mainWindow.dBSqlite.Eventvm(l1, user_id, str1);
+
+            g.Log("SigR Connected : " + user_id + " : "+ str1);
             g.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
             return base.OnConnected();
         }
@@ -31,8 +35,11 @@ namespace pa
         public override Task OnDisconnected(bool b1)
         {
             user_id = Context.Headers["user_id"];
-            g.Log("SigR DisConnected : " + user_id + " : " + Context.ConnectionId.ToString());
+            string str1 = Context.ConnectionId.ToString();
+            g.Log("SigR DisConnected : " + user_id + " : " + str1);
             g.SendSigR(user_id, eSignalRMsgType.eLogoutUser, 0, 0);
+            string l1 = "사용자 로그아웃";
+            g.mainWindow.dBSqlite.Eventvm(l1, user_id, str1);
             return base.OnDisconnected(true);
         }
 

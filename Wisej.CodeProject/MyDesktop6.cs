@@ -17,6 +17,17 @@ namespace Wisej.CodeProject
     // 메인화면 처리 
     public partial class MyDesktop : Desktop
     {
+		private void userControlClick(object sender, EventArgs e)
+		{
+			var s3 = (UserControl1)sender;
+
+			if (s3.Chk)
+				s3.Chk = false;
+			else
+				s3.Chk = true;
+			//s3.data1.index      
+		}
+
 		private void userControlClick2(object sender, EventArgs e)
         {
 			var s3 = (UserControl1)sender;

@@ -57,7 +57,7 @@ namespace pa
                     string line2 = string.Join(",", msg.musicsRows.ToArray());
 
                     string line = line1 + " : " + line2;
-                    string l1 = "다원시작 : ";
+                    string l1 = "다원방송시작";
                     g.Log(l1 + p.chno.ToString() + " : " + line);
                     dBSqlite.Eventvm(l1, p.chno.ToString() + "번 채널", line);
                     // window3 처리 

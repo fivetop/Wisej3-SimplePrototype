@@ -103,7 +103,7 @@ namespace pa
             GlobalMessage.Send(MultiSoundReg, chno, 1); // 중지처리 
             t1.p_run = false;
 
-            string l1 = "다원종료 : ";
+            string l1 = "다원방송종료";
 
             g.Log(l1 +t1.chno.ToString() + " : "+ t1.idno.ToString());
             dBSqlite.Delete(t1.idno);

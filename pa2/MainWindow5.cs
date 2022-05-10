@@ -1044,23 +1044,23 @@ namespace pa
                     break;
                 case 1:
                     checkPreset("110", 2, "111");
-                    checkPreset("111", 2, "110");
+                    //checkPreset("111", 2, "110");
                     break;
                 case 2:
                     checkPreset("1110", 3, "1111");
-                    checkPreset("1111", 3, "1110");
+                    //checkPreset("1111", 3, "1110");
                     break;
                 case 3:
                     checkPreset("11110", 4, "11111");
-                    checkPreset("11111", 4, "11110");
+                    //checkPreset("11111", 4, "11110");
                     break;
                 case 4:
                     checkPreset("111110", 5, "111111");
-                    checkPreset("111111", 5, "111110");
+                    //checkPreset("111111", 5, "111110");
                     break;
                 case 5:
                     checkPreset("1111110", 6, "1111111");
-                    checkPreset("1111111", 6, "1111110");
+                    //checkPreset("1111111", 6, "1111110");
                     break;
                 case 6:
                     checkPreset("11111110", 7, "11111111");

@@ -1,22 +1,24 @@
-﻿using Wisej.Web;
-using System.Threading;
-using Wisej.CodeProject.Examples;
-using Wisej.CodeProject.Setup;
-using Wisej.ChatServer;
-using Wisej.CodeProject.SignalR;
-using System.Collections.Generic;
-using static Wisej.CodeProject.DataSet1;
-using System.Linq;
-using Microsoft.Ajax.Utilities;
-using DataClass;
-using System.Drawing;
+﻿using Microsoft.Ajax.Utilities;
 using System;
+using System.Linq;
+using Wisej.Web;
+using static Wisej.CodeProject.DataSet1;
 
-namespace Wisej.CodeProject
+namespace Wisej.CodeProject.win
 {
-    // 개별 앵커 방송
-    public partial class MyDesktop : Desktop
+    public partial class MGroupManager : Wisej.Web.UserControl
     {
+        public MGroupManager()
+        {
+            InitializeComponent();
+        }
+
+
+		private void MGroupManager_Load(object sender, EventArgs e)
+		{
+			gLoadData();
+		}
+
 		// 콤보 처리용 
 		DataList DataList { get; set; } = new DataList();
 		// 선택된 차일드 
@@ -174,6 +176,24 @@ namespace Wisej.CodeProject
 			}
 		}
 
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0 || e.ColumnIndex < 1)
+				return;
+			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)gdataGridView1.Rows[e.RowIndex].Cells[1];
+			gdataGridView1.BeginEdit(true);
+
+			if (Convert.ToBoolean(this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value) == false)
+			{
+				this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value = true;
+			}
+			else
+			{
+				this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value = false;
+			}
+			gdataGridView1.EndEdit();
+		}
+
 		private void gbutton1_Click(object sender, EventArgs e)
 		{
 			UpGroup();
@@ -189,6 +209,5 @@ namespace Wisej.CodeProject
 			DeleteGroup();
 		}
 
-
-	}
+    }
 }

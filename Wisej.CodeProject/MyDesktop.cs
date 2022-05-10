@@ -13,6 +13,8 @@ using DataClass;
 using System.Drawing;
 using System.ComponentModel;
 using Wisej.Base;
+using Wisej.CodeProject.win;
+using Wisej.CodeProject.DataSet1TableAdapters;
 
 namespace Wisej.CodeProject
 {
@@ -24,10 +26,12 @@ namespace Wisej.CodeProject
 		public static SignalRClient signalRClient { get; set; } = new SignalRClient();
 		public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
 
+		public TableAdapterManager tam { get; internal set; }
+
 		public MyDesktop()
 		{
 			InitializeComponent();
-			
+
 			for (int i = 1; i < 9; i++)
 			{
 				playItems[i] = new PlayItem();
@@ -49,39 +53,6 @@ namespace Wisej.CodeProject
 			}
 
 		}
-
-
-		bool show = false;
-        private void MyDesktop_ItemClick(object sender, DesktopTaskBarItemClickEventArgs e)
-		{
-			try
-			{
-				switch (e.Item.Name)
-				{
-					case "desktopDateTime":
-						break;
-					case "desktopStart":
-						if (show)
-						{
-						}
-						else
-						{ 
-						}
-						show = !show;
-						break;
-					case "desktopTaskBarItemCompras":
-						break;
-					default:
-
-						break;
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Error en la aplicación." + ex.Message);
-			}
-		}
-
 
 		// 초기화 처리 
 		private void MyDesktop_Load(object sender, EventArgs e)
@@ -108,9 +79,46 @@ namespace Wisej.CodeProject
 			//Application.LoadTheme("Material-3");
 			//Application.LoadTheme("Vista-2");
 
-			Main_Load(sender, e);
-			Main_Load642(sender, e);
+			tam = new TableAdapterManager()
+			{
+				AssetsTableAdapter = new AssetsTableAdapter(),
+				AssetGroupsTableAdapter = new AssetGroupsTableAdapter(),
+				BSTreeTableAdapter = new BSTreeTableAdapter(),
+				DeviceTableAdapter = new DeviceTableAdapter(),
+				EventvmTableAdapter = new EventvmTableAdapter(),
+				FloorbasesTableAdapter = new FloorbasesTableAdapter(),
+				FloormapsTableAdapter = new FloormapsTableAdapter(),
+				HolidaysTableAdapter = new HolidaysTableAdapter(),
+				InfoTreesTableAdapter = new InfoTreesTableAdapter(),
+				MusicsTableAdapter = new MusicsTableAdapter(),
+				SimpleMultisTableAdapter = new SimpleMultisTableAdapter(),
+				SimplepaTableAdapter = new SimplepaTableAdapter(),
+				UserTreesTableAdapter = new UserTreesTableAdapter(),
+			};
+			tam.AssetsTableAdapter.Fill(this.dataSet1.Assets);
+			tam.AssetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
+			tam.BSTreeTableAdapter.Fill(this.dataSet1.BSTree);
+			tam.DeviceTableAdapter.Fill(this.dataSet1.Device);
+			tam.EventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+			tam.FloorbasesTableAdapter.Fill(this.dataSet1.Floorbases);
+			tam.FloormapsTableAdapter.Fill(this.dataSet1.Floormaps);
+			tam.HolidaysTableAdapter.Fill(this.dataSet1.Holidays);
+			tam.InfoTreesTableAdapter.Fill(this.dataSet1.InfoTrees);
+			tam.MusicsTableAdapter.Fill(this.dataSet1.Musics);
+			tam.SimpleMultisTableAdapter.Fill(this.dataSet1.SimpleMultis);
+			tam.SimplepaTableAdapter.Fill(this.dataSet1.Simplepa);
+			tam.UserTreesTableAdapter.Fill(this.dataSet1.UserTrees);
 
+
+			this.btnStart.Enabled = true;
+			this.btnStop.Enabled = false;
+			this.dataGridView2.RowCount = 10;
+
+			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+			this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
+
+			Main_Load(sender, e);
 
 			Cookie d1 = Application.Cookies.Get("d1");
 			Cookie d2 = Application.Cookies.Get("d2");
@@ -121,23 +129,15 @@ namespace Wisej.CodeProject
 				splitContainer5.SplitterDistance = int.Parse(d2.Value);
 				splitContainer6.SplitterDistance = int.Parse(d3.Value);
 			}
+			// tab page add 
+			AddBSPage();
+			AddSetupPage();
 		}
 
 		BindingList<bsroom> dataSource = new BindingList<bsroom>();
 
 		private void Main_Load(object sender, EventArgs e)
 		{
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-			this.dataGridView2.RowCount = 10;
-
-			this.simplepaTableAdapter.Fill(this.dataSet1.Simplepa);
-			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-			this.userTreesTableAdapter.Fill(this.dataSet1.UserTrees);
-			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-			this.deviceTableAdapter.Fill(this.dataSet1.Device);
-			this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
-
 			// 자산 1
 			var t1 = this.dataSet1.Assets.OrderBy(p => p.seq).ToList();
 			listviewCTL1.Dock = DockStyle.Fill;
@@ -149,13 +149,6 @@ namespace Wisej.CodeProject
 			listviewCTL2.Dock = DockStyle.Fill;
 			listviewCTL2.ListviewCTL_Load(t2);
 			listviewCTL2.UserControlClick += userControlClick2;
-
-			// 휴일
-			hLoadData();
-
-			// 그룹 
-			gLoadData();
-
 
 			// 입장하기 처리
 			foreach (var t3 in this.dataSet1.BSroom)
@@ -170,11 +163,21 @@ namespace Wisej.CodeProject
 			dataRepeater1.DataSource = dataSource;
 
 			// 장비 아이콘 보이기 
+			DevicelistView1.View = View.LargeIcon; 
+			//DevicelistView1.View = View.Tile;
+			//DevicelistView1.View = View.SmallIcon;
+			//DevicelistView1.ar .AutoResizeColumn(1 ,ColumnHeaderAutoResizeStyle.ColumnContent);
+
+			//DevicelistView1.View = View.Details;
 			DevicelistView1.BeginUpdate();
 			foreach (var t3 in this.dataSet1.Device)
 			{
+				if (!(t3.device == 0 || t3.device == 2))
+					continue;
 				ListViewItem lvi = new ListViewItem();
-				lvi.Text = t3.device.ToString();
+				lvi.Text = t3.DeviceName; // t3.device.ToString();
+				lvi.ToolTipText = t3.DeviceName;
+
 				switch (t3.device)
 				{
 					case 0:
@@ -182,7 +185,7 @@ namespace Wisej.CodeProject
 						break;
 					case 2:
 						lvi.ImageIndex = 1;
-						lvi.BackColor = Color.LightBlue;
+						//lvi.BackColor = Color.LightBlue;
 						break;
 					case 3:
 						lvi.ImageIndex = 2;
@@ -202,14 +205,93 @@ namespace Wisej.CodeProject
 				DevicelistView1.Items.Add(lvi);
 			}
 			DevicelistView1.EndUpdate();
-
 		}
 
+		#region // tab initial  
 
-		#region // button 
+		BSDeviceManager bSDeviceManager = new BSDeviceManager();
+		BSInManager bSInManager = new BSInManager();
+		BSOutManager bSOutManage = new BSOutManager();
+		BSLevelManager bSLevelManager = new BSLevelManager();
+		BSEMManager bSEMManager = new BSEMManager();
 
-		// 백그라운드 처리용 
-		private void SatrtUpdatingGageItem()
+        private void AddBSPage()
+        {
+			TabPage tabClients = new TabPage("장비관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(bSDeviceManager);
+			bSDeviceManager.Dock = DockStyle.Fill;
+			BStabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("입력관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(bSInManager);
+			bSInManager.Dock = DockStyle.Fill;
+			BStabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("출력관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(bSOutManage);
+			bSOutManage.Dock = DockStyle.Fill;
+			BStabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("음량관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(bSLevelManager);
+			bSLevelManager.Dock = DockStyle.Fill;
+			BStabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("비상방송");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(bSEMManager);
+			bSEMManager.Dock = DockStyle.Fill;
+			BStabControl.TabPages.Add(tabClients);
+		}
+
+        MSetupManager mSetupManager = new MSetupManager();
+		MGroupManager mGroupManager = new MGroupManager();
+		MHolidayManager mHolidayManager = new MHolidayManager();
+		MMusicManager mMusicManager = new MMusicManager();
+		MUserManager mUserManager = new MUserManager();
+
+        private void AddSetupPage()
+        {
+			TabPage tabClients = new TabPage("환경설정");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mSetupManager);
+			mSetupManager.Dock = DockStyle.Fill;
+			SetuptabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("그룹관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mGroupManager);
+			mGroupManager.Dock = DockStyle.Fill;
+			SetuptabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("휴일관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mHolidayManager);
+			mHolidayManager.Dock = DockStyle.Fill;
+			SetuptabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("음원관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mMusicManager);
+			mMusicManager.Dock = DockStyle.Fill;
+			SetuptabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("사용자관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mUserManager);
+			mUserManager.Dock = DockStyle.Fill;
+			SetuptabControl.TabPages.Add(tabClients);
+		}
+        #endregion
+
+        #region // button 
+
+        // 백그라운드 처리용 
+        private void SatrtUpdatingGageItem()
 		{
 			Application.StartTask(() =>
 			{
@@ -226,9 +308,12 @@ namespace Wisej.CodeProject
 		// 시험용  
 		private void button7_Click(object sender, EventArgs e)
         {
+
+			radioButton2.Checked = true;
+
+			/*
 			var win = new Window1();
 			win.Show();
-			/*
 			var win1 = new SimpleChatClient();
 			win1.Show();
 
@@ -257,7 +342,7 @@ namespace Wisej.CodeProject
         {
 			var nCurr = dataRepeater1.CurrentItemIndex;
 			string n = Application.Session["user_name"];
-			tabControl1.SelectedIndex = 1;
+			MaintabControl.SelectedIndex = 1;
 			dataSource[nCurr].state_int = 1;
 			dataSource[nCurr].username = n;
 			dataRepeater1.Refresh();
@@ -283,7 +368,51 @@ namespace Wisej.CodeProject
 			Application.Cookies.Add("d3", splitContainer6.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 		}
 
+        private void ubutton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hdataGridView1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
 		#endregion
+
+
+		bool show = false;
+		private void MyDesktop_ItemClick(object sender, DesktopTaskBarItemClickEventArgs e)
+		{
+			try
+			{
+				switch (e.Item.Name)
+				{
+					case "desktopDateTime":
+						break;
+					case "desktopStart":
+						if (show)
+						{
+						}
+						else
+						{
+						}
+						show = !show;
+						break;
+					case "desktopTaskBarItemCompras":
+						break;
+					default:
+
+						break;
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error en la aplicación." + ex.Message);
+			}
+		}
+
+
 
 		/*
             private void Application_ApplicationExit(object sender, EventArgs e)

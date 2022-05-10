@@ -1,22 +1,21 @@
-﻿using Wisej.Web;
-using System.Threading;
-using Wisej.CodeProject.Examples;
-using Wisej.CodeProject.Setup;
-using Wisej.ChatServer;
-using Wisej.CodeProject.SignalR;
-using System.Collections.Generic;
-using static Wisej.CodeProject.DataSet1;
+﻿using System;
 using System.Linq;
-using Microsoft.Ajax.Utilities;
-using DataClass;
-using System.Drawing;
-using System;
+using Wisej.Web;
 
-namespace Wisej.CodeProject
+namespace Wisej.CodeProject.win
 {
-    // 개별 앵커 방송
-    public partial class MyDesktop : Desktop
+    public partial class MUserManager : Wisej.Web.UserControl
     {
+        public MUserManager()
+        {
+            InitializeComponent();
+        }
+
+		private void MUserManager_Load(object sender, EventArgs e)
+		{
+			this.userTreesTableAdapter.Fill(this.dataSet1.UserTrees);
+		}
+
 		int add = 0; // add =1. update =2
 
 		private void uDeleteRecord()
@@ -115,5 +114,5 @@ namespace Wisej.CodeProject
 			uDeleteRecord();
 			add = 0;
 		}
-	}
+    }
 }

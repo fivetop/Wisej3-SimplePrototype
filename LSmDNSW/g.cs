@@ -60,39 +60,10 @@ namespace LSmDNSW
 
 		static public bool GetMain()
 		{
-			if (g.resolver == null)
+			try
 			{
 				g.resolver = new Resolver();
-				//g.resolver.OnReceiveMessage += Resolver_OnReceiveMessage;
-				//g.resolver.StartListening();
-			}
-
-			try
-			{
 				g.resolver.ResolveServiceName3(g._netaudio_arc);
-
-				//g.resolver.ResolveServiceName2(g._netaudio_arc);
-
-			}
-			catch (System.Threading.ThreadAbortException e)
-			{
-				Thread.ResetAbort();
-			}
-			catch (Exception e)
-			{
-				//Thread.ResetAbort();
-				//Console.WriteLine(e.Message);
-			}
-
-			return true;
-		}
-
-		static public bool GetDevice()
-		{
-			try
-			{
-				g.resolver.ResolveServiceName3(g._netaudio_arc);
-				g.resolver.GetDevice();
 			}
 			catch (Exception e)
 			{

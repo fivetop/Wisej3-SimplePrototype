@@ -141,8 +141,26 @@
     <EmbeddedResource Include="Page2.resx">
       <DependentUpon>Page2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="win\BSDeviceManager.resx">
+      <DependentUpon>BSDeviceManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\EventEditor.resx">
       <DependentUpon>EventEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\MGroupManager.resx">
+      <DependentUpon>MGroupManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\MHolidayManager.resx">
+      <DependentUpon>MHolidayManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\MMusicManager.resx">
+      <DependentUpon>MMusicManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\MSetupManager.resx">
+      <DependentUpon>MSetupManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\MUserManager.resx">
+      <DependentUpon>MUserManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
@@ -635,30 +653,6 @@
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyDesktop1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop61.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop62.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop63.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop64.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop65.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop7.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop71.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="MyDesktop9.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -671,23 +665,77 @@
     <Compile Include="MyDesktop5.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyDesktop4.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Page2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Page2.Designer.cs">
       <DependentUpon>Page2.cs</DependentUpon>
     </Compile>
+    <Compile Include="win\BSDeviceManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\BSDeviceManager.Designer.cs">
+      <DependentUpon>BSDeviceManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\BSEMManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\BSEMManager.Designer.cs">
+      <DependentUpon>BSEMManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\BSInManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\BSInManager.Designer.cs">
+      <DependentUpon>BSInManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\BSLevelManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\BSLevelManager.Designer.cs">
+      <DependentUpon>BSLevelManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\BSOutManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\BSOutManager.Designer.cs">
+      <DependentUpon>BSOutManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="win\EventEditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="win\EventEditor.Designer.cs">
       <DependentUpon>EventEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\MGroupManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\MGroupManager.Designer.cs">
+      <DependentUpon>MGroupManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\MHolidayManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\MHolidayManager.Designer.cs">
+      <DependentUpon>MHolidayManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\MMusicManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\MMusicManager.Designer.cs">
+      <DependentUpon>MMusicManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\MSetupManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\MSetupManager.Designer.cs">
+      <DependentUpon>MSetupManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\MUserManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\MUserManager.Designer.cs">
+      <DependentUpon>MUserManager.cs</DependentUpon>
     </Compile>
     <Compile Include="win\PMusicSel.cs">
       <SubType>Form</SubType>
@@ -896,6 +944,13 @@
     <Reference Include="Wisej.Framework">
       <HintPath>..\..\..\..\wisej\Development\2.0\bin\Wisej.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="Wisej.Web.Ext.ChartJS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.ChartJS.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Web.Ext.ChartJS3">
+      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.ChartJS3.dll</HintPath>
+    </Reference>
     <Reference Include="Wisej.Web.Ext.CKEditor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.CKEditor.dll</HintPath>
@@ -913,6 +968,7 @@
       <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.ProgressCircle.dll</HintPath>
     </Reference>
     <Reference Include="Wisej.Web.Ext.RibbonBar, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
+    <Reference Include="Wisej.Web.Ext.SideButton, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Examples\BackgroundTasks.resx">

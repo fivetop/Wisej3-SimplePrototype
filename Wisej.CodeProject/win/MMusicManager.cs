@@ -1,26 +1,19 @@
-﻿using Wisej.Web;
-using System.Threading;
-using Wisej.CodeProject.Examples;
-using Wisej.CodeProject.Setup;
-using Wisej.ChatServer;
-using Wisej.CodeProject.SignalR;
-using System.Collections.Generic;
-using static Wisej.CodeProject.DataSet1;
-using System.Linq;
-using Microsoft.Ajax.Utilities;
-using DataClass;
-using System.Drawing;
-using System;
+﻿using System;
 using System.IO;
+using Wisej.Web;
 
-namespace Wisej.CodeProject
+namespace Wisej.CodeProject.win
 {
-    // 개별 앵커 방송
-    public partial class MyDesktop : Desktop
+    public partial class MMusicManager : Wisej.Web.UserControl
     {
+        public MMusicManager()
+        {
+            InitializeComponent();
+        }
 
-		private void Main_Load642(object sender, EventArgs e)
+		private void MMusicManager_Load(object sender, EventArgs e)
 		{
+
 			this.mupload1.CreateControl();
 
 			this.mbutton2.Eval(
@@ -116,5 +109,6 @@ namespace Wisej.CodeProject
 
 			//e.Files[0].SaveAs("C:\\Test-upload" + e.Files[0].FileName);
 		}
-	}
+
+    }
 }

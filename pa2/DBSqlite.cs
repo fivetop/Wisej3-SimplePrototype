@@ -312,6 +312,7 @@ namespace pa
             em.event_text = event_text;
             em.path = base_text;
             em.state = state;
+            em.alarm = 0;
             Save(em);
         }
         internal void EventvmIP(AssetsRow t3)
@@ -322,6 +323,7 @@ namespace pa
             em.path = t3.path;
             em.DeviceName = t3.DeviceName;
             em.state = t3.state;
+            em.alarm = 2;
             this.Save(em);
         }
 
