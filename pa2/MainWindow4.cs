@@ -9,14 +9,16 @@ namespace pa
 {
     using DataClass;
     using gClass;
+    using static Wisej.CodeProject.DataSet1;
+
     // v2 update ok
     public partial class MainWindow : Window
     {
         // EM 전용처리 - 층별 처리 포함 
         // 오디오 처리 
         #region // play 처리 NAUDIO 
-        List<Device> cur_embs_device { get; set; } = new List<Device>();
-        List<Device> em_play { get; set; } = new List<Device>();
+        List<DeviceRow> cur_embs_device { get; set; } = new List<DeviceRow>();
+        List<DeviceRow> em_play { get; set; } = new List<DeviceRow>();
 
         public void EMBSOn()
         {
@@ -39,16 +41,16 @@ namespace pa
         private void EMMetrixChOn()
         {
             cur_embs_device.Clear();
-            List<Device> d1 = null;
+            List<DeviceRow> d1 = null;
 
-            var sst1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
+            var sst1 = _DanteDevice.Where(p => p.device == 2).ToList();
 
             // 직상층 발화 조건이 있으면 
             if (g._BaseData.Jigsangbalhwa == 2 && run_pktr != null)
             {
                 var emd = run_pktr.em_Data;
                 emd.getemData();
-                d1 = gl.danteDevice._DanteDevice.Where(p => p.device == 0).ToList();
+                d1 = _DanteDevice.Where(p => p.device == 0).ToList();
 
                 switch (emd.cc)
                 {
@@ -66,8 +68,8 @@ namespace pa
             }
 
             //Console.WriteLine("DSP Metrix Out ==> In :" + t1.ip_dspctrl);
-            List<Device> sp2 = null;
-            sp2 = gl.danteDevice._DanteDevice.Where(p => p.device == 0).ToList();
+            List<DeviceRow> sp2 = null;
+            sp2 = _DanteDevice.Where(p => p.device == 0).ToList();
 
             foreach (var t1 in sst1)
             {
@@ -82,7 +84,7 @@ namespace pa
                     if (d1 == null)
                     {
                         // 스피커가 있는거만 온 시키기 
-                        foreach (Device d3 in sp2)
+                        foreach (var d3 in sp2)
                         {
                             if (d3.ip_dspctrl == t1.ip_dspctrl && j == d3.dsp_chno)
                             {
@@ -94,7 +96,7 @@ namespace pa
                     else
                     {
                         // 직상층이 있으면 
-                        foreach (Device d2 in d1)
+                        foreach (var d2 in d1)
                         {
                             if (j == d2.dsp_chno && t1.ip_dspctrl == d2.ip_dspctrl)
                             {
@@ -113,14 +115,14 @@ namespace pa
             if (em_play.Count() == 0)
                 return;
             g.DSP_EMMakeGroupSpeaker(em_play, 0, BS_DSP_STATE.EM_BS_OFF, 0);
-            em_play = new List<Device>();
+            em_play = new List<DeviceRow>();
         }
 
         public void InitVolume(bool emflag = false)
         {
-            var splist1 = gl.danteDevice._DanteDevice.Where(p => p.device == 0).ToList();
+            var splist1 = _DanteDevice.Where(p => p.device == 0).ToList();
 
-            foreach (Device sp1 in splist1)
+            foreach (var sp1 in splist1)
             {
                 try
                 {

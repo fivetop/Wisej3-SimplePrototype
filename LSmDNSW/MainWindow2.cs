@@ -87,16 +87,15 @@ namespace LSmDNSW
         // 디바이스 정보에 몇층에 설치 되는지정보를 등록함 
         private void MakeDeviceFloor()
         {
-            gl.XMLDanteDevice(true);
             foreach (var t1 in g.dBSqlite.ds1.Assets)
             {
-                var dv1 = gl.danteDevice._DanteDevice.Find(p => p.DeviceName == t1.DeviceName);
+                var dv1 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
                 if (dv1 == null)
                     continue;
                 if (t1.em3 == null) continue;
                 dv1.floor_em = (int)t1.em3; // 층정보 등록 
             }
-            gl.XMLDanteDevice(false);
+            g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.ds1.Device);
         }
 
         #endregion
@@ -129,6 +128,8 @@ namespace LSmDNSW
 
         private void _btnUpdae_Click(object sender, RoutedEventArgs e)
         {
+            return;
+            /*
             string newfile = _txt2.Text;
 
             var nd = newfile.Split(' ');
@@ -189,13 +190,14 @@ namespace LSmDNSW
                     break;
                 }
             }
-            g.dBSqlite.dm1.FloormapsTableAdapter.Update(g.dBSqlite.ds1.Floormaps);
+            g.dBSqlite.Tam.FloormapsTableAdapter.Update(g.dBSqlite.ds1.Floormaps);
 
             gl.XMLDanteDevice(false);
 
             MessageBox.Show("완료 되었습니다. 장비검색에서 변경된 장치 검색/확인 바랍니다.", "관리자 전용", MessageBoxButton.OK);
 
             _txt1.Text = "변경 완료";
+            */
         }
 
         private void cboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -261,20 +263,18 @@ namespace LSmDNSW
 
         private void initLeft()
         {
-            gl.XMLDanteDevice(true);
-
             MakeSpeakerIP();
 
-            foreach (var t1 in gl.danteDevice._DanteDevice)
+            foreach (var t1 in _DanteDevice)
             {
                 t1.path = sel(t1.DeviceName, t1.chspk);
             }
-            var t2 = gl.danteDevice._DanteDevice.FindAll(p => p.device == 0);
+            var t2 = _DanteDevice.Where(p => p.device == 0).ToList();
             _lv2.ItemsSource = null;
             _lv2.ItemsSource = t2.ToList();
         }
 
-        private static void MakeSpeakerIP()
+        private void MakeSpeakerIP()
         {
             foreach (var t1 in g.dBSqlite.ds1.Assets)
             {
@@ -283,13 +283,15 @@ namespace LSmDNSW
                     t1.state = ""; // "Off-Line";
                     continue;
                 }
-
+                // 자산엔 있는데 디바이스에 없는경우 없음 삭제 처리 
+                /*
+                 
                 if (t1.ch != 1)
                 {
-                    var t4 = gl.danteDevice._DanteDevice.Find(p => p.name == t1.DeviceName || p.DeviceName == t1.DeviceName);
+                    var t4 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
                     if (t4 == null)
                         continue;
-                    var t3 = gl.danteDevice._DanteDevice.Find(p => (p.name == t1.DeviceName || p.DeviceName == t1.DeviceName) && p.chspk == t1.ch);
+                    var t3 = _DanteDevice.FirstOrDefault(p => (p.DeviceName == t1.DeviceName) && p.chspk == t1.ch);
 
                     if (t3 == null)
                     {
@@ -299,8 +301,8 @@ namespace LSmDNSW
                         gl.XMLDanteDevice(false);
                     }
                 }
-
-                var t2 = gl.danteDevice._DanteDevice.Find(p => p.name == t1.DeviceName || p.DeviceName == t1.DeviceName);
+                */
+                var t2 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
                 if (t2 != null)
                 {
                     t1.state = "On-Line";
@@ -336,12 +338,12 @@ namespace LSmDNSW
         }
 
         // DSP 각 채널에 스피커를 할당한다. 
-        private static void SpeakerAssignDSP(Device r1, int chno, string dspname)
+        private void SpeakerAssignDSP(Device r1, int chno, string dspname)
         {
             // 스피커와 DSP 를 가져온다. 
             int chno2 = chno;
-            var src1 = gl.danteDevice._DanteDevice.Find(p => p.DeviceName == r1.DeviceName && p.chspk == r1.chspk);
-            var dsp1 = gl.danteDevice._DanteDevice.Find(p => p.DeviceName == dspname);
+            var src1 = _DanteDevice.FirstOrDefault(p => p.DeviceName == r1.DeviceName && p.chspk == r1.chspk);
+            var dsp1 = _DanteDevice.FirstOrDefault(p => p.DeviceName == dspname);
 
             if (src1 == null)
                 return;
@@ -356,11 +358,14 @@ namespace LSmDNSW
             udpc1.buf2.Clear();
             udpc1.rcv();
 
-            if (dsp1.dsp_out_ch1.Count < chno)
+            if (dsp1.chCount < chno)
             {
-                chno2 = chno - dsp1.dsp_out_ch1.Count;
+                chno2 = chno - dsp1.chCount;
             }
-            byte[] b1 = gl.hexatobyte(dsp1.dsp_out_ch1[chno2 - 1]);
+            var t3 = _DanteDeviceDSPChnnels.Where(p => p.DeviceId == dsp1.DeviceId).ToList();
+            byte[] b1 = gl.hexatobyte(t3[chno2 - 1].dsp_out_ch1);
+
+            //byte[] b1 = gl.hexatobyte(dsp1.dsp_out_ch1[chno2 - 1]);
 
             if (src1.chspk != 1)
             {
@@ -394,12 +399,15 @@ namespace LSmDNSW
 
         private void cboType3_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            return;
+            /*
             string t1 = cboType3.SelectedValue.ToString();    
             var dv1 = gl.danteDevice._DanteDevice.Find(p => p.DeviceName == t1);
             if (dv1 == null)
                 return;
             _lv21.ItemsSource = null;
             _lv21.ItemsSource = dv1.DSPChnnels;
+            */
         }
 
 

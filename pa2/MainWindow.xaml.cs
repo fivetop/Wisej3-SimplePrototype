@@ -11,6 +11,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Linq;
 using System.Data.SqlClient;
 using System.Data.SQLite;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Threading;
@@ -46,7 +47,7 @@ namespace pa
         public int GPIOResponse { get; set; }
         public DBSqlite dBSqlite { get; set; } = new DBSqlite();
         DataSet1 ds1 { get; set; }
-        TableAdapterManager dm1 { get; set; }
+        TableAdapterManager Tam { get; set; }
 
         WireSharkRunning wireShark { get; set; } = new WireSharkRunning();
 
@@ -55,6 +56,9 @@ namespace pa
         bool TestAlarm { get; set; } = false;
 
         public AThreadClass AThread { get; set; } = new AThreadClass();
+
+
+        public  DeviceDataTable _DanteDevice { get; set; }
         public MainWindow()
         {
             g.mainWindow = this;
@@ -66,10 +70,13 @@ namespace pa
 
             dBSqlite.DBInit();
             ds1 = dBSqlite.ds1;
-            dm1 = dBSqlite.dm1;
+            Tam = dBSqlite.Tam;
 
-            dBSqlite.MakeSpeakerIP();
-            dBSqlite.ReadMusic();
+            _DanteDevice = ds1.Device;
+
+            MakeSpeakerIP();
+            ReadMusic();
+
 
             g._BaseData = ds1.Simplepa.FirstOrDefault();
             if (g._BaseData == null)
@@ -77,6 +84,74 @@ namespace pa
             g.Log("DataBase Initial..");
 
             //BSqlite.DBCopy();
+        }
+
+
+        public void MakeSpeakerIP()
+        {
+            foreach (var t1 in ds1.Assets)
+            {
+                if (t1.DeviceName == "")
+                {
+                    t1.state = ""; // "Off-Line";
+                    continue;
+                }
+                var t2 = _DanteDevice.FirstOrDefault(p => p.name == t1.DeviceName || p.DeviceName == t1.DeviceName);
+                if (t2 != null)
+                {
+                    t1.state = "On-Line";
+                    t1.ip = t2.ip;
+                    // 4440 포트는 사용치 않을 예정임  2021.01.26 romee
+                    //AliveChk(t1.ip);
+                }
+                else
+                {
+                    t1.state = ""; // "Off-Line";
+                }
+            }
+            Tam.AssetsTableAdapter.Update(ds1.Assets);
+        }
+
+
+        // 음원 폴더에서 가져와 디비 생성 
+        // 듀레이션은 시간이 걸리므로 타이머 쓰레드 처리 
+        public void ReadMusic()
+        {
+            // 폴더에서 자동으로 파일 확인후 디비에 등록 처리
+            //_BaseData.music.Clear();
+
+            Tam.MusicsTableAdapter.Fill(ds1.Musics);
+
+            var directoryInfo = new DirectoryInfo(gl.appPathServer + "Music");
+            if (directoryInfo.Exists)
+            {
+                var files = directoryInfo.GetFiles("*.mp3");
+
+                foreach (var fileInfo in files)
+                {
+                    var mu1 = TagLib.File.Create(fileInfo.FullName);
+                    var m3 = ds1.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
+                    if (m3 != null)
+                    {
+                    }
+                    else
+                    {
+                        MusicsRow m1 = ds1.Musics.NewMusicsRow();
+                        string str1 = "00:00:00";
+                        var r1 = mu1.Properties.Duration;
+                        m1.FileName = fileInfo.Name;
+                        m1.FileContent = "";
+                        m1.deletable = "N";
+                        Thread.Sleep(50);
+                        str1 = r1.ToString(@"hh\:mm\:ss");
+                        if (str1 == "00:00:00")
+                            str1 = "00:00:01";
+                        m1.duration = str1;
+                        ds1.Musics.Rows.Add(m1);
+                        Tam.MusicsTableAdapter.Update(ds1.Musics);
+                    }
+                }
+            }
         }
 
 
@@ -180,8 +255,8 @@ namespace pa
         // IP 가 없는 디바이스 삭제 처리 
         private void DSPDeviceCheck()
         {
-            List<Device> dsp1 = new List<Device>();
-            dsp1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2).ToList();
+            List<DeviceRow> dsp1 = new List<DeviceRow>();
+            dsp1 = _DanteDevice.Where(p => p.device == 2).ToList();
 
             try
             {

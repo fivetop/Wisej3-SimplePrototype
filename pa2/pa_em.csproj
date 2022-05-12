@@ -156,10 +156,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AThread.cs" />
+    <Compile Include="BSAsset.cs" />
     <Compile Include="BSThreadClass.cs" />
     <Compile Include="classes\common.cs" />
     <Compile Include="classes\TrayIcon.cs" />
-    <Compile Include="DBSqlite.cs" />
     <Compile Include="ExtProcess.cs" />
     <Compile Include="g.cs" />
     <Compile Include="MainWindow8.cs" />

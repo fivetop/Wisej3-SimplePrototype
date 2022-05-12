@@ -150,7 +150,7 @@ namespace pa
             BSThreadClass.AddData(bsa);
         }
 
-        public static void DSP_EMMakeGroupSpeaker(List<Device> child, int v, BS_DSP_STATE k, int chno = 0)
+        public static void DSP_EMMakeGroupSpeaker(List<DeviceRow> child, int v, BS_DSP_STATE k, int chno = 0)
         {
             BSAsset bsa = new BSAsset();
 
@@ -160,7 +160,7 @@ namespace pa
 
             if (child != null)
             {
-                foreach (Device t1 in child)
+                foreach (DeviceRow t1 in child)
                 {
                     bsa.device.Add(t1);
                 }

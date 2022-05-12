@@ -70,6 +70,10 @@ namespace pa
                     chno = getplay(msg.Guid);
                     MBSStop(chno);
                     break;
+                case eSignalRMsgType.eVolume:
+                    // db 처리 선행 필요 
+                    InitVolume();
+                    break;
             }
             return true;
         }

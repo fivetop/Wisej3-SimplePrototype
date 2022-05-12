@@ -27,13 +27,13 @@ namespace pa.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var t1 = gl.danteDevice._DanteDevice.FindAll(p => p.device == 2);
+            var t1 = g.mainWindow.dBSqlite.ds1.Device.Where(p => p.device == 2).ToList();
             cboType.ItemsSource = t1;
             cboType.DisplayMemberPath = "DeviceName";
             cboType.SelectedValuePath = "name";
             cboType.SelectedValue = g._BaseData.ServerIP;
 
-            g.mainWindow.dBSqlite.dm1.MusicsTableAdapter.Fill(g.mainWindow.dBSqlite.ds1.Musics);
+            g.mainWindow.dBSqlite.Tam.MusicsTableAdapter.Fill(g.mainWindow.dBSqlite.ds1.Musics);
             var mt2 = g.mainWindow.dBSqlite.ds1.Musics.ToList();
 
             cboType2.ItemsSource = mt2;
@@ -88,7 +88,7 @@ namespace pa.Windows
 
         private void cboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Device t1 = (Device) e.AddedItems[0];
+            DeviceRow t1 = (DeviceRow) e.AddedItems[0];
             if (t1 == null)
                 return;
             g._BaseData.ServerIP = t1.DeviceName;
@@ -120,17 +120,14 @@ namespace pa.Windows
             if (MessageBox.Show("전체 적용됩니다. 적용하시겠습니까?", "전체적용", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
                 return;
 
-            var dsp1 = gl.danteDevice._DanteDevice.Where(p => p.device == 0).ToList();
+            var dsp1 = g.mainWindow._DanteDevice.Where(p => p.device == 0).ToList();
 
             foreach (var dsp in dsp1)
             {
                 dsp.dsp_vol = t1;
             }
             g._BaseData.dsp_vol = t1;
-            gl.XMLDanteDevice(false);
             msg pkt = new msg("V", "0", "V", "1","");
-            ///g.mainWindow.s1.Send(pkt.pkt);
-
         }
 
         private void _btn2_Click(object sender, RoutedEventArgs e)
@@ -140,14 +137,13 @@ namespace pa.Windows
 
             if (MessageBox.Show("전체 적용됩니다. 적용하시겠습니까?", "전체적용", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
                 return;
-            var dsp1 = gl.danteDevice._DanteDevice.Where(p => p.device == 0).ToList();
+            var dsp1 = g.mainWindow._DanteDevice.Where(p => p.device == 0).ToList();
 
             foreach (var dsp in dsp1)
             {
                 dsp.dsp_vol_em = t1;
             }
             g._BaseData.dsp_vol_em = t1;
-            gl.XMLDanteDevice(false);
             msg pkt = new msg("V", "0", "V", "2", "");
             //g.mainWindow.s1.Send(pkt.pkt);
         }
@@ -171,7 +167,7 @@ namespace pa.Windows
 
         private void _btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            g.mainWindow.dBSqlite.dm1.SimplepaTableAdapter.Update(g.mainWindow.dBSqlite.ds1.Simplepa);
+            g.mainWindow.dBSqlite.Tam.SimplepaTableAdapter.Update(g.mainWindow.dBSqlite.ds1.Simplepa);
             Close();
         }
 

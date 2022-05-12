@@ -151,6 +151,32 @@ namespace Wisej.CodeProject
 			bslamp1.LabelOn(7, playItems[7].p_run);
 			bslamp1.LabelOn(8, playItems[8].p_run);
 		}
+
+		internal void sendSigR(eSignalRMsgType eVolume)
+		{
+			SignalRMsg msg1 = new SignalRMsg();
+			msg1.user = Application.Session["user"];
+
+			switch (eVolume)
+			{
+				case eSignalRMsgType.eVolume:
+					msg1.Guid = Guid.NewGuid();
+					msg1.message = "Volume";
+					msg1.Msgtype = eVolume;
+					break;
+			}
+
+			try
+			{
+				if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+					signalRClient.proxy.Invoke("MessageC2S2", msg1);
+			}
+			catch (Exception e1)
+			{
+			}
+		}
+
+
 		#endregion
 	}
 }

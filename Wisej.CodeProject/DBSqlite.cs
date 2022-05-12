@@ -1,5 +1,4 @@
 ﻿using DataClass;
-using gClass;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,12 +10,12 @@ using Wisej.CodeProject;
 using Wisej.CodeProject.DataSet1TableAdapters;
 using static Wisej.CodeProject.DataSet1;
 
-namespace pa
+namespace Wisej.CodeProject
 {
     public class DBSqlite
     {
         public DataSet1 ds1 { get; set; }
-        public TableAdapterManager dm1 { get; internal set; }
+        public TableAdapterManager Tam { get; internal set; }
 
         public DBSqlite()
         {
@@ -27,11 +26,13 @@ namespace pa
             try
             {
                 ds1 = new DataSet1();
-                dm1 = new TableAdapterManager()
+                Tam = new TableAdapterManager()
                 {
                     AssetsTableAdapter = new AssetsTableAdapter(),
                     AssetGroupsTableAdapter = new AssetGroupsTableAdapter(),
                     BSTreeTableAdapter = new BSTreeTableAdapter(),
+                    DeviceTableAdapter = new DeviceTableAdapter(),
+                    DeviceChannelTableAdapter = new DeviceChannelTableAdapter(),
                     EventvmTableAdapter = new EventvmTableAdapter(),
                     FloorbasesTableAdapter = new FloorbasesTableAdapter(),
                     FloormapsTableAdapter = new FloormapsTableAdapter(),
@@ -42,18 +43,20 @@ namespace pa
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
                     UserTreesTableAdapter = new UserTreesTableAdapter(),
                 };
-                dm1.AssetsTableAdapter.Fill(ds1.Assets);
-                dm1.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
-                dm1.BSTreeTableAdapter.Fill(ds1.BSTree);
-                dm1.EventvmTableAdapter.Fill(ds1.Eventvm);
-                dm1.FloorbasesTableAdapter.Fill(ds1.Floorbases);
-                dm1.FloormapsTableAdapter.Fill(ds1.Floormaps);
-                dm1.HolidaysTableAdapter.Fill(ds1.Holidays);
-                dm1.InfoTreesTableAdapter.Fill(ds1.InfoTrees);
-                dm1.MusicsTableAdapter.Fill(ds1.Musics);
-                dm1.SimpleMultisTableAdapter.Fill(ds1.SimpleMultis);
-                dm1.SimplepaTableAdapter.Fill(ds1.Simplepa);
-                dm1.UserTreesTableAdapter.Fill(ds1.UserTrees);
+                Tam.AssetsTableAdapter.Fill(ds1.Assets);
+                Tam.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
+                Tam.BSTreeTableAdapter.Fill(ds1.BSTree);
+                Tam.DeviceTableAdapter.Fill(ds1.Device);
+                Tam.DeviceChannelTableAdapter.Fill(ds1.DeviceChannel);
+                Tam.EventvmTableAdapter.Fill(ds1.Eventvm);
+                Tam.FloorbasesTableAdapter.Fill(ds1.Floorbases);
+                Tam.FloormapsTableAdapter.Fill(ds1.Floormaps);
+                Tam.HolidaysTableAdapter.Fill(ds1.Holidays);
+                Tam.InfoTreesTableAdapter.Fill(ds1.InfoTrees);
+                Tam.MusicsTableAdapter.Fill(ds1.Musics);
+                Tam.SimpleMultisTableAdapter.Fill(ds1.SimpleMultis);
+                Tam.SimplepaTableAdapter.Fill(ds1.Simplepa);
+                Tam.UserTreesTableAdapter.Fill(ds1.UserTrees);
             }
             catch (Exception e1)
             {
@@ -61,104 +64,37 @@ namespace pa
             }
         }
 
-        public void DBCopy()
+        public void SaveAssets(EmSpeakerPosition t1)
         {
-            try
+            var aa = t1.file.Split(' ');
+
+            var m3 = ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
+            if (m3 == null)
             {
-                foreach (var t1 in ds1.Assets)
-                {
-                    AssetsRow m1 = ds1.Assets.NewAssetsRow();
-                    m1.AssetId = 1;
-                    m1.ch = 1;
-                    m1.chk = t1.chk;
-                    m1.DeviceName = t1.DeviceName;
-                    m1.floor = t1.floor;
-                    m1.GroupName = t1.GroupName;
-                    m1.ip = t1.ip;
-                    m1.path = t1.path;
-                    m1.seq = t1.seq;
-                    m1.SpeakerName = t1.SpeakerName;
-                    m1.state = t1.state;
-                    m1.state_old = t1.state_old;
-                    m1.ZoneName = t1.ZoneName;
-                    ds1.Assets.Rows.Add(m1);
-                }
-                dm1.AssetsTableAdapter.Update(ds1.Assets);
-            }
-            catch (Exception e1)
-            {
-                Console.WriteLine(e1.Message);
+                AssetsRow m2 = ds1.Assets.NewAssetsRow();
+                m2.seq = int.Parse(aa[0]);
+                m2.GroupName = aa[1];
+                m2.ZoneName = aa[2];
+                m2.SpeakerName = aa[3];
+                m2.path = aa[1] + " " + aa[2] + " " + aa[3];
+                m2.ch = int.Parse(aa[5]);
+                m2.chk = 0;
+                m2.em1 = int.Parse(t1.array[6]);
+                m2.em2 = int.Parse(t1.array[7]);
+                m2.em3 = int.Parse(t1.array[8]);
+                m2.ip = "";
+                m2.state = "";
+                m2.state_old = "";
+                if (aa.Count() > 4)
+                    m2.DeviceName = aa[4];
+                ds1.Assets.Rows.Add(m2);
+                Tam.AssetsTableAdapter.Update(ds1.Assets);
             }
         }
 
-        public void MakeSpeakerIP()
-        {
-            foreach (var t1 in ds1.Assets)
-            {
-                if (t1.DeviceName == "")
-                {
-                    t1.state = ""; // "Off-Line";
-                    continue;
-                }
-                var t2 = gl.danteDevice._DanteDevice.Find(p => p.name == t1.DeviceName || p.DeviceName == t1.DeviceName);
-                if (t2 != null)
-                {
-                    t1.state = "On-Line";
-                    t1.ip = t2.ip;
-                    // 4440 포트는 사용치 않을 예정임  2021.01.26 romee
-                    //AliveChk(t1.ip);
-                }
-                else
-                {
-                    t1.state = ""; // "Off-Line";
-                }
-            }
-            dm1.AssetsTableAdapter.Update(ds1.Assets);
-        }
 
 
-        // 음원 폴더에서 가져와 디비 생성 
-        // 듀레이션은 시간이 걸리므로 타이머 쓰레드 처리 
-        public void ReadMusic()
-        {
-            // 폴더에서 자동으로 파일 확인후 디비에 등록 처리
-            //_BaseData.music.Clear();
-
-            dm1.MusicsTableAdapter.Fill(ds1.Musics);
-
-            var directoryInfo = new DirectoryInfo(gl.appPathServer + "Music");
-            if (directoryInfo.Exists)
-            {
-                var files = directoryInfo.GetFiles("*.mp3");
-
-                foreach (var fileInfo in files)
-                {
-                    var mu1 = TagLib.File.Create(fileInfo.FullName);
-                    var m3 = ds1.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
-                    if (m3 != null)
-                    {
-                    }
-                    else
-                    {
-                        MusicsRow m1 = ds1.Musics.NewMusicsRow();
-                        string str1 = "00:00:00";
-                        var r1 = mu1.Properties.Duration;
-                        m1.FileName = fileInfo.Name;
-                        m1.FileContent = "";
-                        m1.deletable = "N";
-                        Thread.Sleep(50);
-                        str1 = r1.ToString(@"hh\:mm\:ss");
-                        if (str1 == "00:00:00")
-                            str1 = "00:00:01";
-                        m1.duration = str1;
-                        ds1.Musics.Rows.Add(m1);
-                        dm1.MusicsTableAdapter.Update(ds1.Musics);
-                    }
-                }
-            }
-        }
-
-        internal void Delete(int idno)
+        public void Delete(int idno)
         {
             try 
             { 
@@ -167,7 +103,7 @@ namespace pa
                 {
                     t3.Delete();
                 }
-                dm1.BSTreeTableAdapter.Update(ds1.BSTree);
+                Tam.BSTreeTableAdapter.Update(ds1.BSTree);
             }
             catch (Exception e1)
             { 
@@ -194,7 +130,7 @@ namespace pa
                 bSTree.AssetId = 0;
                 ds1.BSTree.Rows.Add(bSTree);
             }
-            dm1.BSTreeTableAdapter.Update(ds1.BSTree);
+            Tam.BSTreeTableAdapter.Update(ds1.BSTree);
             ds1.BSTree.AcceptChanges();
 
             var ab1 = ds1.Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
@@ -231,11 +167,11 @@ namespace pa
                 {
                     case "EventvmRow":
                         ds1.Eventvm.Rows.Add((EventvmRow)o1);
-                        dm1.EventvmTableAdapter.Update(ds1.Eventvm);
+                        Tam.EventvmTableAdapter.Update(ds1.Eventvm);
                         break;
                     case "SimplepaRow":
                         ds1.Simplepa.Rows.Add((SimplepaRow)o1);
-                        dm1.SimplepaTableAdapter.Update(ds1.Simplepa);
+                        Tam.SimplepaTableAdapter.Update(ds1.Simplepa);
                         break;
                 }
                 //g.Log(t1.Name + " Save OK..");
@@ -243,11 +179,10 @@ namespace pa
             catch (Exception e1)
             {
                 Console.WriteLine(e1.Message);
-                g.Log(t1.Name + " Save Fail..");
             }
         }
 
-        internal void Init()
+        public void Init()
         {
             SimplepaRow s = ds1.Simplepa.NewSimplepaRow();
 
@@ -295,17 +230,17 @@ namespace pa
             s.sms_rcvno = "";
             s.Pport = 0;
             ds1.Simplepa.Rows.Add(s);
-            dm1.SimplepaTableAdapter.Update(ds1.Simplepa);
+            Tam.SimplepaTableAdapter.Update(ds1.Simplepa);
 
         }
 
-        internal void Remove(SimplepaRow s2)
+        public void Remove(SimplepaRow s2)
         {
             ds1.Simplepa.RemoveSimplepaRow(s2);
-            dm1.SimplepaTableAdapter.Update(ds1.Simplepa);
+            Tam.SimplepaTableAdapter.Update(ds1.Simplepa);
         }
 
-        internal void Eventvm(string event_text, string base_text, string state)
+        public void Eventvm(string event_text, string base_text, string state)
         {
             EventvmRow em = ds1.Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
@@ -315,7 +250,7 @@ namespace pa
             em.alarm = 0;
             Save(em);
         }
-        internal void EventvmIP(AssetsRow t3)
+        public void EventvmIP(AssetsRow t3)
         {
             EventvmRow em = ds1.Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;

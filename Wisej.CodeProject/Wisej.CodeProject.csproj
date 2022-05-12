@@ -144,6 +144,12 @@
     <EmbeddedResource Include="win\BSDeviceManager.resx">
       <DependentUpon>BSDeviceManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="win\BSLevelManager.resx">
+      <DependentUpon>BSLevelManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\BSOutManager.resx">
+      <DependentUpon>BSOutManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\EventEditor.resx">
       <DependentUpon>EventEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -643,6 +649,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBSqlite.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handler1.ashx.cs">
       <DependentUpon>Handler1.ashx</DependentUpon>

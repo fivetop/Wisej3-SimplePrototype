@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetBase.cs" />
-    <Compile Include="BSAsset.cs" />
     <Compile Include="Dante.cs" />
     <Compile Include="DanteDeviceChannel.cs" />
     <Compile Include="Device.cs" />

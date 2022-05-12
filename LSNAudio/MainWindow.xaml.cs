@@ -138,8 +138,8 @@ namespace LSNAudio
         private void ReadMulti()
         {
             m1.Clear();
-            g1.dBSqlite.dm1.BSTreeTableAdapter.Fill(g1.dBSqlite.ds1.BSTree);
-            g1.dBSqlite.dm1.MusicsTableAdapter.Fill(g1.dBSqlite.ds1.Musics);
+            g1.dBSqlite.Tam.BSTreeTableAdapter.Fill(g1.dBSqlite.ds1.BSTree);
+            g1.dBSqlite.Tam.MusicsTableAdapter.Fill(g1.dBSqlite.ds1.Musics);
             var t1 = g1.dBSqlite.ds1.BSTree.Where(p => p.chno == idno);
             var t3 = g1.dBSqlite.ds1.Musics;
 

@@ -13,8 +13,8 @@ namespace DataClass
 	public class Device
 	{
 		[Key]
-		public int DeviceId { get; set; }   // Event (1)   <-- 건수 표시
-		public Guid id { get; set; }
+		public long DeviceId { get; set; }   // Event (1)   <-- 건수 표시
+		//public Guid id { get; set; }
 		public int device { get; set; } // 0 speaker , 1 amp , 2 dsp , 3 avio 
 		public string ip { get; set; }
 		public string ip_dspctrl { get; set; } // DSP Controller IP 
@@ -22,12 +22,10 @@ namespace DataClass
 		public string DeviceName { get; set; }
 		public string ModelName { get; set; }
 		public string DanteModelName { get; set; }
-		public string dsp_off_ch1 { get; set; }
-		public string dsp_off_ch2 { get; set; }
 		public long chspk { get; set; }
 		public List<String> domain { get; set; }
-		public List<String> dsp_out_ch1 = new List<String>();
-		public List<String> dsp_out_ch2 = new List<String>();
+		public List<String> dsp_out_ch1 { get; set; } = new List<String>();
+		public List<String> dsp_out_ch2 { get; set; } = new List<String>();
 		public List<DanteDeviceChnnel> ch { get; set; }
 		public List<String> ptrdomain { get; set; }
 		public List<String> srvdomain { get; set; }
@@ -46,8 +44,6 @@ namespace DataClass
 
 		public Device()
 		{
-			id = Guid.NewGuid();
-
 			device = 0; // 0 speaker , 1 amp , 2 dsp , 3 avio 
 			ip = "";
 			ip_dspctrl = "";
@@ -69,8 +65,7 @@ namespace DataClass
 			dsp_vol = 5;
 			dsp_vol_em = 9;
 
-			dsp_off_ch1 = "";
-			dsp_off_ch2 = "";
+			chspk = 1;
 		}
 
 		public int dsp_ch_cnt()
@@ -151,8 +146,6 @@ namespace DataClass
 
 			dsp_out_ch1.Clear();
 			dsp_out_ch2.Clear();
-			dsp_off_ch1 = "";
-			dsp_off_ch2 = "";
 
 			Dante_DSP_PACKET t1 = new Dante_DSP_PACKET();
 
@@ -183,18 +176,6 @@ namespace DataClass
 				t1.make();
 				dsp_out_ch2.Add(t1.pkt);
 			}
-
-			t1 = new Dante_DSP_PACKET();
-			t1.seqn = 0x4f;
-			t1.r1 = "30140000000100";
-			t1.ch = "000001";
-			dsp_off_ch1 = t1.makeOff();
-
-			t1 = new Dante_DSP_PACKET();
-			t1.seqn = 0x5f;
-			t1.r1 = "30140000000100";
-			t1.ch = "000002";
-			dsp_off_ch2 = t1.makeOff();
 
 		}
 

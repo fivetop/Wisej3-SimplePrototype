@@ -34,8 +34,8 @@
             this.deviceTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.DeviceTableAdapter();
             this.dataGridView3 = new Wisej.Web.DataGridView();
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Name = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Chno = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Vol = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -83,26 +83,30 @@
             this.colDeviceid.DataPropertyName = "DeviceId";
             this.colDeviceid.HeaderText = "No";
             this.colDeviceid.Name = "colDeviceid";
+            this.colDeviceid.ReadOnly = true;
             this.colDeviceid.Width = 40;
-            // 
-            // colIp
-            // 
-            this.colIp.DataPropertyName = "ip";
-            this.colIp.HeaderText = "IP Address";
-            this.colIp.Name = "colIp";
             // 
             // colDevicename
             // 
             this.colDevicename.DataPropertyName = "DeviceName";
             this.colDevicename.HeaderText = "DeviceName";
             this.colDevicename.Name = "colDevicename";
+            this.colDevicename.ReadOnly = true;
             this.colDevicename.Width = 140;
+            // 
+            // colIp
+            // 
+            this.colIp.DataPropertyName = "ip";
+            this.colIp.HeaderText = "IP Address";
+            this.colIp.Name = "colIp";
+            this.colIp.ReadOnly = true;
             // 
             // colDsp_Name
             // 
             this.colDsp_Name.DataPropertyName = "dsp_name";
             this.colDsp_Name.HeaderText = "DSP";
             this.colDsp_Name.Name = "colDsp_Name";
+            this.colDsp_Name.ReadOnly = true;
             this.colDsp_Name.Width = 120;
             // 
             // colDsp_Chno
@@ -131,6 +135,7 @@
             this.colPath_1.DataPropertyName = "path";
             this.colPath_1.HeaderText = "위치";
             this.colPath_1.Name = "colPath_1";
+            this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
             // 
             // BSDeviceManager

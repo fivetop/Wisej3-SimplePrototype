@@ -18,6 +18,7 @@ namespace DataClass
         ePlayEnd = 7,           // 방송종료  S2C
         eLoginUser = 8,         // 로그인    S2C
         eLogoutUser = 9,        // 로그아웃  S2C
+        eVolume = 10,           // 볼륨처리  C2S
     }
 
     public enum eEventCode

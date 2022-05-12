@@ -9,5 +9,10 @@ namespace Wisej.CodeProject.win
         {
             InitializeComponent();
         }
+
+        private void BSOutManager_Load(object sender, EventArgs e)
+        {
+            this.deviceTableAdapter.Fill(this.dataSet1.Device);
+        }
     }
 }

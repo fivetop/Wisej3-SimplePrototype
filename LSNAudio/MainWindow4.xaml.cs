@@ -59,7 +59,7 @@ namespace LSNAudio
                 return;
             }
             
-            g1.dBSqlite.dm1.SimplepaTableAdapter.Fill(g1.dBSqlite.ds1.Simplepa);
+            g1.dBSqlite.Tam.SimplepaTableAdapter.Fill(g1.dBSqlite.ds1.Simplepa);
             var _BaseData = g1.dBSqlite.ds1.Simplepa.FirstOrDefault();
             string fn = _BaseData.EmMusic;
 
@@ -134,7 +134,7 @@ namespace LSNAudio
             SoundCard soundCard = null;
             IntPtr t2 = new IntPtr(Audiochno);
 
-            g1.dBSqlite.dm1.SimplepaTableAdapter.Fill(g1.dBSqlite.ds1.Simplepa);
+            g1.dBSqlite.Tam.SimplepaTableAdapter.Fill(g1.dBSqlite.ds1.Simplepa);
             var _BaseData = g1.dBSqlite.ds1.Simplepa.FirstOrDefault();
             string fn = _BaseData.EmMusic;
 

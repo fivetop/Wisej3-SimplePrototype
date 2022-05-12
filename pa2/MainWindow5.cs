@@ -506,7 +506,7 @@ namespace pa
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : Off");
                         sh = sh + cnt.ToString();
-                        dm1.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
+                        Tam.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
                         var t1 = ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
@@ -530,7 +530,7 @@ namespace pa
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : On");
                         sh = sh + cnt.ToString();
-                        dm1.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
+                        Tam.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
                         var t1 = ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
@@ -550,51 +550,6 @@ namespace pa
                         dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : On", "ON");
                     }
                     break;
-                    /*
-                case 6:
-                    if (g.TestAlarm || g.Alarm > 0)
-                    {
-                        // EM Mic 처리 
-                        if (GetBit(newbstr, chk) == 1)
-                        {
-                            g.Log("4 번 프리셋 버튼 : Off");
-                            //_a5.IsChecked = false;
-                            MicChannel(false);
-                        }
-                        else
-                        {
-                            g.Log("4 번 프리셋 버튼 : On");
-                            //_a5.IsChecked = true;
-                            MicChannel(true);
-                        }
-                    }
-                    else
-                    {
-                        if (GetBit(newbstr, chk) == 1)
-                        {
-                            g.Log("4 번 프리셋 버튼 : Off");
-                            var t1 = gl._AssetGroupList.child.Find(p => p.Name == "PRESET4");
-                            if (t1 == null)
-                                return;
-                            //_a5.IsChecked = false;
-                            g.DSP_MakeGroupSpeaker(t1.child.ToList(), 0, BS_DSP_STATE.PRESET);
-                            Preset_chk();
-                            g.SendR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, 4, 0);
-                        }
-                        else
-                        {
-                            g.Log("4 번 프리셋 버튼 : On");
-                            var t1 = gl._AssetGroupList.child.Find(p => p.Name == "PRESET4");
-                            if (t1 == null)
-                                return;
-                            //_a5.IsChecked = true;
-                            g.DSP_MakeGroupSpeaker(t1.child.ToList(), 1, BS_DSP_STATE.PRESET);
-                            g.SendR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, 4, 1);
-                        }
-                    }
-
-                    break;
-                    */
                 // EM Test
                 case 7:
                     if (GetBit(newbstr, chk) == 1)

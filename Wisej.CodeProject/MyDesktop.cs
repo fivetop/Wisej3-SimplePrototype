@@ -26,7 +26,7 @@ namespace Wisej.CodeProject
 		public static SignalRClient signalRClient { get; set; } = new SignalRClient();
 		public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
 
-		public TableAdapterManager tam { get; internal set; }
+		public TableAdapterManager Tam { get; internal set; }
 
 		public MyDesktop()
 		{
@@ -79,7 +79,7 @@ namespace Wisej.CodeProject
 			//Application.LoadTheme("Material-3");
 			//Application.LoadTheme("Vista-2");
 
-			tam = new TableAdapterManager()
+			Tam = new TableAdapterManager()
 			{
 				AssetsTableAdapter = new AssetsTableAdapter(),
 				AssetGroupsTableAdapter = new AssetGroupsTableAdapter(),
@@ -95,19 +95,19 @@ namespace Wisej.CodeProject
 				SimplepaTableAdapter = new SimplepaTableAdapter(),
 				UserTreesTableAdapter = new UserTreesTableAdapter(),
 			};
-			tam.AssetsTableAdapter.Fill(this.dataSet1.Assets);
-			tam.AssetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
-			tam.BSTreeTableAdapter.Fill(this.dataSet1.BSTree);
-			tam.DeviceTableAdapter.Fill(this.dataSet1.Device);
-			tam.EventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-			tam.FloorbasesTableAdapter.Fill(this.dataSet1.Floorbases);
-			tam.FloormapsTableAdapter.Fill(this.dataSet1.Floormaps);
-			tam.HolidaysTableAdapter.Fill(this.dataSet1.Holidays);
-			tam.InfoTreesTableAdapter.Fill(this.dataSet1.InfoTrees);
-			tam.MusicsTableAdapter.Fill(this.dataSet1.Musics);
-			tam.SimpleMultisTableAdapter.Fill(this.dataSet1.SimpleMultis);
-			tam.SimplepaTableAdapter.Fill(this.dataSet1.Simplepa);
-			tam.UserTreesTableAdapter.Fill(this.dataSet1.UserTrees);
+			Tam.AssetsTableAdapter.Fill(this.dataSet1.Assets);
+			Tam.AssetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
+			Tam.BSTreeTableAdapter.Fill(this.dataSet1.BSTree);
+			Tam.DeviceTableAdapter.Fill(this.dataSet1.Device);
+			Tam.EventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+			Tam.FloorbasesTableAdapter.Fill(this.dataSet1.Floorbases);
+			Tam.FloormapsTableAdapter.Fill(this.dataSet1.Floormaps);
+			Tam.HolidaysTableAdapter.Fill(this.dataSet1.Holidays);
+			Tam.InfoTreesTableAdapter.Fill(this.dataSet1.InfoTrees);
+			Tam.MusicsTableAdapter.Fill(this.dataSet1.Musics);
+			Tam.SimpleMultisTableAdapter.Fill(this.dataSet1.SimpleMultis);
+			Tam.SimplepaTableAdapter.Fill(this.dataSet1.Simplepa);
+			Tam.UserTreesTableAdapter.Fill(this.dataSet1.UserTrees);
 
 
 			this.btnStart.Enabled = true;
@@ -134,7 +134,7 @@ namespace Wisej.CodeProject
 			AddSetupPage();
 		}
 
-		BindingList<bsroom> dataSource = new BindingList<bsroom>();
+        BindingList<bsroom> dataSource = new BindingList<bsroom>();
 
 		private void Main_Load(object sender, EventArgs e)
 		{

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -73,6 +74,9 @@ namespace pa
 
         // 타이머가 종료 할때 처음곡 시작 
         #endregion
+
+
+
 
     }
 }

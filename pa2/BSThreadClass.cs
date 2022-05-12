@@ -142,7 +142,7 @@ namespace pa
 
                         // 뮤트 시키고
                         //var ld1 = data.device.GroupBy(p => p.ip_dspctrl).ToList();
-                        var ld1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
+                        var ld1 = g.mainWindow._DanteDevice.Where(p => p.device == 2).ToList();
 
                         foreach (var d1 in ld1)
                         {
@@ -157,7 +157,7 @@ namespace pa
 
                         // 앰프 처리하고 
                         // 특정 Asset List 만 처리
-                        foreach (Device t1 in data.device)
+                        foreach (var t1 in data.device)
                         {
                             try
                             {
@@ -182,7 +182,7 @@ namespace pa
                             try
                             {
                                 if (t1.ip == "") continue;
-                                var sst1 = gl.danteDevice._DanteDevice.First(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
+                                var sst1 = g.mainWindow._DanteDevice.First(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
                                 if (sst1 == null) continue;
                                 if (sst1.ip == "" || sst1.ip_dspctrl == "") continue;
                                 Console.WriteLine("--" + "DSP Metrix Out ==> In :" + sst1.ip_dspctrl + " : " + t1.path + " : " + data.onoff.ToString());
@@ -210,7 +210,7 @@ namespace pa
                             try
                             {
                                 if (t1.ip == "") continue;
-                                var sst1 = gl.danteDevice._DanteDevice.First(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
+                                var sst1 = g.mainWindow._DanteDevice.First(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
                                 if (sst1 == null) continue;
                                 if (sst1.ip == "" || sst1.ip_dspctrl == "") continue;
                                 Console.WriteLine("--" + "DSP Metrix Out ==> In :" + sst1.ip_dspctrl + " : " + t1.path + " : " + data.onoff.ToString());
@@ -230,7 +230,7 @@ namespace pa
                             try
                             {
                                 if (t1.ip == "") continue;
-                                var sst1 = gl.danteDevice._DanteDevice.First(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
+                                var sst1 = g.mainWindow._DanteDevice.First(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
                                 if (sst1 == null) continue;
                                 if (sst1.ip == "" || sst1.ip_dspctrl == "") continue;
                                 Console.WriteLine("--" + "DSP Metrix Out ==> In :" + sst1.ip_dspctrl + " : " + t1.path + " : " + data.onoff.ToString());
@@ -247,7 +247,7 @@ namespace pa
                         Console.WriteLine("PRESET_ALL" + " : " + data.onoff.ToString());
                         g.dsp.BufferClear();
                         // 전체 컨트롤이므로 Asset List 는 필요 없음 
-                        var sstl = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
+                        var sstl = g.mainWindow._DanteDevice.Where(p => p.device == 2);
 
                         foreach (var t1 in sstl)
                         {
@@ -266,7 +266,7 @@ namespace pa
                     case BS_DSP_STATE.INIT :
                         Console.WriteLine("INIT" + " : " + data.onoff.ToString());
                         g.dsp.BufferClear();
-                        var sstl2 = gl.danteDevice._DanteDevice.Where(p => p.device == 0);
+                        var sstl2 = g.mainWindow._DanteDevice.Where(p => p.device == 0);
 
                         foreach (var t1 in sstl2)
                         {
@@ -303,7 +303,7 @@ namespace pa
                             try
                             {
                                 if (t1.ip == "") continue;
-                                var sst1 = gl.danteDevice._DanteDevice.First(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
+                                var sst1 = g.mainWindow._DanteDevice.First(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
                                 if (sst1 == null) continue;
                                 if (sst1.ip == "" || sst1.ip_dspctrl == "") continue;
                                 Console.WriteLine("--" + "DSP Metrix Out ==> In :" + sst1.ip_dspctrl + " : " + t1.path + " : " + data.onoff.ToString());
@@ -326,7 +326,7 @@ namespace pa
 
         private static void chClear(BSAsset data)
         {
-            var s2 = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
+            var s2 = g.mainWindow._DanteDevice.Where(p => p.device == 2);
             foreach (var t1 in s2)
             {
                 if (t1.ip == "" || t1.ip_dspctrl == "") continue;

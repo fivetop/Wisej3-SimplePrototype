@@ -93,7 +93,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DBSqlite.cs" />
     <Compile Include="g1.cs" />
     <Compile Include="MainWindow4.xaml.cs">
       <DependentUpon>MainWindow4.xaml</DependentUpon>
