@@ -70,77 +70,6 @@ namespace LSmDNSW
             }
         }
 
-        #region add, edit save 로직, delete 로직
-        private void _btnSave_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (!saveLeft()) return;
-            MakeDeviceFloor();
-        }
-
-
-        private bool saveLeft()
-        {
-            return true;
-        }
-
-        // 디바이스 정보에 몇층에 설치 되는지정보를 등록함 
-        private void MakeDeviceFloor()
-        {
-            foreach (var t1 in g.dBSqlite.ds1.Assets)
-            {
-                var dv1 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
-                if (dv1 == null)
-                    continue;
-                if (t1.em3 == null) continue;
-                dv1.floor_em = (int)t1.em3; // 층정보 등록 
-            }
-            g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.ds1.Device);
-        }
-
-        #endregion
-
-        //=====================================================================================
-        // 유지보수 부분 
-        //
-
-        string oldfile = "";
-
-        private void ReadAssetList()
-        {
-            List<string> ts  = new List<string>();
-            // 폴더에서 자동으로 파일 확인후 디비에 등록 처리 
-            var directoryInfo = new DirectoryInfo(gl.appPathServer + "Speaker");
-            if (directoryInfo.Exists)
-            {
-                var files = directoryInfo.GetFiles("*.");
-
-                foreach (var fileInfo in files)
-                {
-                    var aa = fileInfo.Name.Split(' ');
-
-                    ts.Add(fileInfo.Name);
-                }
-            }
-            cboType.ItemsSource = ts;
-            cboType.SelectedIndex = 0;
-        }
-
-        private void _btnUpdae_Click(object sender, RoutedEventArgs e)
-        {
-            return;
-
-        }
-
-        private void cboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var t1 = e.AddedItems[0];
-            if (t1 == null)
-                return;
-            _txt2.Text = (string)t1;
-            oldfile = (string)t1;
-        }
-
         public void StatusContent(string v)
         {
             _Status.Content = v;
@@ -166,13 +95,8 @@ namespace LSmDNSW
                     gl.XMLDanteDevice(true);
                     StatusContent("앰프의 위치에 따른 DSP 채널을 지정할 경우 사용합니다.");
                     break;
-                case 3:
-                    gl.XMLDanteDevice(true);
-                    StatusContent("스피커의 변경/유지보수가 필요할 경우 사용합니다.");
-                    break;
             }
             oldindex = t1.SelectedIndex;
-
         }
 
 
@@ -231,12 +155,6 @@ namespace LSmDNSW
         }
 
 
-        private void _btnSet_Click(object sender, RoutedEventArgs e)
-        {
-            SpeakerAssignDSP();
-
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var t1 = (sender as Button).DataContext as Device;
@@ -292,27 +210,6 @@ namespace LSmDNSW
             src1.dsp_name = dspname;
             src1.ip_dspctrl = dsp1.ip_dspctrl; //추적후 넣기 romee 2021-06-30
             gl.XMLDanteDevice(false);
-        }
-
-        private void _btnTest_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-
-        //=====================================================================================
-        // 입출력 채널 조정 
-        //
-
-        private void _btn1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cboType3_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            return;
         }
 
 

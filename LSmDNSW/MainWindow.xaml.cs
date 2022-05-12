@@ -194,18 +194,8 @@ namespace LSmDNSW
                 }
                 */
             }
-            cboType3.ItemsSource = null;
-            cboType3.ItemsSource = dsp_name;
-
             ComboBoxColumn1.ItemsSource = null;
             ComboBoxColumn1.ItemsSource = dsp_name;
-
-            ComboBoxColumn11.ItemsSource = null;
-            ComboBoxColumn11.ItemsSource = purpose;
-
-            ComboBoxColumn12.ItemsSource = null;
-            ComboBoxColumn12.ItemsSource = division;
-
         }
 
         public void Log(string log)
@@ -267,11 +257,6 @@ namespace LSmDNSW
             catch (Exception e1)
             {
             }
-// 유지보수에서 사용 
-            ReadAssetList();
-
-            //g.Main2();
-
         }
 
         private void Resolver_OnEventNewDevice(object o)
@@ -289,20 +274,6 @@ namespace LSmDNSW
         //=======================================================================================
         // 장비검색 부분 
         //
-
-        // 리스트 보기 
-        private void _Status1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            g.Log("L:List");
-            g.division();
-            foreach (var t2 in _DanteDevice)
-            {
-                g.Log(t2.ip.ToString() + " : " + t2.DeviceName + " : " + t2.name + " : " + t2.device.ToString() + " : " + t2.ip_dspctrl);
-            }
-
-        }
-
-
         private void Resolver_OnReceiveMessage(string message)
         {
             //if (resolver.rcvAddress() == false)
@@ -473,23 +444,6 @@ namespace LSmDNSW
             udpc1.OnReceiveMessage += Udpc1_OnReceiveMessage;
             udpc1.buf2.Clear();
             udpc1.rcv();
-
-
-            /*
-                        // 스피커 분리 처리
-                        for (int i = 0; i < g.danteDevice._DanteDevice.Count; i++)
-                        {
-                            var t1 = g.danteDevice._DanteDevice[i];
-                            if (t1.device != 0)
-                                continue;
-
-                            if (t1.ip == "")
-                                continue;
-                            byte[] b1 = g.etc.hexatobyte(dsp1.dsp_off_ch1);
-                            udpc1.send(t1.ip, 4440, b1);
-                            Thread.Sleep(50);
-                        }
-            */
 
             var sst1 = _DanteDevice.Where(p => p.device == 0).ToList();
             Console.WriteLine ("Assign Speaker :" + sst1.Count().ToString());
