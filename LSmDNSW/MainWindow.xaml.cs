@@ -106,16 +106,16 @@ namespace LSmDNSW
                     m1.DanteModelName = t1.DanteModelName;
                     m1.DeviceName = t1.DeviceName;
                     m1.device = t1.device;
-                    m1.dsp_chno = t1.dsp_chno;
-                    m1.dsp_name = t1.dsp_name;
-                    m1.dsp_vol = t1.dsp_vol;
-                    m1.dsp_vol_em = t1.dsp_vol_em;
-                    m1.emData = t1.emData;
-                    m1.floor_em = t1.floor_em;
                     m1.ip = t1.ip;
                     m1.ip_dspctrl = t1.ip_dspctrl;
                     m1.name = t1.name;
-                    m1.path = t1.path;
+                    //m1.dsp_chno = t1.dsp_chno;
+                    //m1.dsp_name = t1.dsp_name;
+                    //m1.dsp_vol = t1.dsp_vol;
+                    //m1.dsp_vol_em = t1.dsp_vol_em;
+                    //m1.path = t1.path;
+                    //m1.emData = t1.emData;
+                    //m1.floor_em = t1.floor_em;
                     g.dBSqlite.ds1.Device.Rows.Add(m1);
                 }
                 g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.ds1.Device);

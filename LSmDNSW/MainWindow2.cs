@@ -129,75 +129,7 @@ namespace LSmDNSW
         private void _btnUpdae_Click(object sender, RoutedEventArgs e)
         {
             return;
-            /*
-            string newfile = _txt2.Text;
 
-            var nd = newfile.Split(' ');
-            var od = oldfile.Split(' ');
-
-            if (oldfile == newfile)
-            {
-                MessageBox.Show("파일 이름이 동일 합니다. ", "관리자 전용", MessageBoxButton.OK);
-                return;
-            }
-
-            if (nd.Count() < 3)
-            {
-                MessageBox.Show("신규 파일명이 기존 형식과 다릅니다. (스페이스 분리 확인)", "관리자 전용", MessageBoxButton.OK);
-                return;
-            }
-
-            if (MessageBox.Show("되돌릴수 없습니다. 변경 하시겠습니까?", "관리자 전용", MessageBoxButton.YesNo) == MessageBoxResult.No)
-                return;
-
-            string str2 = "";
-            // 1. 새로 만들고
-            str2 = gl.appPathServer + "Speaker\\" + newfile;
-            System.IO.File.Create(str2);
-            System.Threading.Thread.Sleep(100);
-
-            // 2. 파일 지우고
-            str2 = gl.appPathServer + "Speaker\\" + oldfile;
-            System.IO.File.Delete(str2);
-            System.Threading.Thread.Sleep(100);
-
-            // 3. 파일변경 처리 
-            // DanteDevice.xml
-            // FloorTreeList.xml
-            // SimpleSpeaker.xml
-
-            gl.XMLDanteDevice(true);
-
-            Device tt1 = new Device();
-            AssetBase tt2 = new AssetBase();
-
-            foreach (var t1 in gl.danteDevice._DanteDevice)
-            {
-                if (t1.DeviceName == od[3])
-                {
-                    tt1 = t1;
-                    break;
-                }
-            }
-            gl.danteDevice._DanteDevice.Remove(tt1);
-
-            // romee asset 조정 처리 
-            foreach (var t1 in g.dBSqlite.ds1.Floormaps)
-            {
-                if (t1.assetname == od[3])
-                {
-                    t1.Delete();
-                    break;
-                }
-            }
-            g.dBSqlite.Tam.FloormapsTableAdapter.Update(g.dBSqlite.ds1.Floormaps);
-
-            gl.XMLDanteDevice(false);
-
-            MessageBox.Show("완료 되었습니다. 장비검색에서 변경된 장치 검색/확인 바랍니다.", "관리자 전용", MessageBoxButton.OK);
-
-            _txt1.Text = "변경 완료";
-            */
         }
 
         private void cboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -283,25 +215,6 @@ namespace LSmDNSW
                     t1.state = ""; // "Off-Line";
                     continue;
                 }
-                // 자산엔 있는데 디바이스에 없는경우 없음 삭제 처리 
-                /*
-                 
-                if (t1.ch != 1)
-                {
-                    var t4 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
-                    if (t4 == null)
-                        continue;
-                    var t3 = _DanteDevice.FirstOrDefault(p => (p.DeviceName == t1.DeviceName) && p.chspk == t1.ch);
-
-                    if (t3 == null)
-                    {
-                        Device t5 = gl.ObjectCopier.Clone(t4);
-                        t5.chspk = t1.ch;
-                        gl.danteDevice._DanteDevice.Add(t5);
-                        gl.XMLDanteDevice(false);
-                    }
-                }
-                */
                 var t2 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
                 if (t2 != null)
                 {
@@ -400,14 +313,6 @@ namespace LSmDNSW
         private void cboType3_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             return;
-            /*
-            string t1 = cboType3.SelectedValue.ToString();    
-            var dv1 = gl.danteDevice._DanteDevice.Find(p => p.DeviceName == t1);
-            if (dv1 == null)
-                return;
-            _lv21.ItemsSource = null;
-            _lv21.ItemsSource = dv1.DSPChnnels;
-            */
         }
 
 

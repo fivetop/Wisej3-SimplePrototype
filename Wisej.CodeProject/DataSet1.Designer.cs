@@ -6719,8 +6719,8 @@ namespace Wisej.CodeProject {
                         long chspk, 
                         string dsp_name, 
                         int dsp_chno, 
-                        long dsp_vol, 
-                        long dsp_vol_em, 
+                        int dsp_vol, 
+                        int dsp_vol_em, 
                         long floor_em, 
                         string path, 
                         string emData, 
@@ -6821,9 +6821,9 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columndsp_name);
                 this.columndsp_chno = new global::System.Data.DataColumn("dsp_chno", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndsp_chno);
-                this.columndsp_vol = new global::System.Data.DataColumn("dsp_vol", typeof(long), null, global::System.Data.MappingType.Element);
+                this.columndsp_vol = new global::System.Data.DataColumn("dsp_vol", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndsp_vol);
-                this.columndsp_vol_em = new global::System.Data.DataColumn("dsp_vol_em", typeof(long), null, global::System.Data.MappingType.Element);
+                this.columndsp_vol_em = new global::System.Data.DataColumn("dsp_vol_em", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndsp_vol_em);
                 this.columnfloor_em = new global::System.Data.DataColumn("floor_em", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfloor_em);
@@ -10629,10 +10629,10 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long dsp_vol {
+            public int dsp_vol {
                 get {
                     try {
-                        return ((long)(this[this.tableDevice.dsp_volColumn]));
+                        return ((int)(this[this.tableDevice.dsp_volColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_vol\' 열의 값이 DBNull입니다.", e);
@@ -10645,10 +10645,10 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long dsp_vol_em {
+            public int dsp_vol_em {
                 get {
                     try {
-                        return ((long)(this[this.tableDevice.dsp_vol_emColumn]));
+                        return ((int)(this[this.tableDevice.dsp_vol_emColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_vol_em\' 열의 값이 DBNull입니다.", e);

@@ -14,13 +14,11 @@ namespace DataClass
 	{
 		[Key]
 		public long DeviceId { get; set; }   // Event (1)   <-- 건수 표시
-		//public Guid id { get; set; }
 		public int device { get; set; } // 0 speaker , 1 amp , 2 dsp , 3 avio 
 		public string ip { get; set; }
 		public string ip_dspctrl { get; set; } // DSP Controller IP 
 		public string name { get; set; }
 		public string DeviceName { get; set; }
-		public string ModelName { get; set; }
 		public string DanteModelName { get; set; }
 		public long chspk { get; set; }
 		public List<String> domain { get; set; }
@@ -30,17 +28,6 @@ namespace DataClass
 		public List<String> ptrdomain { get; set; }
 		public List<String> srvdomain { get; set; }
 		public List<String> txtdomain { get; set; }
-		public List<String> Connect { get; set; }
-
-		public string dsp_name { get; set; } // 스피커에 할당된 DSP 
-		public int dsp_chno { get; set; } // 스피커에 할당된 DSP 채널번호
-		public int dsp_vol { get; set; }  // 스피커에 할당된 일반 볼륨 
-		public int dsp_vol_em { get; set; } // 스피커에 할당된 비상 방송 볼륨 
-		public string path { get; set; } // 스피커에 위치 출력용 
-		public int floor_em { get; set; } // 스피커에 할당된 비상 방송 층 
-		public string emData { get; set; } // P형 R형 연계용
-
-		public List<DSPChnnel> DSPChnnels { get; set; }
 
 		public Device()
 		{
@@ -50,21 +37,13 @@ namespace DataClass
 			name = "";
 
 			DeviceName = "";
-			ModelName = "";
 			DanteModelName = "";
 
-			Connect = new List<String>();
 			ptrdomain = new List<String>();
 			srvdomain = new List<string>();
 			txtdomain = new List<String>();
 			domain = new List<String>();
 			ch = new List<DanteDeviceChnnel>();
-
-			dsp_name = "";
-			dsp_chno = 0;
-			dsp_vol = 5;
-			dsp_vol_em = 9;
-
 			chspk = 1;
 		}
 
