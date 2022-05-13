@@ -12,13 +12,14 @@ namespace DataClass
         eEM = 1,                // EM Mssage
         eEM_PRESET_SW = 2,      // EM 프리셋 스위치
         eEM_FIRE = 3,           // EM 화재
-        ePlay = 4,              // 방송시작  C2S
-        ePlaying = 5,           // 방송중    S2C  
-        eStop = 6,              // 방송중지  C2S
-        ePlayEnd = 7,           // 방송종료  S2C
-        eLoginUser = 8,         // 로그인    S2C
-        eLogoutUser = 9,        // 로그아웃  S2C
-        eVolume = 10,           // 볼륨처리  C2S
+        ePlay = 4,              // 방송시작     C2S
+        ePlaying = 5,           // 방송중       S2C  
+        eStop = 6,              // 방송중지     C2S
+        ePlayEnd = 7,           // 방송종료     S2C
+        eLoginUser = 8,         // 로그인       S2C
+        eLogoutUser = 9,        // 로그아웃     S2C
+        eVolume = 10,           // 볼륨처리     C2S
+        eOutChMove = 11,        // 스피커 이동  C2S
     }
 
     public enum eEventCode

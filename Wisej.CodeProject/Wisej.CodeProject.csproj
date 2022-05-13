@@ -144,6 +144,12 @@
     <EmbeddedResource Include="win\BSDeviceManager.resx">
       <DependentUpon>BSDeviceManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="win\BSEMManager.resx">
+      <DependentUpon>BSEMManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\BSInManager.resx">
+      <DependentUpon>BSInManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\BSLevelManager.resx">
       <DependentUpon>BSLevelManager.cs</DependentUpon>
     </EmbeddedResource>

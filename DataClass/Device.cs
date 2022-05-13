@@ -44,14 +44,9 @@ namespace DataClass
 			txtdomain = new List<String>();
 			domain = new List<String>();
 			ch = new List<DanteDeviceChnnel>();
-			chspk = 1;
 		}
 
-		public int dsp_ch_cnt()
-		{
-			return dsp_out_ch1.Count();
-		}
-		// DSP Ch No write 
+		// DSP Ch No write 채널이름
 		public void makeDanteDeviceChannel()
 		{
 			if (name.Contains("DESKTOP"))
@@ -94,6 +89,7 @@ namespace DataClass
 			}
 		}
 
+		// 단테 사운드 카드가 있는 컴퓨터 찾기 
 		public void FindSoundCard()
 		{
 
@@ -117,7 +113,7 @@ namespace DataClass
 			}
 		}
 
-		// make dsp channel packet 
+		// make dsp channel packet 채널패킷
 		public void makeDSPChannelpacket()
 		{
 			if (device != 2)
@@ -205,6 +201,7 @@ namespace DataClass
 				DeviceName = name;
 		}
 
+		// 채널번호 파싱 
 		private DanteDeviceChnnel makeChNo(string s1)
 		{
 			DanteDeviceChnnel d1 = new DanteDeviceChnnel();

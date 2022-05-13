@@ -40,8 +40,6 @@ namespace pa
                 playItems[i] = new PlayItem();
                 playItems[i].chno = i;
             }
-            // 기초디비, 스피커 디비
-            gl.XMLDanteDevice(true);
             g.Log("Start PA");
         }
         #endregion

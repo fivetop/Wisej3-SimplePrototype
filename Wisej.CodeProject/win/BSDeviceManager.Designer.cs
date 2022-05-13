@@ -41,9 +41,12 @@
             this.colDsp_Vol = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Vol_Em = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel1 = new Wisej.Web.Panel();
+            this.panel2 = new Wisej.Web.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -73,9 +76,10 @@
             this.colDsp_Vol_Em,
             this.colPath_1});
             this.dataGridView3.DataSource = this.deviceBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(18, 27);
+            this.dataGridView3.Dock = Wisej.Web.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(871, 279);
+            this.dataGridView3.Size = new System.Drawing.Size(910, 546);
             this.dataGridView3.TabIndex = 1;
             // 
             // colDeviceid
@@ -92,7 +96,7 @@
             this.colDevicename.HeaderText = "DeviceName";
             this.colDevicename.Name = "colDevicename";
             this.colDevicename.ReadOnly = true;
-            this.colDevicename.Width = 140;
+            this.colDevicename.Width = 150;
             // 
             // colIp
             // 
@@ -100,6 +104,7 @@
             this.colIp.HeaderText = "IP Address";
             this.colIp.Name = "colIp";
             this.colIp.ReadOnly = true;
+            this.colIp.Width = 110;
             // 
             // colDsp_Name
             // 
@@ -138,15 +143,36 @@
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
             // 
+            // panel1
+            // 
+            this.panel1.Dock = Wisej.Web.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(910, 70);
+            this.panel1.TabIndex = 4;
+            this.panel1.TabStop = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView3);
+            this.panel2.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(910, 546);
+            this.panel2.TabIndex = 5;
+            this.panel2.TabStop = true;
+            // 
             // BSDeviceManager
             // 
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "BSDeviceManager";
             this.Size = new System.Drawing.Size(910, 616);
             this.Load += new System.EventHandler(this.BSDeviceManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -165,5 +191,7 @@
         private Web.DataGridViewTextBoxColumn colDsp_Vol;
         private Web.DataGridViewTextBoxColumn colDsp_Vol_Em;
         private Web.DataGridViewTextBoxColumn colPath_1;
+        private Web.Panel panel1;
+        private Web.Panel panel2;
     }
 }

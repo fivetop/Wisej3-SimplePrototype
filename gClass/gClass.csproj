@@ -75,6 +75,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BThread.cs" />
+    <Compile Include="AThread.cs" />
+    <Compile Include="AThreadData.cs" />
     <Compile Include="DSPControll.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="pktr.cs" />

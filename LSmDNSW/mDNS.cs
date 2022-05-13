@@ -762,8 +762,6 @@ namespace LSmDNSW
 						t2.srvdomain.Add(a.domain);
 						if(a.domain.Split('.')[1] == "local")
 							t2.name = a.domain.Split('.')[0];
-						gl.danteDevice._DanteDevice.Add(t2);
-						g.Log("new Device : " + t2.ip.ToString() + " : " + t2.name);
 						OnEventNewDevice?.Invoke(t2);
 					}
 					else

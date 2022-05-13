@@ -6468,27 +6468,23 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnDeviceName;
             
-            private global::System.Data.DataColumn columndsp_off_ch1;
-            
             private global::System.Data.DataColumn columnDanteModelName;
-            
-            private global::System.Data.DataColumn columndsp_off_ch2;
             
             private global::System.Data.DataColumn columnchspk;
             
             private global::System.Data.DataColumn columndsp_name;
-            
-            private global::System.Data.DataColumn columndsp_chno;
-            
-            private global::System.Data.DataColumn columndsp_vol;
-            
-            private global::System.Data.DataColumn columndsp_vol_em;
             
             private global::System.Data.DataColumn columnfloor_em;
             
             private global::System.Data.DataColumn columnpath;
             
             private global::System.Data.DataColumn columnemData;
+            
+            private global::System.Data.DataColumn columndsp_chno;
+            
+            private global::System.Data.DataColumn columndsp_vol;
+            
+            private global::System.Data.DataColumn columndsp_vol_em;
             
             private global::System.Data.DataColumn columnchCount;
             
@@ -6575,25 +6571,9 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dsp_off_ch1Column {
-                get {
-                    return this.columndsp_off_ch1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn DanteModelNameColumn {
                 get {
                     return this.columnDanteModelName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dsp_off_ch2Column {
-                get {
-                    return this.columndsp_off_ch2;
                 }
             }
             
@@ -6610,30 +6590,6 @@ namespace Wisej.CodeProject {
             public global::System.Data.DataColumn dsp_nameColumn {
                 get {
                     return this.columndsp_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dsp_chnoColumn {
-                get {
-                    return this.columndsp_chno;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dsp_volColumn {
-                get {
-                    return this.columndsp_vol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dsp_vol_emColumn {
-                get {
-                    return this.columndsp_vol_em;
                 }
             }
             
@@ -6658,6 +6614,30 @@ namespace Wisej.CodeProject {
             public global::System.Data.DataColumn emDataColumn {
                 get {
                     return this.columnemData;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn dsp_chnoColumn {
+                get {
+                    return this.columndsp_chno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn dsp_volColumn {
+                get {
+                    return this.columndsp_vol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn dsp_vol_emColumn {
+                get {
+                    return this.columndsp_vol_em;
                 }
             }
             
@@ -6706,44 +6686,24 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DeviceRow AddDeviceRow(
-                        long DeviceId, 
-                        long device, 
-                        string ip, 
-                        string ip_dspctrl, 
-                        string name, 
-                        string DeviceName, 
-                        string dsp_off_ch1, 
-                        string DanteModelName, 
-                        string dsp_off_ch2, 
-                        long chspk, 
-                        string dsp_name, 
-                        int dsp_chno, 
-                        int dsp_vol, 
-                        int dsp_vol_em, 
-                        long floor_em, 
-                        string path, 
-                        string emData, 
-                        int chCount) {
+            public DeviceRow AddDeviceRow(long device, string ip, string ip_dspctrl, string name, string DeviceName, string DanteModelName, int chspk, string dsp_name, long floor_em, string path, string emData, int dsp_chno, int dsp_vol, int dsp_vol_em, int chCount) {
                 DeviceRow rowDeviceRow = ((DeviceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DeviceId,
+                        null,
                         device,
                         ip,
                         ip_dspctrl,
                         name,
                         DeviceName,
-                        dsp_off_ch1,
                         DanteModelName,
-                        dsp_off_ch2,
                         chspk,
                         dsp_name,
-                        dsp_chno,
-                        dsp_vol,
-                        dsp_vol_em,
                         floor_em,
                         path,
                         emData,
+                        dsp_chno,
+                        dsp_vol,
+                        dsp_vol_em,
                         chCount};
                 rowDeviceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDeviceRow);
@@ -6780,17 +6740,15 @@ namespace Wisej.CodeProject {
                 this.columnip_dspctrl = base.Columns["ip_dspctrl"];
                 this.columnname = base.Columns["name"];
                 this.columnDeviceName = base.Columns["DeviceName"];
-                this.columndsp_off_ch1 = base.Columns["dsp_off_ch1"];
                 this.columnDanteModelName = base.Columns["DanteModelName"];
-                this.columndsp_off_ch2 = base.Columns["dsp_off_ch2"];
                 this.columnchspk = base.Columns["chspk"];
                 this.columndsp_name = base.Columns["dsp_name"];
-                this.columndsp_chno = base.Columns["dsp_chno"];
-                this.columndsp_vol = base.Columns["dsp_vol"];
-                this.columndsp_vol_em = base.Columns["dsp_vol_em"];
                 this.columnfloor_em = base.Columns["floor_em"];
                 this.columnpath = base.Columns["path"];
                 this.columnemData = base.Columns["emData"];
+                this.columndsp_chno = base.Columns["dsp_chno"];
+                this.columndsp_vol = base.Columns["dsp_vol"];
+                this.columndsp_vol_em = base.Columns["dsp_vol_em"];
                 this.columnchCount = base.Columns["chCount"];
             }
             
@@ -6809,32 +6767,30 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columnname);
                 this.columnDeviceName = new global::System.Data.DataColumn("DeviceName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeviceName);
-                this.columndsp_off_ch1 = new global::System.Data.DataColumn("dsp_off_ch1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndsp_off_ch1);
                 this.columnDanteModelName = new global::System.Data.DataColumn("DanteModelName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDanteModelName);
-                this.columndsp_off_ch2 = new global::System.Data.DataColumn("dsp_off_ch2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndsp_off_ch2);
-                this.columnchspk = new global::System.Data.DataColumn("chspk", typeof(long), null, global::System.Data.MappingType.Element);
+                this.columnchspk = new global::System.Data.DataColumn("chspk", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnchspk);
                 this.columndsp_name = new global::System.Data.DataColumn("dsp_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndsp_name);
-                this.columndsp_chno = new global::System.Data.DataColumn("dsp_chno", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndsp_chno);
-                this.columndsp_vol = new global::System.Data.DataColumn("dsp_vol", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndsp_vol);
-                this.columndsp_vol_em = new global::System.Data.DataColumn("dsp_vol_em", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndsp_vol_em);
                 this.columnfloor_em = new global::System.Data.DataColumn("floor_em", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfloor_em);
                 this.columnpath = new global::System.Data.DataColumn("path", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpath);
                 this.columnemData = new global::System.Data.DataColumn("emData", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemData);
+                this.columndsp_chno = new global::System.Data.DataColumn("dsp_chno", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndsp_chno);
+                this.columndsp_vol = new global::System.Data.DataColumn("dsp_vol", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndsp_vol);
+                this.columndsp_vol_em = new global::System.Data.DataColumn("dsp_vol_em", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndsp_vol_em);
                 this.columnchCount = new global::System.Data.DataColumn("chCount", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnchCount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDeviceId}, true));
+                this.columnDeviceId.AutoIncrement = true;
+                this.columnDeviceId.AutoIncrementSeed = 1;
                 this.columnDeviceId.AllowDBNull = false;
                 this.columnDeviceId.Unique = true;
             }
@@ -10533,22 +10489,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string dsp_off_ch1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableDevice.dsp_off_ch1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_off_ch1\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevice.dsp_off_ch1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string DanteModelName {
                 get {
                     try {
@@ -10565,26 +10505,10 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string dsp_off_ch2 {
+            public int chspk {
                 get {
                     try {
-                        return ((string)(this[this.tableDevice.dsp_off_ch2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_off_ch2\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevice.dsp_off_ch2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long chspk {
-                get {
-                    try {
-                        return ((long)(this[this.tableDevice.chspkColumn]));
+                        return ((int)(this[this.tableDevice.chspkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'chspk\' 열의 값이 DBNull입니다.", e);
@@ -10608,54 +10532,6 @@ namespace Wisej.CodeProject {
                 }
                 set {
                     this[this.tableDevice.dsp_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int dsp_chno {
-                get {
-                    try {
-                        return ((int)(this[this.tableDevice.dsp_chnoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_chno\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevice.dsp_chnoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int dsp_vol {
-                get {
-                    try {
-                        return ((int)(this[this.tableDevice.dsp_volColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_vol\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevice.dsp_volColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int dsp_vol_em {
-                get {
-                    try {
-                        return ((int)(this[this.tableDevice.dsp_vol_emColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_vol_em\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevice.dsp_vol_emColumn] = value;
                 }
             }
             
@@ -10704,6 +10580,54 @@ namespace Wisej.CodeProject {
                 }
                 set {
                     this[this.tableDevice.emDataColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int dsp_chno {
+                get {
+                    try {
+                        return ((int)(this[this.tableDevice.dsp_chnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_chno\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevice.dsp_chnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int dsp_vol {
+                get {
+                    try {
+                        return ((int)(this[this.tableDevice.dsp_volColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_vol\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevice.dsp_volColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int dsp_vol_em {
+                get {
+                    try {
+                        return ((int)(this[this.tableDevice.dsp_vol_emColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_vol_em\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevice.dsp_vol_emColumn] = value;
                 }
             }
             
@@ -10785,18 +10709,6 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdsp_off_ch1Null() {
-                return this.IsNull(this.tableDevice.dsp_off_ch1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdsp_off_ch1Null() {
-                this[this.tableDevice.dsp_off_ch1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDanteModelNameNull() {
                 return this.IsNull(this.tableDevice.DanteModelNameColumn);
             }
@@ -10805,18 +10717,6 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDanteModelNameNull() {
                 this[this.tableDevice.DanteModelNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdsp_off_ch2Null() {
-                return this.IsNull(this.tableDevice.dsp_off_ch2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdsp_off_ch2Null() {
-                this[this.tableDevice.dsp_off_ch2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10841,42 +10741,6 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setdsp_nameNull() {
                 this[this.tableDevice.dsp_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdsp_chnoNull() {
-                return this.IsNull(this.tableDevice.dsp_chnoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdsp_chnoNull() {
-                this[this.tableDevice.dsp_chnoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdsp_volNull() {
-                return this.IsNull(this.tableDevice.dsp_volColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdsp_volNull() {
-                this[this.tableDevice.dsp_volColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isdsp_vol_emNull() {
-                return this.IsNull(this.tableDevice.dsp_vol_emColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setdsp_vol_emNull() {
-                this[this.tableDevice.dsp_vol_emColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10913,6 +10777,42 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetemDataNull() {
                 this[this.tableDevice.emDataColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdsp_chnoNull() {
+                return this.IsNull(this.tableDevice.dsp_chnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdsp_chnoNull() {
+                this[this.tableDevice.dsp_chnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdsp_volNull() {
+                return this.IsNull(this.tableDevice.dsp_volColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdsp_volNull() {
+                this[this.tableDevice.dsp_volColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdsp_vol_emNull() {
+                return this.IsNull(this.tableDevice.dsp_vol_emColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdsp_vol_emNull() {
+                this[this.tableDevice.dsp_vol_emColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19610,17 +19510,15 @@ FROM     Simplepa";
             tableMapping.ColumnMappings.Add("ip_dspctrl", "ip_dspctrl");
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("DeviceName", "DeviceName");
-            tableMapping.ColumnMappings.Add("dsp_off_ch1", "dsp_off_ch1");
             tableMapping.ColumnMappings.Add("DanteModelName", "DanteModelName");
-            tableMapping.ColumnMappings.Add("dsp_off_ch2", "dsp_off_ch2");
             tableMapping.ColumnMappings.Add("chspk", "chspk");
             tableMapping.ColumnMappings.Add("dsp_name", "dsp_name");
-            tableMapping.ColumnMappings.Add("dsp_chno", "dsp_chno");
-            tableMapping.ColumnMappings.Add("dsp_vol", "dsp_vol");
-            tableMapping.ColumnMappings.Add("dsp_vol_em", "dsp_vol_em");
             tableMapping.ColumnMappings.Add("floor_em", "floor_em");
             tableMapping.ColumnMappings.Add("path", "path");
             tableMapping.ColumnMappings.Add("emData", "emData");
+            tableMapping.ColumnMappings.Add("dsp_chno", "dsp_chno");
+            tableMapping.ColumnMappings.Add("dsp_vol", "dsp_vol");
+            tableMapping.ColumnMappings.Add("dsp_vol_em", "dsp_vol_em");
             tableMapping.ColumnMappings.Add("chCount", "chCount");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.SQLite.SQLiteCommand();
@@ -19637,7 +19535,7 @@ FROM     Simplepa";
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""Device"" (""DeviceId"", ""device"", ""ip"", ""ip_dspctrl"", ""name"", ""DeviceName"", ""dsp_off_ch1"", ""DanteModelName"", ""dsp_off_ch2"", ""chspk"", ""dsp_name"", ""dsp_chno"", ""dsp_vol"", ""dsp_vol_em"", ""floor_em"", ""path"", ""emData"", ""chCount"") VALUES (:DeviceId, :device, :ip, :ip_dspctrl, :name, :DeviceName, :dsp_off_ch1, :DanteModelName, :dsp_off_ch2, :chspk, :dsp_name, :dsp_chno, :dsp_vol, :dsp_vol_em, :floor_em, :path, :emData, :chCount)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""main"".""Device"" (""DeviceId"", ""device"", ""ip"", ""ip_dspctrl"", ""name"", ""DeviceName"", ""DanteModelName"", ""chspk"", ""dsp_name"", ""dsp_chno"", ""dsp_vol"", ""dsp_vol_em"", ""floor_em"", ""path"", ""emData"", ""chCount"") VALUES (:DeviceId, :device, :ip, :ip_dspctrl, :name, :DeviceName, :DanteModelName, :chspk, :dsp_name, :dsp_chno, :dsp_vol, :dsp_vol_em, :floor_em, :path, :emData, :chCount)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "DeviceId";
@@ -19678,22 +19576,10 @@ FROM     Simplepa";
             param.SourceColumn = "DeviceName";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "dsp_off_ch1";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "dsp_off_ch1";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "DanteModelName";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
             param.SourceColumn = "DanteModelName";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "dsp_off_ch2";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "dsp_off_ch2";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "chspk";
@@ -19757,7 +19643,7 @@ FROM     Simplepa";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""Device"" SET ""DeviceId"" = :DeviceId, ""device"" = :device, ""ip"" = :ip, ""ip_dspctrl"" = :ip_dspctrl, ""name"" = :name, ""DeviceName"" = :DeviceName, ""dsp_off_ch1"" = :dsp_off_ch1, ""DanteModelName"" = :DanteModelName, ""dsp_off_ch2"" = :dsp_off_ch2, ""chspk"" = :chspk, ""dsp_name"" = :dsp_name, ""dsp_chno"" = :dsp_chno, ""dsp_vol"" = :dsp_vol, ""dsp_vol_em"" = :dsp_vol_em, ""floor_em"" = :floor_em, ""path"" = :path, ""emData"" = :emData, ""chCount"" = :chCount WHERE ((""DeviceId"" = :Original_DeviceId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""main"".""Device"" SET ""DeviceId"" = :DeviceId, ""device"" = :device, ""ip"" = :ip, ""ip_dspctrl"" = :ip_dspctrl, ""name"" = :name, ""DeviceName"" = :DeviceName, ""DanteModelName"" = :DanteModelName, ""chspk"" = :chspk, ""dsp_name"" = :dsp_name, ""dsp_chno"" = :dsp_chno, ""dsp_vol"" = :dsp_vol, ""dsp_vol_em"" = :dsp_vol_em, ""floor_em"" = :floor_em, ""path"" = :path, ""emData"" = :emData, ""chCount"" = :chCount WHERE ((""DeviceId"" = :Original_DeviceId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "DeviceId";
@@ -19798,22 +19684,10 @@ FROM     Simplepa";
             param.SourceColumn = "DeviceName";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "dsp_off_ch1";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "dsp_off_ch1";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "DanteModelName";
             param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
             param.IsNullable = true;
             param.SourceColumn = "DanteModelName";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Devart.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "dsp_off_ch2";
-            param.SQLiteType = global::Devart.Data.SQLite.SQLiteType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "dsp_off_ch2";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.SQLite.SQLiteParameter();
             param.ParameterName = "chspk";
@@ -19898,9 +19772,9 @@ FROM     Simplepa";
             this._commandCollection = new global::Devart.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::Devart.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  DeviceId, device, ip, ip_dspctrl, name, DeviceName, dsp_off_ch1, DanteMod" +
-                "elName, dsp_off_ch2, chspk, dsp_name, dsp_chno, dsp_vol, dsp_vol_em, floor_em, p" +
-                "ath, emData, chCount\r\nFROM     Device";
+            this._commandCollection[0].CommandText = "SELECT  DeviceId, device, ip, ip_dspctrl, name, DeviceName, DanteModelName, chspk" +
+                ", dsp_name, dsp_chno, dsp_vol, dsp_vol_em, floor_em, path, emData, chCount\r\nFROM" +
+                "     Device";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19990,9 +19864,7 @@ FROM     Simplepa";
                     string ip_dspctrl, 
                     string name, 
                     string DeviceName, 
-                    string dsp_off_ch1, 
                     string DanteModelName, 
-                    string dsp_off_ch2, 
                     global::System.Nullable<long> chspk, 
                     string dsp_name, 
                     global::System.Nullable<long> dsp_chno, 
@@ -20033,77 +19905,65 @@ FROM     Simplepa";
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DeviceName));
             }
-            if ((dsp_off_ch1 == null)) {
+            if ((DanteModelName == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(dsp_off_ch1));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(DanteModelName));
             }
-            if ((DanteModelName == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((chspk.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((long)(chspk.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(DanteModelName));
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((dsp_off_ch2 == null)) {
+            if ((dsp_name == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(dsp_off_ch2));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(dsp_name));
             }
-            if ((chspk.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((long)(chspk.Value));
+            if ((dsp_chno.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((long)(dsp_chno.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((dsp_name == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((dsp_vol.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((long)(dsp_vol.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(dsp_name));
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((dsp_chno.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((long)(dsp_chno.Value));
+            if ((dsp_vol_em.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((long)(dsp_vol_em.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((dsp_vol.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((long)(dsp_vol.Value));
+            if ((floor_em.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((long)(floor_em.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((dsp_vol_em.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((long)(dsp_vol_em.Value));
-            }
-            else {
+            if ((path == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((floor_em.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((long)(floor_em.Value));
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((path == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(path));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(path));
             }
             if ((emData == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(emData));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(emData));
             }
             if ((chCount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((long)(chCount.Value));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((long)(chCount.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -20132,9 +19992,7 @@ FROM     Simplepa";
                     string ip_dspctrl, 
                     string name, 
                     string DeviceName, 
-                    string dsp_off_ch1, 
                     string DanteModelName, 
-                    string dsp_off_ch2, 
                     global::System.Nullable<long> chspk, 
                     string dsp_name, 
                     global::System.Nullable<long> dsp_chno, 
@@ -20176,79 +20034,67 @@ FROM     Simplepa";
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DeviceName));
             }
-            if ((dsp_off_ch1 == null)) {
+            if ((DanteModelName == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(dsp_off_ch1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(DanteModelName));
             }
-            if ((DanteModelName == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((chspk.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(chspk.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(DanteModelName));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((dsp_off_ch2 == null)) {
+            if ((dsp_name == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(dsp_off_ch2));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(dsp_name));
             }
-            if ((chspk.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(chspk.Value));
+            if ((dsp_chno.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(dsp_chno.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((dsp_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((dsp_vol.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((long)(dsp_vol.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(dsp_name));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((dsp_chno.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(dsp_chno.Value));
+            if ((dsp_vol_em.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((long)(dsp_vol_em.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((dsp_vol.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(dsp_vol.Value));
+            if ((floor_em.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((long)(floor_em.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((dsp_vol_em.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((long)(dsp_vol_em.Value));
-            }
-            else {
+            if ((path == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((floor_em.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((long)(floor_em.Value));
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((path == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(path));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(path));
             }
             if ((emData == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(emData));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(emData));
             }
             if ((chCount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((long)(chCount.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((long)(chCount.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((long)(Original_DeviceId));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((long)(Original_DeviceId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20275,9 +20121,7 @@ FROM     Simplepa";
                     string ip_dspctrl, 
                     string name, 
                     string DeviceName, 
-                    string dsp_off_ch1, 
                     string DanteModelName, 
-                    string dsp_off_ch2, 
                     global::System.Nullable<long> chspk, 
                     string dsp_name, 
                     global::System.Nullable<long> dsp_chno, 
@@ -20288,7 +20132,7 @@ FROM     Simplepa";
                     string emData, 
                     global::System.Nullable<long> chCount, 
                     long Original_DeviceId) {
-            return this.Update(Original_DeviceId, device, ip, ip_dspctrl, name, DeviceName, dsp_off_ch1, DanteModelName, dsp_off_ch2, chspk, dsp_name, dsp_chno, dsp_vol, dsp_vol_em, floor_em, path, emData, chCount, Original_DeviceId);
+            return this.Update(Original_DeviceId, device, ip, ip_dspctrl, name, DeviceName, DanteModelName, chspk, dsp_name, dsp_chno, dsp_vol, dsp_vol_em, floor_em, path, emData, chCount, Original_DeviceId);
         }
     }
     

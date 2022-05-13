@@ -152,7 +152,7 @@ namespace Wisej.CodeProject
 			bslamp1.LabelOn(8, playItems[8].p_run);
 		}
 
-		internal void sendSigR(eSignalRMsgType eVolume)
+		internal void sendSigR(eSignalRMsgType eVolume, string dsp = "", int dsp_ch = 0)
 		{
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.user = Application.Session["user"];
@@ -163,6 +163,13 @@ namespace Wisej.CodeProject
 					msg1.Guid = Guid.NewGuid();
 					msg1.message = "Volume";
 					msg1.Msgtype = eVolume;
+					break;
+
+				case eSignalRMsgType.eOutChMove:
+					msg1.Guid = Guid.NewGuid();
+					msg1.message = dsp;
+					msg1.Msgtype = eVolume;
+					msg1.state = dsp_ch;
 					break;
 			}
 

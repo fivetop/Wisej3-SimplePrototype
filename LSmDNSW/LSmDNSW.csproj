@@ -89,6 +89,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindow3.cs" />
     <Compile Include="MainWindow2.cs" />
     <Compile Include="mDNS.cs" />
     <Compile Include="packet.cs" />

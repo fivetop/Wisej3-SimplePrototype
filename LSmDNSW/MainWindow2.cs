@@ -157,61 +157,60 @@ namespace LSmDNSW
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var t1 = (sender as Button).DataContext as Device;
+            var t1 = (sender as Button).DataContext as DeviceRow;
             if (t1 == null)
                 return;
             if (_lv2.SelectedItem == null) return;
             ComboBox a1 = (ComboBox)_lv2.Columns[4].GetCellContent(_lv2.SelectedItem);
             ComboBox a2 = (ComboBox)_lv2.Columns[3].GetCellContent(_lv2.SelectedItem);
+            if (a1.Text == "")
+                return;
             int chno = int.Parse(a1.Text);
             string dspname = a2.Text;
-            SpeakerAssignDSP(t1,chno, dspname);
+            SpeakerAssignDSP(t1.DeviceName, dspname, chno);
         }
 
         // DSP 각 채널에 스피커를 할당한다. 
-        private void SpeakerAssignDSP(Device r1, int chno, string dspname)
+        private void SpeakerAssignDSP(string DeviceName, string dspname, int chno)
         {
             // 스피커와 DSP 를 가져온다. 
             int chno2 = chno;
-            var src1 = _DanteDevice.FirstOrDefault(p => p.DeviceName == r1.DeviceName && p.chspk == r1.chspk);
+            var src1 = _DanteDevice.FirstOrDefault(p => p.DeviceName == DeviceName);
             var dsp1 = _DanteDevice.FirstOrDefault(p => p.DeviceName == dspname);
 
             if (src1 == null)
                 return;
             if (dsp1 == null)
                 return;
-
             if (src1.ip == "")
                 return;
-
-            udpc1 = new udpClient();
-            udpc1.OnReceiveMessage += Udpc1_OnReceiveMessage;
-            udpc1.buf2.Clear();
-            udpc1.rcv();
+            var t3 = _DanteDeviceDSPChnnels.Where(p => p.DeviceId == dsp1.DeviceId).ToList();
+            if (t3.Count() < 1)
+                return;
 
             if (dsp1.chCount < chno)
             {
                 chno2 = chno - dsp1.chCount;
             }
-            var t3 = _DanteDeviceDSPChnnels.Where(p => p.DeviceId == dsp1.DeviceId).ToList();
             byte[] b1 = gl.hexatobyte(t3[chno2 - 1].dsp_out_ch1);
-
             //byte[] b1 = gl.hexatobyte(dsp1.dsp_out_ch1[chno2 - 1]);
 
             if (src1.chspk != 1)
             {
                 b1[13] = (byte)src1.chspk;
             }
-            udpc1.send(src1.ip, 4440, b1);
-            Thread.Sleep(3000);
-            udpc1.Close();
+
+            AThreadData aThreadData = new AThreadData();
+            aThreadData.ip = src1.ip;
+            aThreadData.b1 = b1;
+            aThread.AddData(aThreadData);
 
             src1.dsp_chno = chno;
             src1.dsp_name = dspname;
             src1.ip_dspctrl = dsp1.ip_dspctrl; //추적후 넣기 romee 2021-06-30
+            g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.ds1.Device);
             gl.XMLDanteDevice(false);
         }
-
 
     }
 

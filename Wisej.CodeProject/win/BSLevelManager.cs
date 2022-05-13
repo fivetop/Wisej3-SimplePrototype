@@ -54,7 +54,8 @@ namespace Wisej.CodeProject.win
             this.deviceTableAdapter.Update(this.dataSet1.Device);
             this.dataSet1.AcceptChanges();
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
-            MyDesktop myDesktop = (MyDesktop)Parent;
+
+            MyDesktop myDesktop = (MyDesktop)Application.Desktop;
             myDesktop.sendSigR(eSignalRMsgType.eVolume);
         }
     }
