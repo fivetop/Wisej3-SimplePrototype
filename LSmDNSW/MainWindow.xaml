@@ -9,23 +9,17 @@
         WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing" 
         Title="LS_mDNSW v0.1" Height="700" Width="900" Icon="i2.ico">
 
-    <ContentControl>
         <Grid Background="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
-                    <StackPanel Orientation="Vertical" Margin="10">
-                        <TextBlock Text="구축/설치/유지보수등 시스템 제어용으로 담당자 이외 사용을 금합니다." Margin="0,2,0,0" Foreground="Red" FontWeight="Bold"/>
-                    </StackPanel>
-                </Border>
-            </Grid>
-
-            <Grid Grid.Row="1">
+            <Grid Height="629" VerticalAlignment="Top">
                 <TabControl SelectionChanged="TabControl_SelectionChanged" FontSize="16">
+                <TabItem Header="Main">
+                    
+                </TabItem>
+                    
                     <TabItem Header="선번장등록">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -160,9 +154,8 @@
                 </TabControl>
             </Grid>
 
-            <StatusBar Grid.Row="2" Height="40">
+            <StatusBar Grid.Row="1" Height="40">
                 <StatusBarItem x:Name="_Status" Content="DSP 입출력 설정시 사용합니다." FontSize="14"></StatusBarItem>
             </StatusBar>
         </Grid>
-    </ContentControl>
 </Window>

@@ -907,7 +907,8 @@ namespace pa
 
         int test = 0;
         bool first = true;
-        private void _Status2_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+
+        private void _but6_Click(object sender, RoutedEventArgs e)
         {
             g.SendSigR("Hello Client", eSignalRMsgType.eEM, 0, 0);
 
@@ -976,65 +977,8 @@ namespace pa
             SendACK(this.spR);
         }
 
-        // loop back test 
-        private void _Status5_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            LoopbackWindow window = new LoopbackWindow();
-            window.ShowDialog();
-        }
 
-        int tscnt = 0;
 
-        // GPIO 시험 
-        private void _Status6_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            //EMMappingWindow window = new EMMappingWindow();
-            //window.ShowDialog();
-
-            switch (tscnt)
-            {
-                case 0:
-                    // 예약 방송 시험 
-                    //PlayChildProcess(3, 100001);
-                    break;
-                case 1:
-                    checkPreset("110", 2, "111");
-                    //checkPreset("111", 2, "110");
-                    break;
-                case 2:
-                    checkPreset("1110", 3, "1111");
-                    //checkPreset("1111", 3, "1110");
-                    break;
-                case 3:
-                    checkPreset("11110", 4, "11111");
-                    //checkPreset("11111", 4, "11110");
-                    break;
-                case 4:
-                    checkPreset("111110", 5, "111111");
-                    //checkPreset("111111", 5, "111110");
-                    break;
-                case 5:
-                    checkPreset("1111110", 6, "1111111");
-                    //checkPreset("1111111", 6, "1111110");
-                    break;
-                case 6:
-                    checkPreset("11111110", 7, "11111111");
-                    checkPreset("111111111", 8, "111111110");
-                    break;
-                case 7:
-                    pktr pktr1 = new pktr("00-00-00N=");
-                    Fire_Alarm(1, "3", "0", pktr1.tot, pktr1);
-                    break;
-                case 8:
-                    pktr pktr2 = new pktr("00-00-00R1");
-                    Fire_Alarm(2, "3", "0", pktr2.tot, pktr2);
-                    break;
-                case 9:
-                    tscnt = -1;
-                    break;
-            }
-            tscnt++;
-        }
 
         #endregion
 

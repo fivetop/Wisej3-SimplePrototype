@@ -14,48 +14,21 @@ using System.Windows.Controls;
 using System.Windows.Threading;
 using static Wisej.CodeProject.DataSet1;
 
-namespace LSmDNSW
+namespace pa
 {
-    /// <summary>
-    /// MainWindow.xaml에 대한 상호 작용 논리
-    /// </summary>
+    //
+    // 리시브 시그날알 처리 
+    //
+
+
+
     public partial class MainWindow : Window
     {
         static System.Timers.Timer timer { get; set; } = new System.Timers.Timer(10000);
-        public DeviceDataTable _DanteDevice { get; set; }
         public DeviceChannelDataTable _DanteDeviceDSPChnnels { get; set; }
 
-        public MainWindow()
-        {
-            InitializeComponent();
-            // NativeMethods.AllocConsole();
-            g.MainWindow = this;
-            Title = "System Master " + gl.version;
-            gl.XMLDanteDevice(true);
-
-            g.dBSqlite.DBInit();
-            _DanteDevice = g.dBSqlite.ds1.Device;
-            _DanteDeviceDSPChnnels = g.dBSqlite.ds1.DeviceChannel;
-
-            //DBCopy();
-
-            init();
-            initLeft();
-            g.aThread.Start();
-            g.bThread.Start();
-        }
-
-        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            g.aThread.Stop();
-            Thread.Sleep(1000);
-
-            g.bThread.Stop();
-            Thread.Sleep(1000);
-        }
-
-
-
+        public AThread aThread { get; set; } = new AThread();
+        public BThread bThread { get; set; } = new BThread();
 
         private void init()
         {
@@ -77,66 +50,23 @@ namespace LSmDNSW
             }
             ComboBoxColumn1.ItemsSource = null;
             ComboBoxColumn1.ItemsSource = dsp_name;
+
+            foreach (var t1 in _DanteDevice)
+            {
+                t1.path = sel(t1.DeviceName, t1.chspk);
+            }
+            var t2 = _DanteDevice.Where(p => p.device == 0).ToList();
+            _lv2.ItemsSource = null;
+            _lv2.ItemsSource = t2.ToList();
         }
 
-        public void Log(string log)
+        public void Log2(string log)
         {
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
             {
                 string str1 = log + "\r\n";
                 _out.Inlines.Add(str1);
             }));
-
-        }
-
-        int cardno = 0;
-        string LocalIP = "";
-        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            gl.NetWorkCardFind();
-
-            List<string> cl = new List<string>();
-
-            foreach (var t1 in gl.networkCardList)
-            {
-                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName );
-            }
-            _combo.ItemsSource = cl.ToList();
-
-            var t2 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
-            if (t2 == null)
-            {
-                // 캡처 카드 인덱스 찾기 
-                _combo.SelectedIndex = 0;
-                return;
-            }
-            else
-            {
-                // 캡처 카드 인덱스 찾기 
-                _combo.SelectedItem = t2.NetworkCardNo.ToString() + ":" + t2.NetworkCardmDNS.ToString() + ":" + t2.NetworkCardName;
-            }
-
-            try
-            { 
-                Resolver.intfindx = t2.NetworkCardmDNS;
-                Resolver.localIP = t2.ipv4;
-                LocalIP = t2.ipv4;
-                g.Log("Local IP :" + t2.ipv4);
-
-                g.resolver = new Resolver();
-                g.resolver.OnReceiveMessage += Resolver_OnReceiveMessage;
-                g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice; 
-            }
-            catch (Exception e1)
-            {
-            }
-
-            var d1 = _DanteDevice.Where(p => p.device == 2);
-
-            if (d1.Count() < 1)
-            {
-                Log("DSP 가 없습니다. 1.Network Scan 버튼으로 확인바랍니다.");
-            }
 
         }
 
@@ -149,7 +79,7 @@ namespace LSmDNSW
             if (t1 == null)
             {
                 gl.danteDevice._DanteDevice.Add(t2);
-                g.Log("Device : " + t2.ip.ToString() + " : " + t2.DeviceName);
+                Log2("Device : " + t2.ip.ToString() + " : " + t2.DeviceName);
                 gl.XMLDanteDevice(false);
 
             }
@@ -160,19 +90,14 @@ namespace LSmDNSW
 
         //=======================================================================================
         // 장비검색 부분 
-        //
-        private void Resolver_OnReceiveMessage(string message)
-        {
-        }
-
         // 리스트 출력 
         private void _Status1_Click(object sender, RoutedEventArgs e)
         {
-            g.Log("L:List");
+            Log2("L:List");
             g.division();
             foreach (var t2 in _DanteDevice)
             {
-                g.Log(t2.ip.ToString() + " : " + t2.DeviceName + " : " + t2.name + " : " + t2.device.ToString() + " : " + t2.ip_dspctrl);
+                Log2(t2.ip.ToString() + " : " + t2.DeviceName + " : " + t2.name + " : " + t2.device.ToString() + " : " + t2.ip_dspctrl);
             }
         }
 
@@ -182,7 +107,7 @@ namespace LSmDNSW
         {
             if (timer.Enabled == true)
                 return;
-            g.Log("Network Scan Timer Start..");
+            Log2("Network Scan Timer Start..");
             timer.Elapsed += Timer_Elapsed;
             timer.AutoReset = true;
             timer.Start();
@@ -199,34 +124,34 @@ namespace LSmDNSW
                 {
                     case 0:
                         case1 = 1;
-                        g.Log("process 1 -- _netaudio_arc");
+                        Log2("process 1 -- _netaudio_arc");
                         //resolver.ResolveServiceName(g._netaudio_arc);
                         g.resolver.ResolveServiceName2(g._netaudio_arc);
                         break;
                     case 1:
                         case1 = 2;
-                        g.Log("process 2 -- _netaudio_chan");
+                        Log2("process 2 -- _netaudio_chan");
                         g.resolver.ResolveServiceName(g._netaudio_chan);
                         break;
                     case 2:
                         case1 = 3;
-                        g.Log("process 3 -- _netaudio_cmc");
+                        Log2("process 3 -- _netaudio_cmc");
                         g.resolver.ResolveServiceName(g._netaudio_cmc);
                         break;
                     case 3:
                         case1 = 0;
-                        g.Log("process 4 -- Find DSP");
+                        Log2("process 4 -- Find DSP");
 
                         Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
                         {
                             g.division();
-                            g.FindDSP();
+                            FindDSP();
                         }));
                         break;
                 }
             }
             catch (Exception e1)
-            { 
+            {
             }
 
 
@@ -240,8 +165,8 @@ namespace LSmDNSW
         private void _Status3_Click(object sender, RoutedEventArgs e)
         {
             timer.Stop();
-            g.Log("");
-            g.Log("S:Save Data...");
+            Log2("");
+            Log2("S:Save Data...");
             g.division();
             gl.XMLDanteDevice(false);
 
@@ -250,7 +175,7 @@ namespace LSmDNSW
 
             if (gs1.Count() < 1 || gs2.Count() < 1)
             {
-                g.Log("DSP 혹은 버철사운드를 확인 바랍니다.");
+                Log2("DSP 혹은 버철사운드를 확인 바랍니다.");
                 return;
             }
             saveDBDSP_SC();
@@ -280,12 +205,12 @@ namespace LSmDNSW
             {
                 foreach (var t1 in gs1)
                 {
-                    var s1 = g.dBSqlite.ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    var s1 = dBSqlite.ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
                     if (s1 != null)
                     {
                         continue;
                     }
-                    DeviceRow m1 = g.dBSqlite.ds1.Device.NewDeviceRow();
+                    DeviceRow m1 = dBSqlite.ds1.Device.NewDeviceRow();
                     m1.DanteModelName = t1.DanteModelName;
                     m1.DeviceName = t1.DeviceName;
                     m1.device = t1.device;
@@ -301,9 +226,9 @@ namespace LSmDNSW
                     m1.emData = "";
                     m1.floor_em = 0;
                     m1.path = "";
-                    g.dBSqlite.ds1.Device.Rows.Add(m1);
+                    dBSqlite.ds1.Device.Rows.Add(m1);
                 }
-                g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.ds1.Device);
+                dBSqlite.Tam.DeviceTableAdapter.Update(dBSqlite.ds1.Device);
             }
             catch (Exception e1)
             {
@@ -319,28 +244,28 @@ namespace LSmDNSW
             {
                 foreach (var t1 in gs1)
                 {
-                    var s1 = g.dBSqlite.ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    var s1 = dBSqlite.ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
                     if (s1 == null)
                         continue;
                     t1.DeviceId = s1.DeviceId;
                     if (t1.ch.Count < 2)
                         continue;
 
-                    var s2 = g.dBSqlite.ds1.DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
+                    var s2 = dBSqlite.ds1.DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
                     if (s2.Count() > 0)
                         continue;
 
                     for (int i = 0; i < t1.ch.Count; i++)
                     {
-                        DeviceChannelRow r1 = g.dBSqlite.ds1.DeviceChannel.NewDeviceChannelRow();
+                        DeviceChannelRow r1 = dBSqlite.ds1.DeviceChannel.NewDeviceChannelRow();
                         r1.chno = t1.ch[i].chno;
                         r1.chname = t1.ch[i].chname[0];
                         r1.DeviceId = t1.DeviceId;
                         r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
                         r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
-                        g.dBSqlite.ds1.DeviceChannel.Rows.Add(r1);
+                        dBSqlite.ds1.DeviceChannel.Rows.Add(r1);
                     }
-                    g.dBSqlite.Tam.DeviceChannelTableAdapter.Update(g.dBSqlite.ds1.DeviceChannel);
+                    dBSqlite.Tam.DeviceChannelTableAdapter.Update(dBSqlite.ds1.DeviceChannel);
                 }
             }
             catch (Exception e1)
@@ -361,7 +286,7 @@ namespace LSmDNSW
             if (t3 == "이더넷") return;
 
             System.IO.File.WriteAllText("NetworkCardName.ini", t1);
-            g.Log("Change Network : " + t3);
+            Log2("Change Network : " + t3);
         }
 
         // DSP 에 사운드 카드 채널 할당 
@@ -370,7 +295,7 @@ namespace LSmDNSW
             MessageBox.Show("DSP 장치 댓수에 따라 할당 시간이 변동적 입니다.", "관리자 전용", MessageBoxButton.OK);
             gl.XMLDanteDevice(true);
             DSPinputChannelAssign();
-            g.Log("DSP에 사운드 카드 채널 할당을 종료 하였습니다.");
+            Log2("DSP에 사운드 카드 채널 할당을 종료 하였습니다.");
         }
 
         // DSP Out 에 스피커를 할당 
@@ -379,7 +304,7 @@ namespace LSmDNSW
             MessageBox.Show("Speaker 장치 댓수에 따라 할당 시간이 변동적 입니다.", "관리자 전용", MessageBoxButton.OK);
             gl.XMLDanteDevice(true);
             SpeakerAssignDSP();
-            g.Log("DSP 출력 채널에 앰프 할당을 종료 하였습니다.");
+            Log2("DSP 출력 채널에 앰프 할당을 종료 하였습니다.");
         }
 
         //=======================================================================================
@@ -404,7 +329,7 @@ namespace LSmDNSW
                 string str3 = di2.FullName + t1.array[0] + " " + t1.array[1] + " 층고유이름";
                 System.IO.File.Create(str3);
 
-                g.dBSqlite.SaveAssets(t1);
+                dBSqlite.SaveAssets(t1);
             }
             _txtBlock.Text = gl.appPathServer_speaker + g._emspl.child.Count.ToString() + "개 파일 생성이 완료 되었습니다.";
         }
@@ -438,7 +363,7 @@ namespace LSmDNSW
 
         public void StatusContent(string v)
         {
-            _Status.Content = v;
+            //_Status.Content = v;
         }
 
         int oldindex = 0;
@@ -475,49 +400,11 @@ namespace LSmDNSW
             string ret = "통신실";
             if (deviceName == "")
                 return ret;
-            var ret1 = g.dBSqlite.ds1.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
+            var ret1 = dBSqlite.ds1.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
             if (ret1 == null)
                 return ret;
             ret = ret1.path;
             return ret;
-        }
-
-
-        private void initLeft()
-        {
-            MakeSpeakerIP();
-
-            foreach (var t1 in _DanteDevice)
-            {
-                t1.path = sel(t1.DeviceName, t1.chspk);
-            }
-            var t2 = _DanteDevice.Where(p => p.device == 0).ToList();
-            _lv2.ItemsSource = null;
-            _lv2.ItemsSource = t2.ToList();
-        }
-
-        private void MakeSpeakerIP()
-        {
-            foreach (var t1 in g.dBSqlite.ds1.Assets)
-            {
-                if (t1.DeviceName == "")
-                {
-                    t1.state = ""; // "Off-Line";
-                    continue;
-                }
-                var t2 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
-                if (t2 != null)
-                {
-                    t1.state = "On-Line";
-                    t1.ip = t2.ip;
-                    //t1.Device = t2;
-                    //AliveChk(t1.ip);
-                }
-                else
-                {
-                    t1.state = ""; // "Off-Line";
-                }
-            }
         }
 
 
@@ -569,12 +456,12 @@ namespace LSmDNSW
             AThreadData aThreadData = new AThreadData();
             aThreadData.ip = src1.ip;
             aThreadData.b1 = b1;
-            g.aThread.AddData(aThreadData);
+            aThread.AddData(aThreadData);
 
             src1.dsp_chno = chno;
             src1.dsp_name = dspname;
             src1.ip_dspctrl = dsp1.ip_dspctrl; //추적후 넣기 romee 2021-06-30
-            g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.ds1.Device);
+            dBSqlite.Tam.DeviceTableAdapter.Update(dBSqlite.ds1.Device);
             gl.XMLDanteDevice(false);
         }
 
@@ -586,7 +473,7 @@ namespace LSmDNSW
                 var sst2 = _DanteDevice.First(p => p.device == 9);
                 if (sst2 == null)
                 {
-                    g.Log("Check Virtual Sound Card.. (ID:9)");
+                    Log2("Check Virtual Sound Card.. (ID:9)");
                     return;
                 }
             }
@@ -627,7 +514,7 @@ namespace LSmDNSW
                     AThreadData aThreadData = new AThreadData();
                     aThreadData.ip = t1.ip;
                     aThreadData.b1 = b1;
-                    g.aThread.AddData(aThreadData);
+                    aThread.AddData(aThreadData);
 
                 }
             }
@@ -665,7 +552,7 @@ namespace LSmDNSW
                 }
                 if (dsp1.Count < (dspno + 1))
                 {
-                    g.Log("DSP channel check!!");
+                    Log2("DSP channel check!!");
                     return;
                 }
                 if (dsp1[dspno].chCount > 16)
@@ -679,7 +566,7 @@ namespace LSmDNSW
 
                 t1.dsp_name = dsp1[dspno].name;
                 t1.ip_dspctrl = dsp1[dspno].ip_dspctrl;
-                g.Log("Speaker Assign DSP Name Ch :" + t1.dsp_name + " : " + t1.dsp_chno.ToString());
+                Log2("Speaker Assign DSP Name Ch :" + t1.dsp_name + " : " + t1.dsp_chno.ToString());
 
                 var t3 = _DanteDeviceDSPChnnels.Where(p => p.DeviceId == dsp1[dspno].DeviceId).ToList();
                 //byte[] b1 = gl.hexatobyte(dsp1[dspno].dsp_out_ch1[chno - 1]);
@@ -690,7 +577,7 @@ namespace LSmDNSW
                 AThreadData aThreadData = new AThreadData();
                 aThreadData.ip = t1.ip;
                 aThreadData.b1 = b1;
-                g.aThread.AddData(aThreadData);
+                aThread.AddData(aThreadData);
                 //*/
             }
         }
@@ -708,10 +595,78 @@ namespace LSmDNSW
             timer.Stop();
 
             //g.resolver.ResolveServiceName2(g._netaudio_arc);
-            g.Log("Find DSP Running..");
-            g.FindDSP();
+            Log2("Find DSP Running..");
+            FindDSP();
             gl.XMLDanteDevice(false);
-            g.Log("Find DSP End..");
+            Log2("Find DSP End..");
+        }
+
+        static bool findDSP = false;
+
+        // DSP Control IP 는  239.16.0.8 에서 확인 요
+        // 처음 설치시 한번 필요 
+        public void FindDSP()
+        {
+            if (findDSP)
+                return;
+
+            findDSP = true;
+            List<string> t21 = new List<string>();
+            List<string> t31 = new List<string>();
+
+            LScap.g.capData1.Clear();
+            LScap.g.capData2.Clear();
+            LScap.g.OpenCap();
+
+            string str1 = "a55a100000000000011200010000000000000000000000000000000000000000";
+            byte[] b1 = gl.hexatobyte(str1);
+
+            AThreadData aThreadData = new AThreadData();
+            aThreadData.ip = "239.16.0.8";
+            aThreadData.b1 = b1;
+            aThreadData.LocalIP = Resolver.localIP;
+            aThreadData.intfindx = Resolver.intfindx;
+            bThread.AddData(aThreadData);
+            Thread.Sleep(5000);
+
+            LScap.g.CloseCap();
+            var t2 = LScap.g.capData1;
+            var t3 = LScap.g.capData2;
+            foreach (var t1 in t2)
+            {
+                t21.Add(t1);
+                Log2(t1);
+            }
+            foreach (var t1 in t3)
+            {
+                t31.Add(t1);
+                Log2(t1);
+            }
+
+            foreach (var t5 in gl.danteDevice._DanteDevice)
+            {
+                if (t5.device == 9)
+                {
+                    Log2("--------------------------------------------------------------------------------");
+                    Log2("Find Sound Card  : " + t5.ip_dspctrl + " " + t5.DeviceName);
+                    Log2("--------------------------------------------------------------------------------");
+                }
+                for (int i = 0; i < t31.Count; i++)
+                {
+                    if (t5.name == t31[i])
+                    {
+                        t5.ip_dspctrl = t21[i];
+
+                        if (t5.ch.Count > 1)
+                        {
+                            Log2("--------------------------------------------------------------------------------");
+                            Log2("Find DSP Controller IP : " + t5.ip_dspctrl + " " + t31[i]);
+                            Log2("--------------------------------------------------------------------------------");
+                        }
+                    }
+                }
+            }
+            findDSP = false;
         }
     }
 }

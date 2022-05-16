@@ -57,7 +57,6 @@ namespace pa
 
         public AThreadClass AThread { get; set; } = new AThreadClass();
 
-
         public  DeviceDataTable _DanteDevice { get; set; }
         public MainWindow()
         {
@@ -73,6 +72,7 @@ namespace pa
             Tam = dBSqlite.Tam;
 
             _DanteDevice = ds1.Device;
+            _DanteDeviceDSPChnnels = dBSqlite.ds1.DeviceChannel;
 
             MakeSpeakerIP();
             ReadMusic();
@@ -81,6 +81,16 @@ namespace pa
             g._BaseData = ds1.Simplepa.FirstOrDefault();
             if (g._BaseData == null)
                 dBSqlite.Init();
+
+            gl.XMLDanteDevice(true);
+
+
+            //DBCopy();
+
+            init();
+            aThread.Start();
+            bThread.Start();
+
             g.Log("DataBase Initial..");
 
             //BSqlite.DBCopy();
@@ -96,7 +106,7 @@ namespace pa
                     t1.state = ""; // "Off-Line";
                     continue;
                 }
-                var t2 = _DanteDevice.FirstOrDefault(p => p.name == t1.DeviceName || p.DeviceName == t1.DeviceName);
+                var t2 = _DanteDevice.FirstOrDefault(p =>  p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
                 if (t2 != null)
                 {
                     t1.state = "On-Line";
@@ -111,7 +121,6 @@ namespace pa
             }
             Tam.AssetsTableAdapter.Update(ds1.Assets);
         }
-
 
         // 음원 폴더에서 가져와 디비 생성 
         // 듀레이션은 시간이 걸리므로 타이머 쓰레드 처리 
@@ -159,6 +168,12 @@ namespace pa
         // 종료시 처리 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            aThread.Stop();
+            Thread.Sleep(1000);
+
+            bThread.Stop();
+            Thread.Sleep(1000);
+
             //g.Info("Em Server 종료 처리중...");
 
             AThread.Stop();
@@ -186,6 +201,7 @@ namespace pa
             LScap.g.LSpcapStop();// .LSpcap .CloseCap();
             Thread.Sleep(1000);
         }
+
         private void MetroWindow_Closed(object sender, EventArgs e)
         {
             GC.SuppressFinalize(this);
@@ -240,16 +256,11 @@ namespace pa
                     AThread.DeviceChktime = 40; // 장비가 많아지면 시간 늘리기 
                     AThread.Start();
                     wireShark.CheckStart();
-
-                    LSmDNSW.Resolver.intfindx = gl.NetworkCardmDNS;
-                    LSmDNSW.g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
                 }
             }
-            g.Log("Initialize OK..");
-        }
 
-        private void Resolver_OnEventNewDevice(object o)
-        {
+            MetroWindow_Loaded2();
+            g.Log("Initialize OK..");
         }
 
         // IP 가 없는 디바이스 삭제 처리 
@@ -301,6 +312,53 @@ namespace pa
 //                _tray.MinimizeToTray();
         }
 
+        int cardno = 0;
+        string LocalIP = "";
+        private void MetroWindow_Loaded2()
+        {
+            List<string> cl = new List<string>();
+
+            foreach (var t1 in gl.networkCardList)
+            {
+                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName);
+            }
+            _combo.ItemsSource = cl.ToList();
+
+            var t2 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
+            if (t2 == null)
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo.SelectedIndex = 0;
+                return;
+            }
+            else
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo.SelectedItem = t2.NetworkCardNo.ToString() + ":" + t2.NetworkCardmDNS.ToString() + ":" + t2.NetworkCardName;
+            }
+
+            try
+            {
+                Resolver.intfindx = t2.NetworkCardmDNS;
+                Resolver.localIP = t2.ipv4;
+                LocalIP = t2.ipv4;
+                g.Log("Local IP :" + t2.ipv4);
+
+                g.resolver = new Resolver();
+                g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
+            }
+            catch (Exception e1)
+            {
+            }
+
+            var d1 = _DanteDevice.Where(p => p.device == 2);
+
+            if (d1.Count() < 1)
+            {
+                g.Log("DSP 가 없습니다. 1.Network Scan 버튼으로 확인바랍니다.");
+            }
+
+        }
 
         private void MetroWindow_Deactivated(object sender, EventArgs e)
         {
@@ -312,14 +370,6 @@ namespace pa
         {
         }
 
-        // 설정 종료후 컴포트 재설정 처리 
-        private void _Status_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            SetupWindow window = new SetupWindow();
-            window.ShowDialog();
-            OpenP();
-            OpenR();
-        }
 
         private void _mlog_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -347,8 +397,79 @@ namespace pa
             }));
         }
 
+        // 설정 종료후 컴포트 재설정 처리 
+        private void _but1_Click(object sender, RoutedEventArgs e)
+        {
+            SetupWindow window = new SetupWindow();
+            window.ShowDialog();
+            OpenP();
+            OpenR();
+
+        }
+
+        private void _but2_Click(object sender, RoutedEventArgs e)
+        {
+            LoopbackWindow window = new LoopbackWindow();
+            window.ShowDialog();
+
+        }
+
+        int tscnt = 0;
+
+        // GPIO 시험 
+        private void _but3_Click(object sender, RoutedEventArgs e)
+        {
+            //EMMappingWindow window = new EMMappingWindow();
+            //window.ShowDialog();
+
+            switch (tscnt)
+            {
+                case 0:
+                    // 예약 방송 시험 
+                    //PlayChildProcess(3, 100001);
+                    break;
+                case 1:
+                    checkPreset("110", 2, "111");
+                    //checkPreset("111", 2, "110");
+                    break;
+                case 2:
+                    checkPreset("1110", 3, "1111");
+                    //checkPreset("1111", 3, "1110");
+                    break;
+                case 3:
+                    checkPreset("11110", 4, "11111");
+                    //checkPreset("11111", 4, "11110");
+                    break;
+                case 4:
+                    checkPreset("111110", 5, "111111");
+                    //checkPreset("111111", 5, "111110");
+                    break;
+                case 5:
+                    checkPreset("1111110", 6, "1111111");
+                    //checkPreset("1111111", 6, "1111110");
+                    break;
+                case 6:
+                    checkPreset("11111110", 7, "11111111");
+                    checkPreset("111111111", 8, "111111110");
+                    break;
+                case 7:
+                    pktr pktr1 = new pktr("00-00-00N=");
+                    Fire_Alarm(1, "3", "0", pktr1.tot, pktr1);
+                    break;
+                case 8:
+                    pktr pktr2 = new pktr("00-00-00R1");
+                    Fire_Alarm(2, "3", "0", pktr2.tot, pktr2);
+                    break;
+                case 9:
+                    tscnt = -1;
+                    break;
+            }
+            tscnt++;
+
+        }
+
         Guid testGuid;
-        private async void _Status7_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private async void _but4_Click(object sender, RoutedEventArgs e)
         {
             testGuid = Guid.NewGuid();
             SignalRMsg msg1 = new SignalRMsg();
@@ -361,7 +482,7 @@ namespace pa
             await g.mainWindow.RcvSigR(msg1);
         }
 
-        private void _Status8_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void _but5_Click(object sender, RoutedEventArgs e)
         {
             SignalRMsg msg1 = new SignalRMsg();
             msg1.message = "Stop";
@@ -369,6 +490,9 @@ namespace pa
             msg1.Guid = testGuid;
             msg1.Msgtype = eSignalRMsgType.eStop;
             g.mainWindow.RcvSigR(msg1);
+
         }
+
+
     }
 }

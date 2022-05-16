@@ -68,9 +68,9 @@ namespace pa
                 try
                 {
                     LScap.g.capData.Clear();
-                    LSmDNSW.Resolver.intfindx = gl.NetworkCardmDNS;
-                    LSmDNSW.g.GetCard();
-                    LSmDNSW.g.GetMain();
+                    Resolver.intfindx = gl.NetworkCardmDNS;
+                    g.GetCard();
+                    g.GetMain();
                 }
                 catch (Exception e1)
                 {

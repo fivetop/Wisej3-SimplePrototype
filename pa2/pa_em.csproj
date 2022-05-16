@@ -162,12 +162,15 @@
     <Compile Include="classes\TrayIcon.cs" />
     <Compile Include="ExtProcess.cs" />
     <Compile Include="g.cs" />
+    <Compile Include="MainWindow9.cs" />
     <Compile Include="MainWindow8.cs" />
     <Compile Include="MainWindow4.cs" />
     <Compile Include="MainWindow5.cs" />
     <Compile Include="MainWindow2.cs" />
     <Compile Include="MainWindow7.cs" />
     <Compile Include="MainWindow6.cs" />
+    <Compile Include="mDNS.cs" />
+    <Compile Include="packet.cs" />
     <Compile Include="SendMsg.cs" />
     <Compile Include="SignalR\SignalRHub.cs" />
     <Compile Include="SpeakerChecker.cs" />
@@ -241,6 +244,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="al.wav" />
+    <Resource Include="l1.ico" />
+    <Resource Include="i2.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
@@ -270,10 +275,6 @@
     <ProjectReference Include="..\LScap\LScap.csproj">
       <Project>{23c763ca-380f-4b1f-b6f3-6f3b86590b88}</Project>
       <Name>LScap</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LSmDNSW\LSmDNSW.csproj">
-      <Project>{4ad65a81-ad70-41c8-9bab-5b4aa9dcb233}</Project>
-      <Name>LSmDNSW</Name>
     </ProjectReference>
     <ProjectReference Include="..\LSNAudio\LSNAudio.csproj">
       <Project>{fb33403b-8cd4-490a-b740-6d5a5d932318}</Project>

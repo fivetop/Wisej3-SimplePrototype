@@ -30,6 +30,75 @@ namespace pa
         // DSP 제어을 위함 
         public static DSPControll dsp { get; set; } = new DSPControll(); // 볼륨과 뮤트 처리용 
         public static SimplepaRow _BaseData { get; set; }
+
+
+        // mdns ----------------
+        // new DomainName("_services._dns-sd._udp.local"); 
+        static public string _netaudio_arc = "_netaudio-arc._udp.local";
+        //static public string _netaudio_dbc = "_netaudio-dbc._udp.local";
+        static public string _netaudio_chan = "_netaudio-chan._udp.local";
+        static public string _netaudio_cmc = "_netaudio-cmc._udp.local";
+
+        static public Resolver resolver { get; set; } = new Resolver();
+        // 동수. 계단수, 층수 초기화 필요 
+        static public EmSpeakerPositionList _emspl { get; set; } = new EmSpeakerPositionList();
+
+        #endregion
+
+        #region // mdns =================================
+
+        static int cardno = 0;
+        static public void GetCard()
+        {
+            if (gl.networkCardList.Count < 1)
+                gl.BestInterfaceIndex();
+
+            var t2 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
+
+            if (t2 == null)
+            {
+                t2 = gl.networkCardList[0];
+            }
+            Resolver.intfindx = t2.NetworkCardmDNS;
+            Resolver.localIP = t2.ipv4;
+        }
+
+
+        static public bool GetMain()
+        {
+            try
+            {
+                g.resolver = new Resolver();
+                g.resolver.ResolveServiceName3(g._netaudio_arc);
+            }
+            catch (Exception e)
+            {
+            }
+            return true;
+        }
+
+        internal static void division()
+        {
+            // 디바이스 타입 번호 할당 
+            foreach (Device t2 in gl.danteDevice._DanteDevice)
+            {
+                if (t2.DeviceName == "")
+                    t2.DeviceName = t2.name;
+                t2.makeDanteDeviceChannel();
+
+            }
+            // 1. 채널이름 할당 
+            // 2. DSP Ch Out packet -> 271d~~
+            // 3. 사운드 카드 찾기 
+            foreach (Device t2 in gl.danteDevice._DanteDevice)
+            {
+                t2.makeDanteDeviceChannelSP();
+                t2.makeDSPChannelpacket();
+                t2.FindSoundCard();
+            }
+        }
+
+
         #endregion
 
         #region // XML 처리 
@@ -91,6 +160,7 @@ namespace pa
                 Console.WriteLine(e1.Message);
             }
         }
+
 
         #endregion
 
