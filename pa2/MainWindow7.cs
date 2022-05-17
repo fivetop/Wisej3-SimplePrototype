@@ -25,11 +25,11 @@ namespace pa
         // 상태가 변경되었을 경우만 디스플레이
         private void SpeakerCheck(string str2, int v)
         {
-            var t4 = ds1.Assets.Where(p => p.ip == str2);
+            var t4 = Ds1.Assets.Where(p => p.ip == str2);
             if (t4.Count() == 0)
                 return;
 
-            var t3 = ds1.Assets.First(p => p.ip == str2);
+            var t3 = Ds1.Assets.First(p => p.ip == str2);
             if (t3 == null)
                 return;
 
@@ -68,9 +68,7 @@ namespace pa
                 try
                 {
                     LScap.g.capData.Clear();
-                    Resolver.intfindx = gl.NetworkCardmDNS;
-                    g.GetCard();
-                    g.GetMain();
+                    g.resolver.ResolveServiceName3(g._netaudio_arc);
                 }
                 catch (Exception e1)
                 {
@@ -92,14 +90,14 @@ namespace pa
                 try
                 {
                     g.Log("Device Check : " + t2.Count.ToString());
-                    foreach (var t1 in ds1.Assets)
+                    foreach (var t1 in Ds1.Assets)
                     {
                         if (t1.state != t1.state_old)
                             t1.state_old = t1.state;
                         t1.state = ""; // "Off-Line";
                     }
 
-                    foreach (var t3 in ds1.Assets)
+                    foreach (var t3 in Ds1.Assets)
                     {
                         var t4 = t2.Contains(t3.ip);
                         if (t4)
@@ -145,7 +143,6 @@ namespace pa
             {
                 if (check1 || check2 || check3) return;
                 check3 = true;
-                //LSmDNSW.g.GetDevice();
                 check3 = false;
             }));
         }

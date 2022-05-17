@@ -34,8 +34,8 @@ namespace LSmDNSW
             gl.XMLDanteDevice(true);
 
             g.dBSqlite.DBInit();
-            _DanteDevice = g.dBSqlite.ds1.Device;
-            _DanteDeviceDSPChnnels = g.dBSqlite.ds1.DeviceChannel;
+            _DanteDevice = g.dBSqlite.Ds1.Device;
+            _DanteDeviceDSPChnnels = g.dBSqlite.Ds1.DeviceChannel;
 
             //DBCopy();
 
@@ -280,12 +280,12 @@ namespace LSmDNSW
             {
                 foreach (var t1 in gs1)
                 {
-                    var s1 = g.dBSqlite.ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    var s1 = g.dBSqlite.Ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
                     if (s1 != null)
                     {
                         continue;
                     }
-                    DeviceRow m1 = g.dBSqlite.ds1.Device.NewDeviceRow();
+                    DeviceRow m1 = g.dBSqlite.Ds1.Device.NewDeviceRow();
                     m1.DanteModelName = t1.DanteModelName;
                     m1.DeviceName = t1.DeviceName;
                     m1.device = t1.device;
@@ -301,9 +301,9 @@ namespace LSmDNSW
                     m1.emData = "";
                     m1.floor_em = 0;
                     m1.path = "";
-                    g.dBSqlite.ds1.Device.Rows.Add(m1);
+                    g.dBSqlite.Ds1.Device.Rows.Add(m1);
                 }
-                g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.ds1.Device);
+                g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.Ds1.Device);
             }
             catch (Exception e1)
             {
@@ -319,28 +319,28 @@ namespace LSmDNSW
             {
                 foreach (var t1 in gs1)
                 {
-                    var s1 = g.dBSqlite.ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    var s1 = g.dBSqlite.Ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
                     if (s1 == null)
                         continue;
                     t1.DeviceId = s1.DeviceId;
                     if (t1.ch.Count < 2)
                         continue;
 
-                    var s2 = g.dBSqlite.ds1.DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
+                    var s2 = g.dBSqlite.Ds1.DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
                     if (s2.Count() > 0)
                         continue;
 
                     for (int i = 0; i < t1.ch.Count; i++)
                     {
-                        DeviceChannelRow r1 = g.dBSqlite.ds1.DeviceChannel.NewDeviceChannelRow();
+                        DeviceChannelRow r1 = g.dBSqlite.Ds1.DeviceChannel.NewDeviceChannelRow();
                         r1.chno = t1.ch[i].chno;
                         r1.chname = t1.ch[i].chname[0];
                         r1.DeviceId = t1.DeviceId;
                         r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
                         r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
-                        g.dBSqlite.ds1.DeviceChannel.Rows.Add(r1);
+                        g.dBSqlite.Ds1.DeviceChannel.Rows.Add(r1);
                     }
-                    g.dBSqlite.Tam.DeviceChannelTableAdapter.Update(g.dBSqlite.ds1.DeviceChannel);
+                    g.dBSqlite.Tam.DeviceChannelTableAdapter.Update(g.dBSqlite.Ds1.DeviceChannel);
                 }
             }
             catch (Exception e1)
@@ -475,7 +475,7 @@ namespace LSmDNSW
             string ret = "통신실";
             if (deviceName == "")
                 return ret;
-            var ret1 = g.dBSqlite.ds1.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
+            var ret1 = g.dBSqlite.Ds1.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
             if (ret1 == null)
                 return ret;
             ret = ret1.path;
@@ -498,7 +498,7 @@ namespace LSmDNSW
 
         private void MakeSpeakerIP()
         {
-            foreach (var t1 in g.dBSqlite.ds1.Assets)
+            foreach (var t1 in g.dBSqlite.Ds1.Assets)
             {
                 if (t1.DeviceName == "")
                 {
@@ -574,7 +574,7 @@ namespace LSmDNSW
             src1.dsp_chno = chno;
             src1.dsp_name = dspname;
             src1.ip_dspctrl = dsp1.ip_dspctrl; //추적후 넣기 romee 2021-06-30
-            g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.ds1.Device);
+            g.dBSqlite.Tam.DeviceTableAdapter.Update(g.dBSqlite.Ds1.Device);
             gl.XMLDanteDevice(false);
         }
 

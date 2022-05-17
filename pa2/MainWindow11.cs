@@ -74,6 +74,14 @@ namespace pa
                     // db 처리 선행 필요 
                     InitVolume();
                     break;
+                case eSignalRMsgType.eOutChMove:
+                    SpeakerAssignDSP(msg.message, msg.user_data, msg.state);
+                    g.Log("eOutChMove" + " : " + msg.message + " : " + msg.user_data + " : " + msg.state.ToString());
+                    break;
+                case eSignalRMsgType.eScanAll:
+                    ScanAll();
+                    g.Log("eScanAll");
+                    break;
             }
             return true;
         }

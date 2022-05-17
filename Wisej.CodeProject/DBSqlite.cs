@@ -14,7 +14,7 @@ namespace Wisej.CodeProject
 {
     public class DBSqlite
     {
-        public DataSet1 ds1 { get; set; }
+        public DataSet1 Ds1 { get; set; }
         public TableAdapterManager Tam { get; internal set; }
 
         public DBSqlite()
@@ -25,7 +25,7 @@ namespace Wisej.CodeProject
         {
             try
             {
-                ds1 = new DataSet1();
+                Ds1 = new DataSet1();
                 Tam = new TableAdapterManager()
                 {
                     AssetsTableAdapter = new AssetsTableAdapter(),
@@ -43,20 +43,20 @@ namespace Wisej.CodeProject
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
                     UserTreesTableAdapter = new UserTreesTableAdapter(),
                 };
-                Tam.AssetsTableAdapter.Fill(ds1.Assets);
-                Tam.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
-                Tam.BSTreeTableAdapter.Fill(ds1.BSTree);
-                Tam.DeviceTableAdapter.Fill(ds1.Device);
-                Tam.DeviceChannelTableAdapter.Fill(ds1.DeviceChannel);
-                Tam.EventvmTableAdapter.Fill(ds1.Eventvm);
-                Tam.FloorbasesTableAdapter.Fill(ds1.Floorbases);
-                Tam.FloormapsTableAdapter.Fill(ds1.Floormaps);
-                Tam.HolidaysTableAdapter.Fill(ds1.Holidays);
-                Tam.InfoTreesTableAdapter.Fill(ds1.InfoTrees);
-                Tam.MusicsTableAdapter.Fill(ds1.Musics);
-                Tam.SimpleMultisTableAdapter.Fill(ds1.SimpleMultis);
-                Tam.SimplepaTableAdapter.Fill(ds1.Simplepa);
-                Tam.UserTreesTableAdapter.Fill(ds1.UserTrees);
+                Tam.AssetsTableAdapter.Fill(Ds1.Assets);
+                Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
+                Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
+                Tam.DeviceTableAdapter.Fill(Ds1.Device);
+                Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
+                Tam.EventvmTableAdapter.Fill(Ds1.Eventvm);
+                Tam.FloorbasesTableAdapter.Fill(Ds1.Floorbases);
+                Tam.FloormapsTableAdapter.Fill(Ds1.Floormaps);
+                Tam.HolidaysTableAdapter.Fill(Ds1.Holidays);
+                Tam.InfoTreesTableAdapter.Fill(Ds1.InfoTrees);
+                Tam.MusicsTableAdapter.Fill(Ds1.Musics);
+                Tam.SimpleMultisTableAdapter.Fill(Ds1.SimpleMultis);
+                Tam.SimplepaTableAdapter.Fill(Ds1.Simplepa);
+                Tam.UserTreesTableAdapter.Fill(Ds1.UserTrees);
             }
             catch (Exception e1)
             {
@@ -68,10 +68,10 @@ namespace Wisej.CodeProject
         {
             var aa = t1.file.Split(' ');
 
-            var m3 = ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
+            var m3 = Ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
             if (m3 == null)
             {
-                AssetsRow m2 = ds1.Assets.NewAssetsRow();
+                AssetsRow m2 = Ds1.Assets.NewAssetsRow();
                 m2.seq = int.Parse(aa[0]);
                 m2.GroupName = aa[1];
                 m2.ZoneName = aa[2];
@@ -87,8 +87,8 @@ namespace Wisej.CodeProject
                 m2.state_old = "";
                 if (aa.Count() > 4)
                     m2.DeviceName = aa[4];
-                ds1.Assets.Rows.Add(m2);
-                Tam.AssetsTableAdapter.Update(ds1.Assets);
+                Ds1.Assets.Rows.Add(m2);
+                Tam.AssetsTableAdapter.Update(Ds1.Assets);
             }
         }
 
@@ -98,12 +98,12 @@ namespace Wisej.CodeProject
         {
             try 
             { 
-                var t2 = ds1.BSTree.Where(p => p.chno == idno);
+                var t2 = Ds1.BSTree.Where(p => p.chno == idno);
                 foreach (BSTreeRow t3 in t2)
                 {
                     t3.Delete();
                 }
-                Tam.BSTreeTableAdapter.Update(ds1.BSTree);
+                Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
             }
             catch (Exception e1)
             { 
@@ -116,24 +116,24 @@ namespace Wisej.CodeProject
             List<AssetBase> play = new List<AssetBase>();
             foreach (int t1 in msg.assetsRows)
             {
-                BSTreeRow bSTree = ds1.BSTree.NewBSTreeRow();
+                BSTreeRow bSTree = Ds1.BSTree.NewBSTreeRow();
                 bSTree.chno = 100000 + chno;
                 bSTree.MusicId = 0;
                 bSTree.AssetId = t1;
-                ds1.BSTree.Rows.Add(bSTree);
+                Ds1.BSTree.Rows.Add(bSTree);
             }
             foreach (int t1 in msg.musicsRows)
             {
-                BSTreeRow bSTree = ds1.BSTree.NewBSTreeRow();
+                BSTreeRow bSTree = Ds1.BSTree.NewBSTreeRow();
                 bSTree.chno = 100000 + chno;
                 bSTree.MusicId = t1;
                 bSTree.AssetId = 0;
-                ds1.BSTree.Rows.Add(bSTree);
+                Ds1.BSTree.Rows.Add(bSTree);
             }
-            Tam.BSTreeTableAdapter.Update(ds1.BSTree);
-            ds1.BSTree.AcceptChanges();
+            Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+            Ds1.BSTree.AcceptChanges();
 
-            var ab1 = ds1.Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
+            var ab1 = Ds1.Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
             var p1 = from p in ab1
                      select new AssetBase
                      {
@@ -166,12 +166,12 @@ namespace Wisej.CodeProject
                 switch (t1.Name)
                 {
                     case "EventvmRow":
-                        ds1.Eventvm.Rows.Add((EventvmRow)o1);
-                        Tam.EventvmTableAdapter.Update(ds1.Eventvm);
+                        Ds1.Eventvm.Rows.Add((EventvmRow)o1);
+                        Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
                         break;
                     case "SimplepaRow":
-                        ds1.Simplepa.Rows.Add((SimplepaRow)o1);
-                        Tam.SimplepaTableAdapter.Update(ds1.Simplepa);
+                        Ds1.Simplepa.Rows.Add((SimplepaRow)o1);
+                        Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
                         break;
                 }
                 //g.Log(t1.Name + " Save OK..");
@@ -184,7 +184,7 @@ namespace Wisej.CodeProject
 
         public void Init()
         {
-            SimplepaRow s = ds1.Simplepa.NewSimplepaRow();
+            SimplepaRow s = Ds1.Simplepa.NewSimplepaRow();
 
             s.UserName = "엘에스전선";
             s.ServerIP = "192.168.1.1";
@@ -229,20 +229,20 @@ namespace Wisej.CodeProject
             s.sms_pw = "3ef5afb7e743196d9e0726dba16b02d9";
             s.sms_rcvno = "";
             s.Pport = 0;
-            ds1.Simplepa.Rows.Add(s);
-            Tam.SimplepaTableAdapter.Update(ds1.Simplepa);
+            Ds1.Simplepa.Rows.Add(s);
+            Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
 
         }
 
         public void Remove(SimplepaRow s2)
         {
-            ds1.Simplepa.RemoveSimplepaRow(s2);
-            Tam.SimplepaTableAdapter.Update(ds1.Simplepa);
+            Ds1.Simplepa.RemoveSimplepaRow(s2);
+            Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
         }
 
         public void Eventvm(string event_text, string base_text, string state)
         {
-            EventvmRow em = ds1.Eventvm.NewEventvmRow();
+            EventvmRow em = Ds1.Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.event_text = event_text;
             em.path = base_text;
@@ -252,7 +252,7 @@ namespace Wisej.CodeProject
         }
         public void EventvmIP(AssetsRow t3)
         {
-            EventvmRow em = ds1.Eventvm.NewEventvmRow();
+            EventvmRow em = Ds1.Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.ip = t3.ip;
             em.path = t3.path;
@@ -265,7 +265,7 @@ namespace Wisej.CodeProject
         // 스피커의 현재 상태 체크 
         public int getSpeakerState(string path)
         {
-            var sAsset = ds1.Assets.First(p => p.path == path);
+            var sAsset = Ds1.Assets.First(p => p.path == path);
             if (sAsset != null)
             {
                 if (sAsset.state == "On-Line")

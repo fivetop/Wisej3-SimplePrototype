@@ -91,22 +91,30 @@ namespace gClass
         {
             IPEndPoint ReceiveEndPoint1 = new IPEndPoint(System.Net.IPAddress.Parse(data.LocalIP), 6001);
 
-            udpc1 = new udpClient();
-            udpc1.udp.Client.Bind(ReceiveEndPoint1);
-            udpc1.option(IPAddress.Parse("239.16.0.8"), data.intfindx);
-            udpc1.OnReceiveMessage += Udpc1_OnReceiveMessage;
-            udpc1.buf2.Clear();
-            udpc1.rcv();
-            udpc1.send("239.16.0.8", 6001, data.b1);
+            try
+            {
+                udpc1 = new udpClient();
+                udpc1.udp.Client.Bind(ReceiveEndPoint1);
+                udpc1.option(IPAddress.Parse("239.16.0.8"), data.intfindx);
+                udpc1.OnReceiveMessage += Udpc1_OnReceiveMessage;
+                //udpc1.buf2.Clear();
+                udpc1.rcv();
+                udpc1.send("239.16.0.8", 6001, data.b1);
 
-            Thread.Sleep(500);
-            udpc1.Close();
+                Thread.Sleep(500);
+                udpc1.Close();
+            }
+            catch (Exception e1)
+            {
+                udpc1.Close();
+                Console.WriteLine(e1.Message);
+            }
         }
 
         private void Udpc1_OnReceiveMessage(string message)
         {
             Console.WriteLine("Rcv.." + udpc1.buf2.Count.ToString());
-            udpc1.buf2.Clear();
+            //udpc1.buf2.Clear();
             udpc1.Close();
         }
     }

@@ -69,7 +69,6 @@ namespace pa
         {
             Clients.All.MessageC2S2(message);
             g.mainWindow.RcvSigR(message);
-            g.Log(message.message);
         }
     }
 

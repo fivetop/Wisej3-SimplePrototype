@@ -15,7 +15,7 @@ using static Wisej.CodeProject.DataSet1;
 <sms_id>lstest</sms_id>
 <sms_pw>FFo0DXm9fvE9LBlkZIsO+IIhNQINR+1SM2KV2uCr3BY=</sms_pw>
 
-* */
+*/
 
 namespace pa
 {
@@ -39,44 +39,13 @@ namespace pa
         static public string _netaudio_chan = "_netaudio-chan._udp.local";
         static public string _netaudio_cmc = "_netaudio-cmc._udp.local";
 
-        static public Resolver resolver { get; set; } = new Resolver();
+        static public Resolver resolver { get; set; } = null;
         // 동수. 계단수, 층수 초기화 필요 
         static public EmSpeakerPositionList _emspl { get; set; } = new EmSpeakerPositionList();
 
         #endregion
 
         #region // mdns =================================
-
-        static int cardno = 0;
-        static public void GetCard()
-        {
-            if (gl.networkCardList.Count < 1)
-                gl.BestInterfaceIndex();
-
-            var t2 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
-
-            if (t2 == null)
-            {
-                t2 = gl.networkCardList[0];
-            }
-            Resolver.intfindx = t2.NetworkCardmDNS;
-            Resolver.localIP = t2.ipv4;
-        }
-
-
-        static public bool GetMain()
-        {
-            try
-            {
-                g.resolver = new Resolver();
-                g.resolver.ResolveServiceName3(g._netaudio_arc);
-            }
-            catch (Exception e)
-            {
-            }
-            return true;
-        }
-
         internal static void division()
         {
             // 디바이스 타입 번호 할당 
@@ -306,6 +275,9 @@ namespace pa
                 case eSignalRMsgType.eLogoutUser:
                     msg1.user = "Server";
                     break;
+                case eSignalRMsgType.eFindDSP:
+                    msg1.user = "Server";
+                    break;
             }
 
             msg1.play8sig = playItems;
@@ -319,7 +291,7 @@ namespace pa
             g.DoWorkWithModal(progress =>
             {
                 progress.Report(info);
-                Thread.Sleep(1000);//placeholder for real work;
+                Thread.Sleep(5000);//placeholder for real work;
             });
         }
 

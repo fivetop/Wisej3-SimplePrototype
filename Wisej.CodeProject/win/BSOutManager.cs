@@ -47,6 +47,7 @@ namespace Wisej.CodeProject.win
             DeviceRow dataRow = (DeviceRow) (r1.DataBoundItem as DataRowView).Row;
 
             string str1 = dataRow.dsp_name;
+            string str2 = dataRow.DeviceName;
             int i2 = dataRow.dsp_chno;
 
 
@@ -56,7 +57,7 @@ namespace Wisej.CodeProject.win
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
 
             MyDesktop myDesktop = (MyDesktop)Application.Desktop;
-            myDesktop.sendSigR(eSignalRMsgType.eOutChMove, str1, i2); // dsp, dsp_chno
+            myDesktop.sendSigR(eSignalRMsgType.eOutChMove, str2, str1, i2); // dsp, dsp_chno
         }
     }
 }

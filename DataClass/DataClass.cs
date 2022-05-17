@@ -20,6 +20,8 @@ namespace DataClass
         eLogoutUser = 9,        // 로그아웃     S2C
         eVolume = 10,           // 볼륨처리     C2S
         eOutChMove = 11,        // 스피커 이동  C2S
+        eScanAll = 12,          // 전체 스캔    C2S
+        eFindDSP = 13,          // Find DSP     S2C
     }
 
     public enum eEventCode
@@ -86,6 +88,7 @@ namespace DataClass
         public List<long> musicsRows { get; set; }      // 선택된 음원 ID
         public List<PlayItem> play8sig { get; set; }    // 8채널의 현재 상태 
         public string user { get; set; }                // 유저명 
+        public string user_data { get; set; }           // data1  
 
         public Guid Guid { get; set; }
 

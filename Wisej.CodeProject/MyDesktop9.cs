@@ -54,6 +54,12 @@ namespace Wisej.CodeProject
 					break;
 				case eSignalRMsgType.eLogoutUser:
 					break;
+				case eSignalRMsgType.eFindDSP:
+					if(msg1.state == 1)
+						bSDeviceManager.reLoad();
+					else
+						AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+					break;
 			}
 			playItems = msg1.play8sig;
 			if (playItems != null)
@@ -152,7 +158,7 @@ namespace Wisej.CodeProject
 			bslamp1.LabelOn(8, playItems[8].p_run);
 		}
 
-		internal void sendSigR(eSignalRMsgType eVolume, string dsp = "", int dsp_ch = 0)
+		internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0)
 		{
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.user = Application.Session["user"];
@@ -167,15 +173,22 @@ namespace Wisej.CodeProject
 
 				case eSignalRMsgType.eOutChMove:
 					msg1.Guid = Guid.NewGuid();
-					msg1.message = dsp;
+					msg1.message = device_name;
 					msg1.Msgtype = eVolume;
 					msg1.state = dsp_ch;
+					msg1.user_data = dsp;
+					break;
+
+				case eSignalRMsgType.eScanAll:
+					msg1.Guid = Guid.NewGuid();
+					msg1.Msgtype = eVolume;
+					msg1.message = "Scan All";
 					break;
 			}
 
 			try
 			{
-				if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+				if (isSignalR())
 					signalRClient.proxy.Invoke("MessageC2S2", msg1);
 			}
 			catch (Exception e1)
@@ -183,6 +196,14 @@ namespace Wisej.CodeProject
 			}
 		}
 
+		public bool isSignalR()
+		{
+			if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+				return true;
+			else
+				return false;
+
+		}
 
 		#endregion
 	}

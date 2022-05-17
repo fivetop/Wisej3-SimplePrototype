@@ -43,12 +43,9 @@ namespace pa
 
         public uint AliveMessage { get; set; }
         System.Timers.Timer AliveTimer { get; set; } = new System.Timers.Timer(1000 * 60 * 5);
-        // GPIO 타이머 5초 마다 상태 점검 처리 
-        public int GPIOResponse { get; set; }
         public DBSqlite dBSqlite { get; set; } = new DBSqlite();
-        DataSet1 ds1 { get; set; }
+        DataSet1 Ds1 { get; set; }
         TableAdapterManager Tam { get; set; }
-
         WireSharkRunning wireShark { get; set; } = new WireSharkRunning();
 
         int em_status { get; set; } = 0;  // 화재 1,2 시험 알람 3,4 가스 5,6  
@@ -56,8 +53,8 @@ namespace pa
         bool TestAlarm { get; set; } = false;
 
         public AThreadClass AThread { get; set; } = new AThreadClass();
-
         public  DeviceDataTable _DanteDevice { get; set; }
+
         public MainWindow()
         {
             g.mainWindow = this;
@@ -68,103 +65,183 @@ namespace pa
             Title = "EM Svr "+ gl.version;
 
             dBSqlite.DBInit();
-            ds1 = dBSqlite.ds1;
+            Ds1 = dBSqlite.Ds1;
             Tam = dBSqlite.Tam;
-
-            _DanteDevice = ds1.Device;
-            _DanteDeviceDSPChnnels = dBSqlite.ds1.DeviceChannel;
+            _DanteDevice = Ds1.Device;
 
             MakeSpeakerIP();
             ReadMusic();
-
-
-            g._BaseData = ds1.Simplepa.FirstOrDefault();
+            g._BaseData = Ds1.Simplepa.FirstOrDefault();
             if (g._BaseData == null)
                 dBSqlite.Init();
 
             gl.XMLDanteDevice(true);
 
-
             //DBCopy();
 
-            init();
+            g.Log("DataBase Initial..");
+            //BSqlite.DBCopy();
+            //g.Load("SimplePA EM Server가 로딩중입니다..");
+        }
+
+        #region // 초기화 처리 
+        public void Init()
+        {
+            g.dsp.OnReceiveMessage += Dsp_OnReceiveMessage;
+
+            // 시리얼 통신 처리 
+            g.Log("GPIO & P type Serial Initial..");
+            //OpenP();
+            g.Log("R type Serial Initial..");
+            OpenR();
+            _tray = new TrayIcon();
+
+            DSPDeviceCheck();
+            g.Log("MultiSound/Alive Inter Message Initial..");
+            IPC();
+
+            AliveTimerJob();
+            AliveMessage = GlobalMessage.Register("Alive");
+
+
+            g.Log("Volume Initial..");
+            // 볼륨 초기화 처리  
+            InitVolume();
+
+            g.Log("multiBS Thread running..");
+            // 다중 방송 초기화 처리 
+            InitMultiBS();
+            gl.NetWorkCardFind();
+            g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName );
+
+            if (gl.NetworkCardName != "이더넷")
+            {
+                if (LScap.g.LSpcapStart() == false)
+                {
+                    g.Log("Card initial err.."); // opencap
+                }
+                else 
+                { 
+                    g.Log("Device Check Thread running..");
+                    AThread.OnSpeakerCheck += AThread_OnSpeakerCheck;
+                    AThread.OnAliveChk += AThread_OnAliveChk;
+                    AThread.DeviceChktime = 40; // 장비가 많아지면 시간 늘리기 
+                    AThread.Start();
+                    wireShark.CheckStart();
+                }
+            }
+
+            g.Log("DSP Thread Initial..");
+            // DSP thread start
+            BSThreadClass.Start();
+
+            initUI();
             aThread.Start();
             bThread.Start();
 
-            g.Log("DataBase Initial..");
+            var d1 = _DanteDevice.Where(p => p.device == 2);
 
-            //BSqlite.DBCopy();
+            if (d1.Count() < 1)
+            {
+                g.Log("검출된 DSP 가 없습니다. 1.Network Scan 버튼으로 확인바랍니다.");
+            }
+
+            g.Log("Initialize OK..");
         }
 
-
-        public void MakeSpeakerIP()
+        private void initUI()
         {
-            foreach (var t1 in ds1.Assets)
+            List<string> dsp_name = new List<string>();
+            List<int> dsp_vol = new List<int>() { };
+
+            for (int i = 1; i < 33; i++)
             {
-                if (t1.DeviceName == "")
-                {
-                    t1.state = ""; // "Off-Line";
+                dsp_vol.Add(i);
+            }
+            ComboBoxColumn.ItemsSource = null;
+            ComboBoxColumn.ItemsSource = dsp_vol;
+
+            foreach (var t1 in _DanteDevice)
+            {
+                if (t1.device != 2)
                     continue;
-                }
-                var t2 = _DanteDevice.FirstOrDefault(p =>  p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
-                if (t2 != null)
-                {
-                    t1.state = "On-Line";
-                    t1.ip = t2.ip;
-                    // 4440 포트는 사용치 않을 예정임  2021.01.26 romee
-                    //AliveChk(t1.ip);
-                }
-                else
-                {
-                    t1.state = ""; // "Off-Line";
-                }
+                dsp_name.Add(t1.DeviceName);
             }
-            Tam.AssetsTableAdapter.Update(ds1.Assets);
-        }
+            ComboBoxColumn1.ItemsSource = null;
+            ComboBoxColumn1.ItemsSource = dsp_name;
 
-        // 음원 폴더에서 가져와 디비 생성 
-        // 듀레이션은 시간이 걸리므로 타이머 쓰레드 처리 
-        public void ReadMusic()
-        {
-            // 폴더에서 자동으로 파일 확인후 디비에 등록 처리
-            //_BaseData.music.Clear();
-
-            Tam.MusicsTableAdapter.Fill(ds1.Musics);
-
-            var directoryInfo = new DirectoryInfo(gl.appPathServer + "Music");
-            if (directoryInfo.Exists)
+            foreach (var t1 in _DanteDevice)
             {
-                var files = directoryInfo.GetFiles("*.mp3");
-
-                foreach (var fileInfo in files)
-                {
-                    var mu1 = TagLib.File.Create(fileInfo.FullName);
-                    var m3 = ds1.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
-                    if (m3 != null)
-                    {
-                    }
-                    else
-                    {
-                        MusicsRow m1 = ds1.Musics.NewMusicsRow();
-                        string str1 = "00:00:00";
-                        var r1 = mu1.Properties.Duration;
-                        m1.FileName = fileInfo.Name;
-                        m1.FileContent = "";
-                        m1.deletable = "N";
-                        Thread.Sleep(50);
-                        str1 = r1.ToString(@"hh\:mm\:ss");
-                        if (str1 == "00:00:00")
-                            str1 = "00:00:01";
-                        m1.duration = str1;
-                        ds1.Musics.Rows.Add(m1);
-                        Tam.MusicsTableAdapter.Update(ds1.Musics);
-                    }
-                }
+                t1.path = sel(t1.DeviceName, t1.chspk);
             }
+            var t2 = _DanteDevice.Where(p => p.device == 0).ToList();
+            _lv2.ItemsSource = null;
+            _lv2.ItemsSource = t2.ToList();
+
+            List<string> cl = new List<string>();
+
+            foreach (var t1 in gl.networkCardList)
+            {
+                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName);
+            }
+            _combo.ItemsSource = cl.ToList();
+
+            var t3 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
+            if (t3 == null)
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo.SelectedIndex = 0;
+                return;
+            }
+            else
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo.SelectedItem = t3.NetworkCardNo.ToString() + ":" + t3.NetworkCardmDNS.ToString() + ":" + t3.NetworkCardName;
+            }
+
+            try
+            {
+                Resolver.intfindx = t3.NetworkCardmDNS;
+                Resolver.localIP = t3.ipv4;
+                g.Log("Local IP :" + t3.ipv4);
+
+                g.resolver = new Resolver();
+                g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
+            }
+            catch (Exception e1)
+            {
+            }
+
+        }
+        bool firsttime = true;
+        // 템플릿에서 엘레먼트 가져오기 
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.MinHeight = this.ActualHeight;
+            this.MinWidth = this.ActualWidth / 2;
+
+            if (firsttime)
+            {
+                Init();
+                firsttime = false;
+                // 초기 화면 열리면서 한번 수행 
+                // GPIO 상태 받아오기
+                sendErr(0xFF);
+            }
+            //            if (App.Current.MainWindow.Visibility == Visibility.Visible)
+            //                _tray.MinimizeToTray();
         }
 
+        private void MetroWindow_Deactivated(object sender, EventArgs e)
+        {
+            //            if(App.Current.MainWindow.Visibility == Visibility.Visible)
+            //                _tray.MinimizeToTray();
+        }
 
-        #region // 메인 윈도우 처리 
+        #endregion
+
+        #region // 종료 처리 
+        
         // 종료시 처리 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -207,62 +284,9 @@ namespace pa
             GC.SuppressFinalize(this);
         }
 
-        public void Init()
-        {
-            g.Load("SimplePA EM Server가 로딩중입니다..");
-            g.dsp.OnReceiveMessage += Dsp_OnReceiveMessage;
+        #endregion
 
-            // 시리얼 통신 처리 
-            g.Log("GPIO & P type Serial Initial..");
-            //OpenP();
-            g.Log("R type Serial Initial..");
-            OpenR();
-            _tray = new TrayIcon();
-
-            DSPDeviceCheck();
-            g.Log("MultiSound/Alive Inter Message Initial..");
-            IPC();
-
-            AliveTimerJob();
-            AliveMessage = GlobalMessage.Register("Alive");
-
-
-            g.Log("DSP Thread Initial..");
-            // DSP thread start
-            BSThreadClass.Start();
-
-            g.Log("Volume Initial..");
-            // 볼륨 초기화 처리  
-            InitVolume();
-
-            g.Log("multiBS Thread running..");
-            // 다중 방송 초기화 처리 
-            InitMultiBS();
-            gl.NetWorkCardFind();
-            g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName );
-
-            if (gl.NetworkCardName != "이더넷")
-            {
-                if (LScap.g.LSpcapStart() == false)
-                {
-                    g.Log("Card initial err.."); // opencap
-                }
-                else 
-                { 
-                    g.Log("Device Check Thread running..");
-                    AThread.OnSpeakerCheck += AThread_OnSpeakerCheck;
-                    AThread.OnAliveChk += AThread_OnAliveChk;
-                    AThread.OnGetDevice += AThread_OnGetDevice;
-                    AThread.DeviceChktime = 40; // 장비가 많아지면 시간 늘리기 
-                    AThread.Start();
-                    wireShark.CheckStart();
-                }
-            }
-
-            MetroWindow_Loaded2();
-            g.Log("Initialize OK..");
-        }
-
+        #region // 유틸 처리 
         // IP 가 없는 디바이스 삭제 처리 
         private void DSPDeviceCheck()
         {
@@ -293,91 +317,11 @@ namespace pa
             return;
         }
 
-        bool firsttime = true;
-        // 템플릿에서 엘레먼트 가져오기 
-        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.MinHeight = this.ActualHeight;
-            this.MinWidth = this.ActualWidth/2;
-
-            if (firsttime)
-            {
-                Init();
-                firsttime = false;
-                // 초기 화면 열리면서 한번 수행 
-                // GPIO 상태 받아오기
-                sendErr(0xFF);
-            }
-//            if (App.Current.MainWindow.Visibility == Visibility.Visible)
-//                _tray.MinimizeToTray();
-        }
-
-        int cardno = 0;
-        string LocalIP = "";
-        private void MetroWindow_Loaded2()
-        {
-            List<string> cl = new List<string>();
-
-            foreach (var t1 in gl.networkCardList)
-            {
-                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName);
-            }
-            _combo.ItemsSource = cl.ToList();
-
-            var t2 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
-            if (t2 == null)
-            {
-                // 캡처 카드 인덱스 찾기 
-                _combo.SelectedIndex = 0;
-                return;
-            }
-            else
-            {
-                // 캡처 카드 인덱스 찾기 
-                _combo.SelectedItem = t2.NetworkCardNo.ToString() + ":" + t2.NetworkCardmDNS.ToString() + ":" + t2.NetworkCardName;
-            }
-
-            try
-            {
-                Resolver.intfindx = t2.NetworkCardmDNS;
-                Resolver.localIP = t2.ipv4;
-                LocalIP = t2.ipv4;
-                g.Log("Local IP :" + t2.ipv4);
-
-                g.resolver = new Resolver();
-                g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
-            }
-            catch (Exception e1)
-            {
-            }
-
-            var d1 = _DanteDevice.Where(p => p.device == 2);
-
-            if (d1.Count() < 1)
-            {
-                g.Log("DSP 가 없습니다. 1.Network Scan 버튼으로 확인바랍니다.");
-            }
-
-        }
-
-        private void MetroWindow_Deactivated(object sender, EventArgs e)
-        {
-//            if(App.Current.MainWindow.Visibility == Visibility.Visible)
-//                _tray.MinimizeToTray();
-        }
-
-        private void _Status_MouseDoubleClick_1(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-        }
-
-
         private void _mlog_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (App.Current.MainWindow.Visibility == Visibility.Visible)
                 _tray.MinimizeToTray();
         }
-        #endregion
-
         private void AliveTimerJob()
         {
             AliveTimer.Elapsed += AliveTimer_Elapsed; ;
@@ -406,6 +350,10 @@ namespace pa
             OpenR();
 
         }
+        #endregion
+
+        #region // 버튼 유틸 처리 
+
 
         private void _but2_Click(object sender, RoutedEventArgs e)
         {
@@ -493,6 +441,74 @@ namespace pa
 
         }
 
+
+        public void MakeSpeakerIP()
+        {
+            foreach (var t1 in Ds1.Assets)
+            {
+                if (t1.DeviceName == "")
+                {
+                    t1.state = ""; // "Off-Line";
+                    continue;
+                }
+                var t2 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
+                if (t2 != null)
+                {
+                    t1.state = "On-Line";
+                    t1.ip = t2.ip;
+                    // 4440 포트는 사용치 않을 예정임  2021.01.26 romee
+                    //AliveChk(t1.ip);
+                }
+                else
+                {
+                    t1.state = ""; // "Off-Line";
+                }
+            }
+            Tam.AssetsTableAdapter.Update(Ds1.Assets);
+        }
+
+        // 음원 폴더에서 가져와 디비 생성 
+        // 듀레이션은 시간이 걸리므로 타이머 쓰레드 처리 
+        public void ReadMusic()
+        {
+            // 폴더에서 자동으로 파일 확인후 디비에 등록 처리
+            //_BaseData.music.Clear();
+
+            Tam.MusicsTableAdapter.Fill(Ds1.Musics);
+
+            var directoryInfo = new DirectoryInfo(gl.appPathServer + "Music");
+            if (directoryInfo.Exists)
+            {
+                var files = directoryInfo.GetFiles("*.mp3");
+
+                foreach (var fileInfo in files)
+                {
+                    var mu1 = TagLib.File.Create(fileInfo.FullName);
+                    var m3 = Ds1.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
+                    if (m3 != null)
+                    {
+                    }
+                    else
+                    {
+                        MusicsRow m1 = Ds1.Musics.NewMusicsRow();
+                        string str1 = "00:00:00";
+                        var r1 = mu1.Properties.Duration;
+                        m1.FileName = fileInfo.Name;
+                        m1.FileContent = "";
+                        m1.deletable = "N";
+                        Thread.Sleep(50);
+                        str1 = r1.ToString(@"hh\:mm\:ss");
+                        if (str1 == "00:00:00")
+                            str1 = "00:00:01";
+                        m1.duration = str1;
+                        Ds1.Musics.Rows.Add(m1);
+                        Tam.MusicsTableAdapter.Update(Ds1.Musics);
+                    }
+                }
+            }
+        }
+
+        #endregion
 
     }
 }

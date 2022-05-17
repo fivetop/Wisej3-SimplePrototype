@@ -11,18 +11,37 @@
     <!--#region // 본문 내용 -->
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid>
-            <TabControl>
+            <Menu>
+                <MenuItem Header="설정">
+                    <MenuItem x:Name="_ts1" Header="환경 설정" Click="_but1_Click" />
+                    <Separator></Separator>
+                    <MenuItem x:Name="_ts2" Header="LoopBack Test" Click="_but2_Click" />
+                    <MenuItem x:Name="_ts3" Header="GPIO Test" Click="_but3_Click" />
+                    <MenuItem x:Name="_ts4" Header="Test(Play)" Click="_but4_Click" />
+                    <MenuItem x:Name="_ts5" Header="Test(Stop)" Click="_but5_Click" />
+                    <MenuItem x:Name="_ts6" Header="진단" Click="_but6_Click" />
+                </MenuItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Network Card" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="_combo" Margin="10,0,0,0" SelectionChanged="_combo_SelectionChanged" />
+                </StackPanel>
+            </Menu>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <TabControl SelectionChanged="TabControl_SelectionChanged" FontSize="16">
                 <TabItem Header="Main">
                     <Grid>
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
-                            <RowDefinition Height="40" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0">
                             <Grid Margin="4">
@@ -67,99 +86,13 @@
                             <ListView x:Name="_mlog" ItemsSource="{Binding mlog, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}}" MouseDoubleClick="_mlog_MouseDoubleClick" />
                         </Grid>
                         <Grid Grid.Row="2" Margin="4">
-                                <StackPanel Orientation="Horizontal"  Margin="2">
-                                    <Button x:Name="_but1" Content="설정" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Margin="10,0,0,0" Click="_but1_Click"/>
-                                    <Button x:Name="_but2" Content="LoopBack Test" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Margin="10,0,0,0" Click="_but2_Click" />
-                                    <Button x:Name="_but3" Content="GPIO Test" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Margin="10,0,0,0" Click="_but3_Click"/>
-                                    <Button x:Name="_but4" Content="Test(Play)" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Margin="10,0,0,0" Click="_but4_Click"/>
-                                    <Button x:Name="_but5" Content="Test(Stop)" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Margin="10,0,0,0" Click="_but5_Click"/>
-                                    <Button x:Name="_but6" Content="진단" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Margin="10,0,0,0" Click="_but6_Click"/>
-                                </StackPanel>
-                        </Grid>
-                    </Grid>
-                </TabItem>
-
-                <TabItem Header="선번장등록">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="4"/>
-                        </Grid.RowDefinitions>
-                        <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
-                            <Grid Grid.Row="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="40"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="40"/>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Row="0" Margin="4">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock x:Name="txtFileName" Margin="0,8,0,0" Text="File Name"/>
-                                    </StackPanel>
-                                    <Button x:Name="_btnFile" Content="파일선택" Width="100" Click="_btnFile_Click" HorizontalAlignment="Right"/>
-                                </Grid>
-                                <Grid Grid.Row="1">
-                                    <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
-                                        <DataGrid x:Name="_lvLeft4" AutoGenerateColumns="False">
-                                            <DataGrid.Columns>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn4" Header="파일명" Binding="{Binding file}" Width="300" IsReadOnly="True"/>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn5" Header="채널" Binding="{Binding ch}" Width="60" IsReadOnly="True"/>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn6" Header="위치" Binding="{Binding emData}" Width="250" IsReadOnly="True"/>
-                                            </DataGrid.Columns>
-                                        </DataGrid>
-                                    </Border>
-                                </Grid>
-                                <Grid Grid.Row="2" Margin="4">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <TextBlock x:Name="_txtBlock"  Margin="0,8,0,0" Text=""/>
-                                        <Button x:Name="_btnMake" Content="데이터 파일 생성" Click="_btnMake_Click" HorizontalAlignment="Right"/>
-                                        <!--
-                                            <Button x:Name="_btnTest" Content="테스트" Click="_btnTest_Click" HorizontalAlignment="Right"/>
-                                            -->
-                                    </StackPanel>
-                                </Grid>
-                            </Grid>
-                        </Border>
-                    </Grid>
-                </TabItem>
-
-                <TabItem Header="장비검색">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="40" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="40" />
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0" Margin="4">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120"/>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="200"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock Text="Network Card" TextAlignment="Right"/>
-                            </Grid>
-                            <Grid Grid.Column="1" Grid.ColumnSpan="2">
-                                <ComboBox x:Name="_combo" Background="Transparent" SelectionChanged="_combo_SelectionChanged" />
-                            </Grid>
-                        </Grid>
-                        <Grid Grid.Row="1" Margin="2">
-                            <ScrollViewer>
-                                <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
-                                    <TextBlock x:Name="_out"/>
-                                </Border>
-                            </ScrollViewer>
-                        </Grid>
-                        <Grid Grid.Row="2" Margin="2">
                             <StackPanel Orientation="Horizontal"  Margin="2">
                                 <Button x:Name="_Status2" Content="1. Network Scan" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="_Status2_Click" Margin="10,0,0,0"></Button>
                                 <Button Content="2. Find DSP" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="Button_Click" Margin="10,0,0,0"></Button>
                                 <Button x:Name="_Status3" Content="3. Save" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="_Status3_Click" Margin="10,0,0,0"></Button>
                                 <Button x:Name="_Status1" Content="List" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="_Status1_Click" Margin="10,0,0,0" ></Button>
-                                <Button Content="DSP In AGN." FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="Button_Click_2" Margin="10,0,0,0"></Button>
-                                <Button Content="DSP Out AGN." FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="Button_Click_3" Margin="10,0,0,0"></Button>
+                                <Button Content="DSP 입력" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="Button_Click_2" Margin="10,0,0,0"></Button>
+                                <Button Content="DSP 출력" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Click="Button_Click_3" Margin="10,0,0,0"></Button>
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -209,10 +142,55 @@
                     </Border>
                 </TabItem>
 
+                <TabItem Header="선번장등록">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="4"/>
+                        </Grid.RowDefinitions>
+                        <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
+                            <Grid Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" Margin="4">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock x:Name="txtFileName" Margin="0,8,0,0" Text="File Name"/>
+                                    </StackPanel>
+                                    <Button x:Name="_btnFile" Content="파일선택" Width="100" Click="_btnFile_Click" HorizontalAlignment="Right"/>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
+                                        <DataGrid x:Name="_lvLeft4" AutoGenerateColumns="False">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn x:Name="dataGridTextColumn4" Header="파일명" Binding="{Binding file}" Width="300" IsReadOnly="True"/>
+                                                <DataGridTextColumn x:Name="dataGridTextColumn5" Header="채널" Binding="{Binding ch}" Width="60" IsReadOnly="True"/>
+                                                <DataGridTextColumn x:Name="dataGridTextColumn6" Header="위치" Binding="{Binding emData}" Width="250" IsReadOnly="True"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </Border>
+                                </Grid>
+                                <Grid Grid.Row="2" Margin="4">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <TextBlock x:Name="_txtBlock"  Margin="0,8,0,0" Text=""/>
+                                        <Button x:Name="_btnMake" Content="데이터 파일 생성" Click="_btnMake_Click" HorizontalAlignment="Right"/>
+                                        <!--
+                                            <Button x:Name="_btnTest" Content="테스트" Click="_btnTest_Click" HorizontalAlignment="Right"/>
+                                            -->
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </TabItem>
+
             </TabControl>
         </Grid>
 
-        <StatusBar Grid.Row="1" Height="40">
+        <StatusBar Grid.Row="2" Height="40">
+            <StatusBarItem x:Name="_Status" Content="EM Server.." FontSize="14"></StatusBarItem>
         </StatusBar>
     </Grid>
 </Window>

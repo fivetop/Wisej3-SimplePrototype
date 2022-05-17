@@ -13,7 +13,7 @@ namespace pa
     // v2 update ok
     public class AThreadClass
     {
-        public Thread backgroundThread { get; set; }
+        public Thread backgroundThread { get; set; } = null;
         private bool BackgroundThreadStop { get; set; } = false;
 
         public int DeviceChktime { get; set; } = 40;
@@ -24,6 +24,8 @@ namespace pa
         
         public void Start()
         {
+            if (backgroundThread != null)
+                return;
             BackgroundThreadStop = false;
             backgroundThread = new System.Threading.Thread(BackgroundThread);
             backgroundThread.Start();
@@ -33,15 +35,23 @@ namespace pa
         {
             if (backgroundThread == null)
                 return false;
-            BackgroundThreadStop = true;
-            backgroundThread.Join();
-            System.Threading.Thread.Sleep(500);
+            try
+            {
+                BackgroundThreadStop = true;
+                //backgroundThread.Join();
+                backgroundThread.Abort();
+                System.Threading.Thread.Sleep(500);
+                backgroundThread = null;
+            }
+            catch (ThreadStateException e1)
+            {
+                Console.WriteLine(e1.Message);
+            }
             return true;
         }
 
         public event EventHandler OnAliveChk;
         public event EventHandler OnSpeakerCheck;
-        public event EventHandler OnGetDevice;
 
         private int T1chktimer_cnt = 0;
 
@@ -60,11 +70,6 @@ namespace pa
                 {
                     T1chktimer_cnt = 0;
                     this.OnAliveChk?.Invoke(null, null);
-                }
-                if (T1chktimer_cnt > 60) // 장비가 많아지면 시간 늘리기 
-                {
-                    T1chktimer_cnt = 0;
-                    this.OnGetDevice?.Invoke(null, null);
                 }
             }
         }

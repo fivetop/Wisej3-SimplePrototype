@@ -506,8 +506,8 @@ namespace pa
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : Off");
                         sh = sh + cnt.ToString();
-                        Tam.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
-                        var t1 = ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
+                        Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
+                        var t1 = Ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
                             g.Log("Check : 프리셋 그룹");
@@ -530,8 +530,8 @@ namespace pa
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : On");
                         sh = sh + cnt.ToString();
-                        Tam.AssetGroupsTableAdapter.Fill(ds1.AssetGroups);
-                        var t1 = ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
+                        Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
+                        var t1 = Ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
                             g.Log("Check : 프리셋 그룹");
@@ -1015,6 +1015,9 @@ namespace pa
 
         #region // 비상방송 및 서버 메시지 처리  
         // 상태바 출력하기 
+        // GPIO 타이머 5초 마다 상태 점검 처리 
+        public int GPIOResponse { get; set; }
+
         private void CommState(string s1, bool off = false)
         {
             GPIOResponse++;

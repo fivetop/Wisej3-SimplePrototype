@@ -168,7 +168,7 @@
     <Compile Include="MainWindow5.cs" />
     <Compile Include="MainWindow2.cs" />
     <Compile Include="MainWindow7.cs" />
-    <Compile Include="MainWindow6.cs" />
+    <Compile Include="MainWindow11.cs" />
     <Compile Include="mDNS.cs" />
     <Compile Include="packet.cs" />
     <Compile Include="SendMsg.cs" />
