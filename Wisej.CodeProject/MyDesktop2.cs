@@ -63,66 +63,6 @@ namespace Wisej.CodeProject
             }
         }
 
-		#region // 그리드 처리 
-
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			if (e.RowIndex < 0 || e.ColumnIndex < 1)
-				return;
-			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)dataGridView1.Rows[e.RowIndex].Cells["chk"];
-			dataGridView1.BeginEdit(true);
-
-			if (Convert.ToBoolean(this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value) == false)
-			{
-				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = true;
-			}
-			else
-			{
-				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = false;
-			}
-			dataGridView1.EndEdit();
-		}
-
-		#endregion
-
-		private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-		{
-			if (e.Button == MouseButtons.Left)
-			{
-				var grid = (DataGridView)sender;
-				var ctxMenu = new ContextMenu();
-				var menu1 = ctxMenu.MenuItems.Add("음원 추가");
-				var menu2 = ctxMenu.MenuItems.Add("선택음원 삭제");
-				var menu3 = ctxMenu.MenuItems.Add("인터넷방송추가");
-				var menu4 = ctxMenu.MenuItems.Add("미리듣기");
-				var position = grid.PointToClient(Cursor.Position);
-				ctxMenu.Show((Web.Control)sender, position);
-
-				menu1.Click += (s, e1) =>
-				{
-					PMusicSel win = new PMusicSel();
-					win.EventMusic += Win_EventMusic;
-					win.SelMusic = SelMusic;
-					win.Show();
-				};
-
-				menu2.Click += (s, e1) =>
-				{
-					grid.CurrentCell.Style.ForeColor = Color.Blue;
-				};
-				menu3.Click += (s, e1) =>
-				{
-					grid.CurrentCell.Style.BackColor = Color.Beige;
-				};
-
-				menu4.Click += (s, e1) =>
-				{
-					grid.CurrentCell.Style.ForeColor = Color.Blue;
-				};
-			}
-
-		}
-
 		private void Win_EventMusic(object sender, EventArgs e)
 		{
 			this.dataGridView2.DataSource = SelMusic;
@@ -167,9 +107,69 @@ namespace Wisej.CodeProject
 				s3.Chk = true;
 			//s3.data1.index            
 		}
-		#region // 버튼 처리 
 
 
+		#region // 그리드 처리 
+
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0 || e.ColumnIndex < 1)
+				return;
+			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)dataGridView1.Rows[e.RowIndex].Cells["chk"];
+			dataGridView1.BeginEdit(true);
+
+			if (Convert.ToBoolean(this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value) == false)
+			{
+				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = true;
+			}
+			else
+			{
+				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = false;
+			}
+			dataGridView1.EndEdit();
+		}
+
+		private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				var grid = (DataGridView)sender;
+				var ctxMenu = new ContextMenu();
+				var menu1 = ctxMenu.MenuItems.Add("음원 추가");
+				var menu2 = ctxMenu.MenuItems.Add("선택음원 삭제");
+				var menu3 = ctxMenu.MenuItems.Add("인터넷방송추가");
+				var menu4 = ctxMenu.MenuItems.Add("미리듣기");
+				var position = grid.PointToClient(Cursor.Position);
+				ctxMenu.Show((Web.Control)sender, position);
+
+				menu1.Click += (s, e1) =>
+				{
+					PMusicSel win = new PMusicSel();
+					win.EventMusic += Win_EventMusic;
+					win.SelMusic = SelMusic;
+					win.Show();
+				};
+
+				menu2.Click += (s, e1) =>
+				{
+					grid.CurrentCell.Style.ForeColor = Color.Blue;
+				};
+				menu3.Click += (s, e1) =>
+				{
+					grid.CurrentCell.Style.BackColor = Color.Beige;
+				};
+
+				menu4.Click += (s, e1) =>
+				{
+					grid.CurrentCell.Style.ForeColor = Color.Blue;
+				};
+			}
+
+		}
+		#endregion
+
+
+		#region // 캘린더 버튼 처리 
 		private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
 		{
 			this.fullCalendar1.CurrentDate = e.Start;
@@ -184,9 +184,6 @@ namespace Wisej.CodeProject
 				editor.ShowDialog(this.FindForm());
 			}
 		}
-
-
-		#endregion
 
 		private void fullCalendar1_DayDoubleClick(object sender, DayClickEventArgs e)
 		{
@@ -204,5 +201,6 @@ namespace Wisej.CodeProject
 			}
 			return;
 		}
+		#endregion
 	}
 }
