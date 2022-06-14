@@ -56,7 +56,7 @@ namespace Wisej.CodeProject
 					break;
 				case eSignalRMsgType.eFindDSP:
 					if(msg1.state == 1)
-						bSDeviceManager.reLoad();
+						bSDeviceManager.reDraw();
 					else
 						AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 					break;
@@ -99,6 +99,12 @@ namespace Wisej.CodeProject
 		{
 			if(bslamp1 != null)
 				bslamp1.LabelOn(id, v);
+			if (id == 9 && v == false)
+			{
+				//AlertBox.Show("SignalR Client Disconnected.");
+				AlertBox.Show("<b>SignalR Client</b> Disconnected." , icon: MessageBoxIcon.Warning, alignment: ContentAlignment.MiddleCenter);
+
+			}
 		}
 
 		internal void sendSigR(string v)
@@ -158,7 +164,7 @@ namespace Wisej.CodeProject
 			bslamp1.LabelOn(8, playItems[8].p_run);
 		}
 
-		internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0)
+		internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0)
 		{
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.user = Application.Session["user"];
@@ -176,7 +182,17 @@ namespace Wisej.CodeProject
 					msg1.message = device_name;
 					msg1.Msgtype = eVolume;
 					msg1.state = dsp_ch;
-					msg1.user_data = dsp;
+					msg1.user_data1 = dsp;
+					msg1.user_data4 = device_ch;
+					break;
+
+				case eSignalRMsgType.eInChMove:
+					msg1.Guid = Guid.NewGuid();
+					msg1.message = device_name; // pc
+					msg1.Msgtype = eVolume;
+					msg1.state = dsp_ch; // no
+					msg1.user_data1 = dsp; // ip
+					msg1.user_data4 = device_ch; // dsp ch cnt
 					break;
 
 				case eSignalRMsgType.eScanAll:

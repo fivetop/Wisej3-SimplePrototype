@@ -33,6 +33,7 @@ namespace Wisej.CodeProject
                     BSTreeTableAdapter = new BSTreeTableAdapter(),
                     DeviceTableAdapter = new DeviceTableAdapter(),
                     DeviceChannelTableAdapter = new DeviceChannelTableAdapter(),
+                    EMBsTableAdapter = new EMBsTableAdapter(),
                     EventvmTableAdapter = new EventvmTableAdapter(),
                     FloorbasesTableAdapter = new FloorbasesTableAdapter(),
                     FloormapsTableAdapter = new FloormapsTableAdapter(),
@@ -48,6 +49,7 @@ namespace Wisej.CodeProject
                 Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
                 Tam.DeviceTableAdapter.Fill(Ds1.Device);
                 Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
+                Tam.EMBsTableAdapter.Fill(Ds1.EMBs);
                 Tam.EventvmTableAdapter.Fill(Ds1.Eventvm);
                 Tam.FloorbasesTableAdapter.Fill(Ds1.Floorbases);
                 Tam.FloormapsTableAdapter.Fill(Ds1.Floormaps);
@@ -66,6 +68,7 @@ namespace Wisej.CodeProject
 
         public void SaveAssets(EmSpeakerPosition t1)
         {
+            Tam.AssetsTableAdapter.Fill(Ds1.Assets);
             var aa = t1.file.Split(' ');
 
             var m3 = Ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
@@ -78,13 +81,15 @@ namespace Wisej.CodeProject
                 m2.SpeakerName = aa[3];
                 m2.path = aa[1] + " " + aa[2] + " " + aa[3];
                 m2.ch = int.Parse(aa[5]);
+                if (m2.ch == 0)
+                    m2.ch = 1;
                 m2.chk = 0;
-                m2.em1 = int.Parse(t1.array[6]);
-                m2.em2 = int.Parse(t1.array[7]);
-                m2.em3 = int.Parse(t1.array[8]);
+                m2.floor = int.Parse(t1.array[6]) * 100 + int.Parse(t1.array[7]) *10 + int.Parse(t1.array[8]);
+                m2.emData = t1.emData;
                 m2.ip = "";
                 m2.state = "";
                 m2.state_old = "";
+                m2.DeviceId = 0;
                 if (aa.Count() > 4)
                     m2.DeviceName = aa[4];
                 Ds1.Assets.Rows.Add(m2);
@@ -92,7 +97,45 @@ namespace Wisej.CodeProject
             }
         }
 
+        public void updateAsset()
+        {
+            Tam.AssetsTableAdapter.Fill(Ds1.Assets);
+            Tam.DeviceTableAdapter.Fill(Ds1.Device);
 
+            foreach (var t1 in Ds1.Device)
+            {
+                var m1 = Ds1.Assets.FirstOrDefault(p=>p.DeviceName == t1.DeviceName && p.ch == t1.chspk);
+                if (m1 == null)
+                    continue;
+                m1.DeviceId = t1.DeviceId;
+                m1.ip = t1.ip;
+                t1.AssetId = m1.AssetId; 
+                t1.emData = m1.emData;
+                t1.path = m1.path;
+            }
+            Tam.AssetsTableAdapter.Update(Ds1.Assets);
+            Tam.DeviceTableAdapter.Update(Ds1.Device);
+        }
+
+        public void SaveEMBs()
+        {
+            Tam.EMBsTableAdapter.Fill(Ds1.EMBs);
+
+            foreach (var t1 in Ds1.Device)
+            {
+                if (t1.emData == "")
+                    continue;
+                var m1 = Ds1.EMBs.FirstOrDefault(p => p.emData == t1.emData && p.DeviceId == t1.DeviceId);
+                if (m1 != null)
+                    continue;
+                EMBsRow m2 = Ds1.EMBs.NewEMBsRow();
+                m2.emData = t1.emData;
+                m2.DeviceId = t1.DeviceId;
+                m2.path = t1.path;
+                Ds1.EMBs.Rows.Add(m2);
+                Tam.EMBsTableAdapter.Update(Ds1.EMBs);
+            }
+        }
 
         public void Delete(int idno)
         {
@@ -109,6 +152,7 @@ namespace Wisej.CodeProject
             { 
             }
         }
+
 
         // 나중에 디비는 모두 몰기 
         public List<AssetBase> db2List(SignalRMsg msg, int chno)
@@ -154,6 +198,91 @@ namespace Wisej.CodeProject
             var t3 = ab1.ToList();
             play = p1.ToList();
             return play;
+        }
+
+        // dsp 저장후 상세정보 저장 
+        // dsp ch info 저장 
+        public void saveDBDSPCH(IEnumerable<Device> gs1)
+        {
+            Tam.DeviceTableAdapter.Fill(Ds1.Device);
+            Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
+            try
+            {
+                foreach (var t1 in gs1)
+                {
+                    var s1 = Ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    if (s1 == null)
+                        continue;
+                    t1.DeviceId = s1.DeviceId;
+                    if (t1.ch.Count < 2)
+                        continue;
+
+                    var s2 = Ds1.DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
+                    if (s2.Count() > 0)
+                        continue;
+
+                    for (int i = 0; i < t1.ch.Count; i++)
+                    {
+                        DeviceChannelRow r1 = Ds1.DeviceChannel.NewDeviceChannelRow();
+                        r1.chno = t1.ch[i].chno;
+                        r1.chname = t1.ch[i].chname[0];
+                        r1.DeviceId = t1.DeviceId;
+                        r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
+                        r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
+                        r1.io = 1;
+                        r1.devicein = "";
+                        r1.deviceinch = 0;
+                        Ds1.DeviceChannel.Rows.Add(r1);
+                    }
+
+                    int num = 1;
+                    if (t1.ch.Count < 17)
+                        num = 17;
+
+                    for (int i = 0; i < t1.ch.Count; i++)
+                    {
+                        DeviceChannelRow r1 = Ds1.DeviceChannel.NewDeviceChannelRow();
+                        r1.chno = num.ToString();
+                        r1.chname = "IN"+num.ToString();
+                        r1.DeviceId = t1.DeviceId;
+                        r1.dsp_out_ch1 = "";
+                        r1.dsp_out_ch2 = "";
+                        r1.io = 0;
+                        r1.devicein = "";
+                        r1.deviceinch = 0;
+                        num++;
+                        Ds1.DeviceChannel.Rows.Add(r1);
+                    }
+                    Tam.DeviceChannelTableAdapter.Update(Ds1.DeviceChannel);
+                }
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.Message);
+            }
+        }
+
+        // Device ADD
+        public void NewDeviceRow(Device t1, int v)
+        {
+            DeviceRow m1 = Ds1.Device.NewDeviceRow();
+            m1.DanteModelName = t1.DanteModelName;
+            m1.DeviceName = t1.DeviceName;
+            m1.device = t1.device;
+            m1.ip = t1.ip;
+            m1.ip_dspctrl = t1.ip_dspctrl;
+            m1.name = t1.name;
+            m1.chCount = t1.ch.Count();
+            m1.chspk = v;
+            m1.dsp_chno = 0;
+            m1.dsp_name = "";
+            m1.dsp_vol = 0;
+            m1.dsp_vol_em = 0;
+            m1.emData = "";
+            m1.floor_em = 0;
+            m1.path = "";
+            Ds1.Device.Rows.Add(m1);
+            Tam.DeviceTableAdapter.Update(Ds1.Device);
         }
 
         public void Save(object o1)

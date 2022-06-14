@@ -293,7 +293,7 @@ namespace LSmDNSW
                     m1.ip_dspctrl = t1.ip_dspctrl;
                     m1.name = t1.name;
                     m1.chCount = t1.ch.Count();
-                    m1.chspk = 0;
+                    m1.chspk = 1;
                     m1.dsp_chno = 0;
                     m1.dsp_name = "";
                     m1.dsp_vol = 0;
@@ -556,7 +556,7 @@ namespace LSmDNSW
 
             if (dsp1.chCount < chno)
             {
-                chno2 = chno - dsp1.chCount;
+                chno2 = chno - (int)dsp1.chCount;
             }
             byte[] b1 = gl.hexatobyte(t3[chno2 - 1].dsp_out_ch1);
             //byte[] b1 = gl.hexatobyte(dsp1.dsp_out_ch1[chno2 - 1]);

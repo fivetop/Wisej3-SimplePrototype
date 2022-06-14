@@ -205,10 +205,13 @@ namespace Wisej.CodeProject
 				DevicelistView1.Items.Add(lvi);
 			}
 			DevicelistView1.EndUpdate();
+
+			LabelON(9,false);
 		}
 
 		#region // tab initial  
 
+		BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 		BSInManager bSInManager = new BSInManager();
 		BSOutManager bSOutManage = new BSOutManager();
@@ -217,38 +220,56 @@ namespace Wisej.CodeProject
 
         private void AddBSPage()
         {
-			TabPage tabClients = new TabPage("장비관리");
+			TabPage tabClients = new TabPage("1.선번장관리");
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(bSAsset);
+			bSAsset.Dock = DockStyle.Fill;
+			BStabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage("2.장비관리");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSDeviceManager);
 			bSDeviceManager.Dock = DockStyle.Fill;
 			BStabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("입력관리");
+			tabClients = new TabPage("3.입력관리");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSInManager);
 			bSInManager.Dock = DockStyle.Fill;
 			BStabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("출력관리");
+			tabClients = new TabPage("4.출력관리");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSOutManage);
 			bSOutManage.Dock = DockStyle.Fill;
 			BStabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("음량관리");
+			tabClients = new TabPage("5.음량관리");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSLevelManager);
 			bSLevelManager.Dock = DockStyle.Fill;
 			BStabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("비상방송");
+			tabClients = new TabPage("6.비상방송");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSEMManager);
 			bSEMManager.Dock = DockStyle.Fill;
 			BStabControl.TabPages.Add(tabClients);
+
+            BStabControl.SelectedIndexChanged += BStabControl_SelectedIndexChanged;
 		}
 
-        MSetupManager mSetupManager = new MSetupManager();
+        private void BStabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			bSDeviceManager.reDraw();
+			bSInManager.reDraw(); 
+			bSOutManage.reDraw(); 
+			bSLevelManager.reDraw();
+			bSEMManager.reDraw();
+			bSAsset.reDraw();
+		}
+
+		MSetupManager mSetupManager = new MSetupManager();
 		MGroupManager mGroupManager = new MGroupManager();
 		MHolidayManager mHolidayManager = new MHolidayManager();
 		MMusicManager mMusicManager = new MMusicManager();

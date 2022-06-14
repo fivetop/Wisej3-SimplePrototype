@@ -48,6 +48,7 @@
             this.colDsp_Vol = new Wisej.Web.DataGridViewNumericUpDownColumn();
             this.colDsp_Vol_Em = new Wisej.Web.DataGridViewNumericUpDownColumn();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.채널 = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -165,6 +166,7 @@
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colDeviceid,
             this.colDevicename,
+            this.채널,
             this.colIp,
             this.colDsp_Name,
             this.colDsp_Chno,
@@ -250,6 +252,13 @@
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
             // 
+            // 채널
+            // 
+            this.채널.DataPropertyName = "chspk";
+            this.채널.HeaderText = "채널";
+            this.채널.Name = "채널";
+            this.채널.Width = 60;
+            // 
             // BSLevelManager
             // 
             this.Controls.Add(this.panel2);
@@ -287,5 +296,6 @@
         private Web.DataGridViewNumericUpDownColumn colDsp_Vol;
         private Web.DataGridViewNumericUpDownColumn colDsp_Vol_Em;
         private Web.DataGridViewTextBoxColumn colPath_1;
+        private Web.DataGridViewTextBoxColumn 채널;
     }
 }

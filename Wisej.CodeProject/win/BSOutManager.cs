@@ -25,14 +25,15 @@ namespace Wisej.CodeProject.win
                 b1.Dock = DockStyle.Fill;
                 b1.Click += B1_Click;
                 b1.ToolTipText = t1.Index.ToString();
-                t1[5].Control = b1;
+                t1[6].Control = b1;
             }
 
             var dsp = this.dataSet1.Device.Where(p=>p.device == 2);
 
             foreach (var t1 in dsp)
             {
-                this.colDsp_Name.Items.Add(t1.DeviceName);
+                if(this.colDsp_Name.Items.Contains(t1.DeviceName) == false)
+                    this.colDsp_Name.Items.Add(t1.DeviceName);
             }
         }
 
@@ -49,6 +50,7 @@ namespace Wisej.CodeProject.win
             string str1 = dataRow.dsp_name;
             string str2 = dataRow.DeviceName;
             int i2 = dataRow.dsp_chno;
+            int i3 = dataRow.chspk;
 
 
             if (str1 == "" || i2 == 0)
@@ -57,7 +59,12 @@ namespace Wisej.CodeProject.win
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
 
             MyDesktop myDesktop = (MyDesktop)Application.Desktop;
-            myDesktop.sendSigR(eSignalRMsgType.eOutChMove, str2, str1, i2); // dsp, dsp_chno
+            myDesktop.sendSigR(eSignalRMsgType.eOutChMove, str2, str1, i2, i3); // dsp, dsp_chno
+        }
+
+        internal void reDraw()
+        {
+            BSOutManager_Load  (null, null);
         }
     }
 }

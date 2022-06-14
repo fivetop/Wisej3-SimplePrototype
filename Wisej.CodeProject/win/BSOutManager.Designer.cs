@@ -42,6 +42,7 @@
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1 = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
+            this.채널 = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -70,6 +71,7 @@
             this.dataGridView3.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colDeviceid,
             this.colDevicename,
+            this.채널,
             this.colIp,
             this.colDsp_Name,
             this.colDsp_Chno,
@@ -187,6 +189,13 @@
             this.panel2.TabIndex = 4;
             this.panel2.TabStop = true;
             // 
+            // 채널
+            // 
+            this.채널.DataPropertyName = "chspk";
+            this.채널.HeaderText = "채널";
+            this.채널.Name = "채널";
+            this.채널.Width = 60;
+            // 
             // BSOutManager
             // 
             this.Controls.Add(this.panel2);
@@ -217,5 +226,6 @@
         private Web.Panel panel1;
         private Web.Panel panel2;
         private Web.DataGridViewButtonColumn Column0;
+        private Web.DataGridViewTextBoxColumn 채널;
     }
 }

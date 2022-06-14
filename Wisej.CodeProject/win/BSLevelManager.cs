@@ -58,5 +58,10 @@ namespace Wisej.CodeProject.win
             MyDesktop myDesktop = (MyDesktop)Application.Desktop;
             myDesktop.sendSigR(eSignalRMsgType.eVolume);
         }
+
+        internal void reDraw()
+        {
+            this.deviceTableAdapter.Fill(this.dataSet1.Device);
+        }
     }
 }

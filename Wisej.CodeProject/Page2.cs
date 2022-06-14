@@ -21,5 +21,6 @@ namespace Wisej.CodeProject
         {
             this.Size = new System.Drawing.Size(200,200);
         }
+
     }
 }

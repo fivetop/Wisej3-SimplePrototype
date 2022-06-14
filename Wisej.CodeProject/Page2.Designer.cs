@@ -57,7 +57,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Page2";
-            this.Size = new System.Drawing.Size(786, 495);
+            this.Size = new System.Drawing.Size(803, 487);
             this.ResumeLayout(false);
 
         }

@@ -62,6 +62,8 @@ namespace pa
         {
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
             {
+                if (g.resolver == null)
+                    return;
                 if (check1 || check2 || check3) return;
                 check1 = true;
 

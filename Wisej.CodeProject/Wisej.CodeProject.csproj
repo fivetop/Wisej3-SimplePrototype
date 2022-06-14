@@ -79,6 +79,7 @@
     <Content Include="Properties\DataSources\Wisej.CodeProject.SignalR.ConnectFlag.datasource" />
     <Content Include="Handler1.ashx" />
     <Content Include="Properties\DataSources\bsroom.datasource" />
+    <Content Include="Properties\DataSources\Wisej.CodeProject.DataSet1TableAdapters.EMBsTableAdapter.datasource" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -140,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Page2.resx">
       <DependentUpon>Page2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\BSAsset.resx">
+      <DependentUpon>BSAsset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win\BSDeviceManager.resx">
       <DependentUpon>BSDeviceManager.cs</DependentUpon>
@@ -672,17 +676,17 @@
     <Compile Include="MyDesktop2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyDesktop6.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyDesktop5.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Page2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Page2.Designer.cs">
       <DependentUpon>Page2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\BSAsset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\BSAsset.Designer.cs">
+      <DependentUpon>BSAsset.cs</DependentUpon>
     </Compile>
     <Compile Include="win\BSDeviceManager.cs">
       <SubType>UserControl</SubType>

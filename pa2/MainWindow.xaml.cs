@@ -55,6 +55,12 @@ namespace pa
         public AThreadClass AThread { get; set; } = new AThreadClass();
         public  DeviceDataTable _DanteDevice { get; set; }
 
+        static System.Timers.Timer Devicetimer { get; set; } = new System.Timers.Timer(10000);
+        public AThread aThread { get; set; } = new AThread();
+        public BThread bThread { get; set; } = new BThread();
+
+        int SelfTest { get; set; } = 0;
+
         public MainWindow()
         {
             g.mainWindow = this;
@@ -91,7 +97,7 @@ namespace pa
 
             // 시리얼 통신 처리 
             g.Log("GPIO & P type Serial Initial..");
-            //OpenP();
+            OpenP();
             g.Log("R type Serial Initial..");
             OpenR();
             _tray = new TrayIcon();
@@ -139,14 +145,27 @@ namespace pa
             aThread.Start();
             bThread.Start();
 
+            systemcheck();
+            g.Log("Initialize OK..");
+        }
+
+        private int systemcheck()
+        {
+            var a1 = Ds1.Assets.ToList();
+            if (a1.Count() < 1)
+            {
+                g.Log("선번장이 없습니다. 선번장을 확인바랍니다.");
+                return 1;
+            }
+
             var d1 = _DanteDevice.Where(p => p.device == 2);
 
             if (d1.Count() < 1)
             {
                 g.Log("검출된 DSP 가 없습니다. 1.Network Scan 버튼으로 확인바랍니다.");
+                return 2;
             }
-
-            g.Log("Initialize OK..");
+            return 3;
         }
 
         private void initUI()
@@ -245,6 +264,8 @@ namespace pa
         // 종료시 처리 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            Devicetimer.Stop();
+
             aThread.Stop();
             Thread.Sleep(1000);
 

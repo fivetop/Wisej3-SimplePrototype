@@ -26,12 +26,15 @@ namespace DataClass
         public string DeviceName { get; set; }
         public string ch { get; set; }
 
+        public int floor { get; set; }
+
         public string getfile()
         {
             file = array[0] + " " + array[1] + " " + array[2] + " " + array[3] + " " + array[4] + " " + array[5];
             DeviceName = array[4];
             ch = array[5];
             emData = array[6].Trim(' ') + "동/" + array[7].Trim(' ') + "계단/" + array[8].Trim(' ') + "층";
+            floor = int.Parse(array[6]) * 100 + int.Parse(array[7]) * 10 + int.Parse(array[8]);
             return file;
         }
     }

@@ -185,17 +185,18 @@ namespace gClass
 		}
 
 		// Out ch no / vol 
-		public void makeVolumn(int chno, int v1, string ip)
+		public void makeVolumn(int chno, long v1, string ip)
 		{
 			var d1 = gl.danteDevice._DanteDevice.First(p => p.ip_dspctrl == ip && p.device == 2);
 			if (d1 == null) return;
 
+			int v2 = (int)v1;
 			int no = 0;
 			no = chno - 1;
 
 			string str1 = "B321C100270101";
 			string str2 = String.Format("{0:x4}", no);
-			string str3 = str1 + str2 + "00" + vol[v1];
+			string str3 = str1 + str2 + "00" + vol[v2];
 
 			byte[] bytes1 = gl.hexatobyte(str3);
 			udpc1.send(ip, 50000, bytes1);

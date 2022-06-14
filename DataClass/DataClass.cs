@@ -22,6 +22,8 @@ namespace DataClass
         eOutChMove = 11,        // 스피커 이동  C2S
         eScanAll = 12,          // 전체 스캔    C2S
         eFindDSP = 13,          // Find DSP     S2C
+        eReturn = 14,
+        eInChMove = 15,         // DSP, Sound 이동  C2S
     }
 
     public enum eEventCode
@@ -79,6 +81,8 @@ namespace DataClass
 
     public class SignalRMsg
     {
+
+        public Guid Guid { get; set; }
         public string message { get; set; }             // 메시지
         public eSignalRMsgType Msgtype { get; set; }    // 메시지 타입
         public eEventCode event_code { get; set; }      // 이벤트 코드.....
@@ -88,9 +92,11 @@ namespace DataClass
         public List<long> musicsRows { get; set; }      // 선택된 음원 ID
         public List<PlayItem> play8sig { get; set; }    // 8채널의 현재 상태 
         public string user { get; set; }                // 유저명 
-        public string user_data { get; set; }           // data1  
-
-        public Guid Guid { get; set; }
+        public string user_data1 { get; set; }           // data1  eOutChMove-dspname,  
+        public string user_data2 { get; set; }           // data2  
+        public string user_data3 { get; set; }           // data3  
+        public int user_data4 { get; set; }              // data4 device_chno  
+        public string reason { get; set; }               // 실패이유  
 
         public SignalRMsg()
         {

@@ -16,7 +16,7 @@ namespace DataClass
         public string SpeakerName { get; set; }
         public long ch { get; set; }
         public string path { get; set; }
-        public string floor { get; set; }
+        public long floor { get; set; }
         public string DeviceName { get; set; }
         public string state { get; set; } // On-Line , Off-Line
         public string state_old { get; set; } // On-Line , Off-Line
@@ -29,7 +29,7 @@ namespace DataClass
             //id = Guid.NewGuid();
             ip = "";
             DeviceName = "";
-            floor = "";
+            floor = 0;
             state = "";
             state_old = "";
             seq = 0;

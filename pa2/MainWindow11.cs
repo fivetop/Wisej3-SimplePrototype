@@ -75,12 +75,23 @@ namespace pa
                     InitVolume();
                     break;
                 case eSignalRMsgType.eOutChMove:
-                    SpeakerAssignDSP(msg.message, msg.user_data, msg.state);
-                    g.Log("eOutChMove" + " : " + msg.message + " : " + msg.user_data + " : " + msg.state.ToString());
+                    SpeakerAssignDSP(msg.message, msg.user_data1, msg.state, msg.user_data4);
+                    g.Log("eOutChMove" + " : " + msg.message + " : " + msg.user_data1 + " : " + msg.state.ToString() + " : " + msg.user_data4.ToString());
+                    break;
+                case eSignalRMsgType.eInChMove:
+                    MoveInputChannel(msg.user_data1, msg.state, msg.message, msg.user_data4);
+                    g.Log("eInChMove" + " : " + msg.user_data1 + " : " + msg.state.ToString() + " : " + msg.message + " : " + msg.user_data4.ToString());
                     break;
                 case eSignalRMsgType.eScanAll:
-                    ScanAll();
-                    g.Log("eScanAll");
+                    if (ScanAll())
+                    {
+                        g.SendSigR(eSignalRMsgType.eReturn, "Server : 전체스캔 처리중 입니다. 약 5분정도 소요될 예정입니다");
+                        g.Log("eScanAll");
+                    }
+                    else
+                    {
+                        g.SendSigR(eSignalRMsgType.eReturn, "Server : 처리(진행)중 입니다.");
+                    }
                     break;
             }
             return true;
