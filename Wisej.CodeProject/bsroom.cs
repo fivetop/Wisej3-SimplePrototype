@@ -13,10 +13,10 @@ namespace Wisej.CodeProject
         public string bsroomid { get; set; }
         public bool state { get; set; }
 
-        long _state_int;
+        int _state_int;
         internal DataSet1.BSroomRow bsroomrow;
 
-        public long state_int 
+        public int state_int 
         {
             get 
             { 

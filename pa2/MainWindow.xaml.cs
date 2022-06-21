@@ -79,7 +79,10 @@ namespace pa
             ReadMusic();
             g._BaseData = Ds1.Simplepa.FirstOrDefault();
             if (g._BaseData == null)
+            {
                 dBSqlite.Init();
+                g._BaseData = Ds1.Simplepa.FirstOrDefault();
+            }
 
             gl.XMLDanteDevice(true);
 

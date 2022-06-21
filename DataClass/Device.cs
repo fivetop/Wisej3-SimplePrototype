@@ -13,7 +13,7 @@ namespace DataClass
 	public class Device
 	{
 		[Key]
-		public long DeviceId { get; set; }   // Event (1)   <-- 건수 표시
+		public int DeviceId { get; set; }   // Event (1)   <-- 건수 표시
 		public int device { get; set; } // 0 speaker , 1 amp , 2 dsp , 3 avio 
 		public string ip { get; set; }
 		public string ip_dspctrl { get; set; } // DSP Controller IP 

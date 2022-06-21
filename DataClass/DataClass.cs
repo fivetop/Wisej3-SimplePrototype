@@ -88,8 +88,8 @@ namespace DataClass
         public eEventCode event_code { get; set; }      // 이벤트 코드.....
         public int seqno { get; set; }                  // 순번    
         public int state { get; set; }                  // 상태 코드
-        public List<long> assetsRows { get; set; }      // 선택된 스피커 ID
-        public List<long> musicsRows { get; set; }      // 선택된 음원 ID
+        public List<int> assetsRows { get; set; }      // 선택된 스피커 ID
+        public List<int> musicsRows { get; set; }      // 선택된 음원 ID
         public List<PlayItem> play8sig { get; set; }    // 8채널의 현재 상태 
         public string user { get; set; }                // 유저명 
         public string user_data1 { get; set; }           // data1  eOutChMove-dspname,  
@@ -106,8 +106,8 @@ namespace DataClass
             event_code = eEventCode.eAddUser;
             seqno = 0;
             state = 0;
-            assetsRows = new List<long>();
-            musicsRows = new List<long>();
+            assetsRows = new List<int>();
+            musicsRows = new List<int>();
             play8sig = new List<PlayItem>();
         }
     }

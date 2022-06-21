@@ -35,12 +35,8 @@ namespace Wisej.CodeProject
                     DeviceChannelTableAdapter = new DeviceChannelTableAdapter(),
                     EMBsTableAdapter = new EMBsTableAdapter(),
                     EventvmTableAdapter = new EventvmTableAdapter(),
-                    FloorbasesTableAdapter = new FloorbasesTableAdapter(),
-                    FloormapsTableAdapter = new FloormapsTableAdapter(),
                     HolidaysTableAdapter = new HolidaysTableAdapter(),
-                    InfoTreesTableAdapter = new InfoTreesTableAdapter(),
                     MusicsTableAdapter = new MusicsTableAdapter(),
-                    SimpleMultisTableAdapter = new SimpleMultisTableAdapter(),
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
                     UserTreesTableAdapter = new UserTreesTableAdapter(),
                 };
@@ -51,12 +47,8 @@ namespace Wisej.CodeProject
                 Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
                 Tam.EMBsTableAdapter.Fill(Ds1.EMBs);
                 Tam.EventvmTableAdapter.Fill(Ds1.Eventvm);
-                Tam.FloorbasesTableAdapter.Fill(Ds1.Floorbases);
-                Tam.FloormapsTableAdapter.Fill(Ds1.Floormaps);
                 Tam.HolidaysTableAdapter.Fill(Ds1.Holidays);
-                Tam.InfoTreesTableAdapter.Fill(Ds1.InfoTrees);
                 Tam.MusicsTableAdapter.Fill(Ds1.Musics);
-                Tam.SimpleMultisTableAdapter.Fill(Ds1.SimpleMultis);
                 Tam.SimplepaTableAdapter.Fill(Ds1.Simplepa);
                 Tam.UserTreesTableAdapter.Fill(Ds1.UserTrees);
             }
@@ -322,7 +314,7 @@ namespace Wisej.CodeProject
             s.debug = 0;
             s.MapX = 4000;
             s.MapY = 4000;
-            s.Zoom = 0.2;
+            s.Zoom = 0.2f;
             s.TileWidth = 180;
             s.EMServerIP = "127.0.0.1";
             s.Reserved1 = "0";
@@ -358,6 +350,8 @@ namespace Wisej.CodeProject
             s.sms_pw = "3ef5afb7e743196d9e0726dba16b02d9";
             s.sms_rcvno = "";
             s.Pport = 0;
+            s.scalelength = 0;
+            s.length = 0;
             Ds1.Simplepa.Rows.Add(s);
             Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
 
