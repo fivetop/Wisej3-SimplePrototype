@@ -6,22 +6,22 @@
 	"fonts": {
 		"default": {
 			"size": 13,
-			"family": [ "helvetica", "arial", "  verdana", "sans-serif" ],
+			"family": ["helvetica", "arial", "  verdana", "sans-serif"],
 			"bold": false
 		},
 		"windowTitle": {
 			"size": 20,
-			"family": [ "helvetica", "arial", "  verdana", "sans-serif" ],
+			"family": ["helvetica", "arial", "  verdana", "sans-serif"],
 			"bold": false
 		},
 		"defaultBold": {
 			"size": 13,
-			"family": [ "helvetica", "arial", " verdana", "sans-serif" ],
+			"family": ["helvetica", "arial", " verdana", "sans-serif"],
 			"bold": true
 		},
 		"menu": {
 			"size": 13,
-			"family": [ "arial", "verdana", "sans-serif" ],
+			"family": ["arial", "verdana", "sans-serif"],
 			"bold": false
 		}
 	},
@@ -116,7 +116,12 @@
 		"icon-justify-right": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0zIDIxaDE4di0ySDN2MnptNi00aDEydi0ySDl2MnptLTYtNGgxOHYtMkgzdjJ6bTYtNGgxMlY3SDl2MnpNMyAzdjJoMThWM0gzeiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=",
 		"icon-justify-fill": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0zIDIxaDE4di0ySDN2MnptMC00aDE4di0ySDN2MnptMC00aDE4di0ySDN2MnptMC00aDE4VjdIM3Yyem0wLTZ2MmgxOFYzSDN6Ii8+CiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==",
 		"wallpaper": "https://s3.amazonaws.com/wisej/images/wisej-desktop.jpg",
-		"checkmark": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjQ0OC44cHgiIGhlaWdodD0iNDQ4LjhweCIgdmlld0JveD0iMCAwIDQ0OC44IDQ0OC44IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NDguOCA0NDguODsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQoJPg0KPGc+DQoJPGcgaWQ9ImNoZWNrIj4NCgkJPHBvbHlnb24gcG9pbnRzPSIxNDIuOCwzMjMuODUgMzUuNywyMTYuNzUgMCwyNTIuNDUgMTQyLjgsMzk1LjI1IDQ0OC44LDg5LjI1IDQxMy4xLDUzLjU1IAkJIi8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="
+		"checkmark": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjQ0OC44cHgiIGhlaWdodD0iNDQ4LjhweCIgdmlld0JveD0iMCAwIDQ0OC44IDQ0OC44IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NDguOCA0NDguODsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQoJPg0KPGc+DQoJPGcgaWQ9ImNoZWNrIj4NCgkJPHBvbHlnb24gcG9pbnRzPSIxNDIuOCwzMjMuODUgMzUuNywyMTYuNzUgMCwyNTIuNDUgMTQyLjgsMzk1LjI1IDQ0OC44LDg5LjI1IDQxMy4xLDUzLjU1IAkJIi8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=",
+		"file-word": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzY1LjMgOTMuMzhsLTc0LjYzLTc0LjY0QzI3OC42IDYuNzQyIDI2Mi4zIDAgMjQ1LjQgMEg2NEMyOC42NSAwIDAgMjguNjUgMCA2NGwuMDA2NSAzODRjMCAzNS4zNCAyOC42NSA2NCA2NCA2NEgzMjBjMzUuMiAwIDY0LTI4LjggNjQtNjRWMTM4LjZDMzg0IDEyMS43IDM3Ny4zIDEwNS40IDM2NS4zIDkzLjM4ek0zMzYgNDQ4YzAgOC44MzYtNy4xNjQgMTYtMTYgMTZINjQuMDJjLTguODM4IDAtMTYtNy4xNjQtMTYtMTZMNDggNjQuMTNjMC04LjgzNiA3LjE2NC0xNiAxNi0xNmgxNjBMMjI0IDEyOGMwIDE3LjY3IDE0LjMzIDMyIDMyIDMyaDc5LjFWNDQ4ek0yMTQuNiAyNDhDMjExLjMgMjM4LjQgMjAyLjIgMjMyIDE5MiAyMzJzLTE5LjI1IDYuNDA2LTIyLjYyIDE2TDE0NC43IDMxOC4xbC0yNS44OS03Ny42NkMxMTQuNiAyMjcuOCAxMDEgMjIxLjIgODguNDEgMjI1LjJDNzUuODMgMjI5LjQgNjkuMDUgMjQzIDczLjIzIDI1NS42bDQ4IDE0NEMxMjQuNSA0MDkuMyAxMzMuNSA0MTUuOSAxNDMuOCA0MTZjMTAuMTcgMCAxOS40NS02LjQwNiAyMi44My0xNkwxOTIgMzI4LjFMMjE3LjQgNDAwQzIyMC44IDQwOS42IDIyOS44IDQxNiAyNDAgNDE2YzEwLjI3LS4wOTM4IDE5LjUzLTYuNjg4IDIyLjc3LTE2LjQxbDQ4LTE0NGM0LjE4OC0xMi41OS0yLjU5NC0yNi4xNi0xNS4xNy0zMC4zOGMtMTIuNjEtNC4xMjUtMjYuMiAyLjU5NC0zMC4zNiAxNS4xOWwtMjUuODkgNzcuNjZMMjE0LjYgMjQ4eiIvPjwvc3ZnPg==",
+		"file-excel": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzY1LjMgOTMuMzhsLTc0LjYzLTc0LjY0QzI3OC42IDYuNzQyIDI2Mi4zIDAgMjQ1LjQgMEg2NEMyOC42NSAwIDAgMjguNjUgMCA2NGwuMDA2NSAzODRjMCAzNS4zNCAyOC42NSA2NCA2NCA2NEgzMjBjMzUuMiAwIDY0LTI4LjggNjQtNjRWMTM4LjZDMzg0IDEyMS43IDM3Ny4zIDEwNS40IDM2NS4zIDkzLjM4ek0zMzYgNDQ4YzAgOC44MzYtNy4xNjQgMTYtMTYgMTZINjQuMDJjLTguODM4IDAtMTYtNy4xNjQtMTYtMTZMNDggNjQuMTNjMC04LjgzNiA3LjE2NC0xNiAxNi0xNmgxNjBMMjI0IDEyOGMwIDE3LjY3IDE0LjMzIDMyIDMyIDMyaDc5LjFWNDQ4ek0yMjkuMSAyMzMuM0wxOTIgMjgwLjlMMTU0LjkgMjMzLjNDMTQ2LjggMjIyLjggMTMxLjggMjIwLjkgMTIxLjMgMjI5LjFDMTEwLjggMjM3LjIgMTA4LjkgMjUyLjMgMTE3LjEgMjYyLjhMMTYxLjYgMzIwbC00NC41MyA1Ny4yNWMtOC4xNTYgMTAuNDctNi4yNSAyNS41NiA0LjE4OCAzMy42OUMxMjUuNyA0MTQuMyAxMzAuOCA0MTYgMTM1LjEgNDE2YzcuMTU2IDAgMTQuMjUtMy4xODggMTguOTctOS4yNUwxOTIgMzU5LjFsMzcuMDYgNDcuNjVDMjMzLjggNDEyLjggMjQwLjkgNDE2IDI0OCA0MTZjNS4xMjUgMCAxMC4zMS0xLjY1NiAxNC43Mi01LjA2MmMxMC40NC04LjEyNSAxMi4zNC0yMy4yMiA0LjE4OC0zMy42OUwyMjIuNCAzMjBsNDQuNTMtNTcuMjVjOC4xNTYtMTAuNDcgNi4yNS0yNS41Ni00LjE4OC0zMy42OUMyNTIuMiAyMjAuOSAyMzcuMiAyMjIuOCAyMjkuMSAyMzMuM3oiLz48L3N2Zz4=",
+		"file-pdf": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzIwIDQ2NEMzMjguOCA0NjQgMzM2IDQ1Ni44IDMzNiA0NDhWNDE2SDM4NFY0NDhDMzg0IDQ4My4zIDM1NS4zIDUxMiAzMjAgNTEySDY0QzI4LjY1IDUxMiAwIDQ4My4zIDAgNDQ4VjQxNkg0OFY0NDhDNDggNDU2LjggNTUuMTYgNDY0IDY0IDQ2NEgzMjB6TTI1NiAxNjBDMjM4LjMgMTYwIDIyNCAxNDUuNyAyMjQgMTI4VjQ4SDY0QzU1LjE2IDQ4IDQ4IDU1LjE2IDQ4IDY0VjE5MkgwVjY0QzAgMjguNjUgMjguNjUgMCA2NCAwSDIyOS41QzI0Ni41IDAgMjYyLjcgNi43NDMgMjc0LjcgMTguNzVMMzY1LjMgMTA5LjNDMzc3LjMgMTIxLjMgMzg0IDEzNy41IDM4NCAxNTQuNVYxOTJIMzM2VjE2MEgyNTZ6TTg4IDIyNEMxMTguOSAyMjQgMTQ0IDI0OS4xIDE0NCAyODBDMTQ0IDMxMC45IDExOC45IDMzNiA4OCAzMzZIODBWMzY4QzgwIDM3Ni44IDcyLjg0IDM4NCA2NCAzODRDNTUuMTYgMzg0IDQ4IDM3Ni44IDQ4IDM2OFYyNDBDNDggMjMxLjIgNTUuMTYgMjI0IDY0IDIyNEg4OHpNMTEyIDI4MEMxMTIgMjY2LjcgMTAxLjMgMjU2IDg4IDI1Nkg4MFYzMDRIODhDMTAxLjMgMzA0IDExMiAyOTMuMyAxMTIgMjgwek0xNjAgMjQwQzE2MCAyMzEuMiAxNjcuMiAyMjQgMTc2IDIyNEgyMDBDMjI2LjUgMjI0IDI0OCAyNDUuNSAyNDggMjcyVjMzNkMyNDggMzYyLjUgMjI2LjUgMzg0IDIwMCAzODRIMTc2QzE2Ny4yIDM4NCAxNjAgMzc2LjggMTYwIDM2OFYyNDB6TTE5MiAzNTJIMjAwQzIwOC44IDM1MiAyMTYgMzQ0LjggMjE2IDMzNlYyNzJDMjE2IDI2My4yIDIwOC44IDI1NiAyMDAgMjU2SDE5MlYzNTJ6TTMzNiAyMjRDMzQ0LjggMjI0IDM1MiAyMzEuMiAzNTIgMjQwQzM1MiAyNDguOCAzNDQuOCAyNTYgMzM2IDI1NkgzMDRWMjg4SDMzNkMzNDQuOCAyODggMzUyIDI5NS4yIDM1MiAzMDRDMzUyIDMxMi44IDM0NC44IDMyMCAzMzYgMzIwSDMwNFYzNjhDMzA0IDM3Ni44IDI5Ni44IDM4NCAyODggMzg0QzI3OS4yIDM4NCAyNzIgMzc2LjggMjcyIDM2OFYyNDBDMjcyIDIzMS4yIDI3OS4yIDIyNCAyODggMjI0SDMzNnoiLz48L3N2Zz4=",
+		"file-zip": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzY1LjMgOTMuMzhsLTc0LjYzLTc0LjY0QzI3OC42IDYuNzQyIDI2Mi4zIDAgMjQ1LjQgMEw2NC0uMDAwMWMtMzUuMzUgMC02NCAyOC42NS02NCA2NGwuMDA2NSAzODRjMCAzNS4zNCAyOC42NSA2NCA2NCA2NEgzMjBjMzUuMiAwIDY0LTI4LjggNjQtNjRWMTM4LjZDMzg0IDEyMS43IDM3Ny4zIDEwNS40IDM2NS4zIDkzLjM4ek0zMzYgNDQ4YzAgOC44MzYtNy4xNjQgMTYtMTYgMTZINjQuMDJjLTguODM4IDAtMTYtNy4xNjQtMTYtMTZMNDggNjQuMTNjMC04LjgzNiA3LjE2NC0xNiAxNi0xNmg0OFY2NGg2NFY0OC4xM2g0OC4wMUwyMjQgMTI4YzAgMTcuNjcgMTQuMzMgMzIgMzIgMzJoNzkuMVY0NDh6TTE3NiA5NmgtNjR2MzJoNjRWOTZ6TTE3NiAxNjBoLTY0djMyaDY0VjE2MHpNMTc2IDIyNGgtNjRsLTMwLjU2IDExNi41QzczLjUxIDM3OS41IDEwMy43IDQxNiAxNDQuMyA0MTZjNDAuMjYgMCA3MC40NS0zNi4zIDYyLjY4LTc1LjE1TDE3NiAyMjR6TTE2MCAzNjhIMTI4Yy04LjgzNiAwLTE2LTcuMTY0LTE2LTE2czcuMTY0LTE2IDE2LTE2aDMyYzguODM2IDAgMTYgNy4xNjQgMTYgMTZTMTY4LjggMzY4IDE2MCAzNjh6Ii8+PC9zdmc+",
+		"file-powerpoint": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzIwIDQ2NEMzMjguOCA0NjQgMzM2IDQ1Ni44IDMzNiA0NDhWNDE2SDM4NFY0NDhDMzg0IDQ4My4zIDM1NS4zIDUxMiAzMjAgNTEySDY0QzI4LjY1IDUxMiAwIDQ4My4zIDAgNDQ4VjQxNkg0OFY0NDhDNDggNDU2LjggNTUuMTYgNDY0IDY0IDQ2NEgzMjB6TTI1NiAxNjBDMjM4LjMgMTYwIDIyNCAxNDUuNyAyMjQgMTI4VjQ4SDY0QzU1LjE2IDQ4IDQ4IDU1LjE2IDQ4IDY0VjE5MkgwVjY0QzAgMjguNjUgMjguNjUgMCA2NCAwSDIyOS41QzI0Ni41IDAgMjYyLjcgNi43NDMgMjc0LjcgMTguNzVMMzY1LjMgMTA5LjNDMzc3LjMgMTIxLjMgMzg0IDEzNy41IDM4NCAxNTQuNVYxOTJIMzM2VjE2MEgyNTZ6TTg4IDIyNEMxMTguOSAyMjQgMTQ0IDI0OS4xIDE0NCAyODBDMTQ0IDMxMC45IDExOC45IDMzNiA4OCAzMzZIODBWMzY4QzgwIDM3Ni44IDcyLjg0IDM4NCA2NCAzODRDNTUuMTYgMzg0IDQ4IDM3Ni44IDQ4IDM2OFYyNDBDNDggMjMxLjIgNTUuMTYgMjI0IDY0IDIyNEg4OHpNMTEyIDI4MEMxMTIgMjY2LjcgMTAxLjMgMjU2IDg4IDI1Nkg4MFYzMDRIODhDMTAxLjMgMzA0IDExMiAyOTMuMyAxMTIgMjgwek0xNjAgMjQwQzE2MCAyMzEuMiAxNjcuMiAyMjQgMTc2IDIyNEgyMDBDMjI2LjUgMjI0IDI0OCAyNDUuNSAyNDggMjcyVjMzNkMyNDggMzYyLjUgMjI2LjUgMzg0IDIwMCAzODRIMTc2QzE2Ny4yIDM4NCAxNjAgMzc2LjggMTYwIDM2OFYyNDB6TTE5MiAzNTJIMjAwQzIwOC44IDM1MiAyMTYgMzQ0LjggMjE2IDMzNlYyNzJDMjE2IDI2My4yIDIwOC44IDI1NiAyMDAgMjU2SDE5MlYzNTJ6TTMzNiAyMjRDMzQ0LjggMjI0IDM1MiAyMzEuMiAzNTIgMjQwQzM1MiAyNDguOCAzNDQuOCAyNTYgMzM2IDI1NkgzMDRWMjg4SDMzNkMzNDQuOCAyODggMzUyIDI5NS4yIDM1MiAzMDRDMzUyIDMxMi44IDM0NC44IDMyMCAzMzYgMzIwSDMwNFYzNjhDMzA0IDM3Ni44IDI5Ni44IDM4NCAyODggMzg0QzI3OS4yIDM4NCAyNzIgMzc2LjggMjcyIDM2OFYyNDBDMjcyIDIzMS4yIDI3OS4yIDIyNCAyODggMjI0SDMzNnoiLz48L3N2Zz4="
 	},
 	"colors": {
 		"activeBorder": "#3096D0",
@@ -309,7 +314,7 @@
 								"margin": 5
 							},
 							"styles": {
-								"backgroundPosition": [ "center", "center" ]
+								"backgroundPosition": ["center", "center"]
 							}
 						}
 					}
@@ -360,7 +365,7 @@
 					"states": {
 						"default": {
 							"properties": {
-								"padding": [ 30, 20, 30, 20 ]
+								"padding": [30, 20, 30, 20]
 							}
 						}
 					}
@@ -370,7 +375,7 @@
 						"default": {
 							"properties": {
 								"icon": "icon-close",
-								"margin": [ 5, 5, 0, 0 ],
+								"margin": [5, 5, 0, 0],
 								"alignY": "top",
 								"cursor": "pointer"
 							}
@@ -670,7 +675,8 @@
 							"properties": {
 								"show": "both",
 								"icon": "blank",
-								"padding": 5
+								"padding": 5,
+								"cursor": "pointer"
 							}
 						}
 					},
@@ -897,7 +903,7 @@
 								"width": 0
 							},
 							"properties": {
-								"margin": [ 0, 3, 0, 6 ],
+								"margin": [0, 3, 0, 6],
 								"alignY": "middle"
 							}
 						},
@@ -917,7 +923,7 @@
 						},
 						"simple": {
 							"styles": {
-								"width": [ 1, 0, 0, 0 ]
+								"width": [1, 0, 0, 0]
 							}
 						}
 					},
@@ -935,19 +941,19 @@
 					"states": {
 						"default": {
 							"styles": {
-								"width": [ 0, 1, 1, 1 ],
+								"width": [0, 1, 1, 1],
 								"color": "focusFrame"
 							},
 							"properties": {
-								"offset": [ -1, 0, 0, 0 ]
+								"offset": [-1, 0, 0, 0]
 							}
 						},
 						"placementAbove": {
 							"styles": {
-								"width": [ 1, 1, 0, 1 ]
+								"width": [1, 1, 0, 1]
 							},
 							"properties": {
-								"offset": [ 1, 0, 0, 0 ]
+								"offset": [1, 0, 0, 0]
 							}
 						}
 					}
@@ -1119,6 +1125,9 @@
 				}
 			},
 			"components": {
+				"pane": {
+					"inherit": "scrollarea"
+				},
 				"header": {
 					"states": {
 						"default": {
@@ -1313,14 +1322,16 @@
 						"default": {
 							"styles": {
 								"width": 1,
-								"color": "transparent"
+								"color": "transparent",
+								"css": "{\"display\":\"flex\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}"
 							},
 							"properties": {
 								"padding": 4,
 								"backgroundColor": "",
 								"textColor": "",
 								"opacity": 1,
-								"textAlign": "center"
+								"textAlign": "center",
+								"cursor": "pointer"
 							}
 						},
 						"today": {
@@ -1346,7 +1357,7 @@
 						},
 						"bolded": {
 							"styles": {
-								"css": "{\"font-weight\":\"900 !important\", \"overflow\":\"visible !important\"}"
+								"css": "{\"font-weight\":\"900 !important\", \"overflow\":\"visible !important\",\"display\":\"flex\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}"
 							}
 						}
 					},
@@ -1356,10 +1367,11 @@
 					"states": {
 						"default": {
 							"styles": {
-								"backgroundColor": "controlLight"
+								"backgroundColor": "controlLight",
+								"css": "{\"display\":\"flex\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}"
 							},
 							"properties": {
-								"padding": [ 6, 4, 4, 4 ],
+								"padding": 4,
 								"marginRight": 4
 							}
 						}
@@ -1371,7 +1383,8 @@
 						"default": {
 							"styles": {
 								"backgroundColor": "white",
-								"width": 1
+								"width": 1,
+								"css": "{\"display\":\"flex\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}"
 							},
 							"properties": {
 								"padding": 4,
@@ -1482,7 +1495,7 @@
 										"width": 1
 									},
 									"properties": {
-										"padding": [ 4, 6, 4, 6 ],
+										"padding": [4, 6, 4, 6],
 										"textColor": "inherit",
 										"backgroundColor": "inherit"
 									}
@@ -1512,7 +1525,7 @@
 										"width": 1
 									},
 									"properties": {
-										"padding": [ 4, 6, 4, 6 ],
+										"padding": [4, 6, 4, 6],
 										"textColor": "inherit",
 										"backgroundColor": "inherit"
 									}
@@ -1558,7 +1571,7 @@
 							},
 							"rightToLeft": {
 								"styles": {
-									"width": [ 0, 1, 0, 0 ]
+									"width": [0, 1, 0, 0]
 								}
 							}
 						},
@@ -1620,7 +1633,7 @@
 					"states": {
 						"default": {
 							"styles": {
-								"width": [ 0, 1, 1, 1 ],
+								"width": [0, 1, 1, 1],
 								"color": "focusFrame"
 							}
 						}
@@ -1640,7 +1653,7 @@
 						"default": {
 							"properties": {
 								"source": "checkbox",
-								"margin": [ -5, 0, -5, 0 ]
+								"margin": [-5, 0, -5, 0]
 							}
 						},
 						"checked": {
@@ -1657,7 +1670,7 @@
 							"properties": {
 								"icon": "spinner-up",
 								"center": true,
-								"margin": [ -8, 0, -12, 0 ]
+								"margin": [-8, 0, -12, 0]
 							}
 						},
 						"hovered": {
@@ -1682,7 +1695,7 @@
 							"properties": {
 								"icon": "spinner-down",
 								"center": true,
-								"margin": [ -12, 0, -8, 0 ]
+								"margin": [-12, 0, -8, 0]
 							}
 						},
 						"hovered": {
@@ -1743,10 +1756,10 @@
 					"states": {
 						"default": {
 							"styles": {
-								"backgroundColor": "rgba(0,0,0,.7)"
+								"backgroundColor": "activeCaption"
 							},
 							"properties": {
-								"width": 58,
+								"width": 48,
 								"height": 48
 							}
 						}
@@ -1779,22 +1792,12 @@
 				"default": {
 					"styles": {
 						"width": 1,
-						"color": "rgba(189,191,191,0.5)"
+						"color": "transparent"
 					},
 					"properties": {
+						"margin": 4,
+						"padding": [2, 3, 2, 3],
 						"textColor": "white"
-					}
-				},
-				"vertical": {
-					"properties": {
-						"margin": [ 0, 0, 2, 0 ],
-						"padding": [ 10, 0, 10, 0 ]
-					}
-				},
-				"horizontal": {
-					"properties": {
-						"margin": [ 0, 2, 0, 0 ],
-						"padding": [ 0, 10, 0, 10 ]
 					}
 				},
 				"notification": {
@@ -1804,8 +1807,8 @@
 				},
 				"hovered": {
 					"styles": {
-						"gradientStart": [ "rgba(255,255,255,0.29)", "80" ],
-						"gradientEnd": [ "rgba(255,255,255,0.16)", "100" ]
+						"color": "rgba(189,191,191,0.5)",
+						"backgroundColor": "rgba(255,255,255,0.29)"
 					},
 					"properties": {
 						"cursor": "pointer"
@@ -1818,8 +1821,8 @@
 					"states": {
 						"default": {
 							"properties": {
-								"width": 36,
-								"height": 36,
+								"width": 32,
+								"height": 32,
 								"scale": true
 							}
 						}
@@ -1833,14 +1836,14 @@
 					"states": {
 						"default": {
 							"properties": {
-								"margin": [ 8, 5, 2, 8 ],
-								"textColor": "white"
+								"margin": 5,
+								"textColor": "windowText"
 							}
 						}
 					},
 					"components": {
 						"icon": {
-							"inherit": "icon-light"
+							"inherit": "icon-dark"
 						}
 					}
 				},
@@ -1849,20 +1852,20 @@
 						"default": {
 							"properties": {
 								"icon": "window-close",
-								"margin": [ 8, 8, 0, 8 ],
-								"opacity": 0.7,
-								"cursor": "pointer"
+								"margin": [8, 8, 0, 8],
+								"opacity": 0.7
 							}
 						},
 						"hovered": {
 							"properties": {
-								"opacity": 1
+								"opacity": 1,
+								"cursor": "pointer"
 							}
 						}
 					},
 					"components": {
 						"icon": {
-							"inherit": "icon-light"
+							"inherit": "icon-dark"
 						}
 					}
 				},
@@ -1880,8 +1883,8 @@
 				"default": {
 					"styles": {
 						"width": 12,
-						"color": "transparent",
-						"backgroundColor": "rgba(96,96,97,0.8)",
+						"color": "rgba(96,96,96,0.8)",
+						"backgroundColor": "rgba(214,214,214,0.8)",
 						"transition": "all 200ms"
 					},
 					"properties": {
@@ -1894,7 +1897,7 @@
 				"hovered": {
 					"styles": {
 						"color": "activeCaption",
-						"backgroundColor": "hotTrack"
+						"backgroundColor": "rgba(184,184,184,0.8)"
 					}
 				}
 			}
@@ -1906,7 +1909,7 @@
 					"properties": {
 						"source": "cursor-nodrop",
 						"position": "right-top",
-						"offset": [ 16, 0, 0, 14 ]
+						"offset": [16, 0, 0, 14]
 					}
 				},
 				"copy": {
@@ -1946,8 +1949,8 @@
 						"default": {
 							"properties": {
 								"icon": "checkbox",
-								"margin": [ 0, 0, 0, 10 ],
-								"padding": [ 0, 5, 0, 5 ]
+								"margin": [0, 0, 0, 10],
+								"padding": [0, 5, 0, 5]
 							}
 						},
 						"checked": {
@@ -1966,7 +1969,7 @@
 					"states": {
 						"default": {
 							"styles": {
-								"width": [ 1, 0, 0, 0 ],
+								"width": [1, 0, 0, 0],
 								"color": "windowFrame"
 							}
 						}
@@ -1983,7 +1986,7 @@
 								"backgroundColor": "window",
 								"center": true,
 								"height": 25,
-								"margin": [ -4, 10, 0, 0 ]
+								"margin": [-4, 10, 0, 0]
 							}
 						},
 						"collapsed": {
@@ -2107,19 +2110,19 @@
 				},
 				"borderDashed": {
 					"styles": {
-						"width": [ 0, 0, 1, 0 ],
+						"width": [0, 0, 1, 0],
 						"style": "dashed"
 					}
 				},
 				"borderDotted": {
 					"styles": {
-						"width": [ 0, 0, 1, 0 ],
+						"width": [0, 0, 1, 0],
 						"style": "dotted"
 					}
 				},
 				"borderDouble": {
 					"styles": {
-						"width": [ 0, 0, 3, 0 ],
+						"width": [0, 0, 3, 0],
 						"style": "double"
 					}
 				}
@@ -2141,25 +2144,19 @@
 			}
 		},
 		"label-wrapper": {
-			"states": {
-				"default": {
-					"properties": {
-						"opacity": 1
-					}
-				},
-				"disabled": {
-					"properties": {
-						"opacity": 0.5
-					}
-				}
-			},
 			"components": {
 				"label": {
 					"states": {
 						"default": {
 							"properties": {
+								"opacity": 1,
 								"marginLeft": 0,
-								"padding": [ 0, 5, 0, 0 ]
+								"padding": [0, 5, 0, 0]
+							}
+						},
+						"disabled": {
+							"properties": {
+								"opacity": 0.5
 							}
 						},
 						"inside": {
@@ -2169,13 +2166,13 @@
 							},
 							"properties": {
 								"textAlign": "middleLeft",
-								"padding": [ 0, 0, 0, 6 ]
+								"padding": [0, 0, 0, 6]
 							}
 						},
 						"inside-multiline": {
 							"properties": {
 								"textAlign": "topLeft",
-								"padding": [ 2, 0, 0, 6 ]
+								"padding": [2, 0, 0, 6]
 							}
 						},
 						"inside-focused": {
@@ -2184,7 +2181,7 @@
 							},
 							"properties": {
 								"textAlign": "topLeft",
-								"padding": [ 2, 0, 0, 6 ]
+								"padding": [2, 0, 0, 6]
 							}
 						},
 						"inside-full": {
@@ -2193,7 +2190,7 @@
 							},
 							"properties": {
 								"textAlign": "topLeft",
-								"padding": [ 2, 0, 0, 6 ]
+								"padding": [2, 0, 0, 6]
 							}
 						},
 						"rightToLeft": {
@@ -2203,22 +2200,22 @@
 						},
 						"top": {
 							"properties": {
-								"padding": [ 0, 0, 5, 0 ]
+								"padding": [0, 0, 5, 0]
 							}
 						},
 						"bottom": {
 							"properties": {
-								"padding": [ 5, 0, 0, 0 ]
+								"padding": [5, 0, 0, 0]
 							}
 						},
 						"left": {
 							"properties": {
-								"padding": [ 0, 5, 0, 0 ]
+								"padding": [0, 5, 0, 0]
 							}
 						},
 						"right": {
 							"properties": {
-								"padding": [ 0, 0, 0, 5 ]
+								"padding": [0, 0, 0, 5]
 							}
 						}
 					}
@@ -2326,7 +2323,7 @@
 					},
 					"properties": {
 						"opacity": 1,
-						"padding": [ 3, 2, 3, 6 ],
+						"padding": [3, 2, 3, 6],
 						"textColor": "inherit",
 						"backgroundColor": "inherit"
 					}
@@ -2557,12 +2554,12 @@
 							"states": {
 								"default": {
 									"styles": {
-										"backgroundPosition": [ "center", "center" ],
+										"backgroundPosition": ["center", "center"],
 										"backgroundSize": "18px"
 									},
 									"properties": {
 										"width": 18,
-										"margin": [ 0, 2, 0, 2 ]
+										"margin": [0, 2, 0, 2]
 									}
 								}
 							}
@@ -2571,12 +2568,12 @@
 							"states": {
 								"default": {
 									"styles": {
-										"backgroundPosition": [ "center", "center" ],
+										"backgroundPosition": ["center", "center"],
 										"backgroundSize": "18px"
 									},
 									"properties": {
 										"width": 18,
-										"margin": [ 0, 2, 0, 2 ]
+										"margin": [0, 2, 0, 2]
 									}
 								}
 							}
@@ -2586,13 +2583,13 @@
 								"default": {
 									"styles": {
 										"backgroundImage": "checkbox",
-										"backgroundPosition": [ "center", "center" ],
+										"backgroundPosition": ["center", "center"],
 										"backgroundSize": "18px",
 										"fillColor": "iconDark"
 									},
 									"properties": {
 										"width": 18,
-										"margin": [ 0, 2, 0, 2 ]
+										"margin": [0, 2, 0, 2]
 									}
 								},
 								"checked": {
@@ -2814,7 +2811,7 @@
 							"states": {
 								"default": {
 									"properties": {
-										"padding": [ 0, 14, 0, 14 ]
+										"padding": [0, 14, 0, 14]
 									}
 								}
 							},
@@ -2826,12 +2823,12 @@
 					"states": {
 						"default": {
 							"styles": {
-								"backgroundColor": "controlDark"
+								"widthBottom": 1,
+								"colorBottom": "controlDark"
 							},
 							"properties": {
-								"width": 1,
 								"height": 1,
-								"margin": [ 6, 0, 6, 40 ]
+								"margin": [6, 2, 6, 2]
 							}
 						}
 					}
@@ -2883,7 +2880,7 @@
 					"states": {
 						"default": {
 							"properties": {
-								"padding": [ 0, 12, 0, 12 ],
+								"padding": [0, 12, 0, 12],
 								"textColor": "",
 								"opacity": 1
 							},
@@ -2950,6 +2947,20 @@
 							"inherit": "icon-dark"
 						}
 					}
+				},
+				"separator": {
+					"states": {
+						"default": {
+							"styles": {
+								"widthLeft": 1,
+								"colorLeft": "controlDark"
+							},
+							"properties": {
+								"width": 1,
+								"margin": [2, 6, 2, 6]
+							}
+						}
+					}
 				}
 			}
 		},
@@ -2977,12 +2988,12 @@
 					"states": {
 						"default": {
 							"properties": {
-								"margin": [ 10, 0, 0, 20 ],
+								"margin": [10, 0, 0, 20],
 								"width": 58,
 								"height": 58
 							},
 							"styles": {
-								"backgroundPosition": [ "center", "center" ],
+								"backgroundPosition": ["center", "center"],
 								"backgroundRepeat": "no-repeat"
 							}
 						},
@@ -3023,7 +3034,7 @@
 					"states": {
 						"default": {
 							"properties": {
-								"margin": [ 25, 40, 20, 20 ]
+								"margin": [25, 40, 20, 20]
 							}
 						}
 					}
@@ -3255,14 +3266,14 @@
 								"opacity": 0.5,
 								"alignX": "center",
 								"alignY": "middle",
-								"margin": [ 0, 10, 0, 10 ],
+								"margin": [0, 10, 0, 10],
 								"width": 24,
 								"height": 24
 							}
 						},
 						"vertical": {
 							"properties": {
-								"margin": [ 10, 0, 10, 0 ]
+								"margin": [10, 0, 10, 0]
 							}
 						},
 						"collapsed": {
@@ -3296,17 +3307,17 @@
 						},
 						"horizontal": {
 							"properties": {
-								"margin": [ 0, 10, 0, 10 ]
+								"margin": [0, 10, 0, 10]
 							}
 						},
 						"barLeft": {
 							"properties": {
-								"margin": [ 10, 0, 20, 0 ]
+								"margin": [10, 0, 20, 0]
 							}
 						},
 						"barRight": {
 							"properties": {
-								"margin": [ 10, 0, 10, 0 ]
+								"margin": [10, 0, 10, 0]
 							}
 						}
 					}
@@ -3322,12 +3333,12 @@
 						},
 						"vertical": {
 							"properties": {
-								"margin": [ 0, 0, 8, 0 ]
+								"margin": [0, 0, 8, 0]
 							}
 						},
 						"horizontal": {
 							"properties": {
-								"margin": [ 0, 0, 0, 8 ]
+								"margin": [0, 0, 0, 8]
 							}
 						}
 					}
@@ -3543,7 +3554,7 @@
 									"styles": {
 										"backgroundSize": "16px",
 										"backgroundOrigin": "content-box",
-										"backgroundPosition": [ "center", "right" ],
+										"backgroundPosition": ["center", "right"],
 										"fillColor": "windowText"
 									},
 									"properties": {
@@ -3593,7 +3604,7 @@
 									"styles": {
 										"backgroundSize": "16px",
 										"backgroundOrigin": "content-box",
-										"backgroundPosition": [ "center", "right" ],
+										"backgroundPosition": ["center", "right"],
 										"fillColor": "activeCaptionText"
 									},
 									"properties": {
@@ -4016,7 +4027,7 @@
 							},
 							"styles": {
 								"backgroundImage": "slider-bubble-horizontal",
-								"backgroundPosition": [ "bottom", "center" ]
+								"backgroundPosition": ["bottom", "center"]
 							}
 						},
 						"vertical": {
@@ -4027,7 +4038,7 @@
 							},
 							"styles": {
 								"backgroundImage": "slider-bubble-vertical",
-								"backgroundPosition": [ "center", "left" ]
+								"backgroundPosition": ["center", "left"]
 							}
 						}
 					}
@@ -4168,7 +4179,7 @@
 					"states": {
 						"default": {
 							"properties": {
-								"margin": [ 0, 3, 0, 6 ],
+								"margin": [0, 3, 0, 6],
 								"alignY": "middle"
 							}
 						},
@@ -4192,7 +4203,7 @@
 					"properties": {
 						"textColor": "buttonText",
 						"height": 26,
-						"padding": [ 5, 0, 5, 0 ]
+						"padding": [5, 0, 5, 0]
 					}
 				},
 				"hovered": {
@@ -4210,7 +4221,7 @@
 				},
 				"vertical": {
 					"properties": {
-						"padding": [ 0, 5, 0, 5 ]
+						"padding": [0, 5, 0, 5]
 					}
 				}
 			},
@@ -4222,11 +4233,11 @@
 							"styles": {
 								"radius": 0,
 								"width": 0,
-								"innerWidth": [ 0, 1, 0, 0 ],
+								"innerWidth": [0, 1, 0, 0],
 								"innerColor": "buttonBorder",
 								"backgroundColor": "inherit",
 								"shadowBlurRadius": 0,
-								"shadowLength": [ 0, 0 ]
+								"shadowLength": [0, 0]
 							},
 							"properties": {
 								"textColor": "inherit"
@@ -4236,7 +4247,7 @@
 						},
 						"vertical": {
 							"styles": {
-								"innerWidth": [ 0, 0, 1, 0 ]
+								"innerWidth": [0, 0, 1, 0]
 							}
 						},
 						"hovered": {
@@ -4254,7 +4265,7 @@
 								"width": 0,
 								"backgroundColor": "",
 								"shadowBlurRadius": 0,
-								"shadowLength": [ 0, 0 ]
+								"shadowLength": [0, 0]
 							},
 							"properties": {
 								"icon": "menubutton-arrow"
@@ -4297,24 +4308,31 @@
 						"default": {
 							"properties": {
 								"width": 6,
-								"height": 6
+								"height": 6,
+								"cursor": "default"
 							},
 							"styles": {
 								"fillColor": "Gray",
 								"backgroundColor": "window",
 								"backgroundRepeat": "no-repeat",
 								"backgroundSize": "20px 20px",
-								"backgroundPosition": [ "center", "center" ]
+								"backgroundPosition": ["center", "center"]
 							}
 						},
 						"horizontal": {
 							"styles": {
 								"backgroundImage": "splitter-grip-vertical"
+							},
+							"properties": {
+								"cursor": "ew-resize"
 							}
 						},
 						"vertical": {
 							"styles": {
 								"backgroundImage": "splitter-grip-horizontal"
+							},
+							"properties": {
+								"cursor": "ns-resize"
 							}
 						},
 						"fixed": {
@@ -4357,7 +4375,7 @@
 					"states": {
 						"default": {
 							"properties": {
-								"padding": [ 0, 10, 0, 10 ]
+								"padding": [0, 10, 0, 10]
 							}
 						}
 					}
@@ -4366,12 +4384,18 @@
 					"states": {
 						"default": {
 							"styles": {
-								"widthRight": 0,
+								"widthRight": 1,
 								"styleRight": "solid",
 								"color": "windowFrame"
 							},
 							"properties": {
-								"padding": [ 0, 10, 0, 10 ]
+								"margin": [0, 4, 0, 4],
+								"padding": [0, 6, 0, 6]
+							}
+						},
+						"control": {
+							"properties": {
+								"padding": 0
 							}
 						},
 						"borderNone": {
@@ -4395,18 +4419,6 @@
 							"styles": {
 								"widthRight": 3,
 								"styleRight": "double"
-							}
-						},
-						"borderRaised": {
-							"styles": {
-								"widthRight": 1,
-								"styleRight": "outset"
-							}
-						},
-						"borderSunken": {
-							"styles": {
-								"widthRight": 1,
-								"styleRight": "inset"
 							}
 						}
 					},
@@ -4482,7 +4494,7 @@
 							"properties": {
 								"width": 40,
 								"height": 10,
-								"margin": [ 4, 0, 4, 0 ],
+								"margin": [4, 0, 4, 0],
 								"backgroundColor": "switchOff"
 							}
 						},
@@ -4719,7 +4731,7 @@
 								"backgroundSize": "18px"
 							},
 							"properties": {
-								"padding": [ 0, 2, 0, 2 ]
+								"padding": [0, 2, 0, 2]
 							}
 						}
 					}
@@ -4732,11 +4744,11 @@
 								"backgroundImage": "icon-error",
 								"fillColor": "invalid",
 								"backgroundRepeat": "no-repeat",
-								"backgroundPosition": [ "center", "center" ],
+								"backgroundPosition": ["center", "center"],
 								"backgroundSize": "16px"
 							},
 							"properties": {
-								"padding": [ 0, 8, 0, 8 ]
+								"padding": [0, 8, 0, 8]
 							}
 						}
 					}
@@ -4747,7 +4759,7 @@
 							"styles": {
 								"backgroundSize": "16px",
 								"backgroundOrigin": "content-box",
-								"backgroundPosition": [ "center", "right" ],
+								"backgroundPosition": ["center", "right"],
 								"fillColor": "windowText"
 							},
 							"properties": {
@@ -4786,7 +4798,7 @@
 								"fillColor": "iconDark",
 								"backgroundSize": "18px",
 								"backgroundImage": "checkbox",
-								"backgroundPosition": [ "center", "center" ]
+								"backgroundPosition": ["center", "center"]
 							},
 							"properties": {
 								"width": 20,
@@ -4817,7 +4829,7 @@
 			"states": {
 				"default": {
 					"styles": {
-						"width": [ 0, 1, 0, 0 ],
+						"width": [0, 1, 0, 0],
 						"color": "windowFrame",
 						"transition": "background-color 250ms",
 						"backgroundSize": "18x",
@@ -4832,7 +4844,7 @@
 				},
 				"rightToLeft": {
 					"styles": {
-						"width": [ 0, 0, 0, 1 ]
+						"width": [0, 0, 0, 1]
 					}
 				},
 				"hovered": {
@@ -4861,12 +4873,12 @@
 				},
 				"borderBoth": {
 					"styles": {
-						"width": [ 0, 1, 0, 0 ]
+						"width": [0, 1, 0, 0]
 					}
 				},
 				"borderVertical": {
 					"styles": {
-						"width": [ 0, 1, 0, 0 ]
+						"width": [0, 1, 0, 0]
 					}
 				},
 				"borderHorizontal": {
@@ -4992,7 +5004,7 @@
 						"colorRight": "windowFrame",
 						"backgroundColor": "buttonFace",
 						"backgroundRepeat": "no-repeat",
-						"backgroundPosition": [ "center", "right" ],
+						"backgroundPosition": ["center", "right"],
 						"backgroundSize": "16px 16px",
 						"fillColor": "windowText"
 					},
@@ -5041,11 +5053,11 @@
 						"default": {
 							"styles": {
 								"backgroundRepeat": "no-repeat",
-								"backgroundPosition": [ "center", "left" ],
+								"backgroundPosition": ["center", "left"],
 								"backgroundSize": "20px"
 							},
 							"properties": {
-								"padding": [ 0, 2, 0, 2 ]
+								"padding": [0, 2, 0, 2]
 							}
 						}
 					}
@@ -5057,11 +5069,11 @@
 								"backgroundImage": "icon-error",
 								"fillColor": "invalid",
 								"backgroundRepeat": "no-repeat",
-								"backgroundPosition": [ "center", "center" ],
+								"backgroundPosition": ["center", "center"],
 								"backgroundSize": "16px"
 							},
 							"properties": {
-								"padding": [ 0, 8, 0, 8 ]
+								"padding": [0, 8, 0, 8]
 							}
 						}
 					}
@@ -5072,7 +5084,7 @@
 							"styles": {
 								"backgroundSize": "16px",
 								"backgroundOrigin": "content-box",
-								"backgroundPosition": [ "center", "right" ],
+								"backgroundPosition": ["center", "right"],
 								"fillColor": "buttonText"
 							},
 							"properties": {
@@ -5118,7 +5130,7 @@
 					"states": {
 						"default": {
 							"styles": {
-								"width": [ 0, 0, 2, 0 ],
+								"width": [0, 0, 2, 0],
 								"color": "windowFrame"
 							},
 							"properties": {
@@ -5133,7 +5145,7 @@
 						},
 						"borderBoth": {
 							"styles": {
-								"width": [ 0, 0, 1, 0 ]
+								"width": [0, 0, 1, 0]
 							}
 						},
 						"borderVertical": {
@@ -5143,7 +5155,7 @@
 						},
 						"borderHorizontal": {
 							"styles": {
-								"width": [ 0, 0, 1, 0 ]
+								"width": [0, 0, 1, 0]
 							}
 						}
 					}
@@ -5469,42 +5481,42 @@
 								},
 								"barTop": {
 									"properties": {
-										"margin": [ 0, 2, 0, 2 ]
+										"margin": [0, 2, 0, 2]
 									}
 								},
 								"barLeft": {
 									"properties": {
-										"margin": [ 2, 0, 2, 0 ]
+										"margin": [2, 0, 2, 0]
 									}
 								},
 								"barRight": {
 									"properties": {
-										"margin": [ 2, 0, 2, 0 ]
+										"margin": [2, 0, 2, 0]
 									}
 								},
 								"barBottom": {
 									"properties": {
-										"margin": [ 0, 2, 0, 2 ]
+										"margin": [0, 2, 0, 2]
 									}
 								},
 								"barTop-checked": {
 									"styles": {
-										"width": [ 0, 0, 2, 0 ]
+										"width": [0, 0, 2, 0]
 									}
 								},
 								"barLeft-checked": {
 									"styles": {
-										"width": [ 0, 2, 0, 0 ]
+										"width": [0, 2, 0, 0]
 									}
 								},
 								"barBottom-checked": {
 									"styles": {
-										"width": [ 2, 0, 0, 0 ]
+										"width": [2, 0, 0, 0]
 									}
 								},
 								"barRight-checked": {
 									"styles": {
-										"width": [ 0, 0, 0, 2 ]
+										"width": [0, 0, 0, 2]
 									}
 								},
 								"move": {
@@ -5530,22 +5542,22 @@
 										},
 										"horizontal": {
 											"properties": {
-												"margin": [ 0, 0, 0, 4 ]
+												"margin": [0, 0, 0, 4]
 											}
 										},
 										"vertical": {
 											"properties": {
-												"margin": [ 0, 0, 4, 0 ]
+												"margin": [0, 0, 4, 0]
 											}
 										},
 										"vertical-barRight": {
 											"properties": {
-												"margin": [ 4, 0, 0, 0 ]
+												"margin": [4, 0, 0, 0]
 											}
 										},
 										"vertical-barBottom": {
 											"properties": {
-												"margin": [ 4, 0, 0, 0 ]
+												"margin": [4, 0, 0, 0]
 											}
 										}
 									}
@@ -5561,22 +5573,22 @@
 										},
 										"horizontal": {
 											"properties": {
-												"margin": [ 0, 0, 0, 4 ]
+												"margin": [0, 0, 0, 4]
 											}
 										},
 										"vertical": {
 											"properties": {
-												"margin": [ 0, 0, 4, 0 ]
+												"margin": [0, 0, 4, 0]
 											}
 										},
 										"vertical-barRight": {
 											"properties": {
-												"margin": [ 4, 0, 0, 0 ]
+												"margin": [4, 0, 0, 0]
 											}
 										},
 										"vertical-barBottom": {
 											"properties": {
-												"margin": [ 4, 0, 0, 0 ]
+												"margin": [4, 0, 0, 0]
 											}
 										}
 									}
@@ -5588,14 +5600,14 @@
 										},
 										"horizontal": {
 											"properties": {
-												"margin": [ 0, 10, 0, 10 ],
+												"margin": [0, 10, 0, 10],
 												"alignX": "left",
 												"alignY": "middle"
 											}
 										},
 										"vertical": {
 											"properties": {
-												"margin": [ 10, 0, 10, 0 ],
+												"margin": [10, 0, 10, 0],
 												"alignX": "center",
 												"alignY": "bottom"
 											}
@@ -5685,8 +5697,9 @@
 			"states": {
 				"default": {
 					"properties": {
-						"duplicateDuration": 300,
-						"height": 28
+						"height": 22,
+						"padding": [0, 2, 0, 0],
+						"duplicateDuration": 300
 					}
 				}
 			},
@@ -5695,7 +5708,6 @@
 					"states": {
 						"default": {
 							"styles": {
-								"width": 1,
 								"radius": 0,
 								"color": "transparent",
 								"backgroundColor": "controlLight"
@@ -5703,7 +5715,7 @@
 							"properties": {
 								"icon": "icon-close",
 								"cursor": "pointer",
-								"padding": [ 1, 2, 1, 4 ],
+								"padding": [ 1, 4, 1, 4 ],
 								"textColor": "inherit"
 							}
 						},
@@ -5745,16 +5757,19 @@
 						}
 					}
 				},
-				"tag-container": {
+				"container": {
 					"states": {
 						"default": {
 							"properties": {
-								"margin": [ 2, 4, 2, 0 ],
-								"spacingX": 2,
-								"spacingY": 2
+								"margin": [ 0, 4, 0, 1 ],
+								"spacingX": 3,
+								"spacingY": 3
 							}
 						}
 					}
+				},
+				"slider": {
+					"inherit": "slidebar"
 				}
 			}
 		},
@@ -5767,7 +5782,7 @@
 					},
 					"properties": {
 						"height": 22,
-						"padding": [ 0, 2, 0, 4 ],
+						"padding": [0, 2, 0, 4],
 						"backgroundColor": "window",
 						"opacity": 1,
 						"textColor": "windowText"
@@ -5787,7 +5802,7 @@
 				},
 				"multiline": {
 					"properties": {
-						"padding": [ 2, 4, 2, 4 ]
+						"padding": [2, 4, 2, 4]
 					}
 				},
 				"celleditor": {
@@ -5795,7 +5810,7 @@
 						"width": 0
 					},
 					"properties": {
-						"padding": [ 0, 2, 0, 2 ]
+						"padding": [0, 2, 0, 2]
 					}
 				},
 				"invalid": {
@@ -5860,7 +5875,7 @@
 					"properties": {
 						"font": "default",
 						"gap": 4,
-						"padding": [ 10, 20, 10, 20 ],
+						"padding": [10, 20, 10, 20],
 						"textColor": "highlightText",
 						"margin": 10
 					}
@@ -5926,6 +5941,11 @@
 								"width": 1,
 								"color": "transparent",
 								"backgroundColor": "transparent"
+							}
+						},
+						"control": {
+							"properties": {
+								"padding": 0
 							}
 						},
 						"hovered": {
@@ -5995,7 +6015,7 @@
 							"properties": {
 								"cursor": "pointer",
 								"textColor": "inherit",
-								"padding": [ 5, 0, 5, 5 ],
+								"padding": [5, 0, 5, 5],
 								"opacity": 1
 							}
 						},
@@ -6069,7 +6089,7 @@
 								"default": {
 									"styles": {
 										"backgroundColor": "transparent",
-										"width": [ 0, 0, 0, 1 ],
+										"width": [0, 0, 0, 1],
 										"color": "windowFrame"
 									},
 									"properties": {
@@ -6122,11 +6142,11 @@
 					"states": {
 						"default": {
 							"styles": {
-								"width": [ 0, 0, 0, 1 ],
+								"width": [0, 0, 0, 1],
 								"color": "windowFrame"
 							},
 							"properties": {
-								"margin": [ 1, 8, 1, 8 ]
+								"margin": [1, 8, 1, 8]
 							}
 						}
 					}
@@ -6178,12 +6198,12 @@
 						},
 						"horizontal": {
 							"properties": {
-								"margin": [ 2, 4, 2, 4 ]
+								"margin": [2, 4, 2, 4]
 							}
 						},
 						"vertical": {
 							"properties": {
-								"margin": [ 4, 2, 4, 2 ]
+								"margin": [4, 2, 4, 2]
 							}
 						},
 						"pressed": {
@@ -6193,7 +6213,7 @@
 						},
 						"caption": {
 							"properties": {
-								"margin": [ 0, 10, 0, 10 ]
+								"margin": [0, 10, 0, 10]
 							}
 						}
 					},
@@ -6261,7 +6281,7 @@
 								"color": "#BDBFBF"
 							},
 							"properties": {
-								"padding": [ 14, 12, 14, 12 ],
+								"padding": [14, 12, 14, 12],
 								"textColor": "windowText",
 								"icon": "icon-info",
 								"show": "both"
@@ -6345,7 +6365,7 @@
 								"backgroundColor": "window"
 							},
 							"properties": {
-								"padding": [ 14, 12, 14, 12 ],
+								"padding": [14, 12, 14, 12],
 								"textColor": "windowText",
 								"icon": "icon-error"
 							}
@@ -6464,7 +6484,7 @@
 						"indent": 18,
 						"icon": "icon-file",
 						"opacity": 1,
-						"padding": [ 3, 0, 3, 0 ]
+						"padding": [3, 0, 3, 0]
 					},
 					"styles": {
 						"backgroundColor": null
@@ -6592,7 +6612,7 @@
 						"indent": 18,
 						"icon": "icon-folder",
 						"opacity": 1,
-						"padding": [ 3, 0, 3, 0 ]
+						"padding": [3, 0, 3, 0]
 					},
 					"styles": {
 						"backgroundColor": null
@@ -6640,29 +6660,35 @@
 								"radius": 0
 							},
 							"properties": {
-								"icon": "icon-upload",
-								"height": 22,
-								"padding": [ 0, 5, 0, 5 ],
-								"textColor": "controlText",
+								"padding": [0, 5, 0, 5],
 								"allowGrowX": true
-							}
-						},
-						"hovered": {
-							"styles": {
-								"backgroundColor": "controlDark"
-							},
-							"properties": {
-								"textColor": "black"
 							}
 						},
 						"middleLeft": {
 							"styles": {
-								"width": [ 0, 1, 0, 0 ]
+								"width": [0, 1, 0, 0]
 							}
 						},
 						"middleRight": {
 							"styles": {
-								"width": [ 0, 0, 0, 1 ]
+								"width": [0, 0, 0, 1]
+							}
+						},
+						"pressed": {
+							"styles": {
+								"transform": null
+							}
+						}
+					},
+					"components": {
+						"icon": {
+							"states": {
+								"default": {
+									"properties": {
+										"height": 20,
+										"width": 20
+									}
+								}
 							}
 						}
 					}
@@ -6676,7 +6702,7 @@
 							},
 							"properties": {
 								"textColor": "controlText",
-								"margin": [ 5, 0, 5, 0 ]
+								"margin": [5, 0, 5, 0]
 							}
 						},
 						"middleLeft": {
@@ -6684,7 +6710,7 @@
 								"width": 0
 							},
 							"properties": {
-								"margin": [ 0, 5, 0, 5 ]
+								"margin": [0, 5, 0, 5]
 							}
 						},
 						"middleRight": {
@@ -6692,7 +6718,7 @@
 								"width": 0
 							},
 							"properties": {
-								"margin": [ 0, 5, 0, 5 ]
+								"margin": [0, 5, 0, 5]
 							}
 						}
 					},
@@ -6708,7 +6734,9 @@
 					},
 					"properties": {
 						"height": 22,
-						"backgroundColor": "controlLight"
+						"icon": "icon-upload",
+						"textColor": "buttonText",
+						"backgroundColor": "buttonFace"
 					}
 				},
 				"middleLeft": {
@@ -6771,7 +6799,7 @@
 				"active": {
 					"styles": {
 						"color": "activeCaption",
-						"shadowLength": [ 2, 2 ],
+						"shadowLength": [2, 2],
 						"shadowColor": "buttonShadow",
 						"shadowBlurRadius": 15
 					}
@@ -6786,7 +6814,7 @@
 					"styles": {
 						"width": 0,
 						"shadowBlurRadius": 0,
-						"shadowLength": [ 0, 0 ]
+						"shadowLength": [0, 0]
 					}
 				}
 			},
@@ -6801,7 +6829,7 @@
 							"properties": {
 								"height": 42,
 								"cursor": "move",
-								"padding": [ 0, 20, 0, 20 ],
+								"padding": [0, 20, 0, 20],
 								"textColor": "inactiveCaptionText"
 							}
 						},

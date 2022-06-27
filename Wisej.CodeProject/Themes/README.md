@@ -7,6 +7,7 @@ This repository contains the content of all themes found at the [Wisej site](htt
 
 | Theme | Preview |
 | :--- | :--- |
+| Bootstrap&#8209;4 | <img src="https://s3.amazonaws.com/wisej/downloads/Images/Bootstrap-4.png"/><br/><br/>This theme is based on the popular Bootstrap theme, using its distinctive colors, focus shadow, and Bootstrap SVG icons.|
 | Blue&#8209;1 | <img src="https://s3.amazonaws.com/wisej/downloads/Images/Blue-1.png"/><br/><br/>This theme uses a blue base color, thick window borders and FontAwesome SVG icons.|
 | Blue-2 | <img src="https://s3.amazonaws.com/wisej/downloads/Images/Blue-2.png"/><br/><br/>This theme uses a blue base color, thick window caption, no side window borders borders and Icons8 SVG icons. |
 | Blue-3 | <img src="https://s3.amazonaws.com/wisej/downloads/Images/Blue-3.png"/><br/><br/>This theme uses a blue base color, thick window borders and Google Material SVG icons.|
@@ -23,7 +24,9 @@ Wisej themes use a simple naming convention. The name before the dash indicates 
 - 1: FontAwesome icons (free).
 - 2: Icons8 icons (licensed by Ice Tea Group).
 - 3: Google Material icons (free).
+- 4: Bootstrap icons (free)
 
+Wisej icon packages are available [here](https://github.com/iceteagroup/wisej-extensions).
 
 License
 -------

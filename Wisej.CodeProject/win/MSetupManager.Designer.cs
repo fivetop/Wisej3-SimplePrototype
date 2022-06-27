@@ -159,7 +159,7 @@
             this.label2.Location = new System.Drawing.Point(8, 8);
             this.label2.Margin = new Wisej.Web.Padding(8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(89, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "사용자명";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,7 +170,7 @@
             this.label3.Location = new System.Drawing.Point(298, 8);
             this.label3.Margin = new Wisej.Web.Padding(8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 1;
             this.label3.Text = "프리셋폭";
             // 
@@ -180,7 +180,7 @@
             this.label5.Location = new System.Drawing.Point(534, 8);
             this.label5.Margin = new Wisej.Web.Padding(8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(47, 15);
             this.label5.TabIndex = 2;
             this.label5.Text = "그룹폭";
             // 
@@ -190,7 +190,7 @@
             this.label4.Location = new System.Drawing.Point(298, 43);
             this.label4.Margin = new Wisej.Web.Padding(8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(76, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "스피커 Icon";
             // 
@@ -200,7 +200,7 @@
             this.label6.Location = new System.Drawing.Point(8, 43);
             this.label6.Margin = new Wisej.Web.Padding(8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.Size = new System.Drawing.Size(60, 15);
             this.label6.TabIndex = 1;
             this.label6.Text = "메인DSP";
             // 

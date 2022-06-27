@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SQLite;
 using System.Linq;
 using Wisej.Web;
 using static Wisej.CodeProject.DataSet1;
@@ -19,15 +19,16 @@ namespace Wisej.CodeProject.win
             this.deviceTableAdapter.Fill(this.dataSet1.Device);
             this.emBsTableAdapter.Fill(this.dataSet1.EMBs);
 
-            var dsp = this.dataSet1.EMBs.OrderBy(p=>p.emData);
+            var EMBs = this.dataSet1.EMBs.OrderBy(p=>p.emData).DistinctBy(p => p.emData);
 
+            comboBox1.Items.Clear();
             comboBox1.DisplayMember = "emData";
             comboBox1.ValueMember = "emData";
-            foreach (var t1 in dsp)
+            foreach (var t1 in EMBs)
             {
                 comboBox1.Items.Add(t1);
             }
-            if(dsp.Count() > 1)
+            if(comboBox1.Items.Count > 1)
                 comboBox1.SelectedIndex = 0;
         }
 
@@ -41,7 +42,7 @@ namespace Wisej.CodeProject.win
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var sel = (EMBsRow)comboBox1.SelectedItem;
+            EMBsRow sel = (EMBsRow)comboBox1.SelectedItem;
 
             if (sel == null)
                 return;
@@ -79,6 +80,7 @@ namespace Wisej.CodeProject.win
             r1.path = t2.path;
             dataSet1.EMBs.Rows.Add(r1);
             emBsTableAdapter.Update(dataSet1.EMBs);
+            eMBsBindingSource.EndEdit();
             comboBox1_SelectedIndexChanged(null, null);
         }
 
@@ -91,6 +93,7 @@ namespace Wisej.CodeProject.win
                     return;
                 t1.Delete();
                 emBsTableAdapter.Update(dataSet1.EMBs);
+                eMBsBindingSource.EndEdit();
                 comboBox1_SelectedIndexChanged(null, null);
             }
             catch (Exception e1)

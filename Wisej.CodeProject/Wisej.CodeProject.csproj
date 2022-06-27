@@ -98,18 +98,6 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery.signalR-2.2.3.js" />
     <Content Include="Scripts\jquery.signalR-2.2.3.min.js" />
-    <Content Include="simplepaw.db" />
-    <Content Include="DataSet3.xsc">
-      <DependentUpon>DataSet3.xsd</DependentUpon>
-    </Content>
-    <None Include="DataSet3.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="DataSet3.xss">
-      <DependentUpon>DataSet3.xsd</DependentUpon>
-    </Content>
     <Content Include="Properties\DataSources\Model.DataList.datasource" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
@@ -665,14 +653,6 @@
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet3.cs">
-      <DependentUpon>DataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -824,22 +804,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Reference Include="Devart.Data, Version=5.0.2806.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Devart\dotConnect\SQLite\Devart.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Devart.Data.SQLite, Version=5.18.2014.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Devart\dotConnect\SQLite\Devart.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="Devart.Data.SQLite.Design, Version=5.18.2014.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Devart\dotConnect\SQLite\Devart.Data.SQLite.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Devart.Data.SQLite.Vs, Version=5.18.2014.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Devart\dotConnect\SQLite\Devart.Data.SQLite.Vs.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -910,9 +874,6 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="SQLite-net">
-      <HintPath>..\packages\sqlite-net-pcl.1.6.292\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -924,15 +885,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
@@ -977,8 +929,8 @@
     <Reference Include="Wisej.Ext.ModernUI">
       <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Ext.ModernUI.dll</HintPath>
     </Reference>
-    <Reference Include="Wisej.Framework">
-      <HintPath>..\..\..\..\wisej\Development\2.0\bin\Wisej.Framework.dll</HintPath>
+    <Reference Include="Wisej.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wisej-3.3.0.10\lib\net48\Wisej.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Wisej.Web.Ext.ChartJS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -997,6 +949,10 @@
     <Reference Include="Wisej.Web.Ext.CustomWallpaper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.CustomWallpaper.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Web.Ext.FullCalendar, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Wisej.Web.Ext.FullCalendar.dll</HintPath>
     </Reference>
     <Reference Include="Wisej.Web.Ext.GoogleMaps, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
     <Reference Include="Wisej.Web.Ext.ProgressCircle, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
@@ -1027,10 +983,9 @@
       <Project>{40d7c7ab-a585-49d9-b9a1-0a499eec5067}</Project>
       <Name>DataClass</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Wisej.Web.Ext.FullCalendar\Wisej.Web.Ext.FullCalendar.csproj">
-      <Project>{ac4ea38a-3c62-4eb6-a194-ebb5f64e27ff}</Project>
-      <Name>Wisej.Web.Ext.FullCalendar</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Wisej-3" Version="3.*" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

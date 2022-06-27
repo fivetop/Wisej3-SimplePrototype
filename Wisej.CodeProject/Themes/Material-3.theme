@@ -112,7 +112,12 @@
 		"icon-justify-center": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik03IDE1djJoMTB2LTJIN3ptLTQgNmgxOHYtMkgzdjJ6bTAtOGgxOHYtMkgzdjJ6bTQtNnYyaDEwVjdIN3pNMyAzdjJoMThWM0gzeiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=",
 		"icon-justify-right": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0zIDIxaDE4di0ySDN2MnptNi00aDEydi0ySDl2MnptLTYtNGgxOHYtMkgzdjJ6bTYtNGgxMlY3SDl2MnpNMyAzdjJoMThWM0gzeiIvPgogICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=",
 		"icon-justify-fill": "data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0zIDIxaDE4di0ySDN2MnptMC00aDE4di0ySDN2MnptMC00aDE4di0ySDN2MnptMC00aDE4VjdIM3Yyem0wLTZ2MmgxOFYzSDN6Ii8+CiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==",
-		"wallpaper": "https://s3.amazonaws.com/wisej/images/wisej-desktop.jpg"
+		"wallpaper": "https://s3.amazonaws.com/wisej/images/wisej-desktop.jpg",
+		"file-word": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzY1LjMgOTMuMzhsLTc0LjYzLTc0LjY0QzI3OC42IDYuNzQyIDI2Mi4zIDAgMjQ1LjQgMEg2NEMyOC42NSAwIDAgMjguNjUgMCA2NGwuMDA2NSAzODRjMCAzNS4zNCAyOC42NSA2NCA2NCA2NEgzMjBjMzUuMiAwIDY0LTI4LjggNjQtNjRWMTM4LjZDMzg0IDEyMS43IDM3Ny4zIDEwNS40IDM2NS4zIDkzLjM4ek0zMzYgNDQ4YzAgOC44MzYtNy4xNjQgMTYtMTYgMTZINjQuMDJjLTguODM4IDAtMTYtNy4xNjQtMTYtMTZMNDggNjQuMTNjMC04LjgzNiA3LjE2NC0xNiAxNi0xNmgxNjBMMjI0IDEyOGMwIDE3LjY3IDE0LjMzIDMyIDMyIDMyaDc5LjFWNDQ4ek0yMTQuNiAyNDhDMjExLjMgMjM4LjQgMjAyLjIgMjMyIDE5MiAyMzJzLTE5LjI1IDYuNDA2LTIyLjYyIDE2TDE0NC43IDMxOC4xbC0yNS44OS03Ny42NkMxMTQuNiAyMjcuOCAxMDEgMjIxLjIgODguNDEgMjI1LjJDNzUuODMgMjI5LjQgNjkuMDUgMjQzIDczLjIzIDI1NS42bDQ4IDE0NEMxMjQuNSA0MDkuMyAxMzMuNSA0MTUuOSAxNDMuOCA0MTZjMTAuMTcgMCAxOS40NS02LjQwNiAyMi44My0xNkwxOTIgMzI4LjFMMjE3LjQgNDAwQzIyMC44IDQwOS42IDIyOS44IDQxNiAyNDAgNDE2YzEwLjI3LS4wOTM4IDE5LjUzLTYuNjg4IDIyLjc3LTE2LjQxbDQ4LTE0NGM0LjE4OC0xMi41OS0yLjU5NC0yNi4xNi0xNS4xNy0zMC4zOGMtMTIuNjEtNC4xMjUtMjYuMiAyLjU5NC0zMC4zNiAxNS4xOWwtMjUuODkgNzcuNjZMMjE0LjYgMjQ4eiIvPjwvc3ZnPg==",
+		"file-excel": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzY1LjMgOTMuMzhsLTc0LjYzLTc0LjY0QzI3OC42IDYuNzQyIDI2Mi4zIDAgMjQ1LjQgMEg2NEMyOC42NSAwIDAgMjguNjUgMCA2NGwuMDA2NSAzODRjMCAzNS4zNCAyOC42NSA2NCA2NCA2NEgzMjBjMzUuMiAwIDY0LTI4LjggNjQtNjRWMTM4LjZDMzg0IDEyMS43IDM3Ny4zIDEwNS40IDM2NS4zIDkzLjM4ek0zMzYgNDQ4YzAgOC44MzYtNy4xNjQgMTYtMTYgMTZINjQuMDJjLTguODM4IDAtMTYtNy4xNjQtMTYtMTZMNDggNjQuMTNjMC04LjgzNiA3LjE2NC0xNiAxNi0xNmgxNjBMMjI0IDEyOGMwIDE3LjY3IDE0LjMzIDMyIDMyIDMyaDc5LjFWNDQ4ek0yMjkuMSAyMzMuM0wxOTIgMjgwLjlMMTU0LjkgMjMzLjNDMTQ2LjggMjIyLjggMTMxLjggMjIwLjkgMTIxLjMgMjI5LjFDMTEwLjggMjM3LjIgMTA4LjkgMjUyLjMgMTE3LjEgMjYyLjhMMTYxLjYgMzIwbC00NC41MyA1Ny4yNWMtOC4xNTYgMTAuNDctNi4yNSAyNS41NiA0LjE4OCAzMy42OUMxMjUuNyA0MTQuMyAxMzAuOCA0MTYgMTM1LjEgNDE2YzcuMTU2IDAgMTQuMjUtMy4xODggMTguOTctOS4yNUwxOTIgMzU5LjFsMzcuMDYgNDcuNjVDMjMzLjggNDEyLjggMjQwLjkgNDE2IDI0OCA0MTZjNS4xMjUgMCAxMC4zMS0xLjY1NiAxNC43Mi01LjA2MmMxMC40NC04LjEyNSAxMi4zNC0yMy4yMiA0LjE4OC0zMy42OUwyMjIuNCAzMjBsNDQuNTMtNTcuMjVjOC4xNTYtMTAuNDcgNi4yNS0yNS41Ni00LjE4OC0zMy42OUMyNTIuMiAyMjAuOSAyMzcuMiAyMjIuOCAyMjkuMSAyMzMuM3oiLz48L3N2Zz4=",
+		"file-pdf": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzIwIDQ2NEMzMjguOCA0NjQgMzM2IDQ1Ni44IDMzNiA0NDhWNDE2SDM4NFY0NDhDMzg0IDQ4My4zIDM1NS4zIDUxMiAzMjAgNTEySDY0QzI4LjY1IDUxMiAwIDQ4My4zIDAgNDQ4VjQxNkg0OFY0NDhDNDggNDU2LjggNTUuMTYgNDY0IDY0IDQ2NEgzMjB6TTI1NiAxNjBDMjM4LjMgMTYwIDIyNCAxNDUuNyAyMjQgMTI4VjQ4SDY0QzU1LjE2IDQ4IDQ4IDU1LjE2IDQ4IDY0VjE5MkgwVjY0QzAgMjguNjUgMjguNjUgMCA2NCAwSDIyOS41QzI0Ni41IDAgMjYyLjcgNi43NDMgMjc0LjcgMTguNzVMMzY1LjMgMTA5LjNDMzc3LjMgMTIxLjMgMzg0IDEzNy41IDM4NCAxNTQuNVYxOTJIMzM2VjE2MEgyNTZ6TTg4IDIyNEMxMTguOSAyMjQgMTQ0IDI0OS4xIDE0NCAyODBDMTQ0IDMxMC45IDExOC45IDMzNiA4OCAzMzZIODBWMzY4QzgwIDM3Ni44IDcyLjg0IDM4NCA2NCAzODRDNTUuMTYgMzg0IDQ4IDM3Ni44IDQ4IDM2OFYyNDBDNDggMjMxLjIgNTUuMTYgMjI0IDY0IDIyNEg4OHpNMTEyIDI4MEMxMTIgMjY2LjcgMTAxLjMgMjU2IDg4IDI1Nkg4MFYzMDRIODhDMTAxLjMgMzA0IDExMiAyOTMuMyAxMTIgMjgwek0xNjAgMjQwQzE2MCAyMzEuMiAxNjcuMiAyMjQgMTc2IDIyNEgyMDBDMjI2LjUgMjI0IDI0OCAyNDUuNSAyNDggMjcyVjMzNkMyNDggMzYyLjUgMjI2LjUgMzg0IDIwMCAzODRIMTc2QzE2Ny4yIDM4NCAxNjAgMzc2LjggMTYwIDM2OFYyNDB6TTE5MiAzNTJIMjAwQzIwOC44IDM1MiAyMTYgMzQ0LjggMjE2IDMzNlYyNzJDMjE2IDI2My4yIDIwOC44IDI1NiAyMDAgMjU2SDE5MlYzNTJ6TTMzNiAyMjRDMzQ0LjggMjI0IDM1MiAyMzEuMiAzNTIgMjQwQzM1MiAyNDguOCAzNDQuOCAyNTYgMzM2IDI1NkgzMDRWMjg4SDMzNkMzNDQuOCAyODggMzUyIDI5NS4yIDM1MiAzMDRDMzUyIDMxMi44IDM0NC44IDMyMCAzMzYgMzIwSDMwNFYzNjhDMzA0IDM3Ni44IDI5Ni44IDM4NCAyODggMzg0QzI3OS4yIDM4NCAyNzIgMzc2LjggMjcyIDM2OFYyNDBDMjcyIDIzMS4yIDI3OS4yIDIyNCAyODggMjI0SDMzNnoiLz48L3N2Zz4=",
+		"file-zip": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzY1LjMgOTMuMzhsLTc0LjYzLTc0LjY0QzI3OC42IDYuNzQyIDI2Mi4zIDAgMjQ1LjQgMEw2NC0uMDAwMWMtMzUuMzUgMC02NCAyOC42NS02NCA2NGwuMDA2NSAzODRjMCAzNS4zNCAyOC42NSA2NCA2NCA2NEgzMjBjMzUuMiAwIDY0LTI4LjggNjQtNjRWMTM4LjZDMzg0IDEyMS43IDM3Ny4zIDEwNS40IDM2NS4zIDkzLjM4ek0zMzYgNDQ4YzAgOC44MzYtNy4xNjQgMTYtMTYgMTZINjQuMDJjLTguODM4IDAtMTYtNy4xNjQtMTYtMTZMNDggNjQuMTNjMC04LjgzNiA3LjE2NC0xNiAxNi0xNmg0OFY2NGg2NFY0OC4xM2g0OC4wMUwyMjQgMTI4YzAgMTcuNjcgMTQuMzMgMzIgMzIgMzJoNzkuMVY0NDh6TTE3NiA5NmgtNjR2MzJoNjRWOTZ6TTE3NiAxNjBoLTY0djMyaDY0VjE2MHpNMTc2IDIyNGgtNjRsLTMwLjU2IDExNi41QzczLjUxIDM3OS41IDEwMy43IDQxNiAxNDQuMyA0MTZjNDAuMjYgMCA3MC40NS0zNi4zIDYyLjY4LTc1LjE1TDE3NiAyMjR6TTE2MCAzNjhIMTI4Yy04LjgzNiAwLTE2LTcuMTY0LTE2LTE2czcuMTY0LTE2IDE2LTE2aDMyYzguODM2IDAgMTYgNy4xNjQgMTYgMTZTMTY4LjggMzY4IDE2MCAzNjh6Ii8+PC9zdmc+",
+		"file-powerpoint": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuMS4xIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIyIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMzIwIDQ2NEMzMjguOCA0NjQgMzM2IDQ1Ni44IDMzNiA0NDhWNDE2SDM4NFY0NDhDMzg0IDQ4My4zIDM1NS4zIDUxMiAzMjAgNTEySDY0QzI4LjY1IDUxMiAwIDQ4My4zIDAgNDQ4VjQxNkg0OFY0NDhDNDggNDU2LjggNTUuMTYgNDY0IDY0IDQ2NEgzMjB6TTI1NiAxNjBDMjM4LjMgMTYwIDIyNCAxNDUuNyAyMjQgMTI4VjQ4SDY0QzU1LjE2IDQ4IDQ4IDU1LjE2IDQ4IDY0VjE5MkgwVjY0QzAgMjguNjUgMjguNjUgMCA2NCAwSDIyOS41QzI0Ni41IDAgMjYyLjcgNi43NDMgMjc0LjcgMTguNzVMMzY1LjMgMTA5LjNDMzc3LjMgMTIxLjMgMzg0IDEzNy41IDM4NCAxNTQuNVYxOTJIMzM2VjE2MEgyNTZ6TTg4IDIyNEMxMTguOSAyMjQgMTQ0IDI0OS4xIDE0NCAyODBDMTQ0IDMxMC45IDExOC45IDMzNiA4OCAzMzZIODBWMzY4QzgwIDM3Ni44IDcyLjg0IDM4NCA2NCAzODRDNTUuMTYgMzg0IDQ4IDM3Ni44IDQ4IDM2OFYyNDBDNDggMjMxLjIgNTUuMTYgMjI0IDY0IDIyNEg4OHpNMTEyIDI4MEMxMTIgMjY2LjcgMTAxLjMgMjU2IDg4IDI1Nkg4MFYzMDRIODhDMTAxLjMgMzA0IDExMiAyOTMuMyAxMTIgMjgwek0xNjAgMjQwQzE2MCAyMzEuMiAxNjcuMiAyMjQgMTc2IDIyNEgyMDBDMjI2LjUgMjI0IDI0OCAyNDUuNSAyNDggMjcyVjMzNkMyNDggMzYyLjUgMjI2LjUgMzg0IDIwMCAzODRIMTc2QzE2Ny4yIDM4NCAxNjAgMzc2LjggMTYwIDM2OFYyNDB6TTE5MiAzNTJIMjAwQzIwOC44IDM1MiAyMTYgMzQ0LjggMjE2IDMzNlYyNzJDMjE2IDI2My4yIDIwOC44IDI1NiAyMDAgMjU2SDE5MlYzNTJ6TTMzNiAyMjRDMzQ0LjggMjI0IDM1MiAyMzEuMiAzNTIgMjQwQzM1MiAyNDguOCAzNDQuOCAyNTYgMzM2IDI1NkgzMDRWMjg4SDMzNkMzNDQuOCAyODggMzUyIDI5NS4yIDM1MiAzMDRDMzUyIDMxMi44IDM0NC44IDMyMCAzMzYgMzIwSDMwNFYzNjhDMzA0IDM3Ni44IDI5Ni44IDM4NCAyODggMzg0QzI3OS4yIDM4NCAyNzIgMzc2LjggMjcyIDM2OFYyNDBDMjcyIDIzMS4yIDI3OS4yIDIyNCAyODggMjI0SDMzNnoiLz48L3N2Zz4="
 	},
 	"colors": {
 		"activeBorder": "#3096D0",
@@ -651,7 +656,8 @@
 							"properties": {
 								"show": "both",
 								"icon": "blank",
-								"padding": 5
+								"padding": 5,
+								"cursor": "pointer"
 							}
 						}
 					},
@@ -1095,6 +1101,9 @@
 				}
 			},
 			"components": {
+				"pane": {
+					"inherit": "scrollarea"
+				},
 				"header": {
 					"states": {
 						"default": {
@@ -1289,14 +1298,16 @@
 						"default": {
 							"styles": {
 								"width": 1,
-								"color": "transparent"
+								"color": "transparent",
+								"css": "{\"display\":\"flex\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}"
 							},
 							"properties": {
 								"padding": 4,
 								"backgroundColor": "",
 								"textColor": "",
 								"opacity": 1,
-								"textAlign": "center"
+								"textAlign": "center",
+								"cursor": "pointer"
 							}
 						},
 						"today": {
@@ -1322,7 +1333,7 @@
 						},
 						"bolded": {
 							"styles": {
-								"css": "{\"font-weight\":\"900 !important\", \"overflow\":\"visible !important\"}"
+								"css": "{\"font-weight\":\"900 !important\", \"overflow\":\"visible !important\",\"display\":\"flex\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}"
 							}
 						}
 					},
@@ -1332,10 +1343,11 @@
 					"states": {
 						"default": {
 							"styles": {
-								"backgroundColor": "controlLight"
+								"backgroundColor": "controlLight",
+								"css": "{\"display\":\"flex\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}"
 							},
 							"properties": {
-								"padding": [6, 4, 4, 4],
+								"padding": 4,
 								"marginRight": 4
 							}
 						}
@@ -1347,7 +1359,8 @@
 						"default": {
 							"styles": {
 								"backgroundColor": "white",
-								"width": 1
+								"width": 1,
+								"css": "{\"display\":\"flex\",\"alignItems\":\"center\",\"justifyContent\":\"center\"}"
 							},
 							"properties": {
 								"padding": 4,
@@ -1724,7 +1737,7 @@
 								"backgroundColor": "rgba(0,0,0,0.39)"
 							},
 							"properties": {
-								"width": 58,
+								"width": 48,
 								"height": 48
 							}
 						}
@@ -1757,22 +1770,12 @@
 				"default": {
 					"styles": {
 						"width": 1,
-						"color": "rgba(189,191,191,0.5)"
+						"color": "transparent"
 					},
 					"properties": {
+						"margin": 4,
+						"padding": 3,
 						"textColor": "white"
-					}
-				},
-				"vertical": {
-					"properties": {
-						"margin": [0, 0, 2, 0],
-						"padding": [10, 0, 10, 0]
-					}
-				},
-				"horizontal": {
-					"properties": {
-						"margin": [0, 2, 0, 0],
-						"padding": [0, 10, 0, 10]
 					}
 				},
 				"notification": {
@@ -1782,8 +1785,8 @@
 				},
 				"hovered": {
 					"styles": {
-						"gradientStart": ["rgba(255,255,255,0.29)", "80"],
-						"gradientEnd": ["rgba(255,255,255,0.16)", "100"]
+						"color": "rgba(189,191,191,0.5)",
+						"backgroundColor": "rgba(255,255,255,0.29)"
 					},
 					"properties": {
 						"cursor": "pointer"
@@ -1796,8 +1799,8 @@
 					"states": {
 						"default": {
 							"properties": {
-								"width": 36,
-								"height": 36,
+								"width": 32,
+								"height": 32,
 								"scale": true
 							}
 						}
@@ -1811,7 +1814,7 @@
 					"states": {
 						"default": {
 							"properties": {
-								"margin": [8, 5, 2, 8],
+								"margin": 5,
 								"textColor": "windowText"
 							}
 						}
@@ -1828,13 +1831,13 @@
 							"properties": {
 								"icon": "window-close",
 								"margin": [8, 8, 0, 8],
-								"opacity": 0.7,
-								"cursor": "pointer"
+								"opacity": 0.7
 							}
 						},
 						"hovered": {
 							"properties": {
-								"opacity": 1
+								"opacity": 1,
+								"cursor": "pointer"
 							}
 						}
 					},
@@ -2424,25 +2427,19 @@
 			}
 		},
 		"label-wrapper": {
-			"states": {
-				"default": {
-					"properties": {
-						"opacity": 1
-					}
-				},
-				"disabled": {
-					"properties": {
-						"opacity": 0.5
-					}
-				}
-			},
 			"components": {
 				"label": {
 					"states": {
 						"default": {
 							"properties": {
+								"opacity": 1,
 								"marginLeft": 0,
-								"padding": [ 0, 5, 0, 0 ]
+								"padding": [0, 5, 0, 0]
+							}
+						},
+						"disabled": {
+							"properties": {
+								"opacity": 0.5
 							}
 						},
 						"inside": {
@@ -2452,13 +2449,13 @@
 							},
 							"properties": {
 								"textAlign": "middleLeft",
-								"padding": [ 0, 0, 0, 6 ]
+								"padding": [0, 0, 0, 6]
 							}
 						},
 						"inside-multiline": {
 							"properties": {
 								"textAlign": "topLeft",
-								"padding": [ 2, 0, 0, 6 ]
+								"padding": [2, 0, 0, 6]
 							}
 						},
 						"inside-focused": {
@@ -2467,7 +2464,7 @@
 							},
 							"properties": {
 								"textAlign": "topLeft",
-								"padding": [ 2, 0, 0, 6 ]
+								"padding": [2, 0, 0, 6]
 							}
 						},
 						"inside-full": {
@@ -2476,7 +2473,7 @@
 							},
 							"properties": {
 								"textAlign": "topLeft",
-								"padding": [ 2, 0, 0, 6 ]
+								"padding": [2, 0, 0, 6]
 							}
 						},
 						"rightToLeft": {
@@ -2486,22 +2483,22 @@
 						},
 						"top": {
 							"properties": {
-								"padding": [ 0, 0, 5, 0 ]
+								"padding": [0, 0, 5, 0]
 							}
 						},
 						"bottom": {
 							"properties": {
-								"padding": [ 5, 0, 0, 0 ]
+								"padding": [5, 0, 0, 0]
 							}
 						},
 						"left": {
 							"properties": {
-								"padding": [ 0, 5, 0, 0 ]
+								"padding": [0, 5, 0, 0]
 							}
 						},
 						"right": {
 							"properties": {
-								"padding": [ 0, 0, 0, 5 ]
+								"padding": [0, 0, 0, 5]
 							}
 						}
 					}
@@ -3050,6 +3047,11 @@
 								"icon": "checkbox-checked"
 							}
 						},
+						"radio-unchecked": {
+							"properties": {
+								"icon": "radiobutton"
+							}
+						},
 						"radio-checked": {
 							"properties": {
 								"icon": "radiobutton-checked"
@@ -3104,10 +3106,10 @@
 					"states": {
 						"default": {
 							"styles": {
-								"backgroundColor": "windowFrame"
+								"widthBottom": 1,
+								"colorBottom": "windowFrame"
 							},
 							"properties": {
-								"width": 1,
 								"height": 1,
 								"margin": [6, 2, 6, 2]
 							}
@@ -3226,6 +3228,20 @@
 					"components": {
 						"icon": {
 							"inherit": "icon-dark"
+						}
+					}
+				},
+				"separator": {
+					"states": {
+						"default": {
+							"styles": {
+								"widthLeft": 1,
+								"colorLeft": "windowFrame"
+							},
+							"properties": {
+								"width": 1,
+								"margin": [2, 6, 2, 6]
+							}
 						}
 					}
 				}
@@ -4501,7 +4517,8 @@
 						"default": {
 							"properties": {
 								"width": 6,
-								"height": 6
+								"height": 6,
+								"cursor": "default"
 							},
 							"styles": {
 								"fillColor": "Gray",
@@ -4514,11 +4531,17 @@
 						"horizontal": {
 							"styles": {
 								"backgroundImage": "splitter-grip-vertical"
+							},
+							"properties": {
+								"cursor": "ew-resize"
 							}
 						},
 						"vertical": {
 							"styles": {
 								"backgroundImage": "splitter-grip-horizontal"
+							},
+							"properties": {
+								"cursor": "ns-resize"
 							}
 						},
 						"fixed": {
@@ -4570,12 +4593,18 @@
 					"states": {
 						"default": {
 							"styles": {
-								"widthRight": 0,
+								"widthRight": 1,
 								"styleRight": "solid",
 								"color": "windowFrame"
 							},
 							"properties": {
-								"padding": [0, 10, 0, 10]
+								"margin": [0, 4, 0, 4],
+								"padding": [0, 6, 0, 6]
+							}
+						},
+						"control": {
+							"properties": {
+								"padding": 0
 							}
 						},
 						"borderNone": {
@@ -4599,18 +4628,6 @@
 							"styles": {
 								"widthRight": 3,
 								"styleRight": "double"
-							}
-						},
-						"borderRaised": {
-							"styles": {
-								"widthRight": 1,
-								"styleRight": "outset"
-							}
-						},
-						"borderSunken": {
-							"styles": {
-								"widthRight": 1,
-								"styleRight": "inset"
 							}
 						}
 					},
@@ -5861,8 +5878,9 @@
 			"states": {
 				"default": {
 					"properties": {
-						"duplicateDuration": 300,
-						"height": 28
+						"height": 22,
+						"padding": [0, 2, 0, 0],
+						"duplicateDuration": 300
 					}
 				}
 			},
@@ -5871,7 +5889,6 @@
 					"states": {
 						"default": {
 							"styles": {
-								"width": 1,
 								"radius": 0,
 								"color": "transparent",
 								"backgroundColor": "controlLight"
@@ -5879,7 +5896,7 @@
 							"properties": {
 								"icon": "icon-close",
 								"cursor": "pointer",
-								"padding": [1, 2, 1, 4],
+								"padding": [ 1, 2, 1, 4 ],
 								"textColor": "inherit"
 							}
 						},
@@ -5921,16 +5938,19 @@
 						}
 					}
 				},
-				"tag-container": {
+				"container": {
 					"states": {
 						"default": {
 							"properties": {
-								"margin": [2, 4, 2, 0],
-								"spacingX": 2,
-								"spacingY": 2
+								"margin": [ 0, 4, 2, 0 ],
+								"spacingX": 3,
+								"spacingY": 3
 							}
 						}
 					}
+				},
+				"slider": {
+					"inherit": "slidebar"
 				}
 			}
 		},
@@ -6102,6 +6122,11 @@
 								"width": 1,
 								"color": "transparent",
 								"backgroundColor": "transparent"
+							}
+						},
+						"control": {
+							"properties": {
+								"padding": 0
 							}
 						},
 						"hovered": {
@@ -6770,19 +6795,8 @@
 								"radius": 0
 							},
 							"properties": {
-								"icon": "icon-upload",
-								"height": 22,
 								"padding": [0, 5, 0, 5],
-								"textColor": "controlText",
 								"allowGrowX": true
-							}
-						},
-						"hovered": {
-							"styles": {
-								"backgroundColor": "controlDark"
-							},
-							"properties": {
-								"textColor": "black"
 							}
 						},
 						"middleLeft": {
@@ -6793,6 +6807,18 @@
 						"middleRight": {
 							"styles": {
 								"width": [0, 0, 0, 1]
+							}
+						}
+					},
+					"components": {
+						"icon": {
+							"states": {
+								"default": {
+									"properties": {
+										"height": 20,
+										"width": 20
+									}
+								}
 							}
 						}
 					}
@@ -6838,7 +6864,9 @@
 					},
 					"properties": {
 						"height": 22,
-						"backgroundColor": "controlLight"
+						"icon": "icon-upload",
+						"textColor": "buttonText",
+						"backgroundColor": "buttonFace"
 					}
 				},
 				"middleLeft": {

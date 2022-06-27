@@ -30,6 +30,7 @@
         {
             this.button1 = new Wisej.Web.Button();
             this.button2 = new Wisej.Web.Button();
+            this.button3 = new Wisej.Web.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -50,14 +51,23 @@
             this.button2.Text = "size";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(46, 173);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(169, 73);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "button3";
+            // 
             // Page2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Page2";
-            this.Size = new System.Drawing.Size(803, 487);
+            this.Size = new System.Drawing.Size(476, 421);
             this.ResumeLayout(false);
 
         }
@@ -66,5 +76,6 @@
 
         private Web.Button button1;
         private Web.Button button2;
+        private Web.Button button3;
     }
 }
