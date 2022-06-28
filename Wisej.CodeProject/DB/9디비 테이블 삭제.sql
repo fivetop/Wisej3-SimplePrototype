@@ -9,3 +9,4 @@ DELETE FROM [dbo].Device
 DELETE FROM [dbo].DeviceChannel
 DELETE FROM [dbo].EMBs
 GO
+
