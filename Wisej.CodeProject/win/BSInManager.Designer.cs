@@ -40,7 +40,7 @@
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.deviceChannelBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
-            this.panel2 = new Wisej.Web.Panel();
+            this.ptop = new Wisej.Web.Panel();
             this.deviceChannelTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.DeviceChannelTableAdapter();
             this.deviceTableAdapter1 = new Wisej.CodeProject.DataSet1TableAdapters.DeviceTableAdapter();
             this.panel1.SuspendLayout();
@@ -85,6 +85,7 @@
             this.colDevicechnnelid.DataPropertyName = "DeviceChnnelId";
             this.colDevicechnnelid.HeaderText = "No";
             this.colDevicechnnelid.Name = "colDevicechnnelid";
+            this.colDevicechnnelid.ReadOnly = true;
             this.colDevicechnnelid.Width = 60;
             // 
             // Column1
@@ -148,14 +149,14 @@
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel2
+            // ptop
             // 
-            this.panel2.Dock = Wisej.Web.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(838, 70);
-            this.panel2.TabIndex = 6;
-            this.panel2.TabStop = true;
+            this.ptop.Dock = Wisej.Web.DockStyle.Top;
+            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Name = "ptop";
+            this.ptop.Size = new System.Drawing.Size(838, 70);
+            this.ptop.TabIndex = 6;
+            this.ptop.TabStop = true;
             // 
             // deviceChannelTableAdapter
             // 
@@ -168,7 +169,7 @@
             // BSInManager
             // 
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.ptop);
             this.Name = "BSInManager";
             this.Size = new System.Drawing.Size(838, 539);
             this.Load += new System.EventHandler(this.BSInManager_Load);
@@ -185,7 +186,7 @@
         private Web.Panel panel1;
         private Web.DataGridView dataGridView3;
         private Web.DataGridViewButtonColumn Column0;
-        private Web.Panel panel2;
+        private Web.Panel ptop;
         private Web.DataGridViewTextBoxColumn colDevicechnnelid;
         private Web.DataGridViewTextBoxColumn Column1;
         private Web.DataGridViewTextBoxColumn colChname;

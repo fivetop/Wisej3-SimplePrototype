@@ -32,7 +32,7 @@
             this.deviceBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
             this.deviceTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.DeviceTableAdapter();
-            this.panel1 = new Wisej.Web.Panel();
+            this.ptop = new Wisej.Web.Panel();
             this.button3 = new Wisej.Web.Button();
             this.button2 = new Wisej.Web.Button();
             this.button1 = new Wisej.Web.Button();
@@ -42,16 +42,16 @@
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.채널 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Name = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Chno = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Vol = new Wisej.Web.DataGridViewNumericUpDownColumn();
             this.colDsp_Vol_Em = new Wisej.Web.DataGridViewNumericUpDownColumn();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.채널 = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -71,19 +71,19 @@
             // 
             this.deviceTableAdapter.ClearBeforeFill = true;
             // 
-            // panel1
+            // ptop
             // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(837, 70);
-            this.panel1.TabIndex = 4;
-            this.panel1.TabStop = true;
+            this.ptop.Controls.Add(this.button3);
+            this.ptop.Controls.Add(this.button2);
+            this.ptop.Controls.Add(this.button1);
+            this.ptop.Controls.Add(this.comboBox2);
+            this.ptop.Controls.Add(this.comboBox1);
+            this.ptop.Dock = Wisej.Web.DockStyle.Top;
+            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Name = "ptop";
+            this.ptop.Size = new System.Drawing.Size(837, 70);
+            this.ptop.TabIndex = 4;
+            this.ptop.TabStop = true;
             // 
             // button3
             // 
@@ -128,7 +128,7 @@
             this.comboBox2.LabelText = "비상 방송 볼륨선택";
             this.comboBox2.Location = new System.Drawing.Point(341, 10);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 38);
+            this.comboBox2.Size = new System.Drawing.Size(120, 53);
             this.comboBox2.TabIndex = 1;
             // 
             // comboBox1
@@ -147,7 +147,7 @@
             this.comboBox1.LabelText = "일반 방송 볼륨선택";
             this.comboBox1.Location = new System.Drawing.Point(8, 10);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 38);
+            this.comboBox1.Size = new System.Drawing.Size(120, 53);
             this.comboBox1.TabIndex = 1;
             // 
             // panel2
@@ -195,6 +195,13 @@
             this.colDevicename.Name = "colDevicename";
             this.colDevicename.ReadOnly = true;
             this.colDevicename.Width = 150;
+            // 
+            // 채널
+            // 
+            this.채널.DataPropertyName = "chspk";
+            this.채널.HeaderText = "채널";
+            this.채널.Name = "채널";
+            this.채널.Width = 60;
             // 
             // colIp
             // 
@@ -252,24 +259,17 @@
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
             // 
-            // 채널
-            // 
-            this.채널.DataPropertyName = "chspk";
-            this.채널.HeaderText = "채널";
-            this.채널.Name = "채널";
-            this.채널.Width = 60;
-            // 
             // BSLevelManager
             // 
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ptop);
             this.Name = "BSLevelManager";
             this.Size = new System.Drawing.Size(837, 520);
             this.Load += new System.EventHandler(this.BSLevelManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ptop.ResumeLayout(false);
+            this.ptop.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -280,7 +280,7 @@
         private Web.BindingSource deviceBindingSource;
         private DataSet1 dataSet1;
         private DataSet1TableAdapters.DeviceTableAdapter deviceTableAdapter;
-        private Web.Panel panel1;
+        private Web.Panel ptop;
         private Web.Panel panel2;
         private Web.ComboBox comboBox1;
         private Web.Button button3;

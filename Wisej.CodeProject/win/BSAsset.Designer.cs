@@ -37,6 +37,7 @@
             this.colSpeakername = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colCh = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEmdata = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -49,15 +50,14 @@
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
             this.upload1 = new Wisej.Web.Upload();
             this.button2 = new Wisej.Web.Button();
-            this.panel1 = new Wisej.Web.Panel();
+            this.ptop = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.assetsTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.AssetsTableAdapter();
-            this.colEmdata = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.ptop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -102,6 +102,7 @@
             this.colAssetid.DataPropertyName = "AssetId";
             this.colAssetid.HeaderText = "자산No";
             this.colAssetid.Name = "colAssetid";
+            this.colAssetid.ReadOnly = true;
             this.colAssetid.Width = 60;
             // 
             // colGroupname
@@ -136,6 +137,13 @@
             this.colCh.HeaderText = "채널";
             this.colCh.Name = "colCh";
             this.colCh.Width = 60;
+            // 
+            // colEmdata
+            // 
+            this.colEmdata.DataPropertyName = "emData";
+            this.colEmdata.HeaderText = "층정보";
+            this.colEmdata.Name = "colEmdata";
+            this.colEmdata.Width = 120;
             // 
             // colDeviceid
             // 
@@ -224,17 +232,17 @@
             this.button2.ToolTipText = "장비를 전체 검출하므로 시간이 필요합니다.";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panel1
+            // ptop
             // 
-            this.panel1.Controls.Add(this.upload1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(902, 70);
-            this.panel1.TabIndex = 6;
-            this.panel1.TabStop = true;
+            this.ptop.Controls.Add(this.upload1);
+            this.ptop.Controls.Add(this.button2);
+            this.ptop.Controls.Add(this.button1);
+            this.ptop.Dock = Wisej.Web.DockStyle.Top;
+            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Name = "ptop";
+            this.ptop.Size = new System.Drawing.Size(902, 70);
+            this.ptop.TabIndex = 6;
+            this.ptop.TabStop = true;
             // 
             // button1
             // 
@@ -250,17 +258,10 @@
             // 
             this.assetsTableAdapter.ClearBeforeFill = true;
             // 
-            // colEmdata
-            // 
-            this.colEmdata.DataPropertyName = "emData";
-            this.colEmdata.HeaderText = "층정보";
-            this.colEmdata.Name = "colEmdata";
-            this.colEmdata.Width = 120;
-            // 
             // BSAsset
             // 
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ptop);
             this.Name = "BSAsset";
             this.Size = new System.Drawing.Size(902, 616);
             this.Load += new System.EventHandler(this.BSAsset_Load);
@@ -268,7 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.ptop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -295,7 +296,7 @@
         private DataSet1 dataSet1;
         private Web.Upload upload1;
         private Web.Button button2;
-        private Web.Panel panel1;
+        private Web.Panel ptop;
         private Web.Button button1;
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
         private Web.DataGridViewTextBoxColumn colEmdata;

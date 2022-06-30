@@ -44,13 +44,13 @@
             this.colDsp_Chno = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Vol = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Vol_Em = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.panel1 = new Wisej.Web.Panel();
+            this.ptop = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.panel2 = new Wisej.Web.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,15 +174,15 @@
             this.colDsp_Vol_Em.Visible = false;
             this.colDsp_Vol_Em.Width = 80;
             // 
-            // panel1
+            // ptop
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(910, 70);
-            this.panel1.TabIndex = 4;
-            this.panel1.TabStop = true;
+            this.ptop.Controls.Add(this.button1);
+            this.ptop.Dock = Wisej.Web.DockStyle.Top;
+            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Name = "ptop";
+            this.ptop.Size = new System.Drawing.Size(910, 70);
+            this.ptop.TabIndex = 4;
+            this.ptop.TabStop = true;
             // 
             // button1
             // 
@@ -206,14 +206,14 @@
             // BSDeviceManager
             // 
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ptop);
             this.Name = "BSDeviceManager";
             this.Size = new System.Drawing.Size(910, 616);
             this.Load += new System.EventHandler(this.BSDeviceManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.ptop.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -233,7 +233,7 @@
         private Web.DataGridViewTextBoxColumn colDsp_Vol;
         private Web.DataGridViewTextBoxColumn colDsp_Vol_Em;
         private Web.DataGridViewTextBoxColumn colPath_1;
-        private Web.Panel panel1;
+        private Web.Panel ptop;
         private Web.Panel panel2;
         private Web.Button button1;
         private Web.DataGridViewTextBoxColumn Column0;

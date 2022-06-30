@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new Wisej.Web.Panel();
+            this.ptop = new Wisej.Web.Panel();
             this.comboBox1 = new Wisej.Web.ComboBox();
             this.panel2 = new Wisej.Web.Panel();
             this.splitContainer1 = new Wisej.Web.SplitContainer();
@@ -48,7 +48,7 @@
             this.eMBsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.deviceTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.DeviceTableAdapter();
             this.emBsTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.EMBsTableAdapter();
-            this.panel1.SuspendLayout();
+            this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -61,22 +61,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.eMBsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // ptop
             // 
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(836, 70);
-            this.panel1.TabIndex = 4;
-            this.panel1.TabStop = true;
+            this.ptop.Controls.Add(this.comboBox1);
+            this.ptop.Dock = Wisej.Web.DockStyle.Top;
+            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Name = "ptop";
+            this.ptop.Size = new System.Drawing.Size(836, 70);
+            this.ptop.TabIndex = 4;
+            this.ptop.TabStop = true;
             // 
             // comboBox1
             // 
             this.comboBox1.LabelText = "비상방송 층선택";
             this.comboBox1.Location = new System.Drawing.Point(26, 14);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(252, 40);
+            this.comboBox1.Size = new System.Drawing.Size(252, 53);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -177,7 +177,7 @@
             this.dataGridView2.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(383, 416);
+            this.dataGridView2.Size = new System.Drawing.Size(380, 416);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellMouseDoubleClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
             // 
@@ -229,12 +229,12 @@
             // BSEMManager
             // 
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ptop);
             this.Name = "BSEMManager";
             this.Size = new System.Drawing.Size(836, 486);
             this.Load += new System.EventHandler(this.BSEMManager_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ptop.ResumeLayout(false);
+            this.ptop.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -251,7 +251,7 @@
 
         #endregion
 
-        private Web.Panel panel1;
+        private Web.Panel ptop;
         private Web.Panel panel2;
         private Web.ComboBox comboBox1;
         private Web.SplitContainer splitContainer1;

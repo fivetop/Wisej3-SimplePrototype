@@ -60,7 +60,7 @@
             this.ucomboBox1 = new Wisej.Web.ComboBox();
             this.label18 = new Wisej.Web.Label();
             this.ubutton1 = new Wisej.Web.Button();
-            this.panel1 = new Wisej.Web.Panel();
+            this.ptop = new Wisej.Web.Panel();
             this.ubutton2 = new Wisej.Web.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubindingSource1)).BeginInit();
@@ -72,7 +72,7 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udataGridView1)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ptop.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -92,7 +92,7 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.panel2);
-            this.panel8.Controls.Add(this.panel1);
+            this.panel8.Controls.Add(this.ptop);
             this.panel8.Dock = Wisej.Web.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
@@ -104,9 +104,9 @@
             // 
             this.panel2.Controls.Add(this.splitContainer1);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Location = new System.Drawing.Point(0, 70);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1104, 512);
+            this.panel2.Size = new System.Drawing.Size(1104, 542);
             this.panel2.TabIndex = 14;
             // 
             // splitContainer1
@@ -125,7 +125,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel6);
             this.splitContainer1.Panel2.Controls.Add(this.ubutton1);
             this.splitContainer1.Panel2.ShowHeader = true;
-            this.splitContainer1.Size = new System.Drawing.Size(1104, 512);
+            this.splitContainer1.Size = new System.Drawing.Size(1104, 542);
             this.splitContainer1.SplitterDistance = 681;
             this.splitContainer1.TabIndex = 15;
             // 
@@ -144,7 +144,7 @@
             this.udataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
             this.udataGridView1.Location = new System.Drawing.Point(0, 0);
             this.udataGridView1.Name = "udataGridView1";
-            this.udataGridView1.Size = new System.Drawing.Size(681, 512);
+            this.udataGridView1.Size = new System.Drawing.Size(681, 542);
             this.udataGridView1.TabIndex = 9;
             // 
             // colUsertreeid
@@ -189,9 +189,9 @@
             // ubutton3
             // 
             this.ubutton3.Anchor = Wisej.Web.AnchorStyles.None;
-            this.ubutton3.Location = new System.Drawing.Point(268, 328);
+            this.ubutton3.Location = new System.Drawing.Point(268, 343);
             this.ubutton3.Name = "ubutton3";
-            this.ubutton3.Size = new System.Drawing.Size(100, 47);
+            this.ubutton3.Size = new System.Drawing.Size(100, 30);
             this.ubutton3.TabIndex = 12;
             this.ubutton3.Text = "삭제";
             this.ubutton3.Click += new System.EventHandler(this.ubutton3_Click);
@@ -405,28 +405,28 @@
             // ubutton1
             // 
             this.ubutton1.Anchor = Wisej.Web.AnchorStyles.None;
-            this.ubutton1.Location = new System.Drawing.Point(143, 328);
+            this.ubutton1.Location = new System.Drawing.Point(143, 343);
             this.ubutton1.Name = "ubutton1";
-            this.ubutton1.Size = new System.Drawing.Size(100, 47);
+            this.ubutton1.Size = new System.Drawing.Size(100, 30);
             this.ubutton1.TabIndex = 10;
             this.ubutton1.Text = "저장";
             this.ubutton1.Click += new System.EventHandler(this.ubutton1_Click);
             // 
-            // panel1
+            // ptop
             // 
-            this.panel1.Controls.Add(this.ubutton2);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 100);
-            this.panel1.TabIndex = 13;
+            this.ptop.Controls.Add(this.ubutton2);
+            this.ptop.Dock = Wisej.Web.DockStyle.Top;
+            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Name = "ptop";
+            this.ptop.Size = new System.Drawing.Size(1104, 70);
+            this.ptop.TabIndex = 13;
             // 
             // ubutton2
             // 
             this.ubutton2.Anchor = Wisej.Web.AnchorStyles.None;
-            this.ubutton2.Location = new System.Drawing.Point(956, 24);
+            this.ubutton2.Location = new System.Drawing.Point(959, 19);
             this.ubutton2.Name = "ubutton2";
-            this.ubutton2.Size = new System.Drawing.Size(100, 51);
+            this.ubutton2.Size = new System.Drawing.Size(100, 30);
             this.ubutton2.TabIndex = 11;
             this.ubutton2.Text = "신규";
             this.ubutton2.Click += new System.EventHandler(this.ubutton2_Click);
@@ -448,7 +448,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.udataGridView1)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.ptop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -486,6 +486,6 @@
         private Web.DataGridViewTextBoxColumn colUser_Group;
         private Web.Panel panel2;
         private Web.SplitContainer splitContainer1;
-        private Web.Panel panel1;
+        private Web.Panel ptop;
     }
 }

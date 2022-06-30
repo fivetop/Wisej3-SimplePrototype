@@ -13,6 +13,7 @@ namespace Wisej.CodeProject.win
 
 		private void MUserManager_Load(object sender, EventArgs e)
 		{
+			splitContainer1.Panel2.Collapsed = true;
 			this.userTreesTableAdapter.Fill(this.dataSet1.UserTrees);
 		}
 
@@ -103,8 +104,8 @@ namespace Wisej.CodeProject.win
 
 		private void ubutton2_Click(object sender, EventArgs e)
 		{
-			if (add == 1) return;
 			splitContainer1.Panel2.Collapsed = false;
+			if (add == 1) return;
 			add = 1;
 			uAddNewRecord();
 		}

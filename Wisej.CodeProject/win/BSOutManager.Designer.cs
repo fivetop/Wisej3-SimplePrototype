@@ -35,14 +35,14 @@
             this.dataGridView3 = new Wisej.Web.DataGridView();
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.채널 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Name = new Wisej.Web.DataGridViewComboBoxColumn();
             this.colDsp_Chno = new Wisej.Web.DataGridViewComboBoxColumn();
             this.Column0 = new Wisej.Web.DataGridViewButtonColumn();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.panel1 = new Wisej.Web.Panel();
+            this.ptop = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
-            this.채널 = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -100,6 +100,13 @@
             this.colDevicename.Name = "colDevicename";
             this.colDevicename.ReadOnly = true;
             this.colDevicename.Width = 150;
+            // 
+            // 채널
+            // 
+            this.채널.DataPropertyName = "chspk";
+            this.채널.HeaderText = "채널";
+            this.채널.Name = "채널";
+            this.채널.Width = 60;
             // 
             // colIp
             // 
@@ -170,14 +177,14 @@
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
             // 
-            // panel1
+            // ptop
             // 
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(836, 70);
-            this.panel1.TabIndex = 3;
-            this.panel1.TabStop = true;
+            this.ptop.Dock = Wisej.Web.DockStyle.Top;
+            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Name = "ptop";
+            this.ptop.Size = new System.Drawing.Size(836, 70);
+            this.ptop.TabIndex = 3;
+            this.ptop.TabStop = true;
             // 
             // panel2
             // 
@@ -189,17 +196,10 @@
             this.panel2.TabIndex = 4;
             this.panel2.TabStop = true;
             // 
-            // 채널
-            // 
-            this.채널.DataPropertyName = "chspk";
-            this.채널.HeaderText = "채널";
-            this.채널.Name = "채널";
-            this.채널.Width = 60;
-            // 
             // BSOutManager
             // 
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ptop);
             this.Name = "BSOutManager";
             this.Size = new System.Drawing.Size(836, 514);
             this.Load += new System.EventHandler(this.BSOutManager_Load);
@@ -223,7 +223,7 @@
         private Web.DataGridViewTextBoxColumn colPath_1;
         private Web.DataGridViewComboBoxColumn colDsp_Chno;
         private Web.DataGridViewComboBoxColumn colDsp_Name;
-        private Web.Panel panel1;
+        private Web.Panel ptop;
         private Web.Panel panel2;
         private Web.DataGridViewButtonColumn Column0;
         private Web.DataGridViewTextBoxColumn 채널;
