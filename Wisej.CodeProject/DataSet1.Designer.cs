@@ -1410,6 +1410,16 @@ namespace Wisej.CodeProject {
             
             private global::System.Data.DataColumn columnemData;
             
+            private global::System.Data.DataColumn columnzpco;
+            
+            private global::System.Data.DataColumn columnzpci;
+            
+            private global::System.Data.DataColumn columnfloorname;
+            
+            private global::System.Data.DataColumn columnzpc;
+            
+            private global::System.Data.DataColumn columnbuilding;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AssetsDataTable() {
@@ -1589,6 +1599,46 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn zpcoColumn {
+                get {
+                    return this.columnzpco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn zpciColumn {
+                get {
+                    return this.columnzpci;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn floornameColumn {
+                get {
+                    return this.columnfloorname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn zpcColumn {
+                get {
+                    return this.columnzpc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn buildingColumn {
+                get {
+                    return this.columnbuilding;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1641,7 +1691,12 @@ namespace Wisej.CodeProject {
                         int em2, 
                         int em3, 
                         int DeviceId, 
-                        string emData) {
+                        string emData, 
+                        int zpco, 
+                        int zpci, 
+                        string floorname, 
+                        string zpc, 
+                        string building) {
                 AssetsRow rowAssetsRow = ((AssetsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1661,7 +1716,12 @@ namespace Wisej.CodeProject {
                         em2,
                         em3,
                         DeviceId,
-                        emData};
+                        emData,
+                        zpco,
+                        zpci,
+                        floorname,
+                        zpc,
+                        building};
                 rowAssetsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAssetsRow);
                 return rowAssetsRow;
@@ -1709,6 +1769,11 @@ namespace Wisej.CodeProject {
                 this.columnem3 = base.Columns["em3"];
                 this.columnDeviceId = base.Columns["DeviceId"];
                 this.columnemData = base.Columns["emData"];
+                this.columnzpco = base.Columns["zpco"];
+                this.columnzpci = base.Columns["zpci"];
+                this.columnfloorname = base.Columns["floorname"];
+                this.columnzpc = base.Columns["zpc"];
+                this.columnbuilding = base.Columns["building"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1750,6 +1815,16 @@ namespace Wisej.CodeProject {
                 base.Columns.Add(this.columnDeviceId);
                 this.columnemData = new global::System.Data.DataColumn("emData", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnemData);
+                this.columnzpco = new global::System.Data.DataColumn("zpco", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzpco);
+                this.columnzpci = new global::System.Data.DataColumn("zpci", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzpci);
+                this.columnfloorname = new global::System.Data.DataColumn("floorname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfloorname);
+                this.columnzpc = new global::System.Data.DataColumn("zpc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzpc);
+                this.columnbuilding = new global::System.Data.DataColumn("building", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbuilding);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAssetId}, true));
                 this.columnAssetId.AutoIncrement = true;
@@ -1767,6 +1842,9 @@ namespace Wisej.CodeProject {
                 this.columnstate.MaxLength = 2147483647;
                 this.columnstate_old.MaxLength = 2147483647;
                 this.columnemData.MaxLength = 2147483647;
+                this.columnfloorname.MaxLength = 2147483647;
+                this.columnzpc.MaxLength = 2147483647;
+                this.columnbuilding.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6724,6 +6802,86 @@ namespace Wisej.CodeProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int zpco {
+                get {
+                    try {
+                        return ((int)(this[this.tableAssets.zpcoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Assets\' 테이블의 \'zpco\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssets.zpcoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int zpci {
+                get {
+                    try {
+                        return ((int)(this[this.tableAssets.zpciColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Assets\' 테이블의 \'zpci\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssets.zpciColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string floorname {
+                get {
+                    try {
+                        return ((string)(this[this.tableAssets.floornameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Assets\' 테이블의 \'floorname\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssets.floornameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string zpc {
+                get {
+                    try {
+                        return ((string)(this[this.tableAssets.zpcColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Assets\' 테이블의 \'zpc\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssets.zpcColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string building {
+                get {
+                    try {
+                        return ((string)(this[this.tableAssets.buildingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Assets\' 테이블의 \'building\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssets.buildingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsipNull() {
                 return this.IsNull(this.tableAssets.ipColumn);
             }
@@ -6924,6 +7082,66 @@ namespace Wisej.CodeProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetemDataNull() {
                 this[this.tableAssets.emDataColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IszpcoNull() {
+                return this.IsNull(this.tableAssets.zpcoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetzpcoNull() {
+                this[this.tableAssets.zpcoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IszpciNull() {
+                return this.IsNull(this.tableAssets.zpciColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetzpciNull() {
+                this[this.tableAssets.zpciColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsfloornameNull() {
+                return this.IsNull(this.tableAssets.floornameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetfloornameNull() {
+                this[this.tableAssets.floornameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IszpcNull() {
+                return this.IsNull(this.tableAssets.zpcColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetzpcNull() {
+                this[this.tableAssets.zpcColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsbuildingNull() {
+                return this.IsNull(this.tableAssets.buildingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetbuildingNull() {
+                this[this.tableAssets.buildingColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11120,15 +11338,20 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("em3", "em3");
             tableMapping.ColumnMappings.Add("DeviceId", "DeviceId");
             tableMapping.ColumnMappings.Add("emData", "emData");
+            tableMapping.ColumnMappings.Add("zpco", "zpco");
+            tableMapping.ColumnMappings.Add("zpci", "zpci");
+            tableMapping.ColumnMappings.Add("floorname", "floorname");
+            tableMapping.ColumnMappings.Add("zpc", "zpc");
+            tableMapping.ColumnMappings.Add("building", "building");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Assets] WHERE (([AssetId] = @Original_AssetId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Assets] WHERE (([AssetId] = @Original_AssetId))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Assets] ([ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData]) VALUES (@ip, @GroupName, @ZoneName, @SpeakerName, @path, @floor, @DeviceName, @state, @state_old, @chk, @seq, @ch, @em1, @em2, @em3, @DeviceId, @emData)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Assets] ([ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [zpco], [zpci], [floorname], [zpc], [building]) VALUES (@ip, @GroupName, @ZoneName, @SpeakerName, @path, @floor, @DeviceName, @state, @state_old, @chk, @seq, @ch, @em1, @em2, @em3, @DeviceId, @emData, @zpco, @zpci, @floorname, @zpc, @building)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ip", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GroupName", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GroupName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11147,9 +11370,14 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@em3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "em3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DeviceId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeviceId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emData", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpco", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpci", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpci", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@floorname", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "floorname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpc", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@building", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "building", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Assets] SET [ip] = @ip, [GroupName] = @GroupName, [ZoneName] = @ZoneName, [SpeakerName] = @SpeakerName, [path] = @path, [floor] = @floor, [DeviceName] = @DeviceName, [state] = @state, [state_old] = @state_old, [chk] = @chk, [seq] = @seq, [ch] = @ch, [em1] = @em1, [em2] = @em2, [em3] = @em3, [DeviceId] = @DeviceId, [emData] = @emData WHERE (([AssetId] = @Original_AssetId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Assets] SET [ip] = @ip, [GroupName] = @GroupName, [ZoneName] = @ZoneName, [SpeakerName] = @SpeakerName, [path] = @path, [floor] = @floor, [DeviceName] = @DeviceName, [state] = @state, [state_old] = @state_old, [chk] = @chk, [seq] = @seq, [ch] = @ch, [em1] = @em1, [em2] = @em2, [em3] = @em3, [DeviceId] = @DeviceId, [emData] = @emData, [zpco] = @zpco, [zpci] = @zpci, [floorname] = @floorname, [zpc] = @zpc, [building] = @building WHERE (([AssetId] = @Original_AssetId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ip", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GroupName", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GroupName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11168,6 +11396,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@em3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "em3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DeviceId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeviceId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emData", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpco", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpci", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpci", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@floorname", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "floorname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpc", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@building", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "building", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -11184,8 +11417,9 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AssetId, ip, GroupName, ZoneName, SpeakerName, path, floor, DeviceName, st" +
-                "ate, state_old, chk, seq, ch, em1, em2, em3, DeviceId, emData FROM dbo.Assets";
+            this._commandCollection[0].CommandText = "SELECT  AssetId, ip, GroupName, ZoneName, SpeakerName, path, floor, DeviceName, s" +
+                "tate, state_old, chk, seq, ch, em1, em2, em3, DeviceId, emData, zpco, zpci, floo" +
+                "rname, zpc, building\r\nFROM     Assets";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11285,7 +11519,12 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     global::System.Nullable<int> em2, 
                     global::System.Nullable<int> em3, 
                     global::System.Nullable<int> DeviceId, 
-                    string emData) {
+                    string emData, 
+                    global::System.Nullable<int> zpco, 
+                    global::System.Nullable<int> zpci, 
+                    string floorname, 
+                    string zpc, 
+                    string building) {
             if ((ip == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -11388,6 +11627,36 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(emData));
             }
+            if ((zpco.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(zpco.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((zpci.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((int)(zpci.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((floorname == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(floorname));
+            }
+            if ((zpc == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(zpc));
+            }
+            if ((building == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(building));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11426,6 +11695,11 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
                     global::System.Nullable<int> em3, 
                     global::System.Nullable<int> DeviceId, 
                     string emData, 
+                    global::System.Nullable<int> zpco, 
+                    global::System.Nullable<int> zpci, 
+                    string floorname, 
+                    string zpc, 
+                    string building, 
                     int Original_AssetId) {
             if ((ip == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -11529,7 +11803,37 @@ namespace Wisej.CodeProject.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(emData));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_AssetId));
+            if ((zpco.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(zpco.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((zpci.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(zpci.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((floorname == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(floorname));
+            }
+            if ((zpc == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(zpc));
+            }
+            if ((building == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(building));
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_AssetId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -165,9 +165,12 @@
                                     <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
                                         <DataGrid x:Name="_lvLeft4" AutoGenerateColumns="False">
                                             <DataGrid.Columns>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn4" Header="파일명" Binding="{Binding file}" Width="300" IsReadOnly="True"/>
+                                                <DataGridTextColumn x:Name="dataGridTextColumn4" Header="파일명" Binding="{Binding file}" Width="240" IsReadOnly="True"/>
                                                 <DataGridTextColumn x:Name="dataGridTextColumn5" Header="채널" Binding="{Binding ch}" Width="60" IsReadOnly="True"/>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn6" Header="위치" Binding="{Binding emData}" Width="250" IsReadOnly="True"/>
+                                                <DataGridTextColumn x:Name="dataGridTextColumn6" Header="위치" Binding="{Binding emData}" Width="220" IsReadOnly="True"/>
+                                                <DataGridTextColumn x:Name="dataGridTextColumn7" Header="ZPC" Binding="{Binding zpc}" Width="100" IsReadOnly="True"/>
+                                                <DataGridTextColumn x:Name="dataGridTextColumn8" Header="ZPC-I" Binding="{Binding zpci}" Width="60" IsReadOnly="True"/>
+                                                <DataGridTextColumn x:Name="dataGridTextColumn9" Header="ZPC-O" Binding="{Binding zpco}" Width="60" IsReadOnly="True"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
                                     </Border>

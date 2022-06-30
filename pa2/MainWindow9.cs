@@ -303,8 +303,11 @@ namespace pa
                 {
                     EmSpeakerPosition em1 = new EmSpeakerPosition();
                     em1.array = d2.Split(',');
-                    em1.file = em1.getfile();
-                    g._emspl.child.Add(em1);
+                    if (em1.array.Length > 12)
+                    { 
+                        em1.file = em1.getfile();
+                        g._emspl.child.Add(em1);
+                    }
                 }
                 _lvLeft4.ItemsSource = null;
                 _lvLeft4.ItemsSource = g._emspl.child;

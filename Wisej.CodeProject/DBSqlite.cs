@@ -64,29 +64,37 @@ namespace Wisej.CodeProject
         public void SaveAssets(EmSpeakerPosition t1)
         {
             Tam.AssetsTableAdapter.Fill(Ds1.Assets);
-            var aa = t1.file.Split(' ');
+            var aa = t1.array;
 
+            if (aa.Length < 12)
+                return;
             var m3 = Ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
             if (m3 == null)
             {
                 AssetsRow m2 = Ds1.Assets.NewAssetsRow();
                 m2.seq = int.Parse(aa[0]);
-                m2.GroupName = aa[1];
-                m2.ZoneName = aa[2];
-                m2.SpeakerName = aa[3];
-                m2.path = aa[1] + " " + aa[2] + " " + aa[3];
-                m2.ch = int.Parse(aa[5]);
+                m2.building = aa[1];
+                m2.floorname = aa[2];
+                m2.GroupName = aa[1] + aa[2];
+                m2.ZoneName = aa[3];
+                m2.SpeakerName = aa[4];
+                m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4];
+                m2.ch = int.Parse(t1.ch);
+                m2.zpc = t1.zpc;
+                m2.zpci = t1.zpci;
+                m2.zpco = t1.zpco;
+
                 if (m2.ch == 0)
                     m2.ch = 1;
                 m2.chk = 0;
-                m2.floor = int.Parse(t1.array[6]) * 100 + int.Parse(t1.array[7]) *10 + int.Parse(t1.array[8]);
+                m2.floor = int.Parse(t1.array[10]) * 100 + int.Parse(t1.array[11]) *10 + int.Parse(t1.array[12]);
                 m2.emData = t1.emData;
                 m2.ip = "";
                 m2.state = "";
                 m2.state_old = "";
                 m2.DeviceId = 0;
                 if (aa.Count() > 4)
-                    m2.DeviceName = aa[4];
+                    m2.DeviceName = aa[5];
                 Ds1.Assets.Rows.Add(m2);
                 Tam.AssetsTableAdapter.Update(Ds1.Assets);
             }
