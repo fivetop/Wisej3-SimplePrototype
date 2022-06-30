@@ -30,7 +30,6 @@ namespace Wisej.CodeProject.Examples
 						break;
 
 					this.progressBar1.Value = count;
-					this.progressCircle1.Value = count;
 					this.progressBar1.Text = count + "%";
 					this.label1.Text = BuildText(count);
 					Application.Update(this);

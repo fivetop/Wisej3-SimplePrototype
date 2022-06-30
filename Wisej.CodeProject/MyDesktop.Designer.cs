@@ -1293,7 +1293,6 @@
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
         private Web.Panel panel5;
         private Web.SplitContainer splitContainer3;
-        private Web.Ext.FullCalendar.FullCalendar fullCalendar1;
         private Web.SplitContainer splitContainer4;
         private Web.SplitContainer splitContainer5;
         private Web.TabControl SetuptabControl;

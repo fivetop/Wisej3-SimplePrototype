@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ComponentTool componentTool2 = new Wisej.Web.ComponentTool();
+            Wisej.Web.ComponentTool componentTool1 = new Wisej.Web.ComponentTool();
             this.dataSet1 = new Wisej.CodeProject.DataSet1();
             this.ubindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.userTreesTableAdapter = new Wisej.CodeProject.DataSet1TableAdapters.UserTreesTableAdapter();
@@ -43,25 +43,25 @@
             this.colEmail = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colMobile = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colUser_Group = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.ubutton3 = new Wisej.Web.Button();
             this.tableLayoutPanel6 = new Wisej.Web.TableLayoutPanel();
-            this.utextpassword2 = new Wisej.Web.TextBox();
             this.utextpassword = new Wisej.Web.TextBox();
             this.label13 = new Wisej.Web.Label();
-            this.utextusername = new Wisej.Web.TextBox();
-            this.label14 = new Wisej.Web.Label();
             this.utextloginid = new Wisej.Web.TextBox();
             this.label16 = new Wisej.Web.Label();
-            this.label17 = new Wisej.Web.Label();
-            this.label18 = new Wisej.Web.Label();
             this.label15 = new Wisej.Web.Label();
-            this.ucomboBox1 = new Wisej.Web.ComboBox();
             this.umaskedTextBox1 = new Wisej.Web.MaskedTextBox();
             this.label19 = new Wisej.Web.Label();
             this.utextBox3 = new Wisej.Web.TextBox();
-            this.panel1 = new Wisej.Web.Panel();
-            this.ubutton3 = new Wisej.Web.Button();
-            this.ubutton2 = new Wisej.Web.Button();
+            this.utextusername = new Wisej.Web.TextBox();
+            this.label14 = new Wisej.Web.Label();
+            this.utextpassword2 = new Wisej.Web.TextBox();
+            this.label17 = new Wisej.Web.Label();
+            this.ucomboBox1 = new Wisej.Web.ComboBox();
+            this.label18 = new Wisej.Web.Label();
             this.ubutton1 = new Wisej.Web.Button();
+            this.panel1 = new Wisej.Web.Panel();
+            this.ubutton2 = new Wisej.Web.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubindingSource1)).BeginInit();
             this.panel8.SuspendLayout();
@@ -186,13 +186,23 @@
             this.colUser_Group.HeaderText = "사용자권한";
             this.colUser_Group.Name = "colUser_Group";
             // 
+            // ubutton3
+            // 
+            this.ubutton3.Anchor = Wisej.Web.AnchorStyles.None;
+            this.ubutton3.Location = new System.Drawing.Point(268, 328);
+            this.ubutton3.Name = "ubutton3";
+            this.ubutton3.Size = new System.Drawing.Size(100, 47);
+            this.ubutton3.TabIndex = 12;
+            this.ubutton3.Text = "삭제";
+            this.ubutton3.Click += new System.EventHandler(this.ubutton3_Click);
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 31.9F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 68.1F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 110F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.utextpassword, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.utextloginid, 1, 1);
@@ -221,31 +231,17 @@
             this.tableLayoutPanel6.TabIndex = 8;
             this.tableLayoutPanel6.TabStop = true;
             // 
-            // utextpassword2
-            // 
-            this.utextpassword2.AutoSize = false;
-            this.utextpassword2.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "login_password2", true));
-            this.utextpassword2.Dock = Wisej.Web.DockStyle.Fill;
-            this.utextpassword2.InputType.Type = Wisej.Web.TextBoxType.Password;
-            this.utextpassword2.Location = new System.Drawing.Point(126, 80);
-            this.utextpassword2.Margin = new Wisej.Web.Padding(8);
-            this.utextpassword2.Name = "utextpassword2";
-            this.utextpassword2.PasswordChar = '*';
-            this.utextpassword2.Size = new System.Drawing.Size(239, 20);
-            this.utextpassword2.TabIndex = 15;
-            this.utextpassword2.Watermark = "Enter a name";
-            // 
             // utextpassword
             // 
             this.utextpassword.AutoSize = false;
             this.utextpassword.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "login_password", true));
             this.utextpassword.Dock = Wisej.Web.DockStyle.Fill;
             this.utextpassword.InputType.Type = Wisej.Web.TextBoxType.Password;
-            this.utextpassword.Location = new System.Drawing.Point(126, 116);
+            this.utextpassword.Location = new System.Drawing.Point(118, 116);
             this.utextpassword.Margin = new Wisej.Web.Padding(8);
             this.utextpassword.Name = "utextpassword";
             this.utextpassword.PasswordChar = '*';
-            this.utextpassword.Size = new System.Drawing.Size(239, 20);
+            this.utextpassword.Size = new System.Drawing.Size(247, 20);
             this.utextpassword.TabIndex = 14;
             this.utextpassword.Watermark = "Enter a name";
             // 
@@ -255,20 +251,91 @@
             this.label13.Location = new System.Drawing.Point(0, 0);
             this.label13.Margin = new Wisej.Web.Padding(0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 36);
+            this.label13.Size = new System.Drawing.Size(110, 36);
             this.label13.TabIndex = 0;
             this.label13.Text = "&User Name";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // utextloginid
+            // 
+            this.utextloginid.AutoSize = false;
+            this.utextloginid.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "login_id", true));
+            this.utextloginid.Dock = Wisej.Web.DockStyle.Fill;
+            this.utextloginid.Location = new System.Drawing.Point(118, 44);
+            this.utextloginid.Margin = new Wisej.Web.Padding(8);
+            this.utextloginid.Name = "utextloginid";
+            this.utextloginid.Size = new System.Drawing.Size(247, 20);
+            this.utextloginid.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.Dock = Wisej.Web.DockStyle.Fill;
+            this.label16.Location = new System.Drawing.Point(0, 72);
+            this.label16.Margin = new Wisej.Web.Padding(0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(110, 36);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Password";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = Wisej.Web.DockStyle.Fill;
+            this.label15.Location = new System.Drawing.Point(0, 144);
+            this.label15.Margin = new Wisej.Web.Padding(0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(110, 36);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "&Level";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // umaskedTextBox1
+            // 
+            this.umaskedTextBox1.AutoSize = false;
+            this.umaskedTextBox1.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "mobile", true));
+            this.umaskedTextBox1.Dock = Wisej.Web.DockStyle.Fill;
+            this.umaskedTextBox1.Location = new System.Drawing.Point(113, 183);
+            this.umaskedTextBox1.Mask = "(999) 000-0000";
+            this.umaskedTextBox1.Name = "umaskedTextBox1";
+            this.umaskedTextBox1.Size = new System.Drawing.Size(257, 30);
+            this.umaskedTextBox1.TabIndex = 9;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Dock = Wisej.Web.DockStyle.Fill;
+            this.label19.Location = new System.Drawing.Point(0, 216);
+            this.label19.Margin = new Wisej.Web.Padding(0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(110, 40);
+            this.label19.TabIndex = 10;
+            this.label19.Text = "E&Mail";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // utextBox3
+            // 
+            this.utextBox3.AutoSize = false;
+            this.utextBox3.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "email", true));
+            this.utextBox3.Dock = Wisej.Web.DockStyle.Fill;
+            this.utextBox3.Location = new System.Drawing.Point(113, 219);
+            this.utextBox3.Name = "utextBox3";
+            this.utextBox3.Size = new System.Drawing.Size(257, 34);
+            this.utextBox3.TabIndex = 11;
+            componentTool1.ImageSource = "resource.wx/Wisej.Ext.MaterialDesign/write-email-envelope-button.svg";
+            componentTool1.Name = "Send Email";
+            this.utextBox3.Tools.AddRange(new Wisej.Web.ComponentTool[] {
+            componentTool1});
             // 
             // utextusername
             // 
             this.utextusername.AutoSize = false;
             this.utextusername.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "user_name", true));
             this.utextusername.Dock = Wisej.Web.DockStyle.Fill;
-            this.utextusername.Location = new System.Drawing.Point(126, 8);
+            this.utextusername.Location = new System.Drawing.Point(118, 8);
             this.utextusername.Margin = new Wisej.Web.Padding(8);
             this.utextusername.Name = "utextusername";
-            this.utextusername.Size = new System.Drawing.Size(239, 20);
+            this.utextusername.Size = new System.Drawing.Size(247, 20);
             this.utextusername.TabIndex = 1;
             this.utextusername.Watermark = "Enter a name";
             // 
@@ -279,32 +346,24 @@
             this.label14.Location = new System.Drawing.Point(0, 36);
             this.label14.Margin = new Wisej.Web.Padding(0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(118, 36);
+            this.label14.Size = new System.Drawing.Size(110, 36);
             this.label14.TabIndex = 2;
             this.label14.Text = "&LogIn ID";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // utextloginid
+            // utextpassword2
             // 
-            this.utextloginid.AutoSize = false;
-            this.utextloginid.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "login_id", true));
-            this.utextloginid.Dock = Wisej.Web.DockStyle.Fill;
-            this.utextloginid.Location = new System.Drawing.Point(126, 44);
-            this.utextloginid.Margin = new Wisej.Web.Padding(8);
-            this.utextloginid.Name = "utextloginid";
-            this.utextloginid.Size = new System.Drawing.Size(239, 20);
-            this.utextloginid.TabIndex = 3;
-            // 
-            // label16
-            // 
-            this.label16.Dock = Wisej.Web.DockStyle.Fill;
-            this.label16.Location = new System.Drawing.Point(0, 72);
-            this.label16.Margin = new Wisej.Web.Padding(0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(118, 36);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "Password";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.utextpassword2.AutoSize = false;
+            this.utextpassword2.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "login_password2", true));
+            this.utextpassword2.Dock = Wisej.Web.DockStyle.Fill;
+            this.utextpassword2.InputType.Type = Wisej.Web.TextBoxType.Password;
+            this.utextpassword2.Location = new System.Drawing.Point(118, 80);
+            this.utextpassword2.Margin = new Wisej.Web.Padding(8);
+            this.utextpassword2.Name = "utextpassword2";
+            this.utextpassword2.PasswordChar = '*';
+            this.utextpassword2.Size = new System.Drawing.Size(247, 20);
+            this.utextpassword2.TabIndex = 15;
+            this.utextpassword2.Watermark = "Enter a name";
             // 
             // label17
             // 
@@ -312,33 +371,10 @@
             this.label17.Location = new System.Drawing.Point(0, 108);
             this.label17.Margin = new Wisej.Web.Padding(0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(118, 36);
+            this.label17.Size = new System.Drawing.Size(110, 36);
             this.label17.TabIndex = 13;
             this.label17.Text = "Password(확인)";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label18
-            // 
-            this.label18.Dock = Wisej.Web.DockStyle.Fill;
-            this.label18.Location = new System.Drawing.Point(0, 180);
-            this.label18.Margin = new Wisej.Web.Padding(0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(118, 36);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "&Mobile";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Dock = Wisej.Web.DockStyle.Fill;
-            this.label15.Location = new System.Drawing.Point(0, 144);
-            this.label15.Margin = new Wisej.Web.Padding(0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(118, 36);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "&Level";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ucomboBox1
             // 
@@ -349,77 +385,22 @@
             this.ucomboBox1.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.ucomboBox1.Location = new System.Drawing.Point(126, 152);
+            this.ucomboBox1.Location = new System.Drawing.Point(118, 152);
             this.ucomboBox1.Margin = new Wisej.Web.Padding(8);
             this.ucomboBox1.Name = "ucomboBox1";
-            this.ucomboBox1.Size = new System.Drawing.Size(239, 20);
+            this.ucomboBox1.Size = new System.Drawing.Size(247, 20);
             this.ucomboBox1.TabIndex = 5;
             // 
-            // umaskedTextBox1
+            // label18
             // 
-            this.umaskedTextBox1.AutoSize = false;
-            this.umaskedTextBox1.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "mobile", true));
-            this.umaskedTextBox1.Dock = Wisej.Web.DockStyle.Fill;
-            this.umaskedTextBox1.Location = new System.Drawing.Point(121, 183);
-            this.umaskedTextBox1.Mask = "(999) 000-0000";
-            this.umaskedTextBox1.Name = "umaskedTextBox1";
-            this.umaskedTextBox1.Size = new System.Drawing.Size(249, 30);
-            this.umaskedTextBox1.TabIndex = 9;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Dock = Wisej.Web.DockStyle.Fill;
-            this.label19.Location = new System.Drawing.Point(0, 216);
-            this.label19.Margin = new Wisej.Web.Padding(0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(118, 40);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "E&Mail";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // utextBox3
-            // 
-            this.utextBox3.AutoSize = false;
-            this.utextBox3.DataBindings.Add(new Wisej.Web.Binding("Text", this.ubindingSource1, "email", true));
-            this.utextBox3.Dock = Wisej.Web.DockStyle.Fill;
-            this.utextBox3.Location = new System.Drawing.Point(121, 219);
-            this.utextBox3.Name = "utextBox3";
-            this.utextBox3.Size = new System.Drawing.Size(249, 34);
-            this.utextBox3.TabIndex = 11;
-            componentTool2.ImageSource = "resource.wx/Wisej.Ext.MaterialDesign/write-email-envelope-button.svg";
-            componentTool2.Name = "Send Email";
-            this.utextBox3.Tools.AddRange(new Wisej.Web.ComponentTool[] {
-            componentTool2});
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.ubutton2);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 100);
-            this.panel1.TabIndex = 13;
-            // 
-            // ubutton3
-            // 
-            this.ubutton3.Anchor = Wisej.Web.AnchorStyles.None;
-            this.ubutton3.Location = new System.Drawing.Point(268, 328);
-            this.ubutton3.Name = "ubutton3";
-            this.ubutton3.Size = new System.Drawing.Size(100, 47);
-            this.ubutton3.TabIndex = 12;
-            this.ubutton3.Text = "삭제";
-            this.ubutton3.Click += new System.EventHandler(this.ubutton3_Click);
-            // 
-            // ubutton2
-            // 
-            this.ubutton2.Anchor = Wisej.Web.AnchorStyles.None;
-            this.ubutton2.Location = new System.Drawing.Point(956, 24);
-            this.ubutton2.Name = "ubutton2";
-            this.ubutton2.Size = new System.Drawing.Size(100, 51);
-            this.ubutton2.TabIndex = 11;
-            this.ubutton2.Text = "신규";
-            this.ubutton2.Click += new System.EventHandler(this.ubutton2_Click);
+            this.label18.Dock = Wisej.Web.DockStyle.Fill;
+            this.label18.Location = new System.Drawing.Point(0, 180);
+            this.label18.Margin = new Wisej.Web.Padding(0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(110, 36);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "&Mobile";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ubutton1
             // 
@@ -430,6 +411,25 @@
             this.ubutton1.TabIndex = 10;
             this.ubutton1.Text = "저장";
             this.ubutton1.Click += new System.EventHandler(this.ubutton1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ubutton2);
+            this.panel1.Dock = Wisej.Web.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1104, 100);
+            this.panel1.TabIndex = 13;
+            // 
+            // ubutton2
+            // 
+            this.ubutton2.Anchor = Wisej.Web.AnchorStyles.None;
+            this.ubutton2.Location = new System.Drawing.Point(956, 24);
+            this.ubutton2.Name = "ubutton2";
+            this.ubutton2.Size = new System.Drawing.Size(100, 51);
+            this.ubutton2.TabIndex = 11;
+            this.ubutton2.Text = "신규";
+            this.ubutton2.Click += new System.EventHandler(this.ubutton2_Click);
             // 
             // MUserManager
             // 

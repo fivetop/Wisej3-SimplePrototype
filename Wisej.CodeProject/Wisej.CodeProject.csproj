@@ -162,9 +162,6 @@
     <EmbeddedResource Include="win\BSOutManager.resx">
       <DependentUpon>BSOutManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\EventEditor.resx">
-      <DependentUpon>EventEditor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="win\MGroupManager.resx">
       <DependentUpon>MGroupManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -720,12 +717,6 @@
     <Compile Include="win\BSOutManager.Designer.cs">
       <DependentUpon>BSOutManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\EventEditor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\EventEditor.Designer.cs">
-      <DependentUpon>EventEditor.cs</DependentUpon>
-    </Compile>
     <Compile Include="win\MGroupManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -926,44 +917,9 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="Wisej.Ext.MaterialDesign">
-      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Ext.MaterialDesign.dll</HintPath>
-    </Reference>
-    <Reference Include="Wisej.Ext.ModernUI">
-      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Ext.ModernUI.dll</HintPath>
-    </Reference>
     <Reference Include="Wisej.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
       <HintPath>..\packages\Wisej-3.3.0.10\lib\net48\Wisej.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="Wisej.Web.Ext.ChartJS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.ChartJS.dll</HintPath>
-    </Reference>
-    <Reference Include="Wisej.Web.Ext.ChartJS3">
-      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.ChartJS3.dll</HintPath>
-    </Reference>
-    <Reference Include="Wisej.Web.Ext.CKEditor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.CKEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Wisej.Web.Ext.CoolClock">
-      <HintPath>..\..\..\..\wisej\Extensions\2.0\bin\Wisej.Web.Ext.CoolClock.dll</HintPath>
-    </Reference>
-    <Reference Include="Wisej.Web.Ext.CustomWallpaper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.CustomWallpaper.dll</HintPath>
-    </Reference>
-    <Reference Include="Wisej.Web.Ext.FullCalendar, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Wisej.Web.Ext.FullCalendar.dll</HintPath>
-    </Reference>
-    <Reference Include="Wisej.Web.Ext.GoogleMaps, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
-    <Reference Include="Wisej.Web.Ext.ProgressCircle, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\wisej-extensions-2.5\wisej-extensions-2.5\bin\Wisej.Web.Ext.ProgressCircle.dll</HintPath>
-    </Reference>
-    <Reference Include="Wisej.Web.Ext.RibbonBar, Version=2.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL" />
-    <Reference Include="Wisej.Web.Ext.SideButton, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Examples\BackgroundTasks.resx">

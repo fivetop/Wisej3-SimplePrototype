@@ -31,7 +31,6 @@
             this.button1 = new Wisej.Web.Button();
             this.button2 = new Wisej.Web.Button();
             this.progressBar1 = new Wisej.Web.ProgressBar();
-            this.progressCircle1 = new Wisej.Web.Ext.ProgressCircle.ProgressCircle();
             this.label1 = new Wisej.Web.Label();
             this.SuspendLayout();
             // 
@@ -66,19 +65,6 @@
             this.progressBar1.TabIndex = 2;
             this.progressBar1.Text = "0%";
             // 
-            // progressCircle1
-            // 
-            this.progressCircle1.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
-            | Wisej.Web.AnchorStyles.Left) 
-            | Wisej.Web.AnchorStyles.Right)));
-            this.progressCircle1.Font = new System.Drawing.Font("default", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.progressCircle1.ForeColor = System.Drawing.Color.Coral;
-            this.progressCircle1.LineWidth = 20;
-            this.progressCircle1.Location = new System.Drawing.Point(234, 241);
-            this.progressCircle1.Name = "progressCircle1";
-            this.progressCircle1.Size = new System.Drawing.Size(567, 227);
-            this.progressCircle1.Value = 20;
-            // 
             // label1
             // 
             this.label1.AllowHtml = true;
@@ -98,7 +84,6 @@
             this.ClientSize = new System.Drawing.Size(823, 496);
             this.CloseBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressCircle1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -116,7 +101,6 @@
 		private Web.Button button1;
 		private Web.Button button2;
 		private Web.ProgressBar progressBar1;
-		private Web.Ext.ProgressCircle.ProgressCircle progressCircle1;
 		private Web.Label label1;
 	}
 }

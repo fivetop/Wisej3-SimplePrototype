@@ -104,6 +104,7 @@ namespace Wisej.CodeProject.win
 		private void ubutton2_Click(object sender, EventArgs e)
 		{
 			if (add == 1) return;
+			splitContainer1.Panel2.Collapsed = false;
 			add = 1;
 			uAddNewRecord();
 		}
