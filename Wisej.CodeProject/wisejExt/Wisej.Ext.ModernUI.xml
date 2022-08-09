@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Ext.ModernUI</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Ext.ModernUI.Icons">
+            <summary>
+            Defines all the images in the icon set.
+            </summary>
+        </member>
+        <member name="T:Wisej.Ext.ModernUI.NamespaceDoc">
+            <summary>
+            <para>
+            ModernUI IconPack. Adds the full ModernUI (http://modernuiicons.com/) icon set as a single assembly.
+            </para>
+            </summary>
+        </member>
+    </members>
+</doc>

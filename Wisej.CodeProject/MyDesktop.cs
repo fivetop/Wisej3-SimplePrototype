@@ -70,7 +70,7 @@ namespace Wisej.CodeProject
 
 			AlertBox.Show("Log-In : " + t2 + t1);
 
-            Application.LoadTheme("Blue-1");
+            //Application.LoadTheme("Blue-1");
 			//Application.LoadTheme("Blue-2");
 			//Application.LoadTheme("Blue-3");
 			//Application.LoadTheme("Classic-2");
@@ -78,7 +78,7 @@ namespace Wisej.CodeProject
 			//Application.LoadTheme("Clear-2");
 			//Application.LoadTheme("Clear-3");
 			//Application.LoadTheme("Graphite-3");
-			//Application.LoadTheme("Material-3");
+			Application.LoadTheme("Material-3");
 			//Application.LoadTheme("Vista-2");
 
 			this.btnStart.Enabled = true;
@@ -304,8 +304,10 @@ namespace Wisej.CodeProject
 		// 시험용  
 		private void button7_Click(object sender, EventArgs e)
         {
+			Page2 _Page = new Page2();
+			_Page.Show();
 
-			radioButton2.Checked = true;
+			//radioButton2.Checked = true;
 
 			/*
 			var win = new Window1();
@@ -322,7 +324,7 @@ namespace Wisej.CodeProject
 		}
 
 		// log out 처리 
-        private void button11_Click(object sender, EventArgs e)
+		private void button11_Click(object sender, EventArgs e)
         {
 			Application.Session["isloggedon"] = "false";
 			Application.Session["user"] = "";

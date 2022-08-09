@@ -185,7 +185,7 @@
 		"toolbarText": "#2B2B2B",
 		"primary": "#00897B",
 		"accent": "#4BAF50",
-		"focusFrame": "#106AC8",
+		"focusFrame": "#D6D6D6",
 		"slidebarButtons": "black",
 		"switchOff": "#8A8A8A",
 		"switchOn": "#6BC2BA",

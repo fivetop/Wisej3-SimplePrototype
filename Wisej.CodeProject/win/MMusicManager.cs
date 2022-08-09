@@ -58,7 +58,7 @@ namespace Wisej.CodeProject.win
 			{
 				this.mbindingSource1.EndEdit();
 				var count = this.musicsTableAdapter.Update(this.dataSet1.Musics);
-				this.mdataGridView1.Tools["Save"].Enabled = false;
+				//this.mdataGridView1.Tools["Save"].Enabled = false;
 
 				AlertBox.Show("Saved!");
 			}

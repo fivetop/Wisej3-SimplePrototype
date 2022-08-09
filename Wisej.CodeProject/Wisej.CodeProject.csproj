@@ -94,6 +94,7 @@
     <Content Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
+    <Fakes Include="Fakes\Wisej-3.fakes" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -104,17 +105,7 @@
     <Content Include="Properties\DataSources\Model.DataList.datasource" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Themes\Clear-1.theme" />
-    <Content Include="Themes\App.mixin.theme" />
-    <Content Include="Themes\Blue-1.theme" />
-    <Content Include="Themes\Blue-2.theme" />
-    <Content Include="Themes\Blue-3.theme" />
-    <Content Include="Themes\Classic-2.theme" />
-    <Content Include="Themes\Clear-2.theme" />
-    <Content Include="Themes\Clear-3.theme" />
-    <Content Include="Themes\Graphite-3.theme" />
     <Content Include="Themes\Material-3.theme" />
-    <Content Include="Themes\Vista-2.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,9 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win\MUser.resx">
-      <DependentUpon>MUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\add-alarm-button.svg" />
     <EmbeddedResource Include="Resources\add-button-inside-black-circle.svg" />
@@ -753,12 +741,6 @@
     <Compile Include="win\PMusicSel.Designer.cs">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="win\MUser.Designer.cs">
-      <DependentUpon>MUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Examples\BackgroundTasks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -859,6 +841,9 @@
     <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.1.4.4\lib\net40\Nancy.dll</HintPath>
     </Reference>
@@ -917,8 +902,20 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="Wisej.Ext.ElegantIcons, Version=3.0.0.0, Culture=neutral, PublicKeyToken=653fbd0440795259, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wisej-3-ElegantIcons.3.0.12\lib\net48\Wisej.Ext.ElegantIcons.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Ext.FontAwesome">
+      <HintPath>wisejExt\Wisej.Ext.FontAwesome.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Ext.MaterialDesign">
+      <HintPath>wisejExt\Wisej.Ext.MaterialDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Wisej.Ext.ModernUI">
+      <HintPath>wisejExt\Wisej.Ext.ModernUI.dll</HintPath>
+    </Reference>
     <Reference Include="Wisej.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
-      <HintPath>..\packages\Wisej-3.3.0.10\lib\net48\Wisej.Framework.dll</HintPath>
+      <HintPath>..\packages\Wisej-3.3.0.12\lib\net48\Wisej.Framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -942,9 +939,6 @@
       <Project>{40d7c7ab-a585-49d9-b9a1-0a499eec5067}</Project>
       <Name>DataClass</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Wisej-3" Version="3.*" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

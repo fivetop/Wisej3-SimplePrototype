@@ -1,4 +1,4 @@
-﻿      function dockTwins() {
+﻿function dockTwins() {
 
     // dock window 1 to the left using half of the workspace
     App.Desktop.getWindows()[0].setLayoutProperties({ left: 0, right: "100%", top: 0, bottom: 0 });
