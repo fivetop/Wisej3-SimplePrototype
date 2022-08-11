@@ -20,8 +20,8 @@ namespace Wisej.CodeProject
 {
     public partial class MyDesktop : Desktop
 	{
-		private Popups.StartPopup startPopup;
-		public event EventHandler ExampleCreated;
+		//private Popups.StartPopup startPopup;
+		//public event EventHandler ExampleCreated;
 
 		public static SignalRClient signalRClient { get; set; } = new SignalRClient();
 		public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
@@ -38,10 +38,10 @@ namespace Wisej.CodeProject
 				playItems[i].chno = i;
 			}
 
-			this.startPopup = new Popups.StartPopup()
-			{
-				Alignment = Placement.TopLeft
-			};
+			//this.startPopup = new Popups.StartPopup()
+			//{
+			//	Alignment = Placement.TopLeft
+			//};
 			//this.customWallpaper1.RotationInterval = 5000;
 
 			string t1 = Application.Session["user"];
@@ -92,10 +92,14 @@ namespace Wisej.CodeProject
 
 			Main_Load(sender, e);
 			disp_split();
-			AddBSPage();
-			AddSetupPage();
+
+			AddBSPage(); // 방송 설정 처리 
+			AddSetupPage(); // 환경설정 처리 
 		}
 
+        #region // main initial 
+
+        // split 위치 설정 세로, 가로,  세로
         private void disp_split()
         {
 			Cookie d1 = Application.Cookies.Get("d1");
@@ -184,9 +188,8 @@ namespace Wisej.CodeProject
 			LabelON(9,false);
 		}
 
-		#region // tab initial  
 
-		BSAsset bSAsset = new BSAsset();
+        BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 		BSInManager bSInManager = new BSInManager();
 		BSOutManager bSOutManage = new BSOutManager();
@@ -282,12 +285,13 @@ namespace Wisej.CodeProject
 			mUserManager.Dock = DockStyle.Fill;
 			SetuptabControl.TabPages.Add(tabClients);
 		}
-        #endregion
 
-        #region // button 
+		#endregion
 
-        // 백그라운드 처리용 
-        private void SatrtUpdatingGageItem()
+		#region // button 
+
+		// 백그라운드 처리용 
+		private void SatrtUpdatingGageItem()
 		{
 			Application.StartTask(() =>
 			{
@@ -378,6 +382,8 @@ namespace Wisej.CodeProject
 
 		#endregion
 
+		#region // tab initial  
+		
 
 		bool show = false;
 		private void MyDesktop_ItemClick(object sender, DesktopTaskBarItemClickEventArgs e)
@@ -422,6 +428,7 @@ namespace Wisej.CodeProject
             }
         */
 
+		#endregion
 
 	}
 }

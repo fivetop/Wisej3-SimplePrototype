@@ -1,18 +1,12 @@
-﻿using Microsoft.AspNet.SignalR;
-using Microsoft.Owin;
-using Microsoft.Owin.Hosting;
-using Microsoft.Owin.Cors;
-using Owin;
-using System;
-using System.Threading;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Web.Http;
 using Wisej.Web;
-using System.Diagnostics;
-using System.Collections.Generic;
 
 namespace Wisej.CodeProject
 {
-	static class Program
+    static class Program
 	{
 		/// <summary>
 		/// The main entry point for the application.
