@@ -537,13 +537,6 @@
     <EmbeddedResource Include="win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <Content Include="Scripts\jquery.signalR-2.2.3.js" />
-    <Content Include="Scripts\jquery.signalR-2.2.3.min.js" />
     <Content Include="simplepa2.js" />
     <None Include="DataSet1.xsd">
       <SubType>Designer</SubType>
@@ -557,8 +550,6 @@
     <Content Include="Handler1.ashx" />
     <Fakes Include="Fakes\Wisej-3.fakes" />
     <Content Include="Files\Wisej-Datasheet-V2.3.pdf" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Themes\Material-3.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
