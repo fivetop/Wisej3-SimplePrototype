@@ -258,31 +258,31 @@ namespace simplepa2
 
         private void AddSetupPage()
         {
-			TabPage tabClients = new TabPage("환경설정");
+			TabPage tabClients = new TabPage("1.환경설정");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(mSetupManager);
 			mSetupManager.Dock = DockStyle.Fill;
 			SetuptabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("그룹관리");
+			tabClients = new TabPage("2.그룹관리");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(mGroupManager);
 			mGroupManager.Dock = DockStyle.Fill;
 			SetuptabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("휴일관리");
+			tabClients = new TabPage("3.휴일관리");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(mHolidayManager);
 			mHolidayManager.Dock = DockStyle.Fill;
 			SetuptabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("음원관리");
+			tabClients = new TabPage("4.음원관리");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(mMusicManager);
 			mMusicManager.Dock = DockStyle.Fill;
 			SetuptabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("사용자관리");
+			tabClients = new TabPage("5.사용자관리");
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(mUserManager);
 			mUserManager.Dock = DockStyle.Fill;
