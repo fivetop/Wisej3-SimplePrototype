@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="pa.classes.Node" Collapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pa.classes.MusicList">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAABAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pa.classes.Music">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAEAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAABAAgA=</HashCode>
+      <FileName>classes\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pa.classes.Asset" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAACAAAAAAAAAAAAAAAAABAAAgE=</HashCode>
+      <FileName>classes\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pa.classes.Group" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>classes\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pa.classes.Zone" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>classes\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pa.classes.Speaker" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAABAAgA=</HashCode>
+      <FileName>classes\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pa.classes.TaskExtensions" Collapsed="true">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>classes\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

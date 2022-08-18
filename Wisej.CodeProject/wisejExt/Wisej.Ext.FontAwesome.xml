@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wisej.Ext.FontAwesome</name>
+    </assembly>
+    <members>
+        <member name="T:Wisej.Ext.FontAwesome.Icons">
+            <summary>
+            Defines all the images in the icon set.
+            </summary>
+        </member>
+        <member name="T:Wisej.Ext.FontAwesome.NamespaceDoc">
+            <summary>
+            <para>
+            FontAwesome IconPack. Adds the full FontAwesome icon set as a single assembly.
+            </para>
+            </summary>
+        </member>
+    </members>
+</doc>

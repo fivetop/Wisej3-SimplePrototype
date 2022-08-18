@@ -1,0 +1,90 @@
+﻿<Window x:Class="pa.Windows.SetupWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:w="clr-namespace:pa.Windows"
+                      xmlns:c="clr-namespace:pa.classes"
+                      Title="환경 설정"
+                      WindowStartupLocation="CenterScreen"
+                      Height="500"
+                      Width="460"
+                      Name="Window" Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="4"/>
+        </Grid.RowDefinitions>
+        <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Network Card" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="메인DSP" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="직상층발화 여부" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="P형 Port" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="R형 Port" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="R형 제조사" Margin="0,12,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="비상방송음원" Margin="0,14,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="일반방송볼륨" Margin="0,12,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="비상방송볼륨" Margin="0,14,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="SMS URL" Margin="0,16,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="SMS ID" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="SMS Password" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+                        <TextBlock Text="SMS 수신번호" Margin="0,10,0,0" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="10" Grid.Column="1">
+                        <ComboBox x:Name="_combo2" Margin="0,6,0,0" SelectionChanged="_combo2_SelectionChanged" />
+                        <ComboBox  x:Name="cboType" Margin="0,6,0,0" SelectionChanged="cboType_SelectionChanged" ToolTip="Main DSP"/>
+                        <ComboBox  x:Name="cboType6" Margin="0,6,0,0" SelectionChanged="cboType6_SelectionChanged" ToolTip="5층 이상 연면적 3.000 이상일때 2, 아니면 1"/>
+                        <TextBox x:Name="txt11" Margin="0,8,0,0" Text="{Binding GPIOPort}" ToolTip="P형 수신기 Serial Port(COM1)"/>
+                        <TextBox x:Name="txt12" Margin="0,8,0,0" Text="{Binding Rport}" ToolTip="R형 수신기 Serial Port(COM2)"/>
+                        <ComboBox  x:Name="cboType1" Margin="0,8,0,0" SelectionChanged="cboType1_SelectionChanged" ToolTip="Main DSP"/>
+                        <ComboBox  x:Name="cboType2" Margin="0,8,0,0" SelectionChanged="cboType2_SelectionChanged" ToolTip="Main DSP"/>
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox  x:Name="cboType3" Margin="0,4,4,4" ToolTip="일반방송 볼륨 전체적용" Width="120" SelectionChanged="cboType3_SelectionChanged" />
+                            <Button x:Name="_btn1" Content="일반방송 볼륨 전체적용" Margin="4" Click="_btn1_Click" FontWeight="Normal" FontFamily="Malgun Gothic" FontSize="12"></Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ComboBox  x:Name="cboType4" Margin="0,4,4,4" ToolTip="비상방송 볼륨 전체적용" Width="120" SelectionChanged="cboType4_SelectionChanged"/>
+                            <Button x:Name="_btn2" Content="비상방송 볼륨 전체적용" Margin="4" Click="_btn2_Click" FontFamily="Malgun Gothic" FontWeight="Normal" FontSize="12"></Button>
+                        </StackPanel>
+                        <TextBox x:Name="txt13" Margin="0,8,0,0" Text="{Binding sms_server}" ToolTip="sms url 정보"/>
+                        <TextBox x:Name="txt14" Margin="0,8,0,0" Text="{Binding sms_id}" ToolTip="sms id"/>
+                        <TextBox x:Name="txt15" Margin="0,8,0,0" Text="{Binding sms_pw}" ToolTip="sms pw"/>
+                        <TextBox x:Name="txt16" Margin="0,8,0,0" Text="{Binding sms_rcvno}" ToolTip="sms 수신자"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Margin="10">
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="10" Grid.Column="1">
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="2">
+            <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Right" Grid.Column="2">
+                    <Button x:Name="_btnCancel" Content="저장"  Width="60" Margin="0,0,6,0" Click="_btnCancel_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+
+</Window>
