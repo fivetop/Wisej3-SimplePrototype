@@ -29,20 +29,20 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry13 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
-            Wisej.Web.ImageListEntry imageListEntry14 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
-            Wisej.Web.ImageListEntry imageListEntry15 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry16 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry17 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry18 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry19 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.ImageListEntry imageListEntry20 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry21 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry22 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry23 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry24 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.ImageListEntry imageListEntry25 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
+            Wisej.Web.ImageListEntry imageListEntry26 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
+            Wisej.Web.ImageListEntry imageListEntry27 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry28 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry29 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry30 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry31 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry32 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry33 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry34 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry35 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry36 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle6 = new Wisej.Web.DataGridViewCellStyle();
             this.desktopStart = new Wisej.Web.DesktopTaskBarItem();
             this.desktopDateTime = new Wisej.Web.DesktopTaskBarItemDateTime();
             this.button7 = new Wisej.Web.Button();
@@ -228,8 +228,8 @@
             // imageList3
             // 
             this.imageList3.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry13,
-            imageListEntry14});
+            imageListEntry25,
+            imageListEntry26});
             // 
             // panel2
             // 
@@ -240,7 +240,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.ShowCloseButton = false;
-            this.panel2.Size = new System.Drawing.Size(801, 60);
+            this.panel2.Size = new System.Drawing.Size(774, 60);
             this.panel2.TabIndex = 1;
             this.panel2.TabStop = true;
             // 
@@ -267,7 +267,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 82.14F));
             this.tableLayoutPanel1.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(801, 58);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(774, 58);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.TabStop = true;
             // 
@@ -302,7 +302,7 @@
             this.radioButton5.AutoCheck = false;
             this.radioButton5.Location = new System.Drawing.Point(166, 14);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(38, 22);
+            this.radioButton5.Size = new System.Drawing.Size(38, 25);
             this.radioButton5.TabIndex = 0;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "4";
@@ -312,7 +312,7 @@
             this.radioButton4.AutoCheck = false;
             this.radioButton4.Location = new System.Drawing.Point(124, 14);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(38, 22);
+            this.radioButton4.Size = new System.Drawing.Size(38, 25);
             this.radioButton4.TabIndex = 0;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "3";
@@ -322,7 +322,7 @@
             this.radioButton3.AutoCheck = false;
             this.radioButton3.Location = new System.Drawing.Point(82, 13);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(38, 22);
+            this.radioButton3.Size = new System.Drawing.Size(38, 25);
             this.radioButton3.TabIndex = 0;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "2";
@@ -332,7 +332,7 @@
             this.radioButton2.AutoCheck = false;
             this.radioButton2.Location = new System.Drawing.Point(44, 13);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(38, 22);
+            this.radioButton2.Size = new System.Drawing.Size(38, 25);
             this.radioButton2.TabIndex = 0;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "1";
@@ -342,7 +342,7 @@
             this.radioButton1.AutoCheck = false;
             this.radioButton1.Location = new System.Drawing.Point(4, 12);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(45, 22);
+            this.radioButton1.Size = new System.Drawing.Size(45, 25);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "All";
@@ -437,7 +437,7 @@
             this.MaintabControl.Location = new System.Drawing.Point(0, 0);
             this.MaintabControl.Name = "MaintabControl";
             this.MaintabControl.PageInsets = new Wisej.Web.Padding(0, 41, 2, 2);
-            this.MaintabControl.Size = new System.Drawing.Size(801, 576);
+            this.MaintabControl.Size = new System.Drawing.Size(774, 384);
             this.MaintabControl.SizeMode = Wisej.Web.TabSizeMode.Normal;
             this.MaintabControl.TabIndex = 2;
             // 
@@ -447,8 +447,8 @@
             this.tabPage1.Location = new System.Drawing.Point(0, 41);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new Wisej.Web.Padding(5);
-            this.tabPage1.Size = new System.Drawing.Size(799, 533);
-            this.tabPage1.Text = "메인화면";
+            this.tabPage1.Size = new System.Drawing.Size(772, 341);
+            this.tabPage1.Text = "1.메인화면";
             // 
             // splitContainer4
             // 
@@ -466,8 +466,8 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer6);
             this.splitContainer4.Panel2.TabStop = true;
-            this.splitContainer4.Size = new System.Drawing.Size(789, 523);
-            this.splitContainer4.SplitterDistance = 220;
+            this.splitContainer4.Size = new System.Drawing.Size(762, 331);
+            this.splitContainer4.SplitterDistance = 145;
             this.splitContainer4.TabIndex = 0;
             this.splitContainer4.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
             // 
@@ -486,8 +486,8 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.DevicelistView1);
             this.splitContainer5.Panel2.TabStop = true;
-            this.splitContainer5.Size = new System.Drawing.Size(789, 220);
-            this.splitContainer5.SplitterDistance = 526;
+            this.splitContainer5.Size = new System.Drawing.Size(762, 145);
+            this.splitContainer5.SplitterDistance = 508;
             this.splitContainer5.TabIndex = 0;
             this.splitContainer5.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
             // 
@@ -507,11 +507,11 @@
             this.dataRepeater1.ItemTemplate.Controls.Add(this.label22);
             this.dataRepeater1.ItemTemplate.Controls.Add(this.productTitle);
             this.dataRepeater1.ItemTemplate.Controls.Add(this.pictureBox1);
-            this.dataRepeater1.ItemTemplate.Size = new System.Drawing.Size(524, 108);
+            this.dataRepeater1.ItemTemplate.Size = new System.Drawing.Size(506, 108);
             this.dataRepeater1.Location = new System.Drawing.Point(0, 0);
             this.dataRepeater1.Name = "dataRepeater1";
             this.dataRepeater1.PrefetchItems = 2;
-            this.dataRepeater1.Size = new System.Drawing.Size(526, 220);
+            this.dataRepeater1.Size = new System.Drawing.Size(508, 145);
             this.dataRepeater1.TabIndex = 3;
             this.dataRepeater1.Text = "dataRepeater1";
             // 
@@ -602,7 +602,7 @@
             this.DevicelistView1.LargeImageList = this.imageList1;
             this.DevicelistView1.Location = new System.Drawing.Point(0, 0);
             this.DevicelistView1.Name = "DevicelistView1";
-            this.DevicelistView1.Size = new System.Drawing.Size(257, 220);
+            this.DevicelistView1.Size = new System.Drawing.Size(248, 145);
             this.DevicelistView1.SmallImageList = this.imageList2;
             this.DevicelistView1.StateImageList = this.imageList1;
             this.DevicelistView1.TabIndex = 0;
@@ -610,21 +610,21 @@
             // imageList1
             // 
             this.imageList1.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry15,
-            imageListEntry16,
-            imageListEntry17,
-            imageListEntry18,
-            imageListEntry19});
+            imageListEntry27,
+            imageListEntry28,
+            imageListEntry29,
+            imageListEntry30,
+            imageListEntry31});
             this.imageList1.ImageSize = new System.Drawing.Size(64, 64);
             // 
             // imageList2
             // 
             this.imageList2.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry20,
-            imageListEntry21,
-            imageListEntry22,
-            imageListEntry23,
-            imageListEntry24});
+            imageListEntry32,
+            imageListEntry33,
+            imageListEntry34,
+            imageListEntry35,
+            imageListEntry36});
             this.imageList2.ImageSize = new System.Drawing.Size(32, 32);
             // 
             // splitContainer6
@@ -643,8 +643,8 @@
             this.splitContainer6.Panel2.Controls.Add(this.panel12);
             this.splitContainer6.Panel2.Controls.Add(this.panel13);
             this.splitContainer6.Panel2.TabStop = true;
-            this.splitContainer6.Size = new System.Drawing.Size(789, 297);
-            this.splitContainer6.SplitterDistance = 466;
+            this.splitContainer6.Size = new System.Drawing.Size(762, 180);
+            this.splitContainer6.SplitterDistance = 450;
             this.splitContainer6.TabIndex = 3;
             this.splitContainer6.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
             // 
@@ -655,7 +655,7 @@
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(464, 295);
+            this.panel1.Size = new System.Drawing.Size(448, 178);
             this.panel1.TabIndex = 4;
             this.panel1.TabStop = true;
             // 
@@ -665,7 +665,7 @@
             this.panel9.Dock = Wisej.Web.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 23);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(464, 272);
+            this.panel9.Size = new System.Drawing.Size(448, 155);
             this.panel9.TabIndex = 4;
             this.panel9.TabStop = true;
             // 
@@ -686,7 +686,7 @@
             this.evdataGridView1.MultiSelect = false;
             this.evdataGridView1.Name = "evdataGridView1";
             this.evdataGridView1.RowHeadersWidth = 14;
-            this.evdataGridView1.Size = new System.Drawing.Size(464, 272);
+            this.evdataGridView1.Size = new System.Drawing.Size(448, 155);
             this.evdataGridView1.TabIndex = 2;
             // 
             // colEventvmid
@@ -700,9 +700,9 @@
             // colWrite_Time
             // 
             this.colWrite_Time.DataPropertyName = "write_time";
-            dataGridViewCellStyle3.Format = "f";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Format = "f";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle5;
             this.colWrite_Time.HeaderText = "발생일자";
             this.colWrite_Time.Name = "colWrite_Time";
             this.colWrite_Time.Width = 210;
@@ -745,7 +745,7 @@
             this.panel11.Dock = Wisej.Web.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(464, 23);
+            this.panel11.Size = new System.Drawing.Size(448, 23);
             this.panel11.TabIndex = 5;
             this.panel11.TabStop = true;
             // 
@@ -764,7 +764,7 @@
             this.panel12.Dock = Wisej.Web.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(0, 23);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(315, 272);
+            this.panel12.Size = new System.Drawing.Size(304, 155);
             this.panel12.TabIndex = 5;
             this.panel12.TabStop = true;
             // 
@@ -786,7 +786,7 @@
             this.evdataGridView3.MultiSelect = false;
             this.evdataGridView3.Name = "evdataGridView3";
             this.evdataGridView3.RowHeadersWidth = 14;
-            this.evdataGridView3.Size = new System.Drawing.Size(315, 272);
+            this.evdataGridView3.Size = new System.Drawing.Size(304, 155);
             this.evdataGridView3.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn5
@@ -827,9 +827,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "write_time";
-            dataGridViewCellStyle4.Format = "f";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Format = "f";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn6.HeaderText = "변경일자";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 210;
@@ -847,7 +847,7 @@
             this.panel13.Dock = Wisej.Web.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(315, 23);
+            this.panel13.Size = new System.Drawing.Size(304, 23);
             this.panel13.TabIndex = 6;
             this.panel13.TabStop = true;
             // 
@@ -866,8 +866,8 @@
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(0, 41);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(799, 533);
-            this.tabPage2.Text = "앵커방송";
+            this.tabPage2.Size = new System.Drawing.Size(772, 341);
+            this.tabPage2.Text = "2.앵커방송";
             // 
             // panel3
             // 
@@ -878,7 +878,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Padding = new Wisej.Web.Padding(4);
             this.panel3.ShowCloseButton = false;
-            this.panel3.Size = new System.Drawing.Size(799, 479);
+            this.panel3.Size = new System.Drawing.Size(772, 287);
             this.panel3.TabIndex = 9;
             this.panel3.TabStop = true;
             // 
@@ -898,8 +898,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.TabStop = true;
-            this.splitContainer1.Size = new System.Drawing.Size(789, 469);
-            this.splitContainer1.SplitterDistance = 65;
+            this.splitContainer1.Size = new System.Drawing.Size(762, 277);
+            this.splitContainer1.SplitterDistance = 56;
             this.splitContainer1.TabIndex = 9;
             // 
             // dataGridView1
@@ -918,7 +918,7 @@
             this.dataGridView1.RowHeadersWidth = 14;
             this.dataGridView1.RowHeadersWidthSizeMode = Wisej.Web.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ShowFocusCell = false;
-            this.dataGridView1.Size = new System.Drawing.Size(65, 469);
+            this.dataGridView1.Size = new System.Drawing.Size(56, 277);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -968,8 +968,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.TabStop = true;
-            this.splitContainer2.Size = new System.Drawing.Size(718, 469);
-            this.splitContainer2.SplitterDistance = 93;
+            this.splitContainer2.Size = new System.Drawing.Size(700, 277);
             this.splitContainer2.TabIndex = 0;
             // 
             // dataGridView2
@@ -983,7 +982,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 14;
-            this.dataGridView2.Size = new System.Drawing.Size(718, 93);
+            this.dataGridView2.Size = new System.Drawing.Size(700, 50);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellMouseClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseClick);
             // 
@@ -1010,7 +1009,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.ShowCloseButton = false;
-            this.panel4.Size = new System.Drawing.Size(799, 54);
+            this.panel4.Size = new System.Drawing.Size(772, 54);
             this.panel4.TabIndex = 10;
             this.panel4.TabStop = true;
             // 
@@ -1042,8 +1041,8 @@
             this.tabPage3.Location = new System.Drawing.Point(0, 41);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new Wisej.Web.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(799, 533);
-            this.tabPage3.Text = "프리셋설정";
+            this.tabPage3.Size = new System.Drawing.Size(772, 341);
+            this.tabPage3.Text = "3.프리셋설정";
             // 
             // splitContainer7
             // 
@@ -1060,8 +1059,8 @@
             // 
             this.splitContainer7.Panel2.Controls.Add(this.listviewCTL2);
             this.splitContainer7.Panel2.TabStop = true;
-            this.splitContainer7.Size = new System.Drawing.Size(793, 527);
-            this.splitContainer7.SplitterDistance = 163;
+            this.splitContainer7.Size = new System.Drawing.Size(766, 335);
+            this.splitContainer7.SplitterDistance = 153;
             this.splitContainer7.TabIndex = 0;
             // 
             // listviewCTL1
@@ -1084,8 +1083,8 @@
             this.tabPage4.Location = new System.Drawing.Point(0, 41);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new Wisej.Web.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(799, 533);
-            this.tabPage4.Text = "예약정규방송";
+            this.tabPage4.Size = new System.Drawing.Size(772, 341);
+            this.tabPage4.Text = "4.예약정규방송";
             // 
             // panel5
             // 
@@ -1096,7 +1095,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Padding = new Wisej.Web.Padding(4);
             this.panel5.ShowCloseButton = false;
-            this.panel5.Size = new System.Drawing.Size(793, 527);
+            this.panel5.Size = new System.Drawing.Size(766, 335);
             this.panel5.TabIndex = 8;
             this.panel5.TabStop = true;
             // 
@@ -1112,8 +1111,8 @@
             this.splitContainer3.Panel2.ShowCloseButton = false;
             this.splitContainer3.Panel2.ShowHeader = true;
             this.splitContainer3.Panel2.Text = "Scheduler";
-            this.splitContainer3.Size = new System.Drawing.Size(783, 517);
-            this.splitContainer3.SplitterDistance = 106;
+            this.splitContainer3.Size = new System.Drawing.Size(756, 325);
+            this.splitContainer3.SplitterDistance = 98;
             this.splitContainer3.TabIndex = 5;
             // 
             // tabPage5
@@ -1122,8 +1121,8 @@
             this.tabPage5.Location = new System.Drawing.Point(0, 41);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new Wisej.Web.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(799, 533);
-            this.tabPage5.Text = "방송관리";
+            this.tabPage5.Size = new System.Drawing.Size(772, 341);
+            this.tabPage5.Text = "5.방송관리";
             // 
             // BStabControl
             // 
@@ -1131,7 +1130,7 @@
             this.BStabControl.Location = new System.Drawing.Point(3, 3);
             this.BStabControl.Name = "BStabControl";
             this.BStabControl.PageInsets = new Wisej.Web.Padding(0, 1, 2, 2);
-            this.BStabControl.Size = new System.Drawing.Size(793, 527);
+            this.BStabControl.Size = new System.Drawing.Size(766, 335);
             this.BStabControl.TabIndex = 0;
             // 
             // tabPage6
@@ -1140,8 +1139,8 @@
             this.tabPage6.Location = new System.Drawing.Point(0, 41);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new Wisej.Web.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(799, 533);
-            this.tabPage6.Text = "환경설정";
+            this.tabPage6.Size = new System.Drawing.Size(772, 341);
+            this.tabPage6.Text = "6.환경설정";
             // 
             // SetuptabControl
             // 
@@ -1149,7 +1148,7 @@
             this.SetuptabControl.Location = new System.Drawing.Point(3, 3);
             this.SetuptabControl.Name = "SetuptabControl";
             this.SetuptabControl.PageInsets = new Wisej.Web.Padding(1, 0, 1, 1);
-            this.SetuptabControl.Size = new System.Drawing.Size(793, 527);
+            this.SetuptabControl.Size = new System.Drawing.Size(766, 335);
             this.SetuptabControl.SizeMode = Wisej.Web.TabSizeMode.Normal;
             this.SetuptabControl.TabIndex = 0;
             // 
@@ -1194,7 +1193,7 @@
             this.panel10.Dock = Wisej.Web.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(0, 60);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(801, 576);
+            this.panel10.Size = new System.Drawing.Size(774, 384);
             this.panel10.TabIndex = 3;
             this.panel10.TabStop = true;
             // 
@@ -1206,7 +1205,7 @@
             this.Controls.Add(this.panel2);
             this.javaScript.SetJavaScriptSource(this, "simplepa2.js");
             this.Name = "Simple";
-            this.Size = new System.Drawing.Size(801, 636);
+            this.Size = new System.Drawing.Size(774, 444);
             this.Load += new System.EventHandler(this.MyDesktop_Load);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
