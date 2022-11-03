@@ -43,7 +43,7 @@ namespace pa
 
         public uint AliveMessage { get; set; }
         System.Timers.Timer AliveTimer { get; set; } = new System.Timers.Timer(1000 * 60 * 5);
-        public DBSqlite dBSqlite { get; set; } = new DBSqlite();
+        public DBController dBSqlite { get; set; } = new DBController();
         DataSet1 Ds1 { get; set; }
         TableAdapterManager Tam { get; set; }
         WireSharkRunning wireShark { get; set; } = new WireSharkRunning();

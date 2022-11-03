@@ -65,10 +65,16 @@
     <Content Include="imgs\dPanel2.jpg" />
     <Content Include="imgs\dPanel3.jpg" />
     <Content Include="imgs\login2.jpg" />
+    <None Include="imgs\nav-quit-777.png" />
     <Content Include="imgs\signature-kr.png" />
+    <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
     <EmbeddedResource Include="Page2.resx">
       <DependentUpon>Page2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Simple.resx">
       <DependentUpon>Simple.cs</DependentUpon>
@@ -596,14 +602,14 @@
     <Compile Include="Control\UserControl1.designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data1List.cs" />
     <Compile Include="DataList.cs" />
+    <Compile Include="DataListAssetGroup.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DBSqlite.cs" />
+    <Compile Include="DBController.cs" />
     <Compile Include="Examples\BackgroundTasks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -627,6 +633,11 @@
     <Compile Include="Page2.Designer.cs">
       <DependentUpon>Page2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Simple.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -646,12 +657,6 @@
       <DependentUpon>StartPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="SignalR\SignalRClient.cs" />
-    <Compile Include="Simplepa3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Simplepa3.Designer.cs">
-      <DependentUpon>Simplepa3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="webapi\ApiController1.cs" />
@@ -738,6 +743,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <PackageReference Include="Wisej-3-NavigationBar">
+      <Version>3.1.2</Version>
+    </PackageReference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -812,9 +820,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\StartPopup.resx">
       <DependentUpon>StartPopup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Simplepa3.resx">
-      <DependentUpon>Simplepa3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

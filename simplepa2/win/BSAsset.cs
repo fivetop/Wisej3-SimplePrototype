@@ -67,7 +67,7 @@ namespace simplepa2.win
         private void DBInsert(string strFileUploadPath)
         {
             EmSpeakerPositionList _emspl = new EmSpeakerPositionList();
-            DBSqlite dBSqlite = new DBSqlite();
+            DBController dBSqlite = new DBController();
             dBSqlite.DBInit();
 
             string[] d1 = System.IO.File.ReadAllLines(strFileUploadPath, Encoding.GetEncoding(949));

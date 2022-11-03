@@ -19,7 +19,7 @@ namespace simplepa2.win
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Simplepa3 myDesktop = (Simplepa3)Application.MainPage;
+            Simple myDesktop = (Simple)Application.MainPage;
             if (myDesktop.isSignalR())
             {
                 //AlertBox.Show("서버에 전체 Scan을 요청 하였습니다. - 약 5분 정도 소요됩니다.");

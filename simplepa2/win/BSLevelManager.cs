@@ -55,7 +55,7 @@ namespace simplepa2.win
             this.dataSet1.AcceptChanges();
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
 
-            Simplepa3 myDesktop = (Simplepa3)Application.MainPage;
+            Simple myDesktop = (Simple)Application.MainPage;
             myDesktop.sendSigR(eSignalRMsgType.eVolume);
         }
 

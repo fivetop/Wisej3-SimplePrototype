@@ -10,7 +10,8 @@ namespace simplepa2
         public LoginPage()
         {
             InitializeComponent();
-        }
+			Application.LoadTheme("Material-3");
+		}
 
 		private void LoginPage_Accelerator(object sender, AcceleratorEventArgs e)
 		{
@@ -46,13 +47,14 @@ namespace simplepa2
 			Application.Session["isloggedon"] = "true";
 			Application.Session["user"] = t1.FirstOrDefault().login_id;
 			Application.Session["user_name"] = t1.FirstOrDefault().user_name;
-			Application.MainPage = new Simplepa3();
+			Application.MainPage = new Simple();
 			this.Hide();
 			this.Dispose();
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
+			// 메일 쓰레드 준비 필요 
 			AlertBox.Show("이메일로 패스워드를 전송 하였습니다.");
 		}
 

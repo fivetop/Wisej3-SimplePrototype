@@ -20,7 +20,7 @@ namespace simplepa2.win
 		}
 
 		// 콤보 처리용 
-		DataList DataList { get; set; } = new DataList();
+		DataListAssetGroup DataList { get; set; } = new DataListAssetGroup();
 		// 선택된 차일드 
 
 		#region // 기본 처리 

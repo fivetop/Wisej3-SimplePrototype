@@ -26,7 +26,7 @@ namespace simplepa2
 		public static SignalRClient signalRClient { get; set; } = new SignalRClient();
 		public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
 
-		public DBSqlite dBSqlite { get; set; } = new DBSqlite();
+		public DBController dBSqlite { get; set; } = new DBController();
 
 		public Simple()
 		{
@@ -51,6 +51,10 @@ namespace simplepa2
 				Application.Session["user"] = "Admin";
 				Application.Session["user_name"] = "관리자";
 			}
+
+			//MaintabControl.AppearanceKey = MaintabControl.TabPages.FlatButtons;
+			MaintabControl.ItemSize = new Size(0, 1);
+			MaintabControl.SizeMode = TabSizeMode.Fixed;
 
 		}
 
@@ -97,11 +101,14 @@ namespace simplepa2
 			// tab padding => 5 탭에 있는 컨트롤 잘 보이게 하기 위함 
 			AddBSPage(); // 방송 설정 처리 
 			AddSetupPage(); // 환경설정 처리 
+
+			tableLayoutPanel_Top1.Size = new Size(440,58);
 		}
 
 		// split 위치 설정 세로, 가로,  세로
         private void split_위치()
         {
+			// Main 화면 
 			Cookie d1 = Application.Cookies.Get("d1");
 			Cookie d2 = Application.Cookies.Get("d2");
 			Cookie d3 = Application.Cookies.Get("d3");
@@ -199,45 +206,85 @@ namespace simplepa2
 		BSLevelManager bSLevelManager = new BSLevelManager();
 		BSEMManager bSEMManager = new BSEMManager();
 
-        private void AddBSPage()
+		MSetupManager mSetupManager = new MSetupManager();
+		MGroupManager mGroupManager = new MGroupManager();
+		MHolidayManager mHolidayManager = new MHolidayManager();
+		MMusicManager mMusicManager = new MMusicManager();
+		MUserManager mUserManager = new MUserManager();
+
+
+		private void AddBSPage()
         {
-			TabPage tabClients = new TabPage("1.선번장관리");
+			TabPage tabClients = new TabPage(menu_string[5]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSAsset);
 			bSAsset.Dock = DockStyle.Fill;
-			BStabControl.TabPages.Add(tabClients);
+			//BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("2.장비관리");
+			tabClients = new TabPage(menu_string[6]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSDeviceManager);
 			bSDeviceManager.Dock = DockStyle.Fill;
-			BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("3.입력관리");
+			tabClients = new TabPage(menu_string[7]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSInManager);
 			bSInManager.Dock = DockStyle.Fill;
-			BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("4.출력관리");
+			tabClients = new TabPage(menu_string[8]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSOutManage);
 			bSOutManage.Dock = DockStyle.Fill;
-			BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("5.음량관리");
+			tabClients = new TabPage(menu_string[9]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSLevelManager);
 			bSLevelManager.Dock = DockStyle.Fill;
-			BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage("6.비상방송");
+			tabClients = new TabPage(menu_string[10]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSEMManager);
 			bSEMManager.Dock = DockStyle.Fill;
-			BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
 
-            BStabControl.SelectedIndexChanged += BStabControl_SelectedIndexChanged;
+
+			tabClients = new TabPage(menu_string[11]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mSetupManager);
+			mSetupManager.Dock = DockStyle.Fill;
+			//SetuptabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage(menu_string[12]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mGroupManager);
+			mGroupManager.Dock = DockStyle.Fill;
+			MaintabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage(menu_string[13]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mHolidayManager);
+			mHolidayManager.Dock = DockStyle.Fill;
+			MaintabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage(menu_string[14]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mMusicManager);
+			mMusicManager.Dock = DockStyle.Fill;
+			MaintabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage(menu_string[15]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(mUserManager);
+			mUserManager.Dock = DockStyle.Fill;
+			MaintabControl.TabPages.Add(tabClients);
+
+			MaintabControl.SelectedIndexChanged += BStabControl_SelectedIndexChanged;
 		}
 
         private void BStabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -250,43 +297,9 @@ namespace simplepa2
 			bSAsset.reDraw();
 		}
 
-		MSetupManager mSetupManager = new MSetupManager();
-		MGroupManager mGroupManager = new MGroupManager();
-		MHolidayManager mHolidayManager = new MHolidayManager();
-		MMusicManager mMusicManager = new MMusicManager();
-		MUserManager mUserManager = new MUserManager();
 
         private void AddSetupPage()
         {
-			TabPage tabClients = new TabPage("1.환경설정");
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(mSetupManager);
-			mSetupManager.Dock = DockStyle.Fill;
-			SetuptabControl.TabPages.Add(tabClients);
-
-			tabClients = new TabPage("2.그룹관리");
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(mGroupManager);
-			mGroupManager.Dock = DockStyle.Fill;
-			SetuptabControl.TabPages.Add(tabClients);
-
-			tabClients = new TabPage("3.휴일관리");
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(mHolidayManager);
-			mHolidayManager.Dock = DockStyle.Fill;
-			SetuptabControl.TabPages.Add(tabClients);
-
-			tabClients = new TabPage("4.음원관리");
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(mMusicManager);
-			mMusicManager.Dock = DockStyle.Fill;
-			SetuptabControl.TabPages.Add(tabClients);
-
-			tabClients = new TabPage("5.사용자관리");
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(mUserManager);
-			mUserManager.Dock = DockStyle.Fill;
-			SetuptabControl.TabPages.Add(tabClients);
 		}
 
 		#endregion
@@ -421,6 +434,7 @@ namespace simplepa2
 
 
 
+
 		/*
             private void Application_ApplicationExit(object sender, EventArgs e)
             {
@@ -433,5 +447,52 @@ namespace simplepa2
 
 		#endregion
 
+
+		string[] menu_string = {"댓쉬보드", "앵커방송", "그룹방송", "프리셋", "예약방송", 
+			"선번장관리" , "장비관리", "입력관리", "출력관리", "음량관리" , "비상방송",
+			"시스템설정", "그룹관리","휴일관리", "음원관리", "사용자관리"};
+
+
+		private void navigationBar1_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+			string t1 = this.navigationBar1.SelectedItem.Text;
+			
+			AlertBox.Show($"Selected {t1}");
+			Console.WriteLine(t1);
+			//if (this.navigationBar1.SelectedItem.AccessibleName == null)
+			//	return;
+			//int acc = int.Parse(this.navigationBar1.SelectedItem.AccessibleName);
+
+
+
+			switch (t1)
+			{
+				case "대쉬보드": MaintabControl.SelectedIndex = 0; break;
+				case "방송운영":  break;
+				case "앵커방송": MaintabControl.SelectedIndex = 1; break;
+				case "그룹방송": MaintabControl.SelectedIndex = 2; break;
+				case "프리셋": MaintabControl.SelectedIndex = 3; break;
+				case "예약방송": MaintabControl.SelectedIndex = 4; break;
+				case "방송설정": break;
+				case "선번장관리": MaintabControl.SelectedIndex = 5; break;
+				case "장비관리": MaintabControl.SelectedIndex = 6; break;
+				case "입력관리": MaintabControl.SelectedIndex = 7; break;
+				case "출력관리": MaintabControl.SelectedIndex = 8; break;
+				case "음량관리": MaintabControl.SelectedIndex = 9; break;
+				case "비상방송": MaintabControl.SelectedIndex = 10; break;
+				case "시스템설정": break;
+				case "환경설정": MaintabControl.SelectedIndex = 11; break;
+				case "그룹관리": MaintabControl.SelectedIndex = 12; break;
+				case "휴일관리": MaintabControl.SelectedIndex = 13; break;
+				case "음원관리": MaintabControl.SelectedIndex = 14; break;
+				case "사용자관리": MaintabControl.SelectedIndex = 15; break;
+					//case "사이트관리": MaintabControl.SelectedIndex = 8; break;
+					//case "Zone관리": MaintabControl.SelectedIndex = 9; break;
+					//case "댓쉬보드": MaintabControl.SelectedIndex = 18; break;
+					//case "댓쉬보드": MaintabControl.SelectedIndex = 19; break;
+					//case "댓쉬보드": MaintabControl.SelectedIndex = 20; break;
+			}
+		}
 	}
 }

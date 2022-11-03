@@ -65,7 +65,7 @@ namespace simplepa2.win
                 return;
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 1분 정도 소요됩니다.");
 
-            Simplepa3 myDesktop = (Simplepa3)Application.MainPage;
+            Simple myDesktop = (Simple)Application.MainPage;
             myDesktop.sendSigR(eSignalRMsgType.eInChMove, str2, str1, i2, i3); // dsp, dsp_chno
             this.deviceChannelBindingSource.EndEdit();
             this.deviceChannelTableAdapter.Update(this.dataSet1.DeviceChannel);
