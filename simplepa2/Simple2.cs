@@ -73,27 +73,6 @@ namespace simplepa2
 		{
 		}
 
-		private void userControlClick(object sender, EventArgs e)
-		{
-			var s3 = (UserControl1)sender;
-
-			if (s3.Chk)
-				s3.Chk = false;
-			else
-				s3.Chk = true;
-			//s3.data1.index      
-		}
-
-		private void userControlClick2(object sender, EventArgs e)
-		{
-			var s3 = (UserControl1)sender;
-
-			if (s3.Chk)
-				s3.Chk = false;
-			else
-				s3.Chk = true;
-			//s3.data1.index            
-		}
 
 
 		#region // 그리드 처리 

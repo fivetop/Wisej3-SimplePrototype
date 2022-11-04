@@ -143,18 +143,6 @@ namespace simplepa2
 
 		private void Main_Load(object sender, EventArgs e)
 		{
-			// 자산 1
-			var t1 = this.dataSet1.Assets.OrderBy(p => p.seq).ToList();
-			listviewCTL1.Dock = DockStyle.Fill;
-			listviewCTL1.ListviewCTL_Load2(t1);
-			listviewCTL1.UserControlClick += userControlClick;
-
-			// 자산 2
-			var t2 = this.dataSet1.Assets.OrderBy(p => p.seq).ToList();
-			listviewCTL2.Dock = DockStyle.Fill;
-			listviewCTL2.ListviewCTL_Load(t2);
-			listviewCTL2.UserControlClick += userControlClick2;
-
 			// 입장하기 처리
 			foreach (var t3 in this.dataSet1.BSroom)
 			{
@@ -214,6 +202,9 @@ namespace simplepa2
 			LabelON(9,false);
 		}
 
+		AGroup aGroup = new AGroup();
+		ASchedule aSchedule = new ASchedule();
+		APreset aPreset = new APreset();
 
         BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
@@ -231,7 +222,29 @@ namespace simplepa2
 
 		private void AddBSPage()
         {
-			TabPage tabClients = new TabPage(menu_string[5]);
+
+			TabPage tabClients = new TabPage(menu_string[2]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(aGroup);
+			aGroup.Dock = DockStyle.Fill;
+			//BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
+			
+			tabClients = new TabPage(menu_string[3]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(aPreset);
+			aPreset.Dock = DockStyle.Fill;
+			//BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
+			
+			tabClients = new TabPage(menu_string[4]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(aSchedule);
+			aSchedule.Dock = DockStyle.Fill;
+			//BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage(menu_string[5]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(bSAsset);
 			bSAsset.Dock = DockStyle.Fill;
@@ -497,8 +510,8 @@ namespace simplepa2
 				case "출력관리": MaintabControl.SelectedIndex = 8; break;
 				case "음량관리": MaintabControl.SelectedIndex = 9; break;
 				case "비상방송": MaintabControl.SelectedIndex = 10; break;
-				case "시스템설정": break;
-				case "환경설정": MaintabControl.SelectedIndex = 11; break;
+				case "환경설정": break;
+				case "시스템설정": MaintabControl.SelectedIndex = 11; break;
 				case "그룹관리": MaintabControl.SelectedIndex = 12; break;
 				case "휴일관리": MaintabControl.SelectedIndex = 13; break;
 				case "음원관리": MaintabControl.SelectedIndex = 14; break;

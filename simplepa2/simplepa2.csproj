@@ -508,6 +508,15 @@
     <EmbeddedResource Include="Resources\youtube-logo.svg" />
     <Content Include="js\common.js" />
     <Content Include="Scripts\chatClient.js" />
+    <EmbeddedResource Include="win\AGroup.resx">
+      <DependentUpon>AGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\APreset.resx">
+      <DependentUpon>APreset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\ASchedule.resx">
+      <DependentUpon>ASchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\BSAsset.resx">
       <DependentUpon>BSAsset.cs</DependentUpon>
     </EmbeddedResource>
@@ -666,6 +675,24 @@
     <Compile Include="webapi\ApiController1.cs" />
     <Compile Include="webapi\Encryption.cs" />
     <Compile Include="webapi\MessageHandler.cs" />
+    <Compile Include="win\AGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\AGroup.Designer.cs">
+      <DependentUpon>AGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\APreset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\APreset.Designer.cs">
+      <DependentUpon>APreset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\ASchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\ASchedule.Designer.cs">
+      <DependentUpon>ASchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="win\BSAsset.cs">
       <SubType>UserControl</SubType>
     </Compile>
