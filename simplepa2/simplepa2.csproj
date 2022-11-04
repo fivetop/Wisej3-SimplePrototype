@@ -43,6 +43,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="css\default.css" />
     <Content Include="DB\0 디비테이블생성.sql" />
     <Content Include="DB\1 디비테이블-기초데이터생성.sql" />
     <Content Include="DB\9디비 테이블 삭제.sql" />
@@ -52,6 +53,7 @@
     <Content Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
+    <Content Include="html\layout.html" />
     <Content Include="hubs\q.txt" />
     <Content Include="Images\giftcard20.png" />
     <Content Include="Images\giftcardempty.png" />
@@ -65,6 +67,7 @@
     <Content Include="imgs\dPanel2.jpg" />
     <Content Include="imgs\dPanel3.jpg" />
     <Content Include="imgs\login2.jpg" />
+    <Content Include="fonts\NotoSansKR-Black.otf" />
     <None Include="imgs\nav-quit-777.png" />
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
@@ -503,6 +506,7 @@
     <EmbeddedResource Include="Resources\world-shape-public-symbol.svg" />
     <EmbeddedResource Include="Resources\write-email-envelope-button.svg" />
     <EmbeddedResource Include="Resources\youtube-logo.svg" />
+    <Content Include="js\common.js" />
     <Content Include="Scripts\chatClient.js" />
     <EmbeddedResource Include="win\BSAsset.resx">
       <DependentUpon>BSAsset.cs</DependentUpon>

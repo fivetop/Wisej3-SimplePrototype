@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;
+src: url(../fonts/NotoSansKR-Thin.woff2) format('woff2'),
+url(../fonts/NotoSansKR-Thin.woff) format('woff'),
+url(../fonts/NotoSansKR-Thin.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;
+src: url(../fonts/NotoSansKR-Light.woff2) format('woff2'),
+url(../fonts/NotoSansKR-Light.woff) format('woff'),
+url(../fonts/NotoSansKR-Light.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;
+src: url(../fonts/NotoSansKR-Regular.woff2) format('woff2'),
+url(../fonts/NotoSansKR-Regular.woff) format('woff'),
+url(../fonts/NotoSansKR-Regular.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;
+src: url(../fonts/NotoSansKR-Medium.woff2) format('woff2'),
+url(../fonts/NotoSansKR-Medium.woff) format('woff'),
+url(../fonts/NotoSansKR-Medium.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;
+src: url(../fonts/NotoSansKR-Bold.woff2) format('woff2'),
+url(../fonts/NotoSansKR-Bold.woff) format('woff'),
+url(../fonts/NotoSansKR-Bold.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;
+src: url(../fonts/NotoSansKR-Black.woff2) format('woff2'),
+url(../fonts/NotoSansKR-Black.woff) format('woff'),
+url(../fonts/NotoSansKR-Black.otf) format('opentype');}
+
+html{-webkit-text-size-adjust:none; /*-ms-user-select:none; -khtml-user-select:none; -webkit-user-select:none; user-select:none;*/-webkit-touch-callout:none; }
+*{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+body,a,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,tr,th,td,
+form,fieldset,label,legend,input,textarea,button,menu{margin:0px;padding:0px; -webkit-text-size-adjust:none;}
+body,input,textarea,select,table,button,code{color:#111; letter-spacing:-0.1px;
+font-weight: 400; font-family: 'Noto Sans KR'; text-align: left; } 
+body{width:100%; position:relative;word-wrap:break-word;word-break:break-all;
+background: #F0F0F0;}
+nav,menu,ul,li,ol{list-style:none;}
+div{display:block;}
+table{border-collapse:collapse; border-spacing:0;}
+img,fieldset{border:none;}
+em,address{font-style:normal;}
+select{cursor: pointer;}
+section,article,header,footer,nav,aside,hgroup{display:block;}
+button{border:none; background:none;}
+button:focus{outline:none;}
+a{margin:0px; padding:0px; text-decoration:none; cursor:pointer;}
+a:hover, a:active{text-decoration:none !important;}
+table{table-layout: fixed;}
+
+
+
+/*fix, brisak*/
+.clear_fix:after{content:""; display:block; clear:both;}
+.ib_fix{line-height:0px;}
+.hidden_fix{position: absolute; overflow: hidden; top: 0; left: 0; width: 1px; height: 1px; line-height: 0;
+text-indent:-10000px}
+.lb_hide {overflow: hidden; position: absolute; width: 0; height: 0; line-height: 0;text-indent: -9999px;}
+legend, caption {overflow: hidden; top: 0; left: 0; width: 0; height: 0; line-height: 0;}
+.t-center{text-align: center;}
+.l-cont{float: left;} .l-cont:after{content:""; display:block; clear:both;}
+.r-cont{float: right;} .r-cont:after{content:""; display:block; clear:both;}
+.clearfix:after{content:""; display:block; clear:both;}
+.list-bg{background: #f7f7f7;}
+.pt-small{padding-top: 8px/*16px*/;}
+.pt-normal{padding-top: 18px/*16px*/;}
+.mt-normal{margin-top: 18px/*16px*/ !important;}
+.mt-box{margin-top: 14px !important;}
+.mt-big{margin-top: 40px !important;}
+.mt0{margin-top: 0px !important;}
+.pb0{padding-bottom: 0px !important;}
+.bt1{border-top: 1px solid #e0e0e0;}
+.font-strong{font-weight: 700; color: #37a5aa;}
+.bg-type2{background: #fff;}
+.page-fix{overflow: hidden;}
+
+
+/*인풋류*/
+input[type="text"], input[type="password"], input[type="tel"], input[type="number"], .slt-normal
+{width: 100%; height:36px; line-height:34px; border:1px solid #d0d0d0; padding: 0px 10px 0px 14px;
+color: #111; font-size:15px; font-weight: 500; background:#fff;
+vertical-align:middle; border-radius: 6px;}
+input[readonly]{background: #eaeaea;}
+input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus{}
+select{height:38px; border:1px solid #e2e2e2; padding:0px 7px; color:#111; font-size:14px; font-weight: 400;}
+.ipt-max{width: 100%; border-radius: 4px;}
+
+
+input[type="text"]::placeholder, input[type="password"]::placeholder, 
+input[type="tel"]::placeholder, input[type="number"]::placeholder{color: #AAAAAA}
+
+
+
+
+
+
+/*공통 버튼 : 시작*/
+.n-btn{display: block; width: 100%; height: 48px; line-height: 46px; text-align: center; border-radius: 8px;
+font-size: 16px; font-weight: 700;}
+.btn-done {color: #fff !important; background: #3A86FF !important; border: 1px solid #3A86FF !important;}
+.btn-done:link, .btn-done:visited{color: #fff;}
+/*공통 버튼 : 끝*/
+
+
+
+
+
+/*로그인 : 시작*/
+.login-bg{display: block; width: 100%; height: 100vh; position: relative; padding: 50vh 0px 0px;
+background: url(../images/login-bg.jpg) top center; background-size: 100% auto;}
+.login-wrap{display: block; width: 392px; margin: 0 auto; transform: translateY(-50%);}
+.login-logo{display: block; width: 300px; height: 72px; margin: 0 auto;}
+.login-body{display: block; width: 100%; background: #fff; border-radius: 16px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.2); padding: 47px 48px 74px; margin: 38px auto 0px;}
+.login-body .title{display: block; font-size: 28px; font-weight: 700; color: #111; text-align:left; line-height: 1;}
+.login-body .txt1{display: block; color: #212121; font-size: 16px; text-align: left; line-height: 24px;
+margin: 10px 0px;}
+.login-body .login-ipt-wrap{display: block; width: 100%; position: relative; margin: 34px 0px 0px;}
+.login-body .login-ipt-wrap .icon-ipt-id{display: block;}
+.login-body .login-ipt-wrap .icon-ipt-pw{display: block;}
+.login-body .login-ipt-wrap .ipt-login{display: block; border-radius: 0; border: none; border-bottom: 1px solid #A9A9A9;
+height: 39px; text-align: left; color: #111; font-size: 15px; padding: 0px !important}
+.login-body .login-ipt-wrap .ipt-login:focus{display: block; border-radius: 0; border: none; border-bottom: 1px solid #3A86FF;
+outline: none !important;}
+.login-body .btn-login{margin: 49px 0px 0px;}
+.login-body .forgot-pw{font-size: 14px; font-weight: 500; text-align: left; color: #3A86FF; line-height: 22px;
+margin: 28px 0px 0px; display: block;}
+/*로그인 : 끝*/
+
+
+
+/*레이아웃 - 좌측 메뉴 : 시작*/
+.left-menu-wrap{width: 208px; height: 100vh; position: fixed; top: 0px; left: 0px; z-index: 100;}
+.left-menu{width: 208px; background: #1A53B1; padding: 21px 0px;}
+.left-logo{display: block; width: 100px; height: 24px; background: url(../images/left-logo.png) center;
+background-size: 100px 24px; margin: 0px 0px 0px 24px}
+.menu-wrap{display: block; width: 100%; margin: 42px 0 0;}
+.menu-d1{display: block; width: 100%; height: 62px; line-height: 62px; padding: 0px 0px 0px 24px;
+color: #fff; font-size: 18px; font-weight: 700; text-align: left; position: relative;}
+.menu-d1:after{content: ""; display: block; position: absolute; top: 29px; right: 18px;
+width: 0; height: 0; border-top: 4px solid #9BBBEF; border-right: 4px solid transparent;
+border-left: 4px solid transparent; border-bottom: none; }
+.menu-d1.active:after{content: ""; display: block; position: absolute; top: 29px; right: 18px;
+width: 0; height: 0; border-bottom: 4px solid #fff; border-right: 4px solid transparent;
+border-left: 4px solid transparent; border-top: none; }
+
+
+.menu-d1:link, .menu-d1:visited{color: #fff;}
+.menu-d1.active{background: #3481FF;}
+/*.menu-d2-wrap{display: none;}
+.menu-d1:focus + */.menu-d2-wrap{display: block; width: 100%; background: #0E48A7; padding: 26px 24px;}
+.menu-d2{display: block; line-height: 1; margin: 21px 0 0;
+color: #b9b9b9; font-size: 15px; font-weight: 500; text-align: left;}
+.menu-d2:link, .menu-d2:visited{color: #b9b9b9;}
+.menu-d2:first-child{margin: 0px}
+.menu-d2.active{color: #fff}
+.menu-d2.active:link, .menu-d2.active:visited{color: #fff}
+/*레이아웃 - 좌측 메뉴 : 끝*/
+
+
+
+
+/*레이아웃 - 톱 메뉴 : 시작*/
+.top-bar-wrap{display: block; position: fixed; top: 0px; right: 0px; width: calc(100% - 210px);}
+.top-bar{display: block; width: 100%; height: 66px; border-bottom: 1px solid #d0d0d0; background: #fff}
+.top-bar:after{content: ""; display: block; clear: both;}
+.top-bar .top-date{float: left; font-size: 14px; font-weight: 500; color: #111; margin: 20px 0px 0px;}
+.top-bar .top-date span{color: #3481FF; padding: 0px 0px 0px 10px; }
+.top-bar .login-user{float: left; font-size: 14px; font-weight: 500; color: #111; margin: 20px 0px 0px 36px; position: relative;
+padding: 0px 0px 0px 31px}
+.top-bar .login-user:before{content: ""; position: absolute; width: 24px; height: 24px; border-radius: 6px;
+	top: 0px; left: 0px; border: 1px solid #d0d0d0; box-sizing: border-box;
+background: /*#5f96f0 */ #fff url(../images/myinfo-icon-9x9-777.png) center no-repeat; background-size: 12px 12px;}
+.top-bar .login-user span{color: #3481FF;}
+.btn-logout{content: ""; float: left; height: 24px; border-radius: 6px;
+margin: 20px 40px 0px 20px; padding: 0px 10px 0px 27px; font-size: 12px; line-height: 20px;
+color: #111; text-align: left; min-width: 1230;
+font-weight: 400; border: 1px solid #d0d0d0;
+background: url(../images/nav-quit-777.png) 10px center no-repeat; background-size: 12px 12px;}
+/*.btn-lougout{content: ""; float: left; height: 24px; border-radius: 6px;
+margin: 20px 40px 0px 40px; padding: 0px 10px 0px 28px; font-size: 12px; line-height: 22px;
+color: #fff; text-align: left;
+font-weight: 500;
+background: #5f96f0 url(../images/nav-quit-w.png) 10px no-repeat; background-size: 12px 12px;}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1920px) {
+/*로그인 : 시작*/
+.login-bg{background: url(../images/login-bg.jpg) top center; background-size: 1920px auto;}
+/*로그인 : 끝*/
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1080px) {
+
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+
+}
+
+
+
+@media screen and (max-width: 470px) {
+
+
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+
+}
+
+
+
+@media screen and (max-width: 350px) {
+ 
+
+}
+

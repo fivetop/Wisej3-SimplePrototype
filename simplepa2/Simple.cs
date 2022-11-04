@@ -20,6 +20,8 @@ namespace simplepa2
 {
     public partial class Simple : Page
 	{
+		private System.Threading.Timer timer;
+
 		//private Popups.StartPopup startPopup;
 		//public event EventHandler ExampleCreated;
 
@@ -85,6 +87,8 @@ namespace simplepa2
 			Application.LoadTheme("Material-3");
 			//Application.LoadTheme("Vista-2");
 
+			//Application.Theme.Colors["navbar-background"] = "blue";
+
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
 			this.dataGridView2.RowCount = 10;
@@ -103,10 +107,22 @@ namespace simplepa2
 			AddSetupPage(); // 환경설정 처리 
 
 			tableLayoutPanel_Top1.Size = new Size(440,58);
+
+			this.timer = Application.StartTimer(1, 1000, () => {
+				var now = DateTime.Now;
+				this.label_date.Text = now.ToString("yyyy:MM:dd");
+				this.label_time.Text = now.ToString("hh:mm:ss");
+				Application.Update(this);
+			});
+		}
+
+		private void Simple_Disposed(object sender, EventArgs e)
+		{
+			this.timer.Dispose();
 		}
 
 		// split 위치 설정 세로, 가로,  세로
-        private void split_위치()
+		private void split_위치()
         {
 			// Main 화면 
 			Cookie d1 = Application.Cookies.Get("d1");
@@ -494,5 +510,6 @@ namespace simplepa2
 					//case "댓쉬보드": MaintabControl.SelectedIndex = 20; break;
 			}
 		}
-	}
+
+    }
 }
