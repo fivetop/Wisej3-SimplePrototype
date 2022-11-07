@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataClass", "DataClass\Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simplepa2", "simplepa2\simplepa2.csproj", "{BFA3AD02-154B-446B-9062-8B3EFD6EF609}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wisejhtml", "Wisejhtml\Wisejhtml.csproj", "{37525303-7BA7-4947-9F1C-D757A8B1E9AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,14 @@ Global
 		{BFA3AD02-154B-446B-9062-8B3EFD6EF609}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BFA3AD02-154B-446B-9062-8B3EFD6EF609}.Release|x86.ActiveCfg = Release|Any CPU
 		{BFA3AD02-154B-446B-9062-8B3EFD6EF609}.Release|x86.Build.0 = Release|Any CPU
+		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Debug|x86.Build.0 = Debug|Any CPU
+		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Release|x86.ActiveCfg = Release|Any CPU
+		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

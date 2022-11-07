@@ -28,66 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer7 = new Wisej.Web.SplitContainer();
-            this.listviewCTL1 = new simplepa2.Control.ListviewCTL();
-            this.listviewCTL2 = new simplepa2.Control.ListviewCTL();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
-            this.splitContainer7.Panel1.SuspendLayout();
-            this.splitContainer7.Panel2.SuspendLayout();
-            this.splitContainer7.SuspendLayout();
+            this.htmlPanel1 = new Wisej.Web.HtmlPanel();
             this.SuspendLayout();
             // 
-            // splitContainer7
+            // htmlPanel1
             // 
-            this.splitContainer7.Dock = Wisej.Web.DockStyle.Fill;
-            this.splitContainer7.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer7.Name = "splitContainer7";
-            // 
-            // splitContainer7.Panel1
-            // 
-            this.splitContainer7.Panel1.Controls.Add(this.listviewCTL1);
-            this.splitContainer7.Panel1.TabStop = true;
-            // 
-            // splitContainer7.Panel2
-            // 
-            this.splitContainer7.Panel2.Controls.Add(this.listviewCTL2);
-            this.splitContainer7.Panel2.TabStop = true;
-            this.splitContainer7.Size = new System.Drawing.Size(900, 600);
-            this.splitContainer7.SplitterDistance = 297;
-            this.splitContainer7.TabIndex = 1;
-            // 
-            // listviewCTL1
-            // 
-            this.listviewCTL1.Location = new System.Drawing.Point(20, 25);
-            this.listviewCTL1.Name = "listviewCTL1";
-            this.listviewCTL1.Size = new System.Drawing.Size(272, 197);
-            this.listviewCTL1.TabIndex = 0;
-            // 
-            // listviewCTL2
-            // 
-            this.listviewCTL2.Location = new System.Drawing.Point(21, 25);
-            this.listviewCTL2.Name = "listviewCTL2";
-            this.listviewCTL2.Size = new System.Drawing.Size(381, 197);
-            this.listviewCTL2.TabIndex = 0;
+            this.htmlPanel1.Dock = Wisej.Web.DockStyle.Fill;
+            this.htmlPanel1.Focusable = false;
+            this.htmlPanel1.HtmlSource = "html\\B001.html";
+            this.htmlPanel1.Location = new System.Drawing.Point(0, 0);
+            this.htmlPanel1.Name = "htmlPanel1";
+            this.htmlPanel1.Size = new System.Drawing.Size(900, 600);
+            this.htmlPanel1.TabIndex = 0;
+            this.htmlPanel1.TabStop = false;
             // 
             // APreset
             // 
-            this.Controls.Add(this.splitContainer7);
+            this.Controls.Add(this.htmlPanel1);
             this.Name = "APreset";
             this.Size = new System.Drawing.Size(900, 600);
             this.Load += new System.EventHandler(this.APreset_Load);
-            this.splitContainer7.Panel1.ResumeLayout(false);
-            this.splitContainer7.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
-            this.splitContainer7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Wisej.Web.SplitContainer splitContainer7;
-        private Control.ListviewCTL listviewCTL1;
-        private Control.ListviewCTL listviewCTL2;
+        private Wisej.Web.HtmlPanel htmlPanel1;
     }
 }

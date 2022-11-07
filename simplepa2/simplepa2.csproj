@@ -53,7 +53,41 @@
     <Content Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
+    <Content Include="html\A001.html" />
+    <Content Include="html\A002.html" />
+    <Content Include="html\B0011.html" />
+    <Content Include="html\B001.html" />
+    <Content Include="html\B002.html" />
+    <Content Include="html\B003.html" />
+    <Content Include="html\B004.html" />
+    <Content Include="html\B005.html" />
+    <Content Include="html\B006.html" />
+    <Content Include="html\B007.html" />
+    <Content Include="html\C001.html" />
+    <Content Include="html\C002.html" />
+    <Content Include="html\C003.html" />
+    <Content Include="html\C004.html" />
+    <Content Include="html\C005.html" />
+    <Content Include="html\C006.html" />
+    <Content Include="html\C007.html" />
+    <Content Include="html\C008.html" />
+    <Content Include="html\C009.html" />
+    <Content Include="html\C010.html" />
+    <Content Include="html\D001.html" />
+    <Content Include="html\D002.html" />
+    <Content Include="html\D003.html" />
+    <Content Include="html\D004.html" />
+    <Content Include="html\D005.html" />
+    <Content Include="html\E001.html" />
+    <Content Include="html\E002.html" />
+    <Content Include="html\E003.html" />
+    <Content Include="html\E004.html" />
     <Content Include="html\layout.html" />
+    <Content Include="html\left1.html" />
+    <Content Include="html\left2.html" />
+    <Content Include="html\login.html" />
+    <Content Include="html\top1.html" />
+    <Content Include="html\top2.html" />
     <Content Include="hubs\q.txt" />
     <Content Include="Images\giftcard20.png" />
     <Content Include="Images\giftcardempty.png" />
@@ -72,6 +106,9 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="Control\gPanel.resx">
+      <DependentUpon>gPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Page2.resx">
       <DependentUpon>Page2.cs</DependentUpon>
     </EmbeddedResource>
@@ -602,6 +639,12 @@
     </Compile>
     <Compile Include="Control\DeviceCTL.designer.cs">
       <DependentUpon>DeviceCTL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\gPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\gPanel.Designer.cs">
+      <DependentUpon>gPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\ListviewCTL.cs">
       <SubType>UserControl</SubType>

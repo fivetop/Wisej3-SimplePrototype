@@ -1,6 +1,6 @@
 USE [simplePA]
 GO
-/****** Object:  Table [dbo].[AssetGroups]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[AssetGroups]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[AssetGroups](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Assets]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[Assets]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -39,13 +39,18 @@ CREATE TABLE [dbo].[Assets](
 	[em3] [int] NULL,
 	[DeviceId] [int] NULL,
 	[emData] [text] NULL,
+	[building] [text] NULL,
+	[floorname] [text] NULL,
+	[zpc] [text] NULL,
+	[zpci] [int] NULL,
+	[zpco] [int] NULL,
  CONSTRAINT [PK_Assets] PRIMARY KEY CLUSTERED 
 (
 	[AssetId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BSroom]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[BSroom]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -61,7 +66,7 @@ CREATE TABLE [dbo].[BSroom](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BSTree]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[BSTree]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -82,7 +87,7 @@ CREATE TABLE [dbo].[BSTree](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Device]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[Device]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -111,7 +116,7 @@ CREATE TABLE [dbo].[Device](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DeviceChannel]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[DeviceChannel]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +137,7 @@ CREATE TABLE [dbo].[DeviceChannel](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EMBs]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[EMBs]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -148,7 +153,7 @@ CREATE TABLE [dbo].[EMBs](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Eventvm]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[Eventvm]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -168,7 +173,7 @@ CREATE TABLE [dbo].[Eventvm](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Holidays]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[Holidays]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -183,7 +188,7 @@ CREATE TABLE [dbo].[Holidays](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Musics]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[Musics]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -200,7 +205,7 @@ CREATE TABLE [dbo].[Musics](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PlayItem]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[PlayItem]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -221,7 +226,7 @@ CREATE TABLE [dbo].[PlayItem](
 	[p_run] [int] NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Simplepa]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[Simplepa]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -281,7 +286,7 @@ CREATE TABLE [dbo].[Simplepa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserTrees]    Script Date: 2022-06-28 오전 10:51:14 ******/
+/****** Object:  Table [dbo].[UserTrees]    Script Date: 2022-11-07 오후 3:52:11 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
