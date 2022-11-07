@@ -1,5 +1,5 @@
 {
-	"name": "Material-3",
+	"name": "LSMaterial-3",
 	"fonts": {
 		"default": {
 			"size": 13,
@@ -4516,12 +4516,12 @@
 					"states": {
 						"default": {
 							"properties": {
-								"width": 6,
-								"height": 6,
+								"width": 16,
+								"height": 16,
 								"cursor": "default"
 							},
 							"styles": {
-								"fillColor": "Gray",
+								"fillColor": "Gold",
 								"backgroundColor": "window",
 								"backgroundRepeat": "no-repeat",
 								"backgroundSize": "20px 20px",
@@ -4530,7 +4530,7 @@
 						},
 						"horizontal": {
 							"styles": {
-								"backgroundImage": "splitter-grip-vertical"
+								"backgroundImage": "blank"
 							},
 							"properties": {
 								"cursor": "ew-resize"
@@ -4538,7 +4538,7 @@
 						},
 						"vertical": {
 							"styles": {
-								"backgroundImage": "splitter-grip-horizontal"
+								"backgroundImage": "blank"
 							},
 							"properties": {
 								"cursor": "ns-resize"
@@ -4559,7 +4559,7 @@
 					"states": {
 						"default": {
 							"styles": {
-								"backgroundColor": "rgba(189,191,191,0.64)"
+								"backgroundColor": "rgba(255,239,0,0.64)"
 							}
 						},
 						"vertical": {
@@ -5896,7 +5896,7 @@
 							"properties": {
 								"icon": "icon-close",
 								"cursor": "pointer",
-								"padding": [ 1, 2, 1, 4 ],
+								"padding": [1, 2, 1, 4],
 								"textColor": "inherit"
 							}
 						},
@@ -5942,7 +5942,7 @@
 					"states": {
 						"default": {
 							"properties": {
-								"margin": [ 0, 4, 2, 0 ],
+								"margin": [0, 4, 2, 0],
 								"spacingX": 3,
 								"spacingY": 3
 							}
