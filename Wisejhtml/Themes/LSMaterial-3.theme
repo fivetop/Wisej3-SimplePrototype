@@ -4760,7 +4760,7 @@
 						"rowHeight": 32,
 						"headerCellHeight": 32,
 						"backgroundColor": "window",
-						"headerBackColor": "buttonFace"
+						"headerBackColor": "White"
 					}
 				},
 				"borderNone": {
@@ -5046,7 +5046,7 @@
 					"properties": {
 						"padding": 5,
 						"sortIcon": "",
-						"textColor": "buttonText",
+						"textColor": "Black",
 						"cursor": "default"
 					}
 				},
@@ -5209,7 +5209,7 @@
 					"styles": {
 						"widthRight": 1,
 						"colorRight": "windowFrame",
-						"backgroundColor": "buttonFace",
+						"backgroundColor": "White",
 						"backgroundRepeat": "no-repeat",
 						"backgroundPosition": ["center", "right"],
 						"backgroundSize": "16px 16px",

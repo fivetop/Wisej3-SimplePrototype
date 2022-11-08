@@ -10,7 +10,7 @@ namespace Wisejhtml
 		/// </summary>
 		static void Main()
 		{
-			Application.MainPage = new Page1();
+			Application.MainPage = new Page2();
 		}
 
 		//

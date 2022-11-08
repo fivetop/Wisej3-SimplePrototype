@@ -38,7 +38,7 @@
             this.htmlPanel1.HtmlSource = "html\\B001.html";
             this.htmlPanel1.Location = new System.Drawing.Point(0, 0);
             this.htmlPanel1.Name = "htmlPanel1";
-            this.htmlPanel1.Size = new System.Drawing.Size(647, 507);
+            this.htmlPanel1.Size = new System.Drawing.Size(695, 543);
             this.htmlPanel1.TabIndex = 0;
             this.htmlPanel1.TabStop = false;
             this.htmlPanel1.ElementClick += new Wisej.Web.HtmlPanelElementClickHandler(this.htmlPanel1_ElementClick);
@@ -49,7 +49,7 @@
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.htmlPanel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(647, 507);
+            this.Size = new System.Drawing.Size(695, 543);
             this.Text = "Page1";
             this.ResumeLayout(false);
 
