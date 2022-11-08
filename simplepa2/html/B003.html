@@ -105,7 +105,7 @@
 
 <!-- 메인영역 : 시작 -->
 <div class="main-area">
-	<div class="block-left">
+	<div class="block-left3">
 		<div class="m-box">
 			<div class="title-row">
 				<span>프리셋(Preset) 리스트</span>
@@ -114,12 +114,58 @@
 				</div>
 			</div>
 			<div class="content-row scroll-y">
-				
+				<div class="preset-list-card">
+					<div class="col1 icon1"><span></span></div>	
+					<div class="col2">
+						<div class="txt1">[ADMIN] 3층 주의 방송</div>
+						<div class="txt2">로비외 23곳 / 음원 3개</div>
+					</div>
+				</div>
+
+				<div class="preset-list-card">
+					<div class="col1 icon2"><span></span></div>	
+					<div class="col2">
+						<div class="txt1">[최영규] 1층 주차장 민방위 라디오</div>
+						<div class="txt2">지하1층 외 2개 / 주소 1개 </div>
+					</div>
+				</div>
+
+				<div class="preset-list-card">
+					<div class="col1 icon1"><span></span></div>	
+					<div class="col2">
+						<div class="txt1">[최영규] 3, 4, 5층 상가 주의방송</div>
+						<div class="txt2">3층 외 2개 / "안녕하세요...</div>
+					</div>
+				</div>
+
+				<div class="preset-list-card">
+					<div class="col1 icon4"><span></span></div>	
+					<div class="col2">
+						<div class="txt1">[장영실] 상가 전체 물청소 안내방송</div>
+						<div class="txt2">1층 외 4개 / "관리실에서 안내 방송 드립니다. 금일 오전 10시부터 오후...</div>
+					</div>
+				</div>
+
+				<div class="preset-list-card">
+					<div class="col1 icon2"><span></span></div>	
+					<div class="col2">
+						<div class="txt1">[ADMIN] 3층 점심시간 종료 방송</div>
+						<div class="txt2">로비외 23곳 / 음원 1개</div>
+					</div>
+				</div>
+
+				<div class="preset-list-card">
+					<div class="col1 icon1"><span></span></div>	
+					<div class="col2">
+						<div class="txt1">[ADMIN] 3층 점심시간 시작 방송</div>
+						<div class="txt2">로비외 23곳 / 음원 1개</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div><!-- block=left의 끝 -->
 
-	<div class="block-right">
+	<div class="block-right3">
 		<div class="m-box">
 			<div class="title-row">
 				<!-- <span>새 프리셋 추가</span> -->
@@ -136,7 +182,30 @@
 						<span class="i-title">프리셋 일반 정보</span>
 					</div>
 					<div class="i-content-row">
-						
+						<div class="data-row">
+							<div class="data-label data-label1">프리셋 이름</div>
+							<div class="data-input2">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label1">프리셋 작성자</div>
+							<div class="data-input3">
+								<input type="text" class="ipt-dt">
+							</div>
+							<div class="data-label data-label2-a">수정일자</div>
+							<div class="data-input2-2a">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label1">프리셋 사용권한</div>
+							<div class="data-input1">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -146,7 +215,37 @@
 						<span class="i-title">음원 및 플레이</span>
 					</div>
 					<div class="i-content-row">
-						
+						<div class="data-row">
+							<div class="data-label data-label1">음원 종류</div>
+							<div class="data-input2">
+								<select class="select-t2">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label1">음원상세</div>
+							<div class="data-input3">
+								<textarea class="txta-dt"></textarea>
+							</div>
+							<div class="data-label data-label2-a">전체 플레이 시간</div>
+							<div class="data-input2-2a">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label1">재생 시간</div>
+							<div class="data-input4-1">
+								<input type="text" class="ipt-dt">
+							</div>
+							<div class="data-input4-2">
+								
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -156,12 +255,172 @@
 						<span class="i-title">방송지역</span>
 					</div>
 					<div class="i-content-row">
-						
+						<div class="data-row">
+							<div class="data-label data-label1">선택지역</div>
+							<div class="data-input2">
+								<select class="select-t2">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+								</select>
+							</div>
+						</div>
+
+
+
+						<div class="s-box s-box2">
+							<div class="s-title-row">
+								<label class="brisak-input">
+									<input type="checkbox">6층<span></span>
+								</label>
+								<!-- <span class="s-title">파인동</span> --> <!-- 일반 텍스트 제목 대신 체크박스로 변경, 만약을 위해 남겨둡니다. -->
+							</div>
+							<div class="s-content-row">
+								<div class="broadcasting-area-wrap small-ba">
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+							
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+								</div>
+							</div>
+						</div><!-- s-box s-box2의 끝 -->
+
+
+
+						<div class="s-box s-box2">
+							<div class="s-title-row">
+								<label class="brisak-input">
+									<input type="checkbox">7층<span></span>
+								</label>
+								<!-- <span class="s-title">파인동</span> --> <!-- 일반 텍스트 제목 대신 체크박스로 변경, 만약을 위해 남겨둡니다. -->
+							</div>
+							<div class="s-content-row">
+								<div class="broadcasting-area-wrap small-ba">
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+							
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+									<a tabindex="0" class="broadcasting-area">
+										<div class="ba-txt">601</div>
+										<div class="ba-bar">
+											
+										</div>
+									</a>
+
+								</div>
+							</div>
+						</div><!-- s-box s-box2의 끝 -->
+
+
+
+
+
 					</div>
 				</div>
 			</div>
 		</div>
-	</div><!-- block=left의 끝 -->
+	</div><!-- block-right의 끝 -->
 
 
 </div>

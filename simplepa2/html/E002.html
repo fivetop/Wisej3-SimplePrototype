@@ -16,9 +16,9 @@
 		<div class="menu-wrap">
 			<a tabindex="0" class="menu-d1 no-child">대쉬보드</a>
 
-			<a tabindex="0" class="menu-d1 active">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+			<a tabindex="0" class="menu-d1">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 			<div class="menu-d2-wrap">
-				<a tabindex="0" class="menu-d2 active">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+				<a tabindex="0" class="menu-d2">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 				<a tabindex="0" class="menu-d2">예약방송</a>
 				<a tabindex="0" class="menu-d2">프리셋편집</a>
 				<a tabindex="0" class="menu-d2">그룹편집</a>
@@ -48,10 +48,10 @@
 				<a tabindex="0" class="menu-d2">시스템 변경 이력</a>
 			</div>
 
-			<a tabindex="0" class="menu-d1">시스템 관리</a>
+			<a tabindex="0" class="menu-d1 active">시스템 관리</a>
 			<div class="menu-d2-wrap">
 				<a tabindex="0" class="menu-d2">계정 등록 관리</a>
-				<a tabindex="0" class="menu-d2">시스템 이메일 등록</a>
+				<a tabindex="0" class="menu-d2 active">시스템 이메일 등록</a>
 				<a tabindex="0" class="menu-d2">SMS 등록</a>
 				<a tabindex="0" class="menu-d2">REST API 등록</a>
 			</div>
@@ -105,14 +105,122 @@
 
 <!-- 메인영역 : 시작 -->
 <div class="main-area">
-	<div class="block-all">
+	
+
+	<div class="block-all2">
 		<div class="m-box">
-			<div class="title-row"><span class="title">메일 서버 구성</span></div>
-			<div class="content-row">
-				
+			<div class="title-row">
+				<span>메일 서버 구성</span>
+				<div class="r-cont">
+					<a tabindex="0" class="m-btn btn-delete">취소</a>
+					<a tabindex="0" class="m-btn btn-done">저장</a>
+				</div>
+			</div>
+			<div class="content-row scroll-y">
+				<div class="in-box">
+					<div class="i-title-row">
+						<span class="i-num">1</span>
+						<span class="i-title">서버 기본 정보</span>
+					</div>
+					<div class="i-content-row">
+						<div class="data-row">
+							<div class="data-label data-label3">서버 이름</div>
+							<div class="data-input2">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label3">포트번호</div>
+							<div class="data-input2">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label3">타임아웃<span>초</span></div>
+							<div class="data-input2">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label3">보내는 사람 이메일ID<span class="txt-option">(옵션)</span></div>
+							<div class="data-input3x">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label3">받는 사람 이메일ID<span class="txt-option">(옵션)</span></div>
+							<div class="data-input3x">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="in-box">
+					<div class="i-title-row">
+						<span class="i-num">2</span>
+						<span class="i-title">인증 정보<span class="txt-option">(옵션)</span></span>
+					</div>
+					<div class="i-content-row">
+						<div class="data-row">
+							<div class="data-label data-label3">사용자 이름</div>
+							<div class="data-input2">
+								<input type="text" class="ipt-dt">
+							</div>
+						</div>
+
+						<div class="data-row">
+							<div class="data-label data-label3">비밀번호</div>
+							<div class="data-input2">
+								<input type="password" class="ipt-dt">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="in-box">
+					<div class="i-title-row">
+						<span class="i-num">3</span>
+						<span class="i-title">보안 접속 정보<span class="txt-option">(옵션)</span></span>
+					</div>
+					<div class="i-content-row">
+						<div class="data-row">
+							<label class="brisak-input">
+								<input type="radio" name="e002-1">SSL 사용여부<span></span>
+							</label>
+							<label class="brisak-input">
+								<input type="radio" name="e002-1">TLS 사용함<span></span>
+							</label>
+							<label class="brisak-input">
+								<input type="radio" name="e002-1">없음<span></span>
+							</label>
+						</div>
+
+						<div class="txt-desc1">
+							We recommended you to always use TLS and SSL cryptographic protocols that provide communication security over a computer network.
+						</div>
+
+						<div class="data-row">
+							<label class="brisak-input">
+								<input type="checkbox">예비메일 서버 추가 <span></span><div class="txt-option">(옵션)</div>
+							</label>
+						</div>
+
+
+
+
+
+
+
+					</div>
+				</div>
 			</div>
 		</div>
-	</div><!-- block=all의 끝 -->
+	</div><!-- block-all2의 끝 -->
 
 
 </div>

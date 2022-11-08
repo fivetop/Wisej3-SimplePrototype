@@ -16,9 +16,9 @@
 		<div class="menu-wrap">
 			<a tabindex="0" class="menu-d1 no-child">대쉬보드</a>
 
-			<a tabindex="0" class="menu-d1 active">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+			<a tabindex="0" class="menu-d1">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 			<div class="menu-d2-wrap">
-				<a tabindex="0" class="menu-d2 active">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+				<a tabindex="0" class="menu-d2">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 				<a tabindex="0" class="menu-d2">예약방송</a>
 				<a tabindex="0" class="menu-d2">프리셋편집</a>
 				<a tabindex="0" class="menu-d2">그룹편집</a>
@@ -48,12 +48,12 @@
 				<a tabindex="0" class="menu-d2">시스템 변경 이력</a>
 			</div>
 
-			<a tabindex="0" class="menu-d1">시스템 관리</a>
+			<a tabindex="0" class="menu-d1 active">시스템 관리</a>
 			<div class="menu-d2-wrap">
 				<a tabindex="0" class="menu-d2">계정 등록 관리</a>
 				<a tabindex="0" class="menu-d2">시스템 이메일 등록</a>
 				<a tabindex="0" class="menu-d2">SMS 등록</a>
-				<a tabindex="0" class="menu-d2">REST API 등록</a>
+				<a tabindex="0" class="menu-d2 active">REST API 등록</a>
 			</div>
 		</div>
 	</div>
@@ -105,14 +105,40 @@
 
 <!-- 메인영역 : 시작 -->
 <div class="main-area">
-	<div class="block-all">
-		<div class="m-box">
-			<div class="title-row"><span class="title">REST API</span></div>
+	
+
+	<div class="block-all3">
+		<div class="m-box inline-block-style">
+			<div class="title-row">
+				<span>Rest API</span>
+			</div>
 			<div class="content-row">
+				<div class="in-box">
+					
+					<div class="i-content-row">
+						<div class="data-row data-row-e004-1">
+							<div class="data-label data-label3">Rest API Key</div>
+							<div class="data-input2">
+								<input type="password" class="ipt-dt" readonly>
+							</div>
+							
+						</div>
+						<div class="in-line1"></div>
+						<div class="data-row">
+							<div class="r-cont">
+								<a tabindex="0" class="n-btn btn-done btn-key-generate">키 재생성</a>
+							</div>
+							
+						</div>
+
+						
+					</div>
+				</div>
+
 				
 			</div>
 		</div>
-	</div><!-- block=all의 끝 -->
+	</div><!-- block-all2의 끝 -->
 
 
 </div>

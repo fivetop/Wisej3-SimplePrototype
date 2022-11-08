@@ -16,9 +16,9 @@
 		<div class="menu-wrap">
 			<a tabindex="0" class="menu-d1 no-child">대쉬보드</a>
 
-			<a tabindex="0" class="menu-d1 active">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+			<a tabindex="0" class="menu-d1">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 			<div class="menu-d2-wrap">
-				<a tabindex="0" class="menu-d2 active">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+				<a tabindex="0" class="menu-d2">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 				<a tabindex="0" class="menu-d2">예약방송</a>
 				<a tabindex="0" class="menu-d2">프리셋편집</a>
 				<a tabindex="0" class="menu-d2">그룹편집</a>
@@ -27,7 +27,7 @@
 				<a tabindex="0" class="menu-d2">휴일 관리</a>
 			</div>
 
-			<a tabindex="0" class="menu-d1">방송 설정</a>
+			<a tabindex="0" class="menu-d1 active">방송 설정</a>
 			<div class="menu-d2-wrap">
 				<a tabindex="0" class="menu-d2">장비 관리</a>
 				<a tabindex="0" class="menu-d2">사이트 관리</a>
@@ -36,7 +36,7 @@
 				<a tabindex="0" class="menu-d2">출력 관리</a>
 				<a tabindex="0" class="menu-d2">음량 관리</a>
 				<a tabindex="0" class="menu-d2">비상 방송</a>
-				<a tabindex="0" class="menu-d2">앰프 Failover</a>
+				<a tabindex="0" class="menu-d2 active">앰프 Failover</a>
 			</div>
 
 			<a tabindex="0" class="menu-d1">방송 기록</a>
@@ -106,13 +106,168 @@
 <!-- 메인영역 : 시작 -->
 <div class="main-area">
 	<div class="block-all">
+		
+
 		<div class="m-box">
-			<div class="title-row"><span class="title">음량 관리</span></div>
-			<div class="content-row">
-				
+			<div class="title-row">
+				<!-- <span class="title"></span> -->
+				<div class="t-l-label">컨트롤러</div>
+				<div class="t-l-ipt1">
+					<input type="text" class="ipt-tt">
+				</div>
+				<div class="r-cont">
+					<div class="t-l-label">백업앰프</div>
+					<div class="t-l-ipt1">
+						<select class="select-t2">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+					</div>
+					<div class="t-l-ipt1">
+						<select class="select-t2">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+					</div>
+					<a tabindex="0" class="m-btn btn-done">적용</a>
+				</div>
+			</div>
+			<div class="content-row2">
+				<div class="m-table-wrap">
+					<table class="m-table">
+						<colgroup>
+							<col style="width:130px">
+							<col style="width:100px">
+							<col style="">
+							<col style="width:110px">
+							<col style="width:140px">
+
+							<col style="width:100px">
+							<col style="width:60px">
+							<col style="width:150px">
+							<col style="width:100px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>장비아이디</th>
+								<th>장비이름</th>
+								<th>장비종류</th>
+								<th>IP주소</th>
+								<th>카테고리</th>
+
+								<th>입출력</th>
+								<th>상태</th>
+								<th>발견시간</th>
+								<th>관리 여부</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>DSP-32a32a</td>
+								<td>16x16 메인동</td>
+								<td>DSP</td>
+								<td>169.254.15.11</td>
+								<td>DSP</td>
+								<td>32x32</td>
+								<td><span class="c1-status1-1"></span></td>
+								<td>2022-11-28 13:01:00</td>
+								<td><span class="c1-status2-1">관리</span></td>
+							</tr>
+							
+							<tr>
+								<td>DSP-32a32a</td>
+								<td>16x16 메인동</td>
+								<td>DSP</td>
+								<td>169.254.15.11</td>
+								<td>DSP</td>
+								<td>32x32</td>
+								<td><span class="c1-status1-2"></span></td>
+								<td>2022-11-28 13:01:00</td>
+								<td><span class="c1-status2-1">관리</span></td>
+							</tr>
+
+							<tr>
+								<td>DSP-32a32a</td>
+								<td>16x16 메인동</td>
+								<td>DSP</td>
+								<td>169.254.15.11</td>
+								<td>DSP</td>
+								<td>32x32</td>
+								<td><span class="c1-status1-3"></span></td>
+								<td>2022-11-28 13:01:00</td>
+								<td><span class="c1-status2-1">관리</span></td>
+							</tr>
+
+							<tr>
+								<td>DSP-32a32a</td>
+								<td>16x16 메인동</td>
+								<td>DSP</td>
+								<td>169.254.15.11</td>
+								<td>DSP</td>
+								<td>32x32</td>
+								<td><span class="c1-status1-1"></span></td>
+								<td>2022-11-28 13:01:00</td>
+								<td><span class="c1-status2-1">관리</span></td>
+							</tr>
+
+							<tr>
+								<td>DSP-32a32a</td>
+								<td>16x16 메인동</td>
+								<td>DSP</td>
+								<td>169.254.15.11</td>
+								<td>DSP</td>
+								<td>32x32</td>
+								<td><span class="c1-status1-1"></span></td>
+								<td>2022-11-28 13:01:00</td>
+								<td><span class="c1-status2-2">비관리</span></td>
+							</tr>
+
+							<tr>
+								<td>DSP-32a32a</td>
+								<td>16x16 메인동</td>
+								<td>DSP</td>
+								<td>169.254.15.11</td>
+								<td>DSP</td>
+								<td>32x32</td>
+								<td><span class="c1-status1-1"></span></td>
+								<td>2022-11-28 13:01:00</td>
+								<td><span class="c1-status2-3">Offline 관리</span></td>
+							</tr>
+
+							<tr>
+								<td>DSP-32a32a</td>
+								<td>16x16 메인동</td>
+								<td>DSP</td>
+								<td>169.254.15.11</td>
+								<td>DSP</td>
+								<td>32x32</td>
+								<td><span class="c1-status1-1"></span></td>
+								<td>2022-11-28 13:01:00</td>
+								<td><span class="c1-status2-1">관리</span></td>
+							</tr>
+
+							<tr>
+								<td>DSP-32a32a</td>
+								<td>16x16 메인동</td>
+								<td>DSP</td>
+								<td>169.254.15.11</td>
+								<td>DSP</td>
+								<td>32x32</td>
+								<td><span class="c1-status1-1"></span></td>
+								<td>2022-11-28 13:01:00</td>
+								<td><span class="c1-status2-1">관리</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- m-table-wrap의 끝 -->
+
 			</div>
 		</div>
-	</div><!-- block=all의 끝 -->
+
+
+	</div><!-- block-all의 끝 -->
 
 
 </div>

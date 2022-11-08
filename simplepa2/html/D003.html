@@ -16,9 +16,9 @@
 		<div class="menu-wrap">
 			<a tabindex="0" class="menu-d1 no-child">대쉬보드</a>
 
-			<a tabindex="0" class="menu-d1 active">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+			<a tabindex="0" class="menu-d1">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 			<div class="menu-d2-wrap">
-				<a tabindex="0" class="menu-d2 active">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+				<a tabindex="0" class="menu-d2">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 				<a tabindex="0" class="menu-d2">예약방송</a>
 				<a tabindex="0" class="menu-d2">프리셋편집</a>
 				<a tabindex="0" class="menu-d2">그룹편집</a>
@@ -39,11 +39,11 @@
 				<a tabindex="0" class="menu-d2">앰프 Failover</a>
 			</div>
 
-			<a tabindex="0" class="menu-d1">방송 기록</a>
+			<a tabindex="0" class="menu-d1 active">방송 기록</a>
 			<div class="menu-d2-wrap">
 				<a tabindex="0" class="menu-d2">방송 이력</a>
 				<a tabindex="0" class="menu-d2">장비 이력</a>
-				<a tabindex="0" class="menu-d2">화재수신 이력</a>
+				<a tabindex="0" class="menu-d2 active">화재수신 이력</a>
 				<a tabindex="0" class="menu-d2">외부 수신 이력</a>
 				<a tabindex="0" class="menu-d2">시스템 변경 이력</a>
 			</div>
@@ -106,13 +106,175 @@
 <!-- 메인영역 : 시작 -->
 <div class="main-area">
 	<div class="block-all">
+		
+
 		<div class="m-box">
-			<div class="title-row"><span class="title">음량 관리</span></div>
-			<div class="content-row">
-				
+			<div class="title-row">
+				<div class="t-l-label2">날짜</div>
+				<div class="t-l-ipt-date">
+					<input type="text" class="ipt-tt">
+				</div>
+				<div class="t-l-date-bw">~</div>
+				<div class="t-l-ipt-date">
+					<input type="text" class="ipt-tt">
+				</div>
+				<a tabindex="0" class="q-btn btn-grayline">1주일</a>
+				<a tabindex="0" class="q-btn btn-grayline">1개월</a>
+				<a tabindex="0" class="q-btn btn-grayline">6개월</a>
+
+				<div class="r-cont">
+					<div class="t-l-label">이벤트</div>
+					<div class="t-l-ipt3">
+						<select class="select-t3">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+					</div>
+					<div class="t-l-label">수신장비</div>
+					<div class="t-l-ipt3">
+						<select class="select-t3">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+					</div>
+					<a tabindex="0" class="m-btn btn-done">검색</a>
+				</div>
+			</div>
+			<div class="content-row2">
+				<div class="m-table-wrap">
+					<table class="m-table">
+						<colgroup>
+							<col style="width:140px">
+							<col style="">
+							<col style="width:17%">
+							<col style="width:130px">
+							<col style="width:90px">
+
+							<col style="width:18%">
+							<col style="width:18%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>수신시각</th>
+								<th>수신반 타입</th>
+								<th>수신위치</th>
+								<th>포트번호</th>
+								<th>수신정보</th>
+
+								<th>수신명령</th>
+								<th>상세</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+							
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+
+							<tr>
+								<td>2022-07-15 12:00:12</td>
+								<td>P형 수신반</td>
+								<td>E.M1번 중측용</td>
+								<td>COM2</td>
+								<td>Port1</td>
+
+								<td>Fire</td>
+								<td>Port1 : Short</td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- m-table-wrap의 끝 -->
+
 			</div>
 		</div>
-	</div><!-- block=all의 끝 -->
+
+
+	</div><!-- block-all의 끝 -->
 
 
 </div>

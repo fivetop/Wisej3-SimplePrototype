@@ -48,6 +48,7 @@
     <Content Include="Default.json" />
     <Content Include="favicon.ico" />
     <Content Include="작업현황.html" />
+    <Content Include="Themes\LSMaterial-3.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,9 +76,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Themes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />

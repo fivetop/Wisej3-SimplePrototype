@@ -16,9 +16,9 @@
 		<div class="menu-wrap">
 			<a tabindex="0" class="menu-d1 no-child">대쉬보드</a>
 
-			<a tabindex="0" class="menu-d1 active">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+			<a tabindex="0" class="menu-d1">방송운영</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 			<div class="menu-d2-wrap">
-				<a tabindex="0" class="menu-d2 active">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
+				<a tabindex="0" class="menu-d2">앵커방송</a><!-- 선택된 것에는 active클래스를 추가합니다. -->
 				<a tabindex="0" class="menu-d2">예약방송</a>
 				<a tabindex="0" class="menu-d2">프리셋편집</a>
 				<a tabindex="0" class="menu-d2">그룹편집</a>
@@ -27,7 +27,7 @@
 				<a tabindex="0" class="menu-d2">휴일 관리</a>
 			</div>
 
-			<a tabindex="0" class="menu-d1">방송 설정</a>
+			<a tabindex="0" class="menu-d1 active">방송 설정</a>
 			<div class="menu-d2-wrap">
 				<a tabindex="0" class="menu-d2">장비 관리</a>
 				<a tabindex="0" class="menu-d2">사이트 관리</a>
@@ -36,7 +36,7 @@
 				<a tabindex="0" class="menu-d2">출력 관리</a>
 				<a tabindex="0" class="menu-d2">음량 관리</a>
 				<a tabindex="0" class="menu-d2">비상 방송</a>
-				<a tabindex="0" class="menu-d2">앰프 Failover</a>
+				<a tabindex="0" class="menu-d2 active">앰프 Failover</a>
 			</div>
 
 			<a tabindex="0" class="menu-d1">방송 기록</a>
@@ -106,13 +106,192 @@
 <!-- 메인영역 : 시작 -->
 <div class="main-area">
 	<div class="block-all">
+		
+
 		<div class="m-box">
-			<div class="title-row"><span class="title">음량 관리</span></div>
-			<div class="content-row">
-				
+			<div class="title-row">
+				<!-- <span class="title"></span> -->
+				<div class="t-l-label2">컨트롤러</div>
+				<div class="t-l-ipt2">
+					<input type="text" class="ipt-tt">
+				</div>
+				<div class="r-cont">
+					<div class="t-l-label">백업앰프</div>
+					<div class="t-l-ipt3">
+						<select class="select-t3">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+					</div>
+					<div class="t-l-ipt3">
+						<select class="select-t3">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+					</div>
+					<a tabindex="0" class="m-btn btn-done">적용</a>
+				</div>
+			</div>
+			<div class="content-row2">
+				<div class="m-table-wrap">
+					<table class="m-table">
+						<colgroup>
+							<col style="width:140px">
+							<col style="">
+							<col style="width:100px">
+							<col style="width:160px">
+							<col style="width:90px">
+
+							<col style="width:90px">
+							<col style="width:90px">
+							<col style="width:320px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>장비번호</th>
+								<th>컨트롤러 이름</th>
+								<th>장비ID</th>
+								<th>입력앰프</th>
+								<th>앰프채널</th>
+
+								<th>입력포트</th>
+								<th>출력번호</th>
+								<th>출력Zone</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+							<tr>
+								<td>87</td>
+								<td>ZPC-001</td>
+								<td>33</td>
+								<td>MA200TD-28139</td>
+								<td>1Ch</td>
+								<td>1Port</td>
+								<td>1Port</td>
+								<td>오크동/1층/S1</td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- m-table-wrap의 끝 -->
+
 			</div>
 		</div>
-	</div><!-- block=all의 끝 -->
+
+
+	</div><!-- block-all의 끝 -->
 
 
 </div>
