@@ -85,7 +85,7 @@ namespace simplepa2
 			//Application.LoadTheme("Clear-2");
 			//Application.LoadTheme("Clear-3");
 			//Application.LoadTheme("Graphite-3");
-			Application.LoadTheme("Material-3");
+			Application.LoadTheme("LSMaterial-3"); //"Material-3" 
 			//Application.LoadTheme("Vista-2");
 
 			//Application.Theme.Colors["navbar-background"] = "blue";

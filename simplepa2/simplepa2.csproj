@@ -657,7 +657,7 @@
     <Content Include="Handler1.ashx" />
     <Fakes Include="Fakes\Wisej-3.fakes" />
     <Content Include="Files\Wisej-Datasheet-V2.3.pdf" />
-    <Content Include="Themes\Material-3.theme" />
+    <Content Include="Themes\LSMaterial-3.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
