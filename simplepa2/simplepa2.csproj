@@ -106,6 +106,36 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="win2\c04.resx">
+      <DependentUpon>c04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\c03.resx">
+      <DependentUpon>c03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\c02.resx">
+      <DependentUpon>c02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\c01.resx">
+      <DependentUpon>c01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\b05.resx">
+      <DependentUpon>b05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\b04.resx">
+      <DependentUpon>b04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\b03.resx">
+      <DependentUpon>b03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\b02.resx">
+      <DependentUpon>b02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\b01.resx">
+      <DependentUpon>b01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\a01.resx">
+      <DependentUpon>a01.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\gPanel.resx">
       <DependentUpon>gPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +575,27 @@
     <EmbeddedResource Include="Resources\youtube-logo.svg" />
     <Content Include="js\common.js" />
     <Content Include="Scripts\chatClient.js" />
+    <EmbeddedResource Include="win2\a02.resx">
+      <DependentUpon>a02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\a03.resx">
+      <DependentUpon>a03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\a04.resx">
+      <DependentUpon>a04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\a05.resx">
+      <DependentUpon>a05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\a06.resx">
+      <DependentUpon>a06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\a08.resx">
+      <DependentUpon>a08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win2\a07.resx">
+      <DependentUpon>a07.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\AGroup.resx">
       <DependentUpon>AGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -618,6 +669,66 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="win2\c04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\c04.Designer.cs">
+      <DependentUpon>c04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\c03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\c03.Designer.cs">
+      <DependentUpon>c03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\c02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\c02.Designer.cs">
+      <DependentUpon>c02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\c01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\c01.Designer.cs">
+      <DependentUpon>c01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\b05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\b05.Designer.cs">
+      <DependentUpon>b05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\b04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\b04.Designer.cs">
+      <DependentUpon>b04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\b03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\b03.Designer.cs">
+      <DependentUpon>b03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\b02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\b02.Designer.cs">
+      <DependentUpon>b02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\b01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\b01.Designer.cs">
+      <DependentUpon>b01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\a01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\a01.Designer.cs">
+      <DependentUpon>a01.cs</DependentUpon>
+    </Compile>
     <Compile Include="bsroom.cs" />
     <Compile Include="chat\SimpleChatClient.cs">
       <SubType>Form</SubType>
@@ -718,6 +829,48 @@
     <Compile Include="webapi\ApiController1.cs" />
     <Compile Include="webapi\Encryption.cs" />
     <Compile Include="webapi\MessageHandler.cs" />
+    <Compile Include="win2\a02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\a02.Designer.cs">
+      <DependentUpon>a02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\a03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\a03.Designer.cs">
+      <DependentUpon>a03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\a04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\a04.Designer.cs">
+      <DependentUpon>a04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\a05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\a05.Designer.cs">
+      <DependentUpon>a05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\a06.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\a06.Designer.cs">
+      <DependentUpon>a06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\a08.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\a08.Designer.cs">
+      <DependentUpon>a08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win2\a07.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win2\a07.Designer.cs">
+      <DependentUpon>a07.cs</DependentUpon>
+    </Compile>
     <Compile Include="win\AGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
