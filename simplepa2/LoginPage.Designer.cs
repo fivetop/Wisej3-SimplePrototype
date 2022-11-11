@@ -55,7 +55,7 @@
             this.panel1.HeaderAlignment = Wisej.Web.HorizontalAlignment.Center;
             this.panel1.HeaderBackColor = System.Drawing.Color.FromArgb(255, 167, 0);
             this.panel1.HeaderSize = 40;
-            this.panel1.Location = new System.Drawing.Point(184, 160);
+            this.panel1.Location = new System.Drawing.Point(255, 242);
             this.panel1.Name = "panel1";
             this.panel1.ShowCloseButton = false;
             this.panel1.Size = new System.Drawing.Size(319, 216);
@@ -67,7 +67,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(192, 186);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(101, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(103, 17);
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.Text = "Forgot password";
             this.linkLabel1.LinkClicked += new Wisej.Web.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -123,7 +123,7 @@
             this.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
             this.Controls.Add(this.panel1);
             this.Name = "LoginPage";
-            this.Size = new System.Drawing.Size(695, 450);
+            this.Size = new System.Drawing.Size(837, 615);
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -7,6 +7,7 @@ namespace simplepa2
 {
     public partial class LoginPage : Page
     {
+		// YK Comment for Git Hub test 
         public LoginPage()
         {
             InitializeComponent();
