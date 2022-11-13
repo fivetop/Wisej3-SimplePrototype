@@ -3,6 +3,7 @@ using System.Diagnostics;
 using Wisej.Web;
 using System.Collections.Generic;
 using System.Web.Http;
+using simplepa2.UI.Pages;
 
 namespace simplepa2
 {
@@ -21,7 +22,7 @@ namespace simplepa2
 			loginPage.Show();
 			// */
 
-			Application.MainPage = new Simple();
+			Application.MainPage = new PA_MainFrame();
 		}
 
 		//

@@ -54,7 +54,7 @@
             this.panel1.HeaderAlignment = Wisej.Web.HorizontalAlignment.Center;
             this.panel1.HeaderBackColor = System.Drawing.Color.FromArgb(255, 167, 0);
             this.panel1.HeaderSize = 40;
-            this.panel1.Location = new System.Drawing.Point(430, 179);
+            this.panel1.Location = new System.Drawing.Point(318, 218);
             this.panel1.Name = "panel1";
             this.panel1.ShowCloseButton = false;
             this.panel1.Size = new System.Drawing.Size(319, 216);
@@ -122,7 +122,7 @@
             this.BackgroundImageSource = "imgs/로그인2B.png";
             this.Controls.Add(this.panel1);
             this.Name = "PA_Login";
-            this.Size = new System.Drawing.Size(1186, 488);
+            this.Size = new System.Drawing.Size(963, 567);
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
