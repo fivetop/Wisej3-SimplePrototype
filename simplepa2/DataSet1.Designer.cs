@@ -1404,6 +1404,8 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnzpco;
             
+            private global::System.Data.DataColumn columnemServer;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AssetsDataTable() {
@@ -1623,6 +1625,14 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn emServerColumn {
+                get {
+                    return this.columnemServer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1680,7 +1690,8 @@ namespace simplepa2 {
                         string floorname, 
                         string zpc, 
                         int zpci, 
-                        int zpco) {
+                        int zpco, 
+                        string emServer) {
                 AssetsRow rowAssetsRow = ((AssetsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1705,7 +1716,8 @@ namespace simplepa2 {
                         floorname,
                         zpc,
                         zpci,
-                        zpco};
+                        zpco,
+                        emServer};
                 rowAssetsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAssetsRow);
                 return rowAssetsRow;
@@ -1758,6 +1770,7 @@ namespace simplepa2 {
                 this.columnzpc = base.Columns["zpc"];
                 this.columnzpci = base.Columns["zpci"];
                 this.columnzpco = base.Columns["zpco"];
+                this.columnemServer = base.Columns["emServer"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1809,6 +1822,8 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnzpci);
                 this.columnzpco = new global::System.Data.DataColumn("zpco", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnzpco);
+                this.columnemServer = new global::System.Data.DataColumn("emServer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemServer);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAssetId}, true));
                 this.columnAssetId.AutoIncrement = true;
@@ -1829,6 +1844,7 @@ namespace simplepa2 {
                 this.columnbuilding.MaxLength = 2147483647;
                 this.columnfloorname.MaxLength = 2147483647;
                 this.columnzpc.MaxLength = 2147483647;
+                this.columnemServer.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6855,6 +6871,22 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string emServer {
+                get {
+                    try {
+                        return ((string)(this[this.tableAssets.emServerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Assets\' 테이블의 \'emServer\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssets.emServerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsipNull() {
                 return this.IsNull(this.tableAssets.ipColumn);
             }
@@ -7115,6 +7147,18 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetzpcoNull() {
                 this[this.tableAssets.zpcoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsemServerNull() {
+                return this.IsNull(this.tableAssets.emServerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetemServerNull() {
+                this[this.tableAssets.emServerColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11316,15 +11360,16 @@ namespace simplepa2.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("zpc", "zpc");
             tableMapping.ColumnMappings.Add("zpci", "zpci");
             tableMapping.ColumnMappings.Add("zpco", "zpco");
+            tableMapping.ColumnMappings.Add("emServer", "emServer");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Assets] WHERE (([AssetId] = @Original_AssetId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Assets] WHERE (([AssetId] = @Original_AssetId))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Assets] ([ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (@ip, @GroupName, @ZoneName, @SpeakerName, @path, @floor, @DeviceName, @state, @state_old, @chk, @seq, @ch, @em1, @em2, @em3, @DeviceId, @emData, @building, @floorname, @zpc, @zpci, @zpco)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Assets] ([ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco], [emServer]) VALUES (@ip, @GroupName, @ZoneName, @SpeakerName, @path, @floor, @DeviceName, @state, @state_old, @chk, @seq, @ch, @em1, @em2, @em3, @DeviceId, @emData, @building, @floorname, @zpc, @zpci, @zpco, @emServer)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ip", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GroupName", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GroupName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11348,9 +11393,10 @@ namespace simplepa2.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpc", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpci", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpci", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpco", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emServer", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emServer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Assets] SET [ip] = @ip, [GroupName] = @GroupName, [ZoneName] = @ZoneName, [SpeakerName] = @SpeakerName, [path] = @path, [floor] = @floor, [DeviceName] = @DeviceName, [state] = @state, [state_old] = @state_old, [chk] = @chk, [seq] = @seq, [ch] = @ch, [em1] = @em1, [em2] = @em2, [em3] = @em3, [DeviceId] = @DeviceId, [emData] = @emData, [building] = @building, [floorname] = @floorname, [zpc] = @zpc, [zpci] = @zpci, [zpco] = @zpco WHERE (([AssetId] = @Original_AssetId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Assets] SET [ip] = @ip, [GroupName] = @GroupName, [ZoneName] = @ZoneName, [SpeakerName] = @SpeakerName, [path] = @path, [floor] = @floor, [DeviceName] = @DeviceName, [state] = @state, [state_old] = @state_old, [chk] = @chk, [seq] = @seq, [ch] = @ch, [em1] = @em1, [em2] = @em2, [em3] = @em3, [DeviceId] = @DeviceId, [emData] = @emData, [building] = @building, [floorname] = @floorname, [zpc] = @zpc, [zpci] = @zpci, [zpco] = @zpco, [emServer] = @emServer WHERE (([AssetId] = @Original_AssetId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ip", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GroupName", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GroupName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11374,6 +11420,7 @@ namespace simplepa2.DataSet1TableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpc", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpci", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpci", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zpco", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zpco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emServer", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emServer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -11390,9 +11437,9 @@ namespace simplepa2.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AssetId, ip, GroupName, ZoneName, SpeakerName, path, floor, DeviceName, st" +
-                "ate, state_old, chk, seq, ch, em1, em2, em3, DeviceId, emData, building, floorna" +
-                "me, zpc, zpci, zpco FROM dbo.Assets";
+            this._commandCollection[0].CommandText = "SELECT  AssetId, ip, GroupName, ZoneName, SpeakerName, path, floor, DeviceName, s" +
+                "tate, state_old, chk, seq, ch, em1, em2, em3, DeviceId, emData, building, floorn" +
+                "ame, zpc, zpci, zpco, \r\n               emServer\r\nFROM     Assets";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11497,7 +11544,8 @@ namespace simplepa2.DataSet1TableAdapters {
                     string floorname, 
                     string zpc, 
                     global::System.Nullable<int> zpci, 
-                    global::System.Nullable<int> zpco) {
+                    global::System.Nullable<int> zpco, 
+                    string emServer) {
             if ((ip == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -11630,6 +11678,12 @@ namespace simplepa2.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
+            if ((emServer == null)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(emServer));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11673,6 +11727,7 @@ namespace simplepa2.DataSet1TableAdapters {
                     string zpc, 
                     global::System.Nullable<int> zpci, 
                     global::System.Nullable<int> zpco, 
+                    string emServer, 
                     int Original_AssetId) {
             if ((ip == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -11806,7 +11861,13 @@ namespace simplepa2.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_AssetId));
+            if ((emServer == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(emServer));
+            }
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_AssetId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

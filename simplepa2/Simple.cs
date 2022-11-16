@@ -207,7 +207,6 @@ namespace simplepa2
 		ASchedule aSchedule = new ASchedule();
 		APreset aPreset = new APreset();
 
-        BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 		BSInManager bSInManager = new BSInManager();
 		BSOutManager bSOutManage = new BSOutManager();
@@ -262,13 +261,6 @@ namespace simplepa2
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(aSchedule);
 			aSchedule.Dock = DockStyle.Fill;
-			//BStabControl.TabPages.Add(tabClients);
-			MaintabControl.TabPages.Add(tabClients);
-
-			tabClients = new TabPage(menu_string[5]);
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(bSAsset);
-			bSAsset.Dock = DockStyle.Fill;
 			//BStabControl.TabPages.Add(tabClients);
 			MaintabControl.TabPages.Add(tabClients);
 
@@ -401,7 +393,7 @@ namespace simplepa2
 			bSOutManage.reDraw(); 
 			bSLevelManager.reDraw();
 			bSEMManager.reDraw();
-			bSAsset.reDraw();
+			//bSAsset.reDraw();
 		}
 
 

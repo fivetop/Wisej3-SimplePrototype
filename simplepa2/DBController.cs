@@ -86,18 +86,19 @@ namespace simplepa2
                 m2.zpc = t1.zpc;
                 m2.zpci = t1.zpci;
                 m2.zpco = t1.zpco;
+                m2.emServer = t1.emServer;
 
                 if (m2.ch == 0)
                     m2.ch = 1;
                 m2.chk = 0;
-                m2.floor = int.Parse(t1.array[10]) * 100 + int.Parse(t1.array[11]) *10 + int.Parse(t1.array[12]);
+                m2.floor = int.Parse(t1.array[11]) * 100 + int.Parse(t1.array[12]) *10 + int.Parse(t1.array[13]);
                 m2.emData = t1.emData;
                 m2.ip = "";
                 m2.state = "";
                 m2.state_old = "";
                 m2.DeviceId = 0;
                 if (aa.Count() > 4)
-                    m2.DeviceName = aa[5];
+                    m2.DeviceName = aa[6];
                 Ds1.Assets.Rows.Add(m2);
                 Tam.AssetsTableAdapter.Update(Ds1.Assets);
             }

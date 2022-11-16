@@ -88,7 +88,7 @@ namespace simplepa2.UI.Pages
             switch (barText)
             {
                 case "대쉬보드":
-                    bringFrontView("View_DashBoard", true);
+                    bringFrontView("View_DashBoard", false);
                     break;
                 case "앵커방송":
                     bringFrontView("View_BBSAnchor", false);

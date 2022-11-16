@@ -102,6 +102,26 @@
     <Content Include="imgs\dPanel3.jpg" />
     <Content Include="imgs\login2.jpg" />
     <Content Include="fonts\NotoSansKR-Black.otf" />
+    <Content Include="fonts\NotoSansKR-Black.woff" />
+    <Content Include="fonts\NotoSansKR-Black.woff2" />
+    <Content Include="fonts\NotoSansKR-Bold.otf" />
+    <Content Include="fonts\NotoSansKR-Bold.woff" />
+    <Content Include="fonts\NotoSansKR-Bold.woff2" />
+    <Content Include="fonts\NotoSansKR-DemiLight.otf" />
+    <Content Include="fonts\NotoSansKR-DemiLight.woff" />
+    <Content Include="fonts\NotoSansKR-DemiLight.woff2" />
+    <Content Include="fonts\NotoSansKR-Light.otf" />
+    <Content Include="fonts\NotoSansKR-Light.woff" />
+    <Content Include="fonts\NotoSansKR-Light.woff2" />
+    <Content Include="fonts\NotoSansKR-Medium.otf" />
+    <Content Include="fonts\NotoSansKR-Medium.woff" />
+    <Content Include="fonts\NotoSansKR-Medium.woff2" />
+    <Content Include="fonts\NotoSansKR-Regular.otf" />
+    <Content Include="fonts\NotoSansKR-Regular.woff" />
+    <Content Include="fonts\NotoSansKR-Regular.woff2" />
+    <Content Include="fonts\NotoSansKR-Thin.otf" />
+    <Content Include="fonts\NotoSansKR-Thin.woff" />
+    <Content Include="fonts\NotoSansKR-Thin.woff2" />
     <None Include="imgs\nav-quit-777.png" />
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
@@ -605,8 +625,8 @@
     <EmbeddedResource Include="win\ASchedule.resx">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSAsset.resx">
-      <DependentUpon>BSAsset.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCZone.resx">
+      <DependentUpon>View_BBCZone.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win\BSDeviceManager.resx">
       <DependentUpon>BSDeviceManager.cs</DependentUpon>
@@ -758,12 +778,6 @@
     </Compile>
     <Compile Include="UI\Views\View_BBCSite.Designer.cs">
       <DependentUpon>View_BBCSite.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Views\View_BBCZone.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Views\View_BBCZone.Designer.cs">
-      <DependentUpon>View_BBCZone.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBSAnchor.cs">
       <SubType>UserControl</SubType>
@@ -1093,11 +1107,11 @@
     <Compile Include="win\ASchedule.Designer.cs">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSAsset.cs">
+    <Compile Include="UI\Views\View_BBCZone.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSAsset.Designer.cs">
-      <DependentUpon>BSAsset.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCZone.Designer.cs">
+      <DependentUpon>View_BBCZone.cs</DependentUpon>
     </Compile>
     <Compile Include="win\BSDeviceManager.cs">
       <SubType>UserControl</SubType>

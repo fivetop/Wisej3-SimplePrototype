@@ -1,27 +1,5 @@
 USE [simplePA]
 GO
-SET IDENTITY_INSERT [dbo].[Assets] ON 
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (46, N'169.254.150.80', N'1동B1F', N'통신실1', N'1번앰프', N'1동 B1F 통신실1 1번앰프', 110, N'MA1000T-845095', N'On-Line', N'', 0, 1, 1, NULL, NULL, NULL, 48, N'01동/01계단/00층', N'1동', N'B1F', N'zpc01', 1, 2)
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (47, N'169.254.150.80', N'1동B1F', N'통신실2', N'2번앰프', N'1동 B1F 통신실2 2번앰프', 110, N'MA1000T-845095', N'On-Line', N'', 0, 2, 2, NULL, NULL, NULL, 49, N'01동/01계단/00층', N'1동', N'B1F', N'', 0, 0)
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (48, N'169.254.241.123', N'1동1F', N'사무실2', N'2번앰프', N'1동 1F 사무실2 2번앰프', 111, N'DPCB-30-917bf0', N'On-Line', N'', 0, 3, 1, NULL, NULL, NULL, 42, N'01동/01계단/01층', N'1동', N'1F', N'', 0, 0)
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (49, N'169.254.191.220', N'1동2F', N'사무실3', N'4번앰프', N'1동 2F 사무실3 4번앰프', 112, N'DPCB-30-93dcbe', N'On-Line', N'', 0, 4, 1, NULL, NULL, NULL, 47, N'01동/01계단/02층', N'1동', N'2F', N'', 0, 0)
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (50, N'169.254.243.217', N'1동3F', N'사무실4', N'5번앰프', N'1동 3F 사무실4 5번앰프', 113, N'DPCB-30-93d9f2', N'On-Line', N'', 0, 5, 1, NULL, NULL, NULL, 45, N'01동/01계단/03층', N'1동', N'3F', N'', 0, 0)
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (51, N'169.254.223.123', N'2동1F', N'근린사무실5', N'6번앰프', N'2동 1F 근린사무실5 6번앰프', 211, N'DPCB-30-917bde', N'On-Line', N'', 0, 6, 1, NULL, NULL, NULL, 46, N'02동/01계단/01층', N'2동', N'1F', N'', 0, 0)
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (52, N'169.254.77.94', N'2동2F', N'근린사무실6', N'7번앰프', N'2동 2F 근린사무실6 7번앰프', 212, N'DPCB-30-955e4c', N'On-Line', N'', 0, 7, 1, NULL, NULL, NULL, 50, N'02동/01계단/02층', N'2동', N'2F', N'', 0, 0)
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (53, N'169.254.36.139', N'3동1F', N'오피사무실7', N'8번앰프', N'3동 1F 오피사무실7 8번앰프', 311, N'DPCB-30-838b23', N'On-Line', N'', 0, 8, 1, NULL, NULL, NULL, 41, N'03동/01계단/01층', N'3동', N'1F', N'', 0, 0)
-GO
-INSERT [dbo].[Assets] ([AssetId], [ip], [GroupName], [ZoneName], [SpeakerName], [path], [floor], [DeviceName], [state], [state_old], [chk], [seq], [ch], [em1], [em2], [em3], [DeviceId], [emData], [building], [floorname], [zpc], [zpci], [zpco]) VALUES (54, N'169.254.115.98', N'3동2F', N'오피사무실8', N'9번앰프', N'3동 2F 오피사무실8 9번앰프', 312, N'DPCB-30-906272', N'On-Line', N'', 0, 9, 1, NULL, NULL, NULL, 44, N'03동/01계단/02층', N'3동', N'2F', N'', 0, 0)
-GO
-SET IDENTITY_INSERT [dbo].[Assets] OFF
-GO
 SET IDENTITY_INSERT [dbo].[BSroom] ON 
 GO
 INSERT [dbo].[BSroom] ([BSroomid], [user_name], [state], [mode]) VALUES (1, N'관리자', 1, 0)
@@ -39,56 +17,6 @@ GO
 INSERT [dbo].[BSroom] ([BSroomid], [user_name], [state], [mode]) VALUES (7, N'', 0, 0)
 GO
 SET IDENTITY_INSERT [dbo].[BSroom] OFF
-GO
-SET IDENTITY_INSERT [dbo].[BSTree] ON 
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (4, NULL, 100002, 46, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (5, NULL, 100002, 47, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (6, NULL, 100002, 48, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (7, NULL, 100002, 49, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (8, NULL, 100002, 0, 1)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (9, NULL, 100002, 0, 2)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (10, NULL, 100002, 46, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (11, NULL, 100002, 48, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (12, NULL, 100002, 0, 2)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1010, NULL, 100002, 46, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1011, NULL, 100002, 47, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1012, NULL, 100002, 0, 2)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1013, NULL, 100002, 0, 3)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1014, NULL, 100003, 46, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1015, NULL, 100003, 47, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1016, NULL, 100003, 0, 2)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1017, NULL, 100003, 0, 3)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1018, NULL, 100002, 46, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1019, NULL, 100002, 47, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1020, NULL, 100002, 0, 1)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1021, NULL, 100002, 46, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1022, NULL, 100002, 47, 0)
-GO
-INSERT [dbo].[BSTree] ([BSTreeId], [wtime], [chno], [AssetId], [MusicId]) VALUES (1023, NULL, 100002, 0, 2)
-GO
-SET IDENTITY_INSERT [dbo].[BSTree] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Device] ON 
 GO

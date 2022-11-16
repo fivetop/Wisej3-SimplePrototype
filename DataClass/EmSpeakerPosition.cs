@@ -20,7 +20,8 @@ namespace DataClass
     [Serializable]
     public class EmSpeakerPosition
     {
-        public string  emData { get; set; }
+        public string emData { get; set; }
+        public string emServer { get; set; }
 
         public string file { get; set; }
         public string[] array { get; set; } = new string[13];
@@ -36,13 +37,14 @@ namespace DataClass
             if (array.Length < 12)
                 return null;
             file = array[0] + " " + array[1] + " " + array[2] + " " + array[3] + " " + array[4] + " " + array[5] + " " + array[6];
-            DeviceName = array[4];
-            ch = array[6];
-            zpc = array[7];
-            zpci = int.Parse(array[8] == "" ? "0" : array[8]);
-            zpco = int.Parse(array[9] == "" ? "0" : array[9]);
-            emData = array[10].Trim(' ') + "동/" + array[11].Trim(' ') + "계단/" + array[12].Trim(' ') + "층";
-            floor = int.Parse(array[10]) * 100 + int.Parse(array[11]) * 10 + int.Parse(array[12]);
+            emServer = array[1];
+            DeviceName = array[5];
+            ch = array[7];
+            zpc = array[8];
+            zpci = int.Parse(array[9] == "" ? "0" : array[9]);
+            zpco = int.Parse(array[10] == "" ? "0" : array[10]);
+            emData = array[11].Trim(' ') + "동/" + array[12].Trim(' ') + "계단/" + array[13].Trim(' ') + "층";
+            floor = int.Parse(array[11]) * 100 + int.Parse(array[12]) * 10 + int.Parse(array[13]);
             return file;
         }
     }
