@@ -77,7 +77,7 @@
             this.mainMenuBar.Logo = "imgs\\myinfo-icon-9x9-777.png";
             this.mainMenuBar.Name = "mainMenuBar";
             this.mainMenuBar.ShowUser = false;
-            this.mainMenuBar.Size = new System.Drawing.Size(282, 636);
+            this.mainMenuBar.Size = new System.Drawing.Size(282, 555);
             this.mainMenuBar.TabIndex = 0;
             this.mainMenuBar.Text = "SimplePA";
             this.mainMenuBar.ItemClick += new Wisej.Web.Ext.NavigationBar.NavigationBarItemClickEventHandler(this.mainMenuBar_ItemClick);
@@ -264,7 +264,7 @@
             this.rightPanels.Dock = Wisej.Web.DockStyle.Fill;
             this.rightPanels.Location = new System.Drawing.Point(282, 0);
             this.rightPanels.Name = "rightPanels";
-            this.rightPanels.Size = new System.Drawing.Size(1326, 636);
+            this.rightPanels.Size = new System.Drawing.Size(1191, 555);
             this.rightPanels.TabIndex = 1;
             // 
             // contentsPanel
@@ -274,7 +274,7 @@
             this.contentsPanel.Dock = Wisej.Web.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 66);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(1326, 570);
+            this.contentsPanel.Size = new System.Drawing.Size(1191, 489);
             this.contentsPanel.TabIndex = 0;
             // 
             // topPanels
@@ -284,7 +284,7 @@
             this.topPanels.Dock = Wisej.Web.DockStyle.Top;
             this.topPanels.Location = new System.Drawing.Point(0, 0);
             this.topPanels.Name = "topPanels";
-            this.topPanels.Size = new System.Drawing.Size(1326, 66);
+            this.topPanels.Size = new System.Drawing.Size(1191, 66);
             this.topPanels.TabIndex = 2;
             // 
             // PA_MainFrame
@@ -292,7 +292,7 @@
             this.Controls.Add(this.rightPanels);
             this.Controls.Add(this.mainMenuBar);
             this.Name = "PA_MainFrame";
-            this.Size = new System.Drawing.Size(1608, 636);
+            this.Size = new System.Drawing.Size(1473, 555);
             this.Text = "PA_MainFrame";
             this.rightPanels.ResumeLayout(false);
             this.ResumeLayout(false);

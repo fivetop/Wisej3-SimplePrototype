@@ -7,6 +7,7 @@ namespace simplepa2.UI.Pages
 {
     public partial class PA_MainFrame : Wisej.Web.Page
     {
+        #region // 화면 변수 선언 
         private View_TopPanelBar view_topPanelBar;
 
         private View_DashBoard view_PADashboard;
@@ -29,6 +30,8 @@ namespace simplepa2.UI.Pages
         private View_BBCAmpFailover view_BBCAmpFailover;
 
         private View_HistoryBBS view_HistoryBBS;
+
+
         private View_HistoryDevice view_HistoryDevice;
         private View_HistoryFireSignal view_HistoryFireSignal;
         private View_HistoryOutMsgs view_HistoryOutMsgs;
@@ -38,7 +41,7 @@ namespace simplepa2.UI.Pages
         private View_SystemEmail view_SystemEmail;
         private View_SystemSMSRegistration view_SystemSMSRegistration;
         private View_SystemRestAPI view_SystemRestAPI;
-
+        #endregion
 
         public PA_MainFrame()
         {
@@ -55,9 +58,8 @@ namespace simplepa2.UI.Pages
 
         }
 
-#pragma warning disable IDE1006 // 명명 스타일
+        #region // 메뉴 처리 
         private void mainMenuBar_SelectedItemChanged(object sender, EventArgs e)
-#pragma warning restore IDE1006 // 명명 스타일
         {
             /*
             var barItems = (sender as NavigationBar).SelectedItem;
@@ -181,5 +183,22 @@ namespace simplepa2.UI.Pages
             this.mainMenuBar.CompactView = bShinkNavBar;
 
         }
+        #endregion
+
+        #region // Logout, 
+
+
+        public void Logout()
+        {
+            Application.Session["isloggedon"] = "false";
+            Application.Session["user"] = "";
+            Application.Session["user_name"] = "";
+
+            LoginPage loginPage = new LoginPage();
+            loginPage.Show();
+            this.Dispose(true);
+        }
+
+        #endregion
     }
 }

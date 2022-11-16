@@ -31,6 +31,7 @@
             this.popTestButton = new Wisej.Web.Button();
             this.textBox1 = new Wisej.Web.TextBox();
             this.label1 = new Wisej.Web.Label();
+            this.label2 = new Wisej.Web.Label();
             this.SuspendLayout();
             // 
             // popTestButton
@@ -40,13 +41,14 @@
             this.popTestButton.Size = new System.Drawing.Size(100, 27);
             this.popTestButton.TabIndex = 26;
             this.popTestButton.Text = "button1";
+            this.popTestButton.Click += new System.EventHandler(this.popTestButton_Click);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBox1.Location = new System.Drawing.Point(417, 135);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 32);
+            this.textBox1.Size = new System.Drawing.Size(241, 30);
             this.textBox1.TabIndex = 25;
             // 
             // label1
@@ -59,9 +61,19 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "방송관리-앵커방송";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(271, 253);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 14);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "org";
+            // 
             // View_BBSAnchor
             // 
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.popTestButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -78,5 +90,6 @@
         private Wisej.Web.Button popTestButton;
         private Wisej.Web.TextBox textBox1;
         private Wisej.Web.Label label1;
+        private Wisej.Web.Label label2;
     }
 }

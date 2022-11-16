@@ -9,5 +9,10 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
         }
+
+        private void popTestButton_Click(object sender, EventArgs e)
+        {
+            label2.Text = "chcnge";
+        }
     }
 }
