@@ -106,107 +106,11 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
-    <EmbeddedResource Include="UI\Base\PA_MainFrame.resx">
-      <DependentUpon>PA_MainFrame.cs</DependentUpon>
+    <EmbeddedResource Include="Simple2.resx">
+      <DependentUpon>Simple2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Pages\PA_Login.resx">
-      <DependentUpon>PA_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Pages\PA_MainFrame.resx">
-      <DependentUpon>PA_MainFrame.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Popups\Popup_BBCDeviceForm.resx">
-      <DependentUpon>Popup_BBCDeviceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Popups\Popup_BBCEmergencyForm.resx">
-      <DependentUpon>Popup_BBCEmergencyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Popups\Popup_BBCOutputForm.resx">
-      <DependentUpon>Popup_BBCOutputForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Popups\Popup_BBCSiteForm.resx">
-      <DependentUpon>Popup_BBCSiteForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Popups\Popup_BBCZoneForm.resx">
-      <DependentUpon>Popup_BBCZoneForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCAmpFailover.resx">
-      <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCDevice.resx">
-      <DependentUpon>View_BBCDevice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCEmergency.resx">
-      <DependentUpon>View_BBCEmergency.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCInput.resx">
-      <DependentUpon>View_BBCInput.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCMusic.resx">
-      <DependentUpon>View_BBCMusic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCOutput.resx">
-      <DependentUpon>View_BBCOutput.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCSite.resx">
-      <DependentUpon>View_BBCSite.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCZone.resx">
-      <DependentUpon>View_BBCZone.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSAnchor.resx">
-      <DependentUpon>View_BBSAnchor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSGroupManage.resx">
-      <DependentUpon>View_BBSGroupManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSHolidayManage.resx">
-      <DependentUpon>View_BBSHolidayManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSIoTApplication.resx">
-      <DependentUpon>View_BBSIoTApplication.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSMusicManage.resx">
-      <DependentUpon>View_BBSMusicManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSPresetManage.resx">
-      <DependentUpon>View_BBSPresetManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSReservation.resx">
-      <DependentUpon>View_BBSReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_DashBoard.resx">
-      <DependentUpon>View_DashBoard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_HistoryBBS.resx">
-      <DependentUpon>View_HistoryBBS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_HistoryDevice.resx">
-      <DependentUpon>View_HistoryDevice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_HistoryFireSignal.resx">
-      <DependentUpon>View_HistoryFireSignal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_HistoryOutMsgs.resx">
-      <DependentUpon>View_HistoryOutMsgs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_HistorySystemChanges.resx">
-      <DependentUpon>View_HistorySystemChanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_SystemAccount.resx">
-      <DependentUpon>View_SystemAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_SystemEmail.resx">
-      <DependentUpon>View_SystemEmail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_SystemRestAPI.resx">
-      <DependentUpon>View_SystemRestAPI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_SystemSMSRegistration.resx">
-      <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_TopPanelBar.resx">
-      <DependentUpon>View_TopPanelBar.cs</DependentUpon>
+    <EmbeddedResource Include="Simple9.resx">
+      <DependentUpon>Simple9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win2\c04.resx">
       <DependentUpon>c04.cs</DependentUpon>

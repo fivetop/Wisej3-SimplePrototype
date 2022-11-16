@@ -23,5 +23,65 @@ namespace Wisejhtml
 				p2.Show();
 			}
         }
-    }
+
+		private void textBox2_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox5_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox6_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox7_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void shape2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox8_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox12_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox20_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void panel12_PanelCollapsed(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox21_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void shape4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void panel2_PanelCollapsed(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
