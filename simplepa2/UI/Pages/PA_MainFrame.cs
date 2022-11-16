@@ -200,5 +200,10 @@ namespace simplepa2.UI.Pages
         }
 
         #endregion
+
+        private void PA_MainFrame_Load(object sender, EventArgs e)
+        {
+            openContentsView("대쉬보드");
+        }
     }
 }

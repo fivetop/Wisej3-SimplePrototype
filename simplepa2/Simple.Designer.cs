@@ -63,6 +63,7 @@
             this.label_time = new Wisej.Web.Label();
             this.label_date = new Wisej.Web.Label();
             this.button11 = new Wisej.Web.Button();
+            this.bslamp1 = new simplepa2.bslamp();
             this.menuItem2 = new Wisej.Web.MenuItem();
             this.linkMenuItem1 = new Wisej.Web.LinkMenuItem();
             this.linkMenuItem2 = new Wisej.Web.LinkMenuItem();
@@ -77,6 +78,7 @@
             this.label23 = new Wisej.Web.Label();
             this.btnBS2 = new Wisej.Web.Button();
             this.btnBS1 = new Wisej.Web.Button();
+            this.membs = new Wisej.Web.BindingSource(this.components);
             this.label22 = new Wisej.Web.Label();
             this.productTitle = new Wisej.Web.Label();
             this.pictureBox1 = new Wisej.Web.PictureBox();
@@ -172,8 +174,6 @@
             this.panel6 = new Wisej.Web.Panel();
             this.styleSheet1 = new Wisej.Web.StyleSheet(this.components);
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
-            this.membs = new Wisej.Web.BindingSource(this.components);
-            this.bslamp1 = new simplepa2.bslamp();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -191,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataRepeater1)).BeginInit();
             this.dataRepeater1.ItemTemplate.SuspendLayout();
             this.dataRepeater1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
             this.splitContainer6.Panel1.SuspendLayout();
@@ -222,7 +223,6 @@
             this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             this.SuspendLayout();
             // 
             // desktopStart
@@ -321,7 +321,7 @@
             this.radioButton5.AutoCheck = false;
             this.radioButton5.Location = new System.Drawing.Point(166, 14);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(33, 19);
+            this.radioButton5.Size = new System.Drawing.Size(34, 20);
             this.radioButton5.TabIndex = 0;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "4";
@@ -331,7 +331,7 @@
             this.radioButton4.AutoCheck = false;
             this.radioButton4.Location = new System.Drawing.Point(124, 14);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(33, 19);
+            this.radioButton4.Size = new System.Drawing.Size(34, 20);
             this.radioButton4.TabIndex = 0;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "3";
@@ -341,7 +341,7 @@
             this.radioButton3.AutoCheck = false;
             this.radioButton3.Location = new System.Drawing.Point(82, 13);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(33, 19);
+            this.radioButton3.Size = new System.Drawing.Size(34, 20);
             this.radioButton3.TabIndex = 0;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "2";
@@ -351,7 +351,7 @@
             this.radioButton2.AutoCheck = false;
             this.radioButton2.Location = new System.Drawing.Point(44, 13);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(33, 19);
+            this.radioButton2.Size = new System.Drawing.Size(34, 20);
             this.radioButton2.TabIndex = 0;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "1";
@@ -361,7 +361,7 @@
             this.radioButton1.AutoCheck = false;
             this.radioButton1.Location = new System.Drawing.Point(4, 12);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(40, 19);
+            this.radioButton1.Size = new System.Drawing.Size(41, 20);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "All";
@@ -396,9 +396,9 @@
             // 
             this.label5.Anchor = Wisej.Web.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(199, 23);
+            this.label5.Location = new System.Drawing.Point(199, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 14);
+            this.label5.Size = new System.Drawing.Size(51, 30);
             this.label5.TabIndex = 10;
             this.label5.Text = "님 접속중";
             // 
@@ -407,9 +407,9 @@
             this.label4.Anchor = Wisej.Web.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Blue;
-            this.label4.Location = new System.Drawing.Point(162, 16);
+            this.label4.Location = new System.Drawing.Point(159, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 28);
+            this.label4.Size = new System.Drawing.Size(33, 30);
             this.label4.TabIndex = 9;
             this.label4.Text = "오정상";
             // 
@@ -418,9 +418,9 @@
             this.label_time.Anchor = Wisej.Web.AnchorStyles.None;
             this.label_time.AutoSize = true;
             this.label_time.ForeColor = System.Drawing.Color.Blue;
-            this.label_time.Location = new System.Drawing.Point(63, 23);
+            this.label_time.Location = new System.Drawing.Point(63, 22);
             this.label_time.Name = "label_time";
-            this.label_time.Size = new System.Drawing.Size(54, 14);
+            this.label_time.Size = new System.Drawing.Size(54, 15);
             this.label_time.TabIndex = 8;
             this.label_time.Text = "12:28:00";
             // 
@@ -428,9 +428,9 @@
             // 
             this.label_date.Anchor = Wisej.Web.AnchorStyles.None;
             this.label_date.AutoSize = true;
-            this.label_date.Location = new System.Drawing.Point(3, 16);
+            this.label_date.Location = new System.Drawing.Point(3, 15);
             this.label_date.Name = "label_date";
-            this.label_date.Size = new System.Drawing.Size(54, 28);
+            this.label_date.Size = new System.Drawing.Size(54, 30);
             this.label_date.TabIndex = 7;
             this.label_date.Text = "2022.11.18";
             // 
@@ -446,6 +446,15 @@
             this.button11.Size = new System.Drawing.Size(18, 54);
             this.button11.TabIndex = 1;
             this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // bslamp1
+            // 
+            this.bslamp1.Anchor = Wisej.Web.AnchorStyles.None;
+            this.bslamp1.Location = new System.Drawing.Point(149, 18);
+            this.bslamp1.Name = "bslamp1";
+            this.bslamp1.Size = new System.Drawing.Size(12, 30);
+            this.bslamp1.TabIndex = 9;
+            this.bslamp1.Visible = false;
             // 
             // menuItem2
             // 
@@ -508,7 +517,7 @@
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer6);
             this.splitContainer4.Panel2.TabStop = true;
             this.splitContainer4.Size = new System.Drawing.Size(1203, 373);
-            this.splitContainer4.SplitterDistance = 166;
+            this.splitContainer4.SplitterDistance = 162;
             this.splitContainer4.TabIndex = 0;
             this.splitContainer4.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
             // 
@@ -527,7 +536,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.DevicelistView1);
             this.splitContainer5.Panel2.TabStop = true;
-            this.splitContainer5.Size = new System.Drawing.Size(1203, 166);
+            this.splitContainer5.Size = new System.Drawing.Size(1203, 162);
             this.splitContainer5.SplitterDistance = 786;
             this.splitContainer5.TabIndex = 0;
             this.splitContainer5.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
@@ -552,7 +561,7 @@
             this.dataRepeater1.Location = new System.Drawing.Point(0, 0);
             this.dataRepeater1.Name = "dataRepeater1";
             this.dataRepeater1.PrefetchItems = 2;
-            this.dataRepeater1.Size = new System.Drawing.Size(786, 166);
+            this.dataRepeater1.Size = new System.Drawing.Size(786, 162);
             this.dataRepeater1.TabIndex = 3;
             this.dataRepeater1.Text = "dataRepeater1";
             // 
@@ -604,6 +613,10 @@
             this.btnBS1.Text = "입장하기";
             this.btnBS1.Click += new System.EventHandler(this.btnBS1_Click);
             // 
+            // membs
+            // 
+            this.membs.DataSource = typeof(simplepa2.bsroom);
+            // 
             // label22
             // 
             this.label22.DataBindings.Add(new Wisej.Web.Binding("Text", this.membs, "username", true));
@@ -621,7 +634,7 @@
             this.productTitle.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.productTitle.Location = new System.Drawing.Point(10, 10);
             this.productTitle.Name = "productTitle";
-            this.productTitle.Size = new System.Drawing.Size(123, 19);
+            this.productTitle.Size = new System.Drawing.Size(122, 19);
             this.productTitle.TabIndex = 1;
             this.productTitle.Text = "title1234567890";
             // 
@@ -639,7 +652,7 @@
             this.DevicelistView1.LargeImageList = this.imageList1;
             this.DevicelistView1.Location = new System.Drawing.Point(0, 0);
             this.DevicelistView1.Name = "DevicelistView1";
-            this.DevicelistView1.Size = new System.Drawing.Size(411, 166);
+            this.DevicelistView1.Size = new System.Drawing.Size(411, 162);
             this.DevicelistView1.SmallImageList = this.imageList2;
             this.DevicelistView1.StateImageList = this.imageList1;
             this.DevicelistView1.TabIndex = 0;
@@ -680,8 +693,8 @@
             this.splitContainer6.Panel2.Controls.Add(this.panel12);
             this.splitContainer6.Panel2.Controls.Add(this.panel13);
             this.splitContainer6.Panel2.TabStop = true;
-            this.splitContainer6.Size = new System.Drawing.Size(1203, 201);
-            this.splitContainer6.SplitterDistance = 657;
+            this.splitContainer6.Size = new System.Drawing.Size(1203, 205);
+            this.splitContainer6.SplitterDistance = 653;
             this.splitContainer6.SplitterWidth = 6;
             this.splitContainer6.TabIndex = 3;
             this.splitContainer6.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
@@ -693,7 +706,7 @@
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(657, 201);
+            this.panel1.Size = new System.Drawing.Size(653, 205);
             this.panel1.TabIndex = 4;
             this.panel1.TabStop = true;
             // 
@@ -703,7 +716,7 @@
             this.panel9.Dock = Wisej.Web.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 23);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(657, 178);
+            this.panel9.Size = new System.Drawing.Size(653, 182);
             this.panel9.TabIndex = 4;
             this.panel9.TabStop = true;
             // 
@@ -724,7 +737,7 @@
             this.evdataGridView1.MultiSelect = false;
             this.evdataGridView1.Name = "evdataGridView1";
             this.evdataGridView1.RowHeadersWidth = 14;
-            this.evdataGridView1.Size = new System.Drawing.Size(657, 178);
+            this.evdataGridView1.Size = new System.Drawing.Size(653, 182);
             this.evdataGridView1.TabIndex = 2;
             // 
             // colEventvmid
@@ -783,7 +796,7 @@
             this.panel11.Dock = Wisej.Web.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(657, 23);
+            this.panel11.Size = new System.Drawing.Size(653, 23);
             this.panel11.TabIndex = 5;
             this.panel11.TabStop = true;
             // 
@@ -792,7 +805,7 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(15, 5);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(149, 14);
+            this.label20.Size = new System.Drawing.Size(173, 15);
             this.label20.TabIndex = 3;
             this.label20.Text = "화재수신/방송 이벤트 정보";
             // 
@@ -802,7 +815,7 @@
             this.panel12.Dock = Wisej.Web.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(0, 23);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(540, 178);
+            this.panel12.Size = new System.Drawing.Size(544, 182);
             this.panel12.TabIndex = 5;
             this.panel12.TabStop = true;
             // 
@@ -824,7 +837,7 @@
             this.evdataGridView3.MultiSelect = false;
             this.evdataGridView3.Name = "evdataGridView3";
             this.evdataGridView3.RowHeadersWidth = 14;
-            this.evdataGridView3.Size = new System.Drawing.Size(540, 178);
+            this.evdataGridView3.Size = new System.Drawing.Size(544, 182);
             this.evdataGridView3.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn5
@@ -885,7 +898,7 @@
             this.panel13.Dock = Wisej.Web.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(540, 23);
+            this.panel13.Size = new System.Drawing.Size(544, 23);
             this.panel13.TabIndex = 6;
             this.panel13.TabStop = true;
             // 
@@ -894,7 +907,7 @@
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(14, 5);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(96, 14);
+            this.label21.Size = new System.Drawing.Size(112, 15);
             this.label21.TabIndex = 4;
             this.label21.Text = "장치 이벤트 정보";
             // 
@@ -937,7 +950,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.TabStop = true;
             this.splitContainer1.Size = new System.Drawing.Size(1205, 321);
-            this.splitContainer1.SplitterDistance = 72;
+            this.splitContainer1.SplitterDistance = 156;
             this.splitContainer1.TabIndex = 9;
             // 
             // dataGridView1
@@ -956,7 +969,7 @@
             this.dataGridView1.RowHeadersWidth = 14;
             this.dataGridView1.RowHeadersWidthSizeMode = Wisej.Web.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ShowFocusCell = false;
-            this.dataGridView1.Size = new System.Drawing.Size(72, 321);
+            this.dataGridView1.Size = new System.Drawing.Size(156, 321);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -1006,8 +1019,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.TabStop = true;
-            this.splitContainer2.Size = new System.Drawing.Size(1127, 321);
-            this.splitContainer2.SplitterDistance = 26;
+            this.splitContainer2.Size = new System.Drawing.Size(1043, 321);
+            this.splitContainer2.SplitterDistance = 143;
             this.splitContainer2.TabIndex = 0;
             // 
             // dataGridView2
@@ -1021,7 +1034,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 14;
-            this.dataGridView2.Size = new System.Drawing.Size(1127, 26);
+            this.dataGridView2.Size = new System.Drawing.Size(1043, 143);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellMouseClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseClick);
             // 
@@ -1141,12 +1154,14 @@
             // 
             // navigationBarItem1
             // 
+            this.navigationBarItem1.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem1.Name = "NavigationBarItem";
             this.navigationBarItem1.Text = "대쉬보드";
             // 
             // navigationBarItem2
             // 
+            this.navigationBarItem2.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem2.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.navigationBarItem4,
@@ -1158,30 +1173,35 @@
             // 
             // navigationBarItem4
             // 
+            this.navigationBarItem4.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem4.Name = "NavigationBarItem";
             this.navigationBarItem4.Text = "앵커방송";
             // 
             // navigationBarItem5
             // 
+            this.navigationBarItem5.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem5.Name = "NavigationBarItem";
             this.navigationBarItem5.Text = "그룹방송";
             // 
             // navigationBarItem6
             // 
+            this.navigationBarItem6.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem6.Name = "NavigationBarItem";
             this.navigationBarItem6.Text = "프리셋";
             // 
             // navigationBarItem7
             // 
+            this.navigationBarItem7.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem7.Name = "NavigationBarItem";
             this.navigationBarItem7.Text = "예약방송";
             // 
             // navigationBarItem3
             // 
+            this.navigationBarItem3.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem3.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.navigationBarItem20,
@@ -1203,82 +1223,97 @@
             // 
             // navigationBarItem20
             // 
+            this.navigationBarItem20.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem20.Name = "NavigationBarItem";
             this.navigationBarItem20.Text = "A01";
             // 
             // navigationBarItem27
             // 
+            this.navigationBarItem27.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem27.Name = "NavigationBarItem";
             this.navigationBarItem27.Text = "A02";
             // 
             // navigationBarItem21
             // 
+            this.navigationBarItem21.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem21.Name = "NavigationBarItem";
             this.navigationBarItem21.Text = "A03";
             // 
             // navigationBarItem22
             // 
+            this.navigationBarItem22.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem22.Name = "NavigationBarItem";
             this.navigationBarItem22.Text = "A04";
             // 
             // navigationBarItem26
             // 
+            this.navigationBarItem26.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem26.Name = "NavigationBarItem";
             this.navigationBarItem26.Text = "A05";
             // 
             // navigationBarItem25
             // 
+            this.navigationBarItem25.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem25.Name = "NavigationBarItem";
             this.navigationBarItem25.Text = "A06";
             // 
             // navigationBarItem24
             // 
+            this.navigationBarItem24.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem24.Name = "NavigationBarItem";
             this.navigationBarItem24.Text = "A07";
             // 
             // navigationBarItem23
             // 
+            this.navigationBarItem23.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem23.Name = "NavigationBarItem";
             this.navigationBarItem23.Text = "A08";
             // 
             // navigationBarItem10
             // 
+            this.navigationBarItem10.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem10.Name = "NavigationBarItem";
             this.navigationBarItem10.Text = "선번장관리";
             // 
             // navigationBarItem11
             // 
+            this.navigationBarItem11.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem11.Name = "NavigationBarItem";
             this.navigationBarItem11.Text = "장비관리";
             // 
             // navigationBarItem12
             // 
+            this.navigationBarItem12.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem12.Name = "NavigationBarItem";
             this.navigationBarItem12.Text = "입력관리";
             // 
             // navigationBarItem13
             // 
+            this.navigationBarItem13.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem13.Name = "NavigationBarItem";
             this.navigationBarItem13.Text = "출력관리";
             // 
             // navigationBarItem14
             // 
+            this.navigationBarItem14.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem14.Name = "NavigationBarItem";
             this.navigationBarItem14.Text = "음량관리";
             // 
             // navigationBarItem15
             // 
+            this.navigationBarItem15.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem15.Name = "NavigationBarItem";
             this.navigationBarItem15.Text = "비상방송";
             // 
             // navigationBarItem28
             // 
+            this.navigationBarItem28.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem28.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem28.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.navigationBarItem29,
@@ -1291,31 +1326,37 @@
             // 
             // navigationBarItem29
             // 
+            this.navigationBarItem29.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem29.Name = "NavigationBarItem";
             this.navigationBarItem29.Text = "B01";
             // 
             // navigationBarItem30
             // 
+            this.navigationBarItem30.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem30.Name = "NavigationBarItem";
             this.navigationBarItem30.Text = "B02";
             // 
             // navigationBarItem31
             // 
+            this.navigationBarItem31.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem31.Name = "NavigationBarItem";
             this.navigationBarItem31.Text = "B03";
             // 
             // navigationBarItem32
             // 
+            this.navigationBarItem32.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem32.Name = "NavigationBarItem";
             this.navigationBarItem32.Text = "B04";
             // 
             // navigationBarItem33
             // 
+            this.navigationBarItem33.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem33.Name = "NavigationBarItem";
             this.navigationBarItem33.Text = "B05";
             // 
             // navigationBarItem34
             // 
+            this.navigationBarItem34.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem34.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem34.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.navigationBarItem35,
@@ -1327,26 +1368,31 @@
             // 
             // navigationBarItem35
             // 
+            this.navigationBarItem35.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem35.Name = "NavigationBarItem";
             this.navigationBarItem35.Text = "C01";
             // 
             // navigationBarItem36
             // 
+            this.navigationBarItem36.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem36.Name = "NavigationBarItem";
             this.navigationBarItem36.Text = "C02";
             // 
             // navigationBarItem37
             // 
+            this.navigationBarItem37.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem37.Name = "NavigationBarItem";
             this.navigationBarItem37.Text = "C03";
             // 
             // navigationBarItem38
             // 
+            this.navigationBarItem38.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem38.Name = "NavigationBarItem";
             this.navigationBarItem38.Text = "C04";
             // 
             // navigationBarItem16
             // 
+            this.navigationBarItem16.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem16.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem16.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.navigationBarItem8,
@@ -1359,30 +1405,35 @@
             // 
             // navigationBarItem8
             // 
+            this.navigationBarItem8.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem8.Name = "NavigationBarItem";
             this.navigationBarItem8.Text = "시스템설정";
             // 
             // navigationBarItem9
             // 
+            this.navigationBarItem9.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem9.Name = "NavigationBarItem";
             this.navigationBarItem9.Text = "그룹관리";
             // 
             // navigationBarItem17
             // 
+            this.navigationBarItem17.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem17.Name = "NavigationBarItem";
             this.navigationBarItem17.Text = "휴일관리";
             // 
             // navigationBarItem18
             // 
+            this.navigationBarItem18.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem18.Name = "NavigationBarItem";
             this.navigationBarItem18.Text = "음원관리";
             // 
             // navigationBarItem19
             // 
+            this.navigationBarItem19.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem19.Name = "NavigationBarItem";
             this.navigationBarItem19.Text = "사용자관리";
@@ -1400,19 +1451,6 @@
             // styleSheet1
             // 
             this.styleSheet1.StyleSheetSource = "css\\default.css";
-            // 
-            // membs
-            // 
-            this.membs.DataSource = typeof(simplepa2.bsroom);
-            // 
-            // bslamp1
-            // 
-            this.bslamp1.Anchor = Wisej.Web.AnchorStyles.None;
-            this.bslamp1.Location = new System.Drawing.Point(149, 18);
-            this.bslamp1.Name = "bslamp1";
-            this.bslamp1.Size = new System.Drawing.Size(12, 30);
-            this.bslamp1.TabIndex = 9;
-            this.bslamp1.Visible = false;
             // 
             // Simple
             // 
@@ -1446,6 +1484,7 @@
             this.dataRepeater1.ItemTemplate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataRepeater1)).EndInit();
             this.dataRepeater1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer6.Panel1.ResumeLayout(false);
             this.splitContainer6.Panel2.ResumeLayout(false);
@@ -1479,7 +1518,6 @@
             this.panel10.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             this.ResumeLayout(false);
 
 		}
