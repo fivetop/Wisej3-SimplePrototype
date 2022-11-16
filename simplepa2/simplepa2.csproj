@@ -106,6 +106,12 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="Simple2.resx">
+      <DependentUpon>Simple2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Simple9.resx">
+      <DependentUpon>Simple9.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win2\c04.resx">
       <DependentUpon>c04.cs</DependentUpon>
     </EmbeddedResource>
