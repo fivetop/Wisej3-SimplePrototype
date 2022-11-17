@@ -15,7 +15,7 @@ using System;
 namespace simplepa2
 {
     // 개별방송
-    public partial class Simple : Page
+    public partial class Simple
 	{
 
         public List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
@@ -132,7 +132,8 @@ namespace simplepa2
 			}
 
 		}
-		#endregion
+        #endregion
 
-	}
+
+    }
 }

@@ -15,7 +15,7 @@ using System;
 namespace simplepa2
 {
 	//시그날 알 클라이언트 처리용 
-    public partial class Simple : Page
+    public partial class Simple
 	{
 		#region // Signal R  
 
