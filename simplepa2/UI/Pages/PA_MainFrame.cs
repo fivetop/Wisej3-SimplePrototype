@@ -57,7 +57,7 @@ namespace simplepa2.UI.Pages
         {
             InitializeComponent();
 
-            g.mainFrame = this;
+            gweb.mainFrame = this;
 
             // 초기화 탑
             if (view_topPanelBar == null)

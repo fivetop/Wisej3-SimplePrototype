@@ -53,7 +53,7 @@ namespace simplepa2.UI.Views
 				return;
 			}
 
-			guid = g.mainFrame.sendSigR(eSignalRMsgType.ePlay, SelAsset, SelMusic, Guid.Empty);
+			guid = gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, SelAsset, SelMusic, Guid.Empty);
 			this.btnStart.Enabled = false;
 			this.btnStop.Enabled = true;
 
@@ -65,7 +65,7 @@ namespace simplepa2.UI.Views
 			this.btnStop.Enabled = false;
 			if (guid != Guid.Empty)
 			{
-				g.mainFrame.sendSigR(eSignalRMsgType.eStop, null, null, guid);
+				gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, null, null, guid);
 				guid = Guid.Empty;
 			}
 		}
