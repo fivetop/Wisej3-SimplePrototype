@@ -53,6 +53,7 @@
             this.ptop = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
+            this.colEmserver = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
@@ -75,6 +76,7 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colAssetid,
+            this.colEmserver,
             this.colGroupname,
             this.colZonename,
             this.colSpeakername,
@@ -258,6 +260,13 @@
             // 
             this.assetsTableAdapter.ClearBeforeFill = true;
             // 
+            // colEmserver
+            // 
+            this.colEmserver.DataPropertyName = "emServer";
+            this.colEmserver.HeaderText = "emServer";
+            this.colEmserver.Name = "colEmserver";
+            this.colEmserver.Width = 140;
+            // 
             // View_BBCZone
             // 
             this.Controls.Add(this.panel2);
@@ -301,5 +310,6 @@
         private Wisej.Web.Button button1;
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
         private Wisej.Web.DataGridViewTextBoxColumn colEmdata;
+        private Wisej.Web.DataGridViewTextBoxColumn colEmserver;
     }
 }

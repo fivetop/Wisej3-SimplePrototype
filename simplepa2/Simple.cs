@@ -28,7 +28,6 @@ namespace simplepa2
 
 		public static SignalRClient signalRClient { get; set; } = new SignalRClient();
 		public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
-
 		public DBController dBSqlite { get; set; } = new DBController();
 
 		public Simple()
@@ -69,7 +68,7 @@ namespace simplepa2
 			//this.dataSet1 = dBSqlite.Ds1;
 			// start gage background task.
 			SatrtUpdatingGageItem();
-			signalRClient.owner = this;
+			//signalRClient.owner = this;
 			signalRClient.ConnectToSignalR();
 
 			var t1 = Application.Session["user"];
@@ -207,7 +206,6 @@ namespace simplepa2
 		ASchedule aSchedule = new ASchedule();
 		APreset aPreset = new APreset();
 
-		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 		BSInManager bSInManager = new BSInManager();
 		BSOutManager bSOutManage = new BSOutManager();
 		BSLevelManager bSLevelManager = new BSLevelManager();
@@ -264,11 +262,6 @@ namespace simplepa2
 			//BStabControl.TabPages.Add(tabClients);
 			MaintabControl.TabPages.Add(tabClients);
 
-			tabClients = new TabPage(menu_string[6]);
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(bSDeviceManager);
-			bSDeviceManager.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
 
 			tabClients = new TabPage(menu_string[7]);
 			tabClients.Name = "tabClients";
@@ -388,12 +381,10 @@ namespace simplepa2
 
         private void BStabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-			bSDeviceManager.reDraw();
 			bSInManager.reDraw(); 
 			bSOutManage.reDraw(); 
 			bSLevelManager.reDraw();
 			bSEMManager.reDraw();
-			//bSAsset.reDraw();
 		}
 
 

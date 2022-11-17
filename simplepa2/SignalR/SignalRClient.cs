@@ -1,5 +1,6 @@
 ﻿using DataClass;
 using Microsoft.AspNet.SignalR.Client;
+using simplepa2.UI.Pages;
 using System;
 using System.Drawing;
 using System.Threading;
@@ -11,7 +12,7 @@ namespace simplepa2.SignalR
     public class SignalRClient
     {
 		public IHubProxy proxy;
-        public Simple owner { get; set; } = null;
+        public PA_MainFrame owner { get; set; } = null;
 		private HubConnection hubConnection;
         private bool Hub_Disconnect_Flag = false;
 

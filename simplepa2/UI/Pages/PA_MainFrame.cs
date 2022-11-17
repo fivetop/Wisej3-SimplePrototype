@@ -1,7 +1,13 @@
-﻿using simplepa2.UI.Views;
+﻿using DataClass;
+using simplepa2.SignalR;
+using simplepa2.UI.Views;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using Wisej.Web;
 using Wisej.Web.Ext.NavigationBar;
+using static simplepa2.DataSet1;
 
 namespace simplepa2.UI.Pages
 {
@@ -43,10 +49,17 @@ namespace simplepa2.UI.Pages
         private View_SystemRestAPI view_SystemRestAPI;
         #endregion
 
+        public static SignalRClient signalRClient { get; set; } = new SignalRClient();
+        public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
+        public DBController dBSqlite { get; set; } = new DBController();
+
         public PA_MainFrame()
         {
             InitializeComponent();
 
+            g.mainFrame = this;
+
+            // 초기화 탑
             if (view_topPanelBar == null)
             {
                 view_topPanelBar = new View_TopPanelBar
@@ -56,7 +69,37 @@ namespace simplepa2.UI.Pages
                 view_topPanelBar.BringToFront();
             }
 
+            // 초기화 플레이 
+            for (int i = 1; i < 9; i++)
+            {
+                playItems[i] = new PlayItem();
+                playItems[i].chno = i;
+            }
+
+            // 초기화 사용자 
+            string t1 = Application.Session["user"];
+            if (t1 == null)
+            {
+                Application.Session["isloggedon"] = "true";
+                Application.Session["user"] = "Admin";
+                Application.Session["user_name"] = "관리자";
+            }
         }
+
+        private void PA_MainFrame_Load(object sender, EventArgs e)
+        {
+            dBSqlite.DBInit();
+            signalRClient.owner = this;
+            signalRClient.ConnectToSignalR();
+
+            var t1 = Application.Session["user"];
+            var t2 = Application.Session["user_name"];
+
+            AlertBox.Show("Log-In : " + t2 + t1);
+
+            openContentsView("대쉬보드");
+        }
+
 
         #region // 메뉴 처리 
         private void mainMenuBar_SelectedItemChanged(object sender, EventArgs e)
@@ -83,7 +126,7 @@ namespace simplepa2.UI.Pages
 
         }
 
-        private void openContentsView(string barText)
+        public void openContentsView(string barText)
         {
             switch (barText)
             {
@@ -201,9 +244,178 @@ namespace simplepa2.UI.Pages
 
         #endregion
 
-        private void PA_MainFrame_Load(object sender, EventArgs e)
+        internal void RcvSigR(SignalRMsg msg1)
         {
-            openContentsView("대쉬보드");
+            LabelON(9, true);
+            AlertBox.Show(msg1.message);
+
+            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+            //evdataGridView1.Refresh();
+
+            switch (msg1.Msgtype)
+            {
+                case eSignalRMsgType.eEM:
+                    break;
+                case eSignalRMsgType.eEM_FIRE:
+                    if (msg1.seqno == 1)
+                        LabelON(1, true);
+                    else
+                        LabelON(1, false);
+                    break;
+                case eSignalRMsgType.eEM_PRESET_SW:
+                    presetdisp(msg1);
+                    break;
+                case eSignalRMsgType.ePlay:
+                    break;
+                case eSignalRMsgType.ePlayEnd:
+                    //this.btnStart.Enabled = true;
+                    //this.btnStop.Enabled = false;
+                    break;
+                case eSignalRMsgType.ePlaying:
+                    break;
+                case eSignalRMsgType.eStop:
+                    break;
+                case eSignalRMsgType.eLoginUser:
+                    break;
+                case eSignalRMsgType.eLogoutUser:
+                    break;
+                case eSignalRMsgType.eFindDSP:
+                    if (msg1.state == 1)
+                        ;//bSDeviceManager.reDraw();
+                    else
+                        AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+                    break;
+            }
+            playItems = msg1.play8sig;
+            if (playItems != null)
+                PlayItemDisplay();
         }
+
+        // 8채널 출력용 
+        private void PlayItemDisplay()
+        {
+        }
+
+        // 프리셋 메시지 올 경우 화면 출력용 
+        private void presetdisp(SignalRMsg msg1)
+        {
+        }
+
+        // 8채널과 링크 출력용 
+        public void LabelON(int id, bool v)
+        {
+            if (id == 9 && v == false)
+            {
+                //AlertBox.Show("SignalR Client Disconnected.");
+                AlertBox.Show("<b>SignalR Client</b> Disconnected.", icon: MessageBoxIcon.Warning, alignment: ContentAlignment.MiddleCenter);
+
+            }
+        }
+
+
+        internal void sendSigR(string v)
+        {
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.message = v;
+            if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                signalRClient.proxy.Invoke("MessageC2S2", msg1);
+        }
+
+        internal Guid sendSigR(eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic, Guid guid)
+        {
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.user = Application.Session["user"];
+
+            switch (v1)
+            {
+                case eSignalRMsgType.ePlay:
+                    msg1.Guid = Guid.NewGuid();
+                    msg1.message = "Play";
+                    msg1.Msgtype = v1;
+                    //msg1.assetsRows = selAsset;
+                    //var t1 = selMusic.Select(p => new { p.MusicId }).ToList();
+                    var t1 = selMusic.Select(p => new { p.MusicId });
+                    msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
+
+                    var t2 = selAsset.Select(p => new { p.AssetId });
+                    msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
+                    break;
+                case eSignalRMsgType.eStop:
+                    msg1.Guid = guid;
+                    msg1.message = "Stop";
+                    msg1.Msgtype = v1;
+                    break;
+            }
+
+            try
+            {
+                if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                    signalRClient.proxy.Invoke("MessageC2S2", msg1);
+            }
+            catch (Exception e1)
+            {
+            }
+            return msg1.Guid;
+        }
+
+
+        internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0)
+        {
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.user = Application.Session["user"];
+
+            switch (eVolume)
+            {
+                case eSignalRMsgType.eVolume:
+                    msg1.Guid = Guid.NewGuid();
+                    msg1.message = "Volume";
+                    msg1.Msgtype = eVolume;
+                    break;
+
+                case eSignalRMsgType.eOutChMove:
+                    msg1.Guid = Guid.NewGuid();
+                    msg1.message = device_name;
+                    msg1.Msgtype = eVolume;
+                    msg1.state = dsp_ch;
+                    msg1.user_data1 = dsp;
+                    msg1.user_data4 = device_ch;
+                    break;
+
+                case eSignalRMsgType.eInChMove:
+                    msg1.Guid = Guid.NewGuid();
+                    msg1.message = device_name; // pc
+                    msg1.Msgtype = eVolume;
+                    msg1.state = dsp_ch; // no
+                    msg1.user_data1 = dsp; // ip
+                    msg1.user_data4 = device_ch; // dsp ch cnt
+                    break;
+
+                case eSignalRMsgType.eScanAll:
+                    msg1.Guid = Guid.NewGuid();
+                    msg1.Msgtype = eVolume;
+                    msg1.message = "Scan All";
+                    break;
+            }
+
+            try
+            {
+                if (isSignalR())
+                    signalRClient.proxy.Invoke("MessageC2S2", msg1);
+            }
+            catch (Exception e1)
+            {
+            }
+        }
+
+        public bool isSignalR()
+        {
+            if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return true;
+            else
+                return false;
+
+        }
+
+
     }
 }

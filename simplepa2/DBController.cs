@@ -76,12 +76,12 @@ namespace simplepa2
             {
                 AssetsRow m2 = Ds1.Assets.NewAssetsRow();
                 m2.seq = int.Parse(aa[0]);
-                m2.building = aa[1];
-                m2.floorname = aa[2];
-                m2.GroupName = aa[1] + aa[2];
-                m2.ZoneName = aa[3];
-                m2.SpeakerName = aa[4];
-                m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4];
+                m2.building = aa[2];
+                m2.floorname = aa[3];
+                m2.GroupName = aa[2] + aa[3];
+                m2.ZoneName = aa[4];
+                m2.SpeakerName = aa[5];
+                m2.path = aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
                 m2.ch = int.Parse(t1.ch);
                 m2.zpc = t1.zpc;
                 m2.zpci = t1.zpci;
