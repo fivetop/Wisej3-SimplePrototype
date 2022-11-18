@@ -280,18 +280,18 @@ namespace pa
             Devicetimer.Stop();
 
             aThread.Stop();
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
 
             bThread.Stop();
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
 
             //g.Info("Em Server 종료 처리중...");
 
             AThread.Stop();
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
 
             BSThreadClass.Stop();
-            Thread.Sleep(500);
+            //Thread.Sleep(500);
 
             //e.Cancel = true; // alt F4 막기 
             if (spP.IsOpen) spP.Close();

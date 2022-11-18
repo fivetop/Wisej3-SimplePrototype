@@ -52,17 +52,14 @@ namespace pa
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            string str1 = gl.appPathServer;
-            //str1 = System.IO.Directory.GetCurrentDirectory();
+            g.XMLEMClient(true);
+            string str1 = g._EMClient.apppath;
 
             var directoryInfo = new DirectoryInfo(str1 + "\\" + "Log");
             if (directoryInfo.Exists == false)
                 directoryInfo.Create();
 
-            g.ReadConfig();
             g.XMLRead();
-            g.Log("XMLRead");
-
 
             Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 

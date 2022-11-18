@@ -19,16 +19,32 @@ using static simplepa2.DataSet1;
 
 namespace pa
 {
+    [Serializable]
+    public class EMClient
+    {
+        public string apppath { get; set; } = @"C:\SimplePA2\";
+        public string EM_NAME { get; set; } = "서울";
+        public string NetworkCardName { get; set; } = "이더넷";
+        public int NetworkCardNo { get; set; } = 0;
+        public int NetworkCardmDNS { get; set; } = 0;
+
+        public EMClient()
+        {
+        }
+    }
+
+
     public static class g
     {
         #region // 글로벌 변수 선언 
-        static public string appPath { get; set; } = @"C:\SimplePA\";
         static public MainWindow mainWindow { get; set; }
         // 현재 방송중인 내용
         static public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
         // DSP 제어을 위함 
         public static DSPControll dsp { get; set; } = new DSPControll(); // 볼륨과 뮤트 처리용 
         public static SimplepaRow _BaseData { get; set; }
+
+        static public EMClient _EMClient { get; set; } = new EMClient(); // 기초 정보
 
 
         // mdns ----------------
@@ -82,6 +98,37 @@ namespace pa
         #endregion
 
         #region // 유틸리티 DoWorkWithModal, ReadConfig, GetAssetList, GetMusicList2, GetDuration
+
+
+        // DanteDevice 
+        public static void XMLEMClient(bool rd)
+        {
+            Serializer ser = new Serializer();
+            string path = string.Empty;
+            string xmlData = string.Empty;
+
+            path = AppDomain.CurrentDomain.BaseDirectory + "EMClient.xml";
+
+            try
+            {
+                if (rd)
+                {
+                    xmlData = File.ReadAllText(path);
+                    _EMClient = ser.Deserialize<EMClient>(xmlData);
+                }
+                else
+                {
+                    xmlData = ser.Serialize<EMClient>(_EMClient);
+                    File.WriteAllText(path, xmlData);
+                }
+            }
+            catch (Exception e)
+            {
+                xmlData = ser.Serialize<EMClient>(_EMClient);
+                File.WriteAllText(path, xmlData);
+            }
+        }
+
         // 기본 폴더 지정 
         internal static void ReadConfig()
         {
@@ -91,7 +138,7 @@ namespace pa
             //파일 있는지 확인 있을때(true), 없으면(false)
             if (fileInfo.Exists)
             {
-                appPath = File.ReadAllText(@strFile);
+                string appPath = File.ReadAllText(@strFile);
             }
         }
 

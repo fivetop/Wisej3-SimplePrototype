@@ -92,8 +92,24 @@ namespace simplepa2.UI.Pages
         internal void eRcvSigR(SignalRMsg message)
         {
         }
-        internal void eEMLoginEvent()
+
+        internal void eEMLoginEvent(Microsoft.AspNet.SignalR.Hubs.HubCallerContext context, int v)
         {
+            string user_id;
+            user_id = context.Headers["user_id"];
+            string str1 = context.ConnectionId.ToString();
+
+            string l1 = "EM connect";
+            if (v == 1)
+            {
+                dBSqlite.Eventvm(l1, user_id, str1);
+            }
+            else 
+            {
+                l1 = "EM disconnect";
+                dBSqlite.Eventvm(l1, user_id, str1);
+            }
+            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
         }
 
         internal void eEMLogoutEvent()

@@ -20,12 +20,12 @@ namespace gClass
     public static class gl
     {
         // 버젼, 실행 위치  
-        static public string version { get; set; } = "Simple PA v1.014";
-        static public string appPathServer { get; set; } = @"C:\SimplePA\";
-        static public string appPathServer_speaker { get; set; } = @"C:\SimplePA\Speaker\";
-        static public string appPathServer_log { get; set; } = @"C:\SimplePA\Log\";
-        static public string appPathServer_music { get; set; } = @"C:\SimplePA\Music\";
-        static public string appPathServer_image { get; set; } = @"C:\SimplePA\Image";
+        static public string version { get; set; } = "Simple PA v2.0";
+        static public string appPathServer { get; set; } = @"C:\SimplePA2\";
+        static public string appPathServer_speaker { get; set; } = @"C:\SimplePA2\Speaker\";
+        static public string appPathServer_log { get; set; } = @"C:\SimplePA2\Log\";
+        static public string appPathServer_music { get; set; } = @"C:\SimplePA2\Music\";
+        static public string appPathServer_image { get; set; } = @"C:\SimplePA2\Image";
         // dante 
         static public DanteDevice danteDevice { get; set; } = new DanteDevice();
 

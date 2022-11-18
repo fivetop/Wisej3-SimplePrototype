@@ -9,8 +9,6 @@ namespace simplepa2.SignalR
     //[HubName("signalr")]
     public class signalr : Hub
     {
-        public string user_id { get; set; }
-
         public signalr()
         {
             gweb._hub = this;
@@ -18,28 +16,14 @@ namespace simplepa2.SignalR
 
         public override Task OnConnected()
         {
-            user_id = Context.Headers["user_id"];
-            string str1= Context.ConnectionId.ToString();
-            string l1 = "EM 로그인";
-            //gweb.mainFrame.dBSqlite.Eventvm(l1, user_id, str1);
-
-            //g.Log("SigR Connected : " + user_id + " : "+ str1);
-            EventArgs args = new EventArgs();
-            args.Equals(str1);
-            gweb.mainFrame.eEMLoginEvent();
+            gweb.mainFrame.eEMLoginEvent(Context, 1);
             //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
             return base.OnConnected();
         }
 
         public override Task OnDisconnected(bool b1)
         {
-            user_id = Context.Headers["user_id"];
-            string str1 = Context.ConnectionId.ToString();
-            //g.Log("SigR DisConnected : " + user_id + " : " + str1);
-            gweb.mainFrame.eEMLogoutEvent();
-            //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLogoutUser, 0, 0);
-            string l1 = "EM 로그아웃";
-            gweb.mainFrame.dBSqlite.Eventvm(l1, user_id, str1);
+            gweb.mainFrame.eEMLoginEvent(Context, 0);
             return base.OnDisconnected(true);
         }
 

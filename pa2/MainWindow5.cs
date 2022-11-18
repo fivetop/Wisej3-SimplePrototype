@@ -1049,46 +1049,7 @@ namespace pa
         void write_ini(bool rw)
         {
             return;
-            if (rw)
-            {
-                string str1 = Alarm.ToString() + "," + TestAlarm.ToString();
-                if (System.IO.File.Exists("pa.ini") == false)
-                {
-                    System.IO.File.WriteAllText("pa.ini", str1);
-                }
-                System.IO.File.WriteAllText("pa.ini", str1);
-                string ini = System.IO.File.ReadAllText("pa.ini");
-                string[] ar = ini.Split(',');
-                Alarm = int.Parse(ar[0]);
-                TestAlarm = bool.Parse(ar[1]);
-            }
-            else
-            {
-                if (System.IO.File.Exists("pa.ini") == false)
-                {
-                    return;
-                }
-                string ini = System.IO.File.ReadAllText("pa.ini");
-                string[] ar = ini.Split(',');
-                Alarm = int.Parse(ar[0]);
-                TestAlarm = bool.Parse(ar[1]);
-            }
         }
-        /*
-            // 파일저장 및 읽기 
-            string str1 = string.Join(",", device);
-            if (System.IO.File.Exists("SoundCardini.ini") == false)
-            {
-                System.IO.File.WriteAllText("SoundCardini.ini", str1);
-            }
-            string ini = System.IO.File.ReadAllText("SoundCardini.ini");
-            string[] card = ini.Split(',');
-
-            for (int i=0; i < 8; i++)
-            {
-                device[i] = int.Parse(card[i]);
-            }
-*/
         #endregion
 
     }
