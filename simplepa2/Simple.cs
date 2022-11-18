@@ -26,7 +26,7 @@ namespace simplepa2
 		//private Popups.StartPopup startPopup;
 		//public event EventHandler ExampleCreated;
 
-		public static SignalRClient signalRClient { get; set; } = new SignalRClient();
+		//public static SignalRClient signalRClient { get; set; } = new SignalRClient();
 		public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
 		public DBController dBSqlite { get; set; } = new DBController();
 
@@ -69,7 +69,7 @@ namespace simplepa2
 			// start gage background task.
 			SatrtUpdatingGageItem();
 			//signalRClient.owner = this;
-			signalRClient.ConnectToSignalR();
+			//signalRClient.ConnectToSignalR();
 
 			var t1 = Application.Session["user"];
 			var t2 = Application.Session["user_name"];

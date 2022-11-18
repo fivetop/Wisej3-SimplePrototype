@@ -1,14 +1,43 @@
-﻿using System;
+﻿using Microsoft.AspNet.SignalR;
+using Microsoft.Owin;
+using Microsoft.Owin.Cors;
+using Microsoft.Owin.Hosting;
+using Owin;
+
+using System;
 using System.Diagnostics;
 using Wisej.Web;
 using System.Collections.Generic;
 using System.Web.Http;
 using simplepa2.UI.Pages;
+using System.Threading;
+using simplepa2.SignalR;
+
+[assembly: OwinStartup(typeof(simplepa2.Startup))]
+
 
 namespace simplepa2
 {
+
+	public partial class Startup
+	{
+		public void Configuration(IAppBuilder app)
+		{
+			app.UseCors(CorsOptions.AllowAll);
+			var hubConfiguration = new HubConfiguration();
+			hubConfiguration.EnableDetailedErrors = true;
+			hubConfiguration.EnableJSONP = true;
+			hubConfiguration.EnableJavaScriptProxies = true;
+			app.MapSignalR("/signalr", hubConfiguration);
+			//app.MapSignalR(hubConfiguration);
+		}
+	}
+
 	static class Program
 	{
+		static Thread t2;
+		public static signalr _hub = null;
+
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
@@ -23,6 +52,22 @@ namespace simplepa2
 			// */
 
 			Application.MainPage = new PA_MainFrame();
+
+			t2 = new Thread(new ThreadStart(DoSignalRThread));
+			t2.Start();
+
+		}
+
+		// SignalR Server
+		private static void DoSignalRThread()
+		{
+			string url = "http://localhost:8080";
+			Console.WriteLine("Server running on {0}", url);
+			using (WebApp.Start(url))
+			{
+				while (true)
+					Thread.Sleep(10);
+			}
 		}
 
 		//

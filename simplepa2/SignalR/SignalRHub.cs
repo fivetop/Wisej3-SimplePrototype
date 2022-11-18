@@ -11,25 +11,26 @@ namespace simplepa2.SignalR
     {
         public string user_id { get; set; }
 
-        public event EventHandler eLoginEvent;
-        public event EventHandler eLogoutEvent;
+        public event EventHandler eEMLoginEvent;
+        public event EventHandler eEMLogoutEvent;
+        public event EventHandler eRcvSigR;
 
         public signalr()
         {
-            //gweb._hub = this;
+            Program._hub = this;
         }
 
         public override Task OnConnected()
         {
             user_id = Context.Headers["user_id"];
             string str1= Context.ConnectionId.ToString();
-            string l1 = "사용자 로그인";
+            string l1 = "EM 로그인";
             //gweb.mainFrame.dBSqlite.Eventvm(l1, user_id, str1);
 
             //g.Log("SigR Connected : " + user_id + " : "+ str1);
             EventArgs args = new EventArgs();
             args.Equals(str1);
-            eLoginEvent?.Invoke(this, args);
+            eEMLoginEvent?.Invoke(this, args);
             //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
             return base.OnConnected();
         }
@@ -41,9 +42,9 @@ namespace simplepa2.SignalR
             //g.Log("SigR DisConnected : " + user_id + " : " + str1);
             EventArgs args = new EventArgs();
             args.Equals(str1);
-            eLoginEvent?.Invoke(this, args);
+            eEMLogoutEvent?.Invoke(this, args);
             //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLogoutUser, 0, 0);
-            string l1 = "사용자 로그아웃";
+            string l1 = "EM 로그아웃";
             gweb.mainFrame.dBSqlite.Eventvm(l1, user_id, str1);
             return base.OnDisconnected(true);
         }
@@ -73,7 +74,10 @@ namespace simplepa2.SignalR
         public void MessageC2S2(SignalRMsg message)
         {
             Clients.All.MessageC2S2(message);
-            gweb.mainFrame.RcvSigR(message);
+            EventArgs args = new EventArgs();
+            args.Equals(message);
+            eRcvSigR?.Invoke(this, args);
+            //gweb.mainFrame.RcvSigR(message);
         }
     }
 

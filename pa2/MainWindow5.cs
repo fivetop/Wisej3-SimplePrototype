@@ -84,7 +84,7 @@ namespace pa
                     str1 = "화재발생 신호를 수신하였습니다." + pkt.src;
                     g.Log(str1);
 
-                    g.SendSigR(str1, eSignalRMsgType.eEM_FIRE, 1, int.Parse(v3));
+                    SendSigR(str1, eSignalRMsgType.eEM_FIRE, 1, int.Parse(v3));
                     EMBSOn();
                     break;
                 case 2:
@@ -100,7 +100,7 @@ namespace pa
 
                         str1 = "화재복구 신호를 수신하였습니다." + pkt.src;
                         g.Log(str1);
-                        g.SendSigR(str1, eSignalRMsgType.eEM_FIRE, 2, 0);
+                        SendSigR(str1, eSignalRMsgType.eEM_FIRE, 2, 0);
                     }
 
                     if (run_pktr == null)
@@ -139,7 +139,7 @@ namespace pa
                     UpdateStatusbar("0층", "시험용", "정상");
                     log = "발생:";
                     EMBSOn();
-                    g.SendSigR(str1, eSignalRMsgType.eEM_FIRE, 3, 0);
+                    SendSigR(str1, eSignalRMsgType.eEM_FIRE, 3, 0);
                     //FireEventDisplay();
                     break;
                 case 4:
@@ -154,7 +154,7 @@ namespace pa
                         InitVolume();
                         str1 = "시험용 화재복구 신호를 수신하였습니다." + pkt.pkt;
                         g.Log(str1);
-                        g.SendSigR(str1, eSignalRMsgType.eEM_FIRE, 4, 0);
+                        SendSigR(str1, eSignalRMsgType.eEM_FIRE, 4, 0);
                     }
                     log = "복구:";
                     event_text = "0층 시험용";
@@ -484,7 +484,7 @@ namespace pa
                         //_a1.IsChecked = false;
                         g.DSP_MakeGroupSpeaker(null, 0, BS_DSP_STATE.PRESET_ALL);
                         Preset_chk();
-                        g.SendSigR("All 프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, 0, 0);
+                        SendSigR("All 프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, 0, 0);
                         dBSqlite.Eventvm("eEM_PRESET_SW", "All 프리셋 버튼 : Off", "OFF");
                     }
                     else
@@ -492,7 +492,7 @@ namespace pa
                         g.Log("All 프리셋 버튼 : On");
                         //_a1.IsChecked = true;
                         g.DSP_MakeGroupSpeaker(null, 1, BS_DSP_STATE.PRESET_ALL);
-                        g.SendSigR("All 프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, 0, 1);
+                        SendSigR("All 프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, 0, 1);
                         dBSqlite.Eventvm("eEM_PRESET_SW", "All 프리셋 버튼 : On", "ON");
                     }
                     break;
@@ -523,7 +523,7 @@ namespace pa
                         // make asset array to assetbase 
                         //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 0, BS_DSP_STATE.PRESET);
                         Preset_chk();
-                        g.SendSigR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
+                        SendSigR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
                         dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : Off", "OFF");
                     }
                     else
@@ -546,7 +546,7 @@ namespace pa
                         }
                         // make asset array to assetbase 
                         //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 1, BS_DSP_STATE.PRESET);
-                        g.SendSigR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
+                        SendSigR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
                         dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : On", "ON");
                     }
                     break;
@@ -910,7 +910,7 @@ namespace pa
 
         private void _but6_Click(object sender, RoutedEventArgs e)
         {
-            g.SendSigR("Hello Client", eSignalRMsgType.eEM, 0, 0);
+            SendSigR("Hello Client", eSignalRMsgType.eEM, 0, 0);
 
             alarmtest = !alarmtest;
 

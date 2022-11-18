@@ -49,7 +49,7 @@ namespace simplepa2.UI.Pages
         private View_SystemRestAPI view_SystemRestAPI;
         #endregion
 
-        public static SignalRClient signalRClient { get; set; } = new SignalRClient();
+        //public static SignalRClient signalRClient { get; set; } = new SignalRClient();
         public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
         public DBController dBSqlite { get; set; } = new DBController();
 
@@ -89,8 +89,8 @@ namespace simplepa2.UI.Pages
         private void PA_MainFrame_Load(object sender, EventArgs e)
         {
             dBSqlite.DBInit();
-            signalRClient.owner = this;
-            signalRClient.ConnectToSignalR();
+            //signalRClient.owner = this;
+            //signalRClient.ConnectToSignalR();
 
             var t1 = Application.Session["user"];
             var t2 = Application.Session["user_name"];
@@ -317,8 +317,8 @@ namespace simplepa2.UI.Pages
         {
             SignalRMsg msg1 = new SignalRMsg();
             msg1.message = v;
-            if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-                signalRClient.proxy.Invoke("MessageC2S2", msg1);
+            //if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+            //    signalRClient.proxy.Invoke("MessageC2S2", msg1);
         }
 
         internal Guid sendSigR(eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic, Guid guid)
@@ -349,8 +349,8 @@ namespace simplepa2.UI.Pages
 
             try
             {
-                if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-                    signalRClient.proxy.Invoke("MessageC2S2", msg1);
+                //if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                //    signalRClient.proxy.Invoke("MessageC2S2", msg1);
             }
             catch (Exception e1)
             {
@@ -399,8 +399,8 @@ namespace simplepa2.UI.Pages
 
             try
             {
-                if (isSignalR())
-                    signalRClient.proxy.Invoke("MessageC2S2", msg1);
+                //if (isSignalR())
+                //    signalRClient.proxy.Invoke("MessageC2S2", msg1);
             }
             catch (Exception e1)
             {
@@ -409,9 +409,9 @@ namespace simplepa2.UI.Pages
 
         public bool isSignalR()
         {
-            if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-                return true;
-            else
+            //if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+            //    return true;
+            //else
                 return false;
 
         }
