@@ -28,56 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.popTestButton = new Wisej.Web.Button();
-            this.textBox1 = new Wisej.Web.TextBox();
-            this.label1 = new Wisej.Web.Label();
+            this.flowLayoutPanel1 = new Wisej.Web.FlowLayoutPanel();
+            this.panel1 = new Wisej.Web.Panel();
+            this.comboBoxView2 = new Wisej.Web.ComboBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // popTestButton
+            // flowLayoutPanel1
             // 
-            this.popTestButton.Location = new System.Drawing.Point(739, 378);
-            this.popTestButton.Name = "popTestButton";
-            this.popTestButton.Size = new System.Drawing.Size(100, 27);
-            this.popTestButton.TabIndex = 23;
-            this.popTestButton.Text = "button1";
-            this.popTestButton.Click += new System.EventHandler(this.popTestButton_Click);
+            this.flowLayoutPanel1.Dock = Wisej.Web.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1400, 850);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // textBox1
+            // panel1
             // 
-            this.textBox1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.Location = new System.Drawing.Point(459, 136);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 32);
-            this.textBox1.TabIndex = 22;
+            this.panel1.Controls.Add(this.comboBoxView2);
+            this.panel1.Dock = Wisej.Web.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1400, 50);
+            this.panel1.TabIndex = 0;
             // 
-            // label1
+            // comboBoxView2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(175, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 30);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "방송설정-사이트설정";
+            this.comboBoxView2.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
+            this.comboBoxView2.LabelText = "View";
+            this.comboBoxView2.Location = new System.Drawing.Point(510, 3);
+            this.comboBoxView2.Name = "comboBoxView2";
+            this.comboBoxView2.Size = new System.Drawing.Size(213, 42);
+            this.comboBoxView2.TabIndex = 6;
+            this.comboBoxView2.Text = "LeftToRight";
+            this.comboBoxView2.SelectedIndexChanged += new System.EventHandler(this.comboBoxView2_SelectedIndexChanged);
             // 
             // View_BBCSite
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.popTestButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel1);
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_BBCSite";
             this.Size = new System.Drawing.Size(1400, 900);
+            this.Load += new System.EventHandler(this.View_BBCSite_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Wisej.Web.Button popTestButton;
-        private Wisej.Web.TextBox textBox1;
-        private Wisej.Web.Label label1;
+        private Wisej.Web.FlowLayoutPanel flowLayoutPanel1;
+        private Wisej.Web.Panel panel1;
+        private Wisej.Web.ComboBox comboBoxView2;
     }
 }
