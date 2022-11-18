@@ -699,6 +699,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="global.cs" />
+    <Compile Include="SignalR\SignalRHub.cs" />
     <Compile Include="UI\Base\PA_MainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
