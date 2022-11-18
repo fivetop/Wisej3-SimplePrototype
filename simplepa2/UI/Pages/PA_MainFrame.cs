@@ -24,6 +24,7 @@ namespace simplepa2.UI.Pages
         private View_BBSGroupManage view_BBSGroupManage;
         private View_BBSIoTApplication view_IotApplication;
         private View_BBSMusicManage view_MusicManage;
+
         private View_BBSHolidayManage view_BBSHolidayManage;
 
         private View_BBCDevice view_DeviceConfiguration;
@@ -33,6 +34,7 @@ namespace simplepa2.UI.Pages
         private View_BBCOutput view_BBCOut;
         private View_BBCMusic view_BBCMusic;
         private View_BBCEmergency view_BBCEmergency;
+
         private View_BBCAmpFailover view_BBCAmpFailover;
 
         private View_HistoryBBS view_HistoryBBS;
@@ -84,6 +86,18 @@ namespace simplepa2.UI.Pages
                 Application.Session["user"] = "Admin";
                 Application.Session["user_name"] = "관리자";
             }
+            gweb.Log("Start Simple PA 2.0");
+        }
+
+        internal void eRcvSigR(SignalRMsg message)
+        {
+        }
+        internal void eEMLoginEvent()
+        {
+        }
+
+        internal void eEMLogoutEvent()
+        {
         }
 
         private void PA_MainFrame_Load(object sender, EventArgs e)

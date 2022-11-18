@@ -11,13 +11,9 @@ namespace simplepa2.SignalR
     {
         public string user_id { get; set; }
 
-        public event EventHandler eEMLoginEvent;
-        public event EventHandler eEMLogoutEvent;
-        public event EventHandler eRcvSigR;
-
         public signalr()
         {
-            Program._hub = this;
+            gweb._hub = this;
         }
 
         public override Task OnConnected()
@@ -30,7 +26,7 @@ namespace simplepa2.SignalR
             //g.Log("SigR Connected : " + user_id + " : "+ str1);
             EventArgs args = new EventArgs();
             args.Equals(str1);
-            eEMLoginEvent?.Invoke(this, args);
+            gweb.mainFrame.eEMLoginEvent();
             //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
             return base.OnConnected();
         }
@@ -40,9 +36,7 @@ namespace simplepa2.SignalR
             user_id = Context.Headers["user_id"];
             string str1 = Context.ConnectionId.ToString();
             //g.Log("SigR DisConnected : " + user_id + " : " + str1);
-            EventArgs args = new EventArgs();
-            args.Equals(str1);
-            eEMLogoutEvent?.Invoke(this, args);
+            gweb.mainFrame.eEMLogoutEvent();
             //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLogoutUser, 0, 0);
             string l1 = "EM 로그아웃";
             gweb.mainFrame.dBSqlite.Eventvm(l1, user_id, str1);
@@ -74,9 +68,7 @@ namespace simplepa2.SignalR
         public void MessageC2S2(SignalRMsg message)
         {
             Clients.All.MessageC2S2(message);
-            EventArgs args = new EventArgs();
-            args.Equals(message);
-            eRcvSigR?.Invoke(this, args);
+            gweb.mainFrame.eRcvSigR(message);
             //gweb.mainFrame.RcvSigR(message);
         }
     }

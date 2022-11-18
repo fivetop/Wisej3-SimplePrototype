@@ -36,7 +36,6 @@ namespace simplepa2
 	static class Program
 	{
 		static Thread t2;
-		public static signalr _hub = null;
 
 		/// <summary>
 		/// The main entry point for the application.
