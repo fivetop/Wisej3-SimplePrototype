@@ -132,6 +132,9 @@
     <EmbeddedResource Include="UI\Pages\PA_MainFrame.resx">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBCAmpFailover.resx">
+      <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSAnchor.resx">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
       <SubType>Designer</SubType>
