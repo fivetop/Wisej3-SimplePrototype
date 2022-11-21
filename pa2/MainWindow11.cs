@@ -182,20 +182,20 @@ namespace pa
             }
 
             msg1.play8sig = g.playItems;
-            signalRClient.MessageS2C2(msg1);
+            signalRClient.MessageC2S2(msg1);
             //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
         }
         internal static void SendSigR(eSignalRMsgType v1, string r1) // s1 = seq, s2=state
         {
             SignalRMsg msg1 = new SignalRMsg();
 
-            msg1.user = "Server";
+            msg1.user = g._EMClient.EM_NAME;
             msg1.message = r1;
             msg1.Msgtype = v1;
             msg1.play8sig = g.playItems;
 
             msg1.play8sig = g.playItems;
-            signalRClient.MessageS2C2(msg1);
+            signalRClient.MessageC2S2(msg1);
             //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
         }
 

@@ -16,22 +16,22 @@ namespace simplepa2.UI.Pages
         #region // 화면 변수 선언 
         private View_TopPanelBar view_topPanelBar;
 
-        private View_DashBoard view_PADashboard;
+        private View_DashBoard view_Dashboard;
 
         private View_BBSAnchor view_BBSAnchor;
         private View_BBSReservation view_BBSReservation;
         private View_BBSPresetManage view_BBSPresetManage;
         private View_BBSGroupManage view_BBSGroupManage;
-        private View_BBSIoTApplication view_IotApplication;
-        private View_BBSMusicManage view_MusicManage;
+        private View_BBSIoTApplication view_BBSIotApplication;
+        private View_BBSMusicManage view_BBSMusicManage;
 
         private View_BBSHolidayManage view_BBSHolidayManage;
 
-        private View_BBCDevice view_DeviceConfiguration;
+        private View_BBCDevice view_BBCDevice;
         private View_BBCSite view_BBCSite;
         private View_BBCZone view_BBCZone;
         private View_BBCInput view_BBCInput;
-        private View_BBCOutput view_BBCOut;
+        private View_BBCOutput view_BBCOutput;
         private View_BBCMusic view_BBCMusic;
         private View_BBCEmergency view_BBCEmergency;
 
@@ -106,6 +106,7 @@ namespace simplepa2.UI.Pages
 
         internal void eRcvSigR(SignalRMsg message)
         {
+            RcvSigR(message);
         }
 
         internal void eEMLoginEvent(Microsoft.AspNet.SignalR.Hubs.HubCallerContext context, int v)
@@ -125,11 +126,7 @@ namespace simplepa2.UI.Pages
                 dBSqlite.Eventvm(l1, user_id, str1);
             }
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-            //view_PADashboard.Refresh ();
-        }
-
-        internal void eEMLogoutEvent()
-        {
+            view_Dashboard.Refresh ();
         }
 
 
@@ -163,86 +160,86 @@ namespace simplepa2.UI.Pages
             switch (barText)
             {
                 case "대쉬보드":
-                    bringFrontView("View_DashBoard", false);
+                    view_Dashboard = (View_DashBoard) bringFrontView("View_DashBoard", false);
                     break;
                 case "앵커방송":
-                    bringFrontView("View_BBSAnchor", false);
+                    view_BBSAnchor = (View_BBSAnchor)bringFrontView("View_BBSAnchor", false);
                     break;
                 case "예약방송":
-                    bringFrontView("View_BBSReservation", false); 
+                    view_BBSReservation = (View_BBSReservation)bringFrontView("View_BBSReservation", false); 
                     break;
                 case "프리셋편집":
-                    bringFrontView("View_BBSPresetManage", false);
+                    view_BBSPresetManage = (View_BBSPresetManage)bringFrontView("View_BBSPresetManage", false);
                     break;
                 case "그룹편집":
-                    bringFrontView("View_BBSGroupManage", false);
+                    view_BBSGroupManage = (View_BBSGroupManage)bringFrontView("View_BBSGroupManage", false);
                     break;
                 case "IoT Application 방송":
-                    bringFrontView("View_BBSIoTApplication", false);
+                    view_BBSIotApplication = (View_BBSIoTApplication)bringFrontView("View_BBSIoTApplication", false);
                     break;
                 case "음원 설정":
-                    bringFrontView("View_BBSMusicManage", false);
+                    view_BBSMusicManage = (View_BBSMusicManage)bringFrontView("View_BBSMusicManage", false);
                     break;
                 case "휴일 관리":
-                    bringFrontView("View_BBSHolidayManage", false);
+                    view_BBSHolidayManage = (View_BBSHolidayManage)bringFrontView("View_BBSHolidayManage", false);
                     break;
-                case "장비 관리": 
-                    bringFrontView("View_BBCDevice", false);
+                case "장비 관리":
+                    view_BBCDevice = (View_BBCDevice)bringFrontView("View_BBCDevice", false);
                     break;
-                case "사이트 관리": 
-                    bringFrontView("View_BBCSite", false);
+                case "사이트 관리":
+                    view_BBCSite = (View_BBCSite)bringFrontView("View_BBCSite", false);
                     break;
                 case "ZONE 관리":
-                    bringFrontView("View_BBCZone", false);
+                    view_BBCZone = (View_BBCZone)bringFrontView("View_BBCZone", false);
                     break;
                 case "입력 관리":
-                    bringFrontView("View_BBCInput", false);
+                    view_BBCInput = (View_BBCInput)bringFrontView("View_BBCInput", false);
                     break;
                 case "출력 관리":
-                    bringFrontView("View_BBCOutput", false);
+                    view_BBCOutput = (View_BBCOutput)bringFrontView("View_BBCOutput", false);
                     break;
                 case "음량 관리":
-                    bringFrontView("View_BBCMusic", false);
+                    view_BBCMusic = (View_BBCMusic)bringFrontView("View_BBCMusic", false);
                     break;
-                case "비상 방송": 
-                    bringFrontView("View_BBCEmergency", false);
+                case "비상 방송":
+                    view_BBCEmergency = (View_BBCEmergency)bringFrontView("View_BBCEmergency", false);
                     break;
-                case "앰프 Failover": 
-                    bringFrontView("View_BBCAmpFailover", false);
+                case "앰프 Failover":
+                    view_BBCAmpFailover = (View_BBCAmpFailover)bringFrontView("View_BBCAmpFailover", false);
                     break;
                 case "방송 이력":
-                    bringFrontView("View_HistoryBBS", false);
+                    view_HistoryBBS = (View_HistoryBBS)bringFrontView("View_HistoryBBS", false);
                     break;
                 case "장비 이력":
-                    bringFrontView("View_HistoryDevice", false);
+                    view_HistoryDevice = (View_HistoryDevice)bringFrontView("View_HistoryDevice", false);
                     break;
                 case "화재수신 이력":
-                    bringFrontView("View_HistoryFireSignal", false);
+                    view_HistoryFireSignal = (View_HistoryFireSignal)bringFrontView("View_HistoryFireSignal", false);
                     break;
                 case "외부수신 이력":
-                    bringFrontView("View_HistoryOutMsgs", false);
+                    view_HistoryOutMsgs = (View_HistoryOutMsgs)bringFrontView("View_HistoryOutMsgs", false);
                     break;
                 case "시스템변경 이력":
-                    bringFrontView("View_HistorySystemChanges", false);
+                    view_HistorySystemChanges = (View_HistorySystemChanges)bringFrontView("View_HistorySystemChanges", false);
                     break;
                 case "계정 등록 관리":
-                    bringFrontView("View_SystemAccount", false);
+                    view_SystemAccount = (View_SystemAccount)bringFrontView("View_SystemAccount", false);
                     break;
                 case "시스템 이메일 등록":
-                    bringFrontView("View_SystemEmail", false);
+                    view_SystemEmail = (View_SystemEmail)bringFrontView("View_SystemEmail", false);
                     break;
                 case "SMS 등록":
-                    bringFrontView("View_SystemSMSRegistration", false);
+                    view_SystemSMSRegistration = (View_SystemSMSRegistration)bringFrontView("View_SystemSMSRegistration", false);
                     break;
                 case "REST API":
-                    bringFrontView("View_SystemRestAPI", false);
+                    view_SystemRestAPI = (View_SystemRestAPI)bringFrontView("View_SystemRestAPI", false);
                     break;
 
             }
 
         }
 
-        private void bringFrontView(string viewName, Boolean bShinkNavBar)
+        private Wisej.Web.Control bringFrontView(string viewName, Boolean bShinkNavBar)
         {
             
             Wisej.Web.Control view = (Wisej.Web.Control)Application.FindComponent(o => o is Wisej.Web.Control && ((Wisej.Web.Control)o).Name == viewName);
@@ -256,6 +253,8 @@ namespace simplepa2.UI.Pages
             }
             view.BringToFront();
             this.mainMenuBar.CompactView = bShinkNavBar;
+            
+            return view;
 
         }
         #endregion
@@ -281,12 +280,10 @@ namespace simplepa2.UI.Pages
             LabelON(9, true);
             AlertBox.Show(msg1.message);
 
-            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-            //evdataGridView1.Refresh();
-
             switch (msg1.Msgtype)
             {
                 case eSignalRMsgType.eEM:
+                    gweb.Log(msg1.Msgtype.ToString() +":"+ msg1.user);
                     break;
                 case eSignalRMsgType.eEM_FIRE:
                     if (msg1.seqno == 1)
@@ -321,6 +318,9 @@ namespace simplepa2.UI.Pages
             playItems = msg1.play8sig;
             if (playItems != null)
                 PlayItemDisplay();
+
+            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+            // 각 뷰 리플레시 필요 
         }
 
         // 8채널 출력용 

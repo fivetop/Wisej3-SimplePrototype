@@ -121,7 +121,9 @@ namespace pa
 
             g.Log("multiBS Thread running..");
             // 다중 방송 초기화 처리 
-            InitMultiBS();
+            // 시험을 위해 막음 - 서비스시 오픈 처리 
+            //InitMultiBS();
+
             gl.NetWorkCardFind();
             g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName );
 
@@ -246,17 +248,28 @@ namespace pa
 
             if (firsttime)
             {
+                firsttime = false;
                 signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
+                signalRClient.eConnect += SignalRClient_eConnect;
+                signalRClient.eDisConnect += SignalRClient_eDisConnect;
                 signalRClient.ConnectToSignalR();
 
                 Init();
-                firsttime = false;
                 // 초기 화면 열리면서 한번 수행 
                 // GPIO 상태 받아오기
                 sendErr(0xFF);
             }
             //            if (App.Current.MainWindow.Visibility == Visibility.Visible)
             //                _tray.MinimizeToTray();
+        }
+
+        private void SignalRClient_eDisConnect(object sender, EventArgs e)
+        {
+        }
+
+        private void SignalRClient_eConnect(object sender, EventArgs e)
+        {
+            SendSigR(eSignalRMsgType.eEM, "EM Info : " + g._EMClient.EM_NAME);
         }
 
         private void SignalRClient_eRcvSigR1(object sender, SignalRMsg e)

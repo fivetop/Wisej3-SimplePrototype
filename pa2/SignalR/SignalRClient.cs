@@ -16,6 +16,8 @@ namespace pa
         private bool Hub_Disconnect_Flag = false;
 
         public event EventHandler<SignalRMsg> eRcvSigR;
+        public event EventHandler eConnect;
+        public event EventHandler eDisConnect;
 
         public SignalRClient()
 		{
@@ -120,6 +122,7 @@ namespace pa
                     // Console.WriteLine("ConnectionState.Connecting");
                     break;
                 case ConnectionState.Connected:
+                    eConnect?.Invoke(obj, null);
                     //set_connect_color(_green);
                     break;
                 case ConnectionState.Reconnecting:
@@ -163,6 +166,7 @@ namespace pa
         // 커넥션이 종료된 경우 -> 디버깅시 발생 
         private void Connection_Closed()
         {
+            eDisConnect?.Invoke("Disconnect", null);
             //owner.LabelON(9, false);
             Console.WriteLine("SignalR Client Disconnected.");
             //if (!Hub_Disconnect_Flag)
