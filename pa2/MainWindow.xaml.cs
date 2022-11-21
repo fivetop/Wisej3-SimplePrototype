@@ -269,7 +269,7 @@ namespace pa
 
         private void SignalRClient_eConnect(object sender, EventArgs e)
         {
-            SendSigR(eSignalRMsgType.eEM, "EM Info : " + g._EMClient.EM_NAME);
+            SendSigR(eSignalRMsgType.eEM, "EM Info : " + g._EMClient.EM_NAME, 1);
         }
 
         private void SignalRClient_eRcvSigR1(object sender, SignalRMsg e)
@@ -290,6 +290,8 @@ namespace pa
         // 종료시 처리 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            SendSigR(eSignalRMsgType.eEM, "EM Info : " + g._EMClient.EM_NAME);
+
             Devicetimer.Stop();
 
             aThread.Stop();

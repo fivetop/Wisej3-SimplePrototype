@@ -52,9 +52,11 @@ namespace simplepa2
 
 			Application.MainPage = new PA_MainFrame();
 
-			t2 = new Thread(new ThreadStart(DoSignalRThread));
-			t2.Start();
-
+			if (t2 == null)
+			{ 
+				t2 = new Thread(new ThreadStart(DoSignalRThread));
+				t2.Start();
+			}
 		}
 
 		// SignalR Server

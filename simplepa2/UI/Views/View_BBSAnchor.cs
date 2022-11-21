@@ -54,9 +54,12 @@ namespace simplepa2.UI.Views
 			}
 
 			guid = gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, SelAsset, SelMusic, Guid.Empty);
-			this.btnStart.Enabled = false;
-			this.btnStop.Enabled = true;
 
+			if (guid != Guid.Empty)
+			{ 
+				this.btnStart.Enabled = false;
+				this.btnStop.Enabled = true;
+			}
 		}
 
 		private void btnStop_Click(object sender, EventArgs e)
@@ -75,6 +78,11 @@ namespace simplepa2.UI.Views
 			this.dataGridView2.DataSource = SelMusic;
 			this.dataGridView2.Refresh();
 
+			if (SelMusic.Count == 0)
+			{
+				this.dataGridView2.DataSource = null;
+				this.dataGridView2.RowCount = 10;
+			}
 		}
 
 

@@ -101,6 +101,7 @@ namespace simplepa2.UI.Views
             foreach (var t1 in _emspl.child)
             {
                 dBSqlite.SaveAssets(t1);
+                dBSqlite.SaveEMServer(t1);
             }
         }
 

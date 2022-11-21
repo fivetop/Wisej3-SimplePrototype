@@ -16,14 +16,14 @@ namespace simplepa2.SignalR
 
         public override Task OnConnected()
         {
-            gweb.mainFrame.eEMLoginEvent(Context, 1);
+            //gweb.mainFrame.eEMLoginEvent(Context, 1);
             //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
             return base.OnConnected();
         }
 
         public override Task OnDisconnected(bool b1)
         {
-            gweb.mainFrame.eEMLoginEvent(Context, 0);
+            //gweb.mainFrame.eEMLoginEvent(Context, 0);
             return base.OnDisconnected(true);
         }
 

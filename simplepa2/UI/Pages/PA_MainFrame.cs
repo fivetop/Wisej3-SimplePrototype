@@ -107,6 +107,11 @@ namespace simplepa2.UI.Pages
         internal void eRcvSigR(SignalRMsg message)
         {
             RcvSigR(message);
+
+            Application.Update(this, () =>
+            {
+                AlertBox.Show(message.message);
+            });
         }
 
         internal void eEMLoginEvent(Microsoft.AspNet.SignalR.Hubs.HubCallerContext context, int v)
@@ -278,12 +283,25 @@ namespace simplepa2.UI.Pages
         internal void RcvSigR(SignalRMsg msg1)
         {
             LabelON(9, true);
-            AlertBox.Show(msg1.message);
 
             switch (msg1.Msgtype)
             {
                 case eSignalRMsgType.eEM:
                     gweb.Log(msg1.Msgtype.ToString() +":"+ msg1.user);
+
+                    string l1 = msg1.user + " EM connect";
+                    if (msg1.state == 1)
+                    {
+                        dBSqlite.Eventvm(l1, msg1.user, "ONLINE");
+                        dBSqlite.updateEMServer(msg1.user, "ONLINE");
+                    }
+                    else
+                    {
+                        l1 = msg1.user + " EM disconnect";
+                        dBSqlite.Eventvm(l1, msg1.user, "OFFLINE");
+                        dBSqlite.updateEMServer(msg1.user, "OFFLINE");
+                    }
+                    view_Dashboard.Refresh();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
                     if (msg1.seqno == 1)
@@ -355,6 +373,14 @@ namespace simplepa2.UI.Pages
 
         internal Guid sendSigR(eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic, Guid guid)
         {
+
+            if (gweb._hub == null)
+            {
+                AlertBox.Show("가용한 EM Server가 없습니다.");
+                return Guid.Empty;
+            }
+
+
             SignalRMsg msg1 = new SignalRMsg();
             msg1.user = Application.Session["user"];
 
@@ -381,6 +407,13 @@ namespace simplepa2.UI.Pages
 
             try
             {
+                if (gweb._hub != null)
+                    gweb._hub.MessageS2C2(msg1);
+                else
+                {
+                    AlertBox.Show("해당 EM Server가 없습니다.");
+                    return Guid.Empty;
+                }
                 //if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
                 //    signalRClient.proxy.Invoke("MessageC2S2", msg1);
             }

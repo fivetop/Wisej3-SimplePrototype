@@ -42,6 +42,7 @@ namespace simplepa2
                     MusicsTableAdapter = new MusicsTableAdapter(),
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
                     UserTreesTableAdapter = new UserTreesTableAdapter(),
+                    EMServerTableAdapter = new EMServerTableAdapter(),
                 };
                 Tam.AssetsTableAdapter.Fill(Ds1.Assets);
                 Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
@@ -55,6 +56,7 @@ namespace simplepa2
                 Tam.MusicsTableAdapter.Fill(Ds1.Musics);
                 Tam.SimplepaTableAdapter.Fill(Ds1.Simplepa);
                 Tam.UserTreesTableAdapter.Fill(Ds1.UserTrees);
+                Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
             }
             catch (Exception e1)
             {
@@ -62,6 +64,39 @@ namespace simplepa2
             }
         }
         #endregion
+
+        #region // EMServer 부분 
+        public void SaveEMServer(EmSpeakerPosition t1)
+        {
+            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+
+            var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == t1.emServer);
+            if (m3 == null)
+            {
+                EMServerRow m2 = Ds1.EMServer.NewEMServerRow();
+                m2.EMNAME = t1.emServer;
+                m2.state = "";
+                m2.state_old = "";
+                Ds1.EMServer.Rows.Add(m2);
+                Tam.EMServerTableAdapter.Update(Ds1.EMServer);
+            }
+        }
+
+        public void updateEMServer(string EMNAME, string state)
+        {
+            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+
+            var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == EMNAME);
+            if (m3 == null)
+                return;
+            m3.state_old = m3.state;
+            m3.state = state;
+            Tam.EMServerTableAdapter.Update(Ds1.EMServer);
+        }
+
+        #endregion
+
+
 
         #region // Assets 자산관리 부분 
         public void SaveAssets(EmSpeakerPosition t1)
@@ -81,7 +116,7 @@ namespace simplepa2
                 m2.GroupName = aa[2] + aa[3];
                 m2.ZoneName = aa[4];
                 m2.SpeakerName = aa[5];
-                m2.path = aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
+                m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
                 m2.ch = int.Parse(t1.ch);
                 m2.zpc = t1.zpc;
                 m2.zpci = t1.zpci;

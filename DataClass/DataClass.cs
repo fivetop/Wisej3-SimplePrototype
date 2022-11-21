@@ -91,7 +91,7 @@ namespace DataClass
         public List<int> assetsRows { get; set; }      // 선택된 스피커 ID
         public List<int> musicsRows { get; set; }      // 선택된 음원 ID
         public List<PlayItem> play8sig { get; set; }    // 8채널의 현재 상태 
-        public string user { get; set; }                // 유저명 
+        public string user { get; set; }                // 유저명 , EM 명 
         public string user_data1 { get; set; }           // data1  eOutChMove-dspname,  
         public string user_data2 { get; set; }           // data2  
         public string user_data3 { get; set; }           // data3  
