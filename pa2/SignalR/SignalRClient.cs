@@ -1,19 +1,21 @@
 ﻿using DataClass;
 using Microsoft.AspNet.SignalR.Client;
+using simplepa2.UI.Pages;
 using System;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
-using Wisej.Web;
 
-namespace simplepa2.SignalR
+namespace pa
 {
     public class SignalRClient
     {
 		public IHubProxy proxy;
-        public Simple owner { get; set; } = null;
+        //public PA_MainFrame owner { get; set; } = null;
 		private HubConnection hubConnection;
         private bool Hub_Disconnect_Flag = false;
+
+        public event EventHandler<SignalRMsg> eRcvSigR;
 
         public SignalRClient()
 		{
@@ -40,11 +42,10 @@ namespace simplepa2.SignalR
             // 아래 코드는 디버그가 필요한 경우 사용  -- romee/jake
             hubConnection.TraceLevel = TraceLevels.All;
             hubConnection.TraceWriter = Console.Out;
-            hubConnection.Headers.Add("user_id", Application.Session["user"]);
+            hubConnection.Headers.Add("user_id", "Client1");
 
             await hubConnection.Start();
 
-            owner.LabelON(9, true);
             proxy.On<string>("sendMessageToClients", async (str1) =>
 			{
 				Console.WriteLine(str1);
@@ -53,17 +54,17 @@ namespace simplepa2.SignalR
 
             proxy.On<SignalRMsg>("MessageS2C2", async (msg) =>
             {
-                Application.Update(owner, () =>
+                try 
                 {
-                    try 
-                    {
-                        owner.RcvSigR(msg);
-                    }
-                    catch (Exception e1)
-                    {
-                        Console.WriteLine(e1.Message);
-                    }
-                });
+                    eRcvSigR?.Invoke(this, msg);
+                    //owner.RcvSigR(msg);
+                    Console.WriteLine("<" + msg.message);
+
+                }
+                catch (Exception e1)
+                {
+                    Console.WriteLine(e1.Message);
+                }
             });
 
             proxy.On<SignalRMsg>("MessageC2S2", async (msg) =>
@@ -162,7 +163,7 @@ namespace simplepa2.SignalR
         // 커넥션이 종료된 경우 -> 디버깅시 발생 
         private void Connection_Closed()
         {
-            owner.LabelON(9, false);
+            //owner.LabelON(9, false);
             Console.WriteLine("SignalR Client Disconnected.");
             //if (!Hub_Disconnect_Flag)
             {
@@ -174,12 +175,19 @@ namespace simplepa2.SignalR
         // 서버와 연결/해제 되면 해당 색상이 바뀜
         private void set_connect_color(Color color)
         {
-            Application.Update(owner, () =>
-            {
-                AlertBox.Show("test");
-                //g.main_window._colorConnect.DarkColor = color;
-                //g.main_window._colorConnect.LightColor = color;
-            });
+             //AlertBox.Show("test");
+        }
+
+        public void MessageS2C2(SignalRMsg message)
+        {
+            if (this.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                this.proxy.Invoke("MessageS2C2", message);
+        }
+
+        public void MessageC2S2(SignalRMsg message)
+        {
+            if (this.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                this.proxy.Invoke("MessageC2S2", message);
         }
 
     }

@@ -55,8 +55,8 @@ namespace simplepa2
 				case eSignalRMsgType.eLogoutUser:
 					break;
 				case eSignalRMsgType.eFindDSP:
-					if(msg1.state == 1)
-						bSDeviceManager.reDraw();
+					if (msg1.state == 1)
+						;//bSDeviceManager.reDraw();
 					else
 						AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 					break;
@@ -111,8 +111,8 @@ namespace simplepa2
 		{
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.message = v;
-			if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-				signalRClient.proxy.Invoke("MessageC2S2", msg1);
+			//if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+			//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
 		}
 
 		internal Guid sendSigR(eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic, Guid guid)
@@ -143,8 +143,8 @@ namespace simplepa2
 
 			try
 			{
-				if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-					signalRClient.proxy.Invoke("MessageC2S2", msg1);
+				//if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+				//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
 			}
 			catch (Exception e1)
 			{
@@ -204,8 +204,8 @@ namespace simplepa2
 
 			try
 			{
-				if (isSignalR())
-					signalRClient.proxy.Invoke("MessageC2S2", msg1);
+				//if (isSignalR())
+				//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
 			}
 			catch (Exception e1)
 			{
@@ -214,9 +214,9 @@ namespace simplepa2
 
 		public bool isSignalR()
 		{
-			if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-				return true;
-			else
+			//if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+			//	return true;
+			//else
 				return false;
 
 		}

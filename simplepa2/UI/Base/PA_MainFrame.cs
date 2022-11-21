@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 using Wisej.Web;
 
 
@@ -10,5 +11,7 @@ namespace simplepa2.UI.Base
         {
             InitializeComponent();
         }
+
+
     }
 }

@@ -1,34 +1,33 @@
 ﻿using DataClass;
-using gClass;
 using Microsoft.AspNet.SignalR;
+using simplepa2.UI.Pages;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Windows.Threading;
-using simplepa2;
 
-namespace pa
+namespace simplepa2.SignalR
 {
     //[HubName("signalr")]
-
     public class signalr : Hub
     {
         public string user_id { get; set; }
 
         public signalr()
         {
-            g._hub = this;
+            gweb._hub = this;
         }
 
         public override Task OnConnected()
         {
             user_id = Context.Headers["user_id"];
             string str1= Context.ConnectionId.ToString();
-            string l1 = "사용자 로그인";
-            g.mainWindow.dBSqlite.Eventvm(l1, user_id, str1);
+            string l1 = "EM 로그인";
+            //gweb.mainFrame.dBSqlite.Eventvm(l1, user_id, str1);
 
-            g.Log("SigR Connected : " + user_id + " : "+ str1);
-            g.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
+            //g.Log("SigR Connected : " + user_id + " : "+ str1);
+            EventArgs args = new EventArgs();
+            args.Equals(str1);
+            gweb.mainFrame.eEMLoginEvent();
+            //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
             return base.OnConnected();
         }
 
@@ -36,10 +35,11 @@ namespace pa
         {
             user_id = Context.Headers["user_id"];
             string str1 = Context.ConnectionId.ToString();
-            g.Log("SigR DisConnected : " + user_id + " : " + str1);
-            g.SendSigR(user_id, eSignalRMsgType.eLogoutUser, 0, 0);
-            string l1 = "사용자 로그아웃";
-            g.mainWindow.dBSqlite.Eventvm(l1, user_id, str1);
+            //g.Log("SigR DisConnected : " + user_id + " : " + str1);
+            gweb.mainFrame.eEMLogoutEvent();
+            //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLogoutUser, 0, 0);
+            string l1 = "EM 로그아웃";
+            gweb.mainFrame.dBSqlite.Eventvm(l1, user_id, str1);
             return base.OnDisconnected(true);
         }
 
@@ -62,13 +62,14 @@ namespace pa
         public void MessageS2C2(SignalRMsg message)
         {
             Clients.All.MessageS2C2(message);
-            g.Log(message.message);
+            //g.Log(message.message);
         }
 
         public void MessageC2S2(SignalRMsg message)
         {
             Clients.All.MessageC2S2(message);
-            g.mainWindow.RcvSigR(message);
+            gweb.mainFrame.eRcvSigR(message);
+            //gweb.mainFrame.RcvSigR(message);
         }
     }
 

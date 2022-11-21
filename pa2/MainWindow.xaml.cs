@@ -61,6 +61,8 @@ namespace pa
 
         int SelfTest { get; set; } = 0;
 
+        public static SignalRClient signalRClient { get; set; } = new SignalRClient();
+
         public MainWindow()
         {
             g.mainWindow = this;
@@ -244,6 +246,9 @@ namespace pa
 
             if (firsttime)
             {
+                signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
+                signalRClient.ConnectToSignalR();
+
                 Init();
                 firsttime = false;
                 // 초기 화면 열리면서 한번 수행 
@@ -252,6 +257,11 @@ namespace pa
             }
             //            if (App.Current.MainWindow.Visibility == Visibility.Visible)
             //                _tray.MinimizeToTray();
+        }
+
+        private void SignalRClient_eRcvSigR1(object sender, SignalRMsg e)
+        {
+            RcvSigR(e);
         }
 
         private void MetroWindow_Deactivated(object sender, EventArgs e)

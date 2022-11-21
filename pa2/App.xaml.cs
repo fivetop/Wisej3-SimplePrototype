@@ -10,25 +10,8 @@ using Microsoft.Owin.Cors;
 using Microsoft.Owin.Hosting;
 using Owin;
 
-[assembly: OwinStartup(typeof(pa.Startup))]
-
 namespace pa
 {
-
-    // Signal R 쓰레드 진입점 
-    public partial class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
-            app.UseCors(CorsOptions.AllowAll);
-            var hubConfiguration = new HubConfiguration();
-            hubConfiguration.EnableDetailedErrors = true;
-            hubConfiguration.EnableJSONP = true;
-            hubConfiguration.EnableJavaScriptProxies = true;
-            app.MapSignalR("/signalr", hubConfiguration);
-        }
-    }
-
     public partial class App : Application
     {
         public App()
@@ -67,13 +50,8 @@ namespace pa
             }
         }
 
-        Thread t2;
-
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            t2 = new Thread(new ThreadStart(DoSignalRThread));
-            t2.Start();
-
             string str1 = gl.appPathServer;
             //str1 = System.IO.Directory.GetCurrentDirectory();
 
@@ -97,19 +75,8 @@ namespace pa
 
         }
 
-        private static void DoSignalRThread()
-        {
-            string url = "http://localhost:8080";
-            using (WebApp.Start(url))
-            {
-                while (true)
-                    Thread.Sleep(10);
-            }
-        }
-
         private void Application_Exit(object sender, ExitEventArgs e)
         {
-            t2.Abort();
         }
     }
 }

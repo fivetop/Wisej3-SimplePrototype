@@ -23,7 +23,6 @@ namespace pa
     {
         #region // 글로벌 변수 선언 
         static public string appPath { get; set; } = @"C:\SimplePA\";
-        public static signalr _hub { get; set; } = null;
         static public MainWindow mainWindow { get; set; }
         // 현재 방송중인 내용
         static public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
@@ -239,67 +238,6 @@ namespace pa
             }
             return false;
         }
-
-        internal static void SendSigR(string t1, eSignalRMsgType v1, int s1, int s2) // s1 = seq, s2=state
-        {
-            SignalRMsg msg1 = new SignalRMsg();
-
-            msg1.user = "Server";
-            msg1.message = t1;
-            msg1.Msgtype = v1;
-            msg1.seqno = s1;
-            msg1.state = s2;
-            msg1.play8sig = g.playItems;
-
-            switch (v1)
-            {
-                case eSignalRMsgType.eEM:
-                    break;
-                case eSignalRMsgType.eEM_FIRE:
-                    break;
-                case eSignalRMsgType.eEM_PRESET_SW:
-                    break;
-                case eSignalRMsgType.ePlay:
-                    break;
-                case eSignalRMsgType.eStop:
-                    break;
-                case eSignalRMsgType.ePlaying:
-                    msg1.message = "ePlaying";
-                    break;
-                case eSignalRMsgType.ePlayEnd:
-                    msg1.message = "ePlayEnd";
-                    break;
-                case eSignalRMsgType.eLoginUser:
-                    msg1.user = "Server";
-                    break;
-                case eSignalRMsgType.eLogoutUser:
-                    msg1.user = "Server";
-                    break;
-                case eSignalRMsgType.eFindDSP:
-                    msg1.user = "Server";
-                    break;
-            }
-
-            msg1.play8sig = playItems;
-            if (g._hub != null)
-                g._hub.MessageS2C2(msg1);
-            //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
-        }
-        internal static void SendSigR(eSignalRMsgType v1, string r1) // s1 = seq, s2=state
-        {
-            SignalRMsg msg1 = new SignalRMsg();
-
-            msg1.user = "Server";
-            msg1.message = r1;
-            msg1.Msgtype = v1;
-            msg1.play8sig = g.playItems;
-
-            msg1.play8sig = playItems;
-            if (g._hub != null)
-                g._hub.MessageS2C2(msg1);
-            //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
-        }
-
         public static void Load(string info)
         {
             g.DoWorkWithModal(progress =>

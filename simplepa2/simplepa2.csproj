@@ -102,10 +102,39 @@
     <Content Include="imgs\dPanel3.jpg" />
     <Content Include="imgs\login2.jpg" />
     <Content Include="fonts\NotoSansKR-Black.otf" />
+    <Content Include="fonts\NotoSansKR-Black.woff" />
+    <Content Include="fonts\NotoSansKR-Black.woff2" />
+    <Content Include="fonts\NotoSansKR-Bold.otf" />
+    <Content Include="fonts\NotoSansKR-Bold.woff" />
+    <Content Include="fonts\NotoSansKR-Bold.woff2" />
+    <Content Include="fonts\NotoSansKR-DemiLight.otf" />
+    <Content Include="fonts\NotoSansKR-DemiLight.woff" />
+    <Content Include="fonts\NotoSansKR-DemiLight.woff2" />
+    <Content Include="fonts\NotoSansKR-Light.otf" />
+    <Content Include="fonts\NotoSansKR-Light.woff" />
+    <Content Include="fonts\NotoSansKR-Light.woff2" />
+    <Content Include="fonts\NotoSansKR-Medium.otf" />
+    <Content Include="fonts\NotoSansKR-Medium.woff" />
+    <Content Include="fonts\NotoSansKR-Medium.woff2" />
+    <Content Include="fonts\NotoSansKR-Regular.otf" />
+    <Content Include="fonts\NotoSansKR-Regular.woff" />
+    <Content Include="fonts\NotoSansKR-Regular.woff2" />
+    <Content Include="fonts\NotoSansKR-Thin.otf" />
+    <Content Include="fonts\NotoSansKR-Thin.woff" />
+    <Content Include="fonts\NotoSansKR-Thin.woff2" />
     <None Include="imgs\nav-quit-777.png" />
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="UI\Pages\PA_MainFrame.resx">
+      <DependentUpon>PA_MainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSAnchor.resx">
+      <DependentUpon>View_BBSAnchor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_DashBoard.resx">
+      <DependentUpon>View_DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win2\c04.resx">
       <DependentUpon>c04.cs</DependentUpon>
     </EmbeddedResource>
@@ -605,11 +634,11 @@
     <EmbeddedResource Include="win\ASchedule.resx">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSAsset.resx">
-      <DependentUpon>BSAsset.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCZone.resx">
+      <DependentUpon>View_BBCZone.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSDeviceManager.resx">
-      <DependentUpon>BSDeviceManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCDevice.resx">
+      <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win\BSEMManager.resx">
       <DependentUpon>BSEMManager.cs</DependentUpon>
@@ -669,6 +698,200 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="global.cs" />
+    <Compile Include="SignalR\SignalRHub.cs" />
+    <Compile Include="UI\Base\PA_MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Base\PA_MainFrame.Designer.cs">
+      <DependentUpon>PA_MainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\PA_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\PA_Login.Designer.cs">
+      <DependentUpon>PA_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\PA_MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pages\PA_MainFrame.Designer.cs">
+      <DependentUpon>PA_MainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCDeviceForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCDeviceForm.Designer.cs">
+      <DependentUpon>Popup_BBCDeviceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCEmergencyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCEmergencyForm.Designer.cs">
+      <DependentUpon>Popup_BBCEmergencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCOutputForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCOutputForm.Designer.cs">
+      <DependentUpon>Popup_BBCOutputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCSiteForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCSiteForm.Designer.cs">
+      <DependentUpon>Popup_BBCSiteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCZoneForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCZoneForm.Designer.cs">
+      <DependentUpon>Popup_BBCZoneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCAmpFailover.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCAmpFailover.Designer.cs">
+      <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCEmergency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCEmergency.Designer.cs">
+      <DependentUpon>View_BBCEmergency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCInput.Designer.cs">
+      <DependentUpon>View_BBCInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCMusic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCMusic.Designer.cs">
+      <DependentUpon>View_BBCMusic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCOutput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCOutput.Designer.cs">
+      <DependentUpon>View_BBCOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCSite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBCSite.Designer.cs">
+      <DependentUpon>View_BBCSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSAnchor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSAnchor.Designer.cs">
+      <DependentUpon>View_BBSAnchor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSGroupManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSGroupManage.Designer.cs">
+      <DependentUpon>View_BBSGroupManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSHolidayManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSHolidayManage.Designer.cs">
+      <DependentUpon>View_BBSHolidayManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSIoTApplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSIoTApplication.Designer.cs">
+      <DependentUpon>View_BBSIoTApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSMusicManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSMusicManage.Designer.cs">
+      <DependentUpon>View_BBSMusicManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSPresetManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSPresetManage.Designer.cs">
+      <DependentUpon>View_BBSPresetManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSReservation.Designer.cs">
+      <DependentUpon>View_BBSReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_DashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_DashBoard.Designer.cs">
+      <DependentUpon>View_DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_HistoryBBS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_HistoryBBS.Designer.cs">
+      <DependentUpon>View_HistoryBBS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_HistoryDevice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_HistoryDevice.Designer.cs">
+      <DependentUpon>View_HistoryDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_HistoryFireSignal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_HistoryFireSignal.Designer.cs">
+      <DependentUpon>View_HistoryFireSignal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_HistoryOutMsgs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_HistoryOutMsgs.Designer.cs">
+      <DependentUpon>View_HistoryOutMsgs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_HistorySystemChanges.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_HistorySystemChanges.Designer.cs">
+      <DependentUpon>View_HistorySystemChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemAccount.Designer.cs">
+      <DependentUpon>View_SystemAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemEmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemEmail.Designer.cs">
+      <DependentUpon>View_SystemEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemRestAPI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemRestAPI.Designer.cs">
+      <DependentUpon>View_SystemRestAPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemSMSRegistration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemSMSRegistration.Designer.cs">
+      <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_TopPanelBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_TopPanelBar.Designer.cs">
+      <DependentUpon>View_TopPanelBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="win2\c04.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -823,7 +1046,6 @@
     <Compile Include="Popups\StartPopup.Designer.cs">
       <DependentUpon>StartPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignalR\SignalRClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="webapi\ApiController1.cs" />
@@ -889,17 +1111,17 @@
     <Compile Include="win\ASchedule.Designer.cs">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSAsset.cs">
+    <Compile Include="UI\Views\View_BBCZone.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSAsset.Designer.cs">
-      <DependentUpon>BSAsset.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCZone.Designer.cs">
+      <DependentUpon>View_BBCZone.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSDeviceManager.cs">
+    <Compile Include="UI\Views\View_BBCDevice.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSDeviceManager.Designer.cs">
-      <DependentUpon>BSDeviceManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCDevice.Designer.cs">
+      <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </Compile>
     <Compile Include="win\BSEMManager.cs">
       <SubType>UserControl</SubType>
@@ -970,6 +1192,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.SignalR">
+      <Version>2.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="Owin">
+      <Version>1.0.0</Version>
+    </PackageReference>
     <PackageReference Include="Wisej-3-NavigationBar">
       <Version>3.1.2</Version>
     </PackageReference>
@@ -981,12 +1209,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
-    <PackageReference Include="Microsoft.AspNet.SignalR.Client">
-      <Version>2.4.3</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNet.SignalR.Core">
-      <Version>2.4.3</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.AspNet.WebApi.WebHost">
       <Version>5.2.6</Version>
     </PackageReference>
@@ -1000,9 +1222,6 @@
       <Version>4.2.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Owin.Hosting">
-      <Version>4.2.2</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Owin.Security">
       <Version>4.2.2</Version>
     </PackageReference>
     <PackageReference Include="Nancy">

@@ -84,7 +84,7 @@ namespace pa
             if (t1.state == "방송중") return;
             t1.state = "방송중";
             //_T3.SchBS(t1.idno);
-            g.SendSigR("PLAYING", eSignalRMsgType.ePlaying, chno, 0);
+            SendSigR("PLAYING", eSignalRMsgType.ePlaying, chno, 0);
         }
 
         // **방송종료처리 - 다원 방송 종료
@@ -108,7 +108,7 @@ namespace pa
             g.Log(l1 +t1.chno.ToString() + " : "+ t1.idno.ToString());
             dBSqlite.Delete(t1.idno);
             dBSqlite.Eventvm(l1, t1.chno.ToString() + "번 채널", t1.idno.ToString());
-            g.SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd , 0, 0);
+            SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd , 0, 0);
             g.playItems[chno] = new PlayItem();
         }
 

@@ -140,7 +140,7 @@ namespace pa
             if (gs1.Count() < 1 || gs2.Count() < 1)
             {
                 g.Log("DSP 혹은 버철사운드를 확인 바랍니다.");
-                g.SendSigR("Find DSP",eSignalRMsgType.eFindDSP, 0,0);
+                SendSigR("Find DSP",eSignalRMsgType.eFindDSP, 0,0);
                 return false;
             }
 
@@ -150,7 +150,7 @@ namespace pa
                 if (t2.ip_dspctrl == "")
                 { 
                     g.Log("DSP 혹은 버철사운드를 확인 바랍니다.");
-                    g.SendSigR("Find DSP", eSignalRMsgType.eFindDSP, 0, 0);
+                    SendSigR("Find DSP", eSignalRMsgType.eFindDSP, 0, 0);
                     return false;
                 }
             }
@@ -171,7 +171,7 @@ namespace pa
                 g.Log(e1.Message);
             }
 
-            g.SendSigR("Find DSP", eSignalRMsgType.eFindDSP, 0, 1);
+            SendSigR("Find DSP", eSignalRMsgType.eFindDSP, 0, 1);
             AThread.Start();
             Devicetimer.Stop();
             g.Log("Svae DB : OK");

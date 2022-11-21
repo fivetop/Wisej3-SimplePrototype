@@ -85,12 +85,12 @@ namespace pa
                 case eSignalRMsgType.eScanAll:
                     if (ScanAll())
                     {
-                        g.SendSigR(eSignalRMsgType.eReturn, "Server : 전체스캔 처리중 입니다. 약 5분정도 소요될 예정입니다");
+                        SendSigR(eSignalRMsgType.eReturn, "Server : 전체스캔 처리중 입니다. 약 5분정도 소요될 예정입니다");
                         g.Log("eScanAll");
                     }
                     else
                     {
-                        g.SendSigR(eSignalRMsgType.eReturn, "Server : 처리(진행)중 입니다.");
+                        SendSigR(eSignalRMsgType.eReturn, "Server : 처리(진행)중 입니다.");
                     }
                     break;
             }
@@ -138,6 +138,67 @@ namespace pa
             }
             return rlt;
         }
+
+
+
+        internal static void SendSigR(string t1, eSignalRMsgType v1, int s1, int s2) // s1 = seq, s2=state
+        {
+            SignalRMsg msg1 = new SignalRMsg();
+
+            msg1.user = "Server";
+            msg1.message = t1;
+            msg1.Msgtype = v1;
+            msg1.seqno = s1;
+            msg1.state = s2;
+            msg1.play8sig = g.playItems;
+
+            switch (v1)
+            {
+                case eSignalRMsgType.eEM:
+                    break;
+                case eSignalRMsgType.eEM_FIRE:
+                    break;
+                case eSignalRMsgType.eEM_PRESET_SW:
+                    break;
+                case eSignalRMsgType.ePlay:
+                    break;
+                case eSignalRMsgType.eStop:
+                    break;
+                case eSignalRMsgType.ePlaying:
+                    msg1.message = "ePlaying";
+                    break;
+                case eSignalRMsgType.ePlayEnd:
+                    msg1.message = "ePlayEnd";
+                    break;
+                case eSignalRMsgType.eLoginUser:
+                    msg1.user = "Server";
+                    break;
+                case eSignalRMsgType.eLogoutUser:
+                    msg1.user = "Server";
+                    break;
+                case eSignalRMsgType.eFindDSP:
+                    msg1.user = "Server";
+                    break;
+            }
+
+            msg1.play8sig = g.playItems;
+            signalRClient.MessageS2C2(msg1);
+            //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
+        }
+        internal static void SendSigR(eSignalRMsgType v1, string r1) // s1 = seq, s2=state
+        {
+            SignalRMsg msg1 = new SignalRMsg();
+
+            msg1.user = "Server";
+            msg1.message = r1;
+            msg1.Msgtype = v1;
+            msg1.play8sig = g.playItems;
+
+            msg1.play8sig = g.playItems;
+            signalRClient.MessageS2C2(msg1);
+            //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
+        }
+
 
     }
 }
