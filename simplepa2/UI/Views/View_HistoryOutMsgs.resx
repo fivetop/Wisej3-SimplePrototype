@@ -117,6 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBox2.CssStyle" xml:space="preserve">
+    <value>    width: 100%;
+    height: 32px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: left;
+    color: #111;
+  
+    padding: 0px 19px 0px 12px;
+    border: 1px solid #E0E3EB;
+    border-radius: 18px;
+    outline: 0 none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;</value>
+  </data>
+  <data name="button3.CssStyle" xml:space="preserve">
+    <value>    height: 32px;
+    line-height: 30px;
+
+    border-radius: 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    float: left;
+  
+    
+        color: #111 !important;
+    background: #fff !important;
+    border: 1px solid #E0E3EB !important;
+}</value>
+  </data>
+  <data name="button2.CssStyle" xml:space="preserve">
+    <value>    height: 32px;
+    line-height: 30px;
+
+    border-radius: 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    float: left;
+  
+    
+        color: #111 !important;
+    background: #fff !important;
+    border: 1px solid #E0E3EB !important;
+}</value>
+  </data>
+  <data name="button1.CssStyle" xml:space="preserve">
+    <value>    height: 32px;
+    line-height: 30px;
+
+    border-radius: 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    float: left;
+  
+    
+        color: #111 !important;
+    background: #fff !important;
+    border: 1px solid #E0E3EB !important;
+}</value>
+  </data>
+  <data name="textBox3.CssStyle" xml:space="preserve">
+    <value>    display: block;
+    height: 32px !important;
+    line-height:30px;
+    border: 1px solid #E0E3EB !important;
+    border-radius: 16px !important;
+    
+    padding: 0px 10px 0px 14px;
+    color: #111;
+    font-size: 15px;
+    font-weight: 500;
+    background: #fff;
+    vertical-align: middle;</value>
+  </data>
+  <data name="comboBox1.CssStyle" xml:space="preserve">
+    <value>    width: 100%;
+    height: 32px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: left;
+    color: #111;
+  
+    padding: 0px 19px 0px 12px;
+    border: 1px solid #E0E3EB;
+    border-radius: 18px;
+    outline: 0 none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;</value>
+  </data>
+  <data name="popTestButton.CssStyle" xml:space="preserve">
+    <value>    color: #fff !important;
+    background: #3A86FF !important;
+        border: 1px solid #3A86FF !important;
+    
+    display: block;
+    width: 100px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    float: left;</value>
+  </data>
+  <data name="textBox2.CssStyle" xml:space="preserve">
+    <value>    display: block;
+    height: 32px !important;
+    line-height:30px;
+    border: 1px solid #E0E3EB !important;
+    border-radius: 16px !important;
+    
+    padding: 0px 10px 0px 14px;
+    color: #111;
+    font-size: 15px;
+    font-weight: 500;
+    background: #fff;
+    vertical-align: middle;</value>
+  </data>
   <metadata name="$this.RulerSnapLines" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0

@@ -47,7 +47,7 @@
             this.textBox1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBox1.Location = new System.Drawing.Point(375, 124);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 32);
+            this.textBox1.Size = new System.Drawing.Size(241, 37);
             this.textBox1.TabIndex = 19;
             // 
             // label1
@@ -56,7 +56,7 @@
             this.label1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label1.Location = new System.Drawing.Point(91, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 30);
+            this.label1.Size = new System.Drawing.Size(223, 35);
             this.label1.TabIndex = 18;
             this.label1.Text = "방송설정-출력설정";
             // 
@@ -66,6 +66,7 @@
             this.Controls.Add(this.popTestButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.CssStyle = "background: #eeeff8;";
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_BBCOutput";
             this.Size = new System.Drawing.Size(1400, 900);

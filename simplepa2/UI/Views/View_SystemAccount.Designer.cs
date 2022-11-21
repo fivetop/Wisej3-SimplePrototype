@@ -28,55 +28,322 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.popTestButton = new Wisej.Web.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_SystemAccount));
+            this.panel2 = new Wisej.Web.Panel();
+            this.button3 = new Wisej.Web.Button();
+            this.button1 = new Wisej.Web.Button();
+            this.label3 = new Wisej.Web.Label();
+            this.panel1 = new Wisej.Web.Panel();
+            this.button2 = new Wisej.Web.Button();
+            this.label2 = new Wisej.Web.Label();
+            this.panel3 = new Wisej.Web.Panel();
+            this.panel5 = new Wisej.Web.Panel();
+            this.line3 = new Wisej.Web.Line();
+            this.textBox3 = new Wisej.Web.TextBox();
+            this.textBox4 = new Wisej.Web.TextBox();
+            this.panel4 = new Wisej.Web.Panel();
+            this.line2 = new Wisej.Web.Line();
             this.textBox1 = new Wisej.Web.TextBox();
-            this.label1 = new Wisej.Web.Label();
+            this.textBox2 = new Wisej.Web.TextBox();
+            this.panel32 = new Wisej.Web.Panel();
+            this.line1 = new Wisej.Web.Line();
+            this.textBox11 = new Wisej.Web.TextBox();
+            this.textBox20 = new Wisej.Web.TextBox();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel32.SuspendLayout();
             this.SuspendLayout();
             // 
-            // popTestButton
+            // panel2
             // 
-            this.popTestButton.Location = new System.Drawing.Point(512, 316);
-            this.popTestButton.Name = "popTestButton";
-            this.popTestButton.Size = new System.Drawing.Size(100, 27);
-            this.popTestButton.TabIndex = 65;
-            this.popTestButton.Text = "button1";
+            this.panel2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(621, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(760, 860);
+            this.panel2.TabIndex = 47;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.button3.CssStyle = resources.GetString("button3.CssStyle");
+            this.button3.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button3.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button3.Location = new System.Drawing.Point(530, 20);
+            this.button3.Margin = new Wisej.Web.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 32);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "삭제";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.button1.CssStyle = resources.GetString("button1.CssStyle");
+            this.button1.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button1.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button1.Location = new System.Drawing.Point(640, 20);
+            this.button1.Margin = new Wisej.Web.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 32);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "저장";
+            // 
+            // label3
+            // 
+            this.label3.CssStyle = "display: block;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    text-align: left;" +
+    "\r\n    color: #111;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n";
+            this.label3.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.Location = new System.Drawing.Point(20, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(352, 32);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "사용자 편집 : on@brisak.com";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(19, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(580, 860);
+            this.panel1.TabIndex = 46;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.button2.CssStyle = resources.GetString("button2.CssStyle");
+            this.button2.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button2.Location = new System.Drawing.Point(460, 20);
+            this.button2.Margin = new Wisej.Web.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 32);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "추가";
+            // 
+            // label2
+            // 
+            this.label2.CssStyle = "display: block;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    text-align: left;" +
+    "\r\n    color: #111;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n";
+            this.label2.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Location = new System.Drawing.Point(20, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(223, 32);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "사용자 관리";
+            // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.panel32);
+            this.panel3.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
+            this.panel3.Location = new System.Drawing.Point(20, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(720, 770);
+            this.panel3.TabIndex = 34;
+            this.panel3.Text = "listPanel";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel5.Controls.Add(this.line3);
+            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Location = new System.Drawing.Point(0, 194);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(720, 77);
+            this.panel5.TabIndex = 35;
+            // 
+            // line3
+            // 
+            this.line3.LineColor = System.Drawing.Color.FromArgb(228, 234, 246);
+            this.line3.Location = new System.Drawing.Point(20, 57);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(680, 1);
+            // 
+            // textBox3
+            // 
+            this.textBox3.AutoSize = false;
+            this.textBox3.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox3.CssStyle = "width: 22px;\r\n    height: 22px;\r\n    border-radius: 11px;\r\n        background: #5" +
+    "B99FF;\r\n    text-align: center;\r\n    font-size: 14px;\r\n    color: #fff;\r\n    fon" +
+    "t-weight: 700;";
+            this.textBox3.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(20, 20);
+            this.textBox3.Margin = new Wisej.Web.Padding(0);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(22, 22);
+            this.textBox3.TabIndex = 2;
+            this.textBox3.Text = "3";
+            this.textBox3.TextAlign = Wisej.Web.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.AutoSize = false;
+            this.textBox4.BackColor = System.Drawing.Color.Transparent;
+            this.textBox4.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox4.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox4.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox4.Location = new System.Drawing.Point(52, 20);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(342, 22);
+            this.textBox4.TabIndex = 1;
+            this.textBox4.Text = "333";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel4.Controls.Add(this.line2);
+            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.textBox2);
+            this.panel4.Location = new System.Drawing.Point(0, 97);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(720, 77);
+            this.panel4.TabIndex = 34;
+            // 
+            // line2
+            // 
+            this.line2.LineColor = System.Drawing.Color.FromArgb(228, 234, 246);
+            this.line2.Location = new System.Drawing.Point(20, 57);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(680, 1);
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.Location = new System.Drawing.Point(252, 310);
+            this.textBox1.AutoSize = false;
+            this.textBox1.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox1.CssStyle = "width: 22px;\r\n    height: 22px;\r\n    border-radius: 11px;\r\n        background: #5" +
+    "B99FF;\r\n    text-align: center;\r\n    font-size: 14px;\r\n    color: #fff;\r\n    fon" +
+    "t-weight: 700;";
+            this.textBox1.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(20, 20);
+            this.textBox1.Margin = new Wisej.Web.Padding(0);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 32);
-            this.textBox1.TabIndex = 64;
+            this.textBox1.Size = new System.Drawing.Size(22, 22);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "2";
+            this.textBox1.TextAlign = Wisej.Web.HorizontalAlignment.Center;
             // 
-            // label1
+            // textBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(24, 313);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 30);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "시스템-계정관리";
+            this.textBox2.AutoSize = false;
+            this.textBox2.BackColor = System.Drawing.Color.Transparent;
+            this.textBox2.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox2.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox2.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox2.Location = new System.Drawing.Point(52, 20);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(342, 22);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.Text = "222";
+            // 
+            // panel32
+            // 
+            this.panel32.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel32.Controls.Add(this.line1);
+            this.panel32.Controls.Add(this.textBox11);
+            this.panel32.Controls.Add(this.textBox20);
+            this.panel32.Location = new System.Drawing.Point(0, 0);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(720, 77);
+            this.panel32.TabIndex = 33;
+            // 
+            // line1
+            // 
+            this.line1.LineColor = System.Drawing.Color.FromArgb(228, 234, 246);
+            this.line1.Location = new System.Drawing.Point(20, 57);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(680, 1);
+            // 
+            // textBox11
+            // 
+            this.textBox11.AutoSize = false;
+            this.textBox11.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox11.CssStyle = "width: 22px;\r\n    height: 22px;\r\n    border-radius: 11px;\r\n        background: #5" +
+    "B99FF;\r\n    text-align: center;\r\n    font-size: 14px;\r\n    color: #fff;\r\n    fon" +
+    "t-weight: 700;";
+            this.textBox11.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox11.ForeColor = System.Drawing.Color.White;
+            this.textBox11.Location = new System.Drawing.Point(20, 20);
+            this.textBox11.Margin = new Wisej.Web.Padding(0);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(22, 22);
+            this.textBox11.TabIndex = 2;
+            this.textBox11.Text = "1";
+            this.textBox11.TextAlign = Wisej.Web.HorizontalAlignment.Center;
+            // 
+            // textBox20
+            // 
+            this.textBox20.AutoSize = false;
+            this.textBox20.BackColor = System.Drawing.Color.Transparent;
+            this.textBox20.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox20.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox20.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox20.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox20.Location = new System.Drawing.Point(52, 20);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(342, 22);
+            this.textBox20.TabIndex = 1;
+            this.textBox20.Text = "111";
             // 
             // View_SystemAccount
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.popTestButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_SystemAccount";
             this.Size = new System.Drawing.Size(1400, 900);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel32.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Wisej.Web.Button popTestButton;
+        private Wisej.Web.Panel panel2;
+        private Wisej.Web.Button button3;
+        private Wisej.Web.Button button1;
+        private Wisej.Web.Label label3;
+        private Wisej.Web.Panel panel1;
+        private Wisej.Web.Button button2;
+        private Wisej.Web.Label label2;
+        private Wisej.Web.Panel panel3;
+        private Wisej.Web.Panel panel5;
+        private Wisej.Web.Line line3;
+        private Wisej.Web.TextBox textBox3;
+        private Wisej.Web.TextBox textBox4;
+        private Wisej.Web.Panel panel4;
+        private Wisej.Web.Line line2;
         private Wisej.Web.TextBox textBox1;
-        private Wisej.Web.Label label1;
+        private Wisej.Web.TextBox textBox2;
+        private Wisej.Web.Panel panel32;
+        private Wisej.Web.Line line1;
+        private Wisej.Web.TextBox textBox11;
+        private Wisej.Web.TextBox textBox20;
     }
 }

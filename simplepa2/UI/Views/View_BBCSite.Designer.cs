@@ -50,9 +50,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1400, 50);
             this.panel1.TabIndex = 0;
-            // 
-            // comboBoxView2
-            // 
             this.comboBoxView2.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
             this.comboBoxView2.LabelText = "View";
             this.comboBoxView2.Location = new System.Drawing.Point(510, 3);
@@ -61,10 +58,6 @@
             this.comboBoxView2.TabIndex = 6;
             this.comboBoxView2.Text = "LeftToRight";
             this.comboBoxView2.SelectedIndexChanged += new System.EventHandler(this.comboBoxView2_SelectedIndexChanged);
-            // 
-            // View_BBCSite
-            // 
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Dock = Wisej.Web.DockStyle.Fill;

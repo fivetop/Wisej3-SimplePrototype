@@ -9,5 +9,24 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
         }
+
+        private void View_BBSPresetManage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void shape1_Click(object sender, EventArgs e)
+        {
+                    }
+
+        private void panel13_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel15_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
     }
 }

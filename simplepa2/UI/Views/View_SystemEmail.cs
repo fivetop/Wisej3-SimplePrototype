@@ -9,5 +9,10 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
         }
+
+        private void panel2_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
     }
 }

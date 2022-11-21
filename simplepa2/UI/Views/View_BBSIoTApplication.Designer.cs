@@ -28,55 +28,490 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.popTestButton = new Wisej.Web.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_BBSIoTApplication));
+            this.panel2 = new Wisej.Web.Panel();
+            this.button3 = new Wisej.Web.Button();
+            this.button1 = new Wisej.Web.Button();
+            this.label3 = new Wisej.Web.Label();
+            this.panel1 = new Wisej.Web.Panel();
+            this.button2 = new Wisej.Web.Button();
+            this.label2 = new Wisej.Web.Label();
+            this.panel3 = new Wisej.Web.Panel();
+            this.panel10 = new Wisej.Web.Panel();
+            this.textBox2 = new Wisej.Web.TextBox();
+            this.panel7 = new Wisej.Web.Panel();
+            this.textBox4 = new Wisej.Web.TextBox();
+            this.panel4 = new Wisej.Web.Panel();
             this.textBox1 = new Wisej.Web.TextBox();
-            this.label1 = new Wisej.Web.Label();
+            this.panel32 = new Wisej.Web.Panel();
+            this.textBox16 = new Wisej.Web.TextBox();
+            this.textBox14 = new Wisej.Web.TextBox();
+            this.textBox12 = new Wisej.Web.TextBox();
+            this.line1 = new Wisej.Web.Line();
+            this.textBox11 = new Wisej.Web.TextBox();
+            this.textBox20 = new Wisej.Web.TextBox();
+            this.comboBox3 = new Wisej.Web.ComboBox();
+            this.textBox13 = new Wisej.Web.TextBox();
+            this.textBox3 = new Wisej.Web.TextBox();
+            this.panel5 = new Wisej.Web.Panel();
+            this.textBox6 = new Wisej.Web.TextBox();
+            this.textBox9 = new Wisej.Web.TextBox();
+            this.line2 = new Wisej.Web.Line();
+            this.textBox10 = new Wisej.Web.TextBox();
+            this.textBox15 = new Wisej.Web.TextBox();
+            this.textBox8 = new Wisej.Web.TextBox();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel32.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // popTestButton
+            // panel2
             // 
-            this.popTestButton.Location = new System.Drawing.Point(628, 387);
-            this.popTestButton.Name = "popTestButton";
-            this.popTestButton.Size = new System.Drawing.Size(100, 27);
-            this.popTestButton.TabIndex = 35;
-            this.popTestButton.Text = "button1";
+            this.panel2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel32);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(621, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(760, 860);
+            this.panel2.TabIndex = 45;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.button3.CssStyle = resources.GetString("button3.CssStyle");
+            this.button3.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button3.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button3.Location = new System.Drawing.Point(530, 20);
+            this.button3.Margin = new Wisej.Web.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 32);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "삭제";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.button1.CssStyle = resources.GetString("button1.CssStyle");
+            this.button1.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button1.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button1.Location = new System.Drawing.Point(640, 20);
+            this.button1.Margin = new Wisej.Web.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 32);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "저장";
+            // 
+            // label3
+            // 
+            this.label3.CssStyle = "display: block;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    text-align: left;" +
+    "\r\n    color: #111;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n";
+            this.label3.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.Location = new System.Drawing.Point(20, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(352, 32);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "방송 편집 : 오크동 입구 IoT 방송";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(19, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(580, 860);
+            this.panel1.TabIndex = 44;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.button2.CssStyle = resources.GetString("button2.CssStyle");
+            this.button2.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button2.Location = new System.Drawing.Point(460, 20);
+            this.button2.Margin = new Wisej.Web.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 32);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "추가";
+            // 
+            // label2
+            // 
+            this.label2.CssStyle = "display: block;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    text-align: left;" +
+    "\r\n    color: #111;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n";
+            this.label2.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Location = new System.Drawing.Point(20, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(223, 32);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "외부 IoT 기기 접속";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.panel10);
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
+            this.panel3.Location = new System.Drawing.Point(20, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(540, 770);
+            this.panel3.TabIndex = 33;
+            this.panel3.Text = "listPanel";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel10.Controls.Add(this.textBox2);
+            this.panel10.Location = new System.Drawing.Point(0, 160);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(540, 60);
+            this.panel10.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.AutoSize = false;
+            this.textBox2.BackColor = System.Drawing.Color.Transparent;
+            this.textBox2.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox2.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox2.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox2.Location = new System.Drawing.Point(22, 20);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(497, 20);
+            this.textBox2.TabIndex = 2;
+            this.textBox2.Text = "3동 입구 IoT 방송";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(52, 129, 255);
+            this.panel7.Controls.Add(this.textBox4);
+            this.panel7.Location = new System.Drawing.Point(0, 80);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(540, 60);
+            this.panel7.TabIndex = 1;
+            // 
+            // textBox4
+            // 
+            this.textBox4.AutoSize = false;
+            this.textBox4.BackColor = System.Drawing.Color.Transparent;
+            this.textBox4.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox4.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox4.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(20, 20);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(497, 20);
+            this.textBox4.TabIndex = 1;
+            this.textBox4.Text = "오크동 입구 IoT 방송";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(540, 60);
+            this.panel4.TabIndex = 0;
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.Location = new System.Drawing.Point(348, 145);
+            this.textBox1.AutoSize = false;
+            this.textBox1.BackColor = System.Drawing.Color.Transparent;
+            this.textBox1.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox1.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox1.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox1.Location = new System.Drawing.Point(20, 20);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 32);
-            this.textBox1.TabIndex = 34;
+            this.textBox1.Size = new System.Drawing.Size(497, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "파인동 입구 IoT 방송";
             // 
-            // label1
+            // panel32
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(64, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 30);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "방송관리-IoT 방송관리";
+            this.panel32.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel32.Controls.Add(this.textBox3);
+            this.panel32.Controls.Add(this.textBox13);
+            this.panel32.Controls.Add(this.comboBox3);
+            this.panel32.Controls.Add(this.textBox16);
+            this.panel32.Controls.Add(this.textBox14);
+            this.panel32.Controls.Add(this.textBox12);
+            this.panel32.Controls.Add(this.line1);
+            this.panel32.Controls.Add(this.textBox11);
+            this.panel32.Controls.Add(this.textBox20);
+            this.panel32.Location = new System.Drawing.Point(20, 70);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(720, 240);
+            this.panel32.TabIndex = 32;
+            // 
+            // textBox16
+            // 
+            this.textBox16.AutoSize = false;
+            this.textBox16.BackColor = System.Drawing.Color.Transparent;
+            this.textBox16.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox16.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox16.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox16.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox16.Location = new System.Drawing.Point(20, 184);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(120, 36);
+            this.textBox16.TabIndex = 10;
+            this.textBox16.Text = "접속 제약";
+            // 
+            // textBox14
+            // 
+            this.textBox14.AutoSize = false;
+            this.textBox14.BackColor = System.Drawing.Color.Transparent;
+            this.textBox14.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox14.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox14.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox14.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox14.Location = new System.Drawing.Point(20, 131);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(120, 36);
+            this.textBox14.TabIndex = 8;
+            this.textBox14.Text = "Key";
+            // 
+            // textBox12
+            // 
+            this.textBox12.AutoSize = false;
+            this.textBox12.BackColor = System.Drawing.Color.Transparent;
+            this.textBox12.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox12.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox12.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox12.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox12.Location = new System.Drawing.Point(20, 77);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(120, 36);
+            this.textBox12.TabIndex = 4;
+            this.textBox12.Text = "기기명";
+            // 
+            // line1
+            // 
+            this.line1.LineColor = System.Drawing.Color.FromArgb(228, 234, 246);
+            this.line1.Location = new System.Drawing.Point(20, 57);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(680, 1);
+            // 
+            // textBox11
+            // 
+            this.textBox11.AutoSize = false;
+            this.textBox11.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox11.CssStyle = "width: 22px;\r\n    height: 22px;\r\n    border-radius: 11px;\r\n        background: #5" +
+    "B99FF;\r\n    text-align: center;\r\n    font-size: 14px;\r\n    color: #fff;\r\n    fon" +
+    "t-weight: 700;";
+            this.textBox11.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox11.ForeColor = System.Drawing.Color.White;
+            this.textBox11.Location = new System.Drawing.Point(20, 20);
+            this.textBox11.Margin = new Wisej.Web.Padding(0);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(22, 22);
+            this.textBox11.TabIndex = 2;
+            this.textBox11.Text = "1";
+            this.textBox11.TextAlign = Wisej.Web.HorizontalAlignment.Center;
+            // 
+            // textBox20
+            // 
+            this.textBox20.AutoSize = false;
+            this.textBox20.BackColor = System.Drawing.Color.Transparent;
+            this.textBox20.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox20.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox20.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox20.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox20.Location = new System.Drawing.Point(52, 20);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(437, 22);
+            this.textBox20.TabIndex = 1;
+            this.textBox20.Text = "외부 IoT 기기 정의";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.comboBox3.AutoSize = false;
+            this.comboBox3.CssStyle = resources.GetString("comboBox3.CssStyle");
+            this.comboBox3.Location = new System.Drawing.Point(146, 77);
+            this.comboBox3.Margin = new Wisej.Web.Padding(0);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(232, 36);
+            this.comboBox3.TabIndex = 109;
+            // 
+            // textBox13
+            // 
+            this.textBox13.AutoSize = false;
+            this.textBox13.CssStyle = resources.GetString("textBox13.CssStyle");
+            this.textBox13.Location = new System.Drawing.Point(146, 131);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(554, 36);
+            this.textBox13.TabIndex = 110;
+            // 
+            // textBox3
+            // 
+            this.textBox3.AutoSize = false;
+            this.textBox3.CssStyle = resources.GetString("textBox3.CssStyle");
+            this.textBox3.Location = new System.Drawing.Point(146, 184);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(554, 36);
+            this.textBox3.TabIndex = 111;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel5.Controls.Add(this.textBox8);
+            this.panel5.Controls.Add(this.textBox6);
+            this.panel5.Controls.Add(this.textBox9);
+            this.panel5.Controls.Add(this.line2);
+            this.panel5.Controls.Add(this.textBox10);
+            this.panel5.Controls.Add(this.textBox15);
+            this.panel5.Location = new System.Drawing.Point(20, 330);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(720, 139);
+            this.panel5.TabIndex = 112;
+            // 
+            // textBox6
+            // 
+            this.textBox6.AutoSize = false;
+            this.textBox6.CssStyle = resources.GetString("textBox6.CssStyle");
+            this.textBox6.Location = new System.Drawing.Point(146, 77);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(270, 36);
+            this.textBox6.TabIndex = 110;
+            // 
+            // textBox9
+            // 
+            this.textBox9.AutoSize = false;
+            this.textBox9.BackColor = System.Drawing.Color.Transparent;
+            this.textBox9.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox9.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox9.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox9.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox9.Location = new System.Drawing.Point(20, 77);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(120, 36);
+            this.textBox9.TabIndex = 4;
+            this.textBox9.Text = "방송시간";
+            // 
+            // line2
+            // 
+            this.line2.LineColor = System.Drawing.Color.FromArgb(228, 234, 246);
+            this.line2.Location = new System.Drawing.Point(20, 57);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(680, 1);
+            // 
+            // textBox10
+            // 
+            this.textBox10.AutoSize = false;
+            this.textBox10.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox10.CssStyle = "width: 22px;\r\n    height: 22px;\r\n    border-radius: 11px;\r\n        background: #5" +
+    "B99FF;\r\n    text-align: center;\r\n    font-size: 14px;\r\n    color: #fff;\r\n    fon" +
+    "t-weight: 700;";
+            this.textBox10.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox10.ForeColor = System.Drawing.Color.White;
+            this.textBox10.Location = new System.Drawing.Point(20, 20);
+            this.textBox10.Margin = new Wisej.Web.Padding(0);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(22, 22);
+            this.textBox10.TabIndex = 2;
+            this.textBox10.Text = "2";
+            this.textBox10.TextAlign = Wisej.Web.HorizontalAlignment.Center;
+            // 
+            // textBox15
+            // 
+            this.textBox15.AutoSize = false;
+            this.textBox15.BackColor = System.Drawing.Color.Transparent;
+            this.textBox15.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.textBox15.CssStyle = "\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    color: #111;\r\n\r\n    overflow: " +
+    "hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;";
+            this.textBox15.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox15.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.textBox15.Location = new System.Drawing.Point(52, 20);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(437, 22);
+            this.textBox15.TabIndex = 1;
+            this.textBox15.Text = "방송 Action";
+            // 
+            // textBox8
+            // 
+            this.textBox8.AutoSize = false;
+            this.textBox8.CssStyle = resources.GetString("textBox8.CssStyle");
+            this.textBox8.Location = new System.Drawing.Point(430, 77);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(270, 36);
+            this.textBox8.TabIndex = 113;
             // 
             // View_BBSIoTApplication
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.popTestButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.CssStyle = "background: /*#F0F0F0*/#eeeff8;";
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_BBSIoTApplication";
             this.Size = new System.Drawing.Size(1400, 900);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel32.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Wisej.Web.Button popTestButton;
+        private Wisej.Web.Panel panel2;
+        private Wisej.Web.Button button3;
+        private Wisej.Web.Button button1;
+        private Wisej.Web.Label label3;
+        private Wisej.Web.Panel panel1;
+        private Wisej.Web.Button button2;
+        private Wisej.Web.Label label2;
+        private Wisej.Web.Panel panel3;
+        private Wisej.Web.Panel panel10;
+        private Wisej.Web.TextBox textBox2;
+        private Wisej.Web.Panel panel7;
+        private Wisej.Web.TextBox textBox4;
+        private Wisej.Web.Panel panel4;
         private Wisej.Web.TextBox textBox1;
-        private Wisej.Web.Label label1;
+        private Wisej.Web.Panel panel32;
+        private Wisej.Web.ComboBox comboBox3;
+        private Wisej.Web.TextBox textBox16;
+        private Wisej.Web.TextBox textBox14;
+        private Wisej.Web.TextBox textBox12;
+        private Wisej.Web.Line line1;
+        private Wisej.Web.TextBox textBox11;
+        private Wisej.Web.TextBox textBox20;
+        private Wisej.Web.Panel panel5;
+        private Wisej.Web.TextBox textBox8;
+        private Wisej.Web.TextBox textBox6;
+        private Wisej.Web.TextBox textBox9;
+        private Wisej.Web.Line line2;
+        private Wisej.Web.TextBox textBox10;
+        private Wisej.Web.TextBox textBox15;
+        private Wisej.Web.TextBox textBox3;
+        private Wisej.Web.TextBox textBox13;
     }
 }

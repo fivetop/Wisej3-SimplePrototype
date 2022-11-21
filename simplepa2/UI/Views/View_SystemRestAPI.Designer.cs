@@ -28,55 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.popTestButton = new Wisej.Web.Button();
-            this.textBox1 = new Wisej.Web.TextBox();
-            this.label1 = new Wisej.Web.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_SystemRestAPI));
+            this.panel2 = new Wisej.Web.Panel();
+            this.button1 = new Wisej.Web.Button();
+            this.label3 = new Wisej.Web.Label();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // popTestButton
+            // panel2
             // 
-            this.popTestButton.Location = new System.Drawing.Point(541, 141);
-            this.popTestButton.Name = "popTestButton";
-            this.popTestButton.Size = new System.Drawing.Size(100, 27);
-            this.popTestButton.TabIndex = 71;
-            this.popTestButton.Text = "button1";
+            this.panel2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(175, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1051, 860);
+            this.panel2.TabIndex = 49;
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.Location = new System.Drawing.Point(281, 135);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 32);
-            this.textBox1.TabIndex = 70;
+            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.button1.CssStyle = resources.GetString("button1.CssStyle");
+            this.button1.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button1.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button1.Location = new System.Drawing.Point(930, 807);
+            this.button1.Margin = new Wisej.Web.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 32);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "키 재생성";
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(53, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 30);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "시스템-RESTAPI";
+            this.label3.CssStyle = "display: block;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    text-align: left;" +
+    "\r\n    color: #111;\r\n    font-size: 18px;\r\n    font-weight: 500;\r\n";
+            this.label3.Font = new System.Drawing.Font("default", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.Location = new System.Drawing.Point(20, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(352, 32);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Rest API";
             // 
             // View_SystemRestAPI
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.popTestButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_SystemRestAPI";
             this.Size = new System.Drawing.Size(1400, 900);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Wisej.Web.Button popTestButton;
-        private Wisej.Web.TextBox textBox1;
-        private Wisej.Web.Label label1;
+        private Wisej.Web.Panel panel2;
+        private Wisej.Web.Button button1;
+        private Wisej.Web.Label label3;
     }
 }
