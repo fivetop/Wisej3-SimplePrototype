@@ -126,6 +126,9 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="UI\Components\Comp_SiteCard.resx">
+      <DependentUpon>Comp_SiteCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Pages\PA_MainFrame.resx">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -705,6 +708,12 @@
     </Compile>
     <Compile Include="UI\Base\PA_MainFrame.Designer.cs">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_SiteCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_SiteCard.Designer.cs">
+      <DependentUpon>Comp_SiteCard.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Pages\PA_Login.cs">
       <SubType>Form</SubType>

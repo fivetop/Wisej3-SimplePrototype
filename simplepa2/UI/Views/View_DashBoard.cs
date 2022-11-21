@@ -16,6 +16,12 @@ namespace simplepa2.UI.Views
 
         BindingList<bsroom> dataSource = new BindingList<bsroom>();
 
+        public void Refresh()
+        {
+            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+            this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
+        }
+
         private void View_DashBoard_Load(object sender, EventArgs e)
         {
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);

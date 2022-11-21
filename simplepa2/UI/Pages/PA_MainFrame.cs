@@ -89,6 +89,21 @@ namespace simplepa2.UI.Pages
             gweb.Log("Start Simple PA 2.0");
         }
 
+        private void PA_MainFrame_Load(object sender, EventArgs e)
+        {
+            dBSqlite.DBInit();
+            //signalRClient.owner = this;
+            //signalRClient.ConnectToSignalR();
+
+            var t1 = Application.Session["user"];
+            var t2 = Application.Session["user_name"];
+
+            AlertBox.Show("Log-In : " + t2 + t1);
+
+            openContentsView("대쉬보드");
+        }
+
+
         internal void eRcvSigR(SignalRMsg message)
         {
         }
@@ -110,24 +125,11 @@ namespace simplepa2.UI.Pages
                 dBSqlite.Eventvm(l1, user_id, str1);
             }
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+            //view_PADashboard.Refresh ();
         }
 
         internal void eEMLogoutEvent()
         {
-        }
-
-        private void PA_MainFrame_Load(object sender, EventArgs e)
-        {
-            dBSqlite.DBInit();
-            //signalRClient.owner = this;
-            //signalRClient.ConnectToSignalR();
-
-            var t1 = Application.Session["user"];
-            var t2 = Application.Session["user_name"];
-
-            AlertBox.Show("Log-In : " + t2 + t1);
-
-            openContentsView("대쉬보드");
         }
 
 
