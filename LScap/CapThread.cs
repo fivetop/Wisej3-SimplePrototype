@@ -50,7 +50,8 @@ namespace LScap
         public static bool LSpcapStart()
         {
             gl.NetWorkCardFind();
-            device = CaptureDeviceList.Instance[gl.NetworkCardNo];
+            CaptureDeviceList dev1 = CaptureDeviceList.Instance;
+            device = dev1[gl.NetworkCardNo];
             if (device == null)
                 return false;
             device.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);

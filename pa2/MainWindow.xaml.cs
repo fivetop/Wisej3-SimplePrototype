@@ -291,6 +291,7 @@ namespace pa
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             SendSigR(eSignalRMsgType.eEM, "EM Info : " + g._EMClient.EM_NAME);
+            signalRClient.HubDisconnect();
 
             Devicetimer.Stop();
 
@@ -401,7 +402,7 @@ namespace pa
         }
         #endregion
 
-        #region // 버튼 유틸 처리 
+        #region // 시험 버튼 유틸 처리 
 
 
         private void _but2_Click(object sender, RoutedEventArgs e)
@@ -471,7 +472,7 @@ namespace pa
             testGuid = Guid.NewGuid();
             SignalRMsg msg1 = new SignalRMsg();
             msg1.message = "Play";
-            msg1.user = "Admin";
+            msg1.user = g._EMClient.EM_NAME;
             msg1.Guid = testGuid;
             msg1.Msgtype = eSignalRMsgType.ePlay;
             msg1.assetsRows.Add(1);
@@ -483,11 +484,48 @@ namespace pa
         {
             SignalRMsg msg1 = new SignalRMsg();
             msg1.message = "Stop";
-            msg1.user = "Admin";
+            msg1.user = g._EMClient.EM_NAME;
             msg1.Guid = testGuid;
             msg1.Msgtype = eSignalRMsgType.eStop;
             g.mainWindow.RcvSigR(msg1);
 
+        }
+
+        // 오디오 처리용 
+        System.Timers.Timer testimer = new System.Timers.Timer(1000); // 1000
+
+        int test = 0;
+        bool first = true;
+
+        private void _but6_Click(object sender, RoutedEventArgs e)
+        {
+
+            //SendSigR("PLAYING", eSignalRMsgType.ePlaying, 1, 0);
+            SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd, 0, 0);
+
+            //SendSigR("Hello Client", eSignalRMsgType.eEM, 0, 0);
+
+            alarmtest = !alarmtest;
+
+            /*
+            if (first)
+            {
+                testimer.Elapsed += Testimer_Elapsed;
+                first = false;
+            }
+            if (alarmtest)
+            {
+                //sendErr(0xB1); // err
+                testimer.Start();
+
+            }
+            else
+            {
+                //sendErr(0xC1);// off
+                testimer.Stop();
+                //BSThreadClass.AddData(i.ToString());
+            }
+            // */
         }
 
 
