@@ -712,207 +712,301 @@
   <ItemGroup>
     <Compile Include="global.cs" />
     <Compile Include="SignalR\SignalRHub.cs" />
-    <Compile Include="UI\Base\PA_MainFrame.cs" />
+    <Compile Include="UI\Base\PA_MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\Base\PA_MainFrame.Designer.cs">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Components\Comp_SiteCard.cs" />
+    <Compile Include="UI\Components\Comp_SiteCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.Designer.cs">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Pages\PA_Login.cs" />
+    <Compile Include="UI\Pages\PA_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\Pages\PA_Login.Designer.cs">
       <DependentUpon>PA_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Pages\PA_MainFrame.cs" />
+    <Compile Include="UI\Pages\PA_MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\Pages\PA_MainFrame.Designer.cs">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Popups\Popup_BBCDeviceForm.cs" />
+    <Compile Include="UI\Popups\Popup_BBCDeviceForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Popups\Popup_BBCDeviceForm.Designer.cs">
       <DependentUpon>Popup_BBCDeviceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Popups\Popup_BBCEmergencyForm.cs" />
+    <Compile Include="UI\Popups\Popup_BBCEmergencyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Popups\Popup_BBCEmergencyForm.Designer.cs">
       <DependentUpon>Popup_BBCEmergencyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Popups\Popup_BBCOutputForm.cs" />
+    <Compile Include="UI\Popups\Popup_BBCOutputForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Popups\Popup_BBCOutputForm.Designer.cs">
       <DependentUpon>Popup_BBCOutputForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Popups\Popup_BBCSiteForm.cs" />
+    <Compile Include="UI\Popups\Popup_BBCSiteForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Popups\Popup_BBCSiteForm.Designer.cs">
       <DependentUpon>Popup_BBCSiteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Popups\Popup_BBCZoneForm.cs" />
+    <Compile Include="UI\Popups\Popup_BBCZoneForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Popups\Popup_BBCZoneForm.Designer.cs">
       <DependentUpon>Popup_BBCZoneForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Popups\UploadGit Test1.cs" />
-    <Compile Include="UI\Popups\UploadGit Test1.Designer.cs">
-      <DependentUpon>UploadGit Test1.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCAmpFailover.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\View_BBCAmpFailover.cs" />
     <Compile Include="UI\Views\View_BBCAmpFailover.Designer.cs">
       <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCEmergency.cs" />
+    <Compile Include="UI\Views\View_BBCEmergency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBCEmergency.Designer.cs">
       <DependentUpon>View_BBCEmergency.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCInput.cs" />
+    <Compile Include="UI\Views\View_BBCInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBCInput.Designer.cs">
       <DependentUpon>View_BBCInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCMusic.cs" />
+    <Compile Include="UI\Views\View_BBCMusic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBCMusic.Designer.cs">
       <DependentUpon>View_BBCMusic.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCOutput.cs" />
+    <Compile Include="UI\Views\View_BBCOutput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBCOutput.Designer.cs">
       <DependentUpon>View_BBCOutput.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCSite.cs" />
+    <Compile Include="UI\Views\View_BBCSite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBCSite.Designer.cs">
       <DependentUpon>View_BBCSite.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBSAnchor.cs" />
+    <Compile Include="UI\Views\View_BBSAnchor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBSAnchor.Designer.cs">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBSGroupManage.cs" />
+    <Compile Include="UI\Views\View_BBSGroupManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBSGroupManage.Designer.cs">
       <DependentUpon>View_BBSGroupManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBSHolidayManage.cs" />
+    <Compile Include="UI\Views\View_BBSHolidayManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBSHolidayManage.Designer.cs">
       <DependentUpon>View_BBSHolidayManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBSIoTApplication.cs" />
+    <Compile Include="UI\Views\View_BBSIoTApplication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBSIoTApplication.Designer.cs">
       <DependentUpon>View_BBSIoTApplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBSMusicManage.cs" />
+    <Compile Include="UI\Views\View_BBSMusicManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBSMusicManage.Designer.cs">
       <DependentUpon>View_BBSMusicManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBSPresetManage.cs" />
+    <Compile Include="UI\Views\View_BBSPresetManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBSPresetManage.Designer.cs">
       <DependentUpon>View_BBSPresetManage.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBSReservation.cs" />
+    <Compile Include="UI\Views\View_BBSReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBSReservation.Designer.cs">
       <DependentUpon>View_BBSReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_DashBoard.cs" />
+    <Compile Include="UI\Views\View_DashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_DashBoard.Designer.cs">
       <DependentUpon>View_DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_HistoryBBS.cs" />
+    <Compile Include="UI\Views\View_HistoryBBS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_HistoryBBS.Designer.cs">
       <DependentUpon>View_HistoryBBS.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_HistoryDevice.cs" />
+    <Compile Include="UI\Views\View_HistoryDevice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_HistoryDevice.Designer.cs">
       <DependentUpon>View_HistoryDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_HistoryFireSignal.cs" />
+    <Compile Include="UI\Views\View_HistoryFireSignal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_HistoryFireSignal.Designer.cs">
       <DependentUpon>View_HistoryFireSignal.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_HistoryOutMsgs.cs" />
+    <Compile Include="UI\Views\View_HistoryOutMsgs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_HistoryOutMsgs.Designer.cs">
       <DependentUpon>View_HistoryOutMsgs.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_HistorySystemChanges.cs" />
+    <Compile Include="UI\Views\View_HistorySystemChanges.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_HistorySystemChanges.Designer.cs">
       <DependentUpon>View_HistorySystemChanges.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_SystemAccount.cs" />
+    <Compile Include="UI\Views\View_SystemAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_SystemAccount.Designer.cs">
       <DependentUpon>View_SystemAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_SystemEmail.cs" />
+    <Compile Include="UI\Views\View_SystemEmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_SystemEmail.Designer.cs">
       <DependentUpon>View_SystemEmail.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_SystemRestAPI.cs" />
+    <Compile Include="UI\Views\View_SystemRestAPI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_SystemRestAPI.Designer.cs">
       <DependentUpon>View_SystemRestAPI.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_SystemSMSRegistration.cs" />
+    <Compile Include="UI\Views\View_SystemSMSRegistration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_SystemSMSRegistration.Designer.cs">
       <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_TopPanelBar.cs" />
+    <Compile Include="UI\Views\View_TopPanelBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_TopPanelBar.Designer.cs">
       <DependentUpon>View_TopPanelBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\c04.cs" />
+    <Compile Include="win2\c04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\c04.Designer.cs">
       <DependentUpon>c04.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\c03.cs" />
+    <Compile Include="win2\c03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\c03.Designer.cs">
       <DependentUpon>c03.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\c02.cs" />
+    <Compile Include="win2\c02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\c02.Designer.cs">
       <DependentUpon>c02.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\c01.cs" />
+    <Compile Include="win2\c01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\c01.Designer.cs">
       <DependentUpon>c01.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\b05.cs" />
+    <Compile Include="win2\b05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\b05.Designer.cs">
       <DependentUpon>b05.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\b04.cs" />
+    <Compile Include="win2\b04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\b04.Designer.cs">
       <DependentUpon>b04.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\b03.cs" />
+    <Compile Include="win2\b03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\b03.Designer.cs">
       <DependentUpon>b03.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\b02.cs" />
+    <Compile Include="win2\b02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\b02.Designer.cs">
       <DependentUpon>b02.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\b01.cs" />
+    <Compile Include="win2\b01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\b01.Designer.cs">
       <DependentUpon>b01.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\a01.cs" />
+    <Compile Include="win2\a01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\a01.Designer.cs">
       <DependentUpon>a01.cs</DependentUpon>
     </Compile>
     <Compile Include="bsroom.cs" />
-    <Compile Include="chat\SimpleChatClient.cs" />
+    <Compile Include="chat\SimpleChatClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="chat\SimpleChatClient.Designer.cs">
       <DependentUpon>SimpleChatClient.cs</DependentUpon>
     </Compile>
     <Compile Include="chat\SimpleChatServer.cs" />
     <Compile Include="chat\SimpleChatServerEventArgs.cs" />
     <Compile Include="chat\SimpleChatServerEventHandler.cs" />
-    <Compile Include="Control\bslamp.cs" />
+    <Compile Include="Control\bslamp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Control\bslamp.Designer.cs">
       <DependentUpon>bslamp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\DeviceCTL.cs" />
+    <Compile Include="Control\DeviceCTL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Control\DeviceCTL.designer.cs">
       <DependentUpon>DeviceCTL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\gPanel.cs" />
+    <Compile Include="Control\gPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Control\gPanel.Designer.cs">
       <DependentUpon>gPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\ListviewCTL.cs" />
+    <Compile Include="Control\ListviewCTL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Control\ListviewCTL.Designer.cs">
       <DependentUpon>ListviewCTL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\UserControl1.cs" />
+    <Compile Include="Control\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Control\UserControl1.designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
@@ -924,7 +1018,9 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DBController.cs" />
-    <Compile Include="Examples\BackgroundTasks.cs" />
+    <Compile Include="Examples\BackgroundTasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Examples\BackgroundTasks.Designer.cs">
       <DependentUpon>BackgroundTasks.cs</DependentUpon>
     </Compile>
@@ -933,11 +1029,15 @@
       <DependentUpon>Handler1.ashx</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
-    <Compile Include="LoginPage.cs" />
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page2.cs" />
+    <Compile Include="Page2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Page2.Designer.cs">
       <DependentUpon>Page2.cs</DependentUpon>
     </Compile>
@@ -946,13 +1046,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Simple.cs" />
+    <Compile Include="Simple.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Simple.Designer.cs">
       <DependentUpon>Simple.cs</DependentUpon>
     </Compile>
-    <Compile Include="Simple2.cs" />
-    <Compile Include="Simple9.cs" />
-    <Compile Include="Popups\StartPopup.cs" />
+    <Compile Include="Simple2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simple9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\StartPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Popups\StartPopup.Designer.cs">
       <DependentUpon>StartPopup.cs</DependentUpon>
     </Compile>
@@ -961,95 +1069,141 @@
     <Compile Include="webapi\ApiController1.cs" />
     <Compile Include="webapi\Encryption.cs" />
     <Compile Include="webapi\MessageHandler.cs" />
-    <Compile Include="win2\a02.cs" />
+    <Compile Include="win2\a02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\a02.Designer.cs">
       <DependentUpon>a02.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\a03.cs" />
+    <Compile Include="win2\a03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\a03.Designer.cs">
       <DependentUpon>a03.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\a04.cs" />
+    <Compile Include="win2\a04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\a04.Designer.cs">
       <DependentUpon>a04.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\a05.cs" />
+    <Compile Include="win2\a05.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\a05.Designer.cs">
       <DependentUpon>a05.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\a06.cs" />
+    <Compile Include="win2\a06.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\a06.Designer.cs">
       <DependentUpon>a06.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\a08.cs" />
+    <Compile Include="win2\a08.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\a08.Designer.cs">
       <DependentUpon>a08.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\a07.cs" />
+    <Compile Include="win2\a07.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win2\a07.Designer.cs">
       <DependentUpon>a07.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\AGroup.cs" />
+    <Compile Include="win\AGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\AGroup.Designer.cs">
       <DependentUpon>AGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\APreset.cs" />
+    <Compile Include="win\APreset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\APreset.Designer.cs">
       <DependentUpon>APreset.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\ASchedule.cs" />
+    <Compile Include="win\ASchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\ASchedule.Designer.cs">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCZone.cs" />
+    <Compile Include="UI\Views\View_BBCZone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBCZone.Designer.cs">
       <DependentUpon>View_BBCZone.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCDevice.cs" />
+    <Compile Include="UI\Views\View_BBCDevice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UI\Views\View_BBCDevice.Designer.cs">
       <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSEMManager.cs" />
+    <Compile Include="win\BSEMManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\BSEMManager.Designer.cs">
       <DependentUpon>BSEMManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSInManager.cs" />
+    <Compile Include="win\BSInManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\BSInManager.Designer.cs">
       <DependentUpon>BSInManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSLevelManager.cs" />
+    <Compile Include="win\BSLevelManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\BSLevelManager.Designer.cs">
       <DependentUpon>BSLevelManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSOutManager.cs" />
+    <Compile Include="win\BSOutManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\BSOutManager.Designer.cs">
       <DependentUpon>BSOutManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MGroupManager.cs" />
+    <Compile Include="win\MGroupManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\MGroupManager.Designer.cs">
       <DependentUpon>MGroupManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MHolidayManager.cs" />
+    <Compile Include="win\MHolidayManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\MHolidayManager.Designer.cs">
       <DependentUpon>MHolidayManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MMusicManager.cs" />
+    <Compile Include="win\MMusicManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\MMusicManager.Designer.cs">
       <DependentUpon>MMusicManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MSetupManager.cs" />
+    <Compile Include="win\MSetupManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\MSetupManager.Designer.cs">
       <DependentUpon>MSetupManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MUserManager.cs" />
+    <Compile Include="win\MUserManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="win\MUserManager.Designer.cs">
       <DependentUpon>MUserManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\PMusicSel.cs" />
+    <Compile Include="win\PMusicSel.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="win\PMusicSel.Designer.cs">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\Window1.cs" />
+    <Compile Include="win\Window1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="win\Window1.Designer.cs">
       <DependentUpon>Window1.cs</DependentUpon>
     </Compile>
