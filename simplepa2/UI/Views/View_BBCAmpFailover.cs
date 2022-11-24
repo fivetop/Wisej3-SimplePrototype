@@ -8,6 +8,15 @@ namespace simplepa2.UI.Views
         public View_BBCAmpFailover()
         {
             InitializeComponent();
+
+            //testet gitgitgit
         }
+
+        //11
+        //22
+        //33\
+        //44
+        //55 add versopm
+
     }
 }

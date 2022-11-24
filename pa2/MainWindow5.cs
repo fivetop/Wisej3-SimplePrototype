@@ -902,38 +902,6 @@ namespace pa
 
         #region // P형 수신기 테스트  
 
-        // 오디오 처리용 
-        System.Timers.Timer testimer = new System.Timers.Timer(1000); // 1000
-
-        int test = 0;
-        bool first = true;
-
-        private void _but6_Click(object sender, RoutedEventArgs e)
-        {
-            SendSigR("Hello Client", eSignalRMsgType.eEM, 0, 0);
-
-            alarmtest = !alarmtest;
-
-            /*
-            if (first)
-            {
-                testimer.Elapsed += Testimer_Elapsed;
-                first = false;
-            }
-            if (alarmtest)
-            {
-                //sendErr(0xB1); // err
-                testimer.Start();
-
-            }
-            else
-            {
-                //sendErr(0xC1);// off
-                testimer.Stop();
-                //BSThreadClass.AddData(i.ToString());
-            }
-            // */
-        }
 
         private void Testimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {

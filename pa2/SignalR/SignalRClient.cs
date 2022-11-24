@@ -5,6 +5,7 @@ using System;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace pa
 {
@@ -25,6 +26,7 @@ namespace pa
 
         public void HubDisconnect()
         {
+            Hub_Disconnect_Flag = true;
             hubConnection.Dispose();
         }
 
@@ -163,17 +165,26 @@ namespace pa
             // Console.WriteLine(string.Format("connection_Reconnected New State:" + hubConnection.State + " " + hubConnection.ConnectionId));
         }
 
+        Thread t1;
         // 커넥션이 종료된 경우 -> 디버깅시 발생 
         private void Connection_Closed()
         {
             eDisConnect?.Invoke("Disconnect", null);
             //owner.LabelON(9, false);
             Console.WriteLine("SignalR Client Disconnected.");
-            //if (!Hub_Disconnect_Flag)
+            if (!Hub_Disconnect_Flag)
             {
-                Thread.Sleep(30000);
-                ConnectToSignalR();
+                t1 = new Thread(new ThreadStart(Run));
+                t1.Start();
             }
+
+        }
+
+        void Run()
+        {
+            Thread.Sleep(10000); // 30000
+            ConnectToSignalR();
+            t1.Abort();
         }
 
         // 서버와 연결/해제 되면 해당 색상이 바뀜

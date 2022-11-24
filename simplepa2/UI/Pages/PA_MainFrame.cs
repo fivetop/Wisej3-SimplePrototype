@@ -107,11 +107,6 @@ namespace simplepa2.UI.Pages
         internal void eRcvSigR(SignalRMsg message)
         {
             RcvSigR(message);
-
-            Application.Update(this, () =>
-            {
-                AlertBox.Show(message.message);
-            });
         }
 
         internal void eEMLoginEvent(Microsoft.AspNet.SignalR.Hubs.HubCallerContext context, int v)
@@ -282,25 +277,18 @@ namespace simplepa2.UI.Pages
 
         internal void RcvSigR(SignalRMsg msg1)
         {
+            string addinfo = "";
             LabelON(9, true);
 
             switch (msg1.Msgtype)
             {
                 case eSignalRMsgType.eEM:
-                    gweb.Log(msg1.Msgtype.ToString() +":"+ msg1.user);
-
-                    string l1 = msg1.user + " EM connect";
                     if (msg1.state == 1)
-                    {
-                        dBSqlite.Eventvm(l1, msg1.user, "ONLINE");
-                        dBSqlite.updateEMServer(msg1.user, "ONLINE");
-                    }
+                        addinfo = "ONLINE";
                     else
-                    {
-                        l1 = msg1.user + " EM disconnect";
-                        dBSqlite.Eventvm(l1, msg1.user, "OFFLINE");
-                        dBSqlite.updateEMServer(msg1.user, "OFFLINE");
-                    }
+                        addinfo = "OFFLINE";
+                    dBSqlite.Eventvm(addinfo, msg1.user, addinfo);
+                    dBSqlite.updateEMServer(msg1.user, addinfo);
                     view_Dashboard.Refresh();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
@@ -339,6 +327,12 @@ namespace simplepa2.UI.Pages
 
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
             // 각 뷰 리플레시 필요 
+
+            Application.Update(this, () =>
+            {
+                AlertBox.Show(msg1.message + ":" + addinfo);
+                gweb.Log(msg1.message + ":" + addinfo);
+            });
         }
 
         // 8채널 출력용 
