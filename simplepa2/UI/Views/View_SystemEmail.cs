@@ -14,5 +14,10 @@ namespace simplepa2.UI.Views
         {
 
         }
+
+        private void panel32_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
     }
 }

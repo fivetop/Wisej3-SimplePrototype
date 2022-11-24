@@ -117,125 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button3.CssStyle" xml:space="preserve">
-    <value>    color: #fff !important;
-    background: #2C4771 !important;
-    border: 1px solid #2C4771 !important;
-    
-    display: block;
-    width: 100px;
-    height: 32px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 700;
-    float: left;</value>
-  </data>
-  <data name="button1.CssStyle" xml:space="preserve">
-    <value>    color: #fff !important;
-    background: #3A86FF !important;
-        border: 1px solid #3A86FF !important;
-    
-    display: block;
-    width: 100px;
-    height: 32px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 700;
-    float: left;</value>
-  </data>
-  <data name="textBox21.CssStyle" xml:space="preserve">
-    <value>height: 36px;
-    line-height: 34px;
-    border: 1px solid #d0d0d0;
-    padding: 0px 10px 0px 14px;
-    border-radius:18px;
-    color: #111;
-    font-size: 15px;
-    font-weight: 500;
-    background: #fff;
-    vertical-align: middle;</value>
-  </data>
-  <data name="textBox23.CssStyle" xml:space="preserve">
-    <value>height: 36px;
-    line-height: 34px;
-    border: 1px solid #d0d0d0;
-    padding: 0px 10px 0px 14px;
-    border-radius:18px;
-    color: #111;
-    font-size: 15px;
-    font-weight: 500;
-    background: #fff;
-    vertical-align: middle;</value>
-  </data>
-  <data name="textBox7.CssStyle" xml:space="preserve">
-    <value>height: 36px;
-    line-height: 34px;
-    border: 1px solid #d0d0d0;
-    padding: 0px 10px 0px 14px;
-    border-radius:18px;
-    color: #111;
-    font-size: 15px;
-    font-weight: 500;
-    background: #fff;
-    vertical-align: middle;</value>
-  </data>
-  <data name="textBox2.CssStyle" xml:space="preserve">
-    <value>height: 36px;
-    line-height: 34px;
-    border: 1px solid #d0d0d0;
-    padding: 0px 10px 0px 14px;
-    border-radius:18px;
-    color: #111;
-    font-size: 15px;
-    font-weight: 500;
-    background: #fff;
-    vertical-align: middle;</value>
-  </data>
-  <data name="textBox1.CssStyle" xml:space="preserve">
-    <value>height: 36px;
-    line-height: 34px;
-    border: 1px solid #d0d0d0;
-    padding: 0px 10px 0px 14px;
-    border-radius:18px;
-    color: #111;
-    font-size: 15px;
-    font-weight: 500;
-    background: #fff;
-    vertical-align: middle;</value>
-  </data>
-  <data name="textBox3.CssStyle" xml:space="preserve">
-    <value>height: 36px;
-    line-height: 34px;
-    border: 1px solid #d0d0d0;
-    padding: 0px 10px 0px 14px;
-    border-radius:18px;
-    color: #111;
-    font-size: 15px;
-    font-weight: 500;
-    background: #fff;
-    vertical-align: middle;</value>
-  </data>
-  <data name="textBox13.CssStyle" xml:space="preserve">
-    <value>height: 36px;
-    line-height: 34px;
-    border: 1px solid #d0d0d0;
-    padding: 0px 10px 0px 14px;
-    border-radius:18px;
-    color: #111;
-    font-size: 15px;
-    font-weight: 500;
-    background: #fff;
-    vertical-align: middle;</value>
-  </data>
   <metadata name="$this.RulerSnapLines" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EHAQAAAAABAAAAAAAAAAQU
-        U3lzdGVtLkRyYXdpbmcuUG9pbnQCAAAACw==
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EHAQAAAAABAAAAAQAAAAQU
+        U3lzdGVtLkRyYXdpbmcuUG9pbnQCAAAABf3///8UU3lzdGVtLkRyYXdpbmcuUG9pbnQCAAAAAXgBeQAA
+        CAgCAAAA/wIAAAAAAAAL
 </value>
   </metadata>
 </root>

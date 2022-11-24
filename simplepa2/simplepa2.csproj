@@ -139,8 +139,14 @@
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSPresetManage.resx">
+      <DependentUpon>View_BBSPresetManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_DashBoard.resx">
       <DependentUpon>View_DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_SystemEmail.resx">
+      <DependentUpon>View_SystemEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="win2\c04.resx">
       <DependentUpon>c04.cs</DependentUpon>

@@ -189,7 +189,24 @@
 		"slidebarButtons": "black",
 		"switchOff": "#8A8A8A",
 		"switchOn": "#6BC2BA",
-		"switchUndetermined": "#DDDDDD"
+		"switchUndetermined": "#DDDDDD",
+		"button1BG": "#3A86FF",
+		"button2BG": "#2C4771",
+		"button1RightBG": "#1D74FF",
+		"button1LeftBG": "#5194FF",
+		"bTextNormal": "#111111",
+		"bTextTopPanelTime": "#3481FF",
+		"bPanelBG1": "#F9FAFC",
+		"bPanelBGline1": "#E4EAF6",
+		"bBolder1": "#E0E3EB",
+		"bReadonly": "#EBEFF6",
+		"bReadonlyBorder": "#E0E3EB",
+		"button3BG": "#2BCEB2",
+		"bPageBG": "#F9FAFC",
+		"bStatusGreen": "#2DE17B",
+		"bStatusYellolw": "#FFF131",
+		"bStatusRed": "#FF5454",
+		"bStatusBlue": "#358CEF"
 	},
 	"appearances": {
 		"accordion": {
@@ -418,23 +435,23 @@
 						"opacity": 1,
 						"center": true,
 						"textColor": "buttonText",
-						"height": 26
+						"height": 32
 					},
 					"styles": {
-						"transition": "background-color 250ms",
-						"color": "transparent",
-						"backgroundColor": "buttonFace",
-						"radius": 2,
-						"shadowColor": "buttonShadow",
-						"shadowBlurRadius": 6,
-						"shadowLength": [1, 4],
-						"css": "{\":before\":{\"content\":\"''\",\"position\":\"absolute\",\"width\":\"0px\",\"height\":\"0px\"}}",
+						"transition": "backgroundColor 250ms",
+						"color": "White",
+						"backgroundColor": "button1BG",
+						"radius": 8,
+						"shadowColor": "none",
+						"shadowBlurRadius": 0,
+						"shadowLength": [0, 0],
+						"css": "",
 						"width": 1
 					}
 				},
 				"hovered": {
 					"styles": {
-						"backgroundColor": "buttonHighlight"
+						"backgroundColor": "button1BG"
 					},
 					"properties": {
 						"cursor": "pointer"
@@ -442,7 +459,7 @@
 				},
 				"focused": {
 					"styles": {
-						"color": "focusFrame"
+						"color": "button1BG"
 					}
 				},
 				"disabled": {
@@ -453,17 +470,17 @@
 				},
 				"checked": {
 					"styles": {
-						"backgroundColor": "buttonSelected"
+						"backgroundColor": "button1BG"
 					},
 					"properties": {
-						"textColor": "buttonSelectedText"
+						"textColor": "buttonText"
 					}
 				},
 				"pressed": {
 					"styles": {
 						"transform": "translate(1px, 1px)",
-						"css": "{\":before\":{\"content\":\"''\",\"position\":\"absolute\",\"width\":\"200%\",\"height\":\"200%\",\"top\":\"-25%\",\"left\":\"-25%\",\"border-radius\":\"100%\",\"background-color\":\"#79BFF8\",\"transition\":\"height .4s, width .3s\"}}",
-						"backgroundColor": "buttonFace"
+						"css": "",
+						"backgroundColor": "button1BG"
 					},
 					"properties": {
 						"textColor": "buttonText"
@@ -751,7 +768,7 @@
 			"states": {
 				"default": {
 					"properties": {
-						"icon": "checkbox",
+						"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAA9klEQVQ4T62VYQqCQBBGpQNEBwzqUnWKfnScKJVKMsiQMlCsbJsnayQVVs7Ap+vufM9ddlwd343eqefOd0PRRNqzpb/fI9r0MUaOza3ppcNb7AZy97bhwSRJZvL8Yq7XohRt+hgjx+bW/M8PHXnzKFjHJk3PpinIIRcP3orzAMrAONwcTFHcrKU5yMWDtwaUqfeDVfwTrAo8eGFUwK63iNbZF8v8FHhhwGKpw214tEP/BwxYAKcn2bm2AQMWS55TDm0DBiyHgqXG2gYMWPpA9SWrbwpbrVo2FKNqYctF/dMrJdPVOxysdI+vSvbQVDlgn/XnLyBy7v+SsST078+TAAAAAElFTkSuQmCC",
 						"opacity": 1
 					},
 					"styles": {
@@ -768,12 +785,12 @@
 				},
 				"checked": {
 					"properties": {
-						"icon": "checkbox-checked"
+						"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABaUlEQVQ4T62VvUoDQRSFF23EIgZ8CiufQX0GjWI0UdBC8AUCCnbBPlYWFjaCYCx8BsEHEFEstBCEWAiiaHM8Z+/uMuPOZoPswLezc2ful93Mz0bRBkLUSZuckzsySNC9YurTmHxuINgijwQlaIzG+vlOY4z0SCh5GMpRbk54REIJo6BcT9gkoYFh2mT9T8wcsbBGnpNgOS1C4dQO66YTN0dNQs2Y21GMZCtA9wp4eAVm99hec/rl4qXvBAz9spLdWCI7uERWFnsWc8b1Jbx3AohWgZkOMLHN+/R/Csg2jy3m5crFixasBShbOAS+foCzG2BcIj1tSLZENDm+cBAUfnxb4uk1MMmn3L+wtsoQmYiF/isvA3Nd4P3TBLcvVquUyET8yvlJafhSlRFkIp6U8LKhdJ6v//QGbJ1Yu0Qm4mVTvLA5IdO7rP21VkS2sEXx1stvsSKyrZdS6eEgKj++Uio7YF3++QlA9AvdUYxFKJin6wAAAABJRU5ErkJggg=="
 					}
 				},
 				"undetermined": {
 					"properties": {
-						"icon": "checkbox-undefined"
+						"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABaUlEQVQ4T62VvUoDQRSFF23EIgZ8CiufQX0GjWI0UdBC8AUCCnbBPlYWFjaCYCx8BsEHEFEstBCEWAiiaHM8Z+/uMuPOZoPswLezc2ful93Mz0bRBkLUSZuckzsySNC9YurTmHxuINgijwQlaIzG+vlOY4z0SCh5GMpRbk54REIJo6BcT9gkoYFh2mT9T8wcsbBGnpNgOS1C4dQO66YTN0dNQs2Y21GMZCtA9wp4eAVm99hec/rl4qXvBAz9spLdWCI7uERWFnsWc8b1Jbx3AohWgZkOMLHN+/R/Csg2jy3m5crFixasBShbOAS+foCzG2BcIj1tSLZENDm+cBAUfnxb4uk1MMmn3L+wtsoQmYiF/isvA3Nd4P3TBLcvVquUyET8yvlJafhSlRFkIp6U8LKhdJ6v//QGbJ1Yu0Qm4mVTvLA5IdO7rP21VkS2sEXx1stvsSKyrZdS6eEgKj++Uio7YF3++QlA9AvdUYxFKJin6wAAAABJRU5ErkJggg=="
 					}
 				},
 				"disabled": {
@@ -791,7 +808,7 @@
 			},
 			"components": {
 				"icon": {
-					"inherit": "icon-dark"
+					"inherit": ""
 				},
 				"label": {
 					"states": {
@@ -938,12 +955,14 @@
 			"states": {
 				"default": {
 					"styles": {
-						"style": "solid"
+						"style": "solid",
+						"css": "{\"border\":\"1px solid #E0E3EB\",\"background-color\":\"#fff\"}",
+						"radius": "18"
 					},
 					"properties": {
-						"padding": 0,
+						"padding": [0, 10, 0, 14],
 						"backgroundColor": "window",
-						"height": 22,
+						"height": 36,
 						"opacity": 1,
 						"textColor": "windowText",
 						"itemHeight": 26
@@ -3892,13 +3911,16 @@
 		"radiobutton": {
 			"components": {
 				"icon": {
-					"inherit": "icon-dark"
+					"inherit": "none"
 				},
 				"label": {
 					"states": {
 						"default": {
 							"properties": {
 								"marginLeft": 4
+							},
+							"styles": {
+								"color": "#111111"
 							}
 						},
 						"rightAligned": {
@@ -3912,23 +3934,23 @@
 			"states": {
 				"default": {
 					"styles": {
-						"width": 1,
+						"width": 0,
 						"color": "transparent"
 					},
 					"properties": {
-						"icon": "radiobutton",
+						"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAA9klEQVQ4T62VYQqCQBBGpQNEBwzqUnWKfnScKJVKMsiQMlCsbJsnayQVVs7Ap+vufM9ddlwd343eqefOd0PRRNqzpb/fI9r0MUaOza3ppcNb7AZy97bhwSRJZvL8Yq7XohRt+hgjx+bW/M8PHXnzKFjHJk3PpinIIRcP3orzAMrAONwcTFHcrKU5yMWDtwaUqfeDVfwTrAo8eGFUwK63iNbZF8v8FHhhwGKpw214tEP/BwxYAKcn2bm2AQMWS55TDm0DBiyHgqXG2gYMWPpA9SWrbwpbrVo2FKNqYctF/dMrJdPVOxysdI+vSvbQVDlgn/XnLyBy7v+SsST078+TAAAAAElFTkSuQmCC",
 						"opacity": 1
 					}
 				},
 				"focused": {
 					"styles": {
 						"color": "focusFrame",
-						"style": "dotted"
+						"style": "none"
 					}
 				},
 				"checked": {
 					"properties": {
-						"icon": "radiobutton-checked"
+						"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABDklEQVQ4T7WVQU7CQBSGCQcg3oKFC2OEvQchkSUcwYSA7jiAdq9rF1xAFyTcQSFsWHOHx/+1UzNlJtWY5yRfMn3v//902um0M3i0HBdiLN7EpzgGmFOjhybxJgVxJ/bCfgAN2oY/vuiKZ5Ezt4EHbxJYiJzhN+BtBI5EIrx5MLucmfXvK5hTy2kFGWVgTxxCsWQoruZm1wuzyYvZ03sFc2r00MQeQUaPQN5Yo4nhdmm2/rJkUKOH5twnxgSu4iJL4i42u5CQGfTQZJa/InAbF3lO09fgbBlo0MZesSWQDftd5OEXH8HVMtCgjb3i+C+B7kt2fynu28Z9Y4Prp1fjejiA+/FV43bAxvzxF2CdE3T4MoF6gq9KAAAAAElFTkSuQmCC"
 					}
 				},
 				"disabled": {
@@ -3939,8 +3961,8 @@
 				"invalid": {
 					"styles": {
 						"color": "invalid",
-						"width": 1,
-						"style": "dotted"
+						"width": 0,
+						"style": "none"
 					}
 				}
 			}
@@ -4559,7 +4581,7 @@
 					"states": {
 						"default": {
 							"styles": {
-								"backgroundColor": "rgba(255,239,0,0.64)"
+								"backgroundColor": "rgba(255,0,0,0.64)"
 							}
 						},
 						"vertical": {
@@ -5959,14 +5981,16 @@
 			"states": {
 				"default": {
 					"styles": {
-						"style": "solid"
+						"style": "solid",
+						"radius": "18",
+						"css": "{\"border\":\"1px solid #E0E3EB\",\"background-color\":\"#fff\"}"
 					},
 					"properties": {
-						"height": 22,
-						"padding": [0, 2, 0, 4],
+						"height": 36,
+						"padding": [0, 10, 0, 14],
 						"backgroundColor": "window",
 						"opacity": 1,
-						"textColor": "windowText"
+						"textColor": "bTextNormal"
 					}
 				},
 				"hovered": {
@@ -5983,7 +6007,7 @@
 				},
 				"multiline": {
 					"properties": {
-						"padding": [2, 4, 2, 4]
+						"padding": 0
 					}
 				},
 				"celleditor": {
@@ -5991,7 +6015,7 @@
 						"width": 0
 					},
 					"properties": {
-						"padding": [0, 2, 0, 2]
+						"padding": 0
 					}
 				},
 				"invalid": {
