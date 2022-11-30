@@ -28,5 +28,20 @@ namespace simplepa2.UI.Views
         {
 
         }
+
+        private void panel47_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

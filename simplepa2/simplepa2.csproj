@@ -138,14 +138,29 @@
     <EmbeddedResource Include="UI\Popups\Popup_BBCZoneForm.resx">
       <DependentUpon>Popup_BBCZoneForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBCAmpFailover.resx">
+      <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCSite.resx">
       <DependentUpon>View_BBCSite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSAnchor.resx">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSGroupManage.resx">
+      <DependentUpon>View_BBSGroupManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSIoTApplication.resx">
+      <DependentUpon>View_BBSIoTApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSMusicManage.resx">
+      <DependentUpon>View_BBSMusicManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSPresetManage.resx">
       <DependentUpon>View_BBSPresetManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSReservation.resx">
+      <DependentUpon>View_BBSReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_DashBoard.resx">
       <DependentUpon>View_DashBoard.cs</DependentUpon>

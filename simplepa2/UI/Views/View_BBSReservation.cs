@@ -18,5 +18,10 @@ namespace simplepa2.UI.Views
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
                     }
+
+        private void label44_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,5 +19,10 @@ namespace simplepa2.UI.Views
         {
 
         }
+
+        private void View_SystemEmail_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
