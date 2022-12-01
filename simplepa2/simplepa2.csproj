@@ -43,6 +43,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Controller\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Controller\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="css\default.css" />
     <Content Include="DB\0 디비테이블생성.sql" />
     <Content Include="DB\1 디비테이블-기초데이터생성.sql" />
@@ -122,6 +132,13 @@
     <Content Include="fonts\NotoSansKR-Thin.otf" />
     <Content Include="fonts\NotoSansKR-Thin.woff" />
     <Content Include="fonts\NotoSansKR-Thin.woff2" />
+    <EntityDeploy Include="Controller\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Controller\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="imgs\nav-quit-777.png" />
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
@@ -179,36 +196,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_SystemEmail.resx">
       <DependentUpon>View_SystemEmail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\c04.resx">
-      <DependentUpon>c04.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\c03.resx">
-      <DependentUpon>c03.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\c02.resx">
-      <DependentUpon>c02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\c01.resx">
-      <DependentUpon>c01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\b05.resx">
-      <DependentUpon>b05.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\b04.resx">
-      <DependentUpon>b04.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\b03.resx">
-      <DependentUpon>b03.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\b02.resx">
-      <DependentUpon>b02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\b01.resx">
-      <DependentUpon>b01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\a01.resx">
-      <DependentUpon>a01.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\gPanel.resx">
       <DependentUpon>gPanel.cs</DependentUpon>
@@ -649,27 +636,6 @@
     <EmbeddedResource Include="Resources\youtube-logo.svg" />
     <Content Include="js\common.js" />
     <Content Include="Scripts\chatClient.js" />
-    <EmbeddedResource Include="win2\a02.resx">
-      <DependentUpon>a02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\a03.resx">
-      <DependentUpon>a03.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\a04.resx">
-      <DependentUpon>a04.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\a05.resx">
-      <DependentUpon>a05.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\a06.resx">
-      <DependentUpon>a06.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\a08.resx">
-      <DependentUpon>a08.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="win2\a07.resx">
-      <DependentUpon>a07.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="win\AGroup.resx">
       <DependentUpon>AGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -743,6 +709,64 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AssetGroups.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Assets.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\BSroom.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\BSTree.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Device.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\DeviceChannel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\EMBs.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\EMServer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Eventvm.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Holidays.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Musics.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\PlayItem.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Simplepa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\UserTrees.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\UserTreesController.cs" />
     <Compile Include="global.cs" />
     <Compile Include="SignalR\SignalRHub.cs" />
     <Compile Include="UI\Base\PA_MainFrame.cs">
@@ -964,66 +988,6 @@
     <Compile Include="UI\Views\View_TopPanelBar.Designer.cs">
       <DependentUpon>View_TopPanelBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="win2\c04.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\c04.Designer.cs">
-      <DependentUpon>c04.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\c03.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\c03.Designer.cs">
-      <DependentUpon>c03.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\c02.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\c02.Designer.cs">
-      <DependentUpon>c02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\c01.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\c01.Designer.cs">
-      <DependentUpon>c01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\b05.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\b05.Designer.cs">
-      <DependentUpon>b05.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\b04.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\b04.Designer.cs">
-      <DependentUpon>b04.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\b03.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\b03.Designer.cs">
-      <DependentUpon>b03.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\b02.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\b02.Designer.cs">
-      <DependentUpon>b02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\b01.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\b01.Designer.cs">
-      <DependentUpon>b01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\a01.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\a01.Designer.cs">
-      <DependentUpon>a01.cs</DependentUpon>
-    </Compile>
     <Compile Include="bsroom.cs" />
     <Compile Include="chat\SimpleChatClient.cs">
       <SubType>Form</SubType>
@@ -1123,48 +1087,6 @@
     <Compile Include="webapi\ApiController1.cs" />
     <Compile Include="webapi\Encryption.cs" />
     <Compile Include="webapi\MessageHandler.cs" />
-    <Compile Include="win2\a02.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\a02.Designer.cs">
-      <DependentUpon>a02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\a03.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\a03.Designer.cs">
-      <DependentUpon>a03.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\a04.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\a04.Designer.cs">
-      <DependentUpon>a04.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\a05.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\a05.Designer.cs">
-      <DependentUpon>a05.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\a06.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\a06.Designer.cs">
-      <DependentUpon>a06.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\a08.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\a08.Designer.cs">
-      <DependentUpon>a08.cs</DependentUpon>
-    </Compile>
-    <Compile Include="win2\a07.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="win2\a07.Designer.cs">
-      <DependentUpon>a07.cs</DependentUpon>
-    </Compile>
     <Compile Include="win\AGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1262,8 +1184,13 @@
       <DependentUpon>Window1.cs</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNet.SignalR">
       <Version>2.4.3</Version>
     </PackageReference>
@@ -1279,6 +1206,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <PackageReference Include="Microsoft.AspNet.WebApi.WebHost">

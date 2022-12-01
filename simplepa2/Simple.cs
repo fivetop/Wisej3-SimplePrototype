@@ -15,7 +15,6 @@ using System.ComponentModel;
 using Wisej.Base;
 using simplepa2.win;
 using simplepa2.DataSet1TableAdapters;
-using simplepa2.win2;
 
 namespace simplepa2
 {
@@ -217,27 +216,6 @@ namespace simplepa2
 		MMusicManager mMusicManager = new MMusicManager();
 		MUserManager mUserManager = new MUserManager();
 
-		a01 A01 = new a01();
-		a02 A02 = new a02();
-		a03 A03 = new a03();
-		a04 A04 = new a04();
-		a05 A05 = new a05();
-		a06 A06 = new a06();
-		a07 A07 = new a07();
-		a08 A08 = new a08();
-
-		b01 B01 = new b01();
-		b02 B02 = new b02();
-		b03 B03 = new b03();
-		b04 B04 = new b04();
-		b05 B05 = new b05();
-
-		c01 C01 = new c01();
-		c02 C02 = new c02();
-		c03 C03 = new c03();
-		c04 C04 = new c04();
-
-
 		private void AddBSPage()
         {
 
@@ -319,62 +297,6 @@ namespace simplepa2
 			mUserManager.Dock = DockStyle.Fill;
 			MaintabControl.TabPages.Add(tabClients);
 
-
-			tabClients = new TabPage(menu_string[16]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(A01); A01.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[17]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(A02); A02.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[18]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(A03); A03.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[19]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(A04); A04.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[20]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(A05); A05.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[21]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(A06); A06.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[22]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(A07); A07.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[23]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(A08); A08.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-
-
-			tabClients = new TabPage(menu_string[24]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(B01); B01.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[25]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(B02); B02.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[26]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(B03); B03.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[27]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(B04); B04.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[28]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(B05); B05.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-
-
-			tabClients = new TabPage(menu_string[29]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(C01); C01.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[30]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(C02); C02.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[31]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(C03); C03.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
-			tabClients = new TabPage(menu_string[32]); tabClients.Name = "tabClients";
-			tabClients.Controls.Add(C04); C04.Dock = DockStyle.Fill;
-			MaintabControl.TabPages.Add(tabClients);
 
 			MaintabControl.SelectedIndexChanged += BStabControl_SelectedIndexChanged;
 		}
@@ -586,25 +508,6 @@ namespace simplepa2
 				//case "댓쉬보드": MaintabControl.SelectedIndex = 18; break;
 				//case "댓쉬보드": MaintabControl.SelectedIndex = 19; break;
 				//case "댓쉬보드": MaintabControl.SelectedIndex = 20; break;
-				case "A01": MaintabControl.SelectedIndex = 16; break;
-				case "A02": MaintabControl.SelectedIndex = 17; break;
-				case "A03": MaintabControl.SelectedIndex = 18; break;
-				case "A04": MaintabControl.SelectedIndex = 19; break;
-				case "A05": MaintabControl.SelectedIndex = 20; break;
-				case "A06": MaintabControl.SelectedIndex = 21; break;
-				case "A07": MaintabControl.SelectedIndex = 22; break;
-				case "A08": MaintabControl.SelectedIndex = 23; break;
-
-				case "B01": MaintabControl.SelectedIndex = 24; break;
-				case "B02": MaintabControl.SelectedIndex = 25; break;
-				case "B03": MaintabControl.SelectedIndex = 26; break;
-				case "B04": MaintabControl.SelectedIndex = 27; break;
-				case "B05": MaintabControl.SelectedIndex = 28; break;
-
-				case "C01": MaintabControl.SelectedIndex = 29; break;
-				case "C02": MaintabControl.SelectedIndex = 30; break;
-				case "C03": MaintabControl.SelectedIndex = 31; break;
-				case "C04": MaintabControl.SelectedIndex = 32; break;
 
 			}
 		}

@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="simplePAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AssetGroups">
+          <Key>
+            <PropertyRef Name="AssetGroupId" />
+          </Key>
+          <Property Name="AssetGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="text" />
+          <Property Name="AssetId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Assets">
+          <Key>
+            <PropertyRef Name="AssetId" />
+          </Key>
+          <Property Name="AssetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emServer" Type="text" />
+          <Property Name="ip" Type="text" />
+          <Property Name="GroupName" Type="text" />
+          <Property Name="ZoneName" Type="text" />
+          <Property Name="SpeakerName" Type="text" />
+          <Property Name="path" Type="text" />
+          <Property Name="floor" Type="int" />
+          <Property Name="DeviceName" Type="text" />
+          <Property Name="state" Type="text" />
+          <Property Name="state_old" Type="text" />
+          <Property Name="chk" Type="int" />
+          <Property Name="seq" Type="int" />
+          <Property Name="ch" Type="int" />
+          <Property Name="em1" Type="int" />
+          <Property Name="em2" Type="int" />
+          <Property Name="em3" Type="int" />
+          <Property Name="DeviceId" Type="int" />
+          <Property Name="emData" Type="text" />
+          <Property Name="building" Type="text" />
+          <Property Name="floorname" Type="text" />
+          <Property Name="zpc" Type="text" />
+          <Property Name="zpci" Type="int" />
+          <Property Name="zpco" Type="int" />
+        </EntityType>
+        <EntityType Name="BSroom">
+          <Key>
+            <PropertyRef Name="BSroomid" />
+          </Key>
+          <Property Name="BSroomid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="text" />
+          <Property Name="state" Type="int" />
+          <Property Name="mode" Type="int" />
+        </EntityType>
+        <EntityType Name="BSTree">
+          <Key>
+            <PropertyRef Name="BSTreeId" />
+          </Key>
+          <Property Name="BSTreeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="wtime" Type="datetime" />
+          <Property Name="chno" Type="int" Nullable="false" />
+          <Property Name="AssetId" Type="int" Nullable="false" />
+          <Property Name="MusicId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceId" />
+          </Key>
+          <Property Name="DeviceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="device" Type="int" />
+          <Property Name="ip" Type="text" />
+          <Property Name="ip_dspctrl" Type="text" />
+          <Property Name="name" Type="text" />
+          <Property Name="DeviceName" Type="text" />
+          <Property Name="DanteModelName" Type="text" />
+          <Property Name="chspk" Type="int" />
+          <Property Name="dsp_name" Type="text" />
+          <Property Name="dsp_chno" Type="int" />
+          <Property Name="dsp_vol" Type="int" />
+          <Property Name="dsp_vol_em" Type="int" />
+          <Property Name="path" Type="text" />
+          <Property Name="floor_em" Type="int" />
+          <Property Name="emData" Type="text" />
+          <Property Name="chCount" Type="int" />
+          <Property Name="AssetId" Type="int" />
+        </EntityType>
+        <EntityType Name="DeviceChannel">
+          <Key>
+            <PropertyRef Name="DeviceChnnelId" />
+          </Key>
+          <Property Name="DeviceChnnelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="chno" Type="text" />
+          <Property Name="chname" Type="text" />
+          <Property Name="dsp_out_ch1" Type="text" />
+          <Property Name="dsp_out_ch2" Type="text" />
+          <Property Name="DeviceId" Type="int" Nullable="false" />
+          <Property Name="io" Type="int" />
+          <Property Name="devicein" Type="text" />
+          <Property Name="deviceinch" Type="int" />
+        </EntityType>
+        <EntityType Name="EMBs">
+          <Key>
+            <PropertyRef Name="EMBsId" />
+          </Key>
+          <Property Name="EMBsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emData" Type="text" />
+          <Property Name="DeviceId" Type="int" />
+          <Property Name="path" Type="text" />
+        </EntityType>
+        <EntityType Name="EMServer">
+          <Key>
+            <PropertyRef Name="EMServerId" />
+          </Key>
+          <Property Name="EMServerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMNAME" Type="text" />
+          <Property Name="state" Type="text" />
+          <Property Name="state_old" Type="text" />
+        </EntityType>
+        <EntityType Name="Eventvm">
+          <Key>
+            <PropertyRef Name="EventVMId" />
+          </Key>
+          <Property Name="EventVMId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="write_time" Type="datetime" Nullable="false" />
+          <Property Name="event_text" Type="text" />
+          <Property Name="ip" Type="text" />
+          <Property Name="path" Type="text" />
+          <Property Name="DeviceName" Type="text" />
+          <Property Name="state" Type="text" />
+          <Property Name="alarm" Type="int" />
+        </EntityType>
+        <EntityType Name="Holidays">
+          <Key>
+            <PropertyRef Name="HolidayId" />
+          </Key>
+          <Property Name="HolidayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hDate" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="Musics">
+          <Key>
+            <PropertyRef Name="MusicId" />
+          </Key>
+          <Property Name="MusicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileName" Type="text" />
+          <Property Name="FileContent" Type="text" />
+          <Property Name="deletable" Type="text" />
+          <Property Name="duration" Type="text" />
+        </EntityType>
+        <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'simplePA.dbo.PlayItem'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+        <EntityType Name="PlayItem">
+          <Key>
+            <PropertyRef Name="PlayItemId" />
+            <PropertyRef Name="playflag_onair" />
+            <PropertyRef Name="idno" />
+            <PropertyRef Name="chno" />
+            <PropertyRef Name="p_run" />
+          </Key>
+          <Property Name="PlayItemId" Type="int" Nullable="false" />
+          <Property Name="playflag_onair" Type="int" Nullable="false" />
+          <Property Name="idno" Type="int" Nullable="false" />
+          <Property Name="chno" Type="int" Nullable="false" />
+          <Property Name="kind" Type="text" />
+          <Property Name="Name" Type="text" />
+          <Property Name="Start" Type="datetime" />
+          <Property Name="End" Type="datetime" />
+          <Property Name="state" Type="text" />
+          <Property Name="playcnt" Type="int" />
+          <Property Name="current" Type="datetime" />
+          <Property Name="duration" Type="datetime" />
+          <Property Name="p_run" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Simplepa">
+          <Key>
+            <PropertyRef Name="SimplePAId" />
+          </Key>
+          <Property Name="SimplePAId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TileWidth" Type="int" Nullable="false" />
+          <Property Name="MapX" Type="int" Nullable="false" />
+          <Property Name="MapY" Type="int" Nullable="false" />
+          <Property Name="Zoom" Type="real" Nullable="false" />
+          <Property Name="debug" Type="int" Nullable="false" />
+          <Property Name="SpeakerIconSize" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="text" />
+          <Property Name="EMServerIP" Type="text" />
+          <Property Name="ServerIP" Type="text" />
+          <Property Name="ServerPort" Type="text" />
+          <Property Name="Reserved1" Type="text" />
+          <Property Name="Reserved2" Type="text" />
+          <Property Name="Reserved3" Type="text" />
+          <Property Name="Reserved4" Type="text" />
+          <Property Name="Reserved5" Type="text" />
+          <Property Name="Reserved6" Type="text" />
+          <Property Name="Reserved7" Type="text" />
+          <Property Name="Reserved8" Type="text" />
+          <Property Name="Reserved9" Type="text" />
+          <Property Name="Reserved10" Type="text" />
+          <Property Name="Reserved11" Type="text" />
+          <Property Name="GPIOPort" Type="text" />
+          <Property Name="Rport" Type="text" />
+          <Property Name="Reserved15" Type="text" />
+          <Property Name="Reserved16" Type="text" />
+          <Property Name="Jigsangbalhwa" Type="int" Nullable="false" />
+          <Property Name="SpeakerTimer" Type="int" Nullable="false" />
+          <Property Name="inputvolume" Type="real" Nullable="false" />
+          <Property Name="outputvolume" Type="real" Nullable="false" />
+          <Property Name="disp" Type="int" Nullable="false" />
+          <Property Name="Multi_Ch" Type="int" Nullable="false" />
+          <Property Name="SoundDeviceNum" Type="int" Nullable="false" />
+          <Property Name="SoundDeviceName" Type="text" />
+          <Property Name="Reserved17" Type="int" Nullable="false" />
+          <Property Name="scalelength" Type="real" />
+          <Property Name="length" Type="real" />
+          <Property Name="scale" Type="real" />
+          <Property Name="noise1" Type="int" />
+          <Property Name="noise2" Type="int" />
+          <Property Name="dsp_vol" Type="int" Nullable="false" />
+          <Property Name="dsp_vol_em" Type="int" Nullable="false" />
+          <Property Name="sms_server" Type="text" />
+          <Property Name="sms_id" Type="text" />
+          <Property Name="sms_pw" Type="text" />
+          <Property Name="sms_rcvno" Type="text" />
+          <Property Name="Pport" Type="int" Nullable="false" />
+          <Property Name="EmMusic" Type="text" />
+        </EntityType>
+        <EntityType Name="UserTrees">
+          <Key>
+            <PropertyRef Name="UserTreeId" />
+          </Key>
+          <Property Name="UserTreeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_group" Type="text" />
+          <Property Name="user_name" Type="text" />
+          <Property Name="login_id" Type="text" />
+          <Property Name="login_password" Type="text" />
+          <Property Name="login_password2" Type="text" />
+          <Property Name="mobile" Type="text" />
+          <Property Name="email" Type="text" />
+        </EntityType>
+        <EntityContainer Name="simplePAModelStoreContainer">
+          <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Assets" EntityType="Self.Assets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BSroom" EntityType="Self.BSroom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BSTree" EntityType="Self.BSTree" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeviceChannel" EntityType="Self.DeviceChannel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMBs" EntityType="Self.EMBs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMServer" EntityType="Self.EMServer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eventvm" EntityType="Self.Eventvm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Holidays" EntityType="Self.Holidays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musics" EntityType="Self.Musics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Simplepa" EntityType="Self.Simplepa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTrees" EntityType="Self.UserTrees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayItem" EntityType="Self.PlayItem" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PlayItem].[PlayItemId] AS [PlayItemId], 
+    [PlayItem].[playflag_onair] AS [playflag_onair], 
+    [PlayItem].[idno] AS [idno], 
+    [PlayItem].[chno] AS [chno], 
+    [PlayItem].[kind] AS [kind], 
+    [PlayItem].[Name] AS [Name], 
+    [PlayItem].[Start] AS [Start], 
+    [PlayItem].[End] AS [End], 
+    [PlayItem].[state] AS [state], 
+    [PlayItem].[playcnt] AS [playcnt], 
+    [PlayItem].[current] AS [current], 
+    [PlayItem].[duration] AS [duration], 
+    [PlayItem].[p_run] AS [p_run]
+    FROM [dbo].[PlayItem] AS [PlayItem]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="simplePAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AssetGroups">
+          <Key>
+            <PropertyRef Name="AssetGroupId" />
+          </Key>
+          <Property Name="AssetGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AssetId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Assets">
+          <Key>
+            <PropertyRef Name="AssetId" />
+          </Key>
+          <Property Name="AssetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emServer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ZoneName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SpeakerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="floor" Type="Int32" />
+          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state_old" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chk" Type="Int32" />
+          <Property Name="seq" Type="Int32" />
+          <Property Name="ch" Type="Int32" />
+          <Property Name="em1" Type="Int32" />
+          <Property Name="em2" Type="Int32" />
+          <Property Name="em3" Type="Int32" />
+          <Property Name="DeviceId" Type="Int32" />
+          <Property Name="emData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="building" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="floorname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zpc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zpci" Type="Int32" />
+          <Property Name="zpco" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BSroom">
+          <Key>
+            <PropertyRef Name="BSroomid" />
+          </Key>
+          <Property Name="BSroomid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="Int32" />
+          <Property Name="mode" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BSTree">
+          <Key>
+            <PropertyRef Name="BSTreeId" />
+          </Key>
+          <Property Name="BSTreeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="wtime" Type="DateTime" Precision="3" />
+          <Property Name="chno" Type="Int32" Nullable="false" />
+          <Property Name="AssetId" Type="Int32" Nullable="false" />
+          <Property Name="MusicId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceId" />
+          </Key>
+          <Property Name="DeviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="device1" Type="Int32" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip_dspctrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DanteModelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chspk" Type="Int32" />
+          <Property Name="dsp_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dsp_chno" Type="Int32" />
+          <Property Name="dsp_vol" Type="Int32" />
+          <Property Name="dsp_vol_em" Type="Int32" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="floor_em" Type="Int32" />
+          <Property Name="emData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chCount" Type="Int32" />
+          <Property Name="AssetId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DeviceChannel">
+          <Key>
+            <PropertyRef Name="DeviceChnnelId" />
+          </Key>
+          <Property Name="DeviceChnnelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="chno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dsp_out_ch1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dsp_out_ch2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceId" Type="Int32" Nullable="false" />
+          <Property Name="io" Type="Int32" />
+          <Property Name="devicein" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="deviceinch" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EMBs">
+          <Key>
+            <PropertyRef Name="EMBsId" />
+          </Key>
+          <Property Name="EMBsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceId" Type="Int32" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EMServer">
+          <Key>
+            <PropertyRef Name="EMServerId" />
+          </Key>
+          <Property Name="EMServerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state_old" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Eventvm">
+          <Key>
+            <PropertyRef Name="EventVMId" />
+          </Key>
+          <Property Name="EventVMId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="write_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="event_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="alarm" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Holidays">
+          <Key>
+            <PropertyRef Name="HolidayId" />
+          </Key>
+          <Property Name="HolidayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Musics">
+          <Key>
+            <PropertyRef Name="MusicId" />
+          </Key>
+          <Property Name="MusicId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FileContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="deletable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="duration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Simplepa">
+          <Key>
+            <PropertyRef Name="SimplePAId" />
+          </Key>
+          <Property Name="SimplePAId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TileWidth" Type="Int32" Nullable="false" />
+          <Property Name="MapX" Type="Int32" Nullable="false" />
+          <Property Name="MapY" Type="Int32" Nullable="false" />
+          <Property Name="Zoom" Type="Single" Nullable="false" />
+          <Property Name="debug" Type="Int32" Nullable="false" />
+          <Property Name="SpeakerIconSize" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EMServerIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ServerIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ServerPort" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GPIOPort" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Rport" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved15" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved16" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Jigsangbalhwa" Type="Int32" Nullable="false" />
+          <Property Name="SpeakerTimer" Type="Int32" Nullable="false" />
+          <Property Name="inputvolume" Type="Single" Nullable="false" />
+          <Property Name="outputvolume" Type="Single" Nullable="false" />
+          <Property Name="disp" Type="Int32" Nullable="false" />
+          <Property Name="Multi_Ch" Type="Int32" Nullable="false" />
+          <Property Name="SoundDeviceNum" Type="Int32" Nullable="false" />
+          <Property Name="SoundDeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reserved17" Type="Int32" Nullable="false" />
+          <Property Name="scalelength" Type="Single" />
+          <Property Name="length" Type="Single" />
+          <Property Name="scale" Type="Single" />
+          <Property Name="noise1" Type="Int32" />
+          <Property Name="noise2" Type="Int32" />
+          <Property Name="dsp_vol" Type="Int32" Nullable="false" />
+          <Property Name="dsp_vol_em" Type="Int32" Nullable="false" />
+          <Property Name="sms_server" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sms_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sms_pw" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sms_rcvno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Pport" Type="Int32" Nullable="false" />
+          <Property Name="EmMusic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserTrees">
+          <Key>
+            <PropertyRef Name="UserTreeId" />
+          </Key>
+          <Property Name="UserTreeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_group" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="login_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="login_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="login_password2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PlayItem">
+          <Key>
+            <PropertyRef Name="PlayItemId" />
+            <PropertyRef Name="playflag_onair" />
+            <PropertyRef Name="idno" />
+            <PropertyRef Name="chno" />
+            <PropertyRef Name="p_run" />
+          </Key>
+          <Property Name="PlayItemId" Type="Int32" Nullable="false" />
+          <Property Name="playflag_onair" Type="Int32" Nullable="false" />
+          <Property Name="idno" Type="Int32" Nullable="false" />
+          <Property Name="chno" Type="Int32" Nullable="false" />
+          <Property Name="kind" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Start" Type="DateTime" Precision="3" />
+          <Property Name="End" Type="DateTime" Precision="3" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="playcnt" Type="Int32" />
+          <Property Name="current" Type="DateTime" Precision="3" />
+          <Property Name="duration" Type="DateTime" Precision="3" />
+          <Property Name="p_run" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="simplePAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" />
+          <EntitySet Name="Assets" EntityType="Self.Assets" />
+          <EntitySet Name="BSroom" EntityType="Self.BSroom" />
+          <EntitySet Name="BSTree" EntityType="Self.BSTree" />
+          <EntitySet Name="Device" EntityType="Self.Device" />
+          <EntitySet Name="DeviceChannel" EntityType="Self.DeviceChannel" />
+          <EntitySet Name="EMBs" EntityType="Self.EMBs" />
+          <EntitySet Name="EMServer" EntityType="Self.EMServer" />
+          <EntitySet Name="Eventvm" EntityType="Self.Eventvm" />
+          <EntitySet Name="Holidays" EntityType="Self.Holidays" />
+          <EntitySet Name="Musics" EntityType="Self.Musics" />
+          <EntitySet Name="Simplepa" EntityType="Self.Simplepa" />
+          <EntitySet Name="UserTrees" EntityType="Self.UserTrees" />
+          <EntitySet Name="PlayItem" EntityType="Self.PlayItem" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="simplePAModelStoreContainer" CdmEntityContainer="simplePAEntities">
+          <EntitySetMapping Name="AssetGroups">
+            <EntityTypeMapping TypeName="simplePAModel.AssetGroups">
+              <MappingFragment StoreEntitySet="AssetGroups">
+                <ScalarProperty Name="AssetGroupId" ColumnName="AssetGroupId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assets">
+            <EntityTypeMapping TypeName="simplePAModel.Assets">
+              <MappingFragment StoreEntitySet="Assets">
+                <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+                <ScalarProperty Name="emServer" ColumnName="emServer" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="SpeakerName" ColumnName="SpeakerName" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="state_old" ColumnName="state_old" />
+                <ScalarProperty Name="chk" ColumnName="chk" />
+                <ScalarProperty Name="seq" ColumnName="seq" />
+                <ScalarProperty Name="ch" ColumnName="ch" />
+                <ScalarProperty Name="em1" ColumnName="em1" />
+                <ScalarProperty Name="em2" ColumnName="em2" />
+                <ScalarProperty Name="em3" ColumnName="em3" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="emData" ColumnName="emData" />
+                <ScalarProperty Name="building" ColumnName="building" />
+                <ScalarProperty Name="floorname" ColumnName="floorname" />
+                <ScalarProperty Name="zpc" ColumnName="zpc" />
+                <ScalarProperty Name="zpci" ColumnName="zpci" />
+                <ScalarProperty Name="zpco" ColumnName="zpco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BSroom">
+            <EntityTypeMapping TypeName="simplePAModel.BSroom">
+              <MappingFragment StoreEntitySet="BSroom">
+                <ScalarProperty Name="BSroomid" ColumnName="BSroomid" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="mode" ColumnName="mode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BSTree">
+            <EntityTypeMapping TypeName="simplePAModel.BSTree">
+              <MappingFragment StoreEntitySet="BSTree">
+                <ScalarProperty Name="BSTreeId" ColumnName="BSTreeId" />
+                <ScalarProperty Name="wtime" ColumnName="wtime" />
+                <ScalarProperty Name="chno" ColumnName="chno" />
+                <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+                <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Device">
+            <EntityTypeMapping TypeName="simplePAModel.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="device1" ColumnName="device" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="ip_dspctrl" ColumnName="ip_dspctrl" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="DanteModelName" ColumnName="DanteModelName" />
+                <ScalarProperty Name="chspk" ColumnName="chspk" />
+                <ScalarProperty Name="dsp_name" ColumnName="dsp_name" />
+                <ScalarProperty Name="dsp_chno" ColumnName="dsp_chno" />
+                <ScalarProperty Name="dsp_vol" ColumnName="dsp_vol" />
+                <ScalarProperty Name="dsp_vol_em" ColumnName="dsp_vol_em" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="floor_em" ColumnName="floor_em" />
+                <ScalarProperty Name="emData" ColumnName="emData" />
+                <ScalarProperty Name="chCount" ColumnName="chCount" />
+                <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeviceChannel">
+            <EntityTypeMapping TypeName="simplePAModel.DeviceChannel">
+              <MappingFragment StoreEntitySet="DeviceChannel">
+                <ScalarProperty Name="DeviceChnnelId" ColumnName="DeviceChnnelId" />
+                <ScalarProperty Name="chno" ColumnName="chno" />
+                <ScalarProperty Name="chname" ColumnName="chname" />
+                <ScalarProperty Name="dsp_out_ch1" ColumnName="dsp_out_ch1" />
+                <ScalarProperty Name="dsp_out_ch2" ColumnName="dsp_out_ch2" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="io" ColumnName="io" />
+                <ScalarProperty Name="devicein" ColumnName="devicein" />
+                <ScalarProperty Name="deviceinch" ColumnName="deviceinch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMBs">
+            <EntityTypeMapping TypeName="simplePAModel.EMBs">
+              <MappingFragment StoreEntitySet="EMBs">
+                <ScalarProperty Name="EMBsId" ColumnName="EMBsId" />
+                <ScalarProperty Name="emData" ColumnName="emData" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="path" ColumnName="path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMServer">
+            <EntityTypeMapping TypeName="simplePAModel.EMServer">
+              <MappingFragment StoreEntitySet="EMServer">
+                <ScalarProperty Name="EMServerId" ColumnName="EMServerId" />
+                <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="state_old" ColumnName="state_old" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eventvm">
+            <EntityTypeMapping TypeName="simplePAModel.Eventvm">
+              <MappingFragment StoreEntitySet="Eventvm">
+                <ScalarProperty Name="EventVMId" ColumnName="EventVMId" />
+                <ScalarProperty Name="write_time" ColumnName="write_time" />
+                <ScalarProperty Name="event_text" ColumnName="event_text" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="alarm" ColumnName="alarm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Holidays">
+            <EntityTypeMapping TypeName="simplePAModel.Holidays">
+              <MappingFragment StoreEntitySet="Holidays">
+                <ScalarProperty Name="HolidayId" ColumnName="HolidayId" />
+                <ScalarProperty Name="hDate" ColumnName="hDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musics">
+            <EntityTypeMapping TypeName="simplePAModel.Musics">
+              <MappingFragment StoreEntitySet="Musics">
+                <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="deletable" ColumnName="deletable" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Simplepa">
+            <EntityTypeMapping TypeName="simplePAModel.Simplepa">
+              <MappingFragment StoreEntitySet="Simplepa">
+                <ScalarProperty Name="SimplePAId" ColumnName="SimplePAId" />
+                <ScalarProperty Name="TileWidth" ColumnName="TileWidth" />
+                <ScalarProperty Name="MapX" ColumnName="MapX" />
+                <ScalarProperty Name="MapY" ColumnName="MapY" />
+                <ScalarProperty Name="Zoom" ColumnName="Zoom" />
+                <ScalarProperty Name="debug" ColumnName="debug" />
+                <ScalarProperty Name="SpeakerIconSize" ColumnName="SpeakerIconSize" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EMServerIP" ColumnName="EMServerIP" />
+                <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
+                <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
+                <ScalarProperty Name="Reserved1" ColumnName="Reserved1" />
+                <ScalarProperty Name="Reserved2" ColumnName="Reserved2" />
+                <ScalarProperty Name="Reserved3" ColumnName="Reserved3" />
+                <ScalarProperty Name="Reserved4" ColumnName="Reserved4" />
+                <ScalarProperty Name="Reserved5" ColumnName="Reserved5" />
+                <ScalarProperty Name="Reserved6" ColumnName="Reserved6" />
+                <ScalarProperty Name="Reserved7" ColumnName="Reserved7" />
+                <ScalarProperty Name="Reserved8" ColumnName="Reserved8" />
+                <ScalarProperty Name="Reserved9" ColumnName="Reserved9" />
+                <ScalarProperty Name="Reserved10" ColumnName="Reserved10" />
+                <ScalarProperty Name="Reserved11" ColumnName="Reserved11" />
+                <ScalarProperty Name="GPIOPort" ColumnName="GPIOPort" />
+                <ScalarProperty Name="Rport" ColumnName="Rport" />
+                <ScalarProperty Name="Reserved15" ColumnName="Reserved15" />
+                <ScalarProperty Name="Reserved16" ColumnName="Reserved16" />
+                <ScalarProperty Name="Jigsangbalhwa" ColumnName="Jigsangbalhwa" />
+                <ScalarProperty Name="SpeakerTimer" ColumnName="SpeakerTimer" />
+                <ScalarProperty Name="inputvolume" ColumnName="inputvolume" />
+                <ScalarProperty Name="outputvolume" ColumnName="outputvolume" />
+                <ScalarProperty Name="disp" ColumnName="disp" />
+                <ScalarProperty Name="Multi_Ch" ColumnName="Multi_Ch" />
+                <ScalarProperty Name="SoundDeviceNum" ColumnName="SoundDeviceNum" />
+                <ScalarProperty Name="SoundDeviceName" ColumnName="SoundDeviceName" />
+                <ScalarProperty Name="Reserved17" ColumnName="Reserved17" />
+                <ScalarProperty Name="scalelength" ColumnName="scalelength" />
+                <ScalarProperty Name="length" ColumnName="length" />
+                <ScalarProperty Name="scale" ColumnName="scale" />
+                <ScalarProperty Name="noise1" ColumnName="noise1" />
+                <ScalarProperty Name="noise2" ColumnName="noise2" />
+                <ScalarProperty Name="dsp_vol" ColumnName="dsp_vol" />
+                <ScalarProperty Name="dsp_vol_em" ColumnName="dsp_vol_em" />
+                <ScalarProperty Name="sms_server" ColumnName="sms_server" />
+                <ScalarProperty Name="sms_id" ColumnName="sms_id" />
+                <ScalarProperty Name="sms_pw" ColumnName="sms_pw" />
+                <ScalarProperty Name="sms_rcvno" ColumnName="sms_rcvno" />
+                <ScalarProperty Name="Pport" ColumnName="Pport" />
+                <ScalarProperty Name="EmMusic" ColumnName="EmMusic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTrees">
+            <EntityTypeMapping TypeName="simplePAModel.UserTrees">
+              <MappingFragment StoreEntitySet="UserTrees">
+                <ScalarProperty Name="UserTreeId" ColumnName="UserTreeId" />
+                <ScalarProperty Name="user_group" ColumnName="user_group" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+                <ScalarProperty Name="login_password" ColumnName="login_password" />
+                <ScalarProperty Name="login_password2" ColumnName="login_password2" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayItem">
+            <EntityTypeMapping TypeName="simplePAModel.PlayItem">
+              <MappingFragment StoreEntitySet="PlayItem">
+                <ScalarProperty Name="PlayItemId" ColumnName="PlayItemId" />
+                <ScalarProperty Name="playflag_onair" ColumnName="playflag_onair" />
+                <ScalarProperty Name="idno" ColumnName="idno" />
+                <ScalarProperty Name="chno" ColumnName="chno" />
+                <ScalarProperty Name="kind" ColumnName="kind" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="End" ColumnName="End" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="playcnt" ColumnName="playcnt" />
+                <ScalarProperty Name="current" ColumnName="current" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="p_run" ColumnName="p_run" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="없음" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
