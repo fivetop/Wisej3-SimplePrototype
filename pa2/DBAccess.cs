@@ -7,22 +7,60 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace pa
 {
-    internal class DBAccess
+    public class DBAccess
     {
         HttpClient httpClient = new HttpClient();
 
-        ObservableCollection<UserTrees> UserTrees = new ObservableCollection<UserTrees>();
+        ObservableCollection<AssetGroups> AssetGroups { get; set; } = new ObservableCollection<AssetGroups>();
+        ObservableCollection<Assets> Assets { get; set; } = new ObservableCollection<Assets>();
+        ObservableCollection<BSroom> BSroom { get; set; } = new ObservableCollection<BSroom>();
+        ObservableCollection<Device> Device { get; set; } = new ObservableCollection<Device>();
+        ObservableCollection<DeviceChannel> DeviceChannel { get; set; } = new ObservableCollection<DeviceChannel>();
+        ObservableCollection<EMBs> EMBs { get; set; } = new ObservableCollection<EMBs>();
+        ObservableCollection<EMServer> EMServer { get; set; } = new ObservableCollection<EMServer>();
+        ObservableCollection<Eventvm> Eventvm { get; set; } = new ObservableCollection<Eventvm>();
+        ObservableCollection<Holidays> Holidays { get; set; } = new ObservableCollection<Holidays>();
+        ObservableCollection<Musics> Musics { get; set; } = new ObservableCollection<Musics>();
+        ObservableCollection<PlayItem> PlayItem { get; set; } = new ObservableCollection<PlayItem>();
+        ObservableCollection<Simplepa> Simplepa { get; set; } = new ObservableCollection<Simplepa>();
+        ObservableCollection<UserTrees> UserTrees { get; set; } = new ObservableCollection<UserTrees>();
 
         #region // Database 초기화 처리
         public void DBInit()
         {
-            var url2 = @"http://localhost:41726/api/usertrees";
-            httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-            var res = httpClient.GetStringAsync(url2).Result;
-            var t1 = JsonConvert.DeserializeObject<ObservableCollection<UserTrees>>(res);
+            AssetGroups = Dbread<ObservableCollection<AssetGroups>>("AssetGroups");
+            Assets = Dbread<ObservableCollection<Assets>>("Assets");
+            BSroom = Dbread<ObservableCollection<BSroom>>("BSroom");
+            Device = Dbread<ObservableCollection<Device>>("Device");
+            DeviceChannel = Dbread<ObservableCollection<DeviceChannel>>("DeviceChannel");
+            EMBs = Dbread<ObservableCollection<EMBs>>("EMBs");
+            EMServer = Dbread<ObservableCollection<EMServer>>("EMServer");
+            Eventvm = Dbread<ObservableCollection<Eventvm>>("Eventvm");
+            Holidays = Dbread<ObservableCollection<Holidays>>("Holidays");
+            Musics = Dbread<ObservableCollection<Musics>>("Musics");
+            PlayItem = Dbread<ObservableCollection<PlayItem>>("PlayItem");
+            Simplepa = Dbread<ObservableCollection<Simplepa>>("Simplepa");
+            UserTrees = Dbread<ObservableCollection<UserTrees>>("UserTrees");
+        }
+
+        public T Dbread <T>(string url)
+        {
+            try
+            {
+                var url2 = @"http://localhost:9921/api/" + url;
+                httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+                var res = httpClient.GetStringAsync(url2).Result;
+                var ret = JsonConvert.DeserializeObject<T>(res);
+                return (T)ret;
+            }
+            catch (Exception e1)
+            {
+                return default(T);
+            }
         }
         #endregion
 

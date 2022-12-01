@@ -43,7 +43,9 @@ namespace pa
 
         public uint AliveMessage { get; set; }
         System.Timers.Timer AliveTimer { get; set; } = new System.Timers.Timer(1000 * 60 * 5);
- 
+
+        public DBAccess DBAccess { get; set; } = new DBAccess();
+             
         public DBController dBSqlite { get; set; } = new DBController();
         DataSet1 Ds1 { get; set; }
         WireSharkRunning wireShark { get; set; } = new WireSharkRunning();
@@ -72,6 +74,12 @@ namespace pa
             g.Log("Emergency Server Start..");
             Title = "EM Svr "+ gl.version;
 
+        }
+
+        #region // 초기화 처리 
+        public void Init()
+        {
+            DBAccess.DBInit();
             dBSqlite.DBInit();
             _DanteDevice = Ds1.Device;
 
@@ -91,11 +99,8 @@ namespace pa
             g.Log("DataBase Initial..");
             //BSqlite.DBCopy();
             //g.Load("SimplePA EM Server가 로딩중입니다..");
-        }
 
-        #region // 초기화 처리 
-        public void Init()
-        {
+
             g.dsp.OnReceiveMessage += Dsp_OnReceiveMessage;
 
             // 시리얼 통신 처리 
