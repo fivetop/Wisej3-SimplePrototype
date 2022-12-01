@@ -179,6 +179,9 @@
     <EmbeddedResource Include="UI\Views\View_BBSGroupManage.resx">
       <DependentUpon>View_BBSGroupManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSHolidayManage.resx">
+      <DependentUpon>View_BBSHolidayManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSIoTApplication.resx">
       <DependentUpon>View_BBSIoTApplication.cs</DependentUpon>
     </EmbeddedResource>
@@ -636,6 +639,9 @@
     <EmbeddedResource Include="Resources\youtube-logo.svg" />
     <Content Include="js\common.js" />
     <Content Include="Scripts\chatClient.js" />
+    <EmbeddedResource Include="UI\Views\View_SystemSMSRegistration.resx">
+      <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\AGroup.resx">
       <DependentUpon>AGroup.cs</DependentUpon>
     </EmbeddedResource>

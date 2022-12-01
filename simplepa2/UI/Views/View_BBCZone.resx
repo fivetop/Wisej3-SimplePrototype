@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button3.CssStyle" xml:space="preserve">
+  <data name="button42.CssStyle" xml:space="preserve">
+    <value>    color: #fff !important;
+    background: #3A86FF !important;
+        border: 1px solid #3A86FF !important;
+    
+    display: block;
+    width: 100px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    float: left;</value>
+  </data>
+  <data name="button43.CssStyle" xml:space="preserve">
     <value>    color: #fff !important;
     background: #2C4771 !important;
     border: 1px solid #2C4771 !important;
@@ -132,10 +147,10 @@
     font-weight: 700;
     float: left;</value>
   </data>
-  <data name="button1.CssStyle" xml:space="preserve">
+  <data name="button44.CssStyle" xml:space="preserve">
     <value>    color: #fff !important;
-    background: #3A86FF !important;
-        border: 1px solid #3A86FF !important;
+    background: #2C4771 !important;
+    border: 1px solid #2C4771 !important;
     
     display: block;
     width: 100px;
@@ -147,22 +162,7 @@
     font-weight: 700;
     float: left;</value>
   </data>
-  <data name="button4.CssStyle" xml:space="preserve">
-    <value>    color: #fff !important;
-    background: #3A86FF !important;
-        border: 1px solid #3A86FF !important;
-    
-    display: block;
-    width: 100px;
-    height: 32px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 700;
-    float: left;</value>
-  </data>
-  <data name="button2.CssStyle" xml:space="preserve">
+  <data name="button23.CssStyle" xml:space="preserve">
     <value>    color: #fff !important;
     background: #3A86FF !important;
         border: 1px solid #3A86FF !important;
