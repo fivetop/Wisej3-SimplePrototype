@@ -185,7 +185,7 @@ namespace pa
             {
                 string str2 = event_text + "~" + type1 + "~" + log + type1 + prowdata;
                 //g.Log(str2);
-                dBSqlite.Eventvm(event_text, type1, log + type1 + prowdata);
+                DBAccess.Eventvms(event_text, type1, log + type1 + prowdata);
             }
             catch (Exception e1)
             {
@@ -485,7 +485,7 @@ namespace pa
                         g.DSP_MakeGroupSpeaker(null, 0, BS_DSP_STATE.PRESET_ALL);
                         Preset_chk();
                         SendSigR("All 프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, 0, 0);
-                        dBSqlite.Eventvm("eEM_PRESET_SW", "All 프리셋 버튼 : Off", "OFF");
+                        DBAccess.Eventvms("eEM_PRESET_SW", "All 프리셋 버튼 : Off", "OFF");
                     }
                     else
                     {
@@ -493,7 +493,7 @@ namespace pa
                         //_a1.IsChecked = true;
                         g.DSP_MakeGroupSpeaker(null, 1, BS_DSP_STATE.PRESET_ALL);
                         SendSigR("All 프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, 0, 1);
-                        dBSqlite.Eventvm("eEM_PRESET_SW", "All 프리셋 버튼 : On", "ON");
+                        DBAccess.Eventvms("eEM_PRESET_SW", "All 프리셋 버튼 : On", "ON");
                     }
                     break;
                 case 3:
@@ -507,7 +507,7 @@ namespace pa
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : Off");
                         sh = sh + cnt.ToString();
                         //Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
-                        var t1 = Ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
+                        var t1 = DBAccess.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
                             g.Log("Check : 프리셋 그룹");
@@ -524,14 +524,14 @@ namespace pa
                         //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 0, BS_DSP_STATE.PRESET);
                         Preset_chk();
                         SendSigR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
-                        dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : Off", "OFF");
+                        DBAccess.Eventvms("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : Off", "OFF");
                     }
                     else
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : On");
                         sh = sh + cnt.ToString();
                         //Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
-                        var t1 = Ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
+                        var t1 = DBAccess.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
                             g.Log("Check : 프리셋 그룹");
@@ -547,7 +547,7 @@ namespace pa
                         // make asset array to assetbase 
                         //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 1, BS_DSP_STATE.PRESET);
                         SendSigR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
-                        dBSqlite.Eventvm("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : On", "ON");
+                        DBAccess.Eventvms("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : On", "ON");
                     }
                     break;
                 // EM Test

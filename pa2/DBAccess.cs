@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DataClass;
+using Newtonsoft.Json;
 using simplepa2.Controller;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static simplepa2.DataSet1;
 
 namespace pa
 {
@@ -15,36 +17,38 @@ namespace pa
     {
         HttpClient httpClient = new HttpClient();
 
-        ObservableCollection<AssetGroups> AssetGroups { get; set; } = new ObservableCollection<AssetGroups>();
-        ObservableCollection<Assets> Assets { get; set; } = new ObservableCollection<Assets>();
-        ObservableCollection<BSroom> BSroom { get; set; } = new ObservableCollection<BSroom>();
-        ObservableCollection<Device> Device { get; set; } = new ObservableCollection<Device>();
-        ObservableCollection<DeviceChannel> DeviceChannel { get; set; } = new ObservableCollection<DeviceChannel>();
-        ObservableCollection<EMBs> EMBs { get; set; } = new ObservableCollection<EMBs>();
-        ObservableCollection<EMServer> EMServer { get; set; } = new ObservableCollection<EMServer>();
-        ObservableCollection<Eventvm> Eventvm { get; set; } = new ObservableCollection<Eventvm>();
-        ObservableCollection<Holidays> Holidays { get; set; } = new ObservableCollection<Holidays>();
-        ObservableCollection<Musics> Musics { get; set; } = new ObservableCollection<Musics>();
-        ObservableCollection<PlayItem> PlayItem { get; set; } = new ObservableCollection<PlayItem>();
-        ObservableCollection<Simplepa> Simplepa { get; set; } = new ObservableCollection<Simplepa>();
-        ObservableCollection<UserTrees> UserTrees { get; set; } = new ObservableCollection<UserTrees>();
+        public AssetGroupsDataTable AssetGroups { get; set; } = new AssetGroupsDataTable();
+        public AssetsDataTable Assets { get; set; } = new AssetsDataTable();
+        public BSroomDataTable BSroom { get; set; } = new BSroomDataTable();
+        public BSTreeDataTable BStree { get; set; } = new BSTreeDataTable();
+        public DeviceDataTable Device { get; set; } = new DeviceDataTable();
+        public DeviceChannelDataTable DeviceChannel { get; set; } = new DeviceChannelDataTable();
+        public EMBsDataTable EMBs { get; set; } = new EMBsDataTable();
+        public EMServerDataTable EMServer { get; set; } = new EMServerDataTable();
+        public EventvmDataTable Eventvm { get; set; } = new EventvmDataTable();
+        public HolidaysDataTable Holidays { get; set; } = new HolidaysDataTable();
+        public MusicsDataTable Musics { get; set; } = new MusicsDataTable();
+        public PlayItemDataTable PlayItem { get; set; } = new PlayItemDataTable();
+        public SimplepaDataTable Simplepa { get; set; } = new SimplepaDataTable();
+        public UserTreesDataTable UserTrees { get; set; } = new UserTreesDataTable();
 
         #region // Database 초기화 처리
         public void DBInit()
         {
-            AssetGroups = Dbread<ObservableCollection<AssetGroups>>("AssetGroups");
-            Assets = Dbread<ObservableCollection<Assets>>("Assets");
-            BSroom = Dbread<ObservableCollection<BSroom>>("BSroom");
-            Device = Dbread<ObservableCollection<Device>>("Device");
-            DeviceChannel = Dbread<ObservableCollection<DeviceChannel>>("DeviceChannel");
-            EMBs = Dbread<ObservableCollection<EMBs>>("EMBs");
-            EMServer = Dbread<ObservableCollection<EMServer>>("EMServer");
-            Eventvm = Dbread<ObservableCollection<Eventvm>>("Eventvm");
-            Holidays = Dbread<ObservableCollection<Holidays>>("Holidays");
-            Musics = Dbread<ObservableCollection<Musics>>("Musics");
-            PlayItem = Dbread<ObservableCollection<PlayItem>>("PlayItem");
-            Simplepa = Dbread<ObservableCollection<Simplepa>>("Simplepa");
-            UserTrees = Dbread<ObservableCollection<UserTrees>>("UserTrees");
+            AssetGroups = Dbread<AssetGroupsDataTable>("AssetGroups");
+            Assets = Dbread<AssetsDataTable>("Assets");
+            BSroom = Dbread<BSroomDataTable>("BSroom");
+            BStree = Dbread<BSTreeDataTable>("BStree");
+            Device = Dbread<DeviceDataTable>("Devices");
+            DeviceChannel = Dbread<DeviceChannelDataTable>("DeviceChannels");
+            EMBs = Dbread<EMBsDataTable>("EMBs");
+            EMServer = Dbread<EMServerDataTable>("EMServer");
+            Eventvm = Dbread<EventvmDataTable>("Eventvm");
+            Holidays = Dbread<HolidaysDataTable>("Holidays");
+            Musics = Dbread<MusicsDataTable>("Musics");
+            PlayItem = Dbread<PlayItemDataTable>("PlayItem");
+            Simplepa = Dbread<SimplepaDataTable>("Simplepas");
+            UserTrees = Dbread<UserTreesDataTable>("UserTrees");
         }
 
         public T Dbread <T>(string url)
@@ -64,158 +68,233 @@ namespace pa
         }
         #endregion
 
-/*
+        /*
 
-        #region // EMServer 부분 
-        public void SaveEMServer(EmSpeakerPosition t1)
-        {
-            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
-
-            var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == t1.emServer);
-            if (m3 == null)
-            {
-                EMServerRow m2 = Ds1.EMServer.NewEMServerRow();
-                m2.EMNAME = t1.emServer;
-                m2.state = "";
-                m2.state_old = "";
-                Ds1.EMServer.Rows.Add(m2);
-                Tam.EMServerTableAdapter.Update(Ds1.EMServer);
-            }
-        }
-
-        public void updateEMServer(string EMNAME, string state)
-        {
-            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
-
-            var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == EMNAME);
-            if (m3 == null)
-                return;
-            m3.state_old = m3.state;
-            m3.state = state;
-            Tam.EMServerTableAdapter.Update(Ds1.EMServer);
-        }
-
-        #endregion
-
-
-
-        #region // Assets 자산관리 부분 
-        public void SaveAssets(EmSpeakerPosition t1)
-        {
-            Tam.AssetsTableAdapter.Fill(Ds1.Assets);
-            var aa = t1.array;
-
-            if (aa.Length < 12)
-                return;
-            var m3 = Ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
-            if (m3 == null)
-            {
-                AssetsRow m2 = Ds1.Assets.NewAssetsRow();
-                m2.seq = int.Parse(aa[0]);
-                m2.building = aa[2];
-                m2.floorname = aa[3];
-                m2.GroupName = aa[2] + aa[3];
-                m2.ZoneName = aa[4];
-                m2.SpeakerName = aa[5];
-                m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
-                m2.ch = int.Parse(t1.ch);
-                m2.zpc = t1.zpc;
-                m2.zpci = t1.zpci;
-                m2.zpco = t1.zpco;
-                m2.emServer = t1.emServer;
-
-                if (m2.ch == 0)
-                    m2.ch = 1;
-                m2.chk = 0;
-                m2.floor = int.Parse(t1.array[11]) * 100 + int.Parse(t1.array[12]) * 10 + int.Parse(t1.array[13]);
-                m2.emData = t1.emData;
-                m2.ip = "";
-                m2.state = "";
-                m2.state_old = "";
-                m2.DeviceId = 0;
-                if (aa.Count() > 4)
-                    m2.DeviceName = aa[6];
-                Ds1.Assets.Rows.Add(m2);
-                Tam.AssetsTableAdapter.Update(Ds1.Assets);
-            }
-        }
-
-        public void updateAsset()
-        {
-            Tam.AssetsTableAdapter.Fill(Ds1.Assets);
-            Tam.DeviceTableAdapter.Fill(Ds1.Device);
-
-            foreach (var t1 in Ds1.Device)
-            {
-                var m1 = Ds1.Assets.FirstOrDefault(p => p.DeviceName == t1.DeviceName && p.ch == t1.chspk);
-                if (m1 == null)
-                    continue;
-                m1.DeviceId = t1.DeviceId;
-                m1.ip = t1.ip;
-                t1.AssetId = m1.AssetId;
-                t1.emData = m1.emData;
-                t1.path = m1.path;
-            }
-            Tam.AssetsTableAdapter.Update(Ds1.Assets);
-            Tam.DeviceTableAdapter.Update(Ds1.Device);
-        }
-
-        // 자산에서 스피커의 현재 상태 체크 
-        public int getSpeakerState(string path)
-        {
-            var sAsset = Ds1.Assets.First(p => p.path == path);
-            if (sAsset != null)
-            {
-                if (sAsset.state == "On-Line")
-                    return 1;
-            }
-            return 0;
-        }
-
-
-        #endregion
-
-        #region // EMBS 비상방송 관리 부분 
-        public void SaveEMBs()
-        {
-            Tam.EMBsTableAdapter.Fill(Ds1.EMBs);
-
-            foreach (var t1 in Ds1.Device)
-            {
-                if (t1.emData == "")
-                    continue;
-                var m1 = Ds1.EMBs.FirstOrDefault(p => p.emData == t1.emData && p.DeviceId == t1.DeviceId);
-                if (m1 != null)
-                    continue;
-                EMBsRow m2 = Ds1.EMBs.NewEMBsRow();
-                m2.emData = t1.emData;
-                m2.DeviceId = t1.DeviceId;
-                m2.path = t1.path;
-                Ds1.EMBs.Rows.Add(m2);
-                Tam.EMBsTableAdapter.Update(Ds1.EMBs);
-            }
-        }
-
-        #endregion
-
-        #region // BSTree 방송 처리 관리 부분 
-
-        public void Delete(int idno)
-        {
-            try
-            {
-                var t2 = Ds1.BSTree.Where(p => p.chno == idno);
-                foreach (BSTreeRow t3 in t2)
+                #region // EMServer 부분 
+                public void SaveEMServer(EmSpeakerPosition t1)
                 {
-                    t3.Delete();
+                    Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+
+                    var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == t1.emServer);
+                    if (m3 == null)
+                    {
+                        EMServerRow m2 = Ds1.EMServer.NewEMServerRow();
+                        m2.EMNAME = t1.emServer;
+                        m2.state = "";
+                        m2.state_old = "";
+                        Ds1.EMServer.Rows.Add(m2);
+                        Tam.EMServerTableAdapter.Update(Ds1.EMServer);
+                    }
                 }
-                Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
-            }
-            catch (Exception e1)
-            {
-            }
-        }
-        #endregion
+
+                public void updateEMServer(string EMNAME, string state)
+                {
+                    Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+
+                    var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == EMNAME);
+                    if (m3 == null)
+                        return;
+                    m3.state_old = m3.state;
+                    m3.state = state;
+                    Tam.EMServerTableAdapter.Update(Ds1.EMServer);
+                }
+
+                #endregion
+
+
+
+                #region // Assets 자산관리 부분 
+                public void SaveAssets(EmSpeakerPosition t1)
+                {
+                    Tam.AssetsTableAdapter.Fill(Ds1.Assets);
+                    var aa = t1.array;
+
+                    if (aa.Length < 12)
+                        return;
+                    var m3 = Ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
+                    if (m3 == null)
+                    {
+                        AssetsRow m2 = Ds1.Assets.NewAssetsRow();
+                        m2.seq = int.Parse(aa[0]);
+                        m2.building = aa[2];
+                        m2.floorname = aa[3];
+                        m2.GroupName = aa[2] + aa[3];
+                        m2.ZoneName = aa[4];
+                        m2.SpeakerName = aa[5];
+                        m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
+                        m2.ch = int.Parse(t1.ch);
+                        m2.zpc = t1.zpc;
+                        m2.zpci = t1.zpci;
+                        m2.zpco = t1.zpco;
+                        m2.emServer = t1.emServer;
+
+                        if (m2.ch == 0)
+                            m2.ch = 1;
+                        m2.chk = 0;
+                        m2.floor = int.Parse(t1.array[11]) * 100 + int.Parse(t1.array[12]) * 10 + int.Parse(t1.array[13]);
+                        m2.emData = t1.emData;
+                        m2.ip = "";
+                        m2.state = "";
+                        m2.state_old = "";
+                        m2.DeviceId = 0;
+                        if (aa.Count() > 4)
+                            m2.DeviceName = aa[6];
+                        Ds1.Assets.Rows.Add(m2);
+                        Tam.AssetsTableAdapter.Update(Ds1.Assets);
+                    }
+                }
+
+                public void updateAsset()
+                {
+                    Tam.AssetsTableAdapter.Fill(Ds1.Assets);
+                    Tam.DeviceTableAdapter.Fill(Ds1.Device);
+
+                    foreach (var t1 in Ds1.Device)
+                    {
+                        var m1 = Ds1.Assets.FirstOrDefault(p => p.DeviceName == t1.DeviceName && p.ch == t1.chspk);
+                        if (m1 == null)
+                            continue;
+                        m1.DeviceId = t1.DeviceId;
+                        m1.ip = t1.ip;
+                        t1.AssetId = m1.AssetId;
+                        t1.emData = m1.emData;
+                        t1.path = m1.path;
+                    }
+                    Tam.AssetsTableAdapter.Update(Ds1.Assets);
+                    Tam.DeviceTableAdapter.Update(Ds1.Device);
+                }
+
+                // 자산에서 스피커의 현재 상태 체크 
+                public int getSpeakerState(string path)
+                {
+                    var sAsset = Ds1.Assets.First(p => p.path == path);
+                    if (sAsset != null)
+                    {
+                        if (sAsset.state == "On-Line")
+                            return 1;
+                    }
+                    return 0;
+                }
+
+
+                #endregion
+
+                #region // EMBS 비상방송 관리 부분 
+                public void SaveEMBs()
+                {
+                    Tam.EMBsTableAdapter.Fill(Ds1.EMBs);
+
+                    foreach (var t1 in Ds1.Device)
+                    {
+                        if (t1.emData == "")
+                            continue;
+                        var m1 = Ds1.EMBs.FirstOrDefault(p => p.emData == t1.emData && p.DeviceId == t1.DeviceId);
+                        if (m1 != null)
+                            continue;
+                        EMBsRow m2 = Ds1.EMBs.NewEMBsRow();
+                        m2.emData = t1.emData;
+                        m2.DeviceId = t1.DeviceId;
+                        m2.path = t1.path;
+                        Ds1.EMBs.Rows.Add(m2);
+                        Tam.EMBsTableAdapter.Update(Ds1.EMBs);
+                    }
+                }
+
+                #endregion
+
+
+        */
+
+
+
+                #region // Device 장치관리 부분 
+                // dsp 저장후 상세정보 저장 
+                // dsp ch info 저장 
+                public void saveDBDSPCH(IEnumerable<DataClass.Device> gs1)
+                {
+                    //Tam.DeviceTableAdapter.Fill(Ds1.Device);
+                    //Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
+                    try
+                    {
+                        foreach (var t1 in gs1)
+                        {
+                            var s1 = Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                            if (s1 == null)
+                                continue;
+                            t1.DeviceId = s1.DeviceId;
+                            if (t1.ch.Count < 2)
+                                continue;
+
+                            var s2 = DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
+                            if (s2.Count() > 0)
+                                continue;
+
+                            for (int i = 0; i < t1.ch.Count; i++)
+                            {
+                                DeviceChannelRow r1 = DeviceChannel.NewDeviceChannelRow();
+                                r1.chno = t1.ch[i].chno;
+                                r1.chname = t1.ch[i].chname[0];
+                                r1.DeviceId = t1.DeviceId;
+                                r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
+                                r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
+                                r1.io = 1;
+                                r1.devicein = "";
+                                r1.deviceinch = 0;
+                                DeviceChannel.Rows.Add(r1);
+                            }
+
+                            int num = 1;
+                            if (t1.ch.Count < 17)
+                                num = 17;
+
+                            for (int i = 0; i < t1.ch.Count; i++)
+                            {
+                                DeviceChannelRow r1 = DeviceChannel.NewDeviceChannelRow();
+                                r1.chno = num.ToString();
+                                r1.chname = "IN" + num.ToString();
+                                r1.DeviceId = t1.DeviceId;
+                                r1.dsp_out_ch1 = "";
+                                r1.dsp_out_ch2 = "";
+                                r1.io = 0;
+                                r1.devicein = "";
+                                r1.deviceinch = 0;
+                                num++;
+                                DeviceChannel.Rows.Add(r1);
+                            }
+                            //Tam.DeviceChannelTableAdapter.Update(Ds1.DeviceChannel);
+                        }
+                    }
+                    catch (Exception e1)
+                    {
+                        Console.WriteLine(e1.Message);
+                    }
+                }
+
+                // Device ADD
+                public void NewDeviceRow(DataClass.Device t1, int v)
+                {
+                    DeviceRow m1 = Device.NewDeviceRow();
+                    m1.DanteModelName = t1.DanteModelName;
+                    m1.DeviceName = t1.DeviceName;
+                    m1.device = t1.device;
+                    m1.ip = t1.ip;
+                    m1.ip_dspctrl = t1.ip_dspctrl;
+                    m1.name = t1.name;
+                    m1.chCount = t1.ch.Count();
+                    m1.chspk = v;
+                    m1.dsp_chno = 0;
+                    m1.dsp_name = "";
+                    m1.dsp_vol = 0;
+                    m1.dsp_vol_em = 0;
+                    m1.emData = "";
+                    m1.floor_em = 0;
+                    m1.path = "";
+                    Device.Rows.Add(m1);
+                    //Tam.DeviceTableAdapter.Update(Ds1.Device);
+                }
+
+
+                #endregion
 
         #region // AssetBase 자산관리 기초 부분 
         // 나중에 디비는 모두 몰기 
@@ -224,24 +303,24 @@ namespace pa
             List<AssetBase> play = new List<AssetBase>();
             foreach (int t1 in msg.assetsRows)
             {
-                BSTreeRow bSTree = Ds1.BSTree.NewBSTreeRow();
+                BSTreeRow bSTree = BStree.NewBSTreeRow();
                 bSTree.chno = 100000 + chno;
                 bSTree.MusicId = 0;
                 bSTree.AssetId = t1;
-                Ds1.BSTree.Rows.Add(bSTree);
+                BStree.Rows.Add(bSTree);
             }
             foreach (int t1 in msg.musicsRows)
             {
-                BSTreeRow bSTree = Ds1.BSTree.NewBSTreeRow();
+                BSTreeRow bSTree = BStree.NewBSTreeRow();
                 bSTree.chno = 100000 + chno;
                 bSTree.MusicId = t1;
                 bSTree.AssetId = 0;
-                Ds1.BSTree.Rows.Add(bSTree);
+                BStree.Rows.Add(bSTree);
             }
-            Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
-            Ds1.BSTree.AcceptChanges();
+            //Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+            BStree.AcceptChanges();
 
-            var ab1 = Ds1.Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
+            var ab1 = Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
             var p1 = from p in ab1
                      select new AssetBase
                      {
@@ -266,125 +345,29 @@ namespace pa
 
 
         #endregion
+        #region // BSTree 방송 처리 관리 부분 
 
-        #region // Device 장치관리 부분 
-        // dsp 저장후 상세정보 저장 
-        // dsp ch info 저장 
-        public void saveDBDSPCH(IEnumerable<Device> gs1)
+        public void Delete(int idno)
         {
-            Tam.DeviceTableAdapter.Fill(Ds1.Device);
-            Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
             try
             {
-                foreach (var t1 in gs1)
+                var t2 = BStree.Where(p => p.chno == idno);
+                foreach (BSTreeRow t3 in t2)
                 {
-                    var s1 = Ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
-                    if (s1 == null)
-                        continue;
-                    t1.DeviceId = s1.DeviceId;
-                    if (t1.ch.Count < 2)
-                        continue;
-
-                    var s2 = Ds1.DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
-                    if (s2.Count() > 0)
-                        continue;
-
-                    for (int i = 0; i < t1.ch.Count; i++)
-                    {
-                        DeviceChannelRow r1 = Ds1.DeviceChannel.NewDeviceChannelRow();
-                        r1.chno = t1.ch[i].chno;
-                        r1.chname = t1.ch[i].chname[0];
-                        r1.DeviceId = t1.DeviceId;
-                        r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
-                        r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
-                        r1.io = 1;
-                        r1.devicein = "";
-                        r1.deviceinch = 0;
-                        Ds1.DeviceChannel.Rows.Add(r1);
-                    }
-
-                    int num = 1;
-                    if (t1.ch.Count < 17)
-                        num = 17;
-
-                    for (int i = 0; i < t1.ch.Count; i++)
-                    {
-                        DeviceChannelRow r1 = Ds1.DeviceChannel.NewDeviceChannelRow();
-                        r1.chno = num.ToString();
-                        r1.chname = "IN" + num.ToString();
-                        r1.DeviceId = t1.DeviceId;
-                        r1.dsp_out_ch1 = "";
-                        r1.dsp_out_ch2 = "";
-                        r1.io = 0;
-                        r1.devicein = "";
-                        r1.deviceinch = 0;
-                        num++;
-                        Ds1.DeviceChannel.Rows.Add(r1);
-                    }
-                    Tam.DeviceChannelTableAdapter.Update(Ds1.DeviceChannel);
+                    t3.Delete();
                 }
+                //Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
             }
             catch (Exception e1)
             {
-                Console.WriteLine(e1.Message);
-            }
-        }
-
-        // Device ADD
-        public void NewDeviceRow(Device t1, int v)
-        {
-            DeviceRow m1 = Ds1.Device.NewDeviceRow();
-            m1.DanteModelName = t1.DanteModelName;
-            m1.DeviceName = t1.DeviceName;
-            m1.device = t1.device;
-            m1.ip = t1.ip;
-            m1.ip_dspctrl = t1.ip_dspctrl;
-            m1.name = t1.name;
-            m1.chCount = t1.ch.Count();
-            m1.chspk = v;
-            m1.dsp_chno = 0;
-            m1.dsp_name = "";
-            m1.dsp_vol = 0;
-            m1.dsp_vol_em = 0;
-            m1.emData = "";
-            m1.floor_em = 0;
-            m1.path = "";
-            Ds1.Device.Rows.Add(m1);
-            Tam.DeviceTableAdapter.Update(Ds1.Device);
-        }
-
-        public void Save(object o1)
-        {
-            var t1 = o1.GetType();
-
-            try
-            {
-                //switch (t1.BaseType.Name)
-                switch (t1.Name)
-                {
-                    case "EventvmRow":
-                        Ds1.Eventvm.Rows.Add((EventvmRow)o1);
-                        Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
-                        break;
-                    case "SimplepaRow":
-                        Ds1.Simplepa.Rows.Add((SimplepaRow)o1);
-                        Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
-                        break;
-                }
-                //g.Log(t1.Name + " Save OK..");
-            }
-            catch (Exception e1)
-            {
-                Console.WriteLine(e1.Message);
             }
         }
         #endregion
-
         #region // Simplepa 환경설정 관리 부분 
 
         public void Init()
         {
-            SimplepaRow s = Ds1.Simplepa.NewSimplepaRow();
+            SimplepaRow s = Simplepa.NewSimplepaRow();
 
             s.UserName = "엘에스전선";
             s.ServerIP = "192.168.1.1";
@@ -431,24 +414,24 @@ namespace pa
             s.Pport = 0;
             s.scalelength = 0;
             s.length = 0;
-            Ds1.Simplepa.Rows.Add(s);
-            Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
+            Simplepa.Rows.Add(s);
+            //Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
 
 
             for (int i = 0; i < 7; i++)
             {
-                var s1 = Ds1.BSroom.NewBSroomRow();
+                var s1 = BSroom.NewBSroomRow();
                 s1.state = 0;
                 s1.mode = 0;
-                Ds1.BSroom.Rows.Add(s1);
-                Tam.BSroomTableAdapter.Update(Ds1.BSroom);
+                BSroom.Rows.Add(s1);
+                //Tam.BSroomTableAdapter.Update(Ds1.BSroom);
             }
         }
 
         public void Remove(SimplepaRow s2)
         {
-            Ds1.Simplepa.RemoveSimplepaRow(s2);
-            Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
+            Simplepa.RemoveSimplepaRow(s2);
+            //Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
         }
 
 
@@ -456,9 +439,9 @@ namespace pa
 
         #region // Eventvm 이벤트처리 관리 부분 
 
-        public void Eventvm(string event_text, string base_text, string state)
+        public void Eventvms(string event_text, string base_text, string state)
         {
-            EventvmRow em = Ds1.Eventvm.NewEventvmRow();
+            EventvmRow em = Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.event_text = event_text;
             em.path = base_text;
@@ -466,9 +449,10 @@ namespace pa
             em.alarm = 0;
             Save(em);
         }
+
         public void EventvmIP(AssetsRow t3)
         {
-            EventvmRow em = Ds1.Eventvm.NewEventvmRow();
+            EventvmRow em = Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.ip = t3.ip;
             em.path = t3.path;
@@ -478,7 +462,31 @@ namespace pa
             this.Save(em);
         }
 
+        public void Save(object o1)
+        {
+            var t1 = o1.GetType();
+
+            try
+            {
+                //switch (t1.BaseType.Name)
+                switch (t1.Name)
+                {
+                    case "EventvmRow":
+                        Eventvm.Rows.Add((EventvmRow)o1);
+                        //Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
+                        break;
+                    case "SimplepaRow":
+                        Simplepa.Rows.Add((SimplepaRow)o1);
+                        //Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
+                        break;
+                }
+                //g.Log(t1.Name + " Save OK..");
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.Message);
+            }
+        }
         #endregion
-*/
     }
 }

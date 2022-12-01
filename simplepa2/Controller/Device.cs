@@ -15,7 +15,7 @@ namespace simplepa2.Controller
     public partial class Device
     {
         public int DeviceId { get; set; }
-        public Nullable<int> device1 { get; set; }
+        public Nullable<int> device { get; set; }
         public string ip { get; set; }
         public string ip_dspctrl { get; set; }
         public string name { get; set; }

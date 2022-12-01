@@ -334,7 +334,7 @@
             <PropertyRef Name="DeviceId" />
           </Key>
           <Property Name="DeviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="device1" Type="Int32" />
+          <Property Name="device" Type="Int32" />
           <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="ip_dspctrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -588,7 +588,7 @@
             <EntityTypeMapping TypeName="simplePAModel.Device">
               <MappingFragment StoreEntitySet="Device">
                 <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
-                <ScalarProperty Name="device1" ColumnName="device" />
+                <ScalarProperty Name="device" ColumnName="device" />
                 <ScalarProperty Name="ip" ColumnName="ip" />
                 <ScalarProperty Name="ip_dspctrl" ColumnName="ip_dspctrl" />
                 <ScalarProperty Name="name" ColumnName="name" />
