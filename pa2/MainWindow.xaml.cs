@@ -43,9 +43,9 @@ namespace pa
 
         public uint AliveMessage { get; set; }
         System.Timers.Timer AliveTimer { get; set; } = new System.Timers.Timer(1000 * 60 * 5);
+ 
         public DBController dBSqlite { get; set; } = new DBController();
         DataSet1 Ds1 { get; set; }
-        TableAdapterManager Tam { get; set; }
         WireSharkRunning wireShark { get; set; } = new WireSharkRunning();
 
         int em_status { get; set; } = 0;  // 화재 1,2 시험 알람 3,4 가스 5,6  
@@ -73,8 +73,6 @@ namespace pa
             Title = "EM Svr "+ gl.version;
 
             dBSqlite.DBInit();
-            Ds1 = dBSqlite.Ds1;
-            Tam = dBSqlite.Tam;
             _DanteDevice = Ds1.Device;
 
             MakeSpeakerIP();
@@ -551,7 +549,7 @@ namespace pa
                     t1.state = ""; // "Off-Line";
                 }
             }
-            Tam.AssetsTableAdapter.Update(Ds1.Assets);
+//            Tam.AssetsTableAdapter.Update(Ds1.Assets);
         }
 
         // 음원 폴더에서 가져와 디비 생성 
@@ -561,7 +559,7 @@ namespace pa
             // 폴더에서 자동으로 파일 확인후 디비에 등록 처리
             //_BaseData.music.Clear();
 
-            Tam.MusicsTableAdapter.Fill(Ds1.Musics);
+//            Tam.MusicsTableAdapter.Fill(Ds1.Musics);
 
             var directoryInfo = new DirectoryInfo(gl.appPathServer + "Music");
             if (directoryInfo.Exists)
@@ -589,7 +587,7 @@ namespace pa
                             str1 = "00:00:01";
                         m1.duration = str1;
                         Ds1.Musics.Rows.Add(m1);
-                        Tam.MusicsTableAdapter.Update(Ds1.Musics);
+                        //Tam.MusicsTableAdapter.Update(Ds1.Musics);
                     }
                 }
             }

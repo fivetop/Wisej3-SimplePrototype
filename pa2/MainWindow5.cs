@@ -506,7 +506,7 @@ namespace pa
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : Off");
                         sh = sh + cnt.ToString();
-                        Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
+                        //Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
                         var t1 = Ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
@@ -530,7 +530,7 @@ namespace pa
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : On");
                         sh = sh + cnt.ToString();
-                        Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
+                        //Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
                         var t1 = Ds1.AssetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {

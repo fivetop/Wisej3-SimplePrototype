@@ -712,33 +712,43 @@
     <Compile Include="Controller\AssetGroups.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\AssetGroupsController.cs" />
     <Compile Include="Controller\Assets.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\AssetsController.cs" />
     <Compile Include="Controller\BSroom.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\BSroomsController.cs" />
     <Compile Include="Controller\BSTree.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\BSTreesController.cs" />
     <Compile Include="Controller\Device.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Controller\DeviceChannel.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\DeviceChannelsController.cs" />
+    <Compile Include="Controller\DevicesController.cs" />
     <Compile Include="Controller\EMBs.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\EMBsController.cs" />
     <Compile Include="Controller\EMServer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\EMServersController.cs" />
     <Compile Include="Controller\Eventvm.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\EventvmsController.cs" />
     <Compile Include="Controller\Holidays.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\HolidaysController.cs" />
     <Compile Include="Controller\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -757,12 +767,15 @@
     <Compile Include="Controller\Musics.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\MusicsController.cs" />
     <Compile Include="Controller\PlayItem.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\PlayItemsController.cs" />
     <Compile Include="Controller\Simplepa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\SimplepasController.cs" />
     <Compile Include="Controller\UserTrees.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

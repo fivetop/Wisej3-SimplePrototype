@@ -164,6 +164,7 @@
     <Compile Include="BSThreadClass.cs" />
     <Compile Include="classes\common.cs" />
     <Compile Include="classes\TrayIcon.cs" />
+    <Compile Include="DBAccess.cs" />
     <Compile Include="ExtProcess.cs" />
     <Compile Include="g.cs" />
     <Compile Include="MainWindow9.cs" />
