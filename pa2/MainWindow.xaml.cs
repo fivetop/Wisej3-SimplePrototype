@@ -76,7 +76,7 @@ namespace pa
         #region // 초기화 처리 
 
         bool firsttime = true;
-        System.Timers.Timer Initialtimer { get; set; } = new System.Timers.Timer(20000);
+        System.Timers.Timer Initialtimer { get; set; } = new System.Timers.Timer(2000);
 
         // 템플릿에서 엘레먼트 가져오기 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
