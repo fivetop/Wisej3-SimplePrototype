@@ -28,60 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.변경이력 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.IP주소 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.장비종류 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.장비명 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.장비아이디 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
+            this.장비아이디 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.장비명 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.장비종류 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.IP주소 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.카테고리 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.label5 = new Wisej.Web.Label();
-            this.comboBox2 = new Wisej.Web.ComboBox();
-            this.label2 = new Wisej.Web.Label();
-            this.comboBox1 = new Wisej.Web.ComboBox();
-            this.popTestButton = new Wisej.Web.Button();
-            this.button3 = new Wisej.Web.Button();
-            this.button2 = new Wisej.Web.Button();
-            this.button1 = new Wisej.Web.Button();
-            this.textBox3 = new Wisej.Web.TextBox();
-            this.label4 = new Wisej.Web.Label();
-            this.label3 = new Wisej.Web.Label();
-            this.textBox2 = new Wisej.Web.TextBox();
-            this.panel1 = new Wisej.Web.Panel();
+            this.변경이력 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.상세 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.발생시간 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel3 = new Wisej.Web.Panel();
+            this.label1 = new Wisej.Web.Label();
+            this.comboBox3 = new Wisej.Web.ComboBox();
+            this.label6 = new Wisej.Web.Label();
+            this.comboBox4 = new Wisej.Web.ComboBox();
+            this.button4 = new Wisej.Web.Button();
+            this.button5 = new Wisej.Web.Button();
+            this.button6 = new Wisej.Web.Button();
+            this.button7 = new Wisej.Web.Button();
+            this.textBox1 = new Wisej.Web.TextBox();
+            this.label7 = new Wisej.Web.Label();
+            this.label8 = new Wisej.Web.Label();
+            this.textBox4 = new Wisej.Web.TextBox();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // 변경이력
+            // panel2
             // 
-            this.변경이력.HeaderText = "변경이력";
-            this.변경이력.Name = "변경이력";
-            this.변경이력.Width = 80;
-            // 
-            // IP주소
-            // 
-            this.IP주소.HeaderText = "IP주소";
-            this.IP주소.Name = "IP주소";
-            this.IP주소.Width = 150;
-            // 
-            // 장비종류
-            // 
-            this.장비종류.HeaderText = "장비종류";
-            this.장비종류.Name = "장비종류";
-            // 
-            // 장비명
-            // 
-            this.장비명.HeaderText = "장비명";
-            this.장비명.Name = "장비명";
-            this.장비명.Width = 200;
-            // 
-            // 장비아이디
-            // 
-            this.장비아이디.HeaderText = "장비아이디";
-            this.장비아이디.Name = "장비아이디";
-            this.장비아이디.Width = 140;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(20, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new Wisej.Web.Padding(20);
+            this.panel2.Size = new System.Drawing.Size(1360, 860);
+            this.panel2.TabIndex = 50;
             // 
             // dataGridView1
             // 
@@ -95,10 +80,33 @@
             this.상세,
             this.발생시간});
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 80);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 72);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1360, 800);
-            this.dataGridView1.TabIndex = 66;
+            this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
+            this.dataGridView1.TabIndex = 68;
+            // 
+            // 장비아이디
+            // 
+            this.장비아이디.HeaderText = "장비아이디";
+            this.장비아이디.Name = "장비아이디";
+            this.장비아이디.Width = 140;
+            // 
+            // 장비명
+            // 
+            this.장비명.HeaderText = "장비명";
+            this.장비명.Name = "장비명";
+            this.장비명.Width = 200;
+            // 
+            // 장비종류
+            // 
+            this.장비종류.HeaderText = "장비종류";
+            this.장비종류.Name = "장비종류";
+            // 
+            // IP주소
+            // 
+            this.IP주소.HeaderText = "IP주소";
+            this.IP주소.Name = "IP주소";
+            this.IP주소.Width = 150;
             // 
             // 카테고리
             // 
@@ -106,163 +114,11 @@
             this.카테고리.Name = "카테고리";
             this.카테고리.Width = 150;
             // 
-            // label5
+            // 변경이력
             // 
-            this.label5.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label5.Location = new System.Drawing.Point(637, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 32);
-            this.label5.TabIndex = 87;
-            this.label5.Text = "이벤트";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.comboBox2.AutoSize = false;
-            this.comboBox2.Location = new System.Drawing.Point(729, 0);
-            this.comboBox2.Margin = new Wisej.Web.Padding(0);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 32);
-            this.comboBox2.TabIndex = 86;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label2.Location = new System.Drawing.Point(956, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 32);
-            this.label2.TabIndex = 85;
-            this.label2.Text = "방송타입";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.comboBox1.AutoSize = false;
-            this.comboBox1.Location = new System.Drawing.Point(1048, 0);
-            this.comboBox1.Margin = new Wisej.Web.Padding(0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 32);
-            this.comboBox1.TabIndex = 84;
-            // 
-            // popTestButton
-            // 
-            this.popTestButton.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.popTestButton.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.popTestButton.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.popTestButton.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.popTestButton.Location = new System.Drawing.Point(1258, 0);
-            this.popTestButton.Margin = new Wisej.Web.Padding(0);
-            this.popTestButton.Name = "popTestButton";
-            this.popTestButton.Size = new System.Drawing.Size(100, 32);
-            this.popTestButton.TabIndex = 83;
-            this.popTestButton.Text = "검색";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
-            this.button3.BorderStyle = Wisej.Web.BorderStyle.None;
-            this.button3.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button3.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
-            this.button3.Location = new System.Drawing.Point(504, 0);
-            this.button3.Margin = new Wisej.Web.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 32);
-            this.button3.TabIndex = 82;
-            this.button3.Text = "6개월";
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
-            this.button2.BorderStyle = Wisej.Web.BorderStyle.None;
-            this.button2.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button2.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
-            this.button2.Location = new System.Drawing.Point(433, 0);
-            this.button2.Margin = new Wisej.Web.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 32);
-            this.button2.TabIndex = 81;
-            this.button2.Text = "1개월";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
-            this.button1.BorderStyle = Wisej.Web.BorderStyle.None;
-            this.button1.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button1.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
-            this.button1.Location = new System.Drawing.Point(363, 0);
-            this.button1.Margin = new Wisej.Web.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 32);
-            this.button1.TabIndex = 80;
-            this.button1.Text = "1주일";
-            // 
-            // textBox3
-            // 
-            this.textBox3.AutoSize = false;
-            this.textBox3.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox3.Location = new System.Drawing.Point(222, 0);
-            this.textBox3.Margin = new Wisej.Web.Padding(0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(130, 32);
-            this.textBox3.TabIndex = 79;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label4.Location = new System.Drawing.Point(187, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 32);
-            this.label4.TabIndex = 78;
-            this.label4.Text = "~";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 32);
-            this.label3.TabIndex = 77;
-            this.label3.Text = "날짜";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox2
-            // 
-            this.textBox2.AutoSize = false;
-            this.textBox2.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox2.Location = new System.Drawing.Point(54, 0);
-            this.textBox2.Margin = new Wisej.Web.Padding(0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 32);
-            this.textBox2.TabIndex = 76;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.popTestButton);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(20, 20);
-            this.panel1.Name = "panel1";
-            this.panel1.ShowCloseButton = false;
-            this.panel1.Size = new System.Drawing.Size(1360, 60);
-            this.panel1.TabIndex = 65;
+            this.변경이력.HeaderText = "변경이력";
+            this.변경이력.Name = "변경이력";
+            this.변경이력.Width = 80;
             // 
             // 상세
             // 
@@ -276,44 +132,200 @@
             this.발생시간.Name = "발생시간";
             this.발생시간.Width = 180;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.comboBox3);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.comboBox4);
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.button7);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Dock = Wisej.Web.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(20, 20);
+            this.panel3.Name = "panel3";
+            this.panel3.ShowCloseButton = false;
+            this.panel3.Size = new System.Drawing.Size(1320, 52);
+            this.panel3.TabIndex = 67;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.Location = new System.Drawing.Point(597, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 32);
+            this.label1.TabIndex = 87;
+            this.label1.Text = "이벤트";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.comboBox3.AutoSize = false;
+            this.comboBox3.Location = new System.Drawing.Point(689, 0);
+            this.comboBox3.Margin = new Wisej.Web.Padding(0);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(200, 32);
+            this.comboBox3.TabIndex = 86;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label6.Location = new System.Drawing.Point(916, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 32);
+            this.label6.TabIndex = 85;
+            this.label6.Text = "장비명";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.comboBox4.AutoSize = false;
+            this.comboBox4.Location = new System.Drawing.Point(1008, 0);
+            this.comboBox4.Margin = new Wisej.Web.Padding(0);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(200, 32);
+            this.comboBox4.TabIndex = 84;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.button4.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button4.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button4.Location = new System.Drawing.Point(1218, 0);
+            this.button4.Margin = new Wisej.Web.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 32);
+            this.button4.TabIndex = 83;
+            this.button4.Text = "검색";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
+            this.button5.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.button5.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button5.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
+            this.button5.Location = new System.Drawing.Point(504, 0);
+            this.button5.Margin = new Wisej.Web.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(60, 32);
+            this.button5.TabIndex = 82;
+            this.button5.Text = "6개월";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
+            this.button6.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.button6.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button6.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
+            this.button6.Location = new System.Drawing.Point(433, 0);
+            this.button6.Margin = new Wisej.Web.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(60, 32);
+            this.button6.TabIndex = 81;
+            this.button6.Text = "1개월";
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
+            this.button7.BorderStyle = Wisej.Web.BorderStyle.None;
+            this.button7.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button7.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
+            this.button7.Location = new System.Drawing.Point(363, 0);
+            this.button7.Margin = new Wisej.Web.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(60, 32);
+            this.button7.TabIndex = 80;
+            this.button7.Text = "1주일";
+            // 
+            // textBox1
+            // 
+            this.textBox1.AutoSize = false;
+            this.textBox1.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.Location = new System.Drawing.Point(222, 0);
+            this.textBox1.Margin = new Wisej.Web.Padding(0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(130, 32);
+            this.textBox1.TabIndex = 79;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label7.Location = new System.Drawing.Point(187, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 32);
+            this.label7.TabIndex = 78;
+            this.label7.Text = "~";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 32);
+            this.label8.TabIndex = 77;
+            this.label8.Text = "날짜";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox4
+            // 
+            this.textBox4.AutoSize = false;
+            this.textBox4.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox4.Location = new System.Drawing.Point(54, 0);
+            this.textBox4.Margin = new Wisej.Web.Padding(0);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(130, 32);
+            this.textBox4.TabIndex = 76;
+            // 
             // View_HistoryDevice
             // 
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
+            this.Controls.Add(this.panel2);
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_HistoryDevice";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Wisej.Web.DataGridViewTextBoxColumn 변경이력;
-        private Wisej.Web.DataGridViewTextBoxColumn IP주소;
-        private Wisej.Web.DataGridViewTextBoxColumn 장비종류;
-        private Wisej.Web.DataGridViewTextBoxColumn 장비명;
-        private Wisej.Web.DataGridViewTextBoxColumn 장비아이디;
+        private Wisej.Web.Panel panel2;
         private Wisej.Web.DataGridView dataGridView1;
+        private Wisej.Web.DataGridViewTextBoxColumn 장비아이디;
+        private Wisej.Web.DataGridViewTextBoxColumn 장비명;
+        private Wisej.Web.DataGridViewTextBoxColumn 장비종류;
+        private Wisej.Web.DataGridViewTextBoxColumn IP주소;
         private Wisej.Web.DataGridViewTextBoxColumn 카테고리;
+        private Wisej.Web.DataGridViewTextBoxColumn 변경이력;
         private Wisej.Web.DataGridViewTextBoxColumn 상세;
         private Wisej.Web.DataGridViewTextBoxColumn 발생시간;
-        private Wisej.Web.Label label5;
-        private Wisej.Web.ComboBox comboBox2;
-        private Wisej.Web.Label label2;
-        private Wisej.Web.ComboBox comboBox1;
-        private Wisej.Web.Button popTestButton;
-        private Wisej.Web.Button button3;
-        private Wisej.Web.Button button2;
-        private Wisej.Web.Button button1;
-        private Wisej.Web.TextBox textBox3;
-        private Wisej.Web.Label label4;
-        private Wisej.Web.Label label3;
-        private Wisej.Web.TextBox textBox2;
-        private Wisej.Web.Panel panel1;
+        private Wisej.Web.Panel panel3;
+        private Wisej.Web.Label label1;
+        private Wisej.Web.ComboBox comboBox3;
+        private Wisej.Web.Label label6;
+        private Wisej.Web.ComboBox comboBox4;
+        private Wisej.Web.Button button4;
+        private Wisej.Web.Button button5;
+        private Wisej.Web.Button button6;
+        private Wisej.Web.Button button7;
+        private Wisej.Web.TextBox textBox1;
+        private Wisej.Web.Label label7;
+        private Wisej.Web.Label label8;
+        private Wisej.Web.TextBox textBox4;
     }
 }

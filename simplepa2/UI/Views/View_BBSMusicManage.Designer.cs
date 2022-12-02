@@ -310,9 +310,8 @@
             // 
             // View_BBSMusicManage
             // 
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel6);
-            this.CssStyle = "background: /*#F0F0F0*/#eeeff8;";
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_BBSMusicManage";
             this.Padding = new Wisej.Web.Padding(20);

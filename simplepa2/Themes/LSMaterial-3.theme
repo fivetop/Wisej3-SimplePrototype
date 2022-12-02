@@ -207,7 +207,9 @@
 		"bStatusYellolw": "#FFF131",
 		"bStatusRed": "#FF5454",
 		"bStatusBlue": "#358CEF",
-		"bgCardinCard": "#e5e8f9"
+		"bgCardinCard": "#e5e8f9",
+		"bBGall": "#eeeff8",
+		"bBoxInBox": "#F4F5FB"
 	},
 	"appearances": {
 		"accordion": {

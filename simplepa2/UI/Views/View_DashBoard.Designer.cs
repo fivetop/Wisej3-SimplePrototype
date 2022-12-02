@@ -56,7 +56,6 @@
             this.label23 = new Wisej.Web.Label();
             this.btnBS2 = new Wisej.Web.Button();
             this.btnBS1 = new Wisej.Web.Button();
-            this.membs = new Wisej.Web.BindingSource(this.components);
             this.label22 = new Wisej.Web.Label();
             this.productTitle = new Wisej.Web.Label();
             this.pictureBox1 = new Wisej.Web.PictureBox();
@@ -82,6 +81,7 @@
             this.dataGridViewTextBoxColumn6 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel13 = new Wisej.Web.Panel();
             this.label21 = new Wisej.Web.Label();
+            this.membs = new Wisej.Web.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).BeginInit();
@@ -96,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataRepeater1)).BeginInit();
             this.dataRepeater1.ItemTemplate.SuspendLayout();
             this.dataRepeater1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
             this.splitContainer6.Panel1.SuspendLayout();
@@ -109,6 +108,7 @@
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.evdataGridView3)).BeginInit();
             this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -268,10 +268,6 @@
             this.btnBS1.TabIndex = 6;
             this.btnBS1.Text = "입장하기";
             this.btnBS1.Click += new System.EventHandler(this.btnBS1_Click);
-            // 
-            // membs
-            // 
-            this.membs.DataSource = typeof(simplepa2.bsroom);
             // 
             // label22
             // 
@@ -527,6 +523,10 @@
             this.label21.TabIndex = 4;
             this.label21.Text = "장치 이벤트 정보";
             // 
+            // membs
+            // 
+            this.membs.DataSource = typeof(simplepa2.bsroom);
+            // 
             // View_DashBoard
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -550,7 +550,6 @@
             this.dataRepeater1.ItemTemplate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataRepeater1)).EndInit();
             this.dataRepeater1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.splitContainer6.Panel1.ResumeLayout(false);
             this.splitContainer6.Panel2.ResumeLayout(false);
@@ -565,6 +564,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.evdataGridView3)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             this.ResumeLayout(false);
 
         }

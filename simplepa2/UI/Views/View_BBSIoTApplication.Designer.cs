@@ -31,6 +31,32 @@
             this.panel1 = new Wisej.Web.Panel();
             this.panel48 = new Wisej.Web.Panel();
             this.panel49 = new Wisej.Web.Panel();
+            this.panel20 = new Wisej.Web.Panel();
+            this.label9 = new Wisej.Web.Label();
+            this.panel18 = new Wisej.Web.Panel();
+            this.panel19 = new Wisej.Web.Panel();
+            this.label8 = new Wisej.Web.Label();
+            this.panel16 = new Wisej.Web.Panel();
+            this.panel17 = new Wisej.Web.Panel();
+            this.label7 = new Wisej.Web.Label();
+            this.panel14 = new Wisej.Web.Panel();
+            this.panel15 = new Wisej.Web.Panel();
+            this.label6 = new Wisej.Web.Label();
+            this.panel12 = new Wisej.Web.Panel();
+            this.panel13 = new Wisej.Web.Panel();
+            this.label5 = new Wisej.Web.Label();
+            this.panel10 = new Wisej.Web.Panel();
+            this.panel11 = new Wisej.Web.Panel();
+            this.label4 = new Wisej.Web.Label();
+            this.panel7 = new Wisej.Web.Panel();
+            this.panel9 = new Wisej.Web.Panel();
+            this.label3 = new Wisej.Web.Label();
+            this.panel4 = new Wisej.Web.Panel();
+            this.panel5 = new Wisej.Web.Panel();
+            this.label2 = new Wisej.Web.Label();
+            this.panel2 = new Wisej.Web.Panel();
+            this.panel3 = new Wisej.Web.Panel();
+            this.label1 = new Wisej.Web.Label();
             this.panel70 = new Wisej.Web.Panel();
             this.panel71 = new Wisej.Web.Panel();
             this.label44 = new Wisej.Web.Label();
@@ -83,34 +109,17 @@
             this.button5 = new Wisej.Web.Button();
             this.button53 = new Wisej.Web.Button();
             this.label66 = new Wisej.Web.Label();
-            this.panel2 = new Wisej.Web.Panel();
-            this.panel3 = new Wisej.Web.Panel();
-            this.label1 = new Wisej.Web.Label();
-            this.panel4 = new Wisej.Web.Panel();
-            this.panel5 = new Wisej.Web.Panel();
-            this.label2 = new Wisej.Web.Label();
-            this.panel7 = new Wisej.Web.Panel();
-            this.panel9 = new Wisej.Web.Panel();
-            this.label3 = new Wisej.Web.Label();
-            this.panel10 = new Wisej.Web.Panel();
-            this.panel11 = new Wisej.Web.Panel();
-            this.label4 = new Wisej.Web.Label();
-            this.panel12 = new Wisej.Web.Panel();
-            this.panel13 = new Wisej.Web.Panel();
-            this.label5 = new Wisej.Web.Label();
-            this.panel14 = new Wisej.Web.Panel();
-            this.panel15 = new Wisej.Web.Panel();
-            this.label6 = new Wisej.Web.Label();
-            this.panel16 = new Wisej.Web.Panel();
-            this.panel17 = new Wisej.Web.Panel();
-            this.label7 = new Wisej.Web.Label();
-            this.panel18 = new Wisej.Web.Panel();
-            this.panel19 = new Wisej.Web.Panel();
-            this.label8 = new Wisej.Web.Label();
-            this.panel20 = new Wisej.Web.Panel();
-            this.label9 = new Wisej.Web.Label();
             this.panel48.SuspendLayout();
             this.panel49.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel71.SuspendLayout();
             this.panel32.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -129,15 +138,6 @@
             this.panel35.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel136.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -191,6 +191,260 @@
             this.panel49.Size = new System.Drawing.Size(540, 768);
             this.panel49.TabIndex = 51;
             this.panel49.Text = "listPanel";
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel20.Controls.Add(this.label9);
+            this.panel20.Dock = Wisej.Web.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(0, 740);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(523, 60);
+            this.panel20.TabIndex = 153;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label9.Location = new System.Drawing.Point(21, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(437, 20);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "[ADMIN 3층 주의 방송";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel18
+            // 
+            this.panel18.Dock = Wisej.Web.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(0, 720);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(523, 20);
+            this.panel18.TabIndex = 152;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel19.Controls.Add(this.label8);
+            this.panel19.Dock = Wisej.Web.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(0, 660);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(523, 60);
+            this.panel19.TabIndex = 151;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label8.Location = new System.Drawing.Point(21, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(437, 20);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "[ADMIN 3층 주의 방송";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel16
+            // 
+            this.panel16.Dock = Wisej.Web.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(0, 640);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(523, 20);
+            this.panel16.TabIndex = 150;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel17.Controls.Add(this.label7);
+            this.panel17.Dock = Wisej.Web.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(0, 580);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(523, 60);
+            this.panel17.TabIndex = 149;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label7.Location = new System.Drawing.Point(21, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(437, 20);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "[ADMIN 3층 주의 방송";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel14
+            // 
+            this.panel14.Dock = Wisej.Web.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(0, 560);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(523, 20);
+            this.panel14.TabIndex = 148;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel15.Controls.Add(this.label6);
+            this.panel15.Dock = Wisej.Web.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 500);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(523, 60);
+            this.panel15.TabIndex = 147;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label6.Location = new System.Drawing.Point(21, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(437, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "[ADMIN 3층 주의 방송";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel12
+            // 
+            this.panel12.Dock = Wisej.Web.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(0, 480);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(523, 20);
+            this.panel12.TabIndex = 146;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel13.Controls.Add(this.label5);
+            this.panel13.Dock = Wisej.Web.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 420);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(523, 60);
+            this.panel13.TabIndex = 145;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label5.Location = new System.Drawing.Point(21, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(437, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "[ADMIN 3층 주의 방송";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel10
+            // 
+            this.panel10.Dock = Wisej.Web.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 400);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(523, 20);
+            this.panel10.TabIndex = 144;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel11.Controls.Add(this.label4);
+            this.panel11.Dock = Wisej.Web.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 340);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(523, 60);
+            this.panel11.TabIndex = 143;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label4.Location = new System.Drawing.Point(21, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(437, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "[ADMIN 3층 주의 방송";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = Wisej.Web.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 320);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(523, 20);
+            this.panel7.TabIndex = 142;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Dock = Wisej.Web.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 260);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(523, 60);
+            this.panel9.TabIndex = 141;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label3.Location = new System.Drawing.Point(21, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(437, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "[ADMIN 3층 주의 방송";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = Wisej.Web.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 240);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(523, 20);
+            this.panel4.TabIndex = 140;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Dock = Wisej.Web.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 180);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(523, 60);
+            this.panel5.TabIndex = 139;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label2.Location = new System.Drawing.Point(21, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(437, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "[ADMIN 3층 주의 방송";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = Wisej.Web.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 160);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(523, 20);
+            this.panel2.TabIndex = 138;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = Wisej.Web.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 100);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(523, 60);
+            this.panel3.TabIndex = 137;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(21, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(437, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "[ADMIN 3층 주의 방송";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel70
             // 
@@ -767,273 +1021,27 @@
             this.label66.Text = "방송 편집 : 오크동 입구 IoT 방송";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel2
-            // 
-            this.panel2.Dock = Wisej.Web.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 160);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(523, 20);
-            this.panel2.TabIndex = 138;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = Wisej.Web.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 100);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(523, 60);
-            this.panel3.TabIndex = 137;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(437, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "[ADMIN 3층 주의 방송";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = Wisej.Web.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 240);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(523, 20);
-            this.panel4.TabIndex = 140;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = Wisej.Web.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 180);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(523, 60);
-            this.panel5.TabIndex = 139;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label2.Location = new System.Drawing.Point(21, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(437, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "[ADMIN 3층 주의 방송";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = Wisej.Web.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 320);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(523, 20);
-            this.panel7.TabIndex = 142;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel9.Controls.Add(this.label3);
-            this.panel9.Dock = Wisej.Web.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 260);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(523, 60);
-            this.panel9.TabIndex = 141;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label3.Location = new System.Drawing.Point(21, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(437, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "[ADMIN 3층 주의 방송";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel10
-            // 
-            this.panel10.Dock = Wisej.Web.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 400);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(523, 20);
-            this.panel10.TabIndex = 144;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel11.Controls.Add(this.label4);
-            this.panel11.Dock = Wisej.Web.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 340);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(523, 60);
-            this.panel11.TabIndex = 143;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label4.Location = new System.Drawing.Point(21, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(437, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "[ADMIN 3층 주의 방송";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel12
-            // 
-            this.panel12.Dock = Wisej.Web.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 480);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(523, 20);
-            this.panel12.TabIndex = 146;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel13.Controls.Add(this.label5);
-            this.panel13.Dock = Wisej.Web.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 420);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(523, 60);
-            this.panel13.TabIndex = 145;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label5.Location = new System.Drawing.Point(21, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(437, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "[ADMIN 3층 주의 방송";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel14
-            // 
-            this.panel14.Dock = Wisej.Web.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 560);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(523, 20);
-            this.panel14.TabIndex = 148;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel15.Controls.Add(this.label6);
-            this.panel15.Dock = Wisej.Web.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(0, 500);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(523, 60);
-            this.panel15.TabIndex = 147;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label6.Location = new System.Drawing.Point(21, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(437, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "[ADMIN 3층 주의 방송";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel16
-            // 
-            this.panel16.Dock = Wisej.Web.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(0, 640);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(523, 20);
-            this.panel16.TabIndex = 150;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel17.Controls.Add(this.label7);
-            this.panel17.Dock = Wisej.Web.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(0, 580);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(523, 60);
-            this.panel17.TabIndex = 149;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label7.Location = new System.Drawing.Point(21, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(437, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "[ADMIN 3층 주의 방송";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel18
-            // 
-            this.panel18.Dock = Wisej.Web.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(0, 720);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(523, 20);
-            this.panel18.TabIndex = 152;
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel19.Controls.Add(this.label8);
-            this.panel19.Dock = Wisej.Web.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(0, 660);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(523, 60);
-            this.panel19.TabIndex = 151;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label8.Location = new System.Drawing.Point(21, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(437, 20);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "[ADMIN 3층 주의 방송";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel20.Controls.Add(this.label9);
-            this.panel20.Dock = Wisej.Web.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(0, 740);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(523, 60);
-            this.panel20.TabIndex = 153;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label9.Location = new System.Drawing.Point(21, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(437, 20);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "[ADMIN 3층 주의 방송";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // View_BBSIoTApplication
             // 
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel48);
-            this.CssStyle = "background: /*#F0F0F0*/#eeeff8;";
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_BBSIoTApplication";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
             this.panel48.ResumeLayout(false);
             this.panel49.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel71.ResumeLayout(false);
             this.panel32.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -1054,15 +1062,6 @@
             this.panel35.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
             this.panel136.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -31,9 +31,6 @@
             this.panel1 = new Wisej.Web.Panel();
             this.panel48 = new Wisej.Web.Panel();
             this.panel49 = new Wisej.Web.Panel();
-            this.panel38 = new Wisej.Web.Panel();
-            this.button1 = new Wisej.Web.Button();
-            this.label17 = new Wisej.Web.Label();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.이름 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송시간 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -41,12 +38,17 @@
             this.방송내용 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.현재로그인 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.이전로그인 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel38 = new Wisej.Web.Panel();
+            this.button1 = new Wisej.Web.Button();
+            this.label17 = new Wisej.Web.Label();
             this.panel3 = new Wisej.Web.Panel();
             this.panel32 = new Wisej.Web.Panel();
             this.panel89 = new Wisej.Web.Panel();
             this.panel37 = new Wisej.Web.Panel();
+            this.comboBox4 = new Wisej.Web.ComboBox();
             this.label26 = new Wisej.Web.Label();
             this.panel36 = new Wisej.Web.Panel();
+            this.comboBox3 = new Wisej.Web.ComboBox();
             this.label25 = new Wisej.Web.Label();
             this.panel35 = new Wisej.Web.Panel();
             this.textBox5 = new Wisej.Web.TextBox();
@@ -59,12 +61,10 @@
             this.button5 = new Wisej.Web.Button();
             this.button2 = new Wisej.Web.Button();
             this.label66 = new Wisej.Web.Label();
-            this.comboBox3 = new Wisej.Web.ComboBox();
-            this.comboBox4 = new Wisej.Web.ComboBox();
             this.panel48.SuspendLayout();
             this.panel49.SuspendLayout();
-            this.panel38.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel38.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel32.SuspendLayout();
             this.panel89.SuspendLayout();
@@ -107,41 +107,6 @@
             this.panel49.Size = new System.Drawing.Size(800, 768);
             this.panel49.TabIndex = 51;
             this.panel49.Text = "listPanel";
-            // 
-            // panel38
-            // 
-            this.panel38.BackColor = System.Drawing.Color.Transparent;
-            this.panel38.Controls.Add(this.button1);
-            this.panel38.Controls.Add(this.label17);
-            this.panel38.Dock = Wisej.Web.DockStyle.Top;
-            this.panel38.Location = new System.Drawing.Point(20, 20);
-            this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(800, 52);
-            this.panel38.TabIndex = 50;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button1.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.button1.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button1.Location = new System.Drawing.Point(700, 0);
-            this.button1.Margin = new Wisej.Web.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 32);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "추가";
-            // 
-            // label17
-            // 
-            this.label17.CssStyle = "\r\n";
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label17.Location = new System.Drawing.Point(0, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(223, 32);
-            this.label17.TabIndex = 33;
-            this.label17.Text = "사용자 리스트";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dataGridView1
             // 
@@ -192,6 +157,41 @@
             this.이전로그인.HeaderText = "이전로그인";
             this.이전로그인.Name = "이전로그인";
             this.이전로그인.Width = 150;
+            // 
+            // panel38
+            // 
+            this.panel38.BackColor = System.Drawing.Color.Transparent;
+            this.panel38.Controls.Add(this.button1);
+            this.panel38.Controls.Add(this.label17);
+            this.panel38.Dock = Wisej.Web.DockStyle.Top;
+            this.panel38.Location = new System.Drawing.Point(20, 20);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(800, 52);
+            this.panel38.TabIndex = 50;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.button1.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button1.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button1.Location = new System.Drawing.Point(700, 0);
+            this.button1.Margin = new Wisej.Web.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 32);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "추가";
+            // 
+            // label17
+            // 
+            this.label17.CssStyle = "\r\n";
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label17.Location = new System.Drawing.Point(0, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(223, 32);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "사용자 리스트";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -244,6 +244,16 @@
             this.panel37.Size = new System.Drawing.Size(420, 56);
             this.panel37.TabIndex = 166;
             // 
+            // comboBox4
+            // 
+            this.comboBox4.AutoSize = false;
+            this.comboBox4.Dock = Wisej.Web.DockStyle.Left;
+            this.comboBox4.Location = new System.Drawing.Point(123, 20);
+            this.comboBox4.Margin = new Wisej.Web.Padding(0);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(240, 36);
+            this.comboBox4.TabIndex = 139;
+            // 
             // label26
             // 
             this.label26.AutoEllipsis = true;
@@ -269,6 +279,16 @@
             this.panel36.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
             this.panel36.Size = new System.Drawing.Size(420, 56);
             this.panel36.TabIndex = 165;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoSize = false;
+            this.comboBox3.Dock = Wisej.Web.DockStyle.Left;
+            this.comboBox3.Location = new System.Drawing.Point(123, 20);
+            this.comboBox3.Margin = new Wisej.Web.Padding(0);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(240, 36);
+            this.comboBox3.TabIndex = 138;
             // 
             // label25
             // 
@@ -416,29 +436,9 @@
             this.label66.Text = "사용자 편집";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox3
-            // 
-            this.comboBox3.AutoSize = false;
-            this.comboBox3.Dock = Wisej.Web.DockStyle.Left;
-            this.comboBox3.Location = new System.Drawing.Point(123, 20);
-            this.comboBox3.Margin = new Wisej.Web.Padding(0);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(240, 36);
-            this.comboBox3.TabIndex = 138;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.AutoSize = false;
-            this.comboBox4.Dock = Wisej.Web.DockStyle.Left;
-            this.comboBox4.Location = new System.Drawing.Point(123, 20);
-            this.comboBox4.Margin = new Wisej.Web.Padding(0);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(240, 36);
-            this.comboBox4.TabIndex = 139;
-            // 
             // View_SystemAccount
             // 
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromName("@bBGall");
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel48);
@@ -448,8 +448,8 @@
             this.Size = new System.Drawing.Size(1400, 900);
             this.panel48.ResumeLayout(false);
             this.panel49.ResumeLayout(false);
-            this.panel38.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel38.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel32.ResumeLayout(false);
             this.panel32.PerformLayout();

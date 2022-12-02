@@ -28,5 +28,10 @@ namespace simplepa2.UI.Views
                 this.pop_BBCZoneForm.ShowPopup(this);
 
         }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
