@@ -56,7 +56,7 @@ namespace pa
         {
             try
             {
-                var url2 = @"http://localhost:9921/api/" + url;
+                var url2 = g._EMClient.WebAPIURL + url;
                 httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
                 var res = httpClient.GetStringAsync(url2).Result;
                 var ret = JsonConvert.DeserializeObject<T>(res);
@@ -74,7 +74,7 @@ namespace pa
             {
                 string jsonEmp = JsonConvert.SerializeObject(t1);
 
-                var url2 = @"http://localhost:9921/api/" + url; //Строка по которой производиться обращение к таблице
+                var url2 = g._EMClient.WebAPIURL + url;
                 StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
                 var res = httpClient.PostAsync(url2, stringC).Result; //отправляем 
 
