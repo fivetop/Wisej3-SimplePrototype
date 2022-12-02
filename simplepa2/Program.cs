@@ -18,7 +18,6 @@ using simplepa2.SignalR;
 
 namespace simplepa2
 {
-
 	public partial class Startup
 	{
 		public void Configuration(IAppBuilder app)
