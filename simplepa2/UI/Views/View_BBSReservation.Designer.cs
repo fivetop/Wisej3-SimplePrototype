@@ -93,7 +93,7 @@
             // label66
             // 
             this.label66.CssStyle = "\r\n";
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label66.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label66.Location = new System.Drawing.Point(0, 0);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(418, 32);

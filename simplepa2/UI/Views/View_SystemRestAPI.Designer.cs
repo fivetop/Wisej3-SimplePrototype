@@ -35,7 +35,6 @@
             this.panel37 = new Wisej.Web.Panel();
             this.textBox3 = new Wisej.Web.TextBox();
             this.label26 = new Wisej.Web.Label();
-            this.line1 = new Wisej.Web.Line();
             this.panel5 = new Wisej.Web.Panel();
             this.panel136 = new Wisej.Web.Panel();
             this.button2 = new Wisej.Web.Button();
@@ -85,7 +84,6 @@
             // 
             this.panel89.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
             this.panel89.Controls.Add(this.panel37);
-            this.panel89.Controls.Add(this.line1);
             this.panel89.Dock = Wisej.Web.DockStyle.Top;
             this.panel89.Location = new System.Drawing.Point(0, 20);
             this.panel89.Name = "panel89";
@@ -98,7 +96,7 @@
             this.panel37.Controls.Add(this.textBox3);
             this.panel37.Controls.Add(this.label26);
             this.panel37.Dock = Wisej.Web.DockStyle.Top;
-            this.panel37.Location = new System.Drawing.Point(20, 21);
+            this.panel37.Location = new System.Drawing.Point(20, 20);
             this.panel37.Name = "panel37";
             this.panel37.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
             this.panel37.Size = new System.Drawing.Size(1280, 56);
@@ -117,23 +115,15 @@
             this.label26.AutoEllipsis = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Dock = Wisej.Web.DockStyle.Left;
-            this.label26.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label26.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label26.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label26.Location = new System.Drawing.Point(0, 20);
             this.label26.Margin = new Wisej.Web.Padding(0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(183, 36);
             this.label26.TabIndex = 136;
-            this.label26.Text = "Rest API 키";
+            this.label26.Text = "Rest API Key";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // line1
-            // 
-            this.line1.Dock = Wisej.Web.DockStyle.Top;
-            this.line1.LineColor = System.Drawing.Color.FromArgb(228, 234, 246);
-            this.line1.Location = new System.Drawing.Point(20, 20);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(1280, 1);
             // 
             // panel5
             // 
@@ -158,7 +148,7 @@
             // 
             this.button2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button2.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button2.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
             this.button2.Location = new System.Drawing.Point(1220, 0);
             this.button2.Margin = new Wisej.Web.Padding(0);
@@ -170,7 +160,7 @@
             // label66
             // 
             this.label66.CssStyle = "\r\n";
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label66.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label66.Location = new System.Drawing.Point(0, 0);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(418, 32);
@@ -204,7 +194,6 @@
         private Wisej.Web.Panel panel37;
         private Wisej.Web.TextBox textBox3;
         private Wisej.Web.Label label26;
-        private Wisej.Web.Line line1;
         private Wisej.Web.Panel panel5;
         private Wisej.Web.Panel panel136;
         private Wisej.Web.Button button2;

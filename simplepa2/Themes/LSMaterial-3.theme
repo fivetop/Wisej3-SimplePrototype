@@ -2,24 +2,169 @@
 	"name": "LSMaterial-3",
 	"fonts": {
 		"default": {
-			"size": 13,
-			"family": ["helvetica", "arial", "  verdana", "sans-serif"],
+			"size": 14,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				" verdana",
+				"sans-serif"
+			],
 			"bold": false
 		},
 		"windowTitle": {
 			"size": 24,
-			"family": ["helvetica", "arial", "  verdana", "sans-serif"],
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				"  verdana",
+				"sans-serif"
+			],
 			"bold": false
 		},
 		"defaultBold": {
-			"size": 13,
-			"family": ["helvetica", "arial", " verdana", "sans-serif"],
+			"size": 14,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				" verdana",
+				"sans-serif"
+			],
 			"bold": true
 		},
 		"menu": {
 			"size": 13,
-			"family": ["arial", "verdana", "sans-serif"],
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				"  verdana",
+				"sans-serif"
+			],
 			"bold": false
+		},
+		"ns800": {
+			"size": 14,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				"  verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 800
+		},
+		"ns700": {
+			"size": 14,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				"  verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 700
+		},
+		"ns500": {
+			"size": 14,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				"  verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 500
+		},
+		"ns400": {
+			"size": 14,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				"  verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 400
+		},
+		"boxTitle": {
+			"size": 19,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				" verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 700
+		},
+		"boxMTitle": {
+			"size": 17,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				" verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 700
+		},
+		"boxLabel": {
+			"size": 15,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				" verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 500
+		},
+		"buttonTxt": {
+			"size": 15,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				" verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 500
+		},
+		"topLabel": {
+			"size": 16,
+			"family": 
+			[
+				"Noto Sans CJK KR",
+				"helvetica",
+				"arial",
+				"verdana",
+				"sans-serif"
+			],
+			"italic": false,
+			"weight": 700
 		}
 	},
 	"images": {
@@ -5071,7 +5216,7 @@
 					"properties": {
 						"padding": 5,
 						"sortIcon": "",
-						"textColor": "buttonText",
+						"textColor": "bTextNormal",
 						"cursor": "default"
 					}
 				},

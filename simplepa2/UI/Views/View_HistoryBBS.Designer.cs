@@ -153,7 +153,7 @@
             // label2
             // 
             this.label2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label2.Location = new System.Drawing.Point(916, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 32);
@@ -175,7 +175,7 @@
             // 
             this.popTestButton.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.popTestButton.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.popTestButton.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.popTestButton.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popTestButton.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
             this.popTestButton.Location = new System.Drawing.Point(1218, 0);
             this.popTestButton.Margin = new Wisej.Web.Padding(0);
@@ -188,7 +188,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
             this.button3.BorderStyle = Wisej.Web.BorderStyle.None;
-            this.button3.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button3.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button3.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
             this.button3.Location = new System.Drawing.Point(504, 0);
             this.button3.Margin = new Wisej.Web.Padding(0);
@@ -201,7 +201,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
             this.button2.BorderStyle = Wisej.Web.BorderStyle.None;
-            this.button2.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button2.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
             this.button2.Location = new System.Drawing.Point(433, 0);
             this.button2.Margin = new Wisej.Web.Padding(0);
@@ -214,7 +214,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
             this.button1.BorderStyle = Wisej.Web.BorderStyle.None;
-            this.button1.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button1.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button1.ForeColor = System.Drawing.Color.FromName("@appWorkspace");
             this.button1.Location = new System.Drawing.Point(363, 0);
             this.button1.Margin = new Wisej.Web.Padding(0);
@@ -245,7 +245,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 32);

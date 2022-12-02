@@ -32,6 +32,8 @@
             this.panel4 = new Wisej.Web.Panel();
             this.panel3 = new Wisej.Web.Panel();
             this.panel6 = new Wisej.Web.Panel();
+            this.panel18 = new Wisej.Web.Panel();
+            this.label19 = new Wisej.Web.Label();
             this.panel17 = new Wisej.Web.Panel();
             this.label16 = new Wisej.Web.Label();
             this.panel16 = new Wisej.Web.Panel();
@@ -83,16 +85,14 @@
             this.panel34 = new Wisej.Web.Panel();
             this.label23 = new Wisej.Web.Label();
             this.label22 = new Wisej.Web.Label();
-            this.panel5 = new Wisej.Web.Panel();
             this.panel136 = new Wisej.Web.Panel();
             this.button5 = new Wisej.Web.Button();
             this.button2 = new Wisej.Web.Button();
             this.label66 = new Wisej.Web.Label();
-            this.panel18 = new Wisej.Web.Panel();
-            this.label19 = new Wisej.Web.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -109,7 +109,6 @@
             this.panel35.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel136.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -131,7 +130,6 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.panel89);
-            this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = Wisej.Web.DockStyle.Fill;
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
             this.panel4.Location = new System.Drawing.Point(20, 72);
@@ -143,7 +141,7 @@
             // panel3
             // 
             this.panel3.Dock = Wisej.Web.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 972);
+            this.panel3.Location = new System.Drawing.Point(0, 952);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1303, 20);
             this.panel3.TabIndex = 163;
@@ -162,11 +160,37 @@
             this.panel6.Controls.Add(this.line2);
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Dock = Wisej.Web.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 478);
+            this.panel6.Location = new System.Drawing.Point(0, 458);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new Wisej.Web.Padding(20);
             this.panel6.Size = new System.Drawing.Size(1303, 494);
             this.panel6.TabIndex = 162;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.label19);
+            this.panel18.Dock = Wisej.Web.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(20, 394);
+            this.panel18.Name = "panel18";
+            this.panel18.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
+            this.panel18.Size = new System.Drawing.Size(1263, 80);
+            this.panel18.TabIndex = 178;
+            // 
+            // label19
+            // 
+            this.label19.AutoEllipsis = true;
+            this.label19.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.label19.CssStyle = "border-radius:10px";
+            this.label19.Font = new System.Drawing.Font("@ns400", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(0, 20);
+            this.label19.Margin = new Wisej.Web.Padding(0);
+            this.label19.Name = "label19";
+            this.label19.Padding = new Wisej.Web.Padding(20);
+            this.label19.Size = new System.Drawing.Size(954, 58);
+            this.label19.TabIndex = 151;
+            this.label19.Text = "Please ensure that you read and follow the Terms of Use of the porvider.";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel17
             // 
@@ -183,7 +207,7 @@
             this.label16.AutoEllipsis = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Dock = Wisej.Web.DockStyle.Left;
-            this.label16.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label16.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label16.ForeColor = System.Drawing.Color.FromName("@button1BG");
             this.label16.Location = new System.Drawing.Point(0, 20);
             this.label16.Margin = new Wisej.Web.Padding(0);
@@ -217,7 +241,7 @@
             this.label17.AutoEllipsis = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Dock = Wisej.Web.DockStyle.Left;
-            this.label17.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label17.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label17.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label17.Location = new System.Drawing.Point(0, 20);
             this.label17.Margin = new Wisej.Web.Padding(0);
@@ -266,7 +290,7 @@
             this.label15.AutoEllipsis = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Dock = Wisej.Web.DockStyle.Left;
-            this.label15.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label15.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label15.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label15.Location = new System.Drawing.Point(0, 20);
             this.label15.Margin = new Wisej.Web.Padding(0);
@@ -315,7 +339,7 @@
             this.label13.AutoEllipsis = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Dock = Wisej.Web.DockStyle.Left;
-            this.label13.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label13.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label13.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label13.Location = new System.Drawing.Point(0, 20);
             this.label13.Margin = new Wisej.Web.Padding(0);
@@ -364,7 +388,7 @@
             this.label11.AutoEllipsis = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Dock = Wisej.Web.DockStyle.Left;
-            this.label11.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label11.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label11.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label11.Location = new System.Drawing.Point(0, 20);
             this.label11.Margin = new Wisej.Web.Padding(0);
@@ -413,7 +437,7 @@
             this.label2.AutoEllipsis = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Dock = Wisej.Web.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label2.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label2.Location = new System.Drawing.Point(0, 20);
             this.label2.Margin = new Wisej.Web.Padding(0);
@@ -445,7 +469,7 @@
             // 
             this.label4.AutoEllipsis = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label4.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label4.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label4.Location = new System.Drawing.Point(32, 0);
             this.label4.Margin = new Wisej.Web.Padding(0);
@@ -462,7 +486,7 @@
             this.label5.CssStyle = "border-radius: 11px;";
             this.label5.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label5.ForeColor = System.Drawing.Color.FromName("@buttonText");
-            this.label5.Location = new System.Drawing.Point(0, 1);
+            this.label5.Location = new System.Drawing.Point(0, 3);
             this.label5.Margin = new Wisej.Web.Padding(0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(22, 22);
@@ -473,7 +497,7 @@
             // panel1
             // 
             this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 458);
+            this.panel1.Location = new System.Drawing.Point(0, 438);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1303, 20);
             this.panel1.TabIndex = 161;
@@ -491,7 +515,7 @@
             this.panel89.Controls.Add(this.line1);
             this.panel89.Controls.Add(this.panel34);
             this.panel89.Dock = Wisej.Web.DockStyle.Top;
-            this.panel89.Location = new System.Drawing.Point(0, 20);
+            this.panel89.Location = new System.Drawing.Point(0, 0);
             this.panel89.Name = "panel89";
             this.panel89.Padding = new Wisej.Web.Padding(20);
             this.panel89.Size = new System.Drawing.Size(1303, 438);
@@ -512,7 +536,7 @@
             this.label18.AutoEllipsis = true;
             this.label18.BackColor = System.Drawing.Color.FromName("@button1BG");
             this.label18.CssStyle = "border-radius:10px";
-            this.label18.Font = new System.Drawing.Font("@default", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label18.Font = new System.Drawing.Font("@ns400", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(0, 20);
             this.label18.Margin = new Wisej.Web.Padding(0);
@@ -547,7 +571,7 @@
             this.label8.AutoEllipsis = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Dock = Wisej.Web.DockStyle.Left;
-            this.label8.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label8.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label8.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label8.Location = new System.Drawing.Point(0, 20);
             this.label8.Margin = new Wisej.Web.Padding(0);
@@ -581,7 +605,7 @@
             this.label7.AutoEllipsis = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Dock = Wisej.Web.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label7.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label7.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label7.Location = new System.Drawing.Point(0, 20);
             this.label7.Margin = new Wisej.Web.Padding(0);
@@ -615,7 +639,7 @@
             this.label6.AutoEllipsis = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Dock = Wisej.Web.DockStyle.Left;
-            this.label6.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label6.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label6.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label6.Location = new System.Drawing.Point(0, 20);
             this.label6.Margin = new Wisej.Web.Padding(0);
@@ -664,7 +688,7 @@
             this.label26.AutoEllipsis = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Dock = Wisej.Web.DockStyle.Left;
-            this.label26.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label26.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label26.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label26.Location = new System.Drawing.Point(0, 20);
             this.label26.Margin = new Wisej.Web.Padding(0);
@@ -723,7 +747,7 @@
             this.label24.AutoEllipsis = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Dock = Wisej.Web.DockStyle.Left;
-            this.label24.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label24.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label24.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label24.Location = new System.Drawing.Point(0, 20);
             this.label24.Margin = new Wisej.Web.Padding(0);
@@ -755,7 +779,7 @@
             // 
             this.label23.AutoEllipsis = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label23.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label23.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label23.Location = new System.Drawing.Point(32, 0);
             this.label23.Margin = new Wisej.Web.Padding(0);
@@ -772,21 +796,13 @@
             this.label22.CssStyle = "border-radius: 11px;";
             this.label22.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label22.ForeColor = System.Drawing.Color.FromName("@buttonText");
-            this.label22.Location = new System.Drawing.Point(0, 1);
+            this.label22.Location = new System.Drawing.Point(0, 3);
             this.label22.Margin = new Wisej.Web.Padding(0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(22, 22);
             this.label22.TabIndex = 133;
             this.label22.Text = "★";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = Wisej.Web.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1303, 20);
-            this.panel5.TabIndex = 129;
             // 
             // panel136
             // 
@@ -804,7 +820,7 @@
             // 
             this.button5.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.Color.FromName("@button2BG");
-            this.button5.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button5.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button5.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
             this.button5.Location = new System.Drawing.Point(1110, 0);
             this.button5.Margin = new Wisej.Web.Padding(0);
@@ -817,7 +833,7 @@
             // 
             this.button2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button2.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button2.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
             this.button2.Location = new System.Drawing.Point(1220, 0);
             this.button2.Margin = new Wisej.Web.Padding(0);
@@ -829,39 +845,13 @@
             // label66
             // 
             this.label66.CssStyle = "\r\n";
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label66.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label66.Location = new System.Drawing.Point(0, 0);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(418, 32);
             this.label66.TabIndex = 33;
             this.label66.Text = "SMS 서버 구성";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.label19);
-            this.panel18.Dock = Wisej.Web.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(20, 394);
-            this.panel18.Name = "panel18";
-            this.panel18.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(1263, 80);
-            this.panel18.TabIndex = 178;
-            // 
-            // label19
-            // 
-            this.label19.AutoEllipsis = true;
-            this.label19.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.label19.CssStyle = "border-radius:10px";
-            this.label19.Font = new System.Drawing.Font("@default", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(0, 20);
-            this.label19.Margin = new Wisej.Web.Padding(0);
-            this.label19.Name = "label19";
-            this.label19.Padding = new Wisej.Web.Padding(20);
-            this.label19.Size = new System.Drawing.Size(954, 58);
-            this.label19.TabIndex = 151;
-            this.label19.Text = "Please ensure that you read and follow the Terms of Use of the porvider.";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // View_SystemSMSRegistration
             // 
@@ -875,6 +865,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
@@ -891,7 +882,6 @@
             this.panel35.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
             this.panel136.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -904,7 +894,6 @@
         private Wisej.Web.Button button2;
         private Wisej.Web.Label label66;
         private Wisej.Web.Panel panel4;
-        private Wisej.Web.Panel panel5;
         private Wisej.Web.Panel panel3;
         private Wisej.Web.Panel panel6;
         private Wisej.Web.Line line2;

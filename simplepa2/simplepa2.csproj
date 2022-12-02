@@ -224,6 +224,24 @@
     <EmbeddedResource Include="UI\Views\View_DashBoard.resx">
       <DependentUpon>View_DashBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_HistoryBBS.resx">
+      <DependentUpon>View_HistoryBBS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_HistoryDevice.resx">
+      <DependentUpon>View_HistoryDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_HistoryFireSignal.resx">
+      <DependentUpon>View_HistoryFireSignal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_HistoryOutMsgs.resx">
+      <DependentUpon>View_HistoryOutMsgs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_HistorySystemChanges.resx">
+      <DependentUpon>View_HistorySystemChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_SystemAccount.resx">
+      <DependentUpon>View_SystemAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_SystemEmail.resx">
       <DependentUpon>View_SystemEmail.cs</DependentUpon>
     </EmbeddedResource>
@@ -666,6 +684,9 @@
     <EmbeddedResource Include="Resources\youtube-logo.svg" />
     <Content Include="js\common.js" />
     <Content Include="Scripts\chatClient.js" />
+    <EmbeddedResource Include="UI\Views\View_SystemRestAPI.resx">
+      <DependentUpon>View_SystemRestAPI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_SystemSMSRegistration.resx">
       <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
     </EmbeddedResource>
