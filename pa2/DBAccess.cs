@@ -4,6 +4,7 @@ using simplepa2.Controller;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -43,7 +44,7 @@ namespace pa
             DeviceChannel = Dbread<DeviceChannelDataTable>("DeviceChannels");
             EMBs = Dbread<EMBsDataTable>("EMBs");
             EMServer = Dbread<EMServerDataTable>("EMServer");
-            Eventvm = Dbread<EventvmDataTable>("Eventvm");
+            Eventvm = Dbread<EventvmDataTable>("Eventvms");
             Holidays = Dbread<HolidaysDataTable>("Holidays");
             Musics = Dbread<MusicsDataTable>("Musics");
             PlayItem = Dbread<PlayItemDataTable>("PlayItem");
@@ -66,6 +67,26 @@ namespace pa
                 return default(T);
             }
         }
+
+        public T Dbsave<T>(string url, DataRow t1)
+        {
+            try
+            {
+                string jsonEmp = JsonConvert.SerializeObject(t1);
+
+                var url2 = @"http://localhost:9921/api/" + url; //Строка по которой производиться обращение к таблице
+                StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
+                var res = httpClient.PostAsync(url2, stringC).Result; //отправляем 
+
+                var ret = JsonConvert.DeserializeObject<T>(res.Content.ReadAsStringAsync().Result); //Получаем полученый объект в ходе выполнения записи в базу данных
+                return (T)ret;
+            }
+            catch (Exception e1)
+            {
+                return default(T);
+            }
+        }
+
         #endregion
 
         /*
@@ -207,10 +228,10 @@ namespace pa
 
 
 
-                #region // Device 장치관리 부분 
-                // dsp 저장후 상세정보 저장 
-                // dsp ch info 저장 
-                public void saveDBDSPCH(IEnumerable<DataClass.Device> gs1)
+        #region // Device 장치관리 부분 
+        // dsp 저장후 상세정보 저장 
+        // dsp ch info 저장 
+        public void saveDBDSPCH(IEnumerable<DataClass.Device> gs1)
                 {
                     //Tam.DeviceTableAdapter.Fill(Ds1.Device);
                     //Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
@@ -301,6 +322,8 @@ namespace pa
         public List<AssetBase> db2List(SignalRMsg msg, int chno)
         {
             List<AssetBase> play = new List<AssetBase>();
+/*
+ * 서버에서 처리 필요 
             foreach (int t1 in msg.assetsRows)
             {
                 BSTreeRow bSTree = BStree.NewBSTreeRow();
@@ -319,7 +342,7 @@ namespace pa
             }
             //Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
             BStree.AcceptChanges();
-
+*/
             var ab1 = Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
             var p1 = from p in ab1
                      select new AssetBase
@@ -448,6 +471,7 @@ namespace pa
             em.state = state;
             em.alarm = 0;
             Save(em);
+
         }
 
         public void EventvmIP(AssetsRow t3)
@@ -472,11 +496,12 @@ namespace pa
                 switch (t1.Name)
                 {
                     case "EventvmRow":
-                        Eventvm.Rows.Add((EventvmRow)o1);
+                        var t2 = Dbsave<Eventvm>("Eventvms", (DataRow)o1);
+                        //Eventvm.Rows.Add((EventvmRow)o1);
                         //Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
                         break;
                     case "SimplepaRow":
-                        Simplepa.Rows.Add((SimplepaRow)o1);
+                        //Simplepa.Rows.Add((SimplepaRow)o1);
                         //Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
                         break;
                 }

@@ -390,9 +390,9 @@
           <Property Name="EventVMId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="write_time" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="event_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="true" />
           <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="true" />
           <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="alarm" Type="Int32" />
         </EntityType>

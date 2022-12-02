@@ -276,44 +276,6 @@ namespace pa
         // 선번장 등록 부분 
         //
 
-        private void _btnMake_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (var t1 in g._emspl.child)
-            {
-                //dBSqlite.SaveAssets(t1);
-            }
-            _txtBlock.Text = gl.appPathServer_speaker + g._emspl.child.Count.ToString() + "개 레코드 생성이 완료 되었습니다.";
-        }
-
-        private void _btnFile_Click(object sender, RoutedEventArgs e)
-        {
-            var dlg = new OpenFileDialog
-            {
-                Filter = "Data Files|*.csv"
-            };
-            dlg.InitialDirectory = gl.appPathServer;
-            if (dlg.ShowDialog() == true)
-            {
-                txtFileName.Text = dlg.FileName;
-
-                string[] d1 = System.IO.File.ReadAllLines(dlg.FileName, Encoding.GetEncoding(949));
-
-                g._emspl.child.Clear();
-                foreach (var d2 in d1)
-                {
-                    EmSpeakerPosition em1 = new EmSpeakerPosition();
-                    em1.array = d2.Split(',');
-                    if (em1.array.Length > 12)
-                    { 
-                        em1.file = em1.getfile();
-                        g._emspl.child.Add(em1);
-                    }
-                }
-                _lvLeft4.ItemsSource = null;
-                _lvLeft4.ItemsSource = g._emspl.child;
-                _lvLeft4.Items.Refresh();
-            }
-        }
 
         public void StatusContent(string v)
         {
@@ -335,9 +297,6 @@ namespace pa
                     break;
                 case 1:
                     StatusContent("앰프의 위치에 따른 DSP 채널을 지정할 경우 사용합니다.");
-                    break;
-                case 2:
-                    StatusContent("초기 스피커 생성시 필요할 경우 사용합니다.");
                     break;
             }
             oldindex = t1.SelectedIndex;

@@ -71,15 +71,65 @@ namespace pa
 
             g.Log("Emergency Server Start..");
             Title = "EM Svr "+ gl.version;
-
         }
 
         #region // 초기화 처리 
+
+        bool firsttime = true;
+        System.Timers.Timer Initialtimer { get; set; } = new System.Timers.Timer(5000);
+
+        // 템플릿에서 엘레먼트 가져오기 
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.MinHeight = this.ActualHeight;
+            this.MinWidth = this.ActualWidth / 2;
+
+            if (firsttime)
+            {
+                firsttime = false;
+                signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
+                signalRClient.eConnect += SignalRClient_eConnect;
+                signalRClient.eDisConnect += SignalRClient_eDisConnect;
+                signalRClient.ConnectToSignalR();
+
+                Initialtimer.Elapsed += Initialtimer_Elapsed; ;
+                Initialtimer.AutoReset = true;
+                Initialtimer.Start();
+
+            }
+            //            if (App.Current.MainWindow.Visibility == Visibility.Visible)
+            //                _tray.MinimizeToTray();
+        }
+
+        private void Initialtimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Initialtimer.Stop();
+            if (signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+            {
+                Initialtimer.Start();
+                return;
+            }
+
+            DBAccess.DBInit();
+            if (DBAccess.Simplepa == null)
+            {
+                Initialtimer.Start();
+                return;
+            }
+            _DanteDevice = DBAccess.Device;
+            g.Log("SignalR Hub Connected ..");
+
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
+            {
+                Init();
+                // 초기 화면 열리면서 한번 수행 
+                // GPIO 상태 받아오기
+                sendErr(0xFF);
+            }));
+        }
+
         public void Init()
         {
-            DBAccess.DBInit();
-            _DanteDevice = DBAccess.Device;
-
             MakeSpeakerIP();
             ReadMusic();
             g._BaseData = DBAccess.Simplepa.FirstOrDefault();
@@ -239,29 +289,7 @@ namespace pa
             }
 
         }
-        bool firsttime = true;
-        // 템플릿에서 엘레먼트 가져오기 
-        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.MinHeight = this.ActualHeight;
-            this.MinWidth = this.ActualWidth / 2;
 
-            if (firsttime)
-            {
-                firsttime = false;
-                signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
-                signalRClient.eConnect += SignalRClient_eConnect;
-                signalRClient.eDisConnect += SignalRClient_eDisConnect;
-                signalRClient.ConnectToSignalR();
-
-                Init();
-                // 초기 화면 열리면서 한번 수행 
-                // GPIO 상태 받아오기
-                sendErr(0xFF);
-            }
-            //            if (App.Current.MainWindow.Visibility == Visibility.Visible)
-            //                _tray.MinimizeToTray();
-        }
 
         private void SignalRClient_eDisConnect(object sender, EventArgs e)
         {
