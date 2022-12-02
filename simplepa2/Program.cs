@@ -15,6 +15,7 @@ using simplepa2.SignalR;
 
 [assembly: OwinStartup(typeof(simplepa2.Startup))]
 
+// test
 
 namespace simplepa2
 {
