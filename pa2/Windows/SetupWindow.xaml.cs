@@ -27,14 +27,14 @@ namespace pa.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var t1 = g.mainWindow.dBSqlite.Ds1.Device.Where(p => p.device == 2).ToList();
+            var t1 = g.mainWindow.DBAccess.Device.Where(p => p.device == 2).ToList();
             cboType.ItemsSource = t1;
             cboType.DisplayMemberPath = "DeviceName";
             cboType.SelectedValuePath = "name";
             cboType.SelectedValue = g._BaseData.ServerIP;
 
-            g.mainWindow.dBSqlite.Tam.MusicsTableAdapter.Fill(g.mainWindow.dBSqlite.Ds1.Musics);
-            var mt2 = g.mainWindow.dBSqlite.Ds1.Musics.ToList();
+            //g.mainWindow.dBSqlite.Tam.MusicsTableAdapter.Fill(g.mainWindow.dBSqlite.Ds1.Musics);
+            var mt2 = g.mainWindow.DBAccess.Musics.ToList();
 
             cboType2.ItemsSource = mt2;
             cboType2.DisplayMemberPath = "FileName";
@@ -167,7 +167,7 @@ namespace pa.Windows
 
         private void _btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            g.mainWindow.dBSqlite.Tam.SimplepaTableAdapter.Update(g.mainWindow.dBSqlite.Ds1.Simplepa);
+            //g.mainWindow.DBAccess.Tam.SimplepaTableAdapter.Update(g.mainWindow.dBSqlite.Ds1.Simplepa);
             Close();
         }
 

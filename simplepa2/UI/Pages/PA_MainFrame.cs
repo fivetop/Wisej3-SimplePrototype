@@ -342,7 +342,6 @@ namespace simplepa2.UI.Pages
                         addinfo = "OFFLINE";
                     dBSqlite.Eventvm(addinfo, msg1.user, addinfo);
                     dBSqlite.updateEMServer(msg1.user, addinfo);
-                    view_Dashboard.Refresh();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
                     if (msg1.seqno == 1)
@@ -374,6 +373,9 @@ namespace simplepa2.UI.Pages
                         AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
                     break;
             }
+            view_Dashboard.Refresh();
+
+
             playItems = msg1.play8sig;
             if (playItems != null)
                 PlayItemDisplay();

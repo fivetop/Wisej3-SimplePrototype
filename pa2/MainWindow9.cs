@@ -180,11 +180,11 @@ namespace pa
 
         private void updateAsset()
         {
-            dBSqlite.updateAsset();
+            //DBAccess.updateAsset();
         }
         private void saveDBEMBs()
         {
-            dBSqlite.SaveEMBs();
+            //DBAccess.SaveEMBs();
         }
 
         private void saveDBSP()
@@ -211,20 +211,20 @@ namespace pa
             {
                 foreach (var t1 in gs1)
                 {
-                    var s1 = dBSqlite.Ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    var s1 = DBAccess.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
                     if (s1 != null)
                     {
                         continue;
                     }
 
-                    dBSqlite.NewDeviceRow(t1, 1);
+                    DBAccess.NewDeviceRow(t1, 1);
                     if (t1.DeviceName.Contains("MA1000T") || t1.DeviceName.Contains("MA2000T"))
                     {
-                        dBSqlite.Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
-                        dBSqlite.NewDeviceRow(t1, 2);
+                        //Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
+                        DBAccess.NewDeviceRow(t1, 2);
                     }
                 }
-                dBSqlite.Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
+                //Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
             }
             catch (Exception e1)
             {
@@ -236,7 +236,7 @@ namespace pa
         // dsp ch info 저장 
         private void saveDBDSPCH(IEnumerable<Device> gs1)
         {
-            dBSqlite.saveDBDSPCH(gs1);
+            //dBSqlite.saveDBDSPCH(gs1);
         }
 
 
@@ -276,44 +276,6 @@ namespace pa
         // 선번장 등록 부분 
         //
 
-        private void _btnMake_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (var t1 in g._emspl.child)
-            {
-                dBSqlite.SaveAssets(t1);
-            }
-            _txtBlock.Text = gl.appPathServer_speaker + g._emspl.child.Count.ToString() + "개 레코드 생성이 완료 되었습니다.";
-        }
-
-        private void _btnFile_Click(object sender, RoutedEventArgs e)
-        {
-            var dlg = new OpenFileDialog
-            {
-                Filter = "Data Files|*.csv"
-            };
-            dlg.InitialDirectory = gl.appPathServer;
-            if (dlg.ShowDialog() == true)
-            {
-                txtFileName.Text = dlg.FileName;
-
-                string[] d1 = System.IO.File.ReadAllLines(dlg.FileName, Encoding.GetEncoding(949));
-
-                g._emspl.child.Clear();
-                foreach (var d2 in d1)
-                {
-                    EmSpeakerPosition em1 = new EmSpeakerPosition();
-                    em1.array = d2.Split(',');
-                    if (em1.array.Length > 12)
-                    { 
-                        em1.file = em1.getfile();
-                        g._emspl.child.Add(em1);
-                    }
-                }
-                _lvLeft4.ItemsSource = null;
-                _lvLeft4.ItemsSource = g._emspl.child;
-                _lvLeft4.Items.Refresh();
-            }
-        }
 
         public void StatusContent(string v)
         {
@@ -336,9 +298,6 @@ namespace pa
                 case 1:
                     StatusContent("앰프의 위치에 따른 DSP 채널을 지정할 경우 사용합니다.");
                     break;
-                case 2:
-                    StatusContent("초기 스피커 생성시 필요할 경우 사용합니다.");
-                    break;
             }
             oldindex = t1.SelectedIndex;
         }
@@ -353,7 +312,7 @@ namespace pa
             string ret = "통신실";
             if (deviceName == "")
                 return ret;
-            var ret1 = dBSqlite.Ds1.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
+            var ret1 = DBAccess.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
             if (ret1 == null)
                 return ret;
             ret = ret1.path;
@@ -390,7 +349,7 @@ namespace pa
                 return;
             if (src1.ip == "")
                 return;
-            var t3 = dBSqlite.Ds1.DeviceChannel.Where(p => p.DeviceId == dsp1.DeviceId).ToList();
+            var t3 = DBAccess.DeviceChannel.Where(p => p.DeviceId == dsp1.DeviceId).ToList();
             if (t3.Count() < 1)
                 return;
 
@@ -416,7 +375,7 @@ namespace pa
             src1.dsp_name = dspname;
             src1.ip_dspctrl = dsp1.ip_dspctrl; //추적후 넣기 romee 2021-06-30
             src1.chspk = device_chno;
-            dBSqlite.Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
+            //Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
         }
 
         // 사운드 카드 채널번호를 DSP할당 
@@ -527,7 +486,7 @@ namespace pa
                 t1.ip_dspctrl = dsp1[dspno].ip_dspctrl;
                 g.Log("Speaker Assign DSP Name Ch :" + t1.dsp_name + " : " + t1.dsp_chno.ToString());
 
-                var t3 = dBSqlite.Ds1.DeviceChannel.Where(p => p.DeviceId == dsp1[dspno].DeviceId).ToList();
+                var t3 = DBAccess.DeviceChannel.Where(p => p.DeviceId == dsp1[dspno].DeviceId).ToList();
                 //byte[] b1 = gl.hexatobyte(dsp1[dspno].dsp_out_ch1[chno - 1]);
                 byte[] b1 = gl.hexatobyte(t3[chno - 1].dsp_out_ch1);
                 // 단테 컨트롤러 스피커 무브 

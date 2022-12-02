@@ -142,53 +142,6 @@
                     </Border>
                 </TabItem>
 
-                <TabItem Header="선번장등록">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="4"/>
-                        </Grid.RowDefinitions>
-                        <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
-                            <Grid Grid.Row="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="40"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="40"/>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Row="0" Margin="4">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock x:Name="txtFileName" Margin="0,8,0,0" Text="File Name"/>
-                                    </StackPanel>
-                                    <Button x:Name="_btnFile" Content="파일선택" Width="100" Click="_btnFile_Click" HorizontalAlignment="Right"/>
-                                </Grid>
-                                <Grid Grid.Row="1">
-                                    <Border Margin="4" BorderBrush="#FFB8BED4" BorderThickness="1">
-                                        <DataGrid x:Name="_lvLeft4" AutoGenerateColumns="False">
-                                            <DataGrid.Columns>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn4" Header="파일명" Binding="{Binding file}" Width="240" IsReadOnly="True"/>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn5" Header="채널" Binding="{Binding ch}" Width="60" IsReadOnly="True"/>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn6" Header="위치" Binding="{Binding emData}" Width="220" IsReadOnly="True"/>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn7" Header="ZPC" Binding="{Binding zpc}" Width="100" IsReadOnly="True"/>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn8" Header="ZPC-I" Binding="{Binding zpci}" Width="60" IsReadOnly="True"/>
-                                                <DataGridTextColumn x:Name="dataGridTextColumn9" Header="ZPC-O" Binding="{Binding zpco}" Width="60" IsReadOnly="True"/>
-                                            </DataGrid.Columns>
-                                        </DataGrid>
-                                    </Border>
-                                </Grid>
-                                <Grid Grid.Row="2" Margin="4">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <TextBlock x:Name="_txtBlock"  Margin="0,8,0,0" Text=""/>
-                                        <Button x:Name="_btnMake" Content="데이터 파일 생성" Click="_btnMake_Click" HorizontalAlignment="Right"/>
-                                        <!--
-                                            <Button x:Name="_btnTest" Content="테스트" Click="_btnTest_Click" HorizontalAlignment="Right"/>
-                                            -->
-                                    </StackPanel>
-                                </Grid>
-                            </Grid>
-                        </Border>
-                    </Grid>
-                </TabItem>
-
             </TabControl>
         </Grid>
 

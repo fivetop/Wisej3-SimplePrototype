@@ -38,7 +38,7 @@ namespace pa
                     List<AssetBase> play = new List<AssetBase>();
                     chno = EmptyChFind();
                     if (chno == 0) return false;
-                    play = dBSqlite.db2List(msg, chno);
+                    play = DBAccess.db2List(msg, chno);
                     ChSet(chno);
 
                     var p =  g.playItems[chno];
@@ -59,7 +59,9 @@ namespace pa
                     string line = line1 + " : " + line2;
                     string l1 = "다원방송시작";
                     g.Log(l1 + p.chno.ToString() + " : " + line);
-                    dBSqlite.Eventvm(l1, p.chno.ToString() + "번 채널", line);
+                    DBAccess.Eventvms(l1, p.chno.ToString() + "번 채널", line);
+                    SendSigR("PLAYING", eSignalRMsgType.ePlaying, 0, 0);
+
                     // window3 처리 
                     break;
                 case eSignalRMsgType.ePlayEnd:

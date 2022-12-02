@@ -8574,11 +8574,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string ip {
                 get {
-                    try {
-                        return ((string)(this[this.tableEventvm.ipColumn]));
+                    if (this.IsipNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Eventvm\' 테이블의 \'ip\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableEventvm.ipColumn]));
                     }
                 }
                 set {
@@ -8606,11 +8606,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string DeviceName {
                 get {
-                    try {
-                        return ((string)(this[this.tableEventvm.DeviceNameColumn]));
+                    if (this.IsDeviceNameNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Eventvm\' 테이블의 \'DeviceName\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableEventvm.DeviceNameColumn]));
                     }
                 }
                 set {

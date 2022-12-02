@@ -45,9 +45,7 @@ namespace pa
         System.Timers.Timer AliveTimer { get; set; } = new System.Timers.Timer(1000 * 60 * 5);
 
         public DBAccess DBAccess { get; set; } = new DBAccess();
-             
-        public DBController dBSqlite { get; set; } = new DBController();
-        DataSet1 Ds1 { get; set; }
+
         WireSharkRunning wireShark { get; set; } = new WireSharkRunning();
 
         int em_status { get; set; } = 0;  // 화재 1,2 시험 알람 3,4 가스 5,6  
@@ -73,23 +71,72 @@ namespace pa
 
             g.Log("Emergency Server Start..");
             Title = "EM Svr "+ gl.version;
-
         }
 
         #region // 초기화 처리 
+
+        bool firsttime = true;
+        System.Timers.Timer Initialtimer { get; set; } = new System.Timers.Timer(5000);
+
+        // 템플릿에서 엘레먼트 가져오기 
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.MinHeight = this.ActualHeight;
+            this.MinWidth = this.ActualWidth / 2;
+
+            if (firsttime)
+            {
+                firsttime = false;
+                signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
+                signalRClient.eConnect += SignalRClient_eConnect;
+                signalRClient.eDisConnect += SignalRClient_eDisConnect;
+                signalRClient.ConnectToSignalR();
+
+                Initialtimer.Elapsed += Initialtimer_Elapsed; ;
+                Initialtimer.AutoReset = true;
+                Initialtimer.Start();
+
+            }
+            //            if (App.Current.MainWindow.Visibility == Visibility.Visible)
+            //                _tray.MinimizeToTray();
+        }
+
+        private void Initialtimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Initialtimer.Stop();
+            if (signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+            {
+                Initialtimer.Start();
+                return;
+            }
+
+            DBAccess.DBInit();
+            if (DBAccess.Simplepa == null)
+            {
+                Initialtimer.Start();
+                return;
+            }
+            _DanteDevice = DBAccess.Device;
+            g.Log("SignalR Hub Connected ..");
+
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
+            {
+                Init();
+                // 초기 화면 열리면서 한번 수행 
+                // GPIO 상태 받아오기
+                sendErr(0xFF);
+            }));
+        }
+
         public void Init()
         {
-            DBAccess.DBInit();
-            dBSqlite.DBInit();
-            _DanteDevice = Ds1.Device;
-
             MakeSpeakerIP();
             ReadMusic();
-            g._BaseData = Ds1.Simplepa.FirstOrDefault();
+            g._BaseData = DBAccess.Simplepa.FirstOrDefault();
             if (g._BaseData == null)
             {
-                dBSqlite.Init();
-                g._BaseData = Ds1.Simplepa.FirstOrDefault();
+                DBAccess.Init();
+                g._BaseData = DBAccess.Simplepa.FirstOrDefault();
             }
 
             gl.XMLDanteDevice(true);
@@ -161,7 +208,7 @@ namespace pa
 
         private int systemcheck()
         {
-            var a1 = Ds1.Assets.ToList();
+            var a1 = DBAccess.Assets.ToList();
             if (a1.Count() < 1)
             {
                 g.Log("선번장이 없습니다. 선번장을 확인바랍니다.");
@@ -242,29 +289,7 @@ namespace pa
             }
 
         }
-        bool firsttime = true;
-        // 템플릿에서 엘레먼트 가져오기 
-        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.MinHeight = this.ActualHeight;
-            this.MinWidth = this.ActualWidth / 2;
 
-            if (firsttime)
-            {
-                firsttime = false;
-                signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
-                signalRClient.eConnect += SignalRClient_eConnect;
-                signalRClient.eDisConnect += SignalRClient_eDisConnect;
-                signalRClient.ConnectToSignalR();
-
-                Init();
-                // 초기 화면 열리면서 한번 수행 
-                // GPIO 상태 받아오기
-                sendErr(0xFF);
-            }
-            //            if (App.Current.MainWindow.Visibility == Visibility.Visible)
-            //                _tray.MinimizeToTray();
-        }
 
         private void SignalRClient_eDisConnect(object sender, EventArgs e)
         {
@@ -534,7 +559,7 @@ namespace pa
 
         public void MakeSpeakerIP()
         {
-            foreach (var t1 in Ds1.Assets)
+            foreach (var t1 in DBAccess.Assets)
             {
                 if (t1.DeviceName == "")
                 {
@@ -574,13 +599,13 @@ namespace pa
                 foreach (var fileInfo in files)
                 {
                     var mu1 = TagLib.File.Create(fileInfo.FullName);
-                    var m3 = Ds1.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
+                    var m3 = DBAccess.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
                     if (m3 != null)
                     {
                     }
                     else
                     {
-                        MusicsRow m1 = Ds1.Musics.NewMusicsRow();
+                        MusicsRow m1 = DBAccess.Musics.NewMusicsRow();
                         string str1 = "00:00:00";
                         var r1 = mu1.Properties.Duration;
                         m1.FileName = fileInfo.Name;
@@ -591,7 +616,7 @@ namespace pa
                         if (str1 == "00:00:00")
                             str1 = "00:00:01";
                         m1.duration = str1;
-                        Ds1.Musics.Rows.Add(m1);
+                        DBAccess.Musics.Rows.Add(m1);
                         //Tam.MusicsTableAdapter.Update(Ds1.Musics);
                     }
                 }

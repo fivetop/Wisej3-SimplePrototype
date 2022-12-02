@@ -1176,7 +1176,7 @@ FROM     EMServer</CommandText>
               </xs:element>
               <xs:element name="zpci" msprop:Generator_ColumnPropNameInTable="zpciColumn" msprop:Generator_ColumnPropNameInRow="zpci" msprop:Generator_UserColumnName="zpci" msprop:Generator_ColumnVarNameInTable="columnzpci" type="xs:int" minOccurs="0" />
               <xs:element name="zpco" msprop:Generator_ColumnPropNameInTable="zpcoColumn" msprop:Generator_ColumnPropNameInRow="zpco" msprop:Generator_UserColumnName="zpco" msprop:Generator_ColumnVarNameInTable="columnzpco" type="xs:int" minOccurs="0" />
-              <xs:element name="emServer" msprop:Generator_UserColumnName="emServer" msprop:Generator_ColumnPropNameInTable="emServerColumn" msprop:Generator_ColumnPropNameInRow="emServer" msprop:Generator_ColumnVarNameInTable="columnemServer" minOccurs="0">
+              <xs:element name="emServer" msprop:Generator_ColumnPropNameInTable="emServerColumn" msprop:Generator_ColumnPropNameInRow="emServer" msprop:Generator_UserColumnName="emServer" msprop:Generator_ColumnVarNameInTable="columnemServer" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
@@ -1363,7 +1363,7 @@ FROM     EMServer</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ip" msprop:Generator_ColumnPropNameInTable="ipColumn" msprop:Generator_ColumnPropNameInRow="ip" msprop:Generator_UserColumnName="ip" msprop:Generator_ColumnVarNameInTable="columnip" minOccurs="0">
+              <xs:element name="ip" msprop:Generator_ColumnPropNameInTable="ipColumn" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ip" msprop:Generator_UserColumnName="ip" msprop:Generator_ColumnVarNameInTable="columnip" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
@@ -1377,7 +1377,7 @@ FROM     EMServer</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DeviceName" msprop:Generator_ColumnPropNameInTable="DeviceNameColumn" msprop:Generator_ColumnPropNameInRow="DeviceName" msprop:Generator_UserColumnName="DeviceName" msprop:Generator_ColumnVarNameInTable="columnDeviceName" minOccurs="0">
+              <xs:element name="DeviceName" msprop:Generator_ColumnPropNameInTable="DeviceNameColumn" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="DeviceName" msprop:Generator_UserColumnName="DeviceName" msprop:Generator_ColumnVarNameInTable="columnDeviceName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
@@ -1704,7 +1704,7 @@ FROM     EMServer</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EMNAME" msprop:Generator_ColumnPropNameInRow="EMNAME" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:Generator_ColumnVarNameInTable="columnEMNAME" msprop:Generator_UserColumnName="EMNAME" minOccurs="0">
+              <xs:element name="EMNAME" msprop:Generator_UserColumnName="EMNAME" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:Generator_ColumnPropNameInRow="EMNAME" msprop:Generator_ColumnVarNameInTable="columnEMNAME" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
