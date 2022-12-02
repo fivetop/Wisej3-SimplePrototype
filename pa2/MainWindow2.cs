@@ -33,6 +33,7 @@ namespace pa
 
                 if (mlog.Count > 100)
                     mlog.Clear();
+                _Status.Content = st1;
             }));
         }
 

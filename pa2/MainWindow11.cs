@@ -71,6 +71,7 @@ namespace pa
                 case eSignalRMsgType.eStop:
                     chno = getplay(msg.Guid);
                     MBSStop(chno);
+                    SendSigR("STOP", eSignalRMsgType.eStop, 0, 0);
                     break;
                 case eSignalRMsgType.eVolume:
                     // db 처리 선행 필요 

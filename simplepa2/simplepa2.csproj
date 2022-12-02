@@ -143,6 +143,9 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="UI\Base\PA_MainFrame.resx">
+      <DependentUpon>PA_MainFrame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_GroupNameCard.resx">
       <DependentUpon>Comp_GroupNameCard.cs</DependentUpon>
     </EmbeddedResource>

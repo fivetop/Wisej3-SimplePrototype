@@ -15,10 +15,10 @@ using simplepa2.SignalR;
 
 [assembly: OwinStartup(typeof(simplepa2.Startup))]
 
+// test
 
 namespace simplepa2
 {
-
 	public partial class Startup
 	{
 		public void Configuration(IAppBuilder app)
@@ -30,6 +30,8 @@ namespace simplepa2
 			hubConfiguration.EnableJavaScriptProxies = true;
 			app.MapSignalR("/signalr", hubConfiguration);
 			//app.MapSignalR(hubConfiguration);
+			// Program Work Git
+			// Program Work Git2222
 		}
 	}
 
