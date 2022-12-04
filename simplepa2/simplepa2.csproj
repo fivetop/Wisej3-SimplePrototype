@@ -135,6 +135,9 @@
     <EmbeddedResource Include="UI\Components\Comp_SiteCard.resx">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_ZoneButton.resx">
+      <DependentUpon>Comp_ZoneButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_ZoneFloorCardList.resx">
       <DependentUpon>Comp_ZoneFloorCardList.cs</DependentUpon>
     </EmbeddedResource>
@@ -765,6 +768,9 @@
     </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.Designer.cs">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_ZoneButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Components\Comp_ZoneFloorCardList.cs">
       <SubType>UserControl</SubType>
