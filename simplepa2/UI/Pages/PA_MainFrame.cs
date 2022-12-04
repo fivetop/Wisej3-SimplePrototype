@@ -100,7 +100,7 @@ namespace simplepa2.UI.Pages
 
             AlertBox.Show("Log-In : " + t2 + t1);
 
-            openContentsView("대쉬보드");
+            openContentsView("dashboardBarItems");
         }
 
 
@@ -147,91 +147,144 @@ namespace simplepa2.UI.Pages
         {
             var barItems = (e.Item as NavigationBarItem);
 
+            // 01. 다른 Expand Fold 처리 
+            shink_NavigationBarItems(barItems);
+
             string outMessages = $"Selected Text : {barItems.Text}\n" + " " + $"Name : {barItems.Name} \n" + "  " + $"Nameof {nameof(barItems.Parent)}";
 
             Console.WriteLine(outMessages);
 
-            openContentsView(barItems.Text);
+            openContentsView(barItems.AccessibleName);
 
         }
 
-        public void openContentsView(string barText)
+        private void shink_NavigationBarItems(NavigationBarItem selectedNavBarItem)
         {
-            switch (barText)
+            if(selectedNavBarItem.Parent != null)  // 차일드 인 경우 
             {
-                case "대쉬보드":
-                    view_Dashboard = (View_DashBoard) bringFrontView("View_DashBoard", false);
+                switch (selectedNavBarItem.Parent.AccessibleName)
+                {
+                    case "bbsManagementBarItem":
+                        foldOtherNavBarItemsForNavBar(this.bbsManagementBarItem);
+                        break;
+                    case "bbsConfigurationBarItems":
+                        foldOtherNavBarItemsForNavBar(this.bbsConfigurationBarItems);
+                        break;
+                    case "bbsHistoryBarItems":
+                        foldOtherNavBarItemsForNavBar(this.bbsHistoryBarItems);
+                        break;
+                    case "systemConfBarItems":
+                        foldOtherNavBarItemsForNavBar(this.systemConfBarItems);
+                        break;
+                }
+            } 
+            else   // 상위 메뉴 인 경우 
+            {
+                foldOtherNavBarItemsForNavBar(selectedNavBarItem);
+            }
+        }
+
+        private void foldOtherNavBarItemsForNavBar(NavigationBarItem items)
+        {
+            this.bbsManagementBarItem.Expanded = false;
+            this.bbsConfigurationBarItems.Expanded = false;
+            this.bbsHistoryBarItems.Expanded = false;
+            this.systemConfBarItems.Expanded = false;
+
+            switch (items.AccessibleName)
+            {
+                case "bbsManagementBarItem":
+                    this.bbsManagementBarItem.Expanded = true;
                     break;
-                case "앵커방송":
+                case "bbsConfigurationBarItems":
+                    this.bbsConfigurationBarItems.Expanded = true;
+                    break;
+                case "bbsHistoryBarItems":
+                    this.bbsHistoryBarItems.Expanded = true;
+                    break;
+                case "systemConfBarItems":
+                    this.systemConfBarItems.Expanded = true;
+                    break;
+            }
+        }
+
+        public void openContentsView(string menuAccessibleName)
+        {
+            switch (menuAccessibleName)
+            {
+                case "dashboardBarItems":
+                    view_Dashboard = (View_DashBoard) bringFrontView("View_DashBoard", false);                    
+                    break;
+                case "anchorBBSBarItem":
                     view_BBSAnchor = (View_BBSAnchor)bringFrontView("View_BBSAnchor", false);
                     break;
-                case "예약방송":
+                case "reservationBarItem":
                     view_BBSReservation = (View_BBSReservation)bringFrontView("View_BBSReservation", false); 
                     break;
-                case "프리셋편집":
+                case "presetBarItem":
                     view_BBSPresetManage = (View_BBSPresetManage)bringFrontView("View_BBSPresetManage", false);
                     break;
-                case "그룹편집":
+                case "groupBarItem":
                     view_BBSGroupManage = (View_BBSGroupManage)bringFrontView("View_BBSGroupManage", false);
                     break;
-                case "IoT Application 방송":
+                case "iotApplicationBarItem":
                     view_BBSIotApplication = (View_BBSIoTApplication)bringFrontView("View_BBSIoTApplication", false);
                     break;
-                case "음원 설정":
+                case "musicConfigurationBarItem":
                     view_BBSMusicManage = (View_BBSMusicManage)bringFrontView("View_BBSMusicManage", false);
                     break;
-                case "휴일 관리":
+                case "holidayBarItem":
                     view_BBSHolidayManage = (View_BBSHolidayManage)bringFrontView("View_BBSHolidayManage", false);
                     break;
-                case "장비 관리":
+                case "deviceManageBarItem":
                     view_BBCDevice = (View_BBCDevice)bringFrontView("View_BBCDevice", false);
                     break;
-                case "사이트 관리":
+                case "siteManageBarItem":
                     view_BBCSite = (View_BBCSite)bringFrontView("View_BBCSite", false);
                     break;
-                case "ZONE 관리":
+                case "zoneManageBarItem":
                     view_BBCZone = (View_BBCZone)bringFrontView("View_BBCZone", false);
                     break;
-                case "입력 관리":
+                case "inputManageBarItem":
                     view_BBCInput = (View_BBCInput)bringFrontView("View_BBCInput", false);
                     break;
-                case "출력 관리":
+                case "outputManageBarItem":
                     view_BBCOutput = (View_BBCOutput)bringFrontView("View_BBCOutput", false);
                     break;
-                case "음량 관리":
+                case "musicManageBarItem":
                     view_BBCMusic = (View_BBCMusic)bringFrontView("View_BBCMusic", false);
                     break;
-                case "비상 방송":
+                case "emergencyManageBarItem":
                     view_BBCEmergency = (View_BBCEmergency)bringFrontView("View_BBCEmergency", false);
                     break;
-                case "앰프 Failover":
+                case "ampFailoverBarItem":
                     view_BBCAmpFailover = (View_BBCAmpFailover)bringFrontView("View_BBCAmpFailover", false);
                     break;
-                case "방송 이력":
+                case "bbsHistoryBarItem":
                     view_HistoryBBS = (View_HistoryBBS)bringFrontView("View_HistoryBBS", false);
                     break;
-                case "장비 이력":
+                case "deviceHistoryBarItem":
                     view_HistoryDevice = (View_HistoryDevice)bringFrontView("View_HistoryDevice", false);
                     break;
-                case "화재수신 이력":
+                case "fireCallHistoryBarItem":
                     view_HistoryFireSignal = (View_HistoryFireSignal)bringFrontView("View_HistoryFireSignal", false);
                     break;
-                case "외부수신 이력":
+                case "outCallHistoryBarItem":
                     view_HistoryOutMsgs = (View_HistoryOutMsgs)bringFrontView("View_HistoryOutMsgs", false);
                     break;
-                case "시스템변경 이력":
+                case "systemVerifyHistoryBarItem":
                     view_HistorySystemChanges = (View_HistorySystemChanges)bringFrontView("View_HistorySystemChanges", false);
                     break;
-                case "계정 등록 관리":
+                case "accountManageBarItem":
                     view_SystemAccount = (View_SystemAccount)bringFrontView("View_SystemAccount", false);
                     break;
-                case "시스템 이메일 등록":
+                case "emailManageBarItem":
                     view_SystemEmail = (View_SystemEmail)bringFrontView("View_SystemEmail", false);
                     break;
-                case "SMS 등록":
+                case "smsRegistrationBarItem":
                     view_SystemSMSRegistration = (View_SystemSMSRegistration)bringFrontView("View_SystemSMSRegistration", false);
                     break;
-                case "REST API":
+                case "restAPIRegistrationBarItem":
                     view_SystemRestAPI = (View_SystemRestAPI)bringFrontView("View_SystemRestAPI", false);
                     break;
 
