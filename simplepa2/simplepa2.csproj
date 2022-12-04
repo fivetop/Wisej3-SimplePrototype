@@ -126,8 +126,20 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="UI\Components\Comp_InputDeviceCard.resx">
+      <DependentUpon>Comp_InputDeviceCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_InputDSPLineCard.resx">
+      <DependentUpon>Comp_InputDSPLineCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_SiteCard.resx">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_ZoneButton.resx">
+      <DependentUpon>Comp_ZoneButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_ZoneFloorCardList.resx">
+      <DependentUpon>Comp_ZoneFloorCardList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Pages\PA_MainFrame.resx">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
@@ -739,11 +751,35 @@
     <Compile Include="UI\Base\PA_MainFrame.Designer.cs">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\Comp_InputDeviceCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_InputDeviceCard.designer.cs">
+      <DependentUpon>Comp_InputDeviceCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_InputDSPLineCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_InputDSPLineCard.Designer.cs">
+      <DependentUpon>Comp_InputDSPLineCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.Designer.cs">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_ZoneButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_ZoneButton.Designer.cs">
+      <DependentUpon>Comp_ZoneButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_ZoneFloorCardList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_ZoneFloorCardList.Designer.cs">
+      <DependentUpon>Comp_ZoneFloorCardList.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Pages\PA_Login.cs">
       <SubType>Form</SubType>
