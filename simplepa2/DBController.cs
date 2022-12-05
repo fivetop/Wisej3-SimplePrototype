@@ -199,6 +199,7 @@ namespace simplepa2
 
         #region // BSTree 방송 처리 관리 부분 
 
+        // 대기, 방송시작, 방송중, 방송종료, 방송중지
         public void SaveBTree(EmSpeakerPosition t1)
         {
             Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
@@ -211,6 +212,7 @@ namespace simplepa2
                     BSTreeRow m2 = Ds1.BSTree.NewBSTreeRow();
                     m2.EMNAME = t1.emServer;
                     m2.chno = i;
+                    m2.playing = "대기";
                     Ds1.BSTree.Rows.Add(m2);
                     Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
                 }

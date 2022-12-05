@@ -32,7 +32,8 @@ namespace simplepa2.win
 
 
 		// BTSTree 에서 해당 지역의 빈채널 선택
-		//
+		// BSTreeC 에 지역과 음원 저장 
+		// 시그날알 호출 처리 
 
 		private void btnStart_Click(object sender, EventArgs e)
 		{
