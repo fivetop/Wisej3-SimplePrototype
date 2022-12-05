@@ -34,44 +34,46 @@
             this.label20 = new Wisej.Web.Label();
             this.checkBox1 = new Wisej.Web.CheckBox();
             this.label19 = new Wisej.Web.Label();
-            this.radioButton3 = new Wisej.Web.RadioButton();
-            this.radioButton2 = new Wisej.Web.RadioButton();
-            this.radioButton1 = new Wisej.Web.RadioButton();
+            this.rb_None = new Wisej.Web.RadioButton();
+            this.rb_TLS = new Wisej.Web.RadioButton();
+            this.rb_SSL = new Wisej.Web.RadioButton();
             this.label5 = new Wisej.Web.Label();
             this.label17 = new Wisej.Web.Label();
             this.label18 = new Wisej.Web.Label();
             this.line3 = new Wisej.Web.Line();
             this.panel5 = new Wisej.Web.Panel();
             this.panel1 = new Wisej.Web.Panel();
-            this.label15 = new Wisej.Web.Label();
-            this.label16 = new Wisej.Web.Label();
+            this.bt_toText = new Wisej.Web.Button();
+            this.lb_CertifyNo = new Wisej.Web.Label();
+            this.lb_CertifyName = new Wisej.Web.Label();
             this.label14 = new Wisej.Web.Label();
             this.label11 = new Wisej.Web.Label();
             this.label12 = new Wisej.Web.Label();
-            this.textBox21 = new Wisej.Web.TextBox();
-            this.textBox23 = new Wisej.Web.TextBox();
+            this.tb_CertifyName = new Wisej.Web.TextBox();
+            this.tb_CertifyPasswd = new Wisej.Web.TextBox();
             this.line2 = new Wisej.Web.Line();
             this.panel6 = new Wisej.Web.Panel();
             this.panel32 = new Wisej.Web.Panel();
-            this.label13 = new Wisej.Web.Label();
-            this.textBox4 = new Wisej.Web.TextBox();
-            this.label9 = new Wisej.Web.Label();
-            this.label8 = new Wisej.Web.Label();
-            this.label7 = new Wisej.Web.Label();
-            this.label6 = new Wisej.Web.Label();
-            this.label4 = new Wisej.Web.Label();
-            this.label2 = new Wisej.Web.Label();
+            this.bt_MailTest = new Wisej.Web.Button();
+            this.lb_MailTest = new Wisej.Web.Label();
+            this.lbTimeout = new Wisej.Web.Label();
+            this.tb_Timeout = new Wisej.Web.TextBox();
+            this.lb_option1 = new Wisej.Web.Label();
+            this.lbReceiverEmail = new Wisej.Web.Label();
+            this.lbSenderEmail = new Wisej.Web.Label();
+            this.lb_portNo = new Wisej.Web.Label();
+            this.lbServerName = new Wisej.Web.Label();
             this.label10 = new Wisej.Web.Label();
             this.label1 = new Wisej.Web.Label();
-            this.textBox7 = new Wisej.Web.TextBox();
-            this.textBox2 = new Wisej.Web.TextBox();
-            this.textBox1 = new Wisej.Web.TextBox();
-            this.textBox13 = new Wisej.Web.TextBox();
+            this.tb_ReceiverEmail = new Wisej.Web.TextBox();
+            this.tbSenderEmail = new Wisej.Web.TextBox();
+            this.tb_ServerName = new Wisej.Web.TextBox();
+            this.tb_PortNumber = new Wisej.Web.TextBox();
             this.line1 = new Wisej.Web.Line();
             this.panel136 = new Wisej.Web.Panel();
-            this.button5 = new Wisej.Web.Button();
-            this.button2 = new Wisej.Web.Button();
-            this.label66 = new Wisej.Web.Label();
+            this.bt_Cancel = new Wisej.Web.Button();
+            this.bt_Save = new Wisej.Web.Button();
+            this.lb_MailServerConsist = new Wisej.Web.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,7 +92,6 @@
             this.panel2.Padding = new Wisej.Web.Padding(20);
             this.panel2.Size = new System.Drawing.Size(1360, 860);
             this.panel2.TabIndex = 48;
-            this.panel2.PanelCollapsed += new System.EventHandler(this.panel2_PanelCollapsed);
             // 
             // panel4
             // 
@@ -114,15 +115,15 @@
             this.panel3.Controls.Add(this.label20);
             this.panel3.Controls.Add(this.checkBox1);
             this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.radioButton3);
-            this.panel3.Controls.Add(this.radioButton2);
-            this.panel3.Controls.Add(this.radioButton1);
+            this.panel3.Controls.Add(this.rb_None);
+            this.panel3.Controls.Add(this.rb_TLS);
+            this.panel3.Controls.Add(this.rb_SSL);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.line3);
             this.panel3.Dock = Wisej.Web.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 544);
+            this.panel3.Location = new System.Drawing.Point(0, 596);
             this.panel3.Margin = new Wisej.Web.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1303, 277);
@@ -147,7 +148,7 @@
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.checkBox1.Location = new System.Drawing.Point(20, 219);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(163, 23);
+            this.checkBox1.Size = new System.Drawing.Size(154, 22);
             this.checkBox1.TabIndex = 150;
             this.checkBox1.Text = "예비 메일 서버 추가";
             // 
@@ -162,41 +163,43 @@
             this.label19.Margin = new Wisej.Web.Padding(0);
             this.label19.Name = "label19";
             this.label19.Padding = new Wisej.Web.Padding(14, 0, 0, 0);
-            this.label19.Size = new System.Drawing.Size(954, 58);
+            this.label19.Size = new System.Drawing.Size(534, 58);
             this.label19.TabIndex = 149;
-            this.label19.Text = "We recommended you to always use TLS and SSL cryptographic protocols that provide" +
-    " communication security over a computer network.";
+            this.label19.Text = "네트워크 보안을 위하여 TLS, SSL 암호화 프로토콜 사용을 권장합니다. ";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radioButton3
+            // rb_None
             // 
-            this.radioButton3.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.radioButton3.Location = new System.Drawing.Point(285, 86);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(57, 21);
-            this.radioButton3.TabIndex = 147;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "없음";
+            this.rb_None.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.rb_None.Location = new System.Drawing.Point(285, 86);
+            this.rb_None.Name = "rb_None";
+            this.rb_None.Size = new System.Drawing.Size(55, 20);
+            this.rb_None.TabIndex = 147;
+            this.rb_None.TabStop = true;
+            this.rb_None.Text = "없음";
+            this.rb_None.CheckedChanged += new System.EventHandler(this.rb_None_CheckedChanged);
             // 
-            // radioButton2
+            // rb_TLS
             // 
-            this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.radioButton2.Location = new System.Drawing.Point(158, 86);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(102, 21);
-            this.radioButton2.TabIndex = 146;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "TSL 사용함";
+            this.rb_TLS.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.rb_TLS.Location = new System.Drawing.Point(158, 86);
+            this.rb_TLS.Name = "rb_TLS";
+            this.rb_TLS.Size = new System.Drawing.Size(82, 20);
+            this.rb_TLS.TabIndex = 146;
+            this.rb_TLS.TabStop = true;
+            this.rb_TLS.Text = "TSL 사용";
+            this.rb_TLS.CheckedChanged += new System.EventHandler(this.rb_TLS_CheckedChanged);
             // 
-            // radioButton1
+            // rb_SSL
             // 
-            this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.radioButton1.Location = new System.Drawing.Point(20, 86);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(118, 21);
-            this.radioButton1.TabIndex = 145;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "SSL 사용여부";
+            this.rb_SSL.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.rb_SSL.Location = new System.Drawing.Point(20, 86);
+            this.rb_SSL.Name = "rb_SSL";
+            this.rb_SSL.Size = new System.Drawing.Size(83, 20);
+            this.rb_SSL.TabIndex = 145;
+            this.rb_SSL.TabStop = true;
+            this.rb_SSL.Text = "SSL 사용";
+            this.rb_SSL.CheckedChanged += new System.EventHandler(this.rb_SSL_CheckedChanged);
             // 
             // label5
             // 
@@ -204,7 +207,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label5.ForeColor = System.Drawing.Color.FromName("@button1LeftBG");
-            this.label5.Location = new System.Drawing.Point(162, 11);
+            this.label5.Location = new System.Drawing.Point(171, 11);
             this.label5.Margin = new Wisej.Web.Padding(0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 36);
@@ -226,7 +229,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(22, 22);
             this.label17.TabIndex = 143;
-            this.label17.Text = "2";
+            this.label17.Text = "3";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
@@ -253,7 +256,7 @@
             // panel5
             // 
             this.panel5.Dock = Wisej.Web.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 524);
+            this.panel5.Location = new System.Drawing.Point(0, 576);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1303, 20);
             this.panel5.TabIndex = 129;
@@ -261,48 +264,62 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.bt_toText);
+            this.panel1.Controls.Add(this.lb_CertifyNo);
+            this.panel1.Controls.Add(this.lb_CertifyName);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.textBox21);
-            this.panel1.Controls.Add(this.textBox23);
+            this.panel1.Controls.Add(this.tb_CertifyName);
+            this.panel1.Controls.Add(this.tb_CertifyPasswd);
             this.panel1.Controls.Add(this.line2);
             this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 333);
+            this.panel1.Location = new System.Drawing.Point(0, 385);
             this.panel1.Margin = new Wisej.Web.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1303, 191);
             this.panel1.TabIndex = 128;
             // 
-            // label15
+            // bt_toText
             // 
-            this.label15.AutoEllipsis = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label15.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label15.Location = new System.Drawing.Point(20, 130);
-            this.label15.Margin = new Wisej.Web.Padding(0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(207, 36);
-            this.label15.TabIndex = 143;
-            this.label15.Text = "비밀번호";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_toText.BackColor = System.Drawing.Color.FromName("@button2BG");
+            this.bt_toText.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_toText.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_toText.Location = new System.Drawing.Point(592, 134);
+            this.bt_toText.Margin = new Wisej.Web.Padding(0);
+            this.bt_toText.Name = "bt_toText";
+            this.bt_toText.Size = new System.Drawing.Size(100, 32);
+            this.bt_toText.TabIndex = 145;
+            this.bt_toText.Text = "문자로 보기";
+            this.bt_toText.Click += new System.EventHandler(this.bt_toText_Click);
             // 
-            // label16
+            // lb_CertifyNo
             // 
-            this.label16.AutoEllipsis = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label16.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label16.Location = new System.Drawing.Point(20, 77);
-            this.label16.Margin = new Wisej.Web.Padding(0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(207, 36);
-            this.label16.TabIndex = 142;
-            this.label16.Text = "사용자 이름";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_CertifyNo.AutoEllipsis = true;
+            this.lb_CertifyNo.BackColor = System.Drawing.Color.Transparent;
+            this.lb_CertifyNo.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_CertifyNo.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_CertifyNo.Location = new System.Drawing.Point(20, 130);
+            this.lb_CertifyNo.Margin = new Wisej.Web.Padding(0);
+            this.lb_CertifyNo.Name = "lb_CertifyNo";
+            this.lb_CertifyNo.Size = new System.Drawing.Size(207, 36);
+            this.lb_CertifyNo.TabIndex = 143;
+            this.lb_CertifyNo.Text = "비밀번호";
+            this.lb_CertifyNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lb_CertifyName
+            // 
+            this.lb_CertifyName.AutoEllipsis = true;
+            this.lb_CertifyName.BackColor = System.Drawing.Color.Transparent;
+            this.lb_CertifyName.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_CertifyName.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_CertifyName.Location = new System.Drawing.Point(20, 77);
+            this.lb_CertifyName.Margin = new Wisej.Web.Padding(0);
+            this.lb_CertifyName.Name = "lb_CertifyName";
+            this.lb_CertifyName.Size = new System.Drawing.Size(207, 36);
+            this.lb_CertifyName.TabIndex = 142;
+            this.lb_CertifyName.Text = "사용자 이름";
+            this.lb_CertifyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label14
             // 
@@ -310,7 +327,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label14.ForeColor = System.Drawing.Color.FromName("@button1LeftBG");
-            this.label14.Location = new System.Drawing.Point(122, 11);
+            this.label14.Location = new System.Drawing.Point(126, 11);
             this.label14.Margin = new Wisej.Web.Padding(0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(51, 36);
@@ -346,24 +363,26 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(437, 24);
             this.label12.TabIndex = 129;
-            this.label12.Text = "인증번호";
+            this.label12.Text = "인증정보";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox21
+            // tb_CertifyName
             // 
-            this.textBox21.AutoSize = false;
-            this.textBox21.Location = new System.Drawing.Point(234, 77);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(340, 36);
-            this.textBox21.TabIndex = 113;
+            this.tb_CertifyName.AutoSize = false;
+            this.tb_CertifyName.Location = new System.Drawing.Point(234, 77);
+            this.tb_CertifyName.Name = "tb_CertifyName";
+            this.tb_CertifyName.Size = new System.Drawing.Size(340, 36);
+            this.tb_CertifyName.TabIndex = 113;
             // 
-            // textBox23
+            // tb_CertifyPasswd
             // 
-            this.textBox23.AutoSize = false;
-            this.textBox23.Location = new System.Drawing.Point(234, 131);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(340, 36);
-            this.textBox23.TabIndex = 110;
+            this.tb_CertifyPasswd.AutoSize = false;
+            this.tb_CertifyPasswd.InputType.Type = Wisej.Web.TextBoxType.Password;
+            this.tb_CertifyPasswd.Location = new System.Drawing.Point(234, 131);
+            this.tb_CertifyPasswd.Name = "tb_CertifyPasswd";
+            this.tb_CertifyPasswd.PasswordChar = '*';
+            this.tb_CertifyPasswd.Size = new System.Drawing.Size(340, 36);
+            this.tb_CertifyPasswd.TabIndex = 110;
             // 
             // line2
             // 
@@ -375,7 +394,7 @@
             // panel6
             // 
             this.panel6.Dock = Wisej.Web.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 313);
+            this.panel6.Location = new System.Drawing.Point(0, 365);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1303, 20);
             this.panel6.TabIndex = 127;
@@ -383,132 +402,146 @@
             // panel32
             // 
             this.panel32.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel32.Controls.Add(this.label13);
-            this.panel32.Controls.Add(this.textBox4);
-            this.panel32.Controls.Add(this.label9);
-            this.panel32.Controls.Add(this.label8);
-            this.panel32.Controls.Add(this.label7);
-            this.panel32.Controls.Add(this.label6);
-            this.panel32.Controls.Add(this.label4);
-            this.panel32.Controls.Add(this.label2);
+            this.panel32.Controls.Add(this.bt_MailTest);
+            this.panel32.Controls.Add(this.lb_MailTest);
+            this.panel32.Controls.Add(this.lbTimeout);
+            this.panel32.Controls.Add(this.tb_Timeout);
+            this.panel32.Controls.Add(this.lb_option1);
+            this.panel32.Controls.Add(this.lbReceiverEmail);
+            this.panel32.Controls.Add(this.lbSenderEmail);
+            this.panel32.Controls.Add(this.lb_portNo);
+            this.panel32.Controls.Add(this.lbServerName);
             this.panel32.Controls.Add(this.label10);
             this.panel32.Controls.Add(this.label1);
-            this.panel32.Controls.Add(this.textBox7);
-            this.panel32.Controls.Add(this.textBox2);
-            this.panel32.Controls.Add(this.textBox1);
-            this.panel32.Controls.Add(this.textBox13);
+            this.panel32.Controls.Add(this.tb_ReceiverEmail);
+            this.panel32.Controls.Add(this.tbSenderEmail);
+            this.panel32.Controls.Add(this.tb_ServerName);
+            this.panel32.Controls.Add(this.tb_PortNumber);
             this.panel32.Controls.Add(this.line1);
             this.panel32.Dock = Wisej.Web.DockStyle.Top;
             this.panel32.Location = new System.Drawing.Point(0, 0);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(1303, 313);
+            this.panel32.Size = new System.Drawing.Size(1303, 365);
             this.panel32.TabIndex = 122;
             // 
-            // label13
+            // bt_MailTest
             // 
-            this.label13.AutoEllipsis = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label13.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label13.Location = new System.Drawing.Point(615, 134);
-            this.label13.Margin = new Wisej.Web.Padding(0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(138, 36);
-            this.label13.TabIndex = 139;
-            this.label13.Text = "타임아웃";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_MailTest.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.bt_MailTest.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_MailTest.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_MailTest.Location = new System.Drawing.Point(234, 308);
+            this.bt_MailTest.Margin = new Wisej.Web.Padding(0);
+            this.bt_MailTest.Name = "bt_MailTest";
+            this.bt_MailTest.Size = new System.Drawing.Size(156, 32);
+            this.bt_MailTest.TabIndex = 142;
+            this.bt_MailTest.Text = "메일 테스트";
+            this.bt_MailTest.Click += new System.EventHandler(this.bt_MailTest_Click);
             // 
-            // textBox4
+            // lb_MailTest
             // 
-            this.textBox4.AutoSize = false;
-            this.textBox4.Location = new System.Drawing.Point(753, 134);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(237, 36);
-            this.textBox4.TabIndex = 138;
+            this.lb_MailTest.AutoEllipsis = true;
+            this.lb_MailTest.BackColor = System.Drawing.Color.Transparent;
+            this.lb_MailTest.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_MailTest.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_MailTest.Location = new System.Drawing.Point(20, 308);
+            this.lb_MailTest.Margin = new Wisej.Web.Padding(0);
+            this.lb_MailTest.Name = "lb_MailTest";
+            this.lb_MailTest.Size = new System.Drawing.Size(138, 36);
+            this.lb_MailTest.TabIndex = 141;
+            this.lb_MailTest.Text = "메일 테스트";
+            this.lb_MailTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // lbTimeout
             // 
-            this.label9.AutoEllipsis = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label9.ForeColor = System.Drawing.Color.FromName("@button1LeftBG");
-            this.label9.Location = new System.Drawing.Point(146, 250);
-            this.label9.Margin = new Wisej.Web.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 36);
-            this.label9.TabIndex = 137;
-            this.label9.Text = "(옵션)";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTimeout.AutoEllipsis = true;
+            this.lbTimeout.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimeout.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbTimeout.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lbTimeout.Location = new System.Drawing.Point(615, 134);
+            this.lbTimeout.Margin = new Wisej.Web.Padding(0);
+            this.lbTimeout.Name = "lbTimeout";
+            this.lbTimeout.Size = new System.Drawing.Size(138, 36);
+            this.lbTimeout.TabIndex = 139;
+            this.lbTimeout.Text = "타임아웃";
+            this.lbTimeout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // tb_Timeout
             // 
-            this.label8.AutoEllipsis = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label8.ForeColor = System.Drawing.Color.FromName("@button1LeftBG");
-            this.label8.Location = new System.Drawing.Point(160, 192);
-            this.label8.Margin = new Wisej.Web.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 36);
-            this.label8.TabIndex = 136;
-            this.label8.Text = "(옵션)";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tb_Timeout.AutoSize = false;
+            this.tb_Timeout.Location = new System.Drawing.Point(753, 134);
+            this.tb_Timeout.Name = "tb_Timeout";
+            this.tb_Timeout.Size = new System.Drawing.Size(237, 36);
+            this.tb_Timeout.TabIndex = 138;
             // 
-            // label7
+            // lb_option1
             // 
-            this.label7.AutoEllipsis = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label7.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label7.Location = new System.Drawing.Point(20, 250);
-            this.label7.Margin = new Wisej.Web.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 36);
-            this.label7.TabIndex = 135;
-            this.label7.Text = "받는 사람 이메일ID";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_option1.AutoEllipsis = true;
+            this.lb_option1.BackColor = System.Drawing.Color.Transparent;
+            this.lb_option1.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_option1.ForeColor = System.Drawing.Color.FromName("@button1LeftBG");
+            this.lb_option1.Location = new System.Drawing.Point(169, 250);
+            this.lb_option1.Margin = new Wisej.Web.Padding(0);
+            this.lb_option1.Name = "lb_option1";
+            this.lb_option1.Size = new System.Drawing.Size(51, 36);
+            this.lb_option1.TabIndex = 136;
+            this.lb_option1.Text = "(옵션)";
+            this.lb_option1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // lbReceiverEmail
             // 
-            this.label6.AutoEllipsis = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label6.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label6.Location = new System.Drawing.Point(20, 192);
-            this.label6.Margin = new Wisej.Web.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 36);
-            this.label6.TabIndex = 134;
-            this.label6.Text = "보내는 사람 이메일ID";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbReceiverEmail.AutoEllipsis = true;
+            this.lbReceiverEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lbReceiverEmail.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbReceiverEmail.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lbReceiverEmail.Location = new System.Drawing.Point(20, 191);
+            this.lbReceiverEmail.Margin = new Wisej.Web.Padding(0);
+            this.lbReceiverEmail.Name = "lbReceiverEmail";
+            this.lbReceiverEmail.Size = new System.Drawing.Size(138, 36);
+            this.lbReceiverEmail.TabIndex = 135;
+            this.lbReceiverEmail.Text = "받는 사람 이메일ID";
+            this.lbReceiverEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // lbSenderEmail
             // 
-            this.label4.AutoEllipsis = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label4.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label4.Location = new System.Drawing.Point(20, 134);
-            this.label4.Margin = new Wisej.Web.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 36);
-            this.label4.TabIndex = 132;
-            this.label4.Text = "포트번호";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbSenderEmail.AutoEllipsis = true;
+            this.lbSenderEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lbSenderEmail.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbSenderEmail.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lbSenderEmail.Location = new System.Drawing.Point(20, 250);
+            this.lbSenderEmail.Margin = new Wisej.Web.Padding(0);
+            this.lbSenderEmail.Name = "lbSenderEmail";
+            this.lbSenderEmail.Size = new System.Drawing.Size(154, 36);
+            this.lbSenderEmail.TabIndex = 134;
+            this.lbSenderEmail.Text = "보내는 사람 이메일ID";
+            this.lbSenderEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // lb_portNo
             // 
-            this.label2.AutoEllipsis = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label2.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label2.Location = new System.Drawing.Point(20, 77);
-            this.label2.Margin = new Wisej.Web.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(207, 36);
-            this.label2.TabIndex = 131;
-            this.label2.Text = "서버 이름";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_portNo.AutoEllipsis = true;
+            this.lb_portNo.BackColor = System.Drawing.Color.Transparent;
+            this.lb_portNo.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_portNo.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_portNo.Location = new System.Drawing.Point(20, 134);
+            this.lb_portNo.Margin = new Wisej.Web.Padding(0);
+            this.lb_portNo.Name = "lb_portNo";
+            this.lb_portNo.Size = new System.Drawing.Size(207, 36);
+            this.lb_portNo.TabIndex = 132;
+            this.lb_portNo.Text = "포트번호";
+            this.lb_portNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbServerName
+            // 
+            this.lbServerName.AutoEllipsis = true;
+            this.lbServerName.BackColor = System.Drawing.Color.Transparent;
+            this.lbServerName.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbServerName.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lbServerName.Location = new System.Drawing.Point(20, 77);
+            this.lbServerName.Margin = new Wisej.Web.Padding(0);
+            this.lbServerName.Name = "lbServerName";
+            this.lbServerName.Size = new System.Drawing.Size(207, 36);
+            this.lbServerName.TabIndex = 131;
+            this.lbServerName.Text = "서버 이름";
+            this.lbServerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
@@ -541,37 +574,37 @@
             this.label1.Text = "서버 기본 정보";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox7
+            // tb_ReceiverEmail
             // 
-            this.textBox7.AutoSize = false;
-            this.textBox7.Location = new System.Drawing.Point(234, 249);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(756, 36);
-            this.textBox7.TabIndex = 118;
+            this.tb_ReceiverEmail.AutoSize = false;
+            this.tb_ReceiverEmail.Location = new System.Drawing.Point(234, 191);
+            this.tb_ReceiverEmail.Name = "tb_ReceiverEmail";
+            this.tb_ReceiverEmail.Size = new System.Drawing.Size(756, 36);
+            this.tb_ReceiverEmail.TabIndex = 118;
             // 
-            // textBox2
+            // tbSenderEmail
             // 
-            this.textBox2.AutoSize = false;
-            this.textBox2.Location = new System.Drawing.Point(234, 191);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(756, 36);
-            this.textBox2.TabIndex = 115;
+            this.tbSenderEmail.AutoSize = false;
+            this.tbSenderEmail.Location = new System.Drawing.Point(234, 250);
+            this.tbSenderEmail.Name = "tbSenderEmail";
+            this.tbSenderEmail.Size = new System.Drawing.Size(756, 36);
+            this.tbSenderEmail.TabIndex = 115;
             // 
-            // textBox1
+            // tb_ServerName
             // 
-            this.textBox1.AutoSize = false;
-            this.textBox1.Location = new System.Drawing.Point(234, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(756, 36);
-            this.textBox1.TabIndex = 113;
+            this.tb_ServerName.AutoSize = false;
+            this.tb_ServerName.Location = new System.Drawing.Point(234, 77);
+            this.tb_ServerName.Name = "tb_ServerName";
+            this.tb_ServerName.Size = new System.Drawing.Size(756, 36);
+            this.tb_ServerName.TabIndex = 113;
             // 
-            // textBox13
+            // tb_PortNumber
             // 
-            this.textBox13.AutoSize = false;
-            this.textBox13.Location = new System.Drawing.Point(234, 134);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(216, 36);
-            this.textBox13.TabIndex = 110;
+            this.tb_PortNumber.AutoSize = false;
+            this.tb_PortNumber.Location = new System.Drawing.Point(234, 134);
+            this.tb_PortNumber.Name = "tb_PortNumber";
+            this.tb_PortNumber.Size = new System.Drawing.Size(216, 36);
+            this.tb_PortNumber.TabIndex = 110;
             // 
             // line1
             // 
@@ -583,51 +616,51 @@
             // panel136
             // 
             this.panel136.BackColor = System.Drawing.Color.Transparent;
-            this.panel136.Controls.Add(this.button5);
-            this.panel136.Controls.Add(this.button2);
-            this.panel136.Controls.Add(this.label66);
+            this.panel136.Controls.Add(this.bt_Cancel);
+            this.panel136.Controls.Add(this.bt_Save);
+            this.panel136.Controls.Add(this.lb_MailServerConsist);
             this.panel136.Dock = Wisej.Web.DockStyle.Top;
             this.panel136.Location = new System.Drawing.Point(20, 20);
             this.panel136.Name = "panel136";
             this.panel136.Size = new System.Drawing.Size(1320, 52);
             this.panel136.TabIndex = 123;
             // 
-            // button5
+            // bt_Cancel
             // 
-            this.button5.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromName("@button2BG");
-            this.button5.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button5.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button5.Location = new System.Drawing.Point(1110, 0);
-            this.button5.Margin = new Wisej.Web.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 32);
-            this.button5.TabIndex = 35;
-            this.button5.Text = "취소";
+            this.bt_Cancel.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_Cancel.BackColor = System.Drawing.Color.FromName("@button2BG");
+            this.bt_Cancel.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_Cancel.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_Cancel.Location = new System.Drawing.Point(1110, 0);
+            this.bt_Cancel.Margin = new Wisej.Web.Padding(0);
+            this.bt_Cancel.Name = "bt_Cancel";
+            this.bt_Cancel.Size = new System.Drawing.Size(100, 32);
+            this.bt_Cancel.TabIndex = 35;
+            this.bt_Cancel.Text = "취소";
             // 
-            // button2
+            // bt_Save
             // 
-            this.button2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button2.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button2.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button2.Location = new System.Drawing.Point(1220, 0);
-            this.button2.Margin = new Wisej.Web.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 32);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "저장";
+            this.bt_Save.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_Save.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.bt_Save.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_Save.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_Save.Location = new System.Drawing.Point(1220, 0);
+            this.bt_Save.Margin = new Wisej.Web.Padding(0);
+            this.bt_Save.Name = "bt_Save";
+            this.bt_Save.Size = new System.Drawing.Size(100, 32);
+            this.bt_Save.TabIndex = 34;
+            this.bt_Save.Text = "저장";
             // 
-            // label66
+            // lb_MailServerConsist
             // 
-            this.label66.CssStyle = "\r\n";
-            this.label66.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label66.Location = new System.Drawing.Point(0, 0);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(418, 32);
-            this.label66.TabIndex = 33;
-            this.label66.Text = "메일 서버 구성";
-            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_MailServerConsist.CssStyle = "\r\n";
+            this.lb_MailServerConsist.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_MailServerConsist.Location = new System.Drawing.Point(0, 0);
+            this.lb_MailServerConsist.Name = "lb_MailServerConsist";
+            this.lb_MailServerConsist.Size = new System.Drawing.Size(418, 32);
+            this.lb_MailServerConsist.TabIndex = 33;
+            this.lb_MailServerConsist.Text = "메일 서버 구성";
+            this.lb_MailServerConsist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // View_SystemEmail
             // 
@@ -654,47 +687,49 @@
 
         private Wisej.Web.Panel panel2;
         private Wisej.Web.Panel panel136;
-        private Wisej.Web.Button button5;
-        private Wisej.Web.Button button2;
-        private Wisej.Web.Label label66;
+        private Wisej.Web.Button bt_Cancel;
+        private Wisej.Web.Button bt_Save;
+        private Wisej.Web.Label lb_MailServerConsist;
         private Wisej.Web.Panel panel4;
         private Wisej.Web.Panel panel3;
         private Wisej.Web.Label label20;
         private Wisej.Web.CheckBox checkBox1;
         private Wisej.Web.Label label19;
-        private Wisej.Web.RadioButton radioButton3;
-        private Wisej.Web.RadioButton radioButton2;
-        private Wisej.Web.RadioButton radioButton1;
+        private Wisej.Web.RadioButton rb_None;
+        private Wisej.Web.RadioButton rb_TLS;
+        private Wisej.Web.RadioButton rb_SSL;
         private Wisej.Web.Label label5;
         private Wisej.Web.Label label17;
         private Wisej.Web.Label label18;
         private Wisej.Web.Line line3;
         private Wisej.Web.Panel panel5;
         private Wisej.Web.Panel panel1;
-        private Wisej.Web.Label label15;
-        private Wisej.Web.Label label16;
+        private Wisej.Web.Label lb_CertifyNo;
+        private Wisej.Web.Label lb_CertifyName;
         private Wisej.Web.Label label14;
         private Wisej.Web.Label label11;
         private Wisej.Web.Label label12;
-        private Wisej.Web.TextBox textBox21;
-        private Wisej.Web.TextBox textBox23;
+        private Wisej.Web.TextBox tb_CertifyName;
+        private Wisej.Web.TextBox tb_CertifyPasswd;
         private Wisej.Web.Line line2;
         private Wisej.Web.Panel panel6;
         private Wisej.Web.Panel panel32;
-        private Wisej.Web.Label label13;
-        private Wisej.Web.TextBox textBox4;
-        private Wisej.Web.Label label9;
-        private Wisej.Web.Label label8;
-        private Wisej.Web.Label label7;
-        private Wisej.Web.Label label6;
-        private Wisej.Web.Label label4;
-        private Wisej.Web.Label label2;
+        private Wisej.Web.Label lbTimeout;
+        private Wisej.Web.TextBox tb_Timeout;
+        private Wisej.Web.Label lb_option1;
+        private Wisej.Web.Label lbReceiverEmail;
+        private Wisej.Web.Label lbSenderEmail;
+        private Wisej.Web.Label lb_portNo;
+        private Wisej.Web.Label lbServerName;
         private Wisej.Web.Label label10;
         private Wisej.Web.Label label1;
-        private Wisej.Web.TextBox textBox7;
-        private Wisej.Web.TextBox textBox2;
-        private Wisej.Web.TextBox textBox1;
-        private Wisej.Web.TextBox textBox13;
+        private Wisej.Web.TextBox tb_ReceiverEmail;
+        private Wisej.Web.TextBox tbSenderEmail;
+        private Wisej.Web.TextBox tb_ServerName;
+        private Wisej.Web.TextBox tb_PortNumber;
         private Wisej.Web.Line line1;
+        private Wisej.Web.Button bt_MailTest;
+        private Wisej.Web.Label lb_MailTest;
+        private Wisej.Web.Button bt_toText;
     }
 }
