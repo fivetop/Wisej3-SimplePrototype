@@ -61,7 +61,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Name = "PA_MainFrame";
-            this.Size = new System.Drawing.Size(1614, 768);
+            this.Size = new System.Drawing.Size(1271, 663);
             this.Text = "PA_MainFrame";
             this.ResumeLayout(false);
 

@@ -10,6 +10,7 @@ namespace simplepa2.UI.Base
         public PA_MainFrame()
         {
             InitializeComponent();
+            // Git Test delete when you release.
         }
 
 
