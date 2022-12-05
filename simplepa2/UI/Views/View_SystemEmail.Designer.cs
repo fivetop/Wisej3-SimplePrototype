@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new Wisej.Web.Panel();
             this.panel4 = new Wisej.Web.Panel();
             this.panel3 = new Wisej.Web.Panel();
@@ -66,7 +67,7 @@
             this.label10 = new Wisej.Web.Label();
             this.label1 = new Wisej.Web.Label();
             this.tb_ReceiverEmail = new Wisej.Web.TextBox();
-            this.tbSenderEmail = new Wisej.Web.TextBox();
+            this.tb_SenderEmail = new Wisej.Web.TextBox();
             this.tb_ServerName = new Wisej.Web.TextBox();
             this.tb_PortNumber = new Wisej.Web.TextBox();
             this.line1 = new Wisej.Web.Line();
@@ -74,12 +75,19 @@
             this.bt_Cancel = new Wisej.Web.Button();
             this.bt_Save = new Wisej.Web.Button();
             this.lb_MailServerConsist = new Wisej.Web.Label();
+            this.tipServerName = new Wisej.Web.HelpTip(this.components);
+            this.tipPortNumber = new Wisej.Web.HelpTip(this.components);
+            this.tipReceiverEmail = new Wisej.Web.HelpTip(this.components);
+            this.tipLoginName = new Wisej.Web.HelpTip(this.components);
+            this.tipLoginPW = new Wisej.Web.HelpTip(this.components);
+            this.errorProvider1 = new Wisej.Web.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel32.SuspendLayout();
             this.panel136.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -176,8 +184,7 @@
             this.rb_None.Size = new System.Drawing.Size(55, 20);
             this.rb_None.TabIndex = 147;
             this.rb_None.TabStop = true;
-            this.rb_None.Text = "없음";
-            this.rb_None.CheckedChanged += new System.EventHandler(this.rb_None_CheckedChanged);
+            this.rb_None.Text = "없음";            
             // 
             // rb_TLS
             // 
@@ -187,8 +194,7 @@
             this.rb_TLS.Size = new System.Drawing.Size(82, 20);
             this.rb_TLS.TabIndex = 146;
             this.rb_TLS.TabStop = true;
-            this.rb_TLS.Text = "TSL 사용";
-            this.rb_TLS.CheckedChanged += new System.EventHandler(this.rb_TLS_CheckedChanged);
+            this.rb_TLS.Text = "TSL 사용";            
             // 
             // rb_SSL
             // 
@@ -198,8 +204,7 @@
             this.rb_SSL.Size = new System.Drawing.Size(83, 20);
             this.rb_SSL.TabIndex = 145;
             this.rb_SSL.TabStop = true;
-            this.rb_SSL.Text = "SSL 사용";
-            this.rb_SSL.CheckedChanged += new System.EventHandler(this.rb_SSL_CheckedChanged);
+            this.rb_SSL.Text = "SSL 사용";            
             // 
             // label5
             // 
@@ -243,7 +248,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(118, 24);
             this.label18.TabIndex = 142;
-            this.label18.Text = "보안 접속 정보";
+            this.label18.Text = "암호화 사용";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // line3
@@ -369,6 +374,7 @@
             // tb_CertifyName
             // 
             this.tb_CertifyName.AutoSize = false;
+            this.tipLoginName.SetHelpTip(this.tb_CertifyName, "공급자에 접근가능한 ID");
             this.tb_CertifyName.Location = new System.Drawing.Point(234, 77);
             this.tb_CertifyName.Name = "tb_CertifyName";
             this.tb_CertifyName.Size = new System.Drawing.Size(340, 36);
@@ -377,6 +383,7 @@
             // tb_CertifyPasswd
             // 
             this.tb_CertifyPasswd.AutoSize = false;
+            this.tipLoginPW.SetHelpTip(this.tb_CertifyPasswd, "공급자의 인증용 PW 입력");
             this.tb_CertifyPasswd.InputType.Type = Wisej.Web.TextBoxType.Password;
             this.tb_CertifyPasswd.Location = new System.Drawing.Point(234, 131);
             this.tb_CertifyPasswd.Name = "tb_CertifyPasswd";
@@ -414,7 +421,7 @@
             this.panel32.Controls.Add(this.label10);
             this.panel32.Controls.Add(this.label1);
             this.panel32.Controls.Add(this.tb_ReceiverEmail);
-            this.panel32.Controls.Add(this.tbSenderEmail);
+            this.panel32.Controls.Add(this.tb_SenderEmail);
             this.panel32.Controls.Add(this.tb_ServerName);
             this.panel32.Controls.Add(this.tb_PortNumber);
             this.panel32.Controls.Add(this.line1);
@@ -462,7 +469,7 @@
             this.lbTimeout.Name = "lbTimeout";
             this.lbTimeout.Size = new System.Drawing.Size(138, 36);
             this.lbTimeout.TabIndex = 139;
-            this.lbTimeout.Text = "타임아웃";
+            this.lbTimeout.Text = "타임아웃(s)";
             this.lbTimeout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tb_Timeout
@@ -571,28 +578,30 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(437, 24);
             this.label1.TabIndex = 129;
-            this.label1.Text = "서버 기본 정보";
+            this.label1.Text = "메일서버 정보";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tb_ReceiverEmail
             // 
             this.tb_ReceiverEmail.AutoSize = false;
+            this.tipReceiverEmail.SetHelpTip(this.tb_ReceiverEmail, "관리자의 계정주소를 입력하시오");
             this.tb_ReceiverEmail.Location = new System.Drawing.Point(234, 191);
             this.tb_ReceiverEmail.Name = "tb_ReceiverEmail";
             this.tb_ReceiverEmail.Size = new System.Drawing.Size(756, 36);
             this.tb_ReceiverEmail.TabIndex = 118;
             // 
-            // tbSenderEmail
+            // tb_SenderEmail
             // 
-            this.tbSenderEmail.AutoSize = false;
-            this.tbSenderEmail.Location = new System.Drawing.Point(234, 250);
-            this.tbSenderEmail.Name = "tbSenderEmail";
-            this.tbSenderEmail.Size = new System.Drawing.Size(756, 36);
-            this.tbSenderEmail.TabIndex = 115;
+            this.tb_SenderEmail.AutoSize = false;
+            this.tb_SenderEmail.Location = new System.Drawing.Point(234, 250);
+            this.tb_SenderEmail.Name = "tb_SenderEmail";
+            this.tb_SenderEmail.Size = new System.Drawing.Size(756, 36);
+            this.tb_SenderEmail.TabIndex = 115;
             // 
             // tb_ServerName
             // 
             this.tb_ServerName.AutoSize = false;
+            this.tipServerName.SetHelpTip(this.tb_ServerName, "이메일 공급자의 공급주소를 기입하시오");
             this.tb_ServerName.Location = new System.Drawing.Point(234, 77);
             this.tb_ServerName.Name = "tb_ServerName";
             this.tb_ServerName.Size = new System.Drawing.Size(756, 36);
@@ -601,6 +610,7 @@
             // tb_PortNumber
             // 
             this.tb_PortNumber.AutoSize = false;
+            this.tipPortNumber.SetHelpTip(this.tb_PortNumber, "공급자에 지정된 메일의 포트번호를 입력");
             this.tb_PortNumber.Location = new System.Drawing.Point(234, 134);
             this.tb_PortNumber.Name = "tb_PortNumber";
             this.tb_PortNumber.Size = new System.Drawing.Size(216, 36);
@@ -637,6 +647,7 @@
             this.bt_Cancel.Size = new System.Drawing.Size(100, 32);
             this.bt_Cancel.TabIndex = 35;
             this.bt_Cancel.Text = "취소";
+            this.bt_Cancel.Click += new System.EventHandler(this.bt_Cancel_Click);
             // 
             // bt_Save
             // 
@@ -650,6 +661,7 @@
             this.bt_Save.Size = new System.Drawing.Size(100, 32);
             this.bt_Save.TabIndex = 34;
             this.bt_Save.Text = "저장";
+            this.bt_Save.Click += new System.EventHandler(this.bt_Save_Click);
             // 
             // lb_MailServerConsist
             // 
@@ -661,6 +673,10 @@
             this.lb_MailServerConsist.TabIndex = 33;
             this.lb_MailServerConsist.Text = "메일 서버 구성";
             this.lb_MailServerConsist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // View_SystemEmail
             // 
@@ -679,6 +695,7 @@
             this.panel1.ResumeLayout(false);
             this.panel32.ResumeLayout(false);
             this.panel136.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -724,12 +741,18 @@
         private Wisej.Web.Label label10;
         private Wisej.Web.Label label1;
         private Wisej.Web.TextBox tb_ReceiverEmail;
-        private Wisej.Web.TextBox tbSenderEmail;
+        private Wisej.Web.TextBox tb_SenderEmail;
         private Wisej.Web.TextBox tb_ServerName;
         private Wisej.Web.TextBox tb_PortNumber;
         private Wisej.Web.Line line1;
         private Wisej.Web.Button bt_MailTest;
         private Wisej.Web.Label lb_MailTest;
         private Wisej.Web.Button bt_toText;
+        private Wisej.Web.HelpTip tipServerName;
+        private Wisej.Web.HelpTip tipPortNumber;
+        private Wisej.Web.HelpTip tipReceiverEmail;
+        private Wisej.Web.HelpTip tipLoginName;
+        private Wisej.Web.HelpTip tipLoginPW;
+        private Wisej.Web.ErrorProvider errorProvider1;
     }
 }

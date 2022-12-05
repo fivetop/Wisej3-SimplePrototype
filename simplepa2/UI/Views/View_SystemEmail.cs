@@ -9,6 +9,8 @@ namespace simplepa2.UI.Views
     {
         private Email_DataList email_DataSet;
         private bool bt_pw_open = false;
+
+        private string str_error_message = "필수 데이터입니다.";
         public View_SystemEmail()
         {
             InitializeComponent();
@@ -22,35 +24,66 @@ namespace simplepa2.UI.Views
 
         private void View_SystemEmail_Load(object sender, EventArgs e)
         {
-            // Debug
-            MessageBox.Show("Demo 로 ExampleData로 동작합니다., Release 시 삭제");
-            email_DataSet = make_DumpData();
-            
-            if(email_DataSet != null)
+            email_DataSet = getData();
+
+            if (email_DataSet != null)
             {
-                this.tb_ServerName.Text = email_DataSet.emailName;
-                this.tb_PortNumber.Text = Convert.ToString(email_DataSet.portName);
-                this.tb_Timeout.Text = Convert.ToString(email_DataSet.timeout);
-                this.tbSenderEmail.Text = email_DataSet.senderEmail;
-                this.tb_ReceiverEmail.Text = email_DataSet.receiverEmail;
-
-                this.tb_CertifyName.Text = email_DataSet.certificationName;
-                this.tb_CertifyPasswd.Text = email_DataSet.certificationPasswd;
-
-                if (email_DataSet.noSecurity == true)
-                {
-                    this.rb_None.Checked = true;
-                }
-                else if (email_DataSet.sslUsage == true)
-                {
-                    this.rb_SSL.Checked = true;
-                }
-                else if (email_DataSet.tlsUsage == true)
-                {
-                    this.rb_TLS.Checked = true;
-                }
+                setData(email_DataSet);
             }
-            
+        }
+
+        private Email_DataList getData()
+        {
+            // Debug , DB GET 구현 
+            MessageBox.Show("Demo 로 ExampleData로 동작합니다., Release 시 삭제");
+
+            Email_DataList data = make_DumpData();     // DB Get 구현 필요 
+
+            return data;
+
+        }
+
+        private void setData(Email_DataList emailDataSet)
+        {
+            this.tb_ServerName.Text = emailDataSet.emailName;
+            this.tb_PortNumber.Text = Convert.ToString(emailDataSet.portName);
+            this.tb_Timeout.Text = Convert.ToString(emailDataSet.timeout);
+            this.tb_SenderEmail.Text = emailDataSet.senderEmail;
+            this.tb_ReceiverEmail.Text = emailDataSet.receiverEmail;
+
+            this.tb_CertifyName.Text = emailDataSet.certificationName;
+            this.tb_CertifyPasswd.Text = emailDataSet.certificationPasswd;
+
+            if (emailDataSet.noSecurity == true)
+            {
+                this.rb_None.Checked = true;
+            }
+            else if (emailDataSet.sslUsage == true)
+            {
+                this.rb_SSL.Checked = true;
+            }
+            else if (emailDataSet.tlsUsage == true)
+            {
+                this.rb_TLS.Checked = true;
+            }
+        }
+
+        private Email_DataList packData()
+        {
+            Email_DataList data = new Email_DataList();
+            data.emailName = this.tb_ServerName.Text;
+            data.portName = Convert.ToInt32(this.tb_PortNumber.Text);
+            data.timeout = Convert.ToInt32(this.tb_Timeout.Text);
+            data.senderEmail = this.tb_SenderEmail.Text;
+            data.receiverEmail = this.tb_SenderEmail.Text;
+            data.certificationName = this.tb_CertifyName.Text;
+            data.certificationPasswd = this.tb_CertifyPasswd.Text;
+
+            data.noSecurity = this.rb_None.Checked;
+            data.sslUsage = this.rb_SSL.Checked;
+            data.tlsUsage = this.rb_TLS.Checked;
+
+            return data;
         }
 
         private void bt_MailTest_Click(object sender, EventArgs e)
@@ -89,8 +122,8 @@ namespace simplepa2.UI.Views
                 var mailMessage = new MailMessage
                 {
                     From = new MailAddress(email_data.senderEmail),
-                    Subject = "Mail Registration from SimplePA Network Server",
-                    Body = "<h1>Hello this is test email from simplepa system, your email configured as management email account. </h1>",
+                    Subject = "SimplePA Network Server register your email account as management purpose.",
+                    Body = "<h1>Hello, SimplePA Network Server register your email  </h1>",
                     IsBodyHtml = true,
                 };
                 mailMessage.To.Add(email_data.receiverEmail);
@@ -104,7 +137,74 @@ namespace simplepa2.UI.Views
             return returnFlag;
         }
 
-        // Example 데이터 만들기용 
+
+        private void bt_toText_Click(object sender, EventArgs e)
+        {
+            this.bt_pw_open = !bt_pw_open;
+            if(this.bt_pw_open)
+            {
+                bt_toText.Text = "숨기기";                
+                this.tb_CertifyPasswd.InputType.Type = Wisej.Web.TextBoxType.Text;
+
+            }
+            else
+            {
+                bt_toText.Text = "문자로보기";
+                this.tb_CertifyPasswd.InputType.Type = Wisej.Web.TextBoxType.Password;
+
+            }
+        }
+
+        private void bt_Cancel_Click(object sender, EventArgs e)
+        {
+            setData(email_DataSet);   // 저장이 되지 않은 데이터를 되돌림
+        }
+
+        private void bt_Save_Click(object sender, EventArgs e)
+        {
+
+            if(formValidation())
+            {
+                // 
+                email_DataSet = packData();
+                
+                // DB update logic   : dbUpdate(email_dataSet)
+                MessageBox.Show("구현 필요 : DB 업데이트 기능");
+            }
+            else
+            {
+                AlertBox.Show("에러메시지의 데이터를 입력하시오");
+            }
+
+        }
+
+        private bool formValidation()
+        {
+            bool bValidation = true;
+                        
+            if(this.tb_ServerName.Text.Trim().Equals(""))
+            {
+                bValidation = false;
+                this.errorProvider1.SetError(this.tb_ServerName, str_error_message);
+            }
+
+            if (this.tb_PortNumber.Text.Trim().Equals(""))
+            {
+                bValidation = false;
+                this.errorProvider1.SetError(this.tb_PortNumber, str_error_message);
+            }
+
+            if (this.tb_ReceiverEmail.Text.Trim().Equals(""))
+            {
+                bValidation = false;
+                this.errorProvider1.SetError(this.tb_ReceiverEmail, str_error_message);
+            }
+
+            return bValidation;
+        }
+
+
+        // Example 데이터 만들기용 =================================================================
         private Email_DataList make_DumpData()
         {
             Email_DataList edl = new Email_DataList();
@@ -124,44 +224,6 @@ namespace simplepa2.UI.Views
             edl.sslUsage = true;
 
             return edl;
-        }
-
-        private void bt_toText_Click(object sender, EventArgs e)
-        {
-            this.bt_pw_open = !bt_pw_open;
-            if(this.bt_pw_open)
-            {
-                bt_toText.Text = "숨기기";                
-                this.tb_CertifyPasswd.InputType.Type = Wisej.Web.TextBoxType.Text;
-
-            }
-            else
-            {
-                bt_toText.Text = "문자로보기";
-                this.tb_CertifyPasswd.InputType.Type = Wisej.Web.TextBoxType.Password;
-
-            }
-        }
-
-        private void rb_None_CheckedChanged(object sender, EventArgs e)
-        {
-            email_DataSet.noSecurity = rb_None.Checked;
-            email_DataSet.sslUsage = rb_SSL.Checked;
-            email_DataSet.tlsUsage = rb_TLS.Checked;
-        }
-
-        private void rb_TLS_CheckedChanged(object sender, EventArgs e)
-        {
-            email_DataSet.noSecurity = rb_None.Checked;
-            email_DataSet.sslUsage = rb_SSL.Checked;
-            email_DataSet.tlsUsage = rb_TLS.Checked;
-        }
-
-        private void rb_SSL_CheckedChanged(object sender, EventArgs e)
-        {
-            email_DataSet.noSecurity = rb_None.Checked;
-            email_DataSet.sslUsage = rb_SSL.Checked;
-            email_DataSet.tlsUsage = rb_TLS.Checked;
         }
     }
 
