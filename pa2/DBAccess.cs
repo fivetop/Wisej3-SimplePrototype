@@ -22,6 +22,7 @@ namespace pa
         public AssetsDataTable Assets { get; set; } = new AssetsDataTable();
         public BSroomDataTable BSroom { get; set; } = new BSroomDataTable();
         public BSTreeDataTable BStree { get; set; } = new BSTreeDataTable();
+        public BSTreeCDataTable BStreeC { get; set; } = new BSTreeCDataTable();
         public DeviceDataTable Device { get; set; } = new DeviceDataTable();
         public DeviceChannelDataTable DeviceChannel { get; set; } = new DeviceChannelDataTable();
         public EMBsDataTable EMBs { get; set; } = new EMBsDataTable();
@@ -38,16 +39,17 @@ namespace pa
         {
             AssetGroups = Dbread<AssetGroupsDataTable>("AssetGroups");
             Assets = Dbread<AssetsDataTable>("Assets");
-            BSroom = Dbread<BSroomDataTable>("BSroom");
-            BStree = Dbread<BSTreeDataTable>("BStree");
+            BSroom = Dbread<BSroomDataTable>("BSrooms");
+            BStree = Dbread<BSTreeDataTable>("BStrees");
+            BStreeC = Dbread<BSTreeCDataTable>("BStreeCs");
             Device = Dbread<DeviceDataTable>("Devices");
             DeviceChannel = Dbread<DeviceChannelDataTable>("DeviceChannels");
             EMBs = Dbread<EMBsDataTable>("EMBs");
-            EMServer = Dbread<EMServerDataTable>("EMServer");
+            EMServer = Dbread<EMServerDataTable>("EMServers");
             Eventvm = Dbread<EventvmDataTable>("Eventvms");
             Holidays = Dbread<HolidaysDataTable>("Holidays");
             Musics = Dbread<MusicsDataTable>("Musics");
-            PlayItem = Dbread<PlayItemDataTable>("PlayItem");
+            PlayItem = Dbread<PlayItemDataTable>("PlayItems");
             Simplepa = Dbread<SimplepaDataTable>("Simplepas");
             UserTrees = Dbread<UserTreesDataTable>("UserTrees");
         }
