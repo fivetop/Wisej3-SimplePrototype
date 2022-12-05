@@ -39,5 +39,6 @@ namespace simplepa2.Controller
         public virtual DbSet<Simplepa> Simplepa { get; set; }
         public virtual DbSet<UserTrees> UserTrees { get; set; }
         public virtual DbSet<PlayItem> PlayItem { get; set; }
+        public virtual DbSet<BSTreeC> BSTreeC { get; set; }
     }
 }

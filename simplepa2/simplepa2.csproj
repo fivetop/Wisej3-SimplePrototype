@@ -781,6 +781,10 @@
     <Compile Include="Controller\BSTree.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\BSTreeC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\BSTreeCsController.cs" />
     <Compile Include="Controller\BSTreesController.cs" />
     <Compile Include="Controller\Device.cs">
       <DependentUpon>Model1.tt</DependentUpon>

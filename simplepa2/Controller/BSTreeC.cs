@@ -12,14 +12,11 @@ namespace simplepa2.Controller
     using System;
     using System.Collections.Generic;
     
-    public partial class BSTree
+    public partial class BSTreeC
     {
-        public int BSTreeId { get; set; }
-        public Nullable<System.DateTime> wtime { get; set; }
-        public Nullable<int> chno { get; set; }
+        public int BSTreeCId { get; set; }
+        public Nullable<int> BSTreeId { get; set; }
         public Nullable<int> AssetId { get; set; }
         public Nullable<int> MusicId { get; set; }
-        public string EMNAME { get; set; }
-        public string playing { get; set; }
     }
 }

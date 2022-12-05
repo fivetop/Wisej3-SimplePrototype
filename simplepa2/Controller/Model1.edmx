@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="simplePAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="simplePAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AssetGroups">
           <Key>
             <PropertyRef Name="AssetGroupId" />
@@ -56,10 +56,21 @@
             <PropertyRef Name="BSTreeId" />
           </Key>
           <Property Name="BSTreeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMNAME" Type="text" />
           <Property Name="wtime" Type="datetime" />
-          <Property Name="chno" Type="int" Nullable="false" />
-          <Property Name="AssetId" Type="int" Nullable="false" />
-          <Property Name="MusicId" Type="int" Nullable="false" />
+          <Property Name="chno" Type="int" />
+          <Property Name="playing" Type="text" />
+          <Property Name="AssetId" Type="int" />
+          <Property Name="MusicId" Type="int" />
+        </EntityType>
+        <EntityType Name="BSTreeC">
+          <Key>
+            <PropertyRef Name="BSTreeCId" />
+          </Key>
+          <Property Name="BSTreeCId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BSTreeId" Type="int" />
+          <Property Name="AssetId" Type="int" />
+          <Property Name="MusicId" Type="int" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -241,6 +252,7 @@
           <EntitySet Name="Assets" EntityType="Self.Assets" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BSroom" EntityType="Self.BSroom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BSTree" EntityType="Self.BSTree" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BSTreeC" EntityType="Self.BSTreeC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DeviceChannel" EntityType="Self.DeviceChannel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EMBs" EntityType="Self.EMBs" Schema="dbo" store:Type="Tables" />
@@ -268,8 +280,7 @@
     FROM [dbo].[PlayItem] AS [PlayItem]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="simplePAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -325,9 +336,11 @@
           </Key>
           <Property Name="BSTreeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="wtime" Type="DateTime" Precision="3" />
-          <Property Name="chno" Type="Int32" Nullable="false" />
-          <Property Name="AssetId" Type="Int32" Nullable="false" />
-          <Property Name="MusicId" Type="Int32" Nullable="false" />
+          <Property Name="chno" Type="Int32" />
+          <Property Name="AssetId" Type="Int32" />
+          <Property Name="MusicId" Type="Int32" />
+          <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="playing" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -517,7 +530,17 @@
           <EntitySet Name="Simplepa" EntityType="Self.Simplepa" />
           <EntitySet Name="UserTrees" EntityType="Self.UserTrees" />
           <EntitySet Name="PlayItem" EntityType="Self.PlayItem" />
+          <EntitySet Name="BSTreeC" EntityType="simplePAModel.BSTreeC" />
         </EntityContainer>
+        <EntityType Name="BSTreeC">
+          <Key>
+            <PropertyRef Name="BSTreeCId" />
+          </Key>
+          <Property Name="BSTreeCId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BSTreeId" Type="Int32" />
+          <Property Name="AssetId" Type="Int32" />
+          <Property Name="MusicId" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -576,6 +599,8 @@
           <EntitySetMapping Name="BSTree">
             <EntityTypeMapping TypeName="simplePAModel.BSTree">
               <MappingFragment StoreEntitySet="BSTree">
+                <ScalarProperty Name="playing" ColumnName="playing" />
+                <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
                 <ScalarProperty Name="BSTreeId" ColumnName="BSTreeId" />
                 <ScalarProperty Name="wtime" ColumnName="wtime" />
                 <ScalarProperty Name="chno" ColumnName="chno" />
@@ -760,6 +785,16 @@
                 <ScalarProperty Name="current" ColumnName="current" />
                 <ScalarProperty Name="duration" ColumnName="duration" />
                 <ScalarProperty Name="p_run" ColumnName="p_run" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BSTreeC">
+            <EntityTypeMapping TypeName="simplePAModel.BSTreeC">
+              <MappingFragment StoreEntitySet="BSTreeC">
+                <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+                <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+                <ScalarProperty Name="BSTreeId" ColumnName="BSTreeId" />
+                <ScalarProperty Name="BSTreeCId" ColumnName="BSTreeCId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

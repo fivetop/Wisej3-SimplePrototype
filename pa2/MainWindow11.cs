@@ -41,6 +41,7 @@ namespace pa
                     play = DBAccess.db2List(msg, chno);
                     ChSet(chno);
 
+                    // 서버에서 처리 
                     var p =  g.playItems[chno];
                     {
                         p.chno = chno;
