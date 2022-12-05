@@ -29,6 +29,7 @@ namespace simplepa2
 			hubConfiguration.EnableJavaScriptProxies = true;
 			app.MapSignalR("/signalr", hubConfiguration);
 			//app.MapSignalR(hubConfiguration);
+			// Program Work Git
 		}
 	}
 
