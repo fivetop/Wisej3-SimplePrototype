@@ -206,10 +206,14 @@ namespace simplepa2
             var m3 = Ds1.BSTree.FirstOrDefault(p => p.EMNAME == t1.emServer);
             if (m3 == null)
             {
-                BSTreeRow m2 = Ds1.BSTree.NewBSTreeRow();
-                m2.EMNAME = t1.emServer;
-                Ds1.BSTree.Rows.Add(m2);
-                Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+                for (int i = 1; i < 9; i++)
+                { 
+                    BSTreeRow m2 = Ds1.BSTree.NewBSTreeRow();
+                    m2.EMNAME = t1.emServer;
+                    m2.chno = i;
+                    Ds1.BSTree.Rows.Add(m2);
+                    Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+                }
             }
         }
 

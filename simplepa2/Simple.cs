@@ -207,6 +207,9 @@ namespace simplepa2
 		ASchedule aSchedule = new ASchedule();
 		APreset aPreset = new APreset();
 
+		BSAsset bSAsset = new BSAsset();
+		BSDeviceManager bSDeviceManager = new BSDeviceManager();
+
 		BSInManager bSInManager = new BSInManager();
 		BSOutManager bSOutManage = new BSOutManager();
 		BSLevelManager bSLevelManager = new BSLevelManager();
@@ -242,6 +245,18 @@ namespace simplepa2
 			//BStabControl.TabPages.Add(tabClients);
 			MaintabControl.TabPages.Add(tabClients);
 
+			tabClients = new TabPage(menu_string[5]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(bSAsset);
+			bSAsset.Dock = DockStyle.Fill;
+			//BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage(menu_string[6]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(bSDeviceManager);
+			bSDeviceManager.Dock = DockStyle.Fill;
+			MaintabControl.TabPages.Add(tabClients);
 
 			tabClients = new TabPage(menu_string[7]);
 			tabClients.Name = "tabClients";
@@ -464,10 +479,7 @@ namespace simplepa2
 
 		string[] menu_string = {"댓쉬보드", "앵커방송", "그룹방송", "프리셋", "예약방송", 
 			"선번장관리" , "장비관리", "입력관리", "출력관리", "음량관리" , "비상방송",
-			"시스템설정", "그룹관리","휴일관리", "음원관리", "사용자관리",
-		"A01","A02","A03","A04","A05","A06","A07","A08",
-		"B01","B02","B03","B04","B05",
-		"C01","C02","C03","C04"
+			"시스템설정", "그룹관리","휴일관리", "음원관리", "사용자관리"
 		};
 
 
