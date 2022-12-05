@@ -43,8 +43,8 @@ namespace simplepa2
 				case eSignalRMsgType.ePlay:
 					break;
 				case eSignalRMsgType.ePlayEnd:
-					this.btnStart.Enabled = true;
-					this.btnStop.Enabled = false;
+					//this.btnStart.Enabled = true;
+					//this.btnStop.Enabled = false;
 					break;
 				case eSignalRMsgType.ePlaying:
 					break;

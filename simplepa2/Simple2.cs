@@ -21,7 +21,7 @@ namespace simplepa2
         public List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
         public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
         Guid guid { get; set; } = Guid.Empty;
-
+/*
         private void btnStart_Click(object sender, EventArgs e)
         {
             SelAsset.Clear();
@@ -133,7 +133,7 @@ namespace simplepa2
 
 		}
         #endregion
-
+*/
 
     }
 }

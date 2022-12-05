@@ -90,9 +90,9 @@ namespace simplepa2
 
 			//Application.Theme.Colors["navbar-background"] = "blue";
 
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-			this.dataGridView2.RowCount = 10;
+			//this.btnStart.Enabled = true;
+			//this.btnStop.Enabled = false;
+			//this.dataGridView2.RowCount = 10;
 
 			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
 			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
@@ -207,6 +207,7 @@ namespace simplepa2
 		ASchedule aSchedule = new ASchedule();
 		APreset aPreset = new APreset();
 
+		View_BBSAnchor view_BBSAnchor = new View_BBSAnchor();
 		BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 
@@ -223,8 +224,14 @@ namespace simplepa2
 
 		private void AddBSPage()
         {
+			TabPage tabClients = new TabPage(menu_string[1]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(view_BBSAnchor);
+			view_BBSAnchor.Dock = DockStyle.Fill;
+			//BStabControl.TabPages.Add(tabClients);
+			MaintabControl.TabPages.Add(tabClients);
 
-			TabPage tabClients = new TabPage(menu_string[2]);
+			tabClients = new TabPage(menu_string[2]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(aGroup);
 			aGroup.Dock = DockStyle.Fill;

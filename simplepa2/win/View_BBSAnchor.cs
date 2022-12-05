@@ -30,6 +30,10 @@ namespace simplepa2.win
 		public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
 		Guid guid { get; set; } = Guid.Empty;
 
+
+		// BTSTree 에서 해당 지역의 빈채널 선택
+		//
+
 		private void btnStart_Click(object sender, EventArgs e)
 		{
 			SelAsset.Clear();
@@ -53,7 +57,7 @@ namespace simplepa2.win
 				return;
 			}
 
-			guid = gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, SelAsset, SelMusic, Guid.Empty);
+			guid = gweb.mainFrame1.sendSigR(eSignalRMsgType.ePlay, SelAsset, SelMusic, Guid.Empty);
 
 			if (guid != Guid.Empty)
 			{ 
@@ -68,7 +72,7 @@ namespace simplepa2.win
 			this.btnStop.Enabled = false;
 			if (guid != Guid.Empty)
 			{
-				gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, null, null, guid);
+				gweb.mainFrame1.sendSigR(eSignalRMsgType.eStop, null, null, guid);
 				guid = Guid.Empty;
 			}
 		}
