@@ -199,6 +199,20 @@ namespace simplepa2
 
         #region // BSTree 방송 처리 관리 부분 
 
+        public void SaveBTree(EmSpeakerPosition t1)
+        {
+            Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
+
+            var m3 = Ds1.BSTree.FirstOrDefault(p => p.EMNAME == t1.emServer);
+            if (m3 == null)
+            {
+                BSTreeRow m2 = Ds1.BSTree.NewBSTreeRow();
+                m2.EMNAME = t1.emServer;
+                Ds1.BSTree.Rows.Add(m2);
+                Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+            }
+        }
+
         public void Delete(int idno)
         {
             try 

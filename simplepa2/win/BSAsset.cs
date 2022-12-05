@@ -19,7 +19,7 @@ namespace simplepa2.win
 
         private void BSAsset_Load(object sender, EventArgs e)
         {
-            strFileUploadPath = @"C:\SimplePA" + "\\Uploaded_Files\\";
+            strFileUploadPath = @"C:\SimplePA2" + "\\Uploaded_Files\\";
             this.assetsTableAdapter.Fill(this.dataSet1.Assets);
         }
 
@@ -83,6 +83,8 @@ namespace simplepa2.win
             foreach (var t1 in _emspl.child)
             {
                 gweb.mainFrame1.dBSqlite.SaveAssets(t1);
+                gweb.mainFrame1.dBSqlite.SaveEMServer(t1);
+                gweb.mainFrame1.dBSqlite.SaveBTree(t1);
             }
         }
 

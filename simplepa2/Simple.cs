@@ -33,6 +33,8 @@ namespace simplepa2
 		{
 			InitializeComponent();
 
+			gweb.mainFrame1 = this;
+
 			for (int i = 1; i < 9; i++)
 			{
 				playItems[i] = new PlayItem();
