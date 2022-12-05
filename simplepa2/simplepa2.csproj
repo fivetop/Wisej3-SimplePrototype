@@ -708,6 +708,12 @@
     <EmbeddedResource Include="UI\Views\View_BBCDevice.resx">
       <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="win\BSAsset.resx">
+      <DependentUpon>BSAsset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="win\BSDeviceManager.resx">
+      <DependentUpon>BSDeviceManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\BSEMManager.resx">
       <DependentUpon>BSEMManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -1226,6 +1232,18 @@
     </Compile>
     <Compile Include="UI\Views\View_BBCDevice.Designer.cs">
       <DependentUpon>View_BBCDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\BSAsset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\BSAsset.Designer.cs">
+      <DependentUpon>BSAsset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\BSDeviceManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\BSDeviceManager.Designer.cs">
+      <DependentUpon>BSDeviceManager.cs</DependentUpon>
     </Compile>
     <Compile Include="win\BSEMManager.cs">
       <SubType>UserControl</SubType>
