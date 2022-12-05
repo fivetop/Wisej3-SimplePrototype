@@ -744,6 +744,9 @@
     <EmbeddedResource Include="win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="win\View_BBSAnchor.resx">
+      <DependentUpon>View_BBSAnchor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
     </EmbeddedResource>
@@ -1304,6 +1307,12 @@
     </Compile>
     <Compile Include="win\PMusicSel.Designer.cs">
       <DependentUpon>PMusicSel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\View_BBSAnchor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\View_BBSAnchor.designer.cs">
+      <DependentUpon>View_BBSAnchor.cs</DependentUpon>
     </Compile>
     <Compile Include="win\Window1.cs">
       <SubType>Form</SubType>

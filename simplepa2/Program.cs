@@ -52,8 +52,8 @@ namespace simplepa2
 			loginPage.Show();
 			// */
 
-			Application.MainPage = new PA_MainFrame();
-			//Application.MainPage = new Simple();
+			//Application.MainPage = new PA_MainFrame();
+			Application.MainPage = new Simple();
 
 			if (t2 == null)
 			{ 
