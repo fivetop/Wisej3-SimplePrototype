@@ -143,6 +143,12 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="UI\Components\Comp_GroupNameCard.resx">
+      <DependentUpon>Comp_GroupNameCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_GroupNameSpacer.resx">
+      <DependentUpon>Comp_GroupNameSpacer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_InputDeviceCard.resx">
       <DependentUpon>Comp_InputDeviceCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,11 +167,32 @@
     <EmbeddedResource Include="UI\Pages\PA_MainFrame.resx">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\Form_BBCZoneImport.resx">
+      <DependentUpon>Form_BBCZoneImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\Form_BBSReservationAdd.resx">
+      <DependentUpon>Form_BBSReservationAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Popups\Popup_BBCDeviceForm.resx">
       <DependentUpon>Popup_BBCDeviceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\Popup_BBCEmergencyBBSCustom.resx">
+      <DependentUpon>Popup_BBCEmergencyBBSCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\Popup_BBCEmergencyForm.resx">
+      <DependentUpon>Popup_BBCEmergencyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\Popup_BBCOutputForm.resx">
+      <DependentUpon>Popup_BBCOutputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\Popup_BBCSiteForm.resx">
+      <DependentUpon>Popup_BBCSiteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Popups\Popup_BBCZoneForm.resx">
       <DependentUpon>Popup_BBCZoneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Popups\Popup_SystemAddUser.resx">
+      <DependentUpon>Popup_SystemAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCAmpFailover.resx">
       <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
@@ -794,6 +821,18 @@
     <Compile Include="UI\Base\PA_MainFrame.Designer.cs">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\Comp_GroupNameCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_GroupNameCard.designer.cs">
+      <DependentUpon>Comp_GroupNameCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_GroupNameSpacer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_GroupNameSpacer.designer.cs">
+      <DependentUpon>Comp_GroupNameSpacer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Comp_InputDeviceCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -833,11 +872,29 @@
     <Compile Include="UI\Pages\PA_MainFrame.Designer.cs">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Popups\Form_BBCZoneImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Form_BBCZoneImport.designer.cs">
+      <DependentUpon>Form_BBCZoneImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\Form_BBSReservationAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Form_BBSReservationAdd.designer.cs">
+      <DependentUpon>Form_BBSReservationAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Popups\Popup_BBCDeviceForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Popups\Popup_BBCDeviceForm.Designer.cs">
       <DependentUpon>Popup_BBCDeviceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCEmergencyBBSCustom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_BBCEmergencyBBSCustom.designer.cs">
+      <DependentUpon>Popup_BBCEmergencyBBSCustom.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Popups\Popup_BBCEmergencyForm.cs">
       <SubType>UserControl</SubType>
@@ -862,6 +919,12 @@
     </Compile>
     <Compile Include="UI\Popups\Popup_BBCZoneForm.Designer.cs">
       <DependentUpon>Popup_BBCZoneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_SystemAddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Popups\Popup_SystemAddUser.designer.cs">
+      <DependentUpon>Popup_SystemAddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBCAmpFailover.cs">
       <SubType>UserControl</SubType>
