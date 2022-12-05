@@ -30,6 +30,7 @@ namespace simplepa2
 			app.MapSignalR("/signalr", hubConfiguration);
 			//app.MapSignalR(hubConfiguration);
 			// Program Work Git
+			// Program Work Git2222
 		}
 	}
 
