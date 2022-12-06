@@ -70,10 +70,23 @@ namespace simplepa2
 
 
 
+
         #endregion
 
         #region // EMServer 부분 
-        public void SaveEMServer(EmSpeakerPosition t1)
+
+        internal int EMServerGetState(AssetsRow assetsRow)
+        {
+            int ret = 0;
+            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+
+            var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == assetsRow.emServer && p.state == "ONLINE");
+            if (m3 == null)
+                return ret;
+            return m3.EMServerId;
+        }
+
+        public void EMServerSave(EmSpeakerPosition t1)
         {
             Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
 
@@ -89,7 +102,7 @@ namespace simplepa2
             }
         }
 
-        public void updateEMServer(string EMNAME, string state)
+        public void EMServerupdate(string EMNAME, string state)
         {
             Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
 

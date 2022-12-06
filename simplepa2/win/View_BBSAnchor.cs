@@ -65,6 +65,14 @@ namespace simplepa2.win
 				return;
 			}
 
+			int ret = gweb.mainFrame1.dBSqlite.EMServerGetState(SelAsset[0]);
+
+			if (ret == 0)
+			{
+				AlertBox.Show("해당 지역 서버를 확인 바랍니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+				return;
+			}
+
 			// 방송 채널 확보 
 			bSTreeRow = gweb.mainFrame1.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
 			// 저장전 기존 데이터 있으면 삭제처리 

@@ -83,7 +83,7 @@ namespace simplepa2.win
             foreach (var t1 in _emspl.child)
             {
                 gweb.mainFrame1.dBSqlite.SaveAssets(t1);
-                gweb.mainFrame1.dBSqlite.SaveEMServer(t1);
+                gweb.mainFrame1.dBSqlite.EMServerSave(t1);
                 gweb.mainFrame1.dBSqlite.BSTreeSave(t1);
             }
         }
