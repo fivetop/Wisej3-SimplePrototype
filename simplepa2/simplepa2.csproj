@@ -146,6 +146,9 @@
     <EmbeddedResource Include="UI\Base\PA_MainFrame.resx">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_GroupDetailPanel.resx">
+      <DependentUpon>Comp_GroupDetailPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_GroupNameCard.resx">
       <DependentUpon>Comp_GroupNameCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -857,6 +860,12 @@
     </Compile>
     <Compile Include="UI\Base\PA_MainFrame.Designer.cs">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_GroupDetailPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_GroupDetailPanel.Designer.cs">
+      <DependentUpon>Comp_GroupDetailPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_GroupNameCard.cs">
       <SubType>UserControl</SubType>
