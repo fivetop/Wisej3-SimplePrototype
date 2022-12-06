@@ -161,6 +161,9 @@
     <EmbeddedResource Include="UI\Components\Comp_InputDSPLineCard.resx">
       <DependentUpon>Comp_InputDSPLineCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_PresetDetailPanel.resx">
+      <DependentUpon>Comp_PresetDetailPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_SiteCard.resx">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -890,6 +893,12 @@
     </Compile>
     <Compile Include="UI\Components\Comp_InputDSPLineCard.Designer.cs">
       <DependentUpon>Comp_InputDSPLineCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_PresetDetailPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_PresetDetailPanel.Designer.cs">
+      <DependentUpon>Comp_PresetDetailPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.cs">
       <SubType>UserControl</SubType>
