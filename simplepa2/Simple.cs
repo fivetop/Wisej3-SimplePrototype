@@ -327,6 +327,7 @@ namespace simplepa2
 
         private void BStabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
+			view_BBSAnchor.reDraw();
 			bSInManager.reDraw(); 
 			bSOutManage.reDraw(); 
 			bSLevelManager.reDraw();

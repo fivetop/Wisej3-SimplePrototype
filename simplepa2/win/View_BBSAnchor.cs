@@ -15,7 +15,13 @@ namespace simplepa2.win
             InitializeComponent();
         }
 
-        private void View_BBSAnchor_Load(object sender, EventArgs e)
+		internal void reDraw()
+		{
+			//throw new NotImplementedException();
+			View_BBSAnchor_Load(null, null);
+		}
+
+		private void View_BBSAnchor_Load(object sender, EventArgs e)
         {
             this.btnStart.Enabled = true;
             this.btnStop.Enabled = false;
@@ -31,7 +37,7 @@ namespace simplepa2.win
 		Guid guid { get; set; } = Guid.Empty;
 
 
-		// BTSTree 에서 해당 지역의 빈채널 선택
+		// BSTree 에서 해당 지역의 빈채널 선택
 		// BSTreeC 에 지역과 음원 저장 
 		// 시그날알 호출 처리 
 
@@ -57,6 +63,8 @@ namespace simplepa2.win
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Warning, true, ContentAlignment.MiddleCenter);
 				return;
 			}
+
+			var bSTreeRow = gweb.mainFrame1.dBSqlite.GetBSTreeFreeCh(SelAsset[0]);
 
 			guid = gweb.mainFrame1.sendSigR(eSignalRMsgType.ePlay, SelAsset, SelMusic, Guid.Empty);
 

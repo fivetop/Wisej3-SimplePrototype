@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using simplepa2;
 using simplepa2.DataSet1TableAdapters;
 using static simplepa2.DataSet1;
+using System.Windows.Forms;
+using System.Data;
 
 namespace simplepa2
 {
@@ -63,6 +65,7 @@ namespace simplepa2
                 Console.WriteLine(e1.Message);
             }
         }
+
         #endregion
 
         #region // EMServer 부분 
@@ -198,6 +201,28 @@ namespace simplepa2
         #endregion
 
         #region // BSTree 방송 처리 관리 부분 
+
+
+        internal BSTreeRow GetBSTreeFreeCh(AssetsRow selAsset)
+        {
+            BSTreeRow ret = null;
+
+            Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
+
+            var m3 = Ds1.BSTree.Where(p => p.EMNAME == selAsset.emServer);
+            if (m3.Count() > 0)
+            {
+                foreach (var m1 in m3)
+                {
+                    if (m1.playing == "대기")
+                    { 
+                        ret = m1;
+                        return ret;
+                    }
+                }
+            }
+            return ret;
+        }
 
         // 대기, 방송시작, 방송중, 방송종료, 방송중지
         public void SaveBTree(EmSpeakerPosition t1)
