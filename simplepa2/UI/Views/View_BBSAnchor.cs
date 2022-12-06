@@ -85,6 +85,13 @@ namespace simplepa2.UI.Views
 			}
 		}
 
+		internal void reDraw()
+		{
+			//throw new NotImplementedException();
+			View_BBSAnchor_Load(null, null);
+		}
+
+
 
 		#region // 그리드 처리 
 
