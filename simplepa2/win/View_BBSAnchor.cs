@@ -34,7 +34,6 @@ namespace simplepa2.win
 
 		public List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
 		public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
-		int guid { get; set; } = 0;
 
 		BSTreeRow bSTreeRow { get; set; } = null;
 
@@ -80,14 +79,10 @@ namespace simplepa2.win
 			// 지역과 음원 저장 
 			gweb.mainFrame1.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId ,SelAsset, SelMusic);
 			// 해당 지역 서버에 명령 처리 
-			guid = gweb.mainFrame1.sendSigR(eSignalRMsgType.ePlay, bSTreeRow.BSTreeId);
+			gweb.mainFrame1.sendSigR(eSignalRMsgType.ePlay, bSTreeRow);
 			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "방송시작");
-
-			if (guid != 0)
-			{ 
-				this.btnStart.Enabled = false;
-				this.btnStop.Enabled = true;
-			}
+			this.btnStart.Enabled = false;
+			this.btnStop.Enabled = true;
 		}
 
 		private void btnStop_Click(object sender, EventArgs e)
@@ -95,7 +90,7 @@ namespace simplepa2.win
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
 			if (bSTreeRow == null) return;
-			gweb.mainFrame1.sendSigR(eSignalRMsgType.eStop, bSTreeRow.BSTreeId);
+			gweb.mainFrame1.sendSigR(eSignalRMsgType.eStop, bSTreeRow);
 			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
 			gweb.mainFrame1.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
 		}

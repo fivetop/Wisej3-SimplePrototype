@@ -115,22 +115,21 @@ namespace simplepa2
 			//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
 		}
 
-		internal int sendSigR(eSignalRMsgType v1, int bstreeid)
+		internal void sendSigR(eSignalRMsgType v1, BSTreeRow bSTreeRow)
 		{
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.user = Application.Session["user"];
+			msg1.EMNAME = bSTreeRow.EMNAME;
+			msg1.seqno = bSTreeRow.BSTreeId;
+			msg1.Msgtype = v1;
 
 			switch (v1)
 			{
 				case eSignalRMsgType.ePlay:
 					msg1.message = "Play";
-					msg1.Msgtype = v1;
-					msg1.seqno = bstreeid;
 					break;
 				case eSignalRMsgType.eStop:
 					msg1.message = "Stop";
-					msg1.Msgtype = v1;
-					msg1.seqno = bstreeid;
 					break;
 			}
 
@@ -142,11 +141,10 @@ namespace simplepa2
 			catch (Exception e1)
 			{
 			}
-			return bstreeid;
 		}
 
-		// 8채널 출력용 
-		private void PlayItemDisplay()
+        // 8채널 출력용 
+        private void PlayItemDisplay()
 		{
 			bslamp1.LabelOn(2, playItems[2].p_run);
 			bslamp1.LabelOn(3, playItems[3].p_run);
