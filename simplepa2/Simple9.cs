@@ -45,6 +45,7 @@ namespace simplepa2
 				case eSignalRMsgType.ePlayEnd:
 					//this.btnStart.Enabled = true;
 					//this.btnStop.Enabled = false;
+					view_BBSAnchor.refresh(msg1);
 					break;
 				case eSignalRMsgType.ePlaying:
 					break;

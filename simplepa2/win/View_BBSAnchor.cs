@@ -21,6 +21,16 @@ namespace simplepa2.win
 			View_BBSAnchor_Load(null, null);
 		}
 
+		public void refresh(SignalRMsg msg1)
+		{
+			this.btnStart.Enabled = true;
+			this.btnStop.Enabled = false;
+			if (bSTreeRow == null) return;
+			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
+			gweb.mainFrame1.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
+			bSTreeRow = null;
+		}
+
 		private void View_BBSAnchor_Load(object sender, EventArgs e)
         {
             this.btnStart.Enabled = true;
@@ -93,6 +103,7 @@ namespace simplepa2.win
 			gweb.mainFrame1.sendSigR(eSignalRMsgType.eStop, bSTreeRow, null, null);
 			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
 			gweb.mainFrame1.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
+			bSTreeRow = null;
 		}
 
 		private void Win_EventMusic(object sender, EventArgs e)
