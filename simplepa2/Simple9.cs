@@ -117,6 +117,11 @@ namespace simplepa2
 
 		internal void sendSigR(eSignalRMsgType v1, BSTreeRow bSTreeRow)
 		{
+			if (gweb._hub == null)
+			{
+				AlertBox.Show("가용한 EM Server가 없습니다.");
+				return;
+			}
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.user = Application.Session["user"];
 			msg1.EMNAME = bSTreeRow.EMNAME;
@@ -135,8 +140,8 @@ namespace simplepa2
 
 			try
 			{
-				//if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-				//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
+				if (gweb._hub != null)
+					gweb._hub.MessageS2C2(msg1);
 			}
 			catch (Exception e1)
 			{

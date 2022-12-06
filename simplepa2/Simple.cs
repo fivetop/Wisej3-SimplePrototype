@@ -208,7 +208,7 @@ namespace simplepa2
 		ASchedule aSchedule = new ASchedule();
 		APreset aPreset = new APreset();
 
-		View_BBSAnchor view_BBSAnchor = new View_BBSAnchor();
+        win.View_BBSAnchor view_BBSAnchor = new win.View_BBSAnchor();
 		BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 
