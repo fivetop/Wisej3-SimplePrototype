@@ -35,6 +35,7 @@ namespace simplepa2
                     AssetsTableAdapter = new AssetsTableAdapter(),
                     AssetGroupsTableAdapter = new AssetGroupsTableAdapter(),
                     BSTreeTableAdapter = new BSTreeTableAdapter(),
+                    BSTreeCTableAdapter = new BSTreeCTableAdapter(),
                     BSroomTableAdapter = new BSroomTableAdapter(),
                     DeviceTableAdapter = new DeviceTableAdapter(),
                     DeviceChannelTableAdapter = new DeviceChannelTableAdapter(),
@@ -49,6 +50,7 @@ namespace simplepa2
                 Tam.AssetsTableAdapter.Fill(Ds1.Assets);
                 Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
                 Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
+                Tam.BSTreeCTableAdapter.Fill(Ds1.BSTreeC);
                 Tam.BSroomTableAdapter.Fill(Ds1.BSroom);
                 Tam.DeviceTableAdapter.Fill(Ds1.Device);
                 Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
@@ -65,6 +67,8 @@ namespace simplepa2
                 Console.WriteLine(e1.Message);
             }
         }
+
+
 
         #endregion
 
@@ -200,10 +204,53 @@ namespace simplepa2
 
         #endregion
 
+
         #region // BSTree 방송 처리 관리 부분 
 
+        internal void BSTreeCRemove(int bSTreeId)
+        {
+            Tam.BSTreeCTableAdapter.Fill(Ds1.BSTreeC);
+            var drs = Ds1.BSTreeC.Where(p =>p.BSTreeId == bSTreeId);
 
-        internal BSTreeRow GetBSTreeFreeCh(AssetsRow selAsset)
+            if(drs != null && drs.Count() > 0)
+            {
+                foreach(BSTreeCRow row in drs)
+                {
+                    //Ds1.BSTreeC.Rows.Remove(row);
+                    row.Delete();
+                }
+            }
+            Tam.BSTreeCTableAdapter.Update(Ds1.BSTreeC);
+        }
+
+        internal void BSTreeCSave(int bSTreeId, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
+        {
+            Tam.BSTreeCTableAdapter.Fill(Ds1.BSTreeC);
+
+            foreach (var t1 in selAsset)
+            {
+                BSTreeCRow m2 = Ds1.BSTreeC.NewBSTreeCRow();
+                m2.BSTreeId = bSTreeId;
+                m2.AssetId  = t1.AssetId;
+                m2.MusicId = 0;
+                Ds1.BSTreeC.Rows.Add(m2);
+                Tam.BSTreeCTableAdapter.Update(Ds1.BSTreeC);
+            }
+
+            foreach (var t1 in selMusic)
+            {
+                BSTreeCRow m2 = Ds1.BSTreeC.NewBSTreeCRow();
+                m2.BSTreeId = bSTreeId;
+                m2.AssetId = 0;
+                m2.MusicId = t1.MusicId;
+                Ds1.BSTreeC.Rows.Add(m2);
+                Tam.BSTreeCTableAdapter.Update(Ds1.BSTreeC);
+            }
+
+        }
+
+
+        internal BSTreeRow BSTreeGetFreeCh(AssetsRow selAsset)
         {
             BSTreeRow ret = null;
 
@@ -225,7 +272,7 @@ namespace simplepa2
         }
 
         // 대기, 방송시작, 방송중, 방송종료, 방송중지
-        public void SaveBTree(EmSpeakerPosition t1)
+        public void BSTreeSave(EmSpeakerPosition t1)
         {
             Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
 
@@ -244,7 +291,15 @@ namespace simplepa2
             }
         }
 
-        public void Delete(int idno)
+        internal void BSTreeUpdate(BSTreeRow bSTreeRow, string p)
+        {
+            //Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
+            bSTreeRow.playing = p;
+            Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+        }
+
+
+        public void BSTreeDelete(int idno)
         {
             try 
             { 

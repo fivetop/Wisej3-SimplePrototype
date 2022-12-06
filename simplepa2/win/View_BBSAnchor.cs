@@ -34,8 +34,9 @@ namespace simplepa2.win
 
 		public List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
 		public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
-		Guid guid { get; set; } = Guid.Empty;
+		int guid { get; set; } = 0;
 
+		BSTreeRow bSTreeRow { get; set; } = null;
 
 		// BSTree 에서 해당 지역의 빈채널 선택
 		// BSTreeC 에 지역과 음원 저장 
@@ -55,20 +56,26 @@ namespace simplepa2.win
 
 			if (SelAsset.Count() < 1 || SelMusic.Count() < 1)
 			{
+				AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Error, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Hand, true, ContentAlignment.MiddleCenter);
-				AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Question, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Stop, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Warning, true, ContentAlignment.MiddleCenter);
 				return;
 			}
 
-			var bSTreeRow = gweb.mainFrame1.dBSqlite.GetBSTreeFreeCh(SelAsset[0]);
+			// 방송 채널 확보 
+			bSTreeRow = gweb.mainFrame1.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
+			// 저장전 기존 데이터 있으면 삭제처리 
+			gweb.mainFrame1.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
+			// 지역과 음원 저장 
+			gweb.mainFrame1.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId ,SelAsset, SelMusic);
+			// 해당 지역 서버에 명령 처리 
+			guid = gweb.mainFrame1.sendSigR(eSignalRMsgType.ePlay, bSTreeRow.BSTreeId);
+			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "방송시작");
 
-			guid = gweb.mainFrame1.sendSigR(eSignalRMsgType.ePlay, SelAsset, SelMusic, Guid.Empty);
-
-			if (guid != Guid.Empty)
+			if (guid != 0)
 			{ 
 				this.btnStart.Enabled = false;
 				this.btnStop.Enabled = true;
@@ -79,11 +86,10 @@ namespace simplepa2.win
 		{
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
-			if (guid != Guid.Empty)
-			{
-				gweb.mainFrame1.sendSigR(eSignalRMsgType.eStop, null, null, guid);
-				guid = Guid.Empty;
-			}
+			if (bSTreeRow == null) return;
+			gweb.mainFrame1.sendSigR(eSignalRMsgType.eStop, bSTreeRow.BSTreeId);
+			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
+			gweb.mainFrame1.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
 		}
 
 		private void Win_EventMusic(object sender, EventArgs e)

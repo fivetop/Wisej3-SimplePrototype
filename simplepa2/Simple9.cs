@@ -115,7 +115,7 @@ namespace simplepa2
 			//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
 		}
 
-		internal Guid sendSigR(eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic, Guid guid)
+		internal int sendSigR(eSignalRMsgType v1, int bstreeid)
 		{
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.user = Application.Session["user"];
@@ -123,21 +123,14 @@ namespace simplepa2
 			switch (v1)
 			{
 				case eSignalRMsgType.ePlay:
-					msg1.Guid = Guid.NewGuid();
 					msg1.message = "Play";
 					msg1.Msgtype = v1;
-					//msg1.assetsRows = selAsset;
-					//var t1 = selMusic.Select(p => new { p.MusicId }).ToList();
-					var t1 = selMusic.Select(p => new { p.MusicId });
-					msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
-
-					var t2 = selAsset.Select(p => new { p.AssetId });
-					msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
+					msg1.seqno = bstreeid;
 					break;
 				case eSignalRMsgType.eStop:
-					msg1.Guid = guid;
 					msg1.message = "Stop";
 					msg1.Msgtype = v1;
+					msg1.seqno = bstreeid;
 					break;
 			}
 
@@ -149,7 +142,7 @@ namespace simplepa2
 			catch (Exception e1)
 			{
 			}
-			return msg1.Guid;
+			return bstreeid;
 		}
 
 		// 8채널 출력용 

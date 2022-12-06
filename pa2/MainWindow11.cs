@@ -149,7 +149,7 @@ namespace pa
         {
             SignalRMsg msg1 = new SignalRMsg();
 
-            msg1.user = g._EMClient.EM_NAME;
+            msg1.EMNAME = g._EMClient.EM_NAME;
             msg1.message = t1;
             msg1.Msgtype = v1;
             msg1.seqno = s1;
@@ -175,13 +175,13 @@ namespace pa
                     msg1.message = "ePlayEnd";
                     break;
                 case eSignalRMsgType.eLoginUser:
-                    msg1.user = g._EMClient.EM_NAME;
+                    msg1.EMNAME = g._EMClient.EM_NAME;
                     break;
                 case eSignalRMsgType.eLogoutUser:
-                    msg1.user = g._EMClient.EM_NAME;
+                    msg1.EMNAME = g._EMClient.EM_NAME;
                     break;
                 case eSignalRMsgType.eFindDSP:
-                    msg1.user = g._EMClient.EM_NAME;
+                    msg1.EMNAME = g._EMClient.EM_NAME;
                     break;
             }
 
@@ -193,7 +193,7 @@ namespace pa
         {
             SignalRMsg msg1 = new SignalRMsg();
 
-            msg1.user = g._EMClient.EM_NAME;
+            msg1.EMNAME = g._EMClient.EM_NAME;
             msg1.message = r1;
             msg1.Msgtype = v1;
             msg1.play8sig = g.playItems;

@@ -84,7 +84,7 @@ namespace simplepa2.win
             {
                 gweb.mainFrame1.dBSqlite.SaveAssets(t1);
                 gweb.mainFrame1.dBSqlite.SaveEMServer(t1);
-                gweb.mainFrame1.dBSqlite.SaveBTree(t1);
+                gweb.mainFrame1.dBSqlite.BSTreeSave(t1);
             }
         }
 

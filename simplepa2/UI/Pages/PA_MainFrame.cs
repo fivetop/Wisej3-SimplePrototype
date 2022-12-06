@@ -340,8 +340,8 @@ namespace simplepa2.UI.Pages
                         addinfo = "ONLINE";
                     else
                         addinfo = "OFFLINE";
-                    dBSqlite.Eventvm(addinfo, msg1.user, addinfo);
-                    dBSqlite.updateEMServer(msg1.user, addinfo);
+                    dBSqlite.Eventvm(addinfo, msg1.EMNAME, addinfo);
+                    dBSqlite.updateEMServer(msg1.EMNAME, addinfo);
                     break;
                 case eSignalRMsgType.eEM_FIRE:
                     if (msg1.seqno == 1)

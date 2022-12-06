@@ -500,7 +500,7 @@ namespace pa
             testGuid = Guid.NewGuid();
             SignalRMsg msg1 = new SignalRMsg();
             msg1.message = "Play";
-            msg1.user = g._EMClient.EM_NAME;
+            msg1.EMNAME = g._EMClient.EM_NAME;
             msg1.Guid = testGuid;
             msg1.Msgtype = eSignalRMsgType.ePlay;
             msg1.assetsRows.Add(1);
@@ -512,7 +512,7 @@ namespace pa
         {
             SignalRMsg msg1 = new SignalRMsg();
             msg1.message = "Stop";
-            msg1.user = g._EMClient.EM_NAME;
+            msg1.EMNAME = g._EMClient.EM_NAME;
             msg1.Guid = testGuid;
             msg1.Msgtype = eSignalRMsgType.eStop;
             g.mainWindow.RcvSigR(msg1);
