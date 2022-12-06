@@ -12,8 +12,8 @@ namespace LSNAudio
         {
             gl.InitSimplePA();
             //string[] t1 = new string[] { "PreMusic", "A Maidens Prayer.mp3" };
-            //string[] t1 = new string[] { "3", "0" }; // 0 : sound card id , 1: multi bs id 
-            string[] t1 = new string[] { "1", "999999" }; // 0 : sound card id , 1: multi bs id 
+            //string[] t1 = new string[] { "2", "0" }; // 0 : sound card id , 2: multi bs ch  
+            string[] t1 = new string[] { "1", "999999" }; // 0 : sound card id , 1: multi bs id  // 비상방송
             // PreMusic Amaryllis.mp3
             ///*
             if (e.Args[0] == "PreMusic")

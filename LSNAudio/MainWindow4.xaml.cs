@@ -44,8 +44,6 @@ namespace LSNAudio
             message = RegisterWindowMessage("MultiSound");
             soundEngine.PlaybackStopped += PlaybackStopped;
             ComponentDispatcher.ThreadFilterMessage += ComponentDispatcher_ThreadFilterMessage;
-            g1.dBSqlite.DBInit();
-
         }
 
         // 4. 한 음악이 끝나면 다음 음악으로 넘어가기 처리 
@@ -59,9 +57,7 @@ namespace LSNAudio
                 return;
             }
             
-            g1.dBSqlite.Tam.SimplepaTableAdapter.Fill(g1.dBSqlite.Ds1.Simplepa);
-            var _BaseData = g1.dBSqlite.Ds1.Simplepa.FirstOrDefault();
-            string fn = _BaseData.EmMusic;
+            string fn = @"재난위험경보(3분).mp3";
 
             if (!System.IO.File.Exists(fn))
                 fn = @"재난위험경보(3분).mp3";
@@ -134,9 +130,7 @@ namespace LSNAudio
             SoundCard soundCard = null;
             IntPtr t2 = new IntPtr(Audiochno);
 
-            g1.dBSqlite.Tam.SimplepaTableAdapter.Fill(g1.dBSqlite.Ds1.Simplepa);
-            var _BaseData = g1.dBSqlite.Ds1.Simplepa.FirstOrDefault();
-            string fn = _BaseData.EmMusic;
+            string fn = @"재난위험경보(3분).mp3";
 
             string str2 = gl.appPathServer_music + fn;
             if (!System.IO.File.Exists(str2))

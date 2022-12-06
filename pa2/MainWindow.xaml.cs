@@ -172,7 +172,7 @@ namespace pa
             g.Log("multiBS Thread running..");
             // 다중 방송 초기화 처리 
             // 시험을 위해 막음 - 서비스시 오픈 처리 
-            //InitMultiBS();
+            InitMultiBS();
 
             gl.NetWorkCardFind();
             g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName );

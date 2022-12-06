@@ -39,7 +39,7 @@ namespace pa
                     int chno = msg.chno;
                     g.playItems[chno] = new PlayItem();
                     g.playItems[chno].p_run = true;
-                    g.playItems[chno].idno = 100000 + chno;
+                    g.playItems[chno].idno = 100000 + msg.seqno;
                     g.playItems[chno].state = "대기";
                     g.playItems[chno].chno = chno;
                     g.playItems[chno].Play = play;

@@ -42,7 +42,6 @@ namespace LSNAudio
             message = RegisterWindowMessage("MultiSound");
             soundEngine.PlaybackStopped += PlaybackStopped;
             ComponentDispatcher.ThreadFilterMessage += ComponentDispatcher_ThreadFilterMessage;
-            g1.dBSqlite.DBInit();
         }
 
         // 4. 한 음악이 끝나면 다음 음악으로 넘어가기 처리 
@@ -138,10 +137,11 @@ namespace LSNAudio
         private void ReadMulti()
         {
             m1.Clear();
-            g1.dBSqlite.Tam.BSTreeTableAdapter.Fill(g1.dBSqlite.Ds1.BSTree);
-            g1.dBSqlite.Tam.MusicsTableAdapter.Fill(g1.dBSqlite.Ds1.Musics);
-            var t1 = g1.dBSqlite.Ds1.BSTree.Where(p => p.chno == idno);
-            var t3 = g1.dBSqlite.Ds1.Musics;
+            g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
+            g1._bstreec = g1.dBSqlite.Dbread<List<BSTreeC>>("BSTreeCs");
+
+            var t1 = g1._bstreec.Where(p => p.BSTreeId == idno);
+            var t3 = g1._music;
 
             var t2 = from p in t1
                      join p2 in t3 on p.MusicId equals p2.MusicId 
