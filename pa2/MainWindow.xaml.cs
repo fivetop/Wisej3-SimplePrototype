@@ -497,6 +497,7 @@ namespace pa
         Guid testGuid;
         private async void _but4_Click(object sender, RoutedEventArgs e)
         {
+            /*
             testGuid = Guid.NewGuid();
             SignalRMsg msg1 = new SignalRMsg();
             msg1.message = "Play";
@@ -506,6 +507,8 @@ namespace pa
             msg1.assetsRows.Add(1);
             msg1.musicsRows.Add(5);
             await g.mainWindow.RcvSigR(msg1);
+            */
+            PlayChildProcess(2, 100034);
         }
 
         private void _but5_Click(object sender, RoutedEventArgs e)

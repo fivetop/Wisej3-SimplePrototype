@@ -139,8 +139,8 @@ namespace LSNAudio
             m1.Clear();
             g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
             g1._bstreec = g1.dBSqlite.Dbread<List<BSTreeC>>("BSTreeCs");
-
-            var t1 = g1._bstreec.Where(p => p.BSTreeId == idno);
+            int bstreeid = idno - 100000;
+            var t1 = g1._bstreec.Where(p => p.BSTreeId == bstreeid);
             var t3 = g1._music;
 
             var t2 = from p in t1
@@ -181,8 +181,18 @@ namespace LSNAudio
             if (!System.IO.File.Exists(str2))
                 str2 = gl.appPathServer_music + "띠링.mp3";
 
-            soundCard = g1._SoundCardList.child.Find(p => p.no == Audiochno);
-            Audiodev = soundEngine.getSoundCard(soundCard.devicename);
+            try
+            {
+                soundCard = g1._SoundCardList.child.Find(p => p.no == Audiochno);
+                if (soundCard == null)
+                    Audiodev = -1;
+                else
+                    Audiodev = soundEngine.getSoundCard(soundCard.devicename);
+            }
+            catch (Exception e1)
+            {
+                Audiodev = -1;
+            }
 
             soundEngine.OpenFile(str2, Audiodev); // debug
             if (!soundEngine.CanPlay)
