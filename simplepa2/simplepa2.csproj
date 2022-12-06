@@ -900,6 +900,12 @@
     <Compile Include="UI\Components\Comp_PresetDetailPanel.Designer.cs">
       <DependentUpon>Comp_PresetDetailPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\Comp_PresetNameCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_PresetNameCard.Designer.cs">
+      <DependentUpon>Comp_PresetNameCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
