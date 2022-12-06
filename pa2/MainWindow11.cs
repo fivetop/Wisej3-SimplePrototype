@@ -22,8 +22,6 @@ namespace pa
     {
         internal async Task<bool> RcvSigR(SignalRMsg msg)
         {
-            int chno = 0;
-
             switch (msg.Msgtype)
             {
                 case eSignalRMsgType.eEM:
@@ -36,20 +34,17 @@ namespace pa
                 // 4. 스피커 셋팅하고 , 5. 방송 처리 
                 case eSignalRMsgType.ePlay:
                     List<AssetBase> play = new List<AssetBase>();
-                    chno = EmptyChFind();
-                    if (chno == 0) return false;
-                    play = DBAccess.db2List(msg, chno);
-                    ChSet(chno);
+                    play = DBAccess.db2List(msg);
 
-                    // 서버에서 처리 
-                    var p =  g.playItems[chno];
-                    {
-                        p.chno = chno;
-                        p.idno = 100000 + chno;
-                        p.Play = play;
-                        p.Guid = msg.Guid;
-                    }
+                    int chno = msg.chno;
+                    g.playItems[chno] = new PlayItem();
+                    g.playItems[chno].p_run = true;
+                    g.playItems[chno].idno = 100000 + chno;
+                    g.playItems[chno].state = "대기";
+                    g.playItems[chno].chno = chno;
+                    g.playItems[chno].Play = play;
 
+                    PlayItem p = g.playItems[chno];
                     // 스피커 셋팅후 플레이 처리 
                     g.DSP_MakeGroupSpeaker(p.Play, 1, BS_DSP_STATE.MUL_BS, p.chno);
                     PlayChildProcess(p.chno, p.idno);
@@ -60,8 +55,8 @@ namespace pa
                     string line = line1 + " : " + line2;
                     string l1 = "다원방송시작";
                     g.Log(l1 + p.chno.ToString() + " : " + line);
-                    DBAccess.Eventvms(l1, p.chno.ToString() + "번 채널", line);
-                    SendSigR("PLAYING", eSignalRMsgType.ePlaying, 0, 0);
+                    DBAccess.Eventvms(l1, msg.chno.ToString() + "번 채널", line);
+                    SendSigR("PLAYING", eSignalRMsgType.ePlaying, msg.seqno, msg.chno);
 
                     // window3 처리 
                     break;
@@ -70,9 +65,12 @@ namespace pa
                 case eSignalRMsgType.ePlaying:
                     break;
                 case eSignalRMsgType.eStop:
-                    chno = getplay(msg.Guid);
-                    MBSStop(chno);
-                    SendSigR("STOP", eSignalRMsgType.eStop, 0, 0);
+                    //g.chno = getplay(msg.Guid);
+                    MBSStop(msg.chno);
+                    SendSigR("STOP", eSignalRMsgType.eStop, msg.seqno, msg.chno);
+                    g.playItems[msg.chno] = new PlayItem();
+                    g.Log("다원방송중지" + msg.chno.ToString() + " : " + msg.seqno.ToString());
+                    DBAccess.Eventvms("다원방송중지", msg.chno.ToString() + "번 채널", msg.seqno.ToString());
                     break;
                 case eSignalRMsgType.eVolume:
                     // db 처리 선행 필요 
@@ -101,27 +99,9 @@ namespace pa
             return true;
         }
 
-        private int getplay(Guid guid)
-        {
-            int rlt = 0;
-            for (int i = 2; i < 9; i++)
-            {
-                PlayItem pl1 = g.playItems[i];
-                if (pl1.Guid == guid)
-                { 
-                    return i;
-                }
-            }
-            return rlt;
-        }
 
         private void ChSet(int chno)
         {
-            g.playItems[chno] = new PlayItem();
-            g.playItems[chno].p_run = true;
-            g.playItems[chno].idno = 100000 + chno;
-            g.playItems[chno].state = "대기";
-            g.playItems[chno].chno = chno;
         }
 
         // 빈채널 찾기 

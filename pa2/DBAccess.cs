@@ -234,117 +234,96 @@ namespace pa
         // dsp 저장후 상세정보 저장 
         // dsp ch info 저장 
         public void saveDBDSPCH(IEnumerable<DataClass.Device> gs1)
+        {
+            //Tam.DeviceTableAdapter.Fill(Ds1.Device);
+            //Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
+            try
+            {
+                foreach (var t1 in gs1)
                 {
-                    //Tam.DeviceTableAdapter.Fill(Ds1.Device);
-                    //Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
-                    try
+                    var s1 = Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    if (s1 == null)
+                        continue;
+                    t1.DeviceId = s1.DeviceId;
+                    if (t1.ch.Count < 2)
+                        continue;
+
+                    var s2 = DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
+                    if (s2.Count() > 0)
+                        continue;
+
+                    for (int i = 0; i < t1.ch.Count; i++)
                     {
-                        foreach (var t1 in gs1)
-                        {
-                            var s1 = Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
-                            if (s1 == null)
-                                continue;
-                            t1.DeviceId = s1.DeviceId;
-                            if (t1.ch.Count < 2)
-                                continue;
-
-                            var s2 = DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
-                            if (s2.Count() > 0)
-                                continue;
-
-                            for (int i = 0; i < t1.ch.Count; i++)
-                            {
-                                DeviceChannelRow r1 = DeviceChannel.NewDeviceChannelRow();
-                                r1.chno = t1.ch[i].chno;
-                                r1.chname = t1.ch[i].chname[0];
-                                r1.DeviceId = t1.DeviceId;
-                                r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
-                                r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
-                                r1.io = 1;
-                                r1.devicein = "";
-                                r1.deviceinch = 0;
-                                DeviceChannel.Rows.Add(r1);
-                            }
-
-                            int num = 1;
-                            if (t1.ch.Count < 17)
-                                num = 17;
-
-                            for (int i = 0; i < t1.ch.Count; i++)
-                            {
-                                DeviceChannelRow r1 = DeviceChannel.NewDeviceChannelRow();
-                                r1.chno = num.ToString();
-                                r1.chname = "IN" + num.ToString();
-                                r1.DeviceId = t1.DeviceId;
-                                r1.dsp_out_ch1 = "";
-                                r1.dsp_out_ch2 = "";
-                                r1.io = 0;
-                                r1.devicein = "";
-                                r1.deviceinch = 0;
-                                num++;
-                                DeviceChannel.Rows.Add(r1);
-                            }
-                            //Tam.DeviceChannelTableAdapter.Update(Ds1.DeviceChannel);
-                        }
+                        DeviceChannelRow r1 = DeviceChannel.NewDeviceChannelRow();
+                        r1.chno = t1.ch[i].chno;
+                        r1.chname = t1.ch[i].chname[0];
+                        r1.DeviceId = t1.DeviceId;
+                        r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
+                        r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
+                        r1.io = 1;
+                        r1.devicein = "";
+                        r1.deviceinch = 0;
+                        DeviceChannel.Rows.Add(r1);
                     }
-                    catch (Exception e1)
+
+                    int num = 1;
+                    if (t1.ch.Count < 17)
+                        num = 17;
+
+                    for (int i = 0; i < t1.ch.Count; i++)
                     {
-                        Console.WriteLine(e1.Message);
+                        DeviceChannelRow r1 = DeviceChannel.NewDeviceChannelRow();
+                        r1.chno = num.ToString();
+                        r1.chname = "IN" + num.ToString();
+                        r1.DeviceId = t1.DeviceId;
+                        r1.dsp_out_ch1 = "";
+                        r1.dsp_out_ch2 = "";
+                        r1.io = 0;
+                        r1.devicein = "";
+                        r1.deviceinch = 0;
+                        num++;
+                        DeviceChannel.Rows.Add(r1);
                     }
+                    //Tam.DeviceChannelTableAdapter.Update(Ds1.DeviceChannel);
                 }
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.Message);
+            }
+        }
 
-                // Device ADD
-                public void NewDeviceRow(DataClass.Device t1, int v)
-                {
-                    DeviceRow m1 = Device.NewDeviceRow();
-                    m1.DanteModelName = t1.DanteModelName;
-                    m1.DeviceName = t1.DeviceName;
-                    m1.device = t1.device;
-                    m1.ip = t1.ip;
-                    m1.ip_dspctrl = t1.ip_dspctrl;
-                    m1.name = t1.name;
-                    m1.chCount = t1.ch.Count();
-                    m1.chspk = v;
-                    m1.dsp_chno = 0;
-                    m1.dsp_name = "";
-                    m1.dsp_vol = 0;
-                    m1.dsp_vol_em = 0;
-                    m1.emData = "";
-                    m1.floor_em = 0;
-                    m1.path = "";
-                    Device.Rows.Add(m1);
-                    //Tam.DeviceTableAdapter.Update(Ds1.Device);
-                }
+        // Device ADD
+        public void NewDeviceRow(DataClass.Device t1, int v)
+        {
+            DeviceRow m1 = Device.NewDeviceRow();
+            m1.DanteModelName = t1.DanteModelName;
+            m1.DeviceName = t1.DeviceName;
+            m1.device = t1.device;
+            m1.ip = t1.ip;
+            m1.ip_dspctrl = t1.ip_dspctrl;
+            m1.name = t1.name;
+            m1.chCount = t1.ch.Count();
+            m1.chspk = v;
+            m1.dsp_chno = 0;
+            m1.dsp_name = "";
+            m1.dsp_vol = 0;
+            m1.dsp_vol_em = 0;
+            m1.emData = "";
+            m1.floor_em = 0;
+            m1.path = "";
+            Device.Rows.Add(m1);
+            //Tam.DeviceTableAdapter.Update(Ds1.Device);
+        }
 
 
-                #endregion
+        #endregion
 
         #region // AssetBase 자산관리 기초 부분 
         // 나중에 디비는 모두 몰기 
-        public List<AssetBase> db2List(SignalRMsg msg, int chno)
+        public List<AssetBase> db2List(SignalRMsg msg)
         {
             List<AssetBase> play = new List<AssetBase>();
-/*
- * 서버에서 처리 필요 
-            foreach (int t1 in msg.assetsRows)
-            {
-                BSTreeRow bSTree = BStree.NewBSTreeRow();
-                bSTree.chno = 100000 + chno;
-                bSTree.MusicId = 0;
-                bSTree.AssetId = t1;
-                BStree.Rows.Add(bSTree);
-            }
-            foreach (int t1 in msg.musicsRows)
-            {
-                BSTreeRow bSTree = BStree.NewBSTreeRow();
-                bSTree.chno = 100000 + chno;
-                bSTree.MusicId = t1;
-                bSTree.AssetId = 0;
-                BStree.Rows.Add(bSTree);
-            }
-            //Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
-            BStree.AcceptChanges();
-*/
             var ab1 = Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
             var p1 = from p in ab1
                      select new AssetBase

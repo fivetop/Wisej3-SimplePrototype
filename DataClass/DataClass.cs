@@ -49,7 +49,6 @@ namespace DataClass
         public bool p_run { get; set; } // 프로세스 러닝인가? 
         public List<AssetBase> Play { get; set; }
         //public ICollection<Asset> playGroup { get; set; }
-        public Guid Guid { get; set; }
 
         public PlayItem()
         {
@@ -87,6 +86,7 @@ namespace DataClass
         public eSignalRMsgType Msgtype { get; set; }    // 메시지 타입
         public eEventCode event_code { get; set; }      // 이벤트 코드.....
         public int seqno { get; set; }                  // 순번, bstreeid    
+        public int chno { get; set; }                   // ch no    
         public int state { get; set; }                  // 상태 코드
         public List<int> assetsRows { get; set; }      // 선택된 스피커 ID
         public List<int> musicsRows { get; set; }      // 선택된 음원 ID

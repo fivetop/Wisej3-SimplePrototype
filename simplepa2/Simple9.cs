@@ -115,7 +115,7 @@ namespace simplepa2
 			//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
 		}
 
-		internal void sendSigR(eSignalRMsgType v1, BSTreeRow bSTreeRow)
+		internal void sendSigR(eSignalRMsgType v1, BSTreeRow bSTreeRow, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
 		{
 			if (gweb._hub == null)
 			{
@@ -126,11 +126,16 @@ namespace simplepa2
 			msg1.user = Application.Session["user"];
 			msg1.EMNAME = bSTreeRow.EMNAME;
 			msg1.seqno = bSTreeRow.BSTreeId;
+			msg1.chno = bSTreeRow.chno;
 			msg1.Msgtype = v1;
 
 			switch (v1)
 			{
 				case eSignalRMsgType.ePlay:
+					var t1 = selMusic.Select(p => new { p.MusicId });
+					msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
+					var t2 = selAsset.Select(p => new { p.AssetId });
+					msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
 					msg1.message = "Play";
 					break;
 				case eSignalRMsgType.eStop:
