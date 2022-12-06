@@ -66,7 +66,7 @@ namespace simplepa2.UI.Views
         {
             foreach(Zone_DataList z in zlist)
             {
-                Comp_ZoneFloorCardList czf = new Comp_ZoneFloorCardList(z);
+                Comp_ZoneFloorCardList czf = new Comp_ZoneFloorCardList(z, true);
                 cardList.Add(czf);
                 this.pn_Contents.Controls.Add(czf);
             }

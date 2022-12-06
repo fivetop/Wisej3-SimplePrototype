@@ -11,6 +11,7 @@ namespace simplepa2.UI.Components
         private Popup_BBCZoneForm pop_BBCZoneForm;
         private string[] zoneData;
         private List<Comp_ZoneButton> zoneList;
+        private bool bAddButton = false;
 
 
 
@@ -23,7 +24,7 @@ namespace simplepa2.UI.Components
             InitializeComponent();
         }
 
-        public Comp_ZoneFloorCardList(Zone_DataList dataList)
+        public Comp_ZoneFloorCardList(Zone_DataList dataList, bool isAddButton)
         {
             InitializeComponent();
 
@@ -33,6 +34,7 @@ namespace simplepa2.UI.Components
             // 01. 데이터를 담고
             this.zoneData = dataList.aStr_Zonelist;
             this.strFloorName = dataList.floorName;
+            this.bAddButton = isAddButton;  
 
             // 02. Zone 리스트를 만들고, Zone의 번호와 Zone명을 입력 > 상기는 예제로 이름을 두번 넣었음 
             zoneList = new List<Comp_ZoneButton>();
@@ -60,11 +62,16 @@ namespace simplepa2.UI.Components
                 this.flowLayoutPanel1.Controls.Add(zoneItem);
                 
             }
-            this.strAddButton = "추가";
-            Button addButton = new Button();
-            addButton.Text = strAddButton;
-            addButton.MouseClick += AddButton_MouseClick;
-            this.flowLayoutPanel1.Controls.Add(addButton); 
+
+            if(bAddButton)
+            {
+                this.strAddButton = "추가";
+                Button addButton = new Button();
+                addButton.Text = strAddButton;
+                addButton.MouseClick += AddButton_MouseClick;
+                this.flowLayoutPanel1.Controls.Add(addButton);
+            }
+
         }
 
         private void AddButton_MouseClick(object sender, MouseEventArgs e)

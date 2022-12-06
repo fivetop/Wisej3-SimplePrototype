@@ -34,25 +34,32 @@ namespace simplepa2.UI.Components
         private void panelCardBack_Click(object sender, EventArgs e)
         {
             cardClicked = !cardClicked;
+            setCardStatus(cardClicked);            
+        }
 
-            if(cardClicked)
-            {
-                this.panelCardBack.BackColor = System.Drawing.Color.FromArgb(52, 129, 255);
-                this.panelCardBack.ForeColor = System.Drawing.Color.White;
+        public void setCardStatus(bool cardStatus)
+        {
+                if (cardStatus)
+                {
+                    this.panelCardBack.BackColor = System.Drawing.Color.FromArgb(52, 129, 255);
+                    this.panelCardBack.ForeColor = System.Drawing.Color.White;
 
-                groupClick(this, new GroupClickedEventArgs(this.intCardNo));
-            }
-            else
-            {
-                this.panelCardBack.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);                
-                this.panelCardBack.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
-            }
-
-            AlertBox.Show("카드 이름 " + this.label_GroupName + " 그룹번호 : " + this.intCardNo + " 클릭되었습니다");
+                    groupClick(this, new GroupClickedEventArgs(this.intCardNo));
+                }
+                else
+                {
+                    this.panelCardBack.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+                    this.panelCardBack.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
+                }
         }
 
         public delegate void GroupClickedEventHandler(object sender, GroupClickedEventArgs e);
 
+        private void label_GroupName_Click(object sender, EventArgs e)
+        {
+            cardClicked = !cardClicked;
+            setCardStatus(cardClicked);
+        }
     }
 
     public class GroupClickedEventArgs : EventArgs

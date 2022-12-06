@@ -54,6 +54,7 @@
             this.label_GroupName.TabIndex = 3;
             this.label_GroupName.Text = "파인동 전체 그룹";
             this.label_GroupName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_GroupName.Click += new System.EventHandler(this.label_GroupName_Click);
             // 
             // Comp_GroupNameCard
             // 

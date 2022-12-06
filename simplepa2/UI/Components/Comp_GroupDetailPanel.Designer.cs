@@ -1060,7 +1060,7 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(123, 36);
             this.label26.TabIndex = 136;
-            this.label26.Text = "그룹선택";
+            this.label26.Text = "추가그룹선택";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel36
@@ -1203,7 +1203,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 32);
             this.button5.TabIndex = 35;
-            this.button5.Text = "삭제";
+            this.button5.Text = "초기화";
             // 
             // button2
             // 
@@ -1216,7 +1216,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 32);
             this.button2.TabIndex = 34;
-            this.button2.Text = "추가";
+            this.button2.Text = "저장";
             // 
             // label66
             // 
@@ -1232,6 +1232,7 @@
             // Comp_GroupDetailPanel
             // 
             this.Controls.Add(this.panel3);
+            this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "Comp_GroupDetailPanel";
             this.Size = new System.Drawing.Size(760, 860);
             this.panel3.ResumeLayout(false);

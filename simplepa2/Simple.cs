@@ -15,7 +15,7 @@ using System.ComponentModel;
 using Wisej.Base;
 using simplepa2.win;
 using simplepa2.DataSet1TableAdapters;
-using simplepa2.UI.Views;
+
 
 namespace simplepa2
 {
