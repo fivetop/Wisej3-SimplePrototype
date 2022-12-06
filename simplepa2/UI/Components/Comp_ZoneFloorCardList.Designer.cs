@@ -28,80 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel7 = new Wisej.Web.Panel();
+            this.panel8 = new Wisej.Web.Panel();
             this.flowLayoutPanel1 = new Wisej.Web.FlowLayoutPanel();
-            this.panel1 = new Wisej.Web.Panel();
-            this.floorCheck = new Wisej.Web.CheckBox();
-            this.panel7.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel11 = new Wisej.Web.Panel();
+            this.panel10 = new Wisej.Web.Panel();
+            this.ch_floor = new Wisej.Web.CheckBox();
+            this.panel8.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel7
+            // panel8
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel7.Controls.Add(this.flowLayoutPanel1);
-            this.panel7.Controls.Add(this.panel1);
-            this.panel7.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(5, 5);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1390, 90);
-            this.panel7.TabIndex = 5;
+            this.panel8.AutoSize = true;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel8.Controls.Add(this.flowLayoutPanel1);
+            this.panel8.Controls.Add(this.panel11);
+            this.panel8.Controls.Add(this.panel10);
+            this.panel8.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(5, 5);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new Wisej.Web.Padding(20);
+            this.panel8.Size = new System.Drawing.Size(1310, 170);
+            this.panel8.TabIndex = 6;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = Wisej.Web.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Dock = Wisej.Web.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 35);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 70);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new Wisej.Web.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1390, 55);
-            this.flowLayoutPanel1.TabIndex = 22;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1270, 80);
+            this.flowLayoutPanel1.TabIndex = 164;
             // 
-            // panel1
+            // panel11
             // 
-            this.panel1.Controls.Add(this.floorCheck);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1390, 35);
-            this.panel1.TabIndex = 21;
+            this.panel11.Dock = Wisej.Web.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(20, 50);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1270, 20);
+            this.panel11.TabIndex = 136;
             // 
-            // floorCheck
+            // panel10
             // 
-            this.floorCheck.BackColor = System.Drawing.Color.Transparent;
-            this.floorCheck.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.floorCheck.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.floorCheck.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.floorCheck.Location = new System.Drawing.Point(12, 5);
-            this.floorCheck.Name = "floorCheck";
-            this.floorCheck.Size = new System.Drawing.Size(72, 24);
-            this.floorCheck.TabIndex = 2;
-            this.floorCheck.Text = "nFloor";
-            this.floorCheck.CheckedChanged += new System.EventHandler(this.floorCheck_CheckedChanged);
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
+            this.panel10.Controls.Add(this.ch_floor);
+            this.panel10.Dock = Wisej.Web.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(20, 20);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1270, 30);
+            this.panel10.TabIndex = 52;
+            // 
+            // ch_floor
+            // 
+            this.ch_floor.BackColor = System.Drawing.Color.Transparent;
+            this.ch_floor.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
+            this.ch_floor.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.ch_floor.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.ch_floor.Location = new System.Drawing.Point(0, 0);
+            this.ch_floor.Name = "ch_floor";
+            this.ch_floor.Size = new System.Drawing.Size(52, 24);
+            this.ch_floor.TabIndex = 3;
+            this.ch_floor.Text = "1층";
+            this.ch_floor.CheckedChanged += new System.EventHandler(this.ch_floor_CheckedChanged);
             // 
             // Comp_ZoneFloorCardList
             // 
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel8);
             this.Dock = Wisej.Web.DockStyle.Top;
+            this.Margin = new Wisej.Web.Padding(0, 0, 0, 20);
             this.Name = "Comp_ZoneFloorCardList";
             this.Padding = new Wisej.Web.Padding(5);
-            this.Size = new System.Drawing.Size(1400, 100);
-            this.Load += new System.EventHandler(this.Comp_ZoneFloorCardList_Load);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Size = new System.Drawing.Size(1320, 180);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Wisej.Web.Panel panel7;
+        private Wisej.Web.Panel panel8;
+        private Wisej.Web.Panel panel10;
+        private Wisej.Web.CheckBox ch_floor;
+        private Wisej.Web.Panel panel11;
         private Wisej.Web.FlowLayoutPanel flowLayoutPanel1;
-        private Wisej.Web.Panel panel1;
-        private Wisej.Web.CheckBox floorCheck;
     }
 }
