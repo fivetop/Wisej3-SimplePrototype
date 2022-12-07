@@ -9,6 +9,9 @@ namespace simplepa2.SignalR
     //[HubName("signalr")]
     public class signalr : Hub
     {
+        public event EventHandler eConnect;
+        public event EventHandler eDisConnect;
+
         public signalr()
         {
             gweb._hub = this;
@@ -16,6 +19,7 @@ namespace simplepa2.SignalR
 
         public override Task OnConnected()
         {
+            eConnect?.Invoke(this, EventArgs.Empty);
             //gweb.mainFrame.eEMLoginEvent(Context, 1);
             //PA_MainFrame.SendSigR(user_id, eSignalRMsgType.eLoginUser, 0, 0);
             return base.OnConnected();
@@ -23,6 +27,7 @@ namespace simplepa2.SignalR
 
         public override Task OnDisconnected(bool b1)
         {
+            eDisConnect?.Invoke(this, EventArgs.Empty);
             //gweb.mainFrame.eEMLoginEvent(Context, 0);
             return base.OnDisconnected(true);
         }

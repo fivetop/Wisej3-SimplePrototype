@@ -21,15 +21,24 @@ namespace simplepa2
 
 		internal void RcvSigR(SignalRMsg msg1)
 		{
+			string addinfo = "";
 			LabelON(9,true);
-			AlertBox.Show(msg1.message);
+
+			//Application.StartTask(() => {
+				AlertBox.Show(msg1.message);
+				//Application.Update(this);
+			//});
 			
-			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-			evdataGridView1.Refresh();
 
 			switch (msg1.Msgtype)
 			{
 				case eSignalRMsgType.eEM:
+					if (msg1.state == 1)
+						addinfo = "ONLINE";
+					else
+						addinfo = "OFFLINE";
+					dBSqlite.Eventvm(addinfo, msg1.EMNAME, addinfo);
+					dBSqlite.EMServerupdate(msg1.EMNAME, addinfo);
 					break;
 				case eSignalRMsgType.eEM_FIRE:
 					if (msg1.seqno == 1)
@@ -65,11 +74,14 @@ namespace simplepa2
 			playItems = msg1.play8sig;
 			if (playItems != null)
 				PlayItemDisplay();
+
+			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+			evdataGridView1.Refresh();
 		}
 
 
 		// 프리셋 메시지 올 경우 화면 출력용 
-        private void presetdisp(SignalRMsg msg1)
+		private void presetdisp(SignalRMsg msg1)
         {
 			if (msg1.state == 1)
 			{
