@@ -32,7 +32,7 @@ namespace pa
 
         public async Task ConnectToSignalR()
 		{
-            hubConnection = new HubConnection("http://localhost:8080/signalr");
+            hubConnection = new HubConnection(g._EMClient.HubURL);
 
 			proxy = hubConnection.CreateHubProxy("signalr");
 
