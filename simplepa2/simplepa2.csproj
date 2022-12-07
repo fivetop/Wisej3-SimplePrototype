@@ -99,14 +99,55 @@
     <Content Include="html\top1.html" />
     <Content Include="html\top2.html" />
     <Content Include="hubs\q.txt" />
+    <Content Include="Images\book.png" />
+    <Content Include="Images\checkbox-off-20x20-g1.png" />
+    <Content Include="Images\checkbox-off-80x80-g1.png" />
+    <Content Include="Images\checkbox-on-20x20-g1.png" />
+    <Content Include="Images\checkbox-on-80x80-g1.png" />
+    <Content Include="Images\collapse icon.png" />
+    <Content Include="Images\combo.png" />
     <Content Include="Images\giftcard20.png" />
     <Content Include="Images\giftcardempty.png" />
     <Content Include="Images\hdd.png" />
     <Content Include="Images\headphones.jpg" />
+    <Content Include="Images\html.png" />
+    <Content Include="Images\Icon Buy.png" />
+    <Content Include="Images\Icon Contact.png" />
+    <Content Include="Images\Icon Free Trial.png" />
+    <Content Include="Images\icon-ls-001.png" />
+    <Content Include="Images\icon-ls-002.png" />
+    <Content Include="Images\icon-ls-003.png" />
+    <Content Include="Images\icon-ls-004.png" />
+    <Content Include="Images\icon-setting-18x18.png" />
     <Content Include="Images\laptop.jpg" />
+    <Content Include="Images\left-logo.png" />
+    <Content Include="Images\login-bg.jpg" />
+    <Content Include="Images\login-logo.png" />
     <Content Include="Images\monitor.png" />
+    <Content Include="Images\music-crrl-1.png" />
+    <Content Include="Images\music-crrl-2.png" />
+    <Content Include="Images\music-crrl-3.png" />
+    <Content Include="Images\music-crrl-4.png" />
+    <Content Include="Images\music-crrl-5.png" />
+    <Content Include="Images\myinfo-icon-9x9-777.png" />
+    <Content Include="Images\myinfo-icon-9x9fff.png" />
+    <Content Include="Images\nav-quit-777.png" />
+    <Content Include="Images\nav-quit-w.png" />
     <Content Include="Images\phone.png" />
+    <Content Include="Images\radio-on-20x20-g1.png" />
+    <Content Include="Images\radio-on-80x80-g1.png" />
     <Content Include="Images\router.png" />
+    <Content Include="Images\sample-001.jpg" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\select-t1-tri.png" />
+    <Content Include="Images\splash.png" />
+    <Content Include="Images\strike.png" />
+    <Content Include="Images\tri-b-g1.png" />
+    <Content Include="Images\tri-r-b1.png" />
+    <Content Include="Images\tri-r-g1.png" />
+    <Content Include="Images\wisej-dotnet-57px-height.png" />
+    <Content Include="Images\wisej-logo.png" />
+    <Content Include="Images\wisej.png" />
     <Content Include="imgs\dPanel1.jpg" />
     <Content Include="imgs\dPanel2.jpg" />
     <Content Include="imgs\dPanel3.jpg" />
@@ -160,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_InputDSPLineCard.resx">
       <DependentUpon>Comp_InputDSPLineCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_PresetDetailPanel.resx">
+      <DependentUpon>Comp_PresetDetailPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_PresetNameCard.resx">
+      <DependentUpon>Comp_PresetNameCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_SiteCard.resx">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
@@ -890,6 +937,18 @@
     </Compile>
     <Compile Include="UI\Components\Comp_InputDSPLineCard.Designer.cs">
       <DependentUpon>Comp_InputDSPLineCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_PresetDetailPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_PresetDetailPanel.Designer.cs">
+      <DependentUpon>Comp_PresetDetailPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_PresetNameCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_PresetNameCard.Designer.cs">
+      <DependentUpon>Comp_PresetNameCard.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.cs">
       <SubType>UserControl</SubType>
