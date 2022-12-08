@@ -65,7 +65,7 @@ namespace simplepa2
 		// SignalR Server
 		private static void DoSignalRThread()
 		{
-			string url = "http://192.168.230.185:8080";
+			string url = "http://*:8080";
 			Console.WriteLine("Server running on {0}", url);
 			using (WebApp.Start(url))
 			{

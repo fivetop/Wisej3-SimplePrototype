@@ -1,4 +1,5 @@
 ﻿using gClass;
+using pa;
 using System.Windows;
 
 namespace LSNAudio
@@ -10,6 +11,7 @@ namespace LSNAudio
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            g1.init();
             gl.InitSimplePA();
             //string[] t1 = new string[] { "PreMusic", "A Maidens Prayer.mp3" };
             //string[] t1 = new string[] { "2", "0" }; // 0 : sound card id , 2: multi bs ch  

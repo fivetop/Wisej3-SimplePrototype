@@ -38,6 +38,7 @@ namespace pa
         public int NetworkCardNo { get; set; } = 0;
         public int NetworkCardmDNS { get; set; } = 0;
         public string WebAPIURL { get; set; } = @"http://localhost:9921/api/";
+        public string HubURL { get; set; } = @"http://localhost:8080/signalr";
         public EMClient()
         {
         }
@@ -53,6 +54,13 @@ namespace pa
 
         static public List<Music> _music { get; set; } = new List<Music>();
         static public List<BSTreeC> _bstreec { get; set; } = new List<BSTreeC>();
+
+
+        static public void init()
+        {
+            XMLEMClient(true);
+
+        }
 
         static public void XMLSimpleSoundCard(bool rd)
         {
