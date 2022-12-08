@@ -127,6 +127,21 @@ namespace LSNAudio
             string strid = e1[1];
             idno = Int32.Parse(strid);
             statetext();
+
+            if (g1._music.Count() < 1)
+            { 
+                g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
+                if (g1._music != null)
+                {
+                    g1._bstreec = g1.dBSqlite.Dbread<List<BSTreeC>>("BSTreeCs");
+                    string str2 = g1._music.Count().ToString() + " : " + g1._music.Count().ToString();
+                    g1.Log("Server music&tree count :" + str2);
+                }
+                else
+                { 
+                    g1.Log("Server connect error ");
+                }
+            }
         }
 
         private void statetext()
@@ -180,6 +195,8 @@ namespace LSNAudio
             string str2 = gl.appPathServer_music + fn;
             if (!System.IO.File.Exists(str2))
                 str2 = gl.appPathServer_music + "띠링.mp3";
+
+            g1.Log("channel :" + t2.ToString() +" : "+ str2);
 
             try
             {
