@@ -7,7 +7,8 @@ namespace simplepa2.UI.Components
     public partial class Comp_PresetNameCard : Wisej.Web.UserControl
     {
         private Preset_DataList dataSet;
-        private bool selectMode = false;
+        public bool selectMode = false;
+        public int intCardNo;
         private string divider = " / ";
 
         public event PresetClickedEventHandler presetClick;            
@@ -24,12 +25,11 @@ namespace simplepa2.UI.Components
             InitializeComponent();
             dataSet = dSet;
 
+            if(dataSet != null)
+            {
+                this.intCardNo = dSet.intPresetID;
+            }
             setCardUserInterface(dSet);
-        }
-
-        public int getPresetID()
-        {
-            return this.dataSet.intPresetID;
         }
 
         public void setCardUserInterface(Preset_DataList dSet)

@@ -34,6 +34,11 @@ namespace simplepa2.UI.Components
         private void panelCardBack_Click(object sender, EventArgs e)
         {
             cardClicked = !cardClicked;
+
+            // 카드가 클릭된 것이면 이벤트 발생
+            if (cardClicked) { groupClick(this, new GroupClickedEventArgs(this.intCardNo));  }
+
+            // 상태 변경 
             setCardStatus(cardClicked);            
         }
 
@@ -42,9 +47,7 @@ namespace simplepa2.UI.Components
                 if (cardStatus)
                 {
                     this.panelCardBack.BackColor = System.Drawing.Color.FromArgb(52, 129, 255);
-                    this.panelCardBack.ForeColor = System.Drawing.Color.White;
-
-                    groupClick(this, new GroupClickedEventArgs(this.intCardNo));
+                    this.panelCardBack.ForeColor = System.Drawing.Color.White;                    
                 }
                 else
                 {

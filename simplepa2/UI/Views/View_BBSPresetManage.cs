@@ -51,12 +51,12 @@ namespace simplepa2.UI.Views
 
         public void presetCardClick(object sender, PresetClickedEventArgs args)
         {
-            int selectedPresetNo = (sender as Comp_PresetNameCard).getPresetID();
+            int selectedPresetNo = (sender as Comp_PresetNameCard).intCardNo;
 
             // 선택된 카드외에는 리셋해주고 
             foreach(Comp_PresetNameCard ui in preset_NameCardList)
             {
-                if(ui.getPresetID() != selectedPresetNo)
+                if(ui.intCardNo != selectedPresetNo)
                 {
                     ui.setCardStatus(false);
                 }                

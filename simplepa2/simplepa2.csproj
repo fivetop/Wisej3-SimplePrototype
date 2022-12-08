@@ -184,6 +184,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="applicationhost.config" />
     <None Include="imgs\nav-quit-777.png" />
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
@@ -818,6 +819,7 @@
     <Fakes Include="Fakes\Wisej-3.fakes" />
     <Content Include="Files\Wisej-Datasheet-V2.3.pdf" />
     <Content Include="Themes\LSMaterial-3.theme" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
