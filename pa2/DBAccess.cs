@@ -312,7 +312,9 @@ namespace pa
             m1.emData = "";
             m1.floor_em = 0;
             m1.path = "";
+            m1.EMNAME = g._EMClient.EM_NAME;
             Device.Rows.Add(m1);
+            var t2 = Dbsave<DeviceRow>("Devices", m1);
             //Tam.DeviceTableAdapter.Update(Ds1.Device);
         }
 
@@ -349,6 +351,7 @@ namespace pa
 
 
         #endregion
+
         #region // BSTree 방송 처리 관리 부분 
 
         public void Delete(int idno)
@@ -367,6 +370,7 @@ namespace pa
             }
         }
         #endregion
+        
         #region // Simplepa 환경설정 관리 부분 
 
         public void Init()

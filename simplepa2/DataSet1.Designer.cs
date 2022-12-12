@@ -2772,6 +2772,8 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnEMNAME;
             
+            private global::System.Data.DataColumn columnDataColumn1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DeviceDataTable() {
@@ -2951,6 +2953,14 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DataColumn1Column {
+                get {
+                    return this.columnDataColumn1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3003,7 +3013,8 @@ namespace simplepa2 {
                         string emData, 
                         int chCount, 
                         int AssetId, 
-                        string EMNAME) {
+                        string EMNAME, 
+                        string DataColumn1) {
                 DeviceRow rowDeviceRow = ((DeviceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3023,7 +3034,8 @@ namespace simplepa2 {
                         emData,
                         chCount,
                         AssetId,
-                        EMNAME};
+                        EMNAME,
+                        DataColumn1};
                 rowDeviceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDeviceRow);
                 return rowDeviceRow;
@@ -3071,6 +3083,7 @@ namespace simplepa2 {
                 this.columnchCount = base.Columns["chCount"];
                 this.columnAssetId = base.Columns["AssetId"];
                 this.columnEMNAME = base.Columns["EMNAME"];
+                this.columnDataColumn1 = base.Columns["DataColumn1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3112,6 +3125,8 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnAssetId);
                 this.columnEMNAME = new global::System.Data.DataColumn("EMNAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEMNAME);
+                this.columnDataColumn1 = new global::System.Data.DataColumn("DataColumn1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDataColumn1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDeviceId}, true));
                 this.columnDeviceId.AutoIncrement = true;
@@ -8681,11 +8696,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string ip_dspctrl {
                 get {
-                    try {
-                        return ((string)(this[this.tableDevice.ip_dspctrlColumn]));
+                    if (this.Isip_dspctrlNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'ip_dspctrl\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDevice.ip_dspctrlColumn]));
                     }
                 }
                 set {
@@ -8697,11 +8712,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string name {
                 get {
-                    try {
-                        return ((string)(this[this.tableDevice.nameColumn]));
+                    if (this.IsnameNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'name\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDevice.nameColumn]));
                     }
                 }
                 set {
@@ -8713,11 +8728,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string DeviceName {
                 get {
-                    try {
-                        return ((string)(this[this.tableDevice.DeviceNameColumn]));
+                    if (this.IsDeviceNameNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'DeviceName\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDevice.DeviceNameColumn]));
                     }
                 }
                 set {
@@ -8729,11 +8744,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string DanteModelName {
                 get {
-                    try {
-                        return ((string)(this[this.tableDevice.DanteModelNameColumn]));
+                    if (this.IsDanteModelNameNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'DanteModelName\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDevice.DanteModelNameColumn]));
                     }
                 }
                 set {
@@ -8761,11 +8776,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string dsp_name {
                 get {
-                    try {
-                        return ((string)(this[this.tableDevice.dsp_nameColumn]));
+                    if (this.Isdsp_nameNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'dsp_name\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDevice.dsp_nameColumn]));
                     }
                 }
                 set {
@@ -8825,11 +8840,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string path {
                 get {
-                    try {
-                        return ((string)(this[this.tableDevice.pathColumn]));
+                    if (this.IspathNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'path\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDevice.pathColumn]));
                     }
                 }
                 set {
@@ -8905,15 +8920,31 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string EMNAME {
                 get {
-                    try {
-                        return ((string)(this[this.tableDevice.EMNAMEColumn]));
+                    if (this.IsEMNAMENull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'EMNAME\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDevice.EMNAMEColumn]));
                     }
                 }
                 set {
                     this[this.tableDevice.EMNAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DataColumn1 {
+                get {
+                    if (this.IsDataColumn1Null()) {
+                        return null;
+                    }
+                    else {
+                        return ((string)(this[this.tableDevice.DataColumn1Column]));
+                    }
+                }
+                set {
+                    this[this.tableDevice.DataColumn1Column] = value;
                 }
             }
             
@@ -9119,6 +9150,18 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetEMNAMENull() {
                 this[this.tableDevice.EMNAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDataColumn1Null() {
+                return this.IsNull(this.tableDevice.DataColumn1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDataColumn1Null() {
+                this[this.tableDevice.DataColumn1Column] = global::System.Convert.DBNull;
             }
         }
         

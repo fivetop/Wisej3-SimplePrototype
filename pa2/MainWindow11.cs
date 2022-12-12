@@ -34,7 +34,7 @@ namespace pa
                 // 4. 스피커 셋팅하고 , 5. 방송 처리 
                 case eSignalRMsgType.ePlay:
                     List<AssetBase> play = new List<AssetBase>();
-                    play = DBAccess.db2List(msg);
+                    play = dBAccess.db2List(msg);
 
                     int chno = msg.chno;
                     g.playItems[chno] = new PlayItem();
@@ -55,7 +55,7 @@ namespace pa
                     string line = line1 + " : " + line2;
                     string l1 = "다원방송시작";
                     g.Log(l1 + p.chno.ToString() + " : " + line);
-                    DBAccess.Eventvms(l1, msg.chno.ToString() + "번 채널", line);
+                    dBAccess.Eventvms(l1, msg.chno.ToString() + "번 채널", line);
                     SendSigR("PLAYING", eSignalRMsgType.ePlaying, msg.seqno, msg.chno);
 
                     // window3 처리 
@@ -70,7 +70,7 @@ namespace pa
                     SendSigR("STOP", eSignalRMsgType.eStop, msg.seqno, msg.chno);
                     g.playItems[msg.chno] = new PlayItem();
                     g.Log("다원방송중지" + msg.chno.ToString() + " : " + msg.seqno.ToString());
-                    DBAccess.Eventvms("다원방송중지", msg.chno.ToString() + "번 채널", msg.seqno.ToString());
+                    dBAccess.Eventvms("다원방송중지", msg.chno.ToString() + "번 채널", msg.seqno.ToString());
                     break;
                 case eSignalRMsgType.eVolume:
                     // db 처리 선행 필요 

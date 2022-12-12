@@ -106,8 +106,8 @@ namespace pa
             string l1 = "다원방송종료";
 
             g.Log(l1 +t1.chno.ToString() + " : "+ t1.idno.ToString());
-            DBAccess.Delete(t1.idno);
-            DBAccess.Eventvms(l1, t1.chno.ToString() + "번 채널", t1.idno.ToString());
+            dBAccess.Delete(t1.idno);
+            dBAccess.Eventvms(l1, t1.chno.ToString() + "번 채널", t1.idno.ToString());
             SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd , 0, 0);
             g.playItems[chno] = new PlayItem();
         }

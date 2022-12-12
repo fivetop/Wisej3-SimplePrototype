@@ -211,17 +211,17 @@ namespace pa
             {
                 foreach (var t1 in gs1)
                 {
-                    var s1 = DBAccess.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    var s1 = dBAccess.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
                     if (s1 != null)
                     {
                         continue;
                     }
 
-                    DBAccess.NewDeviceRow(t1, 1);
+                    dBAccess.NewDeviceRow(t1, 1);
                     if (t1.DeviceName.Contains("MA1000T") || t1.DeviceName.Contains("MA2000T"))
                     {
                         //Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
-                        DBAccess.NewDeviceRow(t1, 2);
+                        dBAccess.NewDeviceRow(t1, 2);
                     }
                 }
                 //Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
@@ -312,7 +312,7 @@ namespace pa
             string ret = "통신실";
             if (deviceName == "")
                 return ret;
-            var ret1 = DBAccess.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
+            var ret1 = dBAccess.Assets.FirstOrDefault(p => p.DeviceName == deviceName && p.ch == chspk);
             if (ret1 == null)
                 return ret;
             ret = ret1.path;
@@ -349,7 +349,7 @@ namespace pa
                 return;
             if (src1.ip == "")
                 return;
-            var t3 = DBAccess.DeviceChannel.Where(p => p.DeviceId == dsp1.DeviceId).ToList();
+            var t3 = dBAccess.DeviceChannel.Where(p => p.DeviceId == dsp1.DeviceId).ToList();
             if (t3.Count() < 1)
                 return;
 
@@ -486,7 +486,7 @@ namespace pa
                 t1.ip_dspctrl = dsp1[dspno].ip_dspctrl;
                 g.Log("Speaker Assign DSP Name Ch :" + t1.dsp_name + " : " + t1.dsp_chno.ToString());
 
-                var t3 = DBAccess.DeviceChannel.Where(p => p.DeviceId == dsp1[dspno].DeviceId).ToList();
+                var t3 = dBAccess.DeviceChannel.Where(p => p.DeviceId == dsp1[dspno].DeviceId).ToList();
                 //byte[] b1 = gl.hexatobyte(dsp1[dspno].dsp_out_ch1[chno - 1]);
                 byte[] b1 = gl.hexatobyte(t3[chno - 1].dsp_out_ch1);
                 // 단테 컨트롤러 스피커 무브 
@@ -532,8 +532,8 @@ namespace pa
             List<string> t21 = new List<string>();
             List<string> t31 = new List<string>();
 
-            LScap.g.capData1.Clear();
-            LScap.g.capData2.Clear();
+            //LScap.g.capData1.Clear();
+            //LScap.g.capData2.Clear();
             LScap.g.OpenCap();
 
             string str1 = "a55a100000000000011200010000000000000000000000000000000000000000";

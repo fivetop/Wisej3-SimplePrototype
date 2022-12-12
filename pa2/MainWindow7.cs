@@ -25,11 +25,11 @@ namespace pa
         // 상태가 변경되었을 경우만 디스플레이
         private void SpeakerCheck(string str2, int v)
         {
-            var t4 = DBAccess.Assets.Where(p => p.ip == str2);
+            var t4 = dBAccess.Assets.Where(p => p.ip == str2);
             if (t4.Count() == 0)
                 return;
 
-            var t3 = DBAccess.Assets.First(p => p.ip == str2);
+            var t3 = dBAccess.Assets.First(p => p.ip == str2);
             if (t3 == null)
                 return;
 
@@ -47,7 +47,7 @@ namespace pa
                 g.Log("Off-Line:" + str2);
             }
 
-            DBAccess.EventvmIP(t3);
+            dBAccess.EventvmIP(t3);
             //updateAlarmEvent();
             //if (MainTabControl.SelectedIndex == 5)
             //    _T6.dispFloorMap();
@@ -92,14 +92,14 @@ namespace pa
                 try
                 {
                     g.Log("Device Check : " + t2.Count.ToString());
-                    foreach (var t1 in DBAccess.Assets)
+                    foreach (var t1 in dBAccess.Assets)
                     {
                         if (t1.state != t1.state_old)
                             t1.state_old = t1.state;
                         t1.state = ""; // "Off-Line";
                     }
 
-                    foreach (var t3 in DBAccess.Assets)
+                    foreach (var t3 in dBAccess.Assets)
                     {
                         var t4 = t2.Contains(t3.ip);
                         if (t4)

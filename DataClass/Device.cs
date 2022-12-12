@@ -16,6 +16,7 @@ namespace DataClass
 		public int DeviceId { get; set; }   // Event (1)   <-- 건수 표시
 		public int device { get; set; } // 0 speaker , 1 amp , 2 dsp , 3 avio 
 		public string ip { get; set; }
+		public string EMNAME { get; set; }
 		public string ip_dspctrl { get; set; } // DSP Controller IP 
 		public string name { get; set; }
 		public string DeviceName { get; set; }
@@ -33,6 +34,7 @@ namespace DataClass
 		{
 			device = 0; // 0 speaker , 1 amp , 2 dsp , 3 avio 
 			ip = "";
+			EMNAME = "";
 			ip_dspctrl = "";
 			name = "";
 

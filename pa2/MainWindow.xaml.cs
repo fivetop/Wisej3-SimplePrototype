@@ -44,7 +44,7 @@ namespace pa
         public uint AliveMessage { get; set; }
         System.Timers.Timer AliveTimer { get; set; } = new System.Timers.Timer(1000 * 60 * 5);
 
-        public DBAccess DBAccess { get; set; } = new DBAccess();
+        public DBAccess dBAccess { get; set; } = new DBAccess();
 
         WireSharkRunning wireShark { get; set; } = new WireSharkRunning();
 
@@ -110,13 +110,13 @@ namespace pa
                 return;
             }
 
-            DBAccess.DBInit();
-            if (DBAccess.Simplepa == null)
+            dBAccess.DBInit();
+            if (dBAccess.Simplepa == null)
             {
                 Initialtimer.Start();
                 return;
             }
-            _DanteDevice = DBAccess.Device;
+            _DanteDevice = dBAccess.Device;
             g.Log("SignalR Hub Connected ..");
 
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
@@ -132,11 +132,11 @@ namespace pa
         {
             MakeSpeakerIP();
             ReadMusic();
-            g._BaseData = DBAccess.Simplepa.FirstOrDefault();
+            g._BaseData = dBAccess.Simplepa.FirstOrDefault();
             if (g._BaseData == null)
             {
-                DBAccess.Init();
-                g._BaseData = DBAccess.Simplepa.FirstOrDefault();
+                dBAccess.Init();
+                g._BaseData = dBAccess.Simplepa.FirstOrDefault();
             }
 
             gl.XMLDanteDevice(true);
@@ -208,7 +208,7 @@ namespace pa
 
         private int systemcheck()
         {
-            var a1 = DBAccess.Assets.ToList();
+            var a1 = dBAccess.Assets.ToList();
             if (a1.Count() < 1)
             {
                 g.Log("선번장이 없습니다. 선번장을 확인바랍니다.");
@@ -562,7 +562,7 @@ namespace pa
 
         public void MakeSpeakerIP()
         {
-            foreach (var t1 in DBAccess.Assets)
+            foreach (var t1 in dBAccess.Assets)
             {
                 if (t1.DeviceName == "")
                 {
@@ -602,13 +602,13 @@ namespace pa
                 foreach (var fileInfo in files)
                 {
                     var mu1 = TagLib.File.Create(fileInfo.FullName);
-                    var m3 = DBAccess.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
+                    var m3 = dBAccess.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
                     if (m3 != null)
                     {
                     }
                     else
                     {
-                        MusicsRow m1 = DBAccess.Musics.NewMusicsRow();
+                        MusicsRow m1 = dBAccess.Musics.NewMusicsRow();
                         string str1 = "00:00:00";
                         var r1 = mu1.Properties.Duration;
                         m1.FileName = fileInfo.Name;
@@ -619,7 +619,7 @@ namespace pa
                         if (str1 == "00:00:00")
                             str1 = "00:00:01";
                         m1.duration = str1;
-                        DBAccess.Musics.Rows.Add(m1);
+                        dBAccess.Musics.Rows.Add(m1);
                         //Tam.MusicsTableAdapter.Update(Ds1.Musics);
                     }
                 }

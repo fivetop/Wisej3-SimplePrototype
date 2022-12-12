@@ -408,9 +408,15 @@ namespace pa
 			int ttl = 255;	// local network packets - rfc3171
 			socket.Client.SetSocketOption( SocketOptionLevel.IP, SocketOptionName.MulticastTimeToLive, ttl );
 
-			//int intfindx = BestInterfaceIndex();
-			var options = new MulticastOption( IPv4.Address, intfindx );
-			socket.Client.SetSocketOption( SocketOptionLevel.IP, SocketOptionName.AddMembership, options );
+			try
+			{
+				//int intfindx = BestInterfaceIndex();
+				var options = new MulticastOption( IPv4.Address, intfindx );
+				socket.Client.SetSocketOption( SocketOptionLevel.IP, SocketOptionName.AddMembership, options );
+			}
+			catch (Exception e1)
+			{ 
+			}
         }
 
 		public void StartListening()
