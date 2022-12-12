@@ -31,5 +31,6 @@ namespace simplepa2.Controller
         public string emData { get; set; }
         public Nullable<int> chCount { get; set; }
         public Nullable<int> AssetId { get; set; }
+        public string EMNAME { get; set; }
     }
 }

@@ -2770,6 +2770,8 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnAssetId;
             
+            private global::System.Data.DataColumn columnEMNAME;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DeviceDataTable() {
@@ -2941,6 +2943,14 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EMNAMEColumn {
+                get {
+                    return this.columnEMNAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2992,7 +3002,8 @@ namespace simplepa2 {
                         int floor_em, 
                         string emData, 
                         int chCount, 
-                        int AssetId) {
+                        int AssetId, 
+                        string EMNAME) {
                 DeviceRow rowDeviceRow = ((DeviceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3011,7 +3022,8 @@ namespace simplepa2 {
                         floor_em,
                         emData,
                         chCount,
-                        AssetId};
+                        AssetId,
+                        EMNAME};
                 rowDeviceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDeviceRow);
                 return rowDeviceRow;
@@ -3058,6 +3070,7 @@ namespace simplepa2 {
                 this.columnemData = base.Columns["emData"];
                 this.columnchCount = base.Columns["chCount"];
                 this.columnAssetId = base.Columns["AssetId"];
+                this.columnEMNAME = base.Columns["EMNAME"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3097,6 +3110,8 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnchCount);
                 this.columnAssetId = new global::System.Data.DataColumn("AssetId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAssetId);
+                this.columnEMNAME = new global::System.Data.DataColumn("EMNAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEMNAME);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDeviceId}, true));
                 this.columnDeviceId.AutoIncrement = true;
@@ -3113,6 +3128,7 @@ namespace simplepa2 {
                 this.columndsp_name.MaxLength = 2147483647;
                 this.columnpath.MaxLength = 2147483647;
                 this.columnemData.MaxLength = 2147483647;
+                this.columnEMNAME.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8887,6 +8903,22 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EMNAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableDevice.EMNAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Device\' 테이블의 \'EMNAME\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevice.EMNAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsdeviceNull() {
                 return this.IsNull(this.tableDevice.deviceColumn);
             }
@@ -9075,6 +9107,18 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAssetIdNull() {
                 this[this.tableDevice.AssetIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEMNAMENull() {
+                return this.IsNull(this.tableDevice.EMNAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEMNAMENull() {
+                this[this.tableDevice.EMNAMEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14559,15 +14603,16 @@ namespace simplepa2.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("emData", "emData");
             tableMapping.ColumnMappings.Add("chCount", "chCount");
             tableMapping.ColumnMappings.Add("AssetId", "AssetId");
+            tableMapping.ColumnMappings.Add("EMNAME", "EMNAME");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Device] WHERE (([DeviceId] = @Original_DeviceId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Device] WHERE (([DeviceId] = @Original_DeviceId))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DeviceId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeviceId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Device] ([device], [ip], [ip_dspctrl], [name], [DeviceName], [DanteModelName], [chspk], [dsp_name], [dsp_chno], [dsp_vol], [dsp_vol_em], [path], [floor_em], [emData], [chCount], [AssetId]) VALUES (@device, @ip, @ip_dspctrl, @name, @DeviceName, @DanteModelName, @chspk, @dsp_name, @dsp_chno, @dsp_vol, @dsp_vol_em, @path, @floor_em, @emData, @chCount, @AssetId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Device] ([device], [ip], [ip_dspctrl], [name], [DeviceName], [DanteModelName], [chspk], [dsp_name], [dsp_chno], [dsp_vol], [dsp_vol_em], [path], [floor_em], [emData], [chCount], [AssetId], [EMNAME]) VALUES (@device, @ip, @ip_dspctrl, @name, @DeviceName, @DanteModelName, @chspk, @dsp_name, @dsp_chno, @dsp_vol, @dsp_vol_em, @path, @floor_em, @emData, @chCount, @AssetId, @EMNAME)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@device", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "device", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ip", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -14585,9 +14630,10 @@ namespace simplepa2.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emData", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@chCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "chCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Device] SET [device] = @device, [ip] = @ip, [ip_dspctrl] = @ip_dspctrl, [name] = @name, [DeviceName] = @DeviceName, [DanteModelName] = @DanteModelName, [chspk] = @chspk, [dsp_name] = @dsp_name, [dsp_chno] = @dsp_chno, [dsp_vol] = @dsp_vol, [dsp_vol_em] = @dsp_vol_em, [path] = @path, [floor_em] = @floor_em, [emData] = @emData, [chCount] = @chCount, [AssetId] = @AssetId WHERE (([DeviceId] = @Original_DeviceId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Device] SET [device] = @device, [ip] = @ip, [ip_dspctrl] = @ip_dspctrl, [name] = @name, [DeviceName] = @DeviceName, [DanteModelName] = @DanteModelName, [chspk] = @chspk, [dsp_name] = @dsp_name, [dsp_chno] = @dsp_chno, [dsp_vol] = @dsp_vol, [dsp_vol_em] = @dsp_vol_em, [path] = @path, [floor_em] = @floor_em, [emData] = @emData, [chCount] = @chCount, [AssetId] = @AssetId, [EMNAME] = @EMNAME WHERE (([DeviceId] = @Original_DeviceId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@device", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "device", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ip", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ip", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -14605,6 +14651,7 @@ namespace simplepa2.DataSet1TableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emData", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@chCount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "chCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DeviceId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DeviceId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -14621,9 +14668,9 @@ namespace simplepa2.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DeviceId, device, ip, ip_dspctrl, name, DeviceName, DanteModelName, chspk," +
-                " dsp_name, dsp_chno, dsp_vol, dsp_vol_em, path, floor_em, emData, chCount, Asset" +
-                "Id FROM dbo.Device";
+            this._commandCollection[0].CommandText = "SELECT  DeviceId, device, ip, ip_dspctrl, name, DeviceName, DanteModelName, chspk" +
+                ", dsp_name, dsp_chno, dsp_vol, dsp_vol_em, path, floor_em, emData, chCount, Asse" +
+                "tId, EMNAME\r\nFROM     Device";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -14722,7 +14769,8 @@ namespace simplepa2.DataSet1TableAdapters {
                     global::System.Nullable<int> floor_em, 
                     string emData, 
                     global::System.Nullable<int> chCount, 
-                    global::System.Nullable<int> AssetId) {
+                    global::System.Nullable<int> AssetId, 
+                    string EMNAME) {
             if ((device.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(device.Value));
             }
@@ -14819,6 +14867,12 @@ namespace simplepa2.DataSet1TableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
+            if ((EMNAME == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(EMNAME));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14856,6 +14910,7 @@ namespace simplepa2.DataSet1TableAdapters {
                     string emData, 
                     global::System.Nullable<int> chCount, 
                     global::System.Nullable<int> AssetId, 
+                    string EMNAME, 
                     int Original_DeviceId) {
             if ((device.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(device.Value));
@@ -14953,7 +15008,13 @@ namespace simplepa2.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_DeviceId));
+            if ((EMNAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(EMNAME));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_DeviceId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

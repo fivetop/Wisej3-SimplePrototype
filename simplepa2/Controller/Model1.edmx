@@ -93,6 +93,7 @@
           <Property Name="emData" Type="text" />
           <Property Name="chCount" Type="int" />
           <Property Name="AssetId" Type="int" />
+          <Property Name="EMNAME" Type="text" />
         </EntityType>
         <EntityType Name="DeviceChannel">
           <Key>
@@ -363,6 +364,7 @@
           <Property Name="emData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="chCount" Type="Int32" />
           <Property Name="AssetId" Type="Int32" />
+          <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="DeviceChannel">
           <Key>
@@ -612,6 +614,7 @@
           <EntitySetMapping Name="Device">
             <EntityTypeMapping TypeName="simplePAModel.Device">
               <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
                 <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
                 <ScalarProperty Name="device" ColumnName="device" />
                 <ScalarProperty Name="ip" ColumnName="ip" />

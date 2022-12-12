@@ -170,17 +170,16 @@ namespace simplepa2
 		{
 			SignalRMsg msg1 = new SignalRMsg();
 			msg1.user = Application.Session["user"];
+			msg1.EMNAME = "ALL";
 
 			switch (eVolume)
 			{
 				case eSignalRMsgType.eVolume:
-					msg1.Guid = Guid.NewGuid();
 					msg1.message = "Volume";
 					msg1.Msgtype = eVolume;
 					break;
 
 				case eSignalRMsgType.eOutChMove:
-					msg1.Guid = Guid.NewGuid();
 					msg1.message = device_name;
 					msg1.Msgtype = eVolume;
 					msg1.state = dsp_ch;
@@ -189,7 +188,6 @@ namespace simplepa2
 					break;
 
 				case eSignalRMsgType.eInChMove:
-					msg1.Guid = Guid.NewGuid();
 					msg1.message = device_name; // pc
 					msg1.Msgtype = eVolume;
 					msg1.state = dsp_ch; // no
@@ -198,7 +196,6 @@ namespace simplepa2
 					break;
 
 				case eSignalRMsgType.eScanAll:
-					msg1.Guid = Guid.NewGuid();
 					msg1.Msgtype = eVolume;
 					msg1.message = "Scan All";
 					break;
