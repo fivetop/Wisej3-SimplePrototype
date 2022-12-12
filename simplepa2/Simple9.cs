@@ -166,18 +166,6 @@ namespace simplepa2
 			}
 		}
 
-        // 8채널 출력용 
-        private void PlayItemDisplay()
-		{
-			bslamp1.LabelOn(2, playItems[2].p_run);
-			bslamp1.LabelOn(3, playItems[3].p_run);
-			bslamp1.LabelOn(4, playItems[4].p_run);
-			bslamp1.LabelOn(5, playItems[5].p_run);
-			bslamp1.LabelOn(6, playItems[6].p_run);
-			bslamp1.LabelOn(7, playItems[7].p_run);
-			bslamp1.LabelOn(8, playItems[8].p_run);
-		}
-
 		internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0)
 		{
 			SignalRMsg msg1 = new SignalRMsg();
@@ -218,8 +206,8 @@ namespace simplepa2
 
 			try
 			{
-				//if (isSignalR())
-				//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
+				if (gweb._hub != null)
+					gweb._hub.MessageS2C2(msg1);
 			}
 			catch (Exception e1)
 			{
@@ -228,12 +216,23 @@ namespace simplepa2
 
 		public bool isSignalR()
 		{
-			//if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-			//	return true;
-			//else
+			if (gweb._hub == null)
 				return false;
-
+			return true;
 		}
+
+		// 8채널 출력용 
+		private void PlayItemDisplay()
+		{
+			bslamp1.LabelOn(2, playItems[2].p_run);
+			bslamp1.LabelOn(3, playItems[3].p_run);
+			bslamp1.LabelOn(4, playItems[4].p_run);
+			bslamp1.LabelOn(5, playItems[5].p_run);
+			bslamp1.LabelOn(6, playItems[6].p_run);
+			bslamp1.LabelOn(7, playItems[7].p_run);
+			bslamp1.LabelOn(8, playItems[8].p_run);
+		}
+
 
 		#endregion
 	}
