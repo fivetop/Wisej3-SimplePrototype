@@ -95,7 +95,7 @@ namespace gClass
             {
                 udpc1 = new udpClient();
                 udpc1.udp.Client.Bind(ReceiveEndPoint1);
-                udpc1.option(IPAddress.Parse("239.16.0.8"), data.intfindx);
+                //udpc1.option(IPAddress.Parse("239.16.0.8"), data.intfindx);
                 udpc1.OnReceiveMessage += Udpc1_OnReceiveMessage;
                 //udpc1.buf2.Clear();
                 udpc1.rcv();

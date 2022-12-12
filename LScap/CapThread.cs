@@ -172,7 +172,7 @@ namespace LScap
                         if (!capData.Contains(t1))
                         {
                             capData.Add(t1);
-                            //Console.WriteLine(t1);
+                            Console.WriteLine(t1);
                         }
                     } 
                 }
