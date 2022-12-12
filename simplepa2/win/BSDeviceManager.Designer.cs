@@ -47,6 +47,7 @@
             this.ptop = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.panel2 = new Wisej.Web.Panel();
+            this.colEMNAME = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -73,6 +74,7 @@
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colDeviceid,
+            this.colEMNAME,
             this.colDevicename,
             this.colChspk,
             this.colDevice,
@@ -203,6 +205,12 @@
             this.panel2.TabIndex = 5;
             this.panel2.TabStop = true;
             // 
+            // colEMNAME
+            // 
+            this.colEMNAME.DataPropertyName = "EMNAME";
+            this.colEMNAME.HeaderText = "지역";
+            this.colEMNAME.Name = "colEMNAME";
+            // 
             // BSDeviceManager
             // 
             this.Controls.Add(this.panel2);
@@ -239,5 +247,6 @@
         private Wisej.Web.DataGridViewTextBoxColumn Column0;
         private Wisej.Web.DataGridViewTextBoxColumn colChspk;
         private Wisej.Web.DataGridViewTextBoxColumn colDevice;
+        private Wisej.Web.DataGridViewTextBoxColumn colEMNAME;
     }
 }

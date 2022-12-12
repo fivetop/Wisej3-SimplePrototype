@@ -66,7 +66,7 @@ namespace simplepa2
 					break;
 				case eSignalRMsgType.eFindDSP:
 					if (msg1.state == 1)
-						;//bSDeviceManager.reDraw();
+						bSDeviceManager.reDraw();
 					else
 						AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 					break;

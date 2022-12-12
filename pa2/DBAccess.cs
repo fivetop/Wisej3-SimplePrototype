@@ -312,6 +312,7 @@ namespace pa
             m1.emData = "";
             m1.floor_em = 0;
             m1.path = "";
+            m1.AssetId = 0;
             m1.EMNAME = g._EMClient.EM_NAME;
             Device.Rows.Add(m1);
             var t2 = Dbsave<DeviceRow>("Devices", m1);
