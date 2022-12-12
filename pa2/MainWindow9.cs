@@ -539,12 +539,13 @@ namespace pa
             string str1 = "a55a100000000000011200010000000000000000000000000000000000000000";
             byte[] b1 = gl.hexatobyte(str1);
 
-            AThreadData aThreadData = new AThreadData();
-            aThreadData.ip = "239.16.0.8";
-            aThreadData.b1 = b1;
-            aThreadData.LocalIP = Resolver.localIP;
-            aThreadData.intfindx = Resolver.intfindx;
-            bThread.AddData(aThreadData);
+            udpClient udpc1;
+            udpc1 = new udpClient();
+            udpc1.send("239.16.0.8", 6001, b1);
+            //Thread.Sleep(500);
+            Console.WriteLine("End...");
+            udpc1.Close();
+
             Thread.Sleep(5000);
 
             //LScap.g.CloseCap();
