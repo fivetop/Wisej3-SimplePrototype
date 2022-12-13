@@ -71,7 +71,6 @@ namespace simplepa2
 						AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 					break;
 			}
-			playItems = msg1.play8sig;
 			if (playItems != null)
 				PlayItemDisplay();
 

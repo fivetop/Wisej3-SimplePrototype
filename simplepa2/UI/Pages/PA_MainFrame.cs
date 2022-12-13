@@ -376,7 +376,7 @@ namespace simplepa2.UI.Pages
             view_Dashboard.Refresh();
 
 
-            playItems = msg1.play8sig;
+            //playItems = msg1.play8sig;
             if (playItems != null)
                 PlayItemDisplay();
 

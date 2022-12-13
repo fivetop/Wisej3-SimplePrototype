@@ -134,7 +134,6 @@ namespace pa
             msg1.Msgtype = v1;
             msg1.seqno = s1;
             msg1.state = s2;
-            msg1.play8sig = g.playItems;
 
             switch (v1)
             {
@@ -164,8 +163,6 @@ namespace pa
                     msg1.EMNAME = g._EMClient.EM_NAME;
                     break;
             }
-
-            msg1.play8sig = g.playItems;
             signalRClient.MessageC2S2(msg1);
             //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
         }
@@ -176,10 +173,7 @@ namespace pa
             msg1.EMNAME = g._EMClient.EM_NAME;
             msg1.message = r1;
             msg1.Msgtype = v1;
-            msg1.play8sig = g.playItems;
             msg1.state = state;
-
-            msg1.play8sig = g.playItems;
             signalRClient.MessageC2S2(msg1);
             //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
         }

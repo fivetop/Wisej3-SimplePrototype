@@ -90,7 +90,6 @@ namespace DataClass
         public int state { get; set; }                  // 상태 코드
         public List<int> assetsRows { get; set; }      // 선택된 스피커 ID
         public List<int> musicsRows { get; set; }      // 선택된 음원 ID
-        public List<PlayItem> play8sig { get; set; }    // 8채널의 현재 상태 
         public string user { get; set;}                 // 유저명 
         public string EMNAME { get; set;}                // EM 명 
         public string user_data1 { get; set; }           // data1  eOutChMove-dspname,  
@@ -109,7 +108,6 @@ namespace DataClass
             state = 0;
             assetsRows = new List<int>();
             musicsRows = new List<int>();
-            play8sig = new List<PlayItem>();
         }
     }
 
