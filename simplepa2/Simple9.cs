@@ -24,8 +24,10 @@ namespace simplepa2
 			string addinfo = "";
 			LabelON(9,true);
 
+			Console.WriteLine(msg1.message);
 			//Application.StartTask(() => {
-				AlertBox.Show(msg1.message);
+			AlertBox.Show(msg1.message);
+			Console.WriteLine(msg1.message);
 				//Application.Update(this);
 			//});
 			

@@ -140,7 +140,8 @@ namespace pa
             if (gs1.Count() < 1 || gs2.Count() < 1)
             {
                 g.Log("DSP 혹은 버철사운드를 확인 바랍니다.");
-                SendSigR("Find DSP",eSignalRMsgType.eFindDSP, 0,0);
+                SendSigR("Find DSP check",eSignalRMsgType.eFindDSP, 0,0);
+                Devicetimer.Stop();
                 return false;
             }
 
@@ -150,7 +151,8 @@ namespace pa
                 if (t2.ip_dspctrl == "")
                 { 
                     g.Log("DSP 혹은 버철사운드를 확인 바랍니다.");
-                    SendSigR("Find DSP", eSignalRMsgType.eFindDSP, 0, 0);
+                    SendSigR("Find DSP check", eSignalRMsgType.eFindDSP, 0, 0);
+                    Devicetimer.Stop();
                     return false;
                 }
             }

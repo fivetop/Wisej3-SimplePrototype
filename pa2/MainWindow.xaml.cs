@@ -508,7 +508,10 @@ namespace pa
             msg1.musicsRows.Add(5);
             await g.mainWindow.RcvSigR(msg1);
             */
+            /*
             PlayChildProcess(2, 100034);
+            */
+
         }
 
         private void _but5_Click(object sender, RoutedEventArgs e)

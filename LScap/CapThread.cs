@@ -163,7 +163,7 @@ namespace LScap
                             {
                                 capData1.Add(t4);
                                 capData2.Add(t3);
-                                //Console.WriteLine(t3);
+                                Console.WriteLine(t3);
                             }
                         }
                         if (ip.DestinationAddress.ToString() != "224.0.0.251") // MDNS 
@@ -172,7 +172,7 @@ namespace LScap
                         if (!capData.Contains(t1))
                         {
                             capData.Add(t1);
-                            Console.WriteLine(t1);
+                            //Console.WriteLine(t1);
                         }
                     } 
                 }

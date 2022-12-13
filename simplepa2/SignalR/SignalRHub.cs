@@ -3,6 +3,7 @@ using Microsoft.AspNet.SignalR;
 using simplepa2.UI.Pages;
 using System;
 using System.Threading.Tasks;
+using Wisej.Web;
 
 namespace simplepa2.SignalR
 {
@@ -61,7 +62,6 @@ namespace simplepa2.SignalR
                 gweb.mainFrame.eRcvSigR(message);
             if(gweb.mainFrame1 != null)
                 gweb.mainFrame1.RcvSigR(message);
-            //gweb.mainFrame.RcvSigR(message);
         }
     }
 
