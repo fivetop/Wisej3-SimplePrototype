@@ -29,7 +29,7 @@ namespace WatchDog
             Title = "Watchdog" + " " + gl.version;
 
             //mpro.Add(new ManageProcess("pa_em", @"pa_em.exe",0));
-            mpro.Add(new ManageProcess(gl._BaseData.processname, gl._BaseData.processfile ,1));
+            //mpro.Add(new ManageProcess(gl._BaseData.processname, gl._BaseData.processfile ,1));
             //mpro.Add(new ManageProcess("Checker", @"Checker.exe", 0));
 
             aTimer = new System.Timers.Timer();
