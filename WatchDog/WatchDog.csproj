@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WatchDog</RootNamespace>
     <AssemblyName>WatchDog</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -104,33 +104,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Checker\Checker.csproj">
-      <Project>{2d36e4d4-b848-4e7d-900a-d9d9a70e9701}</Project>
-      <Name>Checker</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\gClass\gClass.csproj">
-      <Project>{A3148C58-60FE-4AB4-87E7-C30534CA7F6D}</Project>
-      <Name>gClass</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LSmDNSW\LSmDNSW.csproj">
-      <Project>{4ad65a81-ad70-41c8-9bab-5b4aa9dcb233}</Project>
-      <Name>LSmDNSW</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LSudpW\LSudpW.csproj">
-      <Project>{f360c6e3-f7ac-49da-a92d-f6aa0d38e725}</Project>
-      <Name>LSudpW</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\pa2\pa_em.csproj">
-      <Project>{7cac7faf-2a30-4d1d-988d-f008ef90511c}</Project>
-      <Name>pa_em</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\pa\pa.csproj">
-      <Project>{2392233b-b729-4e1b-a75e-68dc3687d514}</Project>
-      <Name>pa</Name>
-    </ProjectReference>
+    <Resource Include="aa37.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="aa37.png" />
+    <ProjectReference Include="..\gClass\gClass.csproj">
+      <Project>{a3148c58-60fe-4ab4-87e7-c30534ca7f6d}</Project>
+      <Name>gClass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -20,10 +20,6 @@ namespace WatchDog
         List<ManageProcess> mpro = new List<ManageProcess>();
         private TrayIcon _tray; // 트래이 제어용 
 
-        public uint AliveMessage;
-        long old_wParam { get; set; }
-        long old_lParam { get; set; }
-
         int cnt = 0;
 
         public MainWindow()
@@ -31,8 +27,6 @@ namespace WatchDog
             InitializeComponent();
 
             Title = "Watchdog" + " " + gl.version;
-
-            gl.XMLSimplePA(true);
 
             //mpro.Add(new ManageProcess("pa_em", @"pa_em.exe",0));
             mpro.Add(new ManageProcess(gl._BaseData.processname, gl._BaseData.processfile ,1));
@@ -52,9 +46,6 @@ namespace WatchDog
             hTimer.Enabled = true;
 
             _tray = new TrayIcon();
-
-            AliveMessage = GlobalMessage.Register("Alive");
-            ComponentDispatcher.ThreadFilterMessage += ComponentDispatcher_ThreadFilterMessage;
         }
 
         private void OnhTimedEvent(object sender, ElapsedEventArgs e)
@@ -75,42 +66,6 @@ namespace WatchDog
             }
             hTimer.Start();
 
-        }
-
-        private void ComponentDispatcher_ThreadFilterMessage(ref MSG msg, ref bool handled)
-        {
-            if (AliveMessage != msg.message)
-                return;
-            long s1 = msg.wParam.ToInt64();
-            long s2 = msg.lParam.ToInt64();
-
-            string str1 = msg.wParam.ToString() + " : " + msg.lParam.ToString() + "\r\n";
-            //_out.Inlines.Add(str1);
-            if (old_lParam == s2 && s1 == old_wParam)
-                return;
-            old_wParam = s1;
-            old_lParam = s2;
-
-            cnt++;
-            if (cnt < 30)
-            { 
-                //return;
-            }
-            cnt = 0;
-
-            switch (s1)
-            {
-
-                case 501: // Off -> 
-                    Log("501:Speaker Check Alive");
-                    break;
-                case 601: // On -> Off
-                    Log("601:PA Alive");
-                    break;
-                case 701: // On -> Off
-                    Log("701:PA Emergency Alive");
-                    break;
-            }
         }
 
         private System.Timers.Timer aTimer { get; set; }

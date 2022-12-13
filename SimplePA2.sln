@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simplepa2", "simplepa2\simp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wisejhtml", "Wisejhtml\Wisejhtml.csproj", "{37525303-7BA7-4947-9F1C-D757A8B1E9AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchDog", "WatchDog\WatchDog.csproj", "{EBC70219-24A0-420C-9045-73438CA463E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,14 @@ Global
 		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Release|x86.ActiveCfg = Release|Any CPU
 		{37525303-7BA7-4947-9F1C-D757A8B1E9AB}.Release|x86.Build.0 = Release|Any CPU
+		{EBC70219-24A0-420C-9045-73438CA463E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC70219-24A0-420C-9045-73438CA463E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC70219-24A0-420C-9045-73438CA463E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EBC70219-24A0-420C-9045-73438CA463E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{EBC70219-24A0-420C-9045-73438CA463E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC70219-24A0-420C-9045-73438CA463E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBC70219-24A0-420C-9045-73438CA463E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{EBC70219-24A0-420C-9045-73438CA463E1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
