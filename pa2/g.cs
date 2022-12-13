@@ -29,6 +29,10 @@ namespace pa
         public int NetworkCardmDNS { get; set; } = 0;
         public string WebAPIURL { get; set; } = @"http://localhost:9921/api/";
         public string HubURL { get; set; } = @"http://localhost:8080/signalr";
+        public string processname { get; set; } = @"pa_em";
+        public string processfile { get; set; } = @"pa_em.exe";
+
+
         public EMClient()
         {
         }

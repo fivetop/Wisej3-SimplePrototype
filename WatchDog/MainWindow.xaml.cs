@@ -24,12 +24,14 @@ namespace WatchDog
 
         public MainWindow()
         {
+
             InitializeComponent();
 
             Title = "Watchdog" + " " + gl.version;
 
+            g.XMLEMClient(true);
             //mpro.Add(new ManageProcess("pa_em", @"pa_em.exe",0));
-            //mpro.Add(new ManageProcess(gl._BaseData.processname, gl._BaseData.processfile ,1));
+            mpro.Add(new ManageProcess(g._EMClient.processname, g._EMClient.processfile ,1));
             //mpro.Add(new ManageProcess("Checker", @"Checker.exe", 0));
 
             aTimer = new System.Timers.Timer();
@@ -87,7 +89,7 @@ namespace WatchDog
                     bool find = false;
                     foreach (Process theprocess in processlist)
                     {
-                        if (theprocess.ProcessName.Contains("pa"))
+                        if (theprocess.ProcessName.Contains(g._EMClient.processname))
                         { 
                             // pa_em
                             // pa
@@ -169,7 +171,7 @@ namespace WatchDog
             try
             {
                 string fn = "Watchdog_"+DateTime.Now.Year.ToString();
-                StreamWriter writer = new StreamWriter(File.Open("C:\\SimplePA\\Log\\" + fn + ".txt", FileMode.Append));
+                StreamWriter writer = new StreamWriter(File.Open("C:\\SimplePA2\\Log\\" + fn + ".txt", FileMode.Append));
                 TextWriterTraceListener listener = new TextWriterTraceListener(writer);
                 //Debug.Listeners.Add(listener);
                 //Debug.WriteLine(string.Format("{0} : {1}", DateTime.Now, str1));
