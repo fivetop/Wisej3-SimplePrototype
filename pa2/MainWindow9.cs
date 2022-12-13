@@ -83,17 +83,20 @@ namespace pa
                     case 0:
                         case1 = 1;
                         g.Log("process 1 -- _netaudio_arc");
+                        SendSigR("process 1 -- _netaudio_arc", eSignalRMsgType.eFindDSP, 0, 0);
                         //resolver.ResolveServiceName(g._netaudio_arc);
                         g.resolver.ResolveServiceName2(g._netaudio_arc);
                         break;
                     case 1:
                         case1 = 2;
                         g.Log("process 2 -- _netaudio_chan");
+                        SendSigR("process 2 -- _netaudio_chan", eSignalRMsgType.eFindDSP, 0, 0);
                         g.resolver.ResolveServiceName(g._netaudio_chan);
                         break;
                     case 2:
                         case1 = 3;
                         g.Log("process 3 -- _netaudio_cmc");
+                        SendSigR("process 3 -- _netaudio_cmc", eSignalRMsgType.eFindDSP, 0, 0);
                         g.resolver.ResolveServiceName(g._netaudio_cmc);
                         break;
                     case 3:

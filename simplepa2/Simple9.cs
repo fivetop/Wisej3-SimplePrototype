@@ -24,13 +24,12 @@ namespace simplepa2
 			string addinfo = "";
 			LabelON(9,true);
 
-			Console.WriteLine(msg1.message);
-			//Application.StartTask(() => {
-			AlertBox.Show(msg1.message);
-			Console.WriteLine(msg1.message);
-				//Application.Update(this);
-			//});
-			
+			Wisej.Web.Application.Update(this, () =>
+			{
+				AlertBox.Show(msg1.message);
+				System.Diagnostics.Debug.WriteLine(msg1.message);
+			});
+
 
 			switch (msg1.Msgtype)
 			{
