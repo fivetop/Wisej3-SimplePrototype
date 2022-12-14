@@ -5,13 +5,13 @@
 		"navbar-close": "",
 		"navbar-shortcut": ""
 	},
-	"colors":  {
-		"navbar-background": "#2C3D4D",
-		"navbar-background-hover": "#243340",
-		"navbar-background-selected": "#486680",
+	"colors": {
+		"navbar-background": "#1A53B1",
+		"navbar-background-hover": "#3481FF",
+		"navbar-background-selected": "#3481FF",
 		"navbar-text": "#C4CBD1",
-		"navbar-text-hover": "#E9ECEF",
-		"navbar-text-selected": "#E9ECEF"
+		"navbar-text-hover": "#fff27f",
+		"navbar-text-selected": "#fff27f"
 	},
 	"appearances":  {
 		"navbar":  {

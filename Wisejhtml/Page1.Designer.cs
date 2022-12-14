@@ -122,7 +122,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(1452, 14);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 30);
+            this.textBox3.Size = new System.Drawing.Size(100, 36);
             this.textBox3.TabIndex = 0;
             this.textBox3.Text = "오정상님 접속중";
             // 
@@ -140,11 +140,11 @@
             // textBox2
             // 
             this.textBox2.BorderStyle = Wisej.Web.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("@default", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox2.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.textBox2.Location = new System.Drawing.Point(1322, 14);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(84, 30);
+            this.textBox2.Size = new System.Drawing.Size(84, 36);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "12:28:00";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -152,11 +152,11 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = Wisej.Web.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("@default", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.textBox1.Location = new System.Drawing.Point(1232, 14);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(84, 30);
+            this.textBox1.Size = new System.Drawing.Size(84, 36);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "2022.11.18";
             this.textBox1.TextAlign = Wisej.Web.HorizontalAlignment.Right;
@@ -165,7 +165,7 @@
             // 
             this.checkBox3.Location = new System.Drawing.Point(213, 21);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(38, 23);
+            this.checkBox3.Size = new System.Drawing.Size(36, 23);
             this.checkBox3.TabIndex = 3;
             this.checkBox3.Text = "3";
             // 
@@ -173,7 +173,7 @@
             // 
             this.checkBox2.Location = new System.Drawing.Point(159, 21);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(38, 23);
+            this.checkBox2.Size = new System.Drawing.Size(36, 23);
             this.checkBox2.TabIndex = 2;
             this.checkBox2.Text = "2";
             // 
@@ -181,7 +181,7 @@
             // 
             this.checkBox1.Location = new System.Drawing.Point(103, 21);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(38, 23);
+            this.checkBox1.Size = new System.Drawing.Size(36, 23);
             this.checkBox1.TabIndex = 1;
             this.checkBox1.Text = "1";
             // 
@@ -189,7 +189,7 @@
             // 
             this.All.Location = new System.Drawing.Point(35, 21);
             this.All.Name = "All";
-            this.All.Size = new System.Drawing.Size(45, 23);
+            this.All.Size = new System.Drawing.Size(44, 23);
             this.All.TabIndex = 0;
             this.All.Text = "All";
             // 
@@ -223,7 +223,7 @@
             // 
             this.comboBox2.Location = new System.Drawing.Point(652, 24);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 30);
+            this.comboBox2.Size = new System.Drawing.Size(120, 36);
             this.comboBox2.TabIndex = 19;
             // 
             // textBox22
@@ -231,7 +231,7 @@
             this.textBox22.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox22.Location = new System.Drawing.Point(558, 23);
             this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(88, 30);
+            this.textBox22.Size = new System.Drawing.Size(88, 36);
             this.textBox22.TabIndex = 18;
             this.textBox22.Text = "그룹선택";
             this.textBox22.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -240,7 +240,7 @@
             // 
             this.comboBox1.Location = new System.Drawing.Point(402, 26);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 30);
+            this.comboBox1.Size = new System.Drawing.Size(120, 36);
             this.comboBox1.TabIndex = 17;
             // 
             // textBox19
@@ -248,7 +248,7 @@
             this.textBox19.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox19.Location = new System.Drawing.Point(308, 25);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(88, 30);
+            this.textBox19.Size = new System.Drawing.Size(88, 36);
             this.textBox19.TabIndex = 16;
             this.textBox19.Text = "건물선택";
             this.textBox19.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -268,7 +268,7 @@
             this.textBox18.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox18.Location = new System.Drawing.Point(26, 28);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(88, 30);
+            this.textBox18.Size = new System.Drawing.Size(88, 36);
             this.textBox18.TabIndex = 15;
             this.textBox18.Text = "1층-S1";
             this.textBox18.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -285,7 +285,7 @@
             this.textBox21.Font = new System.Drawing.Font("default, Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox21.Location = new System.Drawing.Point(31, 24);
             this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(152, 30);
+            this.textBox21.Size = new System.Drawing.Size(152, 36);
             this.textBox21.TabIndex = 0;
             this.textBox21.Text = "방송구역";
             this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
@@ -380,7 +380,7 @@
             this.textBox15.ForeColor = System.Drawing.Color.FromName("@table-row-line");
             this.textBox15.Location = new System.Drawing.Point(256, 37);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(178, 30);
+            this.textBox15.Size = new System.Drawing.Size(178, 36);
             this.textBox15.TabIndex = 18;
             this.textBox15.Text = "오크동 3개 지역";
             // 
@@ -389,7 +389,7 @@
             this.textBox16.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox16.Location = new System.Drawing.Point(256, 7);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(178, 30);
+            this.textBox16.Size = new System.Drawing.Size(178, 36);
             this.textBox16.TabIndex = 17;
             this.textBox16.Text = "3층 주의 방송";
             // 
@@ -399,7 +399,7 @@
             this.textBox11.ForeColor = System.Drawing.Color.FromName("@table-row-line");
             this.textBox11.Location = new System.Drawing.Point(72, 37);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(178, 30);
+            this.textBox11.Size = new System.Drawing.Size(178, 36);
             this.textBox11.TabIndex = 16;
             this.textBox11.Text = "오크동 3개 지역";
             // 
@@ -408,7 +408,7 @@
             this.textBox14.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox14.Location = new System.Drawing.Point(72, 7);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(178, 30);
+            this.textBox14.Size = new System.Drawing.Size(178, 36);
             this.textBox14.TabIndex = 15;
             this.textBox14.Text = "3층 주의 방송";
             // 
@@ -428,7 +428,7 @@
             this.textBox20.Font = new System.Drawing.Font("default, Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox20.Location = new System.Drawing.Point(31, 24);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(235, 30);
+            this.textBox20.Size = new System.Drawing.Size(235, 36);
             this.textBox20.TabIndex = 0;
             this.textBox20.Text = "음원 Application";
             this.textBox20.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
@@ -480,7 +480,7 @@
             this.textBox13.ForeColor = System.Drawing.Color.FromName("@table-row-line");
             this.textBox13.Location = new System.Drawing.Point(72, 37);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(132, 30);
+            this.textBox13.Size = new System.Drawing.Size(132, 36);
             this.textBox13.TabIndex = 16;
             this.textBox13.Text = "오크동 3개 지역";
             // 
@@ -489,7 +489,7 @@
             this.textBox12.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox12.Location = new System.Drawing.Point(72, 7);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(124, 30);
+            this.textBox12.Size = new System.Drawing.Size(124, 36);
             this.textBox12.TabIndex = 15;
             this.textBox12.Text = "3층 주의 방송";
             this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
@@ -510,7 +510,7 @@
             this.textBox17.Font = new System.Drawing.Font("default, Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox17.Location = new System.Drawing.Point(31, 24);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(152, 30);
+            this.textBox17.Size = new System.Drawing.Size(152, 36);
             this.textBox17.TabIndex = 0;
             this.textBox17.Text = "Preset Quick Bar";
             // 
@@ -537,7 +537,7 @@
             this.textBox9.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox9.Location = new System.Drawing.Point(412, 157);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(88, 30);
+            this.textBox9.Size = new System.Drawing.Size(88, 36);
             this.textBox9.TabIndex = 10;
             this.textBox9.Text = "대기";
             this.textBox9.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -553,7 +553,7 @@
             this.textBox10.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox10.Location = new System.Drawing.Point(412, 93);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(88, 30);
+            this.textBox10.Size = new System.Drawing.Size(88, 36);
             this.textBox10.TabIndex = 9;
             this.textBox10.Text = "비상 방송";
             this.textBox10.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -563,7 +563,7 @@
             this.textBox7.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox7.Location = new System.Drawing.Point(295, 157);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(88, 30);
+            this.textBox7.Size = new System.Drawing.Size(88, 36);
             this.textBox7.TabIndex = 6;
             this.textBox7.Text = "정상";
             this.textBox7.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -581,7 +581,7 @@
             this.textBox8.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox8.Location = new System.Drawing.Point(295, 93);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(88, 30);
+            this.textBox8.Size = new System.Drawing.Size(88, 36);
             this.textBox8.TabIndex = 5;
             this.textBox8.Text = "정비 상태";
             this.textBox8.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -592,7 +592,7 @@
             this.textBox6.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox6.Location = new System.Drawing.Point(178, 157);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(88, 30);
+            this.textBox6.Size = new System.Drawing.Size(88, 36);
             this.textBox6.TabIndex = 3;
             this.textBox6.Text = "대기";
             this.textBox6.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -608,7 +608,7 @@
             this.textBox5.Font = new System.Drawing.Font("default, Helvetica", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox5.Location = new System.Drawing.Point(178, 93);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(88, 30);
+            this.textBox5.Size = new System.Drawing.Size(88, 36);
             this.textBox5.TabIndex = 1;
             this.textBox5.Text = "방송 출력";
             this.textBox5.TextAlign = Wisej.Web.HorizontalAlignment.Center;
@@ -619,7 +619,7 @@
             this.textBox4.Font = new System.Drawing.Font("default, Helvetica", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.textBox4.Location = new System.Drawing.Point(31, 24);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 30);
+            this.textBox4.Size = new System.Drawing.Size(152, 36);
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = "방송 모니터링";
             // 
@@ -637,13 +637,13 @@
             // 
             // Page1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.htmlPanel1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1893, 1034);
+            this.Size = new System.Drawing.Size(754, 518);
             this.Text = "Page1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
