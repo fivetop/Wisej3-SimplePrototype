@@ -44,6 +44,7 @@
             this.panel40 = new Wisej.Web.Panel();
             this.label13 = new Wisej.Web.Label();
             this.panel41 = new Wisej.Web.Panel();
+            this.label10 = new Wisej.Web.Label();
             this.line5 = new Wisej.Web.Line();
             this.panel42 = new Wisej.Web.Panel();
             this.panel43 = new Wisej.Web.Panel();
@@ -54,6 +55,7 @@
             this.panel47 = new Wisej.Web.Panel();
             this.label14 = new Wisej.Web.Label();
             this.panel48 = new Wisej.Web.Panel();
+            this.label9 = new Wisej.Web.Label();
             this.line1 = new Wisej.Web.Line();
             this.panel50 = new Wisej.Web.Panel();
             this.panel51 = new Wisej.Web.Panel();
@@ -66,6 +68,7 @@
             this.panel55 = new Wisej.Web.Panel();
             this.label15 = new Wisej.Web.Label();
             this.panel56 = new Wisej.Web.Panel();
+            this.label4 = new Wisej.Web.Label();
             this.line2 = new Wisej.Web.Line();
             this.panel57 = new Wisej.Web.Panel();
             this.panel58 = new Wisej.Web.Panel();
@@ -79,6 +82,7 @@
             this.panel62 = new Wisej.Web.Panel();
             this.label16 = new Wisej.Web.Label();
             this.panel63 = new Wisej.Web.Panel();
+            this.label5 = new Wisej.Web.Label();
             this.line3 = new Wisej.Web.Line();
             this.panel64 = new Wisej.Web.Panel();
             this.label8 = new Wisej.Web.Label();
@@ -94,10 +98,6 @@
             this.comboBox1 = new Wisej.Web.ComboBox();
             this.button2 = new Wisej.Web.Button();
             this.label2 = new Wisej.Web.Label();
-            this.label5 = new Wisej.Web.Label();
-            this.label4 = new Wisej.Web.Label();
-            this.label9 = new Wisej.Web.Label();
-            this.label10 = new Wisej.Web.Label();
             this.panel1.SuspendLayout();
             this.panel31.SuspendLayout();
             this.panel33.SuspendLayout();
@@ -335,6 +335,20 @@
             this.panel41.Size = new System.Drawing.Size(200, 156);
             this.panel41.TabIndex = 170;
             // 
+            // label10
+            // 
+            this.label10.Anchor = Wisej.Web.AnchorStyles.None;
+            this.label10.AppearanceKey = "rounded-panel";
+            this.label10.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
+            this.label10.Font = new System.Drawing.Font("ns500", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label10.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label10.Location = new System.Drawing.Point(40, 62);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 32);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "Analog 1ch";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // line5
             // 
             this.line5.LineColor = System.Drawing.Color.FromName("@buttonHighlight");
@@ -443,6 +457,20 @@
             this.panel48.Name = "panel48";
             this.panel48.Size = new System.Drawing.Size(200, 156);
             this.panel48.TabIndex = 170;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = Wisej.Web.AnchorStyles.None;
+            this.label9.AppearanceKey = "rounded-panel";
+            this.label9.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
+            this.label9.Font = new System.Drawing.Font("ns500", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label9.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label9.Location = new System.Drawing.Point(40, 62);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 32);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Analog 1ch";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // line1
             // 
@@ -584,6 +612,20 @@
             this.panel56.Name = "panel56";
             this.panel56.Size = new System.Drawing.Size(200, 156);
             this.panel56.TabIndex = 170;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = Wisej.Web.AnchorStyles.None;
+            this.label4.AppearanceKey = "rounded-panel";
+            this.label4.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
+            this.label4.Font = new System.Drawing.Font("ns500", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label4.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label4.Location = new System.Drawing.Point(40, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 32);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Analog 1ch";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // line2
             // 
@@ -741,6 +783,20 @@
             this.panel63.Name = "panel63";
             this.panel63.Size = new System.Drawing.Size(200, 156);
             this.panel63.TabIndex = 170;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = Wisej.Web.AnchorStyles.None;
+            this.label5.AppearanceKey = "rounded-panel";
+            this.label5.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
+            this.label5.Font = new System.Drawing.Font("ns500", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label5.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label5.Location = new System.Drawing.Point(40, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 32);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Analog 1ch";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // line3
             // 
@@ -906,6 +962,7 @@
             this.button2.Size = new System.Drawing.Size(100, 32);
             this.button2.TabIndex = 21;
             this.button2.Text = "스캔";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -917,62 +974,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "DSP";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = Wisej.Web.AnchorStyles.None;
-            this.label5.AppearanceKey = "rounded-panel";
-            this.label5.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
-            this.label5.Font = new System.Drawing.Font("ns500", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label5.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label5.Location = new System.Drawing.Point(40, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 32);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Analog 1ch";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = Wisej.Web.AnchorStyles.None;
-            this.label4.AppearanceKey = "rounded-panel";
-            this.label4.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
-            this.label4.Font = new System.Drawing.Font("ns500", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label4.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label4.Location = new System.Drawing.Point(40, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 32);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Analog 1ch";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = Wisej.Web.AnchorStyles.None;
-            this.label9.AppearanceKey = "rounded-panel";
-            this.label9.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
-            this.label9.Font = new System.Drawing.Font("ns500", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label9.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label9.Location = new System.Drawing.Point(40, 62);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 32);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Analog 1ch";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = Wisej.Web.AnchorStyles.None;
-            this.label10.AppearanceKey = "rounded-panel";
-            this.label10.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
-            this.label10.Font = new System.Drawing.Font("ns500", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label10.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label10.Location = new System.Drawing.Point(40, 62);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 32);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "Analog 1ch";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // View_BBCOutput
             // 

@@ -222,6 +222,9 @@
     <EmbeddedResource Include="UI\Components\Comp_ZoneFloorCardList.resx">
       <DependentUpon>Comp_ZoneFloorCardList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pages\PA_Login.resx">
+      <DependentUpon>PA_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Pages\PA_MainFrame.resx">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -760,6 +763,9 @@
     <EmbeddedResource Include="UI\Views\View_SystemSMSRegistration.resx">
       <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_TopPanelBar.resx">
+      <DependentUpon>View_TopPanelBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\AGroup.resx">
       <DependentUpon>AGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -833,6 +839,7 @@
     <Content Include="Themes\LSMaterial-3.theme" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <Content Include="Themes\Wisej-Themes.pdf" />
+    <Content Include="Themes\NavigationBar.mixin.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

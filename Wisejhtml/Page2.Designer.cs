@@ -51,12 +51,13 @@
             this.navigationBarItem3});
             this.navigationBar1.Name = "navigationBar1";
             this.navigationBar1.ShowUser = false;
-            this.navigationBar1.Size = new System.Drawing.Size(282, 535);
+            this.navigationBar1.Size = new System.Drawing.Size(282, 614);
             this.navigationBar1.TabIndex = 1;
             // 
             // navigationBarItem1
             // 
             this.navigationBarItem1.Name = "NavigationBarItem";
+            this.navigationBarItem1.RightToLeftLayout = true;
             // 
             // navigationBarItem2
             // 
@@ -90,9 +91,9 @@
             // bsDeviceManager1
             // 
             this.bsDeviceManager1.Dock = Wisej.Web.DockStyle.Right;
-            this.bsDeviceManager1.Location = new System.Drawing.Point(460, 0);
+            this.bsDeviceManager1.Location = new System.Drawing.Point(887, 0);
             this.bsDeviceManager1.Name = "bsDeviceManager1";
-            this.bsDeviceManager1.Size = new System.Drawing.Size(311, 535);
+            this.bsDeviceManager1.Size = new System.Drawing.Size(311, 614);
             this.bsDeviceManager1.TabIndex = 0;
             // 
             // pictureBox1
@@ -111,7 +112,7 @@
             this.Controls.Add(this.navigationBar1);
             this.Controls.Add(this.bsDeviceManager1);
             this.Name = "Page2";
-            this.Size = new System.Drawing.Size(771, 535);
+            this.Size = new System.Drawing.Size(1198, 614);
             this.Text = "Page1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

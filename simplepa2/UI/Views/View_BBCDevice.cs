@@ -1,4 +1,5 @@
 ﻿using DataClass;
+using simplepa2.UI.Popups;
 using System;
 using System.IO;
 using Wisej.Web;
@@ -7,6 +8,7 @@ namespace simplepa2.UI.Views
 {
     public partial class View_BBCDevice : Wisej.Web.UserControl
     {
+        private Popup_BBCDeviceForm popup_bbcDeviceForm;
         public View_BBCDevice()
         {
             InitializeComponent();
@@ -72,6 +74,27 @@ namespace simplepa2.UI.Views
                 }
                 dataGridView3.EndEdit();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // show the popup.
+            if (this.popup_bbcDeviceForm == null)
+                this.popup_bbcDeviceForm = new Popup_BBCDeviceForm()
+                {
+                    Alignment = Placement.BottomRight,
+                    Height = this.Parent.Height
+                };
+
+            if (this.popup_bbcDeviceForm.Visible)
+                this.popup_bbcDeviceForm.Close();
+            else
+            {
+                this.popup_bbcDeviceForm.Height = this.Parent.Parent.Height;
+                this.popup_bbcDeviceForm.ShowPopup(this.Parent);
+            }
+
+
         }
     }
 }

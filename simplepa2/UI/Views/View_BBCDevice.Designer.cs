@@ -166,6 +166,7 @@
             this.button4.Size = new System.Drawing.Size(100, 32);
             this.button4.TabIndex = 84;
             this.button4.Text = "수동변경";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // popTestButton
             // 
