@@ -814,6 +814,9 @@
     <EmbeddedResource Include="win\View_BBSAnchor.resx">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="win\View_DashBoard.resx">
+      <DependentUpon>View_DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
     </EmbeddedResource>
@@ -1421,6 +1424,12 @@
     </Compile>
     <Compile Include="win\View_BBSAnchor.designer.cs">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="win\View_DashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="win\View_DashBoard.Designer.cs">
+      <DependentUpon>View_DashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="win\Window1.cs">
       <SubType>Form</SubType>
