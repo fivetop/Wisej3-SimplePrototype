@@ -70,7 +70,6 @@ namespace simplepa2
 
 
 
-
         #endregion
 
         #region // EMServer 부분 
@@ -159,21 +158,23 @@ namespace simplepa2
             }
         }
 
-        public void updateAsset()
+        // 장비스캔 후 자산정보와 장비 정보를 1대1로 맵핑 처리 
+        public void LinkAssetDevice()
         {
             Tam.AssetsTableAdapter.Fill(Ds1.Assets);
             Tam.DeviceTableAdapter.Fill(Ds1.Device);
 
-            foreach (var t1 in Ds1.Device)
+            foreach (var d1 in Ds1.Device)
             {
-                var m1 = Ds1.Assets.FirstOrDefault(p=>p.DeviceName == t1.DeviceName && p.ch == t1.chspk);
-                if (m1 == null)
-                    continue;
-                m1.DeviceId = t1.DeviceId;
-                m1.ip = t1.ip;
-                t1.AssetId = m1.AssetId; 
-                t1.emData = m1.emData;
-                t1.path = m1.path;
+                var a1 = Ds1.Assets.FirstOrDefault(p=>p.DeviceName == d1.DeviceName && p.ch == d1.chspk);
+                if (a1 == null) continue;
+                // 자산 정보에 디바이스 아이디 와 아이피 
+                // 장비 정보에 자산아이디, 비상방송 정보, 패스 정보 
+                a1.DeviceId = d1.DeviceId;
+                a1.ip = d1.ip;
+                d1.AssetId = a1.AssetId; 
+                d1.emData = a1.emData;
+                d1.path = a1.path;
             }
             Tam.AssetsTableAdapter.Update(Ds1.Assets);
             Tam.DeviceTableAdapter.Update(Ds1.Device);
