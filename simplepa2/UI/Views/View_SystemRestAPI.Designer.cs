@@ -75,7 +75,7 @@
             // panel3
             // 
             this.panel3.Dock = Wisej.Web.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 339);
+            this.panel3.Location = new System.Drawing.Point(0, 133);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1320, 20);
             this.panel3.TabIndex = 163;
@@ -88,7 +88,7 @@
             this.panel89.Location = new System.Drawing.Point(0, 20);
             this.panel89.Name = "panel89";
             this.panel89.Padding = new Wisej.Web.Padding(20);
-            this.panel89.Size = new System.Drawing.Size(1320, 319);
+            this.panel89.Size = new System.Drawing.Size(1320, 113);
             this.panel89.TabIndex = 160;
             // 
             // panel37

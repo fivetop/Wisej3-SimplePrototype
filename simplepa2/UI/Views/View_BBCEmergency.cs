@@ -27,5 +27,10 @@ namespace simplepa2.UI.Views
             else
                 this.pop_BBCEmergencyForm.ShowPopup(this);
         }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

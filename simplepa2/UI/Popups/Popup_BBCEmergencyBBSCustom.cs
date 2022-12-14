@@ -9,5 +9,15 @@ namespace simplepa2.UI.Popups
         {
             InitializeComponent();
         }
+
+        private void Popup_BBCEmergencyBBSCustom_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_PanelCollapsed(object sender, EventArgs e)
+        {
+
+        }
     }
 }

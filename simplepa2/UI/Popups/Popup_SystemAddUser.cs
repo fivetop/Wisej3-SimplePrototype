@@ -9,5 +9,10 @@ namespace simplepa2.UI.Popups
         {
             InitializeComponent();
         }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

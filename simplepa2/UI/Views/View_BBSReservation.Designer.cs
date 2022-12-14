@@ -30,9 +30,11 @@
         {
             this.panel2 = new Wisej.Web.Panel();
             this.panel4 = new Wisej.Web.Panel();
+            this.fullCalendar1 = new Wisej.Web.Ext.FullCalendar.FullCalendar();
             this.panel5 = new Wisej.Web.Panel();
             this.panel6 = new Wisej.Web.Panel();
             this.panel136 = new Wisej.Web.Panel();
+            this.button1 = new Wisej.Web.Button();
             this.label66 = new Wisej.Web.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -54,6 +56,7 @@
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.fullCalendar1);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = Wisej.Web.DockStyle.Fill;
@@ -63,6 +66,15 @@
             this.panel4.Size = new System.Drawing.Size(1320, 768);
             this.panel4.TabIndex = 124;
             this.panel4.Text = "listPanel";
+            // 
+            // fullCalendar1
+            // 
+            this.fullCalendar1.Dock = Wisej.Web.DockStyle.Fill;
+            this.fullCalendar1.Location = new System.Drawing.Point(0, 40);
+            this.fullCalendar1.Name = "fullCalendar1";
+            this.fullCalendar1.Size = new System.Drawing.Size(1320, 728);
+            this.fullCalendar1.TabIndex = 130;
+            this.fullCalendar1.Text = "fullCalendar1";
             // 
             // panel5
             // 
@@ -83,12 +95,23 @@
             // panel136
             // 
             this.panel136.BackColor = System.Drawing.Color.Transparent;
+            this.panel136.Controls.Add(this.button1);
             this.panel136.Controls.Add(this.label66);
             this.panel136.Dock = Wisej.Web.DockStyle.Top;
             this.panel136.Location = new System.Drawing.Point(20, 20);
             this.panel136.Name = "panel136";
             this.panel136.Size = new System.Drawing.Size(1320, 52);
             this.panel136.TabIndex = 123;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(170, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 33);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "추가(임시버튼)";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label66
             // 
@@ -124,7 +147,9 @@
         private Wisej.Web.Panel panel4;
         private Wisej.Web.Panel panel5;
         private Wisej.Web.Panel panel6;
+        private Wisej.Web.Ext.FullCalendar.FullCalendar fullCalendar1;
         private Wisej.Web.Panel panel136;
+        private Wisej.Web.Button button1;
         private Wisej.Web.Label label66;
     }
 }

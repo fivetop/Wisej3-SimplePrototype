@@ -17,11 +17,13 @@ namespace simplepa2.UI.Views
 
         private void View_BBSAnchor_Load(object sender, EventArgs e)
         {
+			/*
             this.btnStart.Enabled = true;
             this.btnStop.Enabled = false;
             this.dataGridView2.RowCount = 10;
 
             this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+			*/
 
         }
 
@@ -32,6 +34,7 @@ namespace simplepa2.UI.Views
 
 		private void btnStart_Click(object sender, EventArgs e)
 		{
+			/*
 			SelAsset.Clear();
 			foreach (DataGridViewRow row in dataGridView1.Rows)
 			{
@@ -60,10 +63,12 @@ namespace simplepa2.UI.Views
 				this.btnStart.Enabled = false;
 				this.btnStop.Enabled = true;
 			}
+			*/
 		}
 
 		private void btnStop_Click(object sender, EventArgs e)
 		{
+			/*
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
 			if (guid != Guid.Empty)
@@ -71,10 +76,12 @@ namespace simplepa2.UI.Views
 				gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, null, null, guid);
 				guid = Guid.Empty;
 			}
+			*/
 		}
 
 		private void Win_EventMusic(object sender, EventArgs e)
 		{
+			/*
 			this.dataGridView2.DataSource = SelMusic;
 			this.dataGridView2.Refresh();
 
@@ -83,6 +90,7 @@ namespace simplepa2.UI.Views
 				this.dataGridView2.DataSource = null;
 				this.dataGridView2.RowCount = 10;
 			}
+			*/
 		}
 
 		internal void reDraw()
@@ -97,6 +105,7 @@ namespace simplepa2.UI.Views
 
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
+			/*
 			if (e.RowIndex < 0 || e.ColumnIndex < 1)
 				return;
 			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)dataGridView1.Rows[e.RowIndex].Cells["chk"];
@@ -111,6 +120,8 @@ namespace simplepa2.UI.Views
 				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = false;
 			}
 			dataGridView1.EndEdit();
+
+			*/
 		}
 
 		private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

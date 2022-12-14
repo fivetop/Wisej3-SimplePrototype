@@ -204,9 +204,7 @@ namespace simplepa2.UI.Views
             else
             {
                 this.form_BBCZoneImport.ShowDialog();
-            }
-                
-
+            }      
 
         }
     }

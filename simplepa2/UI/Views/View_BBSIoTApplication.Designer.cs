@@ -67,14 +67,14 @@
             this.panel6 = new Wisej.Web.Panel();
             this.panel8 = new Wisej.Web.Panel();
             this.panel45 = new Wisej.Web.Panel();
-            this.panel100 = new Wisej.Web.Panel();
-            this.panel96 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.접속IP = new Wisej.Web.DataGridViewTextBoxColumn();
             this.접속시간 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.요청내역 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송시간 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송구역 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel100 = new Wisej.Web.Panel();
+            this.panel96 = new Wisej.Web.Panel();
             this.line3 = new Wisej.Web.Line();
             this.panel91 = new Wisej.Web.Panel();
             this.label32 = new Wisej.Web.Label();
@@ -82,6 +82,12 @@
             this.panel44 = new Wisej.Web.Panel();
             this.panel33 = new Wisej.Web.Panel();
             this.panel41 = new Wisej.Web.Panel();
+            this.button2 = new Wisej.Web.Button();
+            this.panel110 = new Wisej.Web.Panel();
+            this.label30 = new Wisej.Web.Label();
+            this.label52 = new Wisej.Web.Label();
+            this.panel111 = new Wisej.Web.Panel();
+            this.panel112 = new Wisej.Web.Panel();
             this.label18 = new Wisej.Web.Label();
             this.panel42 = new Wisej.Web.Panel();
             this.textBox1 = new Wisej.Web.TextBox();
@@ -125,11 +131,12 @@
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel45.SuspendLayout();
-            this.panel96.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel91.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel41.SuspendLayout();
+            this.panel110.SuspendLayout();
+            this.panel111.SuspendLayout();
             this.panel42.SuspendLayout();
             this.panel43.SuspendLayout();
             this.panel89.SuspendLayout();
@@ -550,6 +557,7 @@
             // 
             this.panel45.AutoSize = true;
             this.panel45.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel45.Controls.Add(this.dataGridView1);
             this.panel45.Controls.Add(this.panel100);
             this.panel45.Controls.Add(this.panel96);
             this.panel45.Controls.Add(this.line3);
@@ -558,40 +566,23 @@
             this.panel45.Location = new System.Drawing.Point(0, 596);
             this.panel45.Name = "panel45";
             this.panel45.Padding = new Wisej.Web.Padding(20);
-            this.panel45.Size = new System.Drawing.Size(720, 98);
+            this.panel45.Size = new System.Drawing.Size(720, 133);
             this.panel45.TabIndex = 163;
-            // 
-            // panel100
-            // 
-            this.panel100.AutoSize = true;
-            this.panel100.Dock = Wisej.Web.DockStyle.Top;
-            this.panel100.Location = new System.Drawing.Point(20, 78);
-            this.panel100.Name = "panel100";
-            this.panel100.Size = new System.Drawing.Size(680, 0);
-            this.panel100.TabIndex = 174;
-            // 
-            // panel96
-            // 
-            this.panel96.Controls.Add(this.dataGridView1);
-            this.panel96.Dock = Wisej.Web.DockStyle.Top;
-            this.panel96.Location = new System.Drawing.Point(20, 58);
-            this.panel96.Name = "panel96";
-            this.panel96.Size = new System.Drawing.Size(680, 20);
-            this.panel96.TabIndex = 172;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSize = true;
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.접속IP,
             this.접속시간,
             this.요청내역,
             this.방송시간,
             this.방송구역});
-            this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Dock = Wisej.Web.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 78);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(680, 20);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Size = new System.Drawing.Size(680, 35);
+            this.dataGridView1.TabIndex = 176;
             // 
             // 접속IP
             // 
@@ -617,6 +608,23 @@
             // 
             this.방송구역.HeaderText = "방송구역";
             this.방송구역.Name = "방송구역";
+            // 
+            // panel100
+            // 
+            this.panel100.AutoSize = true;
+            this.panel100.Dock = Wisej.Web.DockStyle.Top;
+            this.panel100.Location = new System.Drawing.Point(20, 78);
+            this.panel100.Name = "panel100";
+            this.panel100.Size = new System.Drawing.Size(680, 0);
+            this.panel100.TabIndex = 174;
+            // 
+            // panel96
+            // 
+            this.panel96.Dock = Wisej.Web.DockStyle.Top;
+            this.panel96.Location = new System.Drawing.Point(20, 58);
+            this.panel96.Name = "panel96";
+            this.panel96.Size = new System.Drawing.Size(680, 20);
+            this.panel96.TabIndex = 172;
             // 
             // line3
             // 
@@ -690,6 +698,8 @@
             // 
             // panel41
             // 
+            this.panel41.Controls.Add(this.button2);
+            this.panel41.Controls.Add(this.panel110);
             this.panel41.Controls.Add(this.label18);
             this.panel41.Dock = Wisej.Web.DockStyle.Top;
             this.panel41.Location = new System.Drawing.Point(20, 114);
@@ -697,6 +707,72 @@
             this.panel41.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
             this.panel41.Size = new System.Drawing.Size(680, 176);
             this.panel41.TabIndex = 165;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.button2.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button2.Location = new System.Drawing.Point(434, 25);
+            this.button2.Margin = new Wisej.Web.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 75);
+            this.button2.TabIndex = 138;
+            this.button2.Text = "변경";
+            // 
+            // panel110
+            // 
+            this.panel110.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
+            this.panel110.Controls.Add(this.label30);
+            this.panel110.Controls.Add(this.label52);
+            this.panel110.Controls.Add(this.panel111);
+            this.panel110.Location = new System.Drawing.Point(126, 25);
+            this.panel110.Name = "panel110";
+            this.panel110.Size = new System.Drawing.Size(298, 75);
+            this.panel110.TabIndex = 137;
+            // 
+            // label30
+            // 
+            this.label30.Font = new System.Drawing.Font("@ns400", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(77, 77, 77);
+            this.label30.Location = new System.Drawing.Point(76, 38);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(204, 20);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "로비외 23곳 / 음원 3개";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label52
+            // 
+            this.label52.Font = new System.Drawing.Font("@ns700", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label52.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.label52.Location = new System.Drawing.Point(76, 17);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(188, 20);
+            this.label52.TabIndex = 3;
+            this.label52.Tag = "204";
+            this.label52.Text = "3층 주의 방송";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel111
+            // 
+            this.panel111.BackColor = System.Drawing.Color.White;
+            this.panel111.Controls.Add(this.panel112);
+            this.panel111.CssStyle = "    width: 50px;\r\n    height: 50px;\r\n    border-radius: 15px;\r\n    background: #f" +
+    "ff;\r\n    border: 1px solid /*#E0E3EB*/#dde4f3;";
+            this.panel111.Location = new System.Drawing.Point(16, 13);
+            this.panel111.Name = "panel111";
+            this.panel111.Size = new System.Drawing.Size(50, 50);
+            this.panel111.TabIndex = 0;
+            // 
+            // panel112
+            // 
+            this.panel112.CssStyle = "    background: #fff url(../images/icon-ls-004.png) center no-repeat;\r\n    backgr" +
+    "ound-size: 24px 24px;";
+            this.panel112.Location = new System.Drawing.Point(13, 13);
+            this.panel112.Name = "panel112";
+            this.panel112.Size = new System.Drawing.Size(24, 24);
+            this.panel112.TabIndex = 0;
             // 
             // label18
             // 
@@ -1049,11 +1125,12 @@
             this.panel8.PerformLayout();
             this.panel45.ResumeLayout(false);
             this.panel45.PerformLayout();
-            this.panel96.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel91.ResumeLayout(false);
             this.panel33.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
+            this.panel110.ResumeLayout(false);
+            this.panel111.ResumeLayout(false);
             this.panel42.ResumeLayout(false);
             this.panel43.ResumeLayout(false);
             this.panel89.ResumeLayout(false);
@@ -1109,12 +1186,6 @@
         private Wisej.Web.Panel panel45;
         private Wisej.Web.Panel panel100;
         private Wisej.Web.Panel panel96;
-        private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn 접속IP;
-        private Wisej.Web.DataGridViewTextBoxColumn 접속시간;
-        private Wisej.Web.DataGridViewTextBoxColumn 요청내역;
-        private Wisej.Web.DataGridViewTextBoxColumn 방송시간;
-        private Wisej.Web.DataGridViewTextBoxColumn 방송구역;
         private Wisej.Web.Line line3;
         private Wisej.Web.Panel panel91;
         private Wisej.Web.Label label32;
@@ -1149,5 +1220,17 @@
         private Wisej.Web.Button button5;
         private Wisej.Web.Button button53;
         private Wisej.Web.Label label66;
+        private Wisej.Web.DataGridView dataGridView1;
+        private Wisej.Web.DataGridViewTextBoxColumn 접속IP;
+        private Wisej.Web.DataGridViewTextBoxColumn 접속시간;
+        private Wisej.Web.DataGridViewTextBoxColumn 요청내역;
+        private Wisej.Web.DataGridViewTextBoxColumn 방송시간;
+        private Wisej.Web.DataGridViewTextBoxColumn 방송구역;
+        private Wisej.Web.Panel panel110;
+        private Wisej.Web.Label label30;
+        private Wisej.Web.Label label52;
+        private Wisej.Web.Panel panel111;
+        private Wisej.Web.Panel panel112;
+        private Wisej.Web.Button button2;
     }
 }

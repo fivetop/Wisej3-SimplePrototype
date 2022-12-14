@@ -18,12 +18,15 @@ namespace simplepa2.UI.Views
 
         public void Refresh()
         {
+            /*
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-            this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
+            this.bSroomTableAdapter.Fill(this.dataSet1.BSroom); */
         }
 
         private void View_DashBoard_Load(object sender, EventArgs e)
         {
+            /*
+            
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
             this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
 
@@ -86,6 +89,8 @@ namespace simplepa2.UI.Views
             }
             DevicelistView1.EndUpdate();
 
+            */
+
 //            LabelON(9, false);
 
         }
@@ -94,6 +99,7 @@ namespace simplepa2.UI.Views
         // split 위치 설정 세로, 가로,  세로
         private void split_위치()
         {
+            /*
             // Main 화면 
             Cookie d1 = Application.Cookies.Get("d1");
             Cookie d2 = Application.Cookies.Get("d2");
@@ -104,11 +110,13 @@ namespace simplepa2.UI.Views
                 splitContainer5.SplitterDistance = int.Parse(d2.Value);
                 splitContainer6.SplitterDistance = int.Parse(d3.Value);
             }
+            */
         }
 
         // 입장하기 
         private void btnBS1_Click(object sender, EventArgs e)
         {
+            /*
             var nCurr = dataRepeater1.CurrentItemIndex;
             string n = Application.Session["user_name"];
 
@@ -119,17 +127,19 @@ namespace simplepa2.UI.Views
             dataSource[nCurr].username = n;
             dataRepeater1.Refresh();
             this.bSroomTableAdapter.Update(this.dataSet1.BSroom);
-
+            */
         }
 
         // 방송 종료 
         private void btnBS2_Click(object sender, EventArgs e)
         {
+            /*
             var nCurr = dataRepeater1.CurrentItemIndex;
             dataSource[nCurr].state_int = 0;
             dataSource[nCurr].username = "";
             dataRepeater1.Refresh();
             this.bSroomTableAdapter.Update(this.dataSet1.BSroom);
+            */
         }
 
     }

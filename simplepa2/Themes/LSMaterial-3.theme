@@ -4147,6 +4147,39 @@
 				}
 			}
 		},
+		"rounded-line-panel": {
+			"inherit": "panel",
+			"states": {
+				"default": {
+					"styles": {
+						"radius": 8,
+						"borderSize": 1,
+						"borderColor": "#2094F2",
+						"borderStyle": "solid"
+					}
+				}
+			}
+		},
+		"rounded-panel": {
+			"inherit": "panel",
+			"states": {
+				"default": {
+					"styles": {
+						"radius": 10
+					}
+				}
+			}
+		},
+		"rounded-panel2": {
+			"inherit": "panel",
+			"states": {
+				"default": {
+					"styles": {
+						"radius": 15
+					}
+				}
+			}
+		},
 		"scrollarea": {
 			"text": "Scrollarea",
 			"states": {

@@ -125,7 +125,7 @@
             this.label19.AutoEllipsis = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Dock = Wisej.Web.DockStyle.Left;
-            this.label19.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label19.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label19.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label19.Location = new System.Drawing.Point(0, 20);
             this.label19.Margin = new Wisej.Web.Padding(0);
@@ -157,7 +157,7 @@
             // 
             this.label20.AutoEllipsis = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label20.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label20.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label20.Location = new System.Drawing.Point(32, 0);
             this.label20.Margin = new Wisej.Web.Padding(0);
@@ -174,7 +174,7 @@
             this.label21.CssStyle = "border-radius: 11px;";
             this.label21.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label21.ForeColor = System.Drawing.Color.FromName("@buttonText");
-            this.label21.Location = new System.Drawing.Point(0, 1);
+            this.label21.Location = new System.Drawing.Point(0, 2);
             this.label21.Margin = new Wisej.Web.Padding(0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(22, 22);
@@ -230,7 +230,7 @@
             this.label24.AutoEllipsis = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Dock = Wisej.Web.DockStyle.Left;
-            this.label24.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label24.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label24.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label24.Location = new System.Drawing.Point(0, 20);
             this.label24.Margin = new Wisej.Web.Padding(0);
@@ -262,7 +262,7 @@
             // 
             this.label23.AutoEllipsis = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("default", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label23.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label23.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label23.Location = new System.Drawing.Point(32, 0);
             this.label23.Margin = new Wisej.Web.Padding(0);
@@ -279,7 +279,7 @@
             this.label22.CssStyle = "border-radius: 11px;";
             this.label22.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label22.ForeColor = System.Drawing.Color.FromName("@buttonText");
-            this.label22.Location = new System.Drawing.Point(0, 1);
+            this.label22.Location = new System.Drawing.Point(0, 2);
             this.label22.Margin = new Wisej.Web.Padding(0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(22, 22);

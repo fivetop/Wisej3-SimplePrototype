@@ -473,7 +473,7 @@
             this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.checkBox2.Location = new System.Drawing.Point(0, 0);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(52, 24);
+            this.checkBox2.Size = new System.Drawing.Size(52, 23);
             this.checkBox2.TabIndex = 5;
             this.checkBox2.Text = "1층";
             // 
@@ -767,7 +767,7 @@
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.checkBox1.Location = new System.Drawing.Point(0, 0);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(52, 24);
+            this.checkBox1.Size = new System.Drawing.Size(52, 23);
             this.checkBox1.TabIndex = 5;
             this.checkBox1.Text = "1층";
             // 
@@ -1052,7 +1052,7 @@
             this.checkBox4.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.checkBox4.Location = new System.Drawing.Point(0, 0);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(52, 24);
+            this.checkBox4.Size = new System.Drawing.Size(52, 23);
             this.checkBox4.TabIndex = 4;
             this.checkBox4.Text = "1층";
             // 
@@ -1633,6 +1633,7 @@
             // Comp_PresetDetailPanel
             // 
             this.Controls.Add(this.panel3);
+            this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "Comp_PresetDetailPanel";
             this.Size = new System.Drawing.Size(760, 860);
             this.panel3.ResumeLayout(false);

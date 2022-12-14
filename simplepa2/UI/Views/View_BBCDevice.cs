@@ -31,7 +31,7 @@ namespace simplepa2.UI.Views
         */
         private void BSDeviceManager_Load(object sender, EventArgs e)
         {
-            this.deviceTableAdapter.Fill(this.dataSet1.Device);
+           //  this.deviceTableAdapter.Fill(this.dataSet1.Device);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace simplepa2.UI.Views
 
         internal void reDraw()
         {
-            this.deviceTableAdapter.Fill(this.dataSet1.Device);
+           //  this.deviceTableAdapter.Fill(this.dataSet1.Device);
         }
 
         private void dataGridView3_DataUpdated(object sender, DataGridViewDataUpdatedEventArgs e)

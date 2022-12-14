@@ -20,8 +20,8 @@ namespace simplepa2.UI.Views
 
         private void comboBoxView2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var flow = (FlowDirection)Enum.Parse(typeof(FlowDirection), (string)this.comboBoxView2.SelectedItem);
-            this.flowLayoutPanel1.FlowDirection = flow;
+           // var flow = (FlowDirection)Enum.Parse(typeof(FlowDirection), (string)this.comboBoxView2.SelectedItem);
+            //this.flowLayoutPanel1.FlowDirection = flow;
 
         }
 
@@ -49,7 +49,7 @@ namespace simplepa2.UI.Views
             card5.verifyClick += new Comp_SiteCard.CompSiteCardVerify(this.siteCardVerifyClick);
             card6.verifyClick += new Comp_SiteCard.CompSiteCardVerify(this.siteCardVerifyClick);
             card7.verifyClick += new Comp_SiteCard.CompSiteCardVerify(this.siteCardVerifyClick);            
-
+            /*
             this.flowLayoutPanel1.Controls.Add(card1);
             this.flowLayoutPanel1.Controls.Add(card2);
             this.flowLayoutPanel1.Controls.Add(card3);
@@ -57,7 +57,7 @@ namespace simplepa2.UI.Views
             this.flowLayoutPanel1.Controls.Add(card5);
             this.flowLayoutPanel1.Controls.Add(card6);
             this.flowLayoutPanel1.Controls.Add(card7);
-
+            */
         }
 
         private void siteCardVerifyClick(object sender, Comp_SiteCard.CompSiteCardVerifyClickedEventArgs args)

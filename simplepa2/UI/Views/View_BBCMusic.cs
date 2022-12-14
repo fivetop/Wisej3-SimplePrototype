@@ -9,5 +9,10 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
         }
+
+        private void View_BBCMusic_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

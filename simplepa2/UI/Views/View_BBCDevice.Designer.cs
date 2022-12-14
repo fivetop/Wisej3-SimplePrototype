@@ -28,217 +28,218 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dataSet1 = new simplepa2.DataSet1();
-            this.deviceBindingSource = new Wisej.Web.BindingSource(this.components);
-            this.deviceTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
-            this.ptop = new Wisej.Web.Panel();
-            this.button1 = new Wisej.Web.Button();
             this.panel2 = new Wisej.Web.Panel();
-            this.colDsp_Vol_Em = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDsp_Vol = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDsp_Chno = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDsp_Name = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDevice = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colChspk = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridView3 = new Wisej.Web.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
-            this.ptop.SuspendLayout();
+            this.장비아이디 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.장비이름 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.장비종류 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.IP주소 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.카테고리 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.상태 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.발견시간 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.관리여부 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel1 = new Wisej.Web.Panel();
+            this.button5 = new Wisej.Web.Button();
+            this.button4 = new Wisej.Web.Button();
+            this.popTestButton = new Wisej.Web.Button();
+            this.label3 = new Wisej.Web.Label();
+            this.textBox2 = new Wisej.Web.TextBox();
+            this.dataSet11 = new simplepa2.DataSet1();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // deviceBindingSource
-            // 
-            this.deviceBindingSource.DataMember = "Device";
-            this.deviceBindingSource.DataSource = this.dataSet1;
-            // 
-            // deviceTableAdapter
-            // 
-            this.deviceTableAdapter.ClearBeforeFill = true;
-            // 
-            // ptop
-            // 
-            this.ptop.Controls.Add(this.button1);
-            this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
-            this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(910, 70);
-            this.ptop.TabIndex = 4;
-            this.ptop.TabStop = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(18, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "장비 스캔 요청";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dataGridView3);
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Location = new System.Drawing.Point(20, 20);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(910, 546);
-            this.panel2.TabIndex = 5;
-            this.panel2.TabStop = true;
-            // 
-            // colDsp_Vol_Em
-            // 
-            this.colDsp_Vol_Em.DataPropertyName = "dsp_vol_em";
-            this.colDsp_Vol_Em.HeaderText = "볼륨(비상)";
-            this.colDsp_Vol_Em.Name = "colDsp_Vol_Em";
-            this.colDsp_Vol_Em.Visible = false;
-            this.colDsp_Vol_Em.Width = 80;
-            // 
-            // colDsp_Vol
-            // 
-            this.colDsp_Vol.DataPropertyName = "dsp_vol";
-            this.colDsp_Vol.HeaderText = "볼륨";
-            this.colDsp_Vol.Name = "colDsp_Vol";
-            this.colDsp_Vol.Visible = false;
-            this.colDsp_Vol.Width = 80;
-            // 
-            // colDsp_Chno
-            // 
-            this.colDsp_Chno.DataPropertyName = "dsp_chno";
-            this.colDsp_Chno.HeaderText = "DSP CH";
-            this.colDsp_Chno.Name = "colDsp_Chno";
-            this.colDsp_Chno.Visible = false;
-            this.colDsp_Chno.Width = 60;
-            // 
-            // colPath_1
-            // 
-            this.colPath_1.DataPropertyName = "path";
-            this.colPath_1.HeaderText = "위치";
-            this.colPath_1.Name = "colPath_1";
-            this.colPath_1.ReadOnly = true;
-            this.colPath_1.Width = 180;
-            // 
-            // colDsp_Name
-            // 
-            this.colDsp_Name.DataPropertyName = "dsp_name";
-            this.colDsp_Name.HeaderText = "DSP";
-            this.colDsp_Name.Name = "colDsp_Name";
-            this.colDsp_Name.ReadOnly = true;
-            this.colDsp_Name.Width = 120;
-            // 
-            // colIp
-            // 
-            this.colIp.DataPropertyName = "ip";
-            this.colIp.HeaderText = "IP Address";
-            this.colIp.Name = "colIp";
-            this.colIp.ReadOnly = true;
-            this.colIp.Width = 110;
-            // 
-            // Column0
-            // 
-            this.Column0.HeaderText = "장치종류";
-            this.Column0.Name = "Column0";
-            // 
-            // colDevice
-            // 
-            this.colDevice.DataPropertyName = "device";
-            this.colDevice.HeaderText = "device";
-            this.colDevice.Name = "colDevice";
-            this.colDevice.Visible = false;
-            // 
-            // colChspk
-            // 
-            this.colChspk.DataPropertyName = "chspk";
-            this.colChspk.HeaderText = "채널";
-            this.colChspk.Name = "colChspk";
-            this.colChspk.Width = 60;
-            // 
-            // colDevicename
-            // 
-            this.colDevicename.DataPropertyName = "DeviceName";
-            this.colDevicename.HeaderText = "DeviceName";
-            this.colDevicename.Name = "colDevicename";
-            this.colDevicename.ReadOnly = true;
-            this.colDevicename.Width = 150;
-            // 
-            // colDeviceid
-            // 
-            this.colDeviceid.DataPropertyName = "DeviceId";
-            this.colDeviceid.HeaderText = "No";
-            this.colDeviceid.Name = "colDeviceid";
-            this.colDeviceid.ReadOnly = true;
-            this.colDeviceid.Width = 40;
+            this.panel2.Padding = new Wisej.Web.Padding(20);
+            this.panel2.Size = new System.Drawing.Size(1360, 860);
+            this.panel2.TabIndex = 51;
             // 
             // dataGridView3
             // 
-            this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.colDeviceid,
-            this.colDevicename,
-            this.colChspk,
-            this.colDevice,
-            this.Column0,
-            this.colIp,
-            this.colDsp_Name,
-            this.colPath_1,
-            this.colDsp_Chno,
-            this.colDsp_Vol,
-            this.colDsp_Vol_Em});
-            this.dataGridView3.DataSource = this.deviceBindingSource;
+            this.장비아이디,
+            this.장비이름,
+            this.장비종류,
+            this.IP주소,
+            this.카테고리,
+            this.상태,
+            this.발견시간,
+            this.관리여부});
             this.dataGridView3.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Location = new System.Drawing.Point(20, 72);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(910, 546);
-            this.dataGridView3.TabIndex = 1;
-            this.dataGridView3.DataUpdated += new Wisej.Web.DataGridViewDataUpdatedEventHandler(this.dataGridView3_DataUpdated);
+            this.dataGridView3.Size = new System.Drawing.Size(1320, 768);
+            this.dataGridView3.TabIndex = 67;
+            // 
+            // 장비아이디
+            // 
+            this.장비아이디.HeaderText = "장비아이디";
+            this.장비아이디.Name = "장비아이디";
+            this.장비아이디.Width = 200;
+            // 
+            // 장비이름
+            // 
+            this.장비이름.HeaderText = "장비이름";
+            this.장비이름.Name = "장비이름";
+            this.장비이름.Width = 200;
+            // 
+            // 장비종류
+            // 
+            this.장비종류.HeaderText = "장비종류";
+            this.장비종류.Name = "장비종류";
+            this.장비종류.Width = 140;
+            // 
+            // IP주소
+            // 
+            this.IP주소.HeaderText = "IP주소";
+            this.IP주소.Name = "IP주소";
+            this.IP주소.Width = 200;
+            // 
+            // 카테고리
+            // 
+            this.카테고리.HeaderText = "카테고리";
+            this.카테고리.Name = "카테고리";
+            this.카테고리.Width = 150;
+            // 
+            // 상태
+            // 
+            this.상태.HeaderText = "상태";
+            this.상태.Name = "상태";
+            this.상태.Width = 60;
+            // 
+            // 발견시간
+            // 
+            this.발견시간.HeaderText = "발견시간";
+            this.발견시간.Name = "발견시간";
+            this.발견시간.Width = 200;
+            // 
+            // 관리여부
+            // 
+            this.관리여부.HeaderText = "관리여부";
+            this.관리여부.Name = "관리여부";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.popTestButton);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Dock = Wisej.Web.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(20, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.ShowCloseButton = false;
+            this.panel1.Size = new System.Drawing.Size(1320, 52);
+            this.panel1.TabIndex = 66;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.FromName("@button1LeftBG");
+            this.button5.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button5.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button5.Location = new System.Drawing.Point(1000, 0);
+            this.button5.Margin = new Wisej.Web.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 32);
+            this.button5.TabIndex = 85;
+            this.button5.Text = "장비스캔";
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.button4.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button4.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button4.Location = new System.Drawing.Point(1110, 0);
+            this.button4.Margin = new Wisej.Web.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 32);
+            this.button4.TabIndex = 84;
+            this.button4.Text = "수동변경";
+            // 
+            // popTestButton
+            // 
+            this.popTestButton.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.popTestButton.BackColor = System.Drawing.Color.FromName("@button1RightBG");
+            this.popTestButton.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popTestButton.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.popTestButton.Location = new System.Drawing.Point(1218, 0);
+            this.popTestButton.Margin = new Wisej.Web.Padding(0);
+            this.popTestButton.Name = "popTestButton";
+            this.popTestButton.Size = new System.Drawing.Size(100, 32);
+            this.popTestButton.TabIndex = 83;
+            this.popTestButton.Text = "이름변경";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 32);
+            this.label3.TabIndex = 77;
+            this.label3.Text = "Ethernet Card";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox2
+            // 
+            this.textBox2.AutoSize = false;
+            this.textBox2.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox2.Location = new System.Drawing.Point(141, 0);
+            this.textBox2.Margin = new Wisej.Web.Padding(0);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(280, 32);
+            this.textBox2.TabIndex = 76;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // View_BBCDevice
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.ptop);
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_BBCDevice";
-            this.Size = new System.Drawing.Size(910, 616);
+            this.Padding = new Wisej.Web.Padding(20);
+            this.Size = new System.Drawing.Size(1400, 900);
             this.Load += new System.EventHandler(this.BSDeviceManager_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
-            this.ptop.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DataSet1 dataSet1;
-        private Wisej.Web.BindingSource deviceBindingSource;
-        private DataSet1TableAdapters.DeviceTableAdapter deviceTableAdapter;
-        private Wisej.Web.Panel ptop;
         private Wisej.Web.Panel panel2;
-        private Wisej.Web.Button button1;
         private Wisej.Web.DataGridView dataGridView3;
-        private Wisej.Web.DataGridViewTextBoxColumn colDeviceid;
-        private Wisej.Web.DataGridViewTextBoxColumn colDevicename;
-        private Wisej.Web.DataGridViewTextBoxColumn colChspk;
-        private Wisej.Web.DataGridViewTextBoxColumn colDevice;
-        private Wisej.Web.DataGridViewTextBoxColumn Column0;
-        private Wisej.Web.DataGridViewTextBoxColumn colIp;
-        private Wisej.Web.DataGridViewTextBoxColumn colDsp_Name;
-        private Wisej.Web.DataGridViewTextBoxColumn colPath_1;
-        private Wisej.Web.DataGridViewTextBoxColumn colDsp_Chno;
-        private Wisej.Web.DataGridViewTextBoxColumn colDsp_Vol;
-        private Wisej.Web.DataGridViewTextBoxColumn colDsp_Vol_Em;
+        private Wisej.Web.DataGridViewTextBoxColumn 장비아이디;
+        private Wisej.Web.DataGridViewTextBoxColumn 장비이름;
+        private Wisej.Web.DataGridViewTextBoxColumn 장비종류;
+        private Wisej.Web.DataGridViewTextBoxColumn IP주소;
+        private Wisej.Web.DataGridViewTextBoxColumn 카테고리;
+        private Wisej.Web.DataGridViewTextBoxColumn 상태;
+        private Wisej.Web.DataGridViewTextBoxColumn 발견시간;
+        private Wisej.Web.Panel panel1;
+        private Wisej.Web.Button button5;
+        private Wisej.Web.Button button4;
+        private Wisej.Web.Button popTestButton;
+        private Wisej.Web.Label label3;
+        private Wisej.Web.TextBox textBox2;
+        private Wisej.Web.DataGridViewTextBoxColumn 관리여부;
+        private DataSet1 dataSet11;
     }
 }

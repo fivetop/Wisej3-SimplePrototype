@@ -73,7 +73,7 @@
             // 
             this.radioButton1.Location = new System.Drawing.Point(252, 385);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(104, 22);
+            this.radioButton1.Size = new System.Drawing.Size(106, 21);
             this.radioButton1.TabIndex = 83;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "radioButton1";
@@ -83,7 +83,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(100, 392);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 15);
+            this.label6.Size = new System.Drawing.Size(103, 16);
             this.label6.TabIndex = 82;
             this.label6.Text = "Device Register";
             // 
@@ -91,35 +91,35 @@
             // 
             this.comboBox5.Location = new System.Drawing.Point(252, 333);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(120, 22);
+            this.comboBox5.Size = new System.Drawing.Size(120, 36);
             this.comboBox5.TabIndex = 81;
             // 
             // comboBox4
             // 
             this.comboBox4.Location = new System.Drawing.Point(252, 285);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(120, 22);
+            this.comboBox4.Size = new System.Drawing.Size(120, 36);
             this.comboBox4.TabIndex = 80;
             // 
             // comboBox3
             // 
             this.comboBox3.Location = new System.Drawing.Point(252, 237);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(120, 22);
+            this.comboBox3.Size = new System.Drawing.Size(120, 36);
             this.comboBox3.TabIndex = 79;
             // 
             // comboBox2
             // 
             this.comboBox2.Location = new System.Drawing.Point(252, 185);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 22);
+            this.comboBox2.Size = new System.Drawing.Size(120, 36);
             this.comboBox2.TabIndex = 78;
             // 
             // comboBox1
             // 
             this.comboBox1.Location = new System.Drawing.Point(252, 134);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 22);
+            this.comboBox1.Size = new System.Drawing.Size(120, 36);
             this.comboBox1.TabIndex = 77;
             // 
             // label5
@@ -127,7 +127,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(100, 340);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 15);
+            this.label5.Size = new System.Drawing.Size(103, 16);
             this.label5.TabIndex = 76;
             this.label5.Text = "Device Register";
             // 
@@ -136,7 +136,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(100, 289);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 15);
+            this.label4.Size = new System.Drawing.Size(103, 16);
             this.label4.TabIndex = 75;
             this.label4.Text = "Device Register";
             // 
@@ -145,7 +145,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(100, 237);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 15);
+            this.label3.Size = new System.Drawing.Size(103, 16);
             this.label3.TabIndex = 74;
             this.label3.Text = "Device Register";
             // 
@@ -154,7 +154,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(100, 189);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 15);
+            this.label2.Size = new System.Drawing.Size(103, 16);
             this.label2.TabIndex = 73;
             this.label2.Text = "Device Register";
             // 
@@ -163,7 +163,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(100, 141);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 15);
+            this.label7.Size = new System.Drawing.Size(103, 16);
             this.label7.TabIndex = 72;
             this.label7.Text = "Device Register";
             // 

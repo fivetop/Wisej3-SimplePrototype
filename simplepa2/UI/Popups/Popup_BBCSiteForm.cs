@@ -21,6 +21,7 @@ namespace simplepa2.UI.Popups
 
         public void addExampleData()
         {
+            /*
             string floorName = "층";
             string floorIdentifier = "F";
 
@@ -41,7 +42,7 @@ namespace simplepa2.UI.Popups
 
             }
             this.listView1.EndUpdate();
-
+            */
         }
 
         public class sampleData
