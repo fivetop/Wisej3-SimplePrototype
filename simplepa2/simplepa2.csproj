@@ -793,6 +793,7 @@
     <Content Include="Themes\LSMaterial-3.theme" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <Content Include="Themes\Wisej-Themes.pdf" />
+    <Content Include="Themes\NavigationBar.mixin.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
