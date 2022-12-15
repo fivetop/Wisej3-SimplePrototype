@@ -38,10 +38,10 @@ namespace simplepa2.UI.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (gweb.mainFrame1.isSignalR())
+            if (gweb.mainFrame.isSignalR())
             {
                 //AlertBox.Show("서버에 전체 Scan을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
-                gweb.mainFrame1.sendSigR(eSignalRMsgType.eScanAll); // dsp, dsp_chno
+                gweb.mainFrame.sendSigR(eSignalRMsgType.eScanAll); // dsp, dsp_chno
             }
             else
             {

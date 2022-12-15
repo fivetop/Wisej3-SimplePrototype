@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.UI.Views
 {
-    partial class BSAsset
+    partial class View_BBCAsset
     {
         /// <summary> 
         /// Required designer variable.

@@ -175,7 +175,7 @@ namespace simplepa2.UI.Pages
             }
         }
 
-        BSAsset bSAsset = new BSAsset();
+        View_BBCAsset view_BBCAsset = new View_BBCAsset();
         DashBoard2 view_DashBoard = new DashBoard2();
         BBSAnchor2 BBSAnchor2 = new BBSAnchor2();
         View_BBCDevice bSDeviceManager = new View_BBCDevice();
@@ -184,7 +184,7 @@ namespace simplepa2.UI.Pages
         {
             switch (menuAccessibleName)
             {
-                case "assetBarItem": bSAsset = bringFrontView<BSAsset>("BSAsset", false); break;
+                case "assetBarItem": view_BBCAsset = bringFrontView<View_BBCAsset>("View_BBCAsset", false); break;
                 case "dashboardBarItems": view_Dashboard = bringFrontView<View_DashBoard>("View_DashBoard", false); break;
                 case "anchorBBSBarItem": view_BBSAnchor = bringFrontView<View_BBSAnchor>("View_BBSAnchor", false); break;
                 case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;

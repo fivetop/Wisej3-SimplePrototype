@@ -6,13 +6,13 @@ using Wisej.Web;
 
 namespace simplepa2.UI.Views
 {
-    public partial class BSAsset : Wisej.Web.UserControl
+    public partial class View_BBCAsset : Wisej.Web.UserControl
     {
         string strFileUploadPath;
         Stream stream;
         String filename;
 
-        public BSAsset()
+        public View_BBCAsset()
         {
             InitializeComponent();
         }
