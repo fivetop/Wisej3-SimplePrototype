@@ -4,14 +4,14 @@ using System.Drawing;
 using Wisej.Base;
 using Wisej.Web;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
-    public partial class View_DashBoard2 : Wisej.Web.UserControl
+    public partial class DashBoard2 : Wisej.Web.UserControl
     {
 		
 		BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
-		public View_DashBoard2()
+		public DashBoard2()
         {
             InitializeComponent();
         }

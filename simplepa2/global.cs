@@ -16,6 +16,7 @@ namespace simplepa2
 
         public static signalr _hub { get; set; } = null;
 
+        #region // 로그 처리 
         static string old_string = "";
         public static void Log(string str1)
         {
@@ -49,7 +50,7 @@ namespace simplepa2
                 Console.WriteLine(e1.Message);
             }
         }
-
+        #endregion
 
     }
 }

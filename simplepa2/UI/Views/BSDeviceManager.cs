@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using Wisej.Web;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
     public partial class BSDeviceManager : Wisej.Web.UserControl
     {

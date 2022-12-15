@@ -738,7 +738,7 @@
     <EmbeddedResource Include="UI\Views\BSAsset.resx">
       <DependentUpon>BSAsset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\BSDeviceManager.resx">
+    <EmbeddedResource Include="UI\Views\BSDeviceManager.resx">
       <DependentUpon>BSDeviceManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\BSEMManager.resx">
@@ -771,11 +771,11 @@
     <EmbeddedResource Include="UI\win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\View_BBSAnchor2.resx">
-      <DependentUpon>View_BBSAnchor2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\BBSAnchor2.resx">
+      <DependentUpon>BBSAnchor2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\View_DashBoard2.resx">
-      <DependentUpon>View_DashBoard2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\DashBoard2.resx">
+      <DependentUpon>DashBoard2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
@@ -1287,10 +1287,10 @@
     <Compile Include="UI\Views\BSAsset.Designer.cs">
       <DependentUpon>BSAsset.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\BSDeviceManager.cs">
+    <Compile Include="UI\Views\BSDeviceManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\BSDeviceManager.Designer.cs">
+    <Compile Include="UI\Views\BSDeviceManager.Designer.cs">
       <DependentUpon>BSDeviceManager.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\win\BSEMManager.cs">
@@ -1353,17 +1353,17 @@
     <Compile Include="UI\win\PMusicSel.Designer.cs">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\View_BBSAnchor2.cs">
+    <Compile Include="UI\Views\BBSAnchor2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\View_BBSAnchor2.designer.cs">
-      <DependentUpon>View_BBSAnchor2.cs</DependentUpon>
+    <Compile Include="UI\Views\BBSAnchor2.designer.cs">
+      <DependentUpon>BBSAnchor2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\View_DashBoard2.cs">
+    <Compile Include="UI\Views\DashBoard2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\View_DashBoard2.Designer.cs">
-      <DependentUpon>View_DashBoard2.cs</DependentUpon>
+    <Compile Include="UI\Views\DashBoard2.Designer.cs">
+      <DependentUpon>DashBoard2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\win\Window1.cs">
       <SubType>Form</SubType>

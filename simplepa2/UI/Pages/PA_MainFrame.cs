@@ -255,31 +255,32 @@ namespace simplepa2.UI.Pages
             RcvSigR(message);
         }
 
-        internal void eEMLoginEvent(Microsoft.AspNet.SignalR.Hubs.HubCallerContext context, int v)
+        // 프리셋 메시지 올 경우 화면 출력용 
+        // 8채널과 링크 출력용 
+        public void LabelON(int id, bool v)
         {
-            string user_id;
-            user_id = context.Headers["user_id"];
-            string str1 = context.ConnectionId.ToString();
+            if (id == 9 && v == false)
+            {
+                //AlertBox.Show("SignalR Client Disconnected.");
+                AlertBox.Show("<b>SignalR Client</b> Disconnected.", icon: MessageBoxIcon.Warning, alignment: ContentAlignment.MiddleCenter);
 
-            string l1 = "EM connect";
-            if (v == 1)
-            {
-                dBSqlite.Eventvm(l1, user_id, str1);
             }
-            else
-            {
-                l1 = "EM disconnect";
-                dBSqlite.Eventvm(l1, user_id, str1);
-            }
-            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-            view_Dashboard.Refresh();
         }
 
 
         internal void RcvSigR(SignalRMsg msg1)
         {
             string addinfo = "";
+
             LabelON(9, true);
+
+            Wisej.Web.Application.Update(this, () =>
+            {
+                AlertBox.Show(msg1.message + ":" + addinfo);
+                gweb.Log(msg1.message + ":" + addinfo);
+                System.Diagnostics.Debug.WriteLine(msg1.message);
+            });
+
 
             switch (msg1.Msgtype)
             {
@@ -298,13 +299,14 @@ namespace simplepa2.UI.Pages
                         LabelON(1, false);
                     break;
                 case eSignalRMsgType.eEM_PRESET_SW:
-                    presetdisp(msg1);
+                    //presetdisp(msg1);
                     break;
                 case eSignalRMsgType.ePlay:
                     break;
                 case eSignalRMsgType.ePlayEnd:
                     //this.btnStart.Enabled = true;
                     //this.btnStop.Enabled = false;
+                    view_BBSAnchor2.refresh(msg1);
                     break;
                 case eSignalRMsgType.ePlaying:
                     break;
@@ -316,89 +318,45 @@ namespace simplepa2.UI.Pages
                     break;
                 case eSignalRMsgType.eFindDSP:
                     if (msg1.state == 1)
-                        ;//bSDeviceManager.reDraw();
+                    {
+                        dBSqlite.LinkAssetDevice();
+                        bSDeviceManager.reDraw();
+                    }
                     else
                         AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
                     break;
             }
-            view_Dashboard.Refresh();
+            //view_Dashboard.Refresh();
+            //this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
 
-
-            //playItems = msg1.play8sig;
-            //if (playItems != null)
-            //    PlayItemDisplay();
-
-            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-            // 각 뷰 리플레시 필요 
-
-            Application.Update(this, () =>
-            {
-                AlertBox.Show(msg1.message + ":" + addinfo);
-                gweb.Log(msg1.message + ":" + addinfo);
-            });
-        }
-
-        // 8채널 출력용 
-        private void PlayItemDisplay()
-        {
-        }
-
-        // 프리셋 메시지 올 경우 화면 출력용 
-        private void presetdisp(SignalRMsg msg1)
-        {
-        }
-
-        // 8채널과 링크 출력용 
-        public void LabelON(int id, bool v)
-        {
-            if (id == 9 && v == false)
-            {
-                //AlertBox.Show("SignalR Client Disconnected.");
-                AlertBox.Show("<b>SignalR Client</b> Disconnected.", icon: MessageBoxIcon.Warning, alignment: ContentAlignment.MiddleCenter);
-
-            }
         }
 
 
-        internal void sendSigR(string v)
+        internal void sendSigR(eSignalRMsgType v1, BSTreeRow bSTreeRow, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
         {
-            SignalRMsg msg1 = new SignalRMsg();
-            msg1.message = v;
-            //if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-            //    signalRClient.proxy.Invoke("MessageC2S2", msg1);
-        }
-
-        internal Guid sendSigR(eSignalRMsgType v1, List<AssetsRow> selAsset, List<MusicsRow> selMusic, Guid guid)
-        {
-
             if (gweb._hub == null)
             {
                 AlertBox.Show("가용한 EM Server가 없습니다.");
-                return Guid.Empty;
+                return;
             }
-
-
             SignalRMsg msg1 = new SignalRMsg();
             msg1.user = Application.Session["user"];
+            msg1.EMNAME = bSTreeRow.EMNAME;
+            msg1.seqno = bSTreeRow.BSTreeId;
+            msg1.chno = bSTreeRow.chno;
+            msg1.Msgtype = v1;
 
             switch (v1)
             {
                 case eSignalRMsgType.ePlay:
-                    msg1.Guid = Guid.NewGuid();
-                    msg1.message = "Play";
-                    msg1.Msgtype = v1;
-                    //msg1.assetsRows = selAsset;
-                    //var t1 = selMusic.Select(p => new { p.MusicId }).ToList();
                     var t1 = selMusic.Select(p => new { p.MusicId });
                     msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
-
                     var t2 = selAsset.Select(p => new { p.AssetId });
                     msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
+                    msg1.message = "Play";
                     break;
                 case eSignalRMsgType.eStop:
-                    msg1.Guid = guid;
                     msg1.message = "Stop";
-                    msg1.Msgtype = v1;
                     break;
             }
 
@@ -406,36 +364,26 @@ namespace simplepa2.UI.Pages
             {
                 if (gweb._hub != null)
                     gweb._hub.MessageS2C2(msg1);
-                else
-                {
-                    AlertBox.Show("해당 EM Server가 없습니다.");
-                    return Guid.Empty;
-                }
-                //if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-                //    signalRClient.proxy.Invoke("MessageC2S2", msg1);
             }
             catch (Exception e1)
             {
             }
-            return msg1.Guid;
         }
-
 
         internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0)
         {
             SignalRMsg msg1 = new SignalRMsg();
             msg1.user = Application.Session["user"];
+            msg1.EMNAME = "ALL";
 
             switch (eVolume)
             {
                 case eSignalRMsgType.eVolume:
-                    msg1.Guid = Guid.NewGuid();
                     msg1.message = "Volume";
                     msg1.Msgtype = eVolume;
                     break;
 
                 case eSignalRMsgType.eOutChMove:
-                    msg1.Guid = Guid.NewGuid();
                     msg1.message = device_name;
                     msg1.Msgtype = eVolume;
                     msg1.state = dsp_ch;
@@ -444,7 +392,6 @@ namespace simplepa2.UI.Pages
                     break;
 
                 case eSignalRMsgType.eInChMove:
-                    msg1.Guid = Guid.NewGuid();
                     msg1.message = device_name; // pc
                     msg1.Msgtype = eVolume;
                     msg1.state = dsp_ch; // no
@@ -453,7 +400,6 @@ namespace simplepa2.UI.Pages
                     break;
 
                 case eSignalRMsgType.eScanAll:
-                    msg1.Guid = Guid.NewGuid();
                     msg1.Msgtype = eVolume;
                     msg1.message = "Scan All";
                     break;
@@ -461,8 +407,8 @@ namespace simplepa2.UI.Pages
 
             try
             {
-                //if (isSignalR())
-                //    signalRClient.proxy.Invoke("MessageC2S2", msg1);
+                if (gweb._hub != null)
+                    gweb._hub.MessageS2C2(msg1);
             }
             catch (Exception e1)
             {
@@ -471,12 +417,11 @@ namespace simplepa2.UI.Pages
 
         public bool isSignalR()
         {
-            //if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-            //    return true;
-            //else
+            if (gweb._hub == null)
                 return false;
-
+            return true;
         }
+
         #endregion
 
 

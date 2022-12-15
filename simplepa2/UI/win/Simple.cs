@@ -116,8 +116,8 @@ namespace simplepa2
 		ASchedule aSchedule = new ASchedule();
 		APreset aPreset = new APreset();
 
-		win.View_DashBoard2 view_DashBoard = new win.View_DashBoard2();
-		win.View_BBSAnchor2 view_BBSAnchor = new win.View_BBSAnchor2();
+		DashBoard2 view_DashBoard = new DashBoard2();
+		BBSAnchor2 view_BBSAnchor = new BBSAnchor2();
 		BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 
@@ -418,15 +418,29 @@ namespace simplepa2
 
 
 		#region // Signal R  
+		// 프리셋 메시지 올 경우 화면 출력용 
+		// 8채널과 링크 출력용 
+		public void LabelON(int id, bool v)
+		{
+			if (id == 9 && v == false)
+			{
+				//AlertBox.Show("SignalR Client Disconnected.");
+				AlertBox.Show("<b>SignalR Client</b> Disconnected.", icon: MessageBoxIcon.Warning, alignment: ContentAlignment.MiddleCenter);
+
+			}
+		}
+
 
 		internal void RcvSigR(SignalRMsg msg1)
 		{
 			string addinfo = "";
+
 			LabelON(9, true);
 
 			Wisej.Web.Application.Update(this, () =>
 			{
-				AlertBox.Show(msg1.message);
+				AlertBox.Show(msg1.message + ":" + addinfo);
+				gweb.Log(msg1.message + ":" + addinfo);
 				System.Diagnostics.Debug.WriteLine(msg1.message);
 			});
 
@@ -448,7 +462,7 @@ namespace simplepa2
 						LabelON(1, false);
 					break;
 				case eSignalRMsgType.eEM_PRESET_SW:
-					presetdisp(msg1);
+					//presetdisp(msg1);
 					break;
 				case eSignalRMsgType.ePlay:
 					break;
@@ -475,58 +489,11 @@ namespace simplepa2
 						AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 					break;
 			}
-			if (playItems != null)
-				PlayItemDisplay();
+			//view_Dashboard.Refresh();
+			//this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+
 		}
 
-
-		// 프리셋 메시지 올 경우 화면 출력용 
-		private void presetdisp(SignalRMsg msg1)
-		{
-			if (msg1.state == 1)
-			{
-				switch (msg1.seqno)
-				{
-					case 0: radioButton1.Checked = true; break;
-					case 1: radioButton2.Checked = true; break;
-					case 2: radioButton3.Checked = true; break;
-					case 3: radioButton4.Checked = true; break;
-					case 4: radioButton5.Checked = true; break;
-				}
-			}
-			else
-			{
-				switch (msg1.seqno)
-				{
-					case 0: radioButton1.Checked = false; break;
-					case 1: radioButton2.Checked = false; break;
-					case 2: radioButton3.Checked = false; break;
-					case 3: radioButton4.Checked = false; break;
-					case 4: radioButton5.Checked = false; break;
-				}
-			}
-		}
-
-		// 8채널과 링크 출력용 
-		public void LabelON(int id, bool v)
-		{
-			if (bslamp1 != null)
-				bslamp1.LabelOn(id, v);
-			if (id == 9 && v == false)
-			{
-				//AlertBox.Show("SignalR Client Disconnected.");
-				AlertBox.Show("<b>SignalR Client</b> Disconnected.", icon: MessageBoxIcon.Warning, alignment: ContentAlignment.MiddleCenter);
-
-			}
-		}
-
-		internal void sendSigR(string v)
-		{
-			SignalRMsg msg1 = new SignalRMsg();
-			msg1.message = v;
-			//if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-			//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
-		}
 
 		internal void sendSigR(eSignalRMsgType v1, BSTreeRow bSTreeRow, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
 		{
@@ -616,18 +583,6 @@ namespace simplepa2
 			if (gweb._hub == null)
 				return false;
 			return true;
-		}
-
-		// 8채널 출력용 
-		private void PlayItemDisplay()
-		{
-			bslamp1.LabelOn(2, playItems[2].p_run);
-			bslamp1.LabelOn(3, playItems[3].p_run);
-			bslamp1.LabelOn(4, playItems[4].p_run);
-			bslamp1.LabelOn(5, playItems[5].p_run);
-			bslamp1.LabelOn(6, playItems[6].p_run);
-			bslamp1.LabelOn(7, playItems[7].p_run);
-			bslamp1.LabelOn(8, playItems[8].p_run);
 		}
 
 

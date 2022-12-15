@@ -6,11 +6,11 @@ using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
-    public partial class View_BBSAnchor2 : Wisej.Web.UserControl
+    public partial class BBSAnchor2 : Wisej.Web.UserControl
     {
-        public View_BBSAnchor2()
+        public BBSAnchor2()
         {
             InitializeComponent();
         }
