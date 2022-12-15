@@ -28,192 +28,317 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new Wisej.Web.PictureBox();
-            this.line1 = new Wisej.Web.Line();
-            this.label1 = new Wisej.Web.Label();
-            this.buttonVerify = new Wisej.Web.Button();
-            this.buttonDelete = new Wisej.Web.Button();
-            this.label2 = new Wisej.Web.Label();
-            this.label3 = new Wisej.Web.Label();
-            this.label4 = new Wisej.Web.Label();
-            this.label5 = new Wisej.Web.Label();
-            this.label6 = new Wisej.Web.Label();
-            this.textBox1 = new Wisej.Web.TextBox();
-            this.textBox2 = new Wisej.Web.TextBox();
-            this.textBox3 = new Wisej.Web.TextBox();
-            this.textBox4 = new Wisej.Web.TextBox();
-            this.panel1 = new Wisej.Web.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel10 = new Wisej.Web.Panel();
+            this.panel11 = new Wisej.Web.Panel();
+            this.label9 = new Wisej.Web.Label();
+            this.label10 = new Wisej.Web.Label();
+            this.panel12 = new Wisej.Web.Panel();
+            this.label11 = new Wisej.Web.Label();
+            this.label12 = new Wisej.Web.Label();
+            this.panel13 = new Wisej.Web.Panel();
+            this.label13 = new Wisej.Web.Label();
+            this.label14 = new Wisej.Web.Label();
+            this.panel14 = new Wisej.Web.Panel();
+            this.label15 = new Wisej.Web.Label();
+            this.label16 = new Wisej.Web.Label();
+            this.panel15 = new Wisej.Web.Panel();
+            this.panel16 = new Wisej.Web.Panel();
+            this.panel17 = new Wisej.Web.Panel();
+            this.button6 = new Wisej.Web.Button();
+            this.button2 = new Wisej.Web.Button();
+            this.label17 = new Wisej.Web.Label();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // panel10
             // 
-            this.pictureBox1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
-            | Wisej.Web.AnchorStyles.Right)));
-            this.pictureBox1.ImageSource = "imgs\\dPanel1.jpg";
-            this.pictureBox1.Location = new System.Drawing.Point(140, 59);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(142, 148);
-            this.pictureBox1.SizeMode = Wisej.Web.PictureBoxSizeMode.StretchImage;
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Controls.Add(this.panel12);
+            this.panel10.Controls.Add(this.panel13);
+            this.panel10.Controls.Add(this.panel14);
+            this.panel10.Controls.Add(this.panel15);
+            this.panel10.Controls.Add(this.panel16);
+            this.panel10.Controls.Add(this.panel17);
+            this.panel10.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Padding = new Wisej.Web.Padding(20);
+            this.panel10.Size = new System.Drawing.Size(290, 390);
+            this.panel10.TabIndex = 174;
             // 
-            // line1
+            // panel11
             // 
-            this.line1.Location = new System.Drawing.Point(20, 35);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(268, 10);
+            this.panel11.Controls.Add(this.label9);
+            this.panel11.Controls.Add(this.label10);
+            this.panel11.Dock = Wisej.Web.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(20, 329);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(250, 36);
+            this.panel11.TabIndex = 168;
             // 
-            // label1
+            // label9
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "동이름";
+            this.label9.AutoEllipsis = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Dock = Wisej.Web.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label9.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label9.Location = new System.Drawing.Point(76, 0);
+            this.label9.Margin = new Wisej.Web.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(174, 36);
+            this.label9.TabIndex = 137;
+            this.label9.Text = "3";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // buttonVerify
+            // label10
             // 
-            this.buttonVerify.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
-            | Wisej.Web.AnchorStyles.Right)));
-            this.buttonVerify.Location = new System.Drawing.Point(194, 8);
-            this.buttonVerify.Name = "buttonVerify";
-            this.buttonVerify.Size = new System.Drawing.Size(39, 27);
-            this.buttonVerify.TabIndex = 3;
-            this.buttonVerify.Text = "수정";
-            this.buttonVerify.Click += new System.EventHandler(this.buttonVerfiy_Click);
+            this.label10.AutoEllipsis = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Dock = Wisej.Web.DockStyle.Left;
+            this.label10.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label10.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Margin = new Wisej.Web.Padding(0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(76, 36);
+            this.label10.TabIndex = 136;
+            this.label10.Text = "계단";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // buttonDelete
+            // panel12
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(239, 8);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(43, 27);
-            this.buttonDelete.TabIndex = 4;
-            this.buttonDelete.Text = "삭제";
+            this.panel12.Controls.Add(this.label11);
+            this.panel12.Controls.Add(this.label12);
+            this.panel12.Dock = Wisej.Web.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(20, 293);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(250, 36);
+            this.panel12.TabIndex = 167;
             // 
-            // label2
+            // label11
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "동이름";
+            this.label11.AutoEllipsis = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Dock = Wisej.Web.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label11.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label11.Location = new System.Drawing.Point(76, 0);
+            this.label11.Margin = new Wisej.Web.Padding(0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(174, 36);
+            this.label11.TabIndex = 137;
+            this.label11.Text = "3층";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // label12
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "상층";
+            this.label12.AutoEllipsis = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Dock = Wisej.Web.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label12.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Margin = new Wisej.Web.Padding(0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 36);
+            this.label12.TabIndex = 136;
+            this.label12.Text = "지하층";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // panel13
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "지층";
+            this.panel13.Controls.Add(this.label13);
+            this.panel13.Controls.Add(this.label14);
+            this.panel13.Dock = Wisej.Web.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(20, 257);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(250, 36);
+            this.panel13.TabIndex = 166;
             // 
-            // label5
+            // label13
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "계단";
+            this.label13.AutoEllipsis = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Dock = Wisej.Web.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label13.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label13.Location = new System.Drawing.Point(76, 0);
+            this.label13.Margin = new Wisej.Web.Padding(0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(174, 36);
+            this.label13.TabIndex = 137;
+            this.label13.Text = "24층";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // label14
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 178);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 15);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "E.M 동작";
+            this.label14.AutoEllipsis = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Dock = Wisej.Web.DockStyle.Left;
+            this.label14.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label14.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Margin = new Wisej.Web.Padding(0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 36);
+            this.label14.TabIndex = 136;
+            this.label14.Text = "상층";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // panel14
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(62, 22);
-            this.textBox1.TabIndex = 12;
+            this.panel14.Controls.Add(this.label15);
+            this.panel14.Controls.Add(this.label16);
+            this.panel14.Dock = Wisej.Web.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(20, 211);
+            this.panel14.Name = "panel14";
+            this.panel14.Padding = new Wisej.Web.Padding(0, 10, 0, 0);
+            this.panel14.Size = new System.Drawing.Size(250, 46);
+            this.panel14.TabIndex = 165;
             // 
-            // textBox2
+            // label15
             // 
-            this.textBox2.Location = new System.Drawing.Point(72, 87);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 22);
-            this.textBox2.TabIndex = 13;
+            this.label15.AutoEllipsis = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Dock = Wisej.Web.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label15.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label15.Location = new System.Drawing.Point(76, 10);
+            this.label15.Margin = new Wisej.Web.Padding(0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(174, 36);
+            this.label15.TabIndex = 137;
+            this.label15.Text = "106동";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // label16
             // 
-            this.textBox3.Location = new System.Drawing.Point(72, 115);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(62, 22);
-            this.textBox3.TabIndex = 14;
+            this.label16.AutoEllipsis = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Dock = Wisej.Web.DockStyle.Left;
+            this.label16.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label16.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label16.Location = new System.Drawing.Point(0, 10);
+            this.label16.Margin = new Wisej.Web.Padding(0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(76, 36);
+            this.label16.TabIndex = 136;
+            this.label16.Text = "동구분";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox4
+            // panel15
             // 
-            this.textBox4.Location = new System.Drawing.Point(72, 143);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(62, 22);
-            this.textBox4.TabIndex = 15;
+            this.panel15.BackgroundImage = global::simplepa2.Properties.Resources.sample_0011;
+            this.panel15.BackgroundImageLayout = Wisej.Web.ImageLayout.Stretch;
+            this.panel15.Dock = Wisej.Web.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(20, 70);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(250, 141);
+            this.panel15.TabIndex = 137;
             // 
-            // panel1
+            // panel16
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromName("@switchOn");
-            this.panel1.Location = new System.Drawing.Point(90, 171);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(32, 29);
-            this.panel1.TabIndex = 18;
+            this.panel16.Dock = Wisej.Web.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(20, 50);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(250, 20);
+            this.panel16.TabIndex = 136;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.Transparent;
+            this.panel17.Controls.Add(this.button6);
+            this.panel17.Controls.Add(this.button2);
+            this.panel17.Controls.Add(this.label17);
+            this.panel17.Dock = Wisej.Web.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(20, 20);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(250, 30);
+            this.panel17.TabIndex = 52;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.FromName("@button2BG");
+            this.button6.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button6.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button6.Location = new System.Drawing.Point(120, 0);
+            this.button6.Margin = new Wisej.Web.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(60, 32);
+            this.button6.TabIndex = 36;
+            this.button6.Text = "삭제";
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.button2.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button2.Location = new System.Drawing.Point(190, 0);
+            this.button2.Margin = new Wisej.Web.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 32);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "수정";
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.label17.Dock = Wisej.Web.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label17.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label17.Location = new System.Drawing.Point(0, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(250, 30);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "오크동";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Comp_SiteCard
             // 
-            this.BackColor = System.Drawing.Color.FromName("@table-row-background-focused");
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.buttonVerify);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.line1);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.Controls.Add(this.panel10);
             this.Name = "Comp_SiteCard";
-            this.Size = new System.Drawing.Size(300, 224);
+            this.Size = new System.Drawing.Size(290, 390);
             this.Load += new System.EventHandler(this.Comp_SiteCard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Wisej.Web.PictureBox pictureBox1;
-        private Wisej.Web.Line line1;
-        private Wisej.Web.Label label1;
-        private Wisej.Web.Button buttonVerify;
-        private Wisej.Web.Button buttonDelete;
-        private Wisej.Web.Label label2;
-        private Wisej.Web.Label label3;
-        private Wisej.Web.Label label4;
-        private Wisej.Web.Label label5;
-        private Wisej.Web.Label label6;
-        private Wisej.Web.TextBox textBox1;
-        private Wisej.Web.TextBox textBox2;
-        private Wisej.Web.TextBox textBox3;
-        private Wisej.Web.TextBox textBox4;
-        private Wisej.Web.Panel panel1;
+        private Wisej.Web.Panel panel10;
+        private Wisej.Web.Panel panel11;
+        private Wisej.Web.Label label9;
+        private Wisej.Web.Label label10;
+        private Wisej.Web.Panel panel12;
+        private Wisej.Web.Label label11;
+        private Wisej.Web.Label label12;
+        private Wisej.Web.Panel panel13;
+        private Wisej.Web.Label label13;
+        private Wisej.Web.Label label14;
+        private Wisej.Web.Panel panel14;
+        private Wisej.Web.Label label15;
+        private Wisej.Web.Label label16;
+        private Wisej.Web.Panel panel15;
+        private Wisej.Web.Panel panel16;
+        private Wisej.Web.Panel panel17;
+        private Wisej.Web.Button button6;
+        private Wisej.Web.Button button2;
+        private Wisej.Web.Label label17;
     }
 }

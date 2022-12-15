@@ -98,6 +98,7 @@
             this.panel14 = new Wisej.Web.Panel();
             this.label15 = new Wisej.Web.Label();
             this.label16 = new Wisej.Web.Label();
+            this.panel15 = new Wisej.Web.Panel();
             this.panel16 = new Wisej.Web.Panel();
             this.panel17 = new Wisej.Web.Panel();
             this.button6 = new Wisej.Web.Button();
@@ -106,7 +107,6 @@
             this.panel39 = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.label23 = new Wisej.Web.Label();
-            this.panel15 = new Wisej.Web.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -990,6 +990,16 @@
             this.label16.Text = "동구분";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel15
+            // 
+            this.panel15.BackgroundImage = global::simplepa2.Properties.Resources.sample_0011;
+            this.panel15.BackgroundImageLayout = Wisej.Web.ImageLayout.Stretch;
+            this.panel15.Dock = Wisej.Web.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(20, 70);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(250, 141);
+            this.panel15.TabIndex = 137;
+            // 
             // panel16
             // 
             this.panel16.Dock = Wisej.Web.DockStyle.Top;
@@ -1083,16 +1093,6 @@
             this.label23.TabIndex = 33;
             this.label23.Text = "사이트 리스트";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel15
-            // 
-            this.panel15.BackgroundImage = global::simplepa2.Properties.Resources.sample_0011;
-            this.panel15.BackgroundImageLayout = Wisej.Web.ImageLayout.Stretch;
-            this.panel15.Dock = Wisej.Web.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(20, 70);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(250, 141);
-            this.panel15.TabIndex = 137;
             // 
             // View_BBCSite
             // 
