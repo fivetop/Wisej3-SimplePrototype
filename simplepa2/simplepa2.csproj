@@ -732,14 +732,14 @@
     <EmbeddedResource Include="UI\Views\View_BBCZone.resx">
       <DependentUpon>View_BBCZone.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCDevice.resx">
-      <DependentUpon>View_BBCDevice.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCDevice2.resx">
+      <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\BSAsset.resx">
       <DependentUpon>BSAsset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\BSDeviceManager.resx">
-      <DependentUpon>BSDeviceManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCDevice.resx">
+      <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\BSEMManager.resx">
       <DependentUpon>BSEMManager.cs</DependentUpon>
@@ -1275,11 +1275,11 @@
     <Compile Include="UI\Views\View_BBCZone.Designer.cs">
       <DependentUpon>View_BBCZone.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCDevice.cs">
+    <Compile Include="UI\Views\View_BBCDevice2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\View_BBCDevice.Designer.cs">
-      <DependentUpon>View_BBCDevice.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCDevice2.Designer.cs">
+      <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\BSAsset.cs">
       <SubType>UserControl</SubType>
@@ -1287,11 +1287,11 @@
     <Compile Include="UI\Views\BSAsset.Designer.cs">
       <DependentUpon>BSAsset.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\BSDeviceManager.cs">
+    <Compile Include="UI\Views\View_BBCDevice.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\BSDeviceManager.Designer.cs">
-      <DependentUpon>BSDeviceManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCDevice.Designer.cs">
+      <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\win\BSEMManager.cs">
       <SubType>UserControl</SubType>

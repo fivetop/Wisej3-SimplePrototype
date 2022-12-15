@@ -48,7 +48,7 @@ namespace simplepa2
 			GlobalConfiguration.Configure(WebApiConfig.Register);
 
 			//Application.MainPage = new PA_Login();
-			//Application.LoadTheme("LSMaterial-3"); //"Material-3" .
+			Application.LoadTheme("LSMaterial-3"); //"Material-3" .
 
 			Application.MainPage = new PA_MainFrame();
 			//Application.MainPage = new Simple();

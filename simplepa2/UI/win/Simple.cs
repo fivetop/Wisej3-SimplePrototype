@@ -77,7 +77,7 @@ namespace simplepa2
 
 			AlertBox.Show("Log-In : " + t2 + t1);
 
-			Application.LoadTheme("LSMaterial-3"); //"Material-3" 
+			//Application.LoadTheme("LSMaterial-3"); //"Material-3" 
 
 			//Application.Theme.Colors["navbar-background"] = "blue";
 
@@ -119,7 +119,7 @@ namespace simplepa2
 		DashBoard2 view_DashBoard = new DashBoard2();
 		BBSAnchor2 view_BBSAnchor = new BBSAnchor2();
 		BSAsset bSAsset = new BSAsset();
-		BSDeviceManager bSDeviceManager = new BSDeviceManager();
+		View_BBCDevice bSDeviceManager = new View_BBCDevice();
 
 		BSInManager bSInManager = new BSInManager();
 		BSOutManager bSOutManage = new BSOutManager();

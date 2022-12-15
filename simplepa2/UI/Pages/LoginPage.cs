@@ -11,7 +11,6 @@ namespace simplepa2
         public LoginPage()
         {
             InitializeComponent();
-			Application.LoadTheme("Material-3");
 		}
 
 		private void LoginPage_Accelerator(object sender, AcceleratorEventArgs e)
