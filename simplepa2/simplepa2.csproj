@@ -65,41 +65,6 @@
     <Content Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
-    <Content Include="html\A001.html" />
-    <Content Include="html\A002.html" />
-    <Content Include="html\B0011.html" />
-    <Content Include="html\B001.html" />
-    <Content Include="html\B002.html" />
-    <Content Include="html\B003.html" />
-    <Content Include="html\B004.html" />
-    <Content Include="html\B005.html" />
-    <Content Include="html\B006.html" />
-    <Content Include="html\B007.html" />
-    <Content Include="html\C001.html" />
-    <Content Include="html\C002.html" />
-    <Content Include="html\C003.html" />
-    <Content Include="html\C004.html" />
-    <Content Include="html\C005.html" />
-    <Content Include="html\C006.html" />
-    <Content Include="html\C007.html" />
-    <Content Include="html\C008.html" />
-    <Content Include="html\C009.html" />
-    <Content Include="html\C010.html" />
-    <Content Include="html\D001.html" />
-    <Content Include="html\D002.html" />
-    <Content Include="html\D003.html" />
-    <Content Include="html\D004.html" />
-    <Content Include="html\D005.html" />
-    <Content Include="html\E001.html" />
-    <Content Include="html\E002.html" />
-    <Content Include="html\E003.html" />
-    <Content Include="html\E004.html" />
-    <Content Include="html\layout.html" />
-    <Content Include="html\left1.html" />
-    <Content Include="html\left2.html" />
-    <Content Include="html\login.html" />
-    <Content Include="html\top1.html" />
-    <Content Include="html\top2.html" />
     <Content Include="hubs\q.txt" />
     <Content Include="Images\book.png" />
     <Content Include="Images\checkbox-off-20x20-g1.png" />
@@ -222,9 +187,6 @@
     <EmbeddedResource Include="UI\Components\Comp_ZoneFloorCardList.resx">
       <DependentUpon>Comp_ZoneFloorCardList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Pages\PA_Login.resx">
-      <DependentUpon>PA_Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Pages\PA_MainFrame.resx">
       <DependentUpon>PA_MainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,7 +283,7 @@
     <EmbeddedResource Include="Control\gPanel.resx">
       <DependentUpon>gPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Page2.resx">
+    <EmbeddedResource Include="win\Page2.resx">
       <DependentUpon>Page2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -763,9 +725,6 @@
     <EmbeddedResource Include="UI\Views\View_SystemSMSRegistration.resx">
       <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_TopPanelBar.resx">
-      <DependentUpon>View_TopPanelBar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="win\AGroup.resx">
       <DependentUpon>AGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -842,7 +801,6 @@
     <Content Include="Themes\LSMaterial-3.theme" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <Content Include="Themes\Wisej-Themes.pdf" />
-    <Content Include="Themes\NavigationBar.mixin.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1284,16 +1242,16 @@
       <DependentUpon>Handler1.ashx</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
-    <Compile Include="LoginPage.cs">
+    <Compile Include="UI\Pages\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginPage.Designer.cs">
+    <Compile Include="UI\Pages\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Page2.cs">
+    <Compile Include="win\Page2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Page2.Designer.cs">
+    <Compile Include="win\Page2.Designer.cs">
       <DependentUpon>Page2.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -1312,12 +1270,6 @@
     </Compile>
     <Compile Include="Simple9.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popups\StartPopup.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Popups\StartPopup.Designer.cs">
-      <DependentUpon>StartPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1526,11 +1478,8 @@
     <EmbeddedResource Include="Examples\BackgroundTasks.resx">
       <DependentUpon>BackgroundTasks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginPage.resx">
+    <EmbeddedResource Include="UI\Pages\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Popups\StartPopup.resx">
-      <DependentUpon>StartPopup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
