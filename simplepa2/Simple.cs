@@ -78,16 +78,7 @@ namespace simplepa2
 
 			AlertBox.Show("Log-In : " + t2 + t1);
 
-            //Application.LoadTheme("Blue-1");
-			//Application.LoadTheme("Blue-2");
-			//Application.LoadTheme("Blue-3");
-			//Application.LoadTheme("Classic-2");
-			//Application.LoadTheme("Clear-1");
-			//Application.LoadTheme("Clear-2");
-			//Application.LoadTheme("Clear-3");
-			//Application.LoadTheme("Graphite-3");
 			Application.LoadTheme("LSMaterial-3"); //"Material-3" 
-			//Application.LoadTheme("Vista-2");
 
 			//Application.Theme.Colors["navbar-background"] = "blue";
 
@@ -95,18 +86,7 @@ namespace simplepa2
 			//this.btnStop.Enabled = false;
 			//this.dataGridView2.RowCount = 10;
 
-			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-			this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
-
-
-			Main_Load(sender, e);
-			// split 위치 설정 세로, 가로,  세로
-			split_위치();
-
-			// tab padding => 5 탭에 있는 컨트롤 잘 보이게 하기 위함 
 			AddBSPage(); // 방송 설정 처리 
-			AddSetupPage(); // 환경설정 처리 
 
 			tableLayoutPanel_Top1.Size = new Size(440,58);
 
@@ -123,21 +103,6 @@ namespace simplepa2
 			this.timer.Dispose();
 		}
 
-		// split 위치 설정 세로, 가로,  세로
-		private void split_위치()
-        {
-			// Main 화면 
-			Cookie d1 = Application.Cookies.Get("d1");
-			Cookie d2 = Application.Cookies.Get("d2");
-			Cookie d3 = Application.Cookies.Get("d3");
-			if (d1 != null)
-			{
-				splitContainer4.SplitterDistance = int.Parse(d1.Value);
-				splitContainer5.SplitterDistance = int.Parse(d2.Value);
-				splitContainer6.SplitterDistance = int.Parse(d3.Value);
-			}
-		}
-
 		#region // main initial 
 
 
@@ -145,62 +110,6 @@ namespace simplepa2
 
 		private void Main_Load(object sender, EventArgs e)
 		{
-			// 입장하기 처리
-			foreach (var t3 in this.dataSet1.BSroom)
-			{
-				var t4 = new bsroom();
-				t4.bsroomrow = t3;
-				t4.bsroomid = "방송 스테이션 " + t3.BSroomid.ToString();
-				t4.state_int = t3.state;
-				t4.username = t3.user_name;
-				dataSource.Add(t4);
-			}
-			dataRepeater1.DataSource = dataSource;
-
-			// 장비 아이콘 보이기 
-			DevicelistView1.View = View.LargeIcon; 
-			//DevicelistView1.View = View.Tile;
-			//DevicelistView1.View = View.SmallIcon;
-			//DevicelistView1.ar .AutoResizeColumn(1 ,ColumnHeaderAutoResizeStyle.ColumnContent);
-
-			//DevicelistView1.View = View.Details;
-			DevicelistView1.BeginUpdate();
-			foreach (var t3 in dBSqlite.Ds1.Device)
-			{
-				if (!(t3.device == 0 || t3.device == 2))
-					continue;
-				ListViewItem lvi = new ListViewItem();
-				lvi.Text = t3.DeviceName; // t3.device.ToString();
-				lvi.ToolTipText = t3.DeviceName;
-
-				switch (t3.device)
-				{
-					case 0:
-						lvi.ImageIndex = 0;
-						break;
-					case 2:
-						lvi.ImageIndex = 1;
-						//lvi.BackColor = Color.LightBlue;
-						break;
-					case 3:
-						lvi.ImageIndex = 2;
-						break;
-					case 4:
-						lvi.ImageIndex = 3;
-						lvi.BackColor = Color.Red;
-						break;
-					case 9:
-						lvi.ImageIndex = 4;
-						lvi.BackColor = Color.LightCyan;
-						break;
-					default:
-						lvi.ImageIndex = 0;
-						break;
-				}
-				DevicelistView1.Items.Add(lvi);
-			}
-			DevicelistView1.EndUpdate();
-
 			LabelON(9,false);
 		}
 
@@ -208,7 +117,8 @@ namespace simplepa2
 		ASchedule aSchedule = new ASchedule();
 		APreset aPreset = new APreset();
 
-        win.View_BBSAnchor view_BBSAnchor = new win.View_BBSAnchor();
+		win.View_DashBoard view_DashBoard = new win.View_DashBoard();
+		win.View_BBSAnchor view_BBSAnchor = new win.View_BBSAnchor();
 		BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 
@@ -225,7 +135,13 @@ namespace simplepa2
 
 		private void AddBSPage()
         {
-			TabPage tabClients = new TabPage(menu_string[1]);
+			TabPage tabClients = new TabPage(menu_string[0]);
+			tabClients.Name = "tabClients";
+			tabClients.Controls.Add(view_DashBoard);
+			view_DashBoard.Dock = DockStyle.Fill;
+			MaintabControl.TabPages.Add(tabClients);
+
+			tabClients = new TabPage(menu_string[1]);
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(view_BBSAnchor);
 			view_BBSAnchor.Dock = DockStyle.Fill;
@@ -336,10 +252,6 @@ namespace simplepa2
 		}
 
 
-        private void AddSetupPage()
-        {
-		}
-
 		#endregion
 
 		#region // button 
@@ -393,36 +305,6 @@ namespace simplepa2
 			this.Dispose(true);
         }
 
-		// 입장하기 
-        private void btnBS1_Click(object sender, EventArgs e)
-        {
-			var nCurr = dataRepeater1.CurrentItemIndex;
-			string n = Application.Session["user_name"];
-			MaintabControl.SelectedIndex = 1;
-			dataSource[nCurr].state_int = 1;
-			dataSource[nCurr].username = n;
-			dataRepeater1.Refresh();
-			this.bSroomTableAdapter.Update(this.dataSet1.BSroom);
-
-		}
-
-		// 방송 종료 
-		private void btnBS2_Click(object sender, EventArgs e)
-        {
-			var nCurr = dataRepeater1.CurrentItemIndex;
-			dataSource[nCurr].state_int = 0;
-			dataSource[nCurr].username = "";
-			dataRepeater1.Refresh();
-			this.bSroomTableAdapter.Update(this.dataSet1.BSroom);
-		}
-
-		// 스플리트 화면 조정 내용 저장 
-        private void splitContainer5_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-			Application.Cookies.Add("d1", splitContainer4.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
-			Application.Cookies.Add("d2", splitContainer5.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
-			Application.Cookies.Add("d3", splitContainer6.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
-		}
 
         private void ubutton2_Click(object sender, EventArgs e)
         {
@@ -483,7 +365,6 @@ namespace simplepa2
             }
         */
 
-		#endregion
 
 
 		string[] menu_string = {"댓쉬보드", "앵커방송", "그룹방송", "프리셋", "예약방송", 
@@ -534,6 +415,223 @@ namespace simplepa2
 
 			}
 		}
+		#endregion
 
-    }
+
+		#region // Signal R  
+
+		internal void RcvSigR(SignalRMsg msg1)
+		{
+			string addinfo = "";
+			LabelON(9, true);
+
+			Wisej.Web.Application.Update(this, () =>
+			{
+				AlertBox.Show(msg1.message);
+				System.Diagnostics.Debug.WriteLine(msg1.message);
+			});
+
+
+			switch (msg1.Msgtype)
+			{
+				case eSignalRMsgType.eEM:
+					if (msg1.state == 1)
+						addinfo = "ONLINE";
+					else
+						addinfo = "OFFLINE";
+					dBSqlite.Eventvm(addinfo, msg1.EMNAME, addinfo);
+					dBSqlite.EMServerupdate(msg1.EMNAME, addinfo);
+					break;
+				case eSignalRMsgType.eEM_FIRE:
+					if (msg1.seqno == 1)
+						LabelON(1, true);
+					else
+						LabelON(1, false);
+					break;
+				case eSignalRMsgType.eEM_PRESET_SW:
+					presetdisp(msg1);
+					break;
+				case eSignalRMsgType.ePlay:
+					break;
+				case eSignalRMsgType.ePlayEnd:
+					//this.btnStart.Enabled = true;
+					//this.btnStop.Enabled = false;
+					view_BBSAnchor.refresh(msg1);
+					break;
+				case eSignalRMsgType.ePlaying:
+					break;
+				case eSignalRMsgType.eStop:
+					break;
+				case eSignalRMsgType.eLoginUser:
+					break;
+				case eSignalRMsgType.eLogoutUser:
+					break;
+				case eSignalRMsgType.eFindDSP:
+					if (msg1.state == 1)
+					{
+						dBSqlite.LinkAssetDevice();
+						bSDeviceManager.reDraw();
+					}
+					else
+						AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+					break;
+			}
+			if (playItems != null)
+				PlayItemDisplay();
+		}
+
+
+		// 프리셋 메시지 올 경우 화면 출력용 
+		private void presetdisp(SignalRMsg msg1)
+		{
+			if (msg1.state == 1)
+			{
+				switch (msg1.seqno)
+				{
+					case 0: radioButton1.Checked = true; break;
+					case 1: radioButton2.Checked = true; break;
+					case 2: radioButton3.Checked = true; break;
+					case 3: radioButton4.Checked = true; break;
+					case 4: radioButton5.Checked = true; break;
+				}
+			}
+			else
+			{
+				switch (msg1.seqno)
+				{
+					case 0: radioButton1.Checked = false; break;
+					case 1: radioButton2.Checked = false; break;
+					case 2: radioButton3.Checked = false; break;
+					case 3: radioButton4.Checked = false; break;
+					case 4: radioButton5.Checked = false; break;
+				}
+			}
+		}
+
+		// 8채널과 링크 출력용 
+		public void LabelON(int id, bool v)
+		{
+			if (bslamp1 != null)
+				bslamp1.LabelOn(id, v);
+			if (id == 9 && v == false)
+			{
+				//AlertBox.Show("SignalR Client Disconnected.");
+				AlertBox.Show("<b>SignalR Client</b> Disconnected.", icon: MessageBoxIcon.Warning, alignment: ContentAlignment.MiddleCenter);
+
+			}
+		}
+
+		internal void sendSigR(string v)
+		{
+			SignalRMsg msg1 = new SignalRMsg();
+			msg1.message = v;
+			//if (signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+			//	signalRClient.proxy.Invoke("MessageC2S2", msg1);
+		}
+
+		internal void sendSigR(eSignalRMsgType v1, BSTreeRow bSTreeRow, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
+		{
+			if (gweb._hub == null)
+			{
+				AlertBox.Show("가용한 EM Server가 없습니다.");
+				return;
+			}
+			SignalRMsg msg1 = new SignalRMsg();
+			msg1.user = Application.Session["user"];
+			msg1.EMNAME = bSTreeRow.EMNAME;
+			msg1.seqno = bSTreeRow.BSTreeId;
+			msg1.chno = bSTreeRow.chno;
+			msg1.Msgtype = v1;
+
+			switch (v1)
+			{
+				case eSignalRMsgType.ePlay:
+					var t1 = selMusic.Select(p => new { p.MusicId });
+					msg1.musicsRows = t1.Select(p => p.MusicId).ToList();
+					var t2 = selAsset.Select(p => new { p.AssetId });
+					msg1.assetsRows = t2.Select(p => p.AssetId).ToList();
+					msg1.message = "Play";
+					break;
+				case eSignalRMsgType.eStop:
+					msg1.message = "Stop";
+					break;
+			}
+
+			try
+			{
+				if (gweb._hub != null)
+					gweb._hub.MessageS2C2(msg1);
+			}
+			catch (Exception e1)
+			{
+			}
+		}
+
+		internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0)
+		{
+			SignalRMsg msg1 = new SignalRMsg();
+			msg1.user = Application.Session["user"];
+			msg1.EMNAME = "ALL";
+
+			switch (eVolume)
+			{
+				case eSignalRMsgType.eVolume:
+					msg1.message = "Volume";
+					msg1.Msgtype = eVolume;
+					break;
+
+				case eSignalRMsgType.eOutChMove:
+					msg1.message = device_name;
+					msg1.Msgtype = eVolume;
+					msg1.state = dsp_ch;
+					msg1.user_data1 = dsp;
+					msg1.user_data4 = device_ch;
+					break;
+
+				case eSignalRMsgType.eInChMove:
+					msg1.message = device_name; // pc
+					msg1.Msgtype = eVolume;
+					msg1.state = dsp_ch; // no
+					msg1.user_data1 = dsp; // ip
+					msg1.user_data4 = device_ch; // dsp ch cnt
+					break;
+
+				case eSignalRMsgType.eScanAll:
+					msg1.Msgtype = eVolume;
+					msg1.message = "Scan All";
+					break;
+			}
+
+			try
+			{
+				if (gweb._hub != null)
+					gweb._hub.MessageS2C2(msg1);
+			}
+			catch (Exception e1)
+			{
+			}
+		}
+
+		public bool isSignalR()
+		{
+			if (gweb._hub == null)
+				return false;
+			return true;
+		}
+
+		// 8채널 출력용 
+		private void PlayItemDisplay()
+		{
+			bslamp1.LabelOn(2, playItems[2].p_run);
+			bslamp1.LabelOn(3, playItems[3].p_run);
+			bslamp1.LabelOn(4, playItems[4].p_run);
+			bslamp1.LabelOn(5, playItems[5].p_run);
+			bslamp1.LabelOn(6, playItems[6].p_run);
+			bslamp1.LabelOn(7, playItems[7].p_run);
+			bslamp1.LabelOn(8, playItems[8].p_run);
+		}
+
+
+		#endregion
+	}
 }

@@ -21,6 +21,7 @@ namespace simplepa2.win
             Main_Load();
             // split 위치 설정 세로, 가로,  세로
             split_위치();
+			evdataGridView1.Refresh();
 		}
 
 		private void View_DashBoard_Load(object sender, EventArgs e)
@@ -118,7 +119,6 @@ namespace simplepa2.win
 			Application.Cookies.Add("d2", splitContainer5.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 			Application.Cookies.Add("d3", splitContainer6.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 		}
-
 
 		/*
 		// 입장하기 
