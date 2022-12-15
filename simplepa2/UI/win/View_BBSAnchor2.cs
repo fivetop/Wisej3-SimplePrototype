@@ -8,9 +8,9 @@ using static simplepa2.DataSet1;
 
 namespace simplepa2.win
 {
-    public partial class View_BBSAnchor : Wisej.Web.UserControl
+    public partial class View_BBSAnchor2 : Wisej.Web.UserControl
     {
-        public View_BBSAnchor()
+        public View_BBSAnchor2()
         {
             InitializeComponent();
         }

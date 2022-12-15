@@ -1,6 +1,7 @@
 ﻿using DataClass;
 using simplepa2.SignalR;
 using simplepa2.UI.Views;
+using simplepa2.win;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -49,11 +50,9 @@ namespace simplepa2.UI.Pages
         private View_SystemEmail view_SystemEmail;
         private View_SystemSMSRegistration view_SystemSMSRegistration;
         private View_SystemRestAPI view_SystemRestAPI;
-        #endregion
 
-        //public static SignalRClient signalRClient { get; set; } = new SignalRClient();
-        public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
         public DBController dBSqlite { get; set; } = new DBController();
+        #endregion
 
         public PA_MainFrame()
         {
@@ -71,13 +70,6 @@ namespace simplepa2.UI.Pages
                 view_topPanelBar.BringToFront();
             }
 
-            // 초기화 플레이 
-            for (int i = 1; i < 9; i++)
-            {
-                playItems[i] = new PlayItem();
-                playItems[i].chno = i;
-            }
-
             // 초기화 사용자 
             string t1 = Application.Session["user"];
             if (t1 == null)
@@ -89,6 +81,7 @@ namespace simplepa2.UI.Pages
             gweb.Log("Start Simple PA 2.0");
         }
 
+        #region // 초기화 처리 
         private void PA_MainFrame_Load(object sender, EventArgs e)
         {
             dBSqlite.DBInit();
@@ -102,33 +95,7 @@ namespace simplepa2.UI.Pages
 
             openContentsView("dashboardBarItems");
         }
-
-
-        internal void eRcvSigR(SignalRMsg message)
-        {
-            RcvSigR(message);
-        }
-
-        internal void eEMLoginEvent(Microsoft.AspNet.SignalR.Hubs.HubCallerContext context, int v)
-        {
-            string user_id;
-            user_id = context.Headers["user_id"];
-            string str1 = context.ConnectionId.ToString();
-
-            string l1 = "EM connect";
-            if (v == 1)
-            {
-                dBSqlite.Eventvm(l1, user_id, str1);
-            }
-            else 
-            {
-                l1 = "EM disconnect";
-                dBSqlite.Eventvm(l1, user_id, str1);
-            }
-            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-            view_Dashboard.Refresh ();
-        }
-
+        #endregion
 
         #region // 메뉴 처리 
         private void mainMenuBar_SelectedItemChanged(object sender, EventArgs e)
@@ -208,106 +175,59 @@ namespace simplepa2.UI.Pages
             }
         }
 
+        BSAsset bSAsset = new BSAsset();
+
         public void openContentsView(string menuAccessibleName)
         {
             switch (menuAccessibleName)
             {
-                case "dashboardBarItems":
-                    view_Dashboard = (View_DashBoard) bringFrontView("View_DashBoard", false);                    
-                    break;
-                case "anchorBBSBarItem":
-                    view_BBSAnchor = (View_BBSAnchor)bringFrontView("View_BBSAnchor", false);
-                    break;
-                case "reservationBarItem":
-                    view_BBSReservation = (View_BBSReservation)bringFrontView("View_BBSReservation", false); 
-                    break;
-                case "presetBarItem":
-                    view_BBSPresetManage = (View_BBSPresetManage)bringFrontView("View_BBSPresetManage", false);
-                    break;
-                case "groupBarItem":
-                    view_BBSGroupManage = (View_BBSGroupManage)bringFrontView("View_BBSGroupManage", false);
-                    break;
-                case "iotApplicationBarItem":
-                    view_BBSIotApplication = (View_BBSIoTApplication)bringFrontView("View_BBSIoTApplication", false);
-                    break;
-                case "musicConfigurationBarItem":
-                    view_BBSMusicManage = (View_BBSMusicManage)bringFrontView("View_BBSMusicManage", false);
-                    break;
-                case "holidayBarItem":
-                    view_BBSHolidayManage = (View_BBSHolidayManage)bringFrontView("View_BBSHolidayManage", false);
-                    break;
-                case "deviceManageBarItem":
-                    view_BBCDevice = (View_BBCDevice)bringFrontView("View_BBCDevice", false);
-                    break;
-                case "siteManageBarItem":
-                    view_BBCSite = (View_BBCSite)bringFrontView("View_BBCSite", false);
-                    break;
-                case "zoneManageBarItem":
-                    view_BBCZone = (View_BBCZone)bringFrontView("View_BBCZone", false);
-                    break;
-                case "inputManageBarItem":
-                    view_BBCInput = (View_BBCInput)bringFrontView("View_BBCInput", false);
-                    break;
-                case "outputManageBarItem":
-                    view_BBCOutput = (View_BBCOutput)bringFrontView("View_BBCOutput", false);
-                    break;
-                case "musicManageBarItem":
-                    view_BBCMusic = (View_BBCMusic)bringFrontView("View_BBCMusic", false);
-                    break;
-                case "emergencyManageBarItem":
-                    view_BBCEmergency = (View_BBCEmergency)bringFrontView("View_BBCEmergency", false);
-                    break;
-                case "ampFailoverBarItem":
-                    view_BBCAmpFailover = (View_BBCAmpFailover)bringFrontView("View_BBCAmpFailover", false);
-                    break;
-                case "bbsHistoryBarItem":
-                    view_HistoryBBS = (View_HistoryBBS)bringFrontView("View_HistoryBBS", false);
-                    break;
-                case "deviceHistoryBarItem":
-                    view_HistoryDevice = (View_HistoryDevice)bringFrontView("View_HistoryDevice", false);
-                    break;
-                case "fireCallHistoryBarItem":
-                    view_HistoryFireSignal = (View_HistoryFireSignal)bringFrontView("View_HistoryFireSignal", false);
-                    break;
-                case "outCallHistoryBarItem":
-                    view_HistoryOutMsgs = (View_HistoryOutMsgs)bringFrontView("View_HistoryOutMsgs", false);
-                    break;
-                case "systemVerifyHistoryBarItem":
-                    view_HistorySystemChanges = (View_HistorySystemChanges)bringFrontView("View_HistorySystemChanges", false);
-                    break;
-                case "accountManageBarItem":
-                    view_SystemAccount = (View_SystemAccount)bringFrontView("View_SystemAccount", false);
-                    break;
-                case "emailManageBarItem":
-                    view_SystemEmail = (View_SystemEmail)bringFrontView("View_SystemEmail", false);
-                    break;
-                case "smsRegistrationBarItem":
-                    view_SystemSMSRegistration = (View_SystemSMSRegistration)bringFrontView("View_SystemSMSRegistration", false);
-                    break;
-                case "restAPIRegistrationBarItem":
-                    view_SystemRestAPI = (View_SystemRestAPI)bringFrontView("View_SystemRestAPI", false);
-                    break;
+                case "선번장": bSAsset = bringFrontView<BSAsset>("BSAsset", false); break;
+                case "dashboardBarItems": view_Dashboard = bringFrontView<View_DashBoard>("View_DashBoard", false); break;
+                case "anchorBBSBarItem": view_BBSAnchor = bringFrontView<View_BBSAnchor>("View_BBSAnchor", false); break;
+                case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;
+                case "presetBarItem": view_BBSPresetManage = bringFrontView<View_BBSPresetManage>("View_BBSPresetManage", false); break;
+                case "groupBarItem": view_BBSGroupManage = bringFrontView<View_BBSGroupManage>("View_BBSGroupManage", false); break;
+                case "iotApplicationBarItem": view_BBSIotApplication = bringFrontView<View_BBSIoTApplication>("View_BBSIoTApplication", false); break;
+                case "musicConfigurationBarItem": view_BBSMusicManage = bringFrontView<View_BBSMusicManage>("View_BBSMusicManage", false); break;
+                case "holidayBarItem": view_BBSHolidayManage = bringFrontView<View_BBSHolidayManage>("View_BBSHolidayManage", false); break;
+                case "deviceManageBarItem": view_BBCDevice = bringFrontView<View_BBCDevice>("View_BBCDevice", false); break;
+                case "siteManageBarItem": view_BBCSite = bringFrontView<View_BBCSite>("View_BBCSite", false); break;
+                case "zoneManageBarItem": view_BBCZone = bringFrontView<View_BBCZone>("View_BBCZone", false); break;
+                case "inputManageBarItem": view_BBCInput = bringFrontView<View_BBCInput>("View_BBCInput", false); break;
+                case "outputManageBarItem": view_BBCOutput = bringFrontView<View_BBCOutput>("View_BBCOutput", false); break;
+                case "musicManageBarItem": view_BBCMusic = bringFrontView<View_BBCMusic>("View_BBCMusic", false); break;
+                case "emergencyManageBarItem": view_BBCEmergency = bringFrontView<View_BBCEmergency>("View_BBCEmergency", false); break;
+                case "ampFailoverBarItem": view_BBCAmpFailover = bringFrontView<View_BBCAmpFailover>("View_BBCAmpFailover", false); break;
+                case "bbsHistoryBarItem": view_HistoryBBS = bringFrontView<View_HistoryBBS>("View_HistoryBBS", false); break;
+                case "deviceHistoryBarItem": view_HistoryDevice = bringFrontView<View_HistoryDevice>("View_HistoryDevice", false); break;
+                case "fireCallHistoryBarItem": view_HistoryFireSignal = bringFrontView<View_HistoryFireSignal>("View_HistoryFireSignal", false); break;
+                case "outCallHistoryBarItem": view_HistoryOutMsgs = bringFrontView<View_HistoryOutMsgs>("View_HistoryOutMsgs", false); break;
+                case "systemVerifyHistoryBarItem": view_HistorySystemChanges = bringFrontView<View_HistorySystemChanges>("View_HistorySystemChanges", false); break;
+                case "accountManageBarItem": view_SystemAccount = bringFrontView<View_SystemAccount>("View_SystemAccount", false); break;
+                case "emailManageBarItem": view_SystemEmail = bringFrontView<View_SystemEmail>("View_SystemEmail", false); break;
+                case "smsRegistrationBarItem": view_SystemSMSRegistration = bringFrontView<View_SystemSMSRegistration>("View_SystemSMSRegistration", false); break;
+                case "restAPIRegistrationBarItem": view_SystemRestAPI = bringFrontView<View_SystemRestAPI>("View_SystemRestAPI", false); break;
 
             }
 
         }
 
-        private Wisej.Web.Control bringFrontView(string viewName, Boolean bShinkNavBar)
+        private T bringFrontView<T>(string viewName, Boolean bShinkNavBar)
         {
             
-            Wisej.Web.Control view = (Wisej.Web.Control)Application.FindComponent(o => o is Wisej.Web.Control && ((Wisej.Web.Control)o).Name == viewName);
+            var view = Application.FindComponent(o => o is Wisej.Web.Control && ((Wisej.Web.Control)o).Name == viewName);
 
             if (view == null)
             {
                 Type type = Type.GetType("simplepa2.UI.Views."+viewName, true);
                 view = (Wisej.Web.Control)Activator.CreateInstance(type);
-                view.Parent = this.contentsPanel;
+                ((Wisej.Web.Control)view).Parent = this.contentsPanel;
                 
             }
-            view.BringToFront();
+            ((Wisej.Web.Control)view).BringToFront();
             this.mainMenuBar.CompactView = bShinkNavBar;
-            
-            return view;
+
+            return (T)view;
 
         }
         #endregion
@@ -327,6 +247,34 @@ namespace simplepa2.UI.Pages
         }
 
         #endregion
+
+        #region // signal r 처리 
+
+        internal void eRcvSigR(SignalRMsg message)
+        {
+            RcvSigR(message);
+        }
+
+        internal void eEMLoginEvent(Microsoft.AspNet.SignalR.Hubs.HubCallerContext context, int v)
+        {
+            string user_id;
+            user_id = context.Headers["user_id"];
+            string str1 = context.ConnectionId.ToString();
+
+            string l1 = "EM connect";
+            if (v == 1)
+            {
+                dBSqlite.Eventvm(l1, user_id, str1);
+            }
+            else
+            {
+                l1 = "EM disconnect";
+                dBSqlite.Eventvm(l1, user_id, str1);
+            }
+            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+            view_Dashboard.Refresh();
+        }
+
 
         internal void RcvSigR(SignalRMsg msg1)
         {
@@ -377,8 +325,8 @@ namespace simplepa2.UI.Pages
 
 
             //playItems = msg1.play8sig;
-            if (playItems != null)
-                PlayItemDisplay();
+            //if (playItems != null)
+            //    PlayItemDisplay();
 
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
             // 각 뷰 리플레시 필요 
@@ -529,6 +477,7 @@ namespace simplepa2.UI.Pages
                 return false;
 
         }
+        #endregion
 
 
     }

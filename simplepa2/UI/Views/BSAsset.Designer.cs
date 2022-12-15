@@ -1,4 +1,4 @@
-﻿namespace simplepa2.win
+﻿namespace simplepa2.UI.Views
 {
     partial class BSAsset
     {
@@ -32,6 +32,7 @@
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colAssetid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEmserver = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colGroupname = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colZonename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colSpeakername = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -53,7 +54,6 @@
             this.ptop = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
-            this.colEmserver = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
@@ -63,11 +63,13 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Location = new System.Drawing.Point(20, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(902, 546);
+            this.panel2.Padding = new Wisej.Web.Padding(20);
+            this.panel2.Size = new System.Drawing.Size(862, 524);
             this.panel2.TabIndex = 7;
             this.panel2.TabStop = true;
             // 
@@ -93,10 +95,10 @@
             this.colFloor});
             this.dataGridView1.DataSource = this.assetsBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(20, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(902, 546);
+            this.dataGridView1.Size = new System.Drawing.Size(822, 484);
             this.dataGridView1.TabIndex = 0;
             // 
             // colAssetid
@@ -106,6 +108,12 @@
             this.colAssetid.Name = "colAssetid";
             this.colAssetid.ReadOnly = true;
             this.colAssetid.Width = 60;
+            // 
+            // colEmserver
+            // 
+            this.colEmserver.DataPropertyName = "emServer";
+            this.colEmserver.HeaderText = "지역";
+            this.colEmserver.Name = "colEmserver";
             // 
             // colGroupname
             // 
@@ -216,7 +224,7 @@
             // upload1
             // 
             this.upload1.ButtonPosition = System.Drawing.ContentAlignment.MiddleLeft;
-            this.upload1.Location = new System.Drawing.Point(10, 19);
+            this.upload1.Location = new System.Drawing.Point(16, 19);
             this.upload1.Name = "upload1";
             this.upload1.Size = new System.Drawing.Size(243, 30);
             this.upload1.TabIndex = 4;
@@ -226,7 +234,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(259, 19);
+            this.button2.Location = new System.Drawing.Point(275, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(62, 30);
             this.button2.TabIndex = 3;
@@ -236,19 +244,21 @@
             // 
             // ptop
             // 
+            this.ptop.BackColor = System.Drawing.Color.White;
             this.ptop.Controls.Add(this.upload1);
             this.ptop.Controls.Add(this.button2);
             this.ptop.Controls.Add(this.button1);
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(902, 70);
+            this.ptop.Size = new System.Drawing.Size(862, 52);
             this.ptop.TabIndex = 6;
             this.ptop.TabStop = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(599, 19);
+            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(790, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 30);
             this.button1.TabIndex = 3;
@@ -260,17 +270,14 @@
             // 
             this.assetsTableAdapter.ClearBeforeFill = true;
             // 
-            // colEmserver
-            // 
-            this.colEmserver.DataPropertyName = "emServer";
-            this.colEmserver.HeaderText = "지역";
-            this.colEmserver.Name = "colEmserver";
-            // 
             // BSAsset
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ptop);
+            this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "BSAsset";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(902, 616);
             this.Load += new System.EventHandler(this.BSAsset_Load);
             this.panel2.ResumeLayout(false);

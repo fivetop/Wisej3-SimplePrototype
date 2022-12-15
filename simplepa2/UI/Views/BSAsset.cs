@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using Wisej.Web;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
     public partial class BSAsset : Wisej.Web.UserControl
     {

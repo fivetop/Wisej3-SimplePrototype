@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class View_BBSAnchor
+    partial class View_BBSAnchor2
     {
         /// <summary> 
         /// Required designer variable.

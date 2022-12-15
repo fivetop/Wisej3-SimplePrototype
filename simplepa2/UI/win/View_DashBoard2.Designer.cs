@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class View_DashBoard
+    partial class View_DashBoard2
     {
         /// <summary> 
         /// Required designer variable.

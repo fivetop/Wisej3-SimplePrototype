@@ -14,7 +14,7 @@ using System.ComponentModel;
 using Wisej.Base;
 using simplepa2.win;
 using simplepa2.DataSet1TableAdapters;
-
+using simplepa2.UI.Views;
 
 namespace simplepa2
 {
@@ -116,8 +116,8 @@ namespace simplepa2
 		ASchedule aSchedule = new ASchedule();
 		APreset aPreset = new APreset();
 
-		win.View_DashBoard view_DashBoard = new win.View_DashBoard();
-		win.View_BBSAnchor view_BBSAnchor = new win.View_BBSAnchor();
+		win.View_DashBoard2 view_DashBoard = new win.View_DashBoard2();
+		win.View_BBSAnchor2 view_BBSAnchor = new win.View_BBSAnchor2();
 		BSAsset bSAsset = new BSAsset();
 		BSDeviceManager bSDeviceManager = new BSDeviceManager();
 

@@ -6,12 +6,12 @@ using Wisej.Web;
 
 namespace simplepa2.win
 {
-    public partial class View_DashBoard : Wisej.Web.UserControl
+    public partial class View_DashBoard2 : Wisej.Web.UserControl
     {
 		
 		BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
-		public View_DashBoard()
+		public View_DashBoard2()
         {
             InitializeComponent();
         }
