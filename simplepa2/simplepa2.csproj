@@ -785,7 +785,6 @@
     <EmbeddedResource Include="win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
     </EmbeddedResource>
-    <Content Include="simplepa2.js" />
     <None Include="DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
