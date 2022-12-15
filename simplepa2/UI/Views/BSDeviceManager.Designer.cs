@@ -34,6 +34,7 @@
             this.deviceTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
             this.dataGridView3 = new Wisej.Web.DataGridView();
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEMNAME = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colChspk = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevice = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -47,7 +48,8 @@
             this.ptop = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.panel2 = new Wisej.Web.Panel();
-            this.colEMNAME = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.button4 = new Wisej.Web.Button();
+            this.popTestButton = new Wisej.Web.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -87,9 +89,9 @@
             this.colDsp_Vol_Em});
             this.dataGridView3.DataSource = this.deviceBindingSource;
             this.dataGridView3.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Location = new System.Drawing.Point(20, 72);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(910, 546);
+            this.dataGridView3.Size = new System.Drawing.Size(830, 484);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.DataUpdated += new Wisej.Web.DataGridViewDataUpdatedEventHandler(this.dataGridView3_DataUpdated);
             // 
@@ -100,6 +102,12 @@
             this.colDeviceid.Name = "colDeviceid";
             this.colDeviceid.ReadOnly = true;
             this.colDeviceid.Width = 40;
+            // 
+            // colEMNAME
+            // 
+            this.colEMNAME.DataPropertyName = "EMNAME";
+            this.colEMNAME.HeaderText = "지역";
+            this.colEMNAME.Name = "colEMNAME";
             // 
             // colDevicename
             // 
@@ -178,17 +186,21 @@
             // 
             // ptop
             // 
+            this.ptop.BackColor = System.Drawing.Color.White;
+            this.ptop.Controls.Add(this.button4);
+            this.ptop.Controls.Add(this.popTestButton);
             this.ptop.Controls.Add(this.button1);
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(910, 70);
+            this.ptop.Size = new System.Drawing.Size(830, 52);
             this.ptop.TabIndex = 4;
             this.ptop.TabStop = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 19);
+            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(429, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 30);
             this.button1.TabIndex = 3;
@@ -197,25 +209,50 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dataGridView3);
+            this.panel2.Controls.Add(this.ptop);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Location = new System.Drawing.Point(20, 20);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(910, 546);
+            this.panel2.Padding = new Wisej.Web.Padding(20);
+            this.panel2.Size = new System.Drawing.Size(870, 576);
             this.panel2.TabIndex = 5;
             this.panel2.TabStop = true;
             // 
-            // colEMNAME
+            // button4
             // 
-            this.colEMNAME.DataPropertyName = "EMNAME";
-            this.colEMNAME.HeaderText = "지역";
-            this.colEMNAME.Name = "colEMNAME";
+            this.button4.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.button4.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button4.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button4.Location = new System.Drawing.Point(605, 0);
+            this.button4.Margin = new Wisej.Web.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 32);
+            this.button4.TabIndex = 86;
+            this.button4.Text = "수동변경";
+            // 
+            // popTestButton
+            // 
+            this.popTestButton.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.popTestButton.BackColor = System.Drawing.Color.FromName("@button1RightBG");
+            this.popTestButton.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.popTestButton.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.popTestButton.Location = new System.Drawing.Point(713, 0);
+            this.popTestButton.Margin = new Wisej.Web.Padding(0);
+            this.popTestButton.Name = "popTestButton";
+            this.popTestButton.Size = new System.Drawing.Size(100, 32);
+            this.popTestButton.TabIndex = 85;
+            this.popTestButton.Text = "이름변경";
             // 
             // BSDeviceManager
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.ptop);
+            this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "BSDeviceManager";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(910, 616);
             this.Load += new System.EventHandler(this.BSDeviceManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -248,5 +285,7 @@
         private Wisej.Web.DataGridViewTextBoxColumn colChspk;
         private Wisej.Web.DataGridViewTextBoxColumn colDevice;
         private Wisej.Web.DataGridViewTextBoxColumn colEMNAME;
+        private Wisej.Web.Button button4;
+        private Wisej.Web.Button popTestButton;
     }
 }

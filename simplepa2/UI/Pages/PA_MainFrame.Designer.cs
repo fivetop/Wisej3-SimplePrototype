@@ -39,7 +39,7 @@
             this.musicConfigurationBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.holidayBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.bbsConfigurationBarItems = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
-            this.선번장 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.assetBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.deviceManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.siteManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.zoneManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
@@ -85,7 +85,7 @@
             this.mainMenuBar.Name = "mainMenuBar";
             this.mainMenuBar.RightToLeft = Wisej.Web.RightToLeft.No;
             this.mainMenuBar.ShowUser = false;
-            this.mainMenuBar.Size = new System.Drawing.Size(282, 463);
+            this.mainMenuBar.Size = new System.Drawing.Size(282, 461);
             this.mainMenuBar.TabIndex = 0;
             this.mainMenuBar.ItemClick += new Wisej.Web.Ext.NavigationBar.NavigationBarItemClickEventHandler(this.mainMenuBar_ItemClick);
             this.mainMenuBar.SelectedItemChanged += new System.EventHandler(this.mainMenuBar_SelectedItemChanged);
@@ -169,7 +169,7 @@
             this.bbsConfigurationBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bbsConfigurationBarItems.ForeColor = System.Drawing.Color.White;
             this.bbsConfigurationBarItems.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
-            this.선번장,
+            this.assetBarItem,
             this.deviceManageBarItem,
             this.siteManageBarItem,
             this.zoneManageBarItem,
@@ -181,12 +181,12 @@
             this.bbsConfigurationBarItems.Name = "NavigationBarItem";
             this.bbsConfigurationBarItems.Text = "방송설정";
             // 
-            // 선번장
+            // assetBarItem
             // 
-            this.선번장.AccessibleName = "선번장";
-            this.선번장.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.선번장.Name = "NavigationBarItem";
-            this.선번장.Text = "선번장";
+            this.assetBarItem.AccessibleName = "assetBarItem";
+            this.assetBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.assetBarItem.Name = "NavigationBarItem";
+            this.assetBarItem.Text = "선번장관리";
             // 
             // deviceManageBarItem
             // 
@@ -342,7 +342,7 @@
             this.rightPanels.Dock = Wisej.Web.DockStyle.Fill;
             this.rightPanels.Location = new System.Drawing.Point(282, 0);
             this.rightPanels.Name = "rightPanels";
-            this.rightPanels.Size = new System.Drawing.Size(1321, 463);
+            this.rightPanels.Size = new System.Drawing.Size(804, 461);
             this.rightPanels.TabIndex = 1;
             // 
             // contentsPanel
@@ -352,7 +352,7 @@
             this.contentsPanel.Dock = Wisej.Web.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 66);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(1321, 397);
+            this.contentsPanel.Size = new System.Drawing.Size(804, 395);
             this.contentsPanel.TabIndex = 0;
             // 
             // topPanels
@@ -362,7 +362,7 @@
             this.topPanels.Dock = Wisej.Web.DockStyle.Top;
             this.topPanels.Location = new System.Drawing.Point(0, 0);
             this.topPanels.Name = "topPanels";
-            this.topPanels.Size = new System.Drawing.Size(1321, 66);
+            this.topPanels.Size = new System.Drawing.Size(804, 66);
             this.topPanels.TabIndex = 2;
             // 
             // dataSet1
@@ -387,7 +387,7 @@
             this.Controls.Add(this.rightPanels);
             this.Controls.Add(this.mainMenuBar);
             this.Name = "PA_MainFrame";
-            this.Size = new System.Drawing.Size(1603, 463);
+            this.Size = new System.Drawing.Size(1086, 461);
             this.Text = "PA_MainFrame";
             this.Load += new System.EventHandler(this.PA_MainFrame_Load);
             this.rightPanels.ResumeLayout(false);
@@ -435,6 +435,6 @@
         private DataSet1 dataSet1;
         private DataSet1TableAdapters.EventvmTableAdapter eventvmTableAdapter;
         private Wisej.Web.PictureBox pictureBox1;
-        private Wisej.Web.Ext.NavigationBar.NavigationBarItem 선번장;
+        private Wisej.Web.Ext.NavigationBar.NavigationBarItem assetBarItem;
     }
 }

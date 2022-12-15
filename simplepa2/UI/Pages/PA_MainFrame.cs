@@ -176,12 +176,15 @@ namespace simplepa2.UI.Pages
         }
 
         BSAsset bSAsset = new BSAsset();
+        DashBoard2 view_DashBoard = new DashBoard2();
+        BBSAnchor2 BBSAnchor2 = new BBSAnchor2();
+        BSDeviceManager bSDeviceManager = new BSDeviceManager();
 
         public void openContentsView(string menuAccessibleName)
         {
             switch (menuAccessibleName)
             {
-                case "선번장": bSAsset = bringFrontView<BSAsset>("BSAsset", false); break;
+                case "assetBarItem": bSAsset = bringFrontView<BSAsset>("BSAsset", false); break;
                 case "dashboardBarItems": view_Dashboard = bringFrontView<View_DashBoard>("View_DashBoard", false); break;
                 case "anchorBBSBarItem": view_BBSAnchor = bringFrontView<View_BBSAnchor>("View_BBSAnchor", false); break;
                 case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;
@@ -306,7 +309,7 @@ namespace simplepa2.UI.Pages
                 case eSignalRMsgType.ePlayEnd:
                     //this.btnStart.Enabled = true;
                     //this.btnStop.Enabled = false;
-                    view_BBSAnchor2.refresh(msg1);
+                    BBSAnchor2.refresh(msg1);
                     break;
                 case eSignalRMsgType.ePlaying:
                     break;
