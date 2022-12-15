@@ -1,7 +1,6 @@
 ﻿using System;
 using Wisej.Web;
 using System.Threading;
-using simplepa2.Examples;
 using simplepa2.Setup;
 using Wisej.ChatServer;
 using simplepa2.SignalR;
@@ -106,7 +105,7 @@ namespace simplepa2
 		#region // main initial 
 
 
-		BindingList<bsroom> dataSource = new BindingList<bsroom>();
+		BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
 		private void Main_Load(object sender, EventArgs e)
 		{

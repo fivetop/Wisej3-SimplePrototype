@@ -99,7 +99,7 @@
             // 
             // membs
             // 
-            this.membs.DataSource = typeof(simplepa2.bsroom);
+            this.membs.DataSource = typeof(simplepa2.Bsroom);
             // 
             // imageList1
             // 

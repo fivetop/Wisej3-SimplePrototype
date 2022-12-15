@@ -6,7 +6,7 @@ using System.Web;
 namespace simplepa2
 {
     // 방송룸 8개 관리용 
-    public class bsroom
+    public class Bsroom
     {
         string[] img = { @"Images\headphones.jpg", @"Images\laptop.jpg", @"Images\monitor.png" };
         string[] astate_str = { "입장하기", "방송준비", "방송중" };

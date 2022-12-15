@@ -47,11 +47,11 @@ namespace simplepa2
 			// Microsoft.AspNet.WebApi.WebHost 참조 필요 
 			GlobalConfiguration.Configure(WebApiConfig.Register);
 
-			//Application.MainPage = new PA_Login();
-			//Application.LoadTheme("LSMaterial-3"); //"Material-3" .
+			Application.MainPage = new PA_Login();
+			Application.LoadTheme("LSMaterial-3"); //"Material-3" .
 
 			//Application.MainPage = new PA_MainFrame();
-			Application.MainPage = new Simple();
+			//Application.MainPage = new Simple();
 
 			if (t2 == null)
 			{ 

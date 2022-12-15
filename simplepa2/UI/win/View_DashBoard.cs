@@ -9,7 +9,7 @@ namespace simplepa2.win
     public partial class View_DashBoard : Wisej.Web.UserControl
     {
 		
-		BindingList<bsroom> dataSource = new BindingList<bsroom>();
+		BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
 		public View_DashBoard()
         {
@@ -59,7 +59,7 @@ namespace simplepa2.win
 			// 입장하기 처리
 			foreach (var t3 in this.dataSet1.BSroom)
 			{
-				var t4 = new bsroom();
+				var t4 = new Bsroom();
 				t4.bsroomrow = t3;
 				t4.bsroomid = "방송 스테이션 " + t3.BSroomid.ToString();
 				t4.state_int = t3.state;

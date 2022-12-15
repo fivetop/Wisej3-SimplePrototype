@@ -65,7 +65,6 @@
     <Content Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
-    <Content Include="hubs\q.txt" />
     <Content Include="Images\book.png" />
     <Content Include="Images\checkbox-off-20x20-g1.png" />
     <Content Include="Images\checkbox-off-80x80-g1.png" />
@@ -283,7 +282,7 @@
     <EmbeddedResource Include="Control\gPanel.resx">
       <DependentUpon>gPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\Page2.resx">
+    <EmbeddedResource Include="UI\win\Page2.resx">
       <DependentUpon>Page2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -717,7 +716,6 @@
     <EmbeddedResource Include="Resources\world-shape-public-symbol.svg" />
     <EmbeddedResource Include="Resources\write-email-envelope-button.svg" />
     <EmbeddedResource Include="Resources\youtube-logo.svg" />
-    <Content Include="js\common.js" />
     <Content Include="Scripts\chatClient.js" />
     <EmbeddedResource Include="UI\Views\View_SystemRestAPI.resx">
       <DependentUpon>View_SystemRestAPI.cs</DependentUpon>
@@ -725,13 +723,13 @@
     <EmbeddedResource Include="UI\Views\View_SystemSMSRegistration.resx">
       <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\AGroup.resx">
+    <EmbeddedResource Include="UI\win\AGroup.resx">
       <DependentUpon>AGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\APreset.resx">
+    <EmbeddedResource Include="UI\win\APreset.resx">
       <DependentUpon>APreset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\ASchedule.resx">
+    <EmbeddedResource Include="UI\win\ASchedule.resx">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCZone.resx">
@@ -740,49 +738,49 @@
     <EmbeddedResource Include="UI\Views\View_BBCDevice.resx">
       <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSAsset.resx">
+    <EmbeddedResource Include="UI\win\BSAsset.resx">
       <DependentUpon>BSAsset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSDeviceManager.resx">
+    <EmbeddedResource Include="UI\win\BSDeviceManager.resx">
       <DependentUpon>BSDeviceManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSEMManager.resx">
+    <EmbeddedResource Include="UI\win\BSEMManager.resx">
       <DependentUpon>BSEMManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSInManager.resx">
+    <EmbeddedResource Include="UI\win\BSInManager.resx">
       <DependentUpon>BSInManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSLevelManager.resx">
+    <EmbeddedResource Include="UI\win\BSLevelManager.resx">
       <DependentUpon>BSLevelManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\BSOutManager.resx">
+    <EmbeddedResource Include="UI\win\BSOutManager.resx">
       <DependentUpon>BSOutManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\MGroupManager.resx">
+    <EmbeddedResource Include="UI\win\MGroupManager.resx">
       <DependentUpon>MGroupManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\MHolidayManager.resx">
+    <EmbeddedResource Include="UI\win\MHolidayManager.resx">
       <DependentUpon>MHolidayManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\MMusicManager.resx">
+    <EmbeddedResource Include="UI\win\MMusicManager.resx">
       <DependentUpon>MMusicManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\MSetupManager.resx">
+    <EmbeddedResource Include="UI\win\MSetupManager.resx">
       <DependentUpon>MSetupManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\MUserManager.resx">
+    <EmbeddedResource Include="UI\win\MUserManager.resx">
       <DependentUpon>MUserManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\PMusicSel.resx">
+    <EmbeddedResource Include="UI\win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\View_BBSAnchor.resx">
+    <EmbeddedResource Include="UI\win\View_BBSAnchor.resx">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\View_DashBoard.resx">
+    <EmbeddedResource Include="UI\win\View_DashBoard.resx">
       <DependentUpon>View_DashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="win\Window1.resx">
+    <EmbeddedResource Include="UI\win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsd">
@@ -795,7 +793,6 @@
     </Content>
     <Content Include="libman.json" />
     <Content Include="Handler1.ashx" />
-    <Fakes Include="Fakes\Wisej-3.fakes" />
     <Content Include="Files\Wisej-Datasheet-V2.3.pdf" />
     <Content Include="Themes\LSMaterial-3.theme" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
@@ -1182,7 +1179,7 @@
     <Compile Include="UI\Views\View_TopPanelBar.Designer.cs">
       <DependentUpon>View_TopPanelBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="bsroom.cs" />
+    <Compile Include="Data\Bsroom.cs" />
     <Compile Include="chat\SimpleChatClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1222,20 +1219,14 @@
     <Compile Include="Control\UserControl1.designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataList.cs" />
-    <Compile Include="DataListAssetGroup.cs" />
+    <Compile Include="Data\DataList.cs" />
+    <Compile Include="Data\DataListAssetGroup.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DBController.cs" />
-    <Compile Include="Examples\BackgroundTasks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Examples\BackgroundTasks.Designer.cs">
-      <DependentUpon>BackgroundTasks.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Data\DBController.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handler1.ashx.cs">
       <DependentUpon>Handler1.ashx</DependentUpon>
@@ -1247,10 +1238,10 @@
     <Compile Include="UI\Pages\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\Page2.cs">
+    <Compile Include="UI\win\Page2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="win\Page2.Designer.cs">
+    <Compile Include="UI\win\Page2.Designer.cs">
       <DependentUpon>Page2.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -1266,25 +1257,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="webapi\ApiController1.cs" />
-    <Compile Include="webapi\Encryption.cs" />
-    <Compile Include="webapi\MessageHandler.cs" />
-    <Compile Include="win\AGroup.cs">
+    <Compile Include="SignalR\webapi\ApiController1.cs" />
+    <Compile Include="SignalR\webapi\Encryption.cs" />
+    <Compile Include="SignalR\webapi\MessageHandler.cs" />
+    <Compile Include="UI\win\AGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\AGroup.Designer.cs">
+    <Compile Include="UI\win\AGroup.Designer.cs">
       <DependentUpon>AGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\APreset.cs">
+    <Compile Include="UI\win\APreset.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\APreset.Designer.cs">
+    <Compile Include="UI\win\APreset.Designer.cs">
       <DependentUpon>APreset.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\ASchedule.cs">
+    <Compile Include="UI\win\ASchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\ASchedule.Designer.cs">
+    <Compile Include="UI\win\ASchedule.Designer.cs">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBCZone.cs">
@@ -1299,94 +1290,94 @@
     <Compile Include="UI\Views\View_BBCDevice.Designer.cs">
       <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSAsset.cs">
+    <Compile Include="UI\win\BSAsset.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSAsset.Designer.cs">
+    <Compile Include="UI\win\BSAsset.Designer.cs">
       <DependentUpon>BSAsset.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSDeviceManager.cs">
+    <Compile Include="UI\win\BSDeviceManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSDeviceManager.Designer.cs">
+    <Compile Include="UI\win\BSDeviceManager.Designer.cs">
       <DependentUpon>BSDeviceManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSEMManager.cs">
+    <Compile Include="UI\win\BSEMManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSEMManager.Designer.cs">
+    <Compile Include="UI\win\BSEMManager.Designer.cs">
       <DependentUpon>BSEMManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSInManager.cs">
+    <Compile Include="UI\win\BSInManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSInManager.Designer.cs">
+    <Compile Include="UI\win\BSInManager.Designer.cs">
       <DependentUpon>BSInManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSLevelManager.cs">
+    <Compile Include="UI\win\BSLevelManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSLevelManager.Designer.cs">
+    <Compile Include="UI\win\BSLevelManager.Designer.cs">
       <DependentUpon>BSLevelManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\BSOutManager.cs">
+    <Compile Include="UI\win\BSOutManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\BSOutManager.Designer.cs">
+    <Compile Include="UI\win\BSOutManager.Designer.cs">
       <DependentUpon>BSOutManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MGroupManager.cs">
+    <Compile Include="UI\win\MGroupManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\MGroupManager.Designer.cs">
+    <Compile Include="UI\win\MGroupManager.Designer.cs">
       <DependentUpon>MGroupManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MHolidayManager.cs">
+    <Compile Include="UI\win\MHolidayManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\MHolidayManager.Designer.cs">
+    <Compile Include="UI\win\MHolidayManager.Designer.cs">
       <DependentUpon>MHolidayManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MMusicManager.cs">
+    <Compile Include="UI\win\MMusicManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\MMusicManager.Designer.cs">
+    <Compile Include="UI\win\MMusicManager.Designer.cs">
       <DependentUpon>MMusicManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MSetupManager.cs">
+    <Compile Include="UI\win\MSetupManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\MSetupManager.Designer.cs">
+    <Compile Include="UI\win\MSetupManager.Designer.cs">
       <DependentUpon>MSetupManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\MUserManager.cs">
+    <Compile Include="UI\win\MUserManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\MUserManager.Designer.cs">
+    <Compile Include="UI\win\MUserManager.Designer.cs">
       <DependentUpon>MUserManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\PMusicSel.cs">
+    <Compile Include="UI\win\PMusicSel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="win\PMusicSel.Designer.cs">
+    <Compile Include="UI\win\PMusicSel.Designer.cs">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\View_BBSAnchor.cs">
+    <Compile Include="UI\win\View_BBSAnchor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\View_BBSAnchor.designer.cs">
+    <Compile Include="UI\win\View_BBSAnchor.designer.cs">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\View_DashBoard.cs">
+    <Compile Include="UI\win\View_DashBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="win\View_DashBoard.Designer.cs">
+    <Compile Include="UI\win\View_DashBoard.Designer.cs">
       <DependentUpon>View_DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="win\Window1.cs">
+    <Compile Include="UI\win\Window1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="win\Window1.Designer.cs">
+    <Compile Include="UI\win\Window1.Designer.cs">
       <DependentUpon>Window1.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -1467,9 +1458,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Examples\BackgroundTasks.resx">
-      <DependentUpon>BackgroundTasks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Pages\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
