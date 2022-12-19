@@ -125,37 +125,38 @@ namespace simplepa2
 
             if (aa.Length < 12)
                 return;
-            var m3 = Ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
-            if (m3 == null)
-            {
-                AssetsRow m2 = Ds1.Assets.NewAssetsRow();
-                m2.seq = int.Parse(aa[0]);
-                m2.building = aa[2];
-                m2.floorname = aa[3];
-                m2.GroupName = aa[2] + aa[3];
-                m2.ZoneName = aa[4];
-                m2.SpeakerName = aa[5];
-                m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
-                m2.ch = int.Parse(t1.ch);
-                m2.zpc = t1.zpc;
-                m2.zpci = t1.zpci;
-                m2.zpco = t1.zpco;
-                m2.emServer = t1.emServer;
+            int ch = int.Parse(t1.ch);
+            var m3 = Ds1.Assets.FirstOrDefault(p => p.DeviceName == aa[6] && p.ch == ch);
 
-                if (m2.ch == 0)
-                    m2.ch = 1;
-                m2.chk = 0;
-                m2.floor = int.Parse(t1.array[11]) * 100 + int.Parse(t1.array[12]) *10 + int.Parse(t1.array[13]);
-                m2.emData = t1.emData;
-                m2.ip = "";
-                m2.state = "";
-                m2.state_old = "";
-                m2.DeviceId = 0;
-                if (aa.Count() > 4)
-                    m2.DeviceName = aa[6];
-                Ds1.Assets.Rows.Add(m2);
-                Tam.AssetsTableAdapter.Update(Ds1.Assets);
-            }
+            if (m3 != null) return;
+
+            AssetsRow m2 = Ds1.Assets.NewAssetsRow();
+            m2.seq = int.Parse(aa[0]);
+            m2.building = aa[2];
+            m2.floorname = aa[3];
+            m2.GroupName = aa[2] + aa[3];
+            m2.ZoneName = aa[4];
+            m2.SpeakerName = aa[5];
+            m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
+            m2.ch = int.Parse(t1.ch);
+            m2.zpc = t1.zpc;
+            m2.zpci = t1.zpci;
+            m2.zpco = t1.zpco;
+            m2.emServer = t1.emServer;
+
+            if (m2.ch == 0)
+                m2.ch = 1;
+            m2.chk = 0;
+            m2.floor = int.Parse(t1.array[11]) * 100 + int.Parse(t1.array[12]) *10 + int.Parse(t1.array[13]);
+            m2.emData = t1.emData;
+            m2.ip = "";
+            m2.state = "";
+            m2.state_old = "";
+            m2.DeviceId = 0;
+            if (aa.Count() > 4)
+                m2.DeviceName = aa[6];
+            Ds1.Assets.Rows.Add(m2);
+            Tam.AssetsTableAdapter.Update(Ds1.Assets);
         }
 
         // 장비스캔 후 자산정보와 장비 정보를 1대1로 맵핑 처리 
@@ -286,6 +287,7 @@ namespace simplepa2
         }
 
         // 대기, 방송시작, 방송중, 방송종료, 방송중지
+        // 초기 생성시 2-8 까지 생성 1번은 비상방송 용 
         public void BSTreeSave(EmSpeakerPosition t1)
         {
             Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
