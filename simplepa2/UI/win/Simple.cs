@@ -87,8 +87,8 @@ namespace simplepa2
 
 		View_DashBoard2 view_DashBoard = new View_DashBoard2();
 		View_BBSAnchor2 view_BBSAnchor = new View_BBSAnchor2();
-		View_BBCAsset bSAsset = new View_BBCAsset();
-		View_BBCDevice bSDeviceManager = new View_BBCDevice();
+		View_BBCAsset2 bSAsset = new View_BBCAsset2();
+		View_BBCDevice2 bSDeviceManager = new View_BBCDevice2();
 
 		BSInManager bSInManager = new BSInManager();
 		BSOutManager bSOutManage = new BSOutManager();

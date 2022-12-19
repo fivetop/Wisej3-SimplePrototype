@@ -28,7 +28,7 @@ namespace simplepa2.UI.Pages
 
         private View_BBSHolidayManage view_BBSHolidayManage;
 
-        private View_BBCDevice view_BBCDevice;
+        private View_BBCDevice2 view_BBCDevice;
         private View_BBCSite view_BBCSite;
         private View_BBCZone view_BBCZone;
         private View_BBCInput view_BBCInput;
@@ -175,16 +175,18 @@ namespace simplepa2.UI.Pages
             }
         }
 
-        View_BBCAsset view_BBCAsset = new View_BBCAsset();
-        View_DashBoard2 view_DashBoard = new View_DashBoard2();
-        View_BBSAnchor2 BBSAnchor2 = new View_BBSAnchor2();
-        View_BBCDevice bSDeviceManager = new View_BBCDevice();
+        View_BBCAsset2 view_BBCAsset2 = new View_BBCAsset2();
+        View_BBCDevice2 view_BBCDevice2 = new View_BBCDevice2();
+
+        View_DashBoard2 view_DashBoard2 = new View_DashBoard2();
+        View_BBSAnchor2 view_BBSAnchor2 = new View_BBSAnchor2();
+        View_BBSGroupManage2 view_BBSGroupManage2 = new View_BBSGroupManage2();
 
         public void openContentsView(string menuAccessibleName)
         {
             switch (menuAccessibleName)
             {
-                case "assetBarItem": view_BBCAsset = bringFrontView<View_BBCAsset>("View_BBCAsset", false); break;
+                //
                 case "dashboardBarItems": view_Dashboard = bringFrontView<View_DashBoard>("View_DashBoard", false); break;
                 case "anchorBBSBarItem": view_BBSAnchor = bringFrontView<View_BBSAnchor>("View_BBSAnchor", false); break;
                 case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;
@@ -193,7 +195,9 @@ namespace simplepa2.UI.Pages
                 case "iotApplicationBarItem": view_BBSIotApplication = bringFrontView<View_BBSIoTApplication>("View_BBSIoTApplication", false); break;
                 case "musicConfigurationBarItem": view_BBSMusicManage = bringFrontView<View_BBSMusicManage>("View_BBSMusicManage", false); break;
                 case "holidayBarItem": view_BBSHolidayManage = bringFrontView<View_BBSHolidayManage>("View_BBSHolidayManage", false); break;
-                case "deviceManageBarItem": view_BBCDevice = bringFrontView<View_BBCDevice>("View_BBCDevice", false); break;
+                //
+                case "assetBarItem": view_BBCAsset2 = bringFrontView<View_BBCAsset2>("View_BBCAsset2", false); break;
+                case "deviceManageBarItem": view_BBCDevice2 = bringFrontView<View_BBCDevice2>("View_BBCDevice2", false); break;
                 case "siteManageBarItem": view_BBCSite = bringFrontView<View_BBCSite>("View_BBCSite", false); break;
                 case "zoneManageBarItem": view_BBCZone = bringFrontView<View_BBCZone>("View_BBCZone", false); break;
                 case "inputManageBarItem": view_BBCInput = bringFrontView<View_BBCInput>("View_BBCInput", false); break;
@@ -309,7 +313,7 @@ namespace simplepa2.UI.Pages
                 case eSignalRMsgType.ePlayEnd:
                     //this.btnStart.Enabled = true;
                     //this.btnStop.Enabled = false;
-                    BBSAnchor2.refresh(msg1);
+                    view_BBSAnchor2.refresh(msg1);
                     break;
                 case eSignalRMsgType.ePlaying:
                     break;
@@ -323,7 +327,7 @@ namespace simplepa2.UI.Pages
                     if (msg1.state == 1)
                     {
                         dBSqlite.LinkAssetDevice();
-                        bSDeviceManager.reDraw();
+                        view_BBCDevice2.reDraw();
                     }
                     else
                         AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
