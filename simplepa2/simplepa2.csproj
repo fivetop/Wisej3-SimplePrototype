@@ -737,20 +737,20 @@
     <EmbeddedResource Include="UI\Views\View_BBCDevice2.resx">
       <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\BSEMManager.resx">
-      <DependentUpon>BSEMManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_EMManager2.resx">
+      <DependentUpon>View_EMManager2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\BSInManager.resx">
-      <DependentUpon>BSInManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_InManager2.resx">
+      <DependentUpon>View_InManager2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\BSLevelManager.resx">
-      <DependentUpon>BSLevelManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_LevelManager2.resx">
+      <DependentUpon>View_LevelManager2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\BSOutManager.resx">
-      <DependentUpon>BSOutManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_OutManager2.resx">
+      <DependentUpon>View_OutManager2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\MGroupManager.resx">
-      <DependentUpon>MGroupManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_GroupManager2.resx">
+      <DependentUpon>View_GroupManager2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSHolidayManage2.resx">
       <DependentUpon>View_BBSHolidayManage2.cs</DependentUpon>
@@ -1285,35 +1285,35 @@
     <Compile Include="UI\Views\View_BBCDevice2.Designer.cs">
       <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\BSEMManager.cs">
+    <Compile Include="UI\Views\View_EMManager2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\BSEMManager.Designer.cs">
-      <DependentUpon>BSEMManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_EMManager2.Designer.cs">
+      <DependentUpon>View_EMManager2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\BSInManager.cs">
+    <Compile Include="UI\Views\View_InManager2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\BSInManager.Designer.cs">
-      <DependentUpon>BSInManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_InManager2.Designer.cs">
+      <DependentUpon>View_InManager2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\BSLevelManager.cs">
+    <Compile Include="UI\Views\View_LevelManager2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\BSLevelManager.Designer.cs">
-      <DependentUpon>BSLevelManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_LevelManager2.Designer.cs">
+      <DependentUpon>View_LevelManager2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\BSOutManager.cs">
+    <Compile Include="UI\Views\View_OutManager2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\BSOutManager.Designer.cs">
-      <DependentUpon>BSOutManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_OutManager2.Designer.cs">
+      <DependentUpon>View_OutManager2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\MGroupManager.cs">
+    <Compile Include="UI\Views\View_GroupManager2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\MGroupManager.Designer.cs">
-      <DependentUpon>MGroupManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_GroupManager2.Designer.cs">
+      <DependentUpon>View_GroupManager2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBSHolidayManage2.cs">
       <SubType>UserControl</SubType>

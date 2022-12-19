@@ -7,9 +7,9 @@ using static simplepa2.DataSet1;
 
 namespace simplepa2.win
 {
-    public partial class BSOutManager : Wisej.Web.UserControl
+    public partial class View_OutManager2 : Wisej.Web.UserControl
     {
-        public BSOutManager()
+        public View_OutManager2()
         {
             InitializeComponent();
         }

@@ -4,9 +4,9 @@ using Wisej.Web;
 
 namespace simplepa2.win
 {
-    public partial class BSLevelManager : Wisej.Web.UserControl
+    public partial class View_LevelManager2 : Wisej.Web.UserControl
     {
-        public BSLevelManager()
+        public View_LevelManager2()
         {
             InitializeComponent();
         }

@@ -90,13 +90,13 @@ namespace simplepa2
 		View_BBCAsset2 bSAsset = new View_BBCAsset2();
 		View_BBCDevice2 bSDeviceManager = new View_BBCDevice2();
 
-		BSInManager bSInManager = new BSInManager();
-		BSOutManager bSOutManage = new BSOutManager();
-		BSLevelManager bSLevelManager = new BSLevelManager();
-		BSEMManager bSEMManager = new BSEMManager();
+		View_InManager2 bSInManager = new View_InManager2();
+		View_OutManager2 bSOutManage = new View_OutManager2();
+		View_LevelManager2 bSLevelManager = new View_LevelManager2();
+		View_EMManager2 bSEMManager = new View_EMManager2();
 
 		MSetupManager mSetupManager = new MSetupManager();
-		MGroupManager mGroupManager = new MGroupManager();
+		View_GroupManager2 mGroupManager = new View_GroupManager2();
 		View_BBSHolidayManage2 mHolidayManager = new View_BBSHolidayManage2();
 		View_BBSMusicManage2 mMusicManager = new View_BBSMusicManage2();
 		View_SystemAccount2 mUserManager = new View_SystemAccount2();

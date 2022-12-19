@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class BSInManager
+    partial class View_InManager2
     {
         /// <summary> 
         /// Required designer variable.

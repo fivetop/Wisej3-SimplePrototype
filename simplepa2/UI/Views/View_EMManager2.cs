@@ -8,9 +8,9 @@ using static simplepa2.DataSet1;
 
 namespace simplepa2.win
 {
-    public partial class BSEMManager : Wisej.Web.UserControl
+    public partial class View_EMManager2 : Wisej.Web.UserControl
     {
-        public BSEMManager()
+        public View_EMManager2()
         {
             InitializeComponent();
         }

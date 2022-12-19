@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class MGroupManager
+    partial class View_GroupManager2
     {
         /// <summary> 
         /// Required designer variable.

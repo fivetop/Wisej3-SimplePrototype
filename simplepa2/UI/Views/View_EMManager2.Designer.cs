@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class BSEMManager
+    partial class View_EMManager2
     {
         /// <summary> 
         /// Required designer variable.

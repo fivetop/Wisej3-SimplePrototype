@@ -6,9 +6,9 @@ using static simplepa2.DataSet1;
 
 namespace simplepa2.win
 {
-    public partial class MGroupManager : Wisej.Web.UserControl
+    public partial class View_GroupManager2 : Wisej.Web.UserControl
     {
-        public MGroupManager()
+        public View_GroupManager2()
         {
             InitializeComponent();
         }
