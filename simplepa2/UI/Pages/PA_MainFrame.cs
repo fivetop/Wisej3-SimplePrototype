@@ -51,7 +51,7 @@ namespace simplepa2.UI.Pages
         private View_SystemSMSRegistration view_SystemSMSRegistration;
         private View_SystemRestAPI view_SystemRestAPI;
 
-        public DBController dBSqlite { get; set; } = new DBController();
+        public DBController dBSqlite { get; set; } = new DBController(); // DB 처리용 
         #endregion
 
         public PA_MainFrame()

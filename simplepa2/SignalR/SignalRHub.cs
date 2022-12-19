@@ -60,8 +60,6 @@ namespace simplepa2.SignalR
             Clients.All.MessageC2S2(message);
             if(gweb.mainFrame != null)
                 gweb.mainFrame.eRcvSigR(message);
-            if(gweb.mainFrame1 != null)
-                gweb.mainFrame1.RcvSigR(message);
         }
     }
 

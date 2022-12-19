@@ -12,8 +12,6 @@ namespace simplepa2
     public static class gweb
     {
         public static PA_MainFrame mainFrame { get; set; } = null;
-        public static Simple mainFrame1 { get; set; } = null;
-
         public static signalr _hub { get; set; } = null;
 
         #region // 로그 처리 

@@ -24,28 +24,13 @@ namespace simplepa2
 
 		//private Popups.StartPopup startPopup;
 		//public event EventHandler ExampleCreated;
-
 		//public static SignalRClient signalRClient { get; set; } = new SignalRClient();
-		public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
+		//public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
 		public DBController dBSqlite { get; set; } = new DBController();
 
 		public Simple()
 		{
 			InitializeComponent();
-
-			gweb.mainFrame1 = this;
-
-			for (int i = 1; i < 9; i++)
-			{
-				playItems[i] = new PlayItem();
-				playItems[i].chno = i;
-			}
-
-			//this.startPopup = new Popups.StartPopup()
-			//{
-			//	Alignment = Placement.TopLeft
-			//};
-			//this.customWallpaper1.RotationInterval = 5000;
 
 			string t1 = Application.Session["user"];
 			if (t1 == null)
@@ -54,11 +39,6 @@ namespace simplepa2
 				Application.Session["user"] = "Admin";
 				Application.Session["user_name"] = "관리자";
 			}
-
-			//MaintabControl.AppearanceKey = MaintabControl.TabPages.FlatButtons;
-			MaintabControl.ItemSize = new Size(0, 1);
-			MaintabControl.SizeMode = TabSizeMode.Fixed;
-
 		}
 
 		// 초기화 처리 
@@ -66,11 +46,7 @@ namespace simplepa2
 		{
 
 			dBSqlite.DBInit();
-			//this.dataSet1 = dBSqlite.Ds1;
-			// start gage background task.
-			SatrtUpdatingGageItem();
-			//signalRClient.owner = this;
-			//signalRClient.ConnectToSignalR();
+			SatrtUpdatingItem();
 
 			var t1 = Application.Session["user"];
 			var t2 = Application.Session["user_name"];
@@ -78,16 +54,10 @@ namespace simplepa2
 			AlertBox.Show("Log-In : " + t2 + t1);
 
 			//Application.LoadTheme("LSMaterial-3"); //"Material-3" 
-
 			//Application.Theme.Colors["navbar-background"] = "blue";
-
-			//this.btnStart.Enabled = true;
-			//this.btnStop.Enabled = false;
-			//this.dataGridView2.RowCount = 10;
-
 			AddBSPage(); // 방송 설정 처리 
 
-			tableLayoutPanel_Top1.Size = new Size(440,58);
+			//tableLayoutPanel_Top1.Size = new Size(440,58);
 
 			this.timer = Application.StartTimer(1, 1000, () => {
 				var now = DateTime.Now;
@@ -105,7 +75,7 @@ namespace simplepa2
 		#region // main initial 
 
 
-		BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
+		//BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
 		private void Main_Load(object sender, EventArgs e)
 		{
@@ -233,7 +203,56 @@ namespace simplepa2
 			MaintabControl.SelectedIndexChanged += BStabControl_SelectedIndexChanged;
 		}
 
-        private void BStabControl_SelectedIndexChanged(object sender, EventArgs e)
+		string[] menu_string = {"댓쉬보드", "앵커방송", "그룹방송", "프리셋", "예약방송",
+			"선번장관리" , "장비관리", "입력관리", "출력관리", "음량관리" , "비상방송",
+			"시스템설정", "그룹관리","휴일관리", "음원관리", "사용자관리"
+		};
+
+
+		private void navigationBar1_SelectedItemChanged(object sender, EventArgs e)
+		{
+
+			string t1 = this.navigationBar1.SelectedItem.Text;
+
+			AlertBox.Show($"Selected {t1}");
+			Console.WriteLine(t1);
+			//if (this.navigationBar1.SelectedItem.AccessibleName == null)
+			//	return;
+			//int acc = int.Parse(this.navigationBar1.SelectedItem.AccessibleName);
+
+
+
+			switch (t1)
+			{
+				case "대쉬보드": MaintabControl.SelectedIndex = 0; break;
+				case "방송운영": break;
+				case "앵커방송": MaintabControl.SelectedIndex = 1; break;
+				case "그룹방송": MaintabControl.SelectedIndex = 2; break;
+				case "프리셋": MaintabControl.SelectedIndex = 3; break;
+				case "예약방송": MaintabControl.SelectedIndex = 4; break;
+				case "방송설정": break;
+				case "선번장관리": MaintabControl.SelectedIndex = 5; break;
+				case "장비관리": MaintabControl.SelectedIndex = 6; break;
+				case "입력관리": MaintabControl.SelectedIndex = 7; break;
+				case "출력관리": MaintabControl.SelectedIndex = 8; break;
+				case "음량관리": MaintabControl.SelectedIndex = 9; break;
+				case "비상방송": MaintabControl.SelectedIndex = 10; break;
+				case "환경설정": break;
+				case "시스템설정": MaintabControl.SelectedIndex = 11; break;
+				case "그룹관리": MaintabControl.SelectedIndex = 12; break;
+				case "휴일관리": MaintabControl.SelectedIndex = 13; break;
+				case "음원관리": MaintabControl.SelectedIndex = 14; break;
+				case "사용자관리": MaintabControl.SelectedIndex = 15; break;
+					//case "사이트관리": MaintabControl.SelectedIndex = 8; break;
+					//case "Zone관리": MaintabControl.SelectedIndex = 9; break;
+					//case "댓쉬보드": MaintabControl.SelectedIndex = 18; break;
+					//case "댓쉬보드": MaintabControl.SelectedIndex = 19; break;
+					//case "댓쉬보드": MaintabControl.SelectedIndex = 20; break;
+
+			}
+		}
+
+		private void BStabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
 			view_BBSAnchor.reDraw();
 			bSInManager.reDraw(); 
@@ -248,7 +267,7 @@ namespace simplepa2
 		#region // button 
 
 		// 백그라운드 처리용 
-		private void SatrtUpdatingGageItem()
+		private void SatrtUpdatingItem()
 		{
 			Application.StartTask(() =>
 			{
@@ -296,56 +315,7 @@ namespace simplepa2
 			this.Dispose(true);
         }
 
-
-        private void ubutton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hdataGridView1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-		#endregion
-
-		#region // tab initial  
-		
-
 		bool show = false;
-		private void MyDesktop_ItemClick(object sender, DesktopTaskBarItemClickEventArgs e)
-		{
-			try
-			{
-				switch (e.Item.Name)
-				{
-					case "desktopDateTime":
-						break;
-					case "desktopStart":
-						if (show)
-						{
-						}
-						else
-						{
-						}
-						show = !show;
-						break;
-					case "desktopTaskBarItemCompras":
-						break;
-					default:
-
-						break;
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Error : " + ex.Message);
-			}
-		}
-
-
-
-
 		/*
             private void Application_ApplicationExit(object sender, EventArgs e)
             {
@@ -355,58 +325,8 @@ namespace simplepa2
                 this.userTreesTableAdapter.Adapter.Dispose();
             }
         */
-
-
-
-		string[] menu_string = {"댓쉬보드", "앵커방송", "그룹방송", "프리셋", "예약방송", 
-			"선번장관리" , "장비관리", "입력관리", "출력관리", "음량관리" , "비상방송",
-			"시스템설정", "그룹관리","휴일관리", "음원관리", "사용자관리"
-		};
-
-
-		private void navigationBar1_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-			string t1 = this.navigationBar1.SelectedItem.Text;
-			
-			AlertBox.Show($"Selected {t1}");
-			Console.WriteLine(t1);
-			//if (this.navigationBar1.SelectedItem.AccessibleName == null)
-			//	return;
-			//int acc = int.Parse(this.navigationBar1.SelectedItem.AccessibleName);
-
-
-
-			switch (t1)
-			{
-				case "대쉬보드": MaintabControl.SelectedIndex = 0; break;
-				case "방송운영":  break;
-				case "앵커방송": MaintabControl.SelectedIndex = 1; break;
-				case "그룹방송": MaintabControl.SelectedIndex = 2; break;
-				case "프리셋": MaintabControl.SelectedIndex = 3; break;
-				case "예약방송": MaintabControl.SelectedIndex = 4; break;
-				case "방송설정": break;
-				case "선번장관리": MaintabControl.SelectedIndex = 5; break;
-				case "장비관리": MaintabControl.SelectedIndex = 6; break;
-				case "입력관리": MaintabControl.SelectedIndex = 7; break;
-				case "출력관리": MaintabControl.SelectedIndex = 8; break;
-				case "음량관리": MaintabControl.SelectedIndex = 9; break;
-				case "비상방송": MaintabControl.SelectedIndex = 10; break;
-				case "환경설정": break;
-				case "시스템설정": MaintabControl.SelectedIndex = 11; break;
-				case "그룹관리": MaintabControl.SelectedIndex = 12; break;
-				case "휴일관리": MaintabControl.SelectedIndex = 13; break;
-				case "음원관리": MaintabControl.SelectedIndex = 14; break;
-				case "사용자관리": MaintabControl.SelectedIndex = 15; break;
-				//case "사이트관리": MaintabControl.SelectedIndex = 8; break;
-				//case "Zone관리": MaintabControl.SelectedIndex = 9; break;
-				//case "댓쉬보드": MaintabControl.SelectedIndex = 18; break;
-				//case "댓쉬보드": MaintabControl.SelectedIndex = 19; break;
-				//case "댓쉬보드": MaintabControl.SelectedIndex = 20; break;
-
-			}
-		}
 		#endregion
+
 
 
 		#region // Signal R  

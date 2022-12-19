@@ -26,8 +26,8 @@ namespace simplepa2.UI.Views
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
 			if (bSTreeRow == null) return;
-			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
-			gweb.mainFrame1.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
+			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
+			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
 			bSTreeRow = null;
 		}
 
@@ -74,7 +74,7 @@ namespace simplepa2.UI.Views
 				return;
 			}
 
-			int ret = gweb.mainFrame1.dBSqlite.EMServerGetState(SelAsset[0]);
+			int ret = gweb.mainFrame.dBSqlite.EMServerGetState(SelAsset[0]);
 
 			if (ret == 0)
 			{
@@ -83,14 +83,14 @@ namespace simplepa2.UI.Views
 			}
 
 			// 방송 채널 확보 
-			bSTreeRow = gweb.mainFrame1.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
+			bSTreeRow = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
 			// 저장전 기존 데이터 있으면 삭제처리 
-			gweb.mainFrame1.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
+			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
 			// 지역과 음원 저장 
-			gweb.mainFrame1.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId ,SelAsset, SelMusic);
+			gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId ,SelAsset, SelMusic);
 			// 해당 지역 서버에 명령 처리 
-			gweb.mainFrame1.sendSigR(eSignalRMsgType.ePlay, bSTreeRow, SelAsset, SelMusic);
-			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "방송시작");
+			gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeRow, SelAsset, SelMusic);
+			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "방송시작");
 			this.btnStart.Enabled = false;
 			this.btnStop.Enabled = true;
 		}
@@ -100,9 +100,9 @@ namespace simplepa2.UI.Views
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
 			if (bSTreeRow == null) return;
-			gweb.mainFrame1.sendSigR(eSignalRMsgType.eStop, bSTreeRow, null, null);
-			gweb.mainFrame1.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
-			gweb.mainFrame1.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
+			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeRow, null, null);
+			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
+			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
 			bSTreeRow = null;
 		}
 

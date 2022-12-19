@@ -46,6 +46,7 @@
             this.label_time = new Wisej.Web.Label();
             this.label_date = new Wisej.Web.Label();
             this.button11 = new Wisej.Web.Button();
+            this.bslamp1 = new simplepa2.bslamp();
             this.menuItem2 = new Wisej.Web.MenuItem();
             this.linkMenuItem1 = new Wisej.Web.LinkMenuItem();
             this.linkMenuItem2 = new Wisej.Web.LinkMenuItem();
@@ -84,7 +85,6 @@
             this.navigationBarItem18 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.navigationBarItem19 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.panel6 = new Wisej.Web.Panel();
-            this.bslamp1 = new simplepa2.bslamp();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -124,7 +124,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.ShowCloseButton = false;
-            this.panel2.Size = new System.Drawing.Size(1164, 66);
+            this.panel2.Size = new System.Drawing.Size(786, 66);
             this.panel2.TabIndex = 1;
             this.panel2.TabStop = true;
             // 
@@ -147,7 +147,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 82.14F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1164, 66);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(786, 66);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.TabStop = true;
             // 
@@ -158,7 +158,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0);
             this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 58);
+            this.label1.Size = new System.Drawing.Size(34, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "SimplePA Web v2.0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,7 +171,7 @@
             this.panel14.Controls.Add(this.radioButton3);
             this.panel14.Controls.Add(this.radioButton2);
             this.panel14.Controls.Add(this.radioButton1);
-            this.panel14.Location = new System.Drawing.Point(62, 3);
+            this.panel14.Location = new System.Drawing.Point(43, 3);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(8, 30);
             this.panel14.TabIndex = 11;
@@ -245,7 +245,7 @@
             this.tableLayoutPanel_Top1.Controls.Add(this.button11, 3, 0);
             this.tableLayoutPanel_Top1.Controls.Add(this.button7, 7, 0);
             this.tableLayoutPanel_Top1.Dock = Wisej.Web.DockStyle.Right;
-            this.tableLayoutPanel_Top1.Location = new System.Drawing.Point(899, 3);
+            this.tableLayoutPanel_Top1.Location = new System.Drawing.Point(530, 3);
             this.tableLayoutPanel_Top1.Name = "tableLayoutPanel_Top1";
             this.tableLayoutPanel_Top1.RowCount = 1;
             this.tableLayoutPanel_Top1.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 56F));
@@ -308,6 +308,15 @@
             this.button11.TabIndex = 1;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // bslamp1
+            // 
+            this.bslamp1.Anchor = Wisej.Web.AnchorStyles.None;
+            this.bslamp1.Location = new System.Drawing.Point(96, 17);
+            this.bslamp1.Name = "bslamp1";
+            this.bslamp1.Size = new System.Drawing.Size(8, 30);
+            this.bslamp1.TabIndex = 9;
+            this.bslamp1.Visible = false;
+            // 
             // menuItem2
             // 
             this.menuItem2.Index = -1;
@@ -337,7 +346,7 @@
             this.MaintabControl.Location = new System.Drawing.Point(0, 0);
             this.MaintabControl.Name = "MaintabControl";
             this.MaintabControl.PageInsets = new Wisej.Web.Padding(0, 1, 2, 2);
-            this.MaintabControl.Size = new System.Drawing.Size(1164, 480);
+            this.MaintabControl.Size = new System.Drawing.Size(786, 478);
             this.MaintabControl.SizeMode = Wisej.Web.TabSizeMode.Normal;
             this.MaintabControl.TabIndex = 1;
             // 
@@ -347,7 +356,7 @@
             this.panel10.Dock = Wisej.Web.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(0, 66);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1164, 480);
+            this.panel10.Size = new System.Drawing.Size(786, 478);
             this.panel10.TabIndex = 3;
             this.panel10.TabStop = true;
             // 
@@ -366,7 +375,7 @@
             this.navigationBarItem16});
             this.navigationBar1.Name = "navigationBar1";
             this.navigationBar1.ShowUser = false;
-            this.navigationBar1.Size = new System.Drawing.Size(260, 546);
+            this.navigationBar1.Size = new System.Drawing.Size(260, 544);
             this.navigationBar1.TabIndex = 4;
             this.navigationBar1.Text = "SimplePA";
             this.navigationBar1.SelectedItemChanged += new System.EventHandler(this.navigationBar1_SelectedItemChanged);
@@ -578,17 +587,8 @@
             this.panel6.Dock = Wisej.Web.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(260, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1164, 546);
+            this.panel6.Size = new System.Drawing.Size(786, 544);
             this.panel6.TabIndex = 5;
-            // 
-            // bslamp1
-            // 
-            this.bslamp1.Anchor = Wisej.Web.AnchorStyles.None;
-            this.bslamp1.Location = new System.Drawing.Point(143, 17);
-            this.bslamp1.Name = "bslamp1";
-            this.bslamp1.Size = new System.Drawing.Size(8, 30);
-            this.bslamp1.TabIndex = 9;
-            this.bslamp1.Visible = false;
             // 
             // Simple
             // 
@@ -597,7 +597,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.navigationBar1);
             this.Name = "Simple";
-            this.Size = new System.Drawing.Size(1424, 546);
+            this.Size = new System.Drawing.Size(1046, 544);
             this.Load += new System.EventHandler(this.MyDesktop_Load);
             this.Disposed += new System.EventHandler(this.Simple_Disposed);
             this.panel2.ResumeLayout(false);

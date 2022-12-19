@@ -76,7 +76,7 @@ namespace simplepa2.UI.Views
 
 			//DevicelistView1.View = View.Details;
 			DevicelistView1.BeginUpdate();
-			foreach (var t3 in  gweb.mainFrame1.dBSqlite.Ds1.Device)
+			foreach (var t3 in  gweb.mainFrame.dBSqlite.Ds1.Device)
 			{
 				if (!(t3.device == 0 || t3.device == 2))
 					continue;
