@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel48 = new Wisej.Web.Panel();
             this.panel49 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.이름 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송시간 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송종류 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송내용 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -40,10 +40,23 @@
             this.panel38 = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.label17 = new Wisej.Web.Label();
+            this.dataSet1 = new simplepa2.DataSet1();
+            this.userTreesBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.userTreesTableAdapter = new simplepa2.DataSet1TableAdapters.UserTreesTableAdapter();
+            this.colUsertreeid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colUser_Group = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colUser_Name = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colLogin_Id = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colLogin_Password = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colLogin_Password2 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colMobile = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEmail = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel48.SuspendLayout();
             this.panel49.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel38.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userTreesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel48
@@ -73,23 +86,25 @@
             // dataGridView1
             // 
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.이름,
+            this.colUsertreeid,
+            this.colUser_Name,
             this.방송시간,
             this.방송종류,
             this.방송내용,
             this.현재로그인,
-            this.이전로그인});
+            this.이전로그인,
+            this.colMobile,
+            this.colEmail,
+            this.colUser_Group,
+            this.colLogin_Id,
+            this.colLogin_Password,
+            this.colLogin_Password2});
+            this.dataGridView1.DataSource = this.userTreesBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 185;
-            // 
-            // 이름
-            // 
-            this.이름.HeaderText = "이름";
-            this.이름.Name = "이름";
-            this.이름.Width = 200;
             // 
             // 방송시간
             // 
@@ -157,6 +172,69 @@
             this.label17.Text = "사용자 리스트";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userTreesBindingSource
+            // 
+            this.userTreesBindingSource.DataMember = "UserTrees";
+            this.userTreesBindingSource.DataSource = this.dataSet1;
+            // 
+            // userTreesTableAdapter
+            // 
+            this.userTreesTableAdapter.ClearBeforeFill = true;
+            // 
+            // colUsertreeid
+            // 
+            this.colUsertreeid.DataPropertyName = "UserTreeId";
+            this.colUsertreeid.HeaderText = "번호";
+            this.colUsertreeid.Name = "colUsertreeid";
+            this.colUsertreeid.ReadOnly = true;
+            // 
+            // colUser_Group
+            // 
+            this.colUser_Group.DataPropertyName = "user_group";
+            this.colUser_Group.HeaderText = "user_group";
+            this.colUser_Group.Name = "colUser_Group";
+            // 
+            // colUser_Name
+            // 
+            this.colUser_Name.DataPropertyName = "user_name";
+            this.colUser_Name.HeaderText = "이름";
+            this.colUser_Name.Name = "colUser_Name";
+            // 
+            // colLogin_Id
+            // 
+            this.colLogin_Id.DataPropertyName = "login_id";
+            this.colLogin_Id.HeaderText = "login_id";
+            this.colLogin_Id.Name = "colLogin_Id";
+            // 
+            // colLogin_Password
+            // 
+            this.colLogin_Password.DataPropertyName = "login_password";
+            this.colLogin_Password.HeaderText = "login_password";
+            this.colLogin_Password.Name = "colLogin_Password";
+            // 
+            // colLogin_Password2
+            // 
+            this.colLogin_Password2.DataPropertyName = "login_password2";
+            this.colLogin_Password2.HeaderText = "login_password2";
+            this.colLogin_Password2.Name = "colLogin_Password2";
+            // 
+            // colMobile
+            // 
+            this.colMobile.DataPropertyName = "mobile";
+            this.colMobile.HeaderText = "핸드폰";
+            this.colMobile.Name = "colMobile";
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "email";
+            this.colEmail.HeaderText = "이메일";
+            this.colEmail.Name = "colEmail";
+            // 
             // View_SystemAccount
             // 
             this.BackColor = System.Drawing.Color.FromName("@bBGall");
@@ -165,10 +243,13 @@
             this.Name = "View_SystemAccount";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
+            this.Load += new System.EventHandler(this.View_SystemAccount_Load);
             this.panel48.ResumeLayout(false);
             this.panel49.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel38.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userTreesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,7 +259,6 @@
         private Wisej.Web.Panel panel48;
         private Wisej.Web.Panel panel49;
         private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn 이름;
         private Wisej.Web.DataGridViewTextBoxColumn 방송시간;
         private Wisej.Web.DataGridViewTextBoxColumn 방송종류;
         private Wisej.Web.DataGridViewTextBoxColumn 방송내용;
@@ -187,5 +267,16 @@
         private Wisej.Web.Panel panel38;
         private Wisej.Web.Button button1;
         private Wisej.Web.Label label17;
+        private Wisej.Web.DataGridViewTextBoxColumn colUsertreeid;
+        private Wisej.Web.DataGridViewTextBoxColumn colUser_Name;
+        private Wisej.Web.DataGridViewTextBoxColumn colMobile;
+        private Wisej.Web.DataGridViewTextBoxColumn colEmail;
+        private Wisej.Web.DataGridViewTextBoxColumn colUser_Group;
+        private Wisej.Web.DataGridViewTextBoxColumn colLogin_Id;
+        private Wisej.Web.DataGridViewTextBoxColumn colLogin_Password;
+        private Wisej.Web.DataGridViewTextBoxColumn colLogin_Password2;
+        private Wisej.Web.BindingSource userTreesBindingSource;
+        private DataSet1 dataSet1;
+        private DataSet1TableAdapters.UserTreesTableAdapter userTreesTableAdapter;
     }
 }

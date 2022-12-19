@@ -3,9 +3,9 @@ using Wisej.Web;
 
 namespace simplepa2.win
 {
-    public partial class MHolidayManager : Wisej.Web.UserControl
+    public partial class View_BBSHolidayManage2 : Wisej.Web.UserControl
     {
-        public MHolidayManager()
+        public View_BBSHolidayManage2()
         {
             InitializeComponent();
         }

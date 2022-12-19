@@ -97,9 +97,9 @@ namespace simplepa2
 
 		MSetupManager mSetupManager = new MSetupManager();
 		MGroupManager mGroupManager = new MGroupManager();
-		MHolidayManager mHolidayManager = new MHolidayManager();
-		MMusicManager mMusicManager = new MMusicManager();
-		MUserManager mUserManager = new MUserManager();
+		View_BBSHolidayManage2 mHolidayManager = new View_BBSHolidayManage2();
+		View_BBSMusicManage2 mMusicManager = new View_BBSMusicManage2();
+		View_SystemAccount2 mUserManager = new View_SystemAccount2();
 
 		private void AddBSPage()
         {

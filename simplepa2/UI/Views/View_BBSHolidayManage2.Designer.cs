@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class MHolidayManager
+    partial class View_BBSHolidayManage2
     {
         /// <summary> 
         /// Required designer variable.

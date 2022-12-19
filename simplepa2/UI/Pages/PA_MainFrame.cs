@@ -205,11 +205,13 @@ namespace simplepa2.UI.Pages
                 case "musicManageBarItem": view_BBCMusic = bringFrontView<View_BBCMusic>("View_BBCMusic", false); break;
                 case "emergencyManageBarItem": view_BBCEmergency = bringFrontView<View_BBCEmergency>("View_BBCEmergency", false); break;
                 case "ampFailoverBarItem": view_BBCAmpFailover = bringFrontView<View_BBCAmpFailover>("View_BBCAmpFailover", false); break;
+                //               
                 case "bbsHistoryBarItem": view_HistoryBBS = bringFrontView<View_HistoryBBS>("View_HistoryBBS", false); break;
                 case "deviceHistoryBarItem": view_HistoryDevice = bringFrontView<View_HistoryDevice>("View_HistoryDevice", false); break;
                 case "fireCallHistoryBarItem": view_HistoryFireSignal = bringFrontView<View_HistoryFireSignal>("View_HistoryFireSignal", false); break;
                 case "outCallHistoryBarItem": view_HistoryOutMsgs = bringFrontView<View_HistoryOutMsgs>("View_HistoryOutMsgs", false); break;
                 case "systemVerifyHistoryBarItem": view_HistorySystemChanges = bringFrontView<View_HistorySystemChanges>("View_HistorySystemChanges", false); break;
+                //    
                 case "accountManageBarItem": view_SystemAccount = bringFrontView<View_SystemAccount>("View_SystemAccount", false); break;
                 case "emailManageBarItem": view_SystemEmail = bringFrontView<View_SystemEmail>("View_SystemEmail", false); break;
                 case "smsRegistrationBarItem": view_SystemSMSRegistration = bringFrontView<View_SystemSMSRegistration>("View_SystemSMSRegistration", false); break;

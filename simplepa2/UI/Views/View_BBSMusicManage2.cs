@@ -4,9 +4,9 @@ using Wisej.Web;
 
 namespace simplepa2.win
 {
-    public partial class MMusicManager : Wisej.Web.UserControl
+    public partial class View_BBSMusicManage2 : Wisej.Web.UserControl
     {
-        public MMusicManager()
+        public View_BBSMusicManage2()
         {
             InitializeComponent();
         }

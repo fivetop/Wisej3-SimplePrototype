@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class MMusicManager
+    partial class View_BBSMusicManage2
     {
         /// <summary> 
         /// Required designer variable.

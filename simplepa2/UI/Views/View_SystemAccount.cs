@@ -31,5 +31,17 @@ namespace simplepa2.UI.Views
             }
 
         }
+
+        private void View_SystemAccount_Load(object sender, EventArgs e)
+        {
+            //userTreesBindingSource.Sort
+            reDraw();
+        }
+
+        internal void reDraw()
+        {
+            this.userTreesTableAdapter.Fill(this.dataSet1.UserTrees);
+        }
+
     }
 }

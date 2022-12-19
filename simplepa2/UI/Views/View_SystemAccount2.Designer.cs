@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class MUserManager
+    partial class View_SystemAccount2
     {
         /// <summary> 
         /// Required designer variable.

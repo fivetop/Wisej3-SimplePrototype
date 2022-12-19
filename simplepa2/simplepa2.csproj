@@ -722,7 +722,7 @@
     <EmbeddedResource Include="UI\Views\View_BBSGroupManage2.resx">
       <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\ASchedule.resx">
+    <EmbeddedResource Include="UI\Views\ASchedule.resx">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCZone.resx">
@@ -737,32 +737,32 @@
     <EmbeddedResource Include="UI\Views\View_BBCDevice2.resx">
       <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\BSEMManager.resx">
+    <EmbeddedResource Include="UI\Views\BSEMManager.resx">
       <DependentUpon>BSEMManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\BSInManager.resx">
+    <EmbeddedResource Include="UI\Views\BSInManager.resx">
       <DependentUpon>BSInManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\BSLevelManager.resx">
+    <EmbeddedResource Include="UI\Views\BSLevelManager.resx">
       <DependentUpon>BSLevelManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\BSOutManager.resx">
+    <EmbeddedResource Include="UI\Views\BSOutManager.resx">
       <DependentUpon>BSOutManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\MGroupManager.resx">
+    <EmbeddedResource Include="UI\Views\MGroupManager.resx">
       <DependentUpon>MGroupManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\MHolidayManager.resx">
-      <DependentUpon>MHolidayManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBSHolidayManage2.resx">
+      <DependentUpon>View_BBSHolidayManage2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\MMusicManager.resx">
-      <DependentUpon>MMusicManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBSMusicManage2.resx">
+      <DependentUpon>View_BBSMusicManage2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\MSetupManager.resx">
+    <EmbeddedResource Include="UI\Views\MSetupManager.resx">
       <DependentUpon>MSetupManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\MUserManager.resx">
-      <DependentUpon>MUserManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_SystemAccount2.resx">
+      <DependentUpon>View_SystemAccount2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
@@ -772,6 +772,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_DashBoard2.resx">
       <DependentUpon>View_DashBoard2.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
@@ -1254,10 +1255,10 @@
     <Compile Include="UI\Views\View_BBSGroupManage2.Designer.cs">
       <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\ASchedule.cs">
+    <Compile Include="UI\Views\ASchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\ASchedule.Designer.cs">
+    <Compile Include="UI\Views\ASchedule.Designer.cs">
       <DependentUpon>ASchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBCZone.cs">
@@ -1284,59 +1285,59 @@
     <Compile Include="UI\Views\View_BBCDevice2.Designer.cs">
       <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\BSEMManager.cs">
+    <Compile Include="UI\Views\BSEMManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\BSEMManager.Designer.cs">
+    <Compile Include="UI\Views\BSEMManager.Designer.cs">
       <DependentUpon>BSEMManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\BSInManager.cs">
+    <Compile Include="UI\Views\BSInManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\BSInManager.Designer.cs">
+    <Compile Include="UI\Views\BSInManager.Designer.cs">
       <DependentUpon>BSInManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\BSLevelManager.cs">
+    <Compile Include="UI\Views\BSLevelManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\BSLevelManager.Designer.cs">
+    <Compile Include="UI\Views\BSLevelManager.Designer.cs">
       <DependentUpon>BSLevelManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\BSOutManager.cs">
+    <Compile Include="UI\Views\BSOutManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\BSOutManager.Designer.cs">
+    <Compile Include="UI\Views\BSOutManager.Designer.cs">
       <DependentUpon>BSOutManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\MGroupManager.cs">
+    <Compile Include="UI\Views\MGroupManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\MGroupManager.Designer.cs">
+    <Compile Include="UI\Views\MGroupManager.Designer.cs">
       <DependentUpon>MGroupManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\MHolidayManager.cs">
+    <Compile Include="UI\Views\View_BBSHolidayManage2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\MHolidayManager.Designer.cs">
-      <DependentUpon>MHolidayManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBSHolidayManage2.Designer.cs">
+      <DependentUpon>View_BBSHolidayManage2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\MMusicManager.cs">
+    <Compile Include="UI\Views\View_BBSMusicManage2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\MMusicManager.Designer.cs">
-      <DependentUpon>MMusicManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBSMusicManage2.Designer.cs">
+      <DependentUpon>View_BBSMusicManage2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\MSetupManager.cs">
+    <Compile Include="UI\Views\MSetupManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\MSetupManager.Designer.cs">
+    <Compile Include="UI\Views\MSetupManager.Designer.cs">
       <DependentUpon>MSetupManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\MUserManager.cs">
+    <Compile Include="UI\Views\View_SystemAccount2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\MUserManager.Designer.cs">
-      <DependentUpon>MUserManager.cs</DependentUpon>
+    <Compile Include="UI\Views\View_SystemAccount2.Designer.cs">
+      <DependentUpon>View_SystemAccount2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\win\PMusicSel.cs">
       <SubType>Form</SubType>

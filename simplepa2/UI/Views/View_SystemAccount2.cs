@@ -4,9 +4,9 @@ using Wisej.Web;
 
 namespace simplepa2.win
 {
-    public partial class MUserManager : Wisej.Web.UserControl
+    public partial class View_SystemAccount2 : Wisej.Web.UserControl
     {
-        public MUserManager()
+        public View_SystemAccount2()
         {
             InitializeComponent();
         }
