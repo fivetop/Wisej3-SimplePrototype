@@ -224,7 +224,7 @@
             // upload1
             // 
             this.upload1.ButtonPosition = System.Drawing.ContentAlignment.MiddleLeft;
-            this.upload1.Location = new System.Drawing.Point(16, 19);
+            this.upload1.Location = new System.Drawing.Point(20, 19);
             this.upload1.Name = "upload1";
             this.upload1.Size = new System.Drawing.Size(243, 30);
             this.upload1.TabIndex = 4;
@@ -234,7 +234,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(275, 19);
+            this.button2.Location = new System.Drawing.Point(281, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(62, 30);
             this.button2.TabIndex = 3;
@@ -270,13 +270,13 @@
             // 
             this.assetsTableAdapter.ClearBeforeFill = true;
             // 
-            // BSAsset
+            // View_BBCAsset
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ptop);
             this.Dock = Wisej.Web.DockStyle.Fill;
-            this.Name = "BSAsset";
+            this.Name = "View_BBCAsset";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(902, 616);
             this.Load += new System.EventHandler(this.BSAsset_Load);

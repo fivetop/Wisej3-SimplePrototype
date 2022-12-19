@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.UI.Views
 {
-    partial class DashBoard2
+    partial class View_DashBoard2
     {
         /// <summary> 
         /// Required designer variable.

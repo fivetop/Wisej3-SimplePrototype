@@ -4,9 +4,9 @@ using Wisej.Web;
 
 namespace simplepa2.win
 {
-    public partial class AGroup : Wisej.Web.UserControl
+    public partial class View_BBSGroupManage2 : Wisej.Web.UserControl
     {
-        public AGroup()
+        public View_BBSGroupManage2()
         {
             InitializeComponent();
         }

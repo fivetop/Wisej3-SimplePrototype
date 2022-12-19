@@ -176,8 +176,8 @@ namespace simplepa2.UI.Pages
         }
 
         View_BBCAsset view_BBCAsset = new View_BBCAsset();
-        DashBoard2 view_DashBoard = new DashBoard2();
-        BBSAnchor2 BBSAnchor2 = new BBSAnchor2();
+        View_DashBoard2 view_DashBoard = new View_DashBoard2();
+        View_BBSAnchor2 BBSAnchor2 = new View_BBSAnchor2();
         View_BBCDevice bSDeviceManager = new View_BBCDevice();
 
         public void openContentsView(string menuAccessibleName)

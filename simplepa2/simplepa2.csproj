@@ -719,11 +719,8 @@
     <EmbeddedResource Include="UI\Views\View_SystemSMSRegistration.resx">
       <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\AGroup.resx">
-      <DependentUpon>AGroup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\APreset.resx">
-      <DependentUpon>APreset.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBSGroupManage2.resx">
+      <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\ASchedule.resx">
       <DependentUpon>ASchedule.cs</DependentUpon>
@@ -770,11 +767,11 @@
     <EmbeddedResource Include="UI\win\PMusicSel.resx">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\BBSAnchor2.resx">
-      <DependentUpon>BBSAnchor2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBSAnchor2.resx">
+      <DependentUpon>View_BBSAnchor2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\DashBoard2.resx">
-      <DependentUpon>DashBoard2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_DashBoard2.resx">
+      <DependentUpon>View_DashBoard2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\Window1.resx">
       <DependentUpon>Window1.cs</DependentUpon>
@@ -1251,17 +1248,11 @@
     <Compile Include="SignalR\webapi\ApiController1.cs" />
     <Compile Include="SignalR\webapi\Encryption.cs" />
     <Compile Include="SignalR\webapi\MessageHandler.cs" />
-    <Compile Include="UI\win\AGroup.cs">
+    <Compile Include="UI\Views\View_BBSGroupManage2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\AGroup.Designer.cs">
-      <DependentUpon>AGroup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\win\APreset.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\win\APreset.Designer.cs">
-      <DependentUpon>APreset.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBSGroupManage2.Designer.cs">
+      <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\win\ASchedule.cs">
       <SubType>UserControl</SubType>
@@ -1353,17 +1344,17 @@
     <Compile Include="UI\win\PMusicSel.Designer.cs">
       <DependentUpon>PMusicSel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\BBSAnchor2.cs">
+    <Compile Include="UI\Views\View_BBSAnchor2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\BBSAnchor2.designer.cs">
-      <DependentUpon>BBSAnchor2.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBSAnchor2.designer.cs">
+      <DependentUpon>View_BBSAnchor2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\DashBoard2.cs">
+    <Compile Include="UI\Views\View_DashBoard2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\DashBoard2.Designer.cs">
-      <DependentUpon>DashBoard2.cs</DependentUpon>
+    <Compile Include="UI\Views\View_DashBoard2.Designer.cs">
+      <DependentUpon>View_DashBoard2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\win\Window1.cs">
       <SubType>Form</SubType>

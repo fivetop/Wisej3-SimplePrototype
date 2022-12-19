@@ -112,12 +112,11 @@ namespace simplepa2
 			LabelON(9,false);
 		}
 
-		AGroup aGroup = new AGroup();
+		View_BBSGroupManage2 aGroup = new View_BBSGroupManage2();
 		ASchedule aSchedule = new ASchedule();
-		APreset aPreset = new APreset();
 
-		DashBoard2 view_DashBoard = new DashBoard2();
-		BBSAnchor2 view_BBSAnchor = new BBSAnchor2();
+		View_DashBoard2 view_DashBoard = new View_DashBoard2();
+		View_BBSAnchor2 view_BBSAnchor = new View_BBSAnchor2();
 		View_BBCAsset bSAsset = new View_BBCAsset();
 		View_BBCDevice bSDeviceManager = new View_BBCDevice();
 
@@ -151,13 +150,6 @@ namespace simplepa2
 			tabClients.Name = "tabClients";
 			tabClients.Controls.Add(aGroup);
 			aGroup.Dock = DockStyle.Fill;
-			//BStabControl.TabPages.Add(tabClients);
-			MaintabControl.TabPages.Add(tabClients);
-			
-			tabClients = new TabPage(menu_string[3]);
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(aPreset);
-			aPreset.Dock = DockStyle.Fill;
 			//BStabControl.TabPages.Add(tabClients);
 			MaintabControl.TabPages.Add(tabClients);
 			

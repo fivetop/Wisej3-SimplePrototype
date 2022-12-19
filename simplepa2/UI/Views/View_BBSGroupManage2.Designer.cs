@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.win
 {
-    partial class AGroup
+    partial class View_BBSGroupManage2
     {
         /// <summary> 
         /// Required designer variable.
