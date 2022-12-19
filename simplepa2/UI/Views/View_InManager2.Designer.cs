@@ -53,9 +53,9 @@
             // 
             this.panel1.Controls.Add(this.dataGridView3);
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Location = new System.Drawing.Point(20, 90);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(838, 469);
+            this.panel1.Size = new System.Drawing.Size(798, 429);
             this.panel1.TabIndex = 5;
             this.panel1.TabStop = true;
             // 
@@ -76,7 +76,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(838, 469);
+            this.dataGridView3.Size = new System.Drawing.Size(798, 429);
             this.dataGridView3.TabIndex = 2;
             this.dataGridView3.DataUpdated += new Wisej.Web.DataGridViewDataUpdatedEventHandler(this.dataGridView3_DataUpdated);
             // 
@@ -152,9 +152,9 @@
             // ptop
             // 
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(838, 70);
+            this.ptop.Size = new System.Drawing.Size(798, 70);
             this.ptop.TabIndex = 6;
             this.ptop.TabStop = true;
             // 
@@ -166,11 +166,13 @@
             // 
             this.deviceTableAdapter1.ClearBeforeFill = true;
             // 
-            // BSInManager
+            // View_InManager2
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ptop);
-            this.Name = "BSInManager";
+            this.Name = "View_InManager2";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(838, 539);
             this.Load += new System.EventHandler(this.BSInManager_Load);
             this.panel1.ResumeLayout(false);

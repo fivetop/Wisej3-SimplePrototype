@@ -82,7 +82,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(836, 444);
+            this.dataGridView3.Size = new System.Drawing.Size(796, 404);
             this.dataGridView3.TabIndex = 2;
             // 
             // colDeviceid
@@ -179,10 +179,11 @@
             // 
             // ptop
             // 
+            this.ptop.BackColor = System.Drawing.Color.White;
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(836, 70);
+            this.ptop.Size = new System.Drawing.Size(796, 70);
             this.ptop.TabIndex = 3;
             this.ptop.TabStop = true;
             // 
@@ -190,17 +191,19 @@
             // 
             this.panel2.Controls.Add(this.dataGridView3);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Location = new System.Drawing.Point(20, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(836, 444);
+            this.panel2.Size = new System.Drawing.Size(796, 404);
             this.panel2.TabIndex = 4;
             this.panel2.TabStop = true;
             // 
-            // BSOutManager
+            // View_OutManager2
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ptop);
-            this.Name = "BSOutManager";
+            this.Name = "View_OutManager2";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(836, 514);
             this.Load += new System.EventHandler(this.BSOutManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();

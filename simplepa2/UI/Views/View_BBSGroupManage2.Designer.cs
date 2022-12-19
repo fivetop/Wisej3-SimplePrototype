@@ -43,20 +43,22 @@
             // splitContainer7
             // 
             this.splitContainer7.Dock = Wisej.Web.DockStyle.Fill;
-            this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Location = new System.Drawing.Point(20, 20);
             this.splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
             // 
+            this.splitContainer7.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer7.Panel1.Controls.Add(this.listviewCTL1);
             this.splitContainer7.Panel1.TabStop = true;
             // 
             // splitContainer7.Panel2
             // 
+            this.splitContainer7.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer7.Panel2.Controls.Add(this.listviewCTL2);
             this.splitContainer7.Panel2.TabStop = true;
-            this.splitContainer7.Size = new System.Drawing.Size(900, 600);
-            this.splitContainer7.SplitterDistance = 297;
+            this.splitContainer7.Size = new System.Drawing.Size(860, 560);
+            this.splitContainer7.SplitterDistance = 281;
             this.splitContainer7.TabIndex = 2;
             // 
             // listviewCTL1
@@ -82,10 +84,13 @@
             // 
             this.assetsTableAdapter.ClearBeforeFill = true;
             // 
-            // AGroup
+            // View_BBSGroupManage2
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(239, 238, 248);
             this.Controls.Add(this.splitContainer7);
-            this.Name = "AGroup";
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.Name = "View_BBSGroupManage2";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(900, 600);
             this.Load += new System.EventHandler(this.AGroup_Load);
             this.splitContainer7.Panel1.ResumeLayout(false);

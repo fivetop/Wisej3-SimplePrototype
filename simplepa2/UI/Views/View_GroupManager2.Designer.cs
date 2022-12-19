@@ -89,7 +89,7 @@
             this.gdataGridView1.MultiSelect = false;
             this.gdataGridView1.Name = "gdataGridView1";
             this.gdataGridView1.ShowFocusCell = false;
-            this.gdataGridView1.Size = new System.Drawing.Size(912, 565);
+            this.gdataGridView1.Size = new System.Drawing.Size(872, 525);
             this.gdataGridView1.TabIndex = 12;
             this.gdataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -120,7 +120,7 @@
             // 
             // gbutton3
             // 
-            this.gbutton3.Location = new System.Drawing.Point(809, 13);
+            this.gbutton3.Location = new System.Drawing.Point(765, 13);
             this.gbutton3.Name = "gbutton3";
             this.gbutton3.Size = new System.Drawing.Size(85, 27);
             this.gbutton3.TabIndex = 15;
@@ -129,7 +129,7 @@
             // 
             // gbutton2
             // 
-            this.gbutton2.Location = new System.Drawing.Point(729, 13);
+            this.gbutton2.Location = new System.Drawing.Point(685, 13);
             this.gbutton2.Name = "gbutton2";
             this.gbutton2.Size = new System.Drawing.Size(74, 27);
             this.gbutton2.TabIndex = 14;
@@ -138,7 +138,7 @@
             // 
             // gbutton1
             // 
-            this.gbutton1.Location = new System.Drawing.Point(645, 13);
+            this.gbutton1.Location = new System.Drawing.Point(601, 13);
             this.gbutton1.Name = "gbutton1";
             this.gbutton1.Size = new System.Drawing.Size(78, 27);
             this.gbutton1.TabIndex = 13;
@@ -158,13 +158,13 @@
             this.tableLayoutPanel4.Controls.Add(this.gcomboBox1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.gtextBox1, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.label10, 2, 0);
-            this.tableLayoutPanel4.Font = new System.Drawing.Font("@default", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tableLayoutPanel4.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(21, 4);
             this.tableLayoutPanel4.Margin = new Wisej.Web.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Absolute, 26F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(565, 46);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(525, 46);
             this.tableLayoutPanel4.TabIndex = 11;
             this.tableLayoutPanel4.TabStop = true;
             // 
@@ -176,7 +176,7 @@
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Margin = new Wisej.Web.Padding(0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 46);
+            this.label9.Size = new System.Drawing.Size(51, 46);
             this.label9.TabIndex = 0;
             this.label9.Text = "그룹명";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -188,10 +188,10 @@
             this.gcomboBox1.AutoSize = false;
             this.gcomboBox1.DisplayMember = "Name";
             this.gcomboBox1.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
-            this.gcomboBox1.Location = new System.Drawing.Point(78, 8);
+            this.gcomboBox1.Location = new System.Drawing.Point(68, 8);
             this.gcomboBox1.Margin = new Wisej.Web.Padding(8);
             this.gcomboBox1.Name = "gcomboBox1";
-            this.gcomboBox1.Size = new System.Drawing.Size(193, 24);
+            this.gcomboBox1.Size = new System.Drawing.Size(163, 24);
             this.gcomboBox1.TabIndex = 5;
             this.gcomboBox1.ValueMember = "Name";
             this.gcomboBox1.SelectedIndexChanged += new System.EventHandler(this.gcomboBox1_SelectedIndexChanged);
@@ -201,7 +201,7 @@
             this.gtextBox1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.gtextBox1.AutoSize = false;
-            this.gtextBox1.Location = new System.Drawing.Point(416, 8);
+            this.gtextBox1.Location = new System.Drawing.Point(376, 8);
             this.gtextBox1.Margin = new Wisej.Web.Padding(8);
             this.gtextBox1.Name = "gtextBox1";
             this.gtextBox1.Size = new System.Drawing.Size(141, 24);
@@ -212,10 +212,10 @@
             // 
             this.label10.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(290, 0);
+            this.label10.Location = new System.Drawing.Point(241, 0);
             this.label10.Margin = new Wisej.Web.Padding(0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 46);
+            this.label10.Size = new System.Drawing.Size(125, 46);
             this.label10.TabIndex = 2;
             this.label10.Text = "신규 그룹명(등록)";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,25 +227,28 @@
             this.ptop.Controls.Add(this.gbutton2);
             this.ptop.Controls.Add(this.gbutton1);
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(912, 70);
+            this.ptop.Size = new System.Drawing.Size(872, 70);
             this.ptop.TabIndex = 16;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.gdataGridView1);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Location = new System.Drawing.Point(20, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(912, 565);
+            this.panel2.Size = new System.Drawing.Size(872, 525);
             this.panel2.TabIndex = 17;
             // 
-            // MGroupManager
+            // View_GroupManager2
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ptop);
-            this.Name = "MGroupManager";
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.Name = "View_GroupManager2";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(912, 635);
             this.Load += new System.EventHandler(this.MGroupManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).EndInit();

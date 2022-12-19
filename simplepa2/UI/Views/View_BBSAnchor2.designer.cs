@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry13 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
-            Wisej.Web.ImageListEntry imageListEntry14 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
-            Wisej.Web.ImageListEntry imageListEntry15 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry16 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry17 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry18 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry19 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.ImageListEntry imageListEntry20 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry21 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry22 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry23 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry24 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
+            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
+            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry5 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry6 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry7 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry8 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry9 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry10 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry11 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry12 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
             this.imageList3 = new Wisej.Web.ImageList(this.components);
             this.imageList1 = new Wisej.Web.ImageList(this.components);
             this.imageList2 = new Wisej.Web.ImageList(this.components);
@@ -60,14 +60,16 @@
             this.btnStop = new Wisej.Web.Button();
             this.btnStart = new Wisej.Web.Button();
             this.panel3 = new Wisej.Web.Panel();
-            this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.colSeq = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.chk = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.splitContainer2 = new Wisej.Web.SplitContainer();
             this.dataGridView2 = new Wisej.Web.DataGridView();
             this.colFilename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colFilecontent = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel1 = new Wisej.Web.Panel();
+            this.dataGridView1 = new Wisej.Web.DataGridView();
+            this.colSeq = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.chk = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel5 = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
             this.panel35 = new Wisej.Web.Panel();
             this.label39 = new Wisej.Web.Label();
@@ -78,8 +80,6 @@
             this.label16 = new Wisej.Web.Label();
             this.panel41 = new Wisej.Web.Panel();
             this.label17 = new Wisej.Web.Label();
-            this.panel1 = new Wisej.Web.Panel();
-            this.panel5 = new Wisej.Web.Panel();
             this.membs = new Wisej.Web.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -88,42 +88,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel35.SuspendLayout();
             this.panel41.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList3
             // 
             this.imageList3.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry13,
-            imageListEntry14});
+            imageListEntry1,
+            imageListEntry2});
             // 
             // imageList1
             // 
             this.imageList1.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry15,
-            imageListEntry16,
-            imageListEntry17,
-            imageListEntry18,
-            imageListEntry19});
+            imageListEntry3,
+            imageListEntry4,
+            imageListEntry5,
+            imageListEntry6,
+            imageListEntry7});
             this.imageList1.ImageSize = new System.Drawing.Size(64, 64);
             // 
             // imageList2
             // 
             this.imageList2.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry20,
-            imageListEntry21,
-            imageListEntry22,
-            imageListEntry23,
-            imageListEntry24});
+            imageListEntry8,
+            imageListEntry9,
+            imageListEntry10,
+            imageListEntry11,
+            imageListEntry12});
             this.imageList2.ImageSize = new System.Drawing.Size(32, 32);
             // 
             // Eventbs
@@ -235,51 +235,6 @@
             this.panel3.TabIndex = 12;
             this.panel3.TabStop = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.colSeq,
-            this.chk,
-            this.colPath});
-            this.dataGridView1.DataSource = this.assetsBindingSource;
-            this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 190);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 14;
-            this.dataGridView1.RowHeadersWidthSizeMode = Wisej.Web.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.ShowFocusCell = false;
-            this.dataGridView1.Size = new System.Drawing.Size(550, 646);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // colSeq
-            // 
-            this.colSeq.DataPropertyName = "seq";
-            this.colSeq.HeaderText = "No";
-            this.colSeq.Name = "colSeq";
-            this.colSeq.Width = 50;
-            // 
-            // chk
-            // 
-            this.chk.DataPropertyName = "chk";
-            this.chk.FalseValue = "0";
-            this.chk.HeaderText = "ACT";
-            this.chk.Name = "chk";
-            this.chk.SortMode = Wisej.Web.DataGridViewColumnSortMode.Automatic;
-            this.chk.TrueValue = "1";
-            this.chk.Width = 40;
-            // 
-            // colPath
-            // 
-            this.colPath.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "지역";
-            this.colPath.Name = "colPath";
-            this.colPath.Width = 300;
-            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = Wisej.Web.DockStyle.Fill;
@@ -328,6 +283,73 @@
             this.colFilecontent.HeaderText = "재생시간";
             this.colFilecontent.Name = "colFilecontent";
             this.colFilecontent.Width = 120;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = Wisej.Web.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.MaximumSize = new System.Drawing.Size(550, 836);
+            this.panel1.MinimumSize = new System.Drawing.Size(550, 836);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(550, 836);
+            this.panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
+            this.colSeq,
+            this.chk,
+            this.colPath});
+            this.dataGridView1.DataSource = this.assetsBindingSource;
+            this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
+            this.dataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 190);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 14;
+            this.dataGridView1.RowHeadersWidthSizeMode = Wisej.Web.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.ShowFocusCell = false;
+            this.dataGridView1.Size = new System.Drawing.Size(550, 646);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // colSeq
+            // 
+            this.colSeq.DataPropertyName = "seq";
+            this.colSeq.HeaderText = "No";
+            this.colSeq.Name = "colSeq";
+            this.colSeq.Width = 50;
+            // 
+            // chk
+            // 
+            this.chk.DataPropertyName = "chk";
+            this.chk.FalseValue = "0";
+            this.chk.HeaderText = "ACT";
+            this.chk.Name = "chk";
+            this.chk.SortMode = Wisej.Web.DataGridViewColumnSortMode.Automatic;
+            this.chk.TrueValue = "1";
+            this.chk.Width = 40;
+            // 
+            // colPath
+            // 
+            this.colPath.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPath.DataPropertyName = "path";
+            this.colPath.HeaderText = "지역";
+            this.colPath.Name = "colPath";
+            this.colPath.Width = 300;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
+            this.panel5.Dock = Wisej.Web.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 170);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(550, 20);
+            this.panel5.TabIndex = 167;
             // 
             // panel2
             // 
@@ -459,28 +481,6 @@
             this.label17.Text = "방송 모니터링";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = Wisej.Web.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.MaximumSize = new System.Drawing.Size(550, 836);
-            this.panel1.MinimumSize = new System.Drawing.Size(550, 836);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(550, 836);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
-            this.panel5.Dock = Wisej.Web.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 170);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(550, 20);
-            this.panel5.TabIndex = 167;
-            // 
             // membs
             // 
             this.membs.DataSource = typeof(simplepa2.Bsroom);
@@ -502,15 +502,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             this.ResumeLayout(false);
 

@@ -71,15 +71,16 @@
             // 
             // ptop
             // 
+            this.ptop.BackColor = System.Drawing.Color.White;
             this.ptop.Controls.Add(this.tableLayoutPanel5);
             this.ptop.Controls.Add(this.mbutton2);
             this.ptop.Controls.Add(this.mupload1);
             this.ptop.Controls.Add(this.mbutton3);
             this.ptop.Controls.Add(this.mbutton1);
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(905, 70);
+            this.ptop.Size = new System.Drawing.Size(865, 70);
             this.ptop.TabIndex = 1;
             this.ptop.TabStop = true;
             // 
@@ -88,8 +89,8 @@
             this.tableLayoutPanel5.ColumnCount = 4;
             this.tableLayoutPanel5.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 28.88F));
             this.tableLayoutPanel5.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 71.12F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 104F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 178F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 62F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 195F));
             this.tableLayoutPanel5.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.mtextBox1, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label11, 2, 0);
@@ -110,7 +111,7 @@
             this.label12.Location = new System.Drawing.Point(8, 8);
             this.label12.Margin = new Wisej.Web.Padding(8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 18);
+            this.label12.Size = new System.Drawing.Size(55, 16);
             this.label12.TabIndex = 6;
             this.label12.Text = "파일명";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,10 +120,10 @@
             // 
             this.mtextBox1.AutoSize = false;
             this.mtextBox1.DataBindings.Add(new Wisej.Web.Binding("Text", this.mbindingSource1, "FileName", true));
-            this.mtextBox1.Location = new System.Drawing.Point(72, 8);
+            this.mtextBox1.Location = new System.Drawing.Point(79, 8);
             this.mtextBox1.Margin = new Wisej.Web.Padding(8);
             this.mtextBox1.Name = "mtextBox1";
-            this.mtextBox1.Size = new System.Drawing.Size(143, 18);
+            this.mtextBox1.Size = new System.Drawing.Size(143, 28);
             this.mtextBox1.TabIndex = 1;
             this.mtextBox1.Watermark = "Enter a name";
             // 
@@ -131,10 +132,10 @@
             this.label11.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(231, 8);
+            this.label11.Location = new System.Drawing.Point(256, 8);
             this.label11.Margin = new Wisej.Web.Padding(8);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 18);
+            this.label11.Size = new System.Drawing.Size(46, 16);
             this.label11.TabIndex = 0;
             this.label11.Text = "내용";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,15 +146,15 @@
             | Wisej.Web.AnchorStyles.Right)));
             this.mtextBox2.AutoSize = false;
             this.mtextBox2.DataBindings.Add(new Wisej.Web.Binding("Text", this.mbindingSource1, "FileContent", true));
-            this.mtextBox2.Location = new System.Drawing.Point(335, 8);
+            this.mtextBox2.Location = new System.Drawing.Point(318, 8);
             this.mtextBox2.Margin = new Wisej.Web.Padding(8);
             this.mtextBox2.Name = "mtextBox2";
-            this.mtextBox2.Size = new System.Drawing.Size(163, 17);
+            this.mtextBox2.Size = new System.Drawing.Size(180, 28);
             this.mtextBox2.TabIndex = 7;
             // 
             // mbutton2
             // 
-            this.mbutton2.Location = new System.Drawing.Point(644, 16);
+            this.mbutton2.Location = new System.Drawing.Point(639, 3);
             this.mbutton2.Name = "mbutton2";
             this.mbutton2.Size = new System.Drawing.Size(100, 27);
             this.mbutton2.TabIndex = 12;
@@ -163,7 +164,7 @@
             // mupload1
             // 
             this.mupload1.ButtonPosition = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mupload1.Location = new System.Drawing.Point(543, 49);
+            this.mupload1.Location = new System.Drawing.Point(538, 36);
             this.mupload1.Name = "mupload1";
             this.mupload1.Size = new System.Drawing.Size(98, 27);
             this.mupload1.TabIndex = 10;
@@ -172,7 +173,7 @@
             // 
             // mbutton3
             // 
-            this.mbutton3.Location = new System.Drawing.Point(750, 16);
+            this.mbutton3.Location = new System.Drawing.Point(745, 3);
             this.mbutton3.Name = "mbutton3";
             this.mbutton3.Size = new System.Drawing.Size(100, 27);
             this.mbutton3.TabIndex = 13;
@@ -181,7 +182,7 @@
             // 
             // mbutton1
             // 
-            this.mbutton1.Location = new System.Drawing.Point(541, 16);
+            this.mbutton1.Location = new System.Drawing.Point(536, 3);
             this.mbutton1.Name = "mbutton1";
             this.mbutton1.Size = new System.Drawing.Size(100, 27);
             this.mbutton1.TabIndex = 11;
@@ -201,7 +202,7 @@
             this.mdataGridView1.Location = new System.Drawing.Point(0, 0);
             this.mdataGridView1.Name = "mdataGridView1";
             this.mdataGridView1.RowHeadersWidth = 16;
-            this.mdataGridView1.Size = new System.Drawing.Size(905, 547);
+            this.mdataGridView1.Size = new System.Drawing.Size(865, 507);
             this.mdataGridView1.TabIndex = 9;
             // 
             // colMusicid
@@ -230,16 +231,19 @@
             // 
             this.panel1.Controls.Add(this.mdataGridView1);
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Location = new System.Drawing.Point(20, 90);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(905, 547);
+            this.panel1.Size = new System.Drawing.Size(865, 507);
             this.panel1.TabIndex = 2;
             // 
-            // MMusicManager
+            // View_BBSMusicManage2
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ptop);
-            this.Name = "MMusicManager";
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.Name = "View_BBSMusicManage2";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(905, 617);
             this.Load += new System.EventHandler(this.MMusicManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mbindingSource1)).EndInit();

@@ -73,11 +73,12 @@
             // 
             // ptop
             // 
+            this.ptop.BackColor = System.Drawing.Color.White;
             this.ptop.Controls.Add(this.tableLayoutPanel3);
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(913, 70);
+            this.ptop.Size = new System.Drawing.Size(873, 70);
             this.ptop.TabIndex = 6;
             this.ptop.TabStop = true;
             // 
@@ -108,7 +109,7 @@
             this.label8.Location = new System.Drawing.Point(8, 8);
             this.label8.Margin = new Wisej.Web.Padding(8);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 18);
+            this.label8.Size = new System.Drawing.Size(78, 16);
             this.label8.TabIndex = 6;
             this.label8.Text = "날자";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,7 +136,7 @@
             this.label7.Location = new System.Drawing.Point(335, 8);
             this.label7.Margin = new Wisej.Web.Padding(8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 18);
+            this.label7.Size = new System.Drawing.Size(38, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "내용";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,7 +164,7 @@
             this.hdataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditOnEnter;
             this.hdataGridView1.Location = new System.Drawing.Point(0, 0);
             this.hdataGridView1.Name = "hdataGridView1";
-            this.hdataGridView1.Size = new System.Drawing.Size(913, 580);
+            this.hdataGridView1.Size = new System.Drawing.Size(873, 540);
             this.hdataGridView1.TabIndex = 4;
             componentTool2.ImageSource = "resource.wx/Wisej.Ext.MaterialDesign/square-add-button.svg?color=#3F76BF";
             componentTool2.Name = "Add";
@@ -215,16 +216,19 @@
             // 
             this.panel1.Controls.Add(this.hdataGridView1);
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 70);
+            this.panel1.Location = new System.Drawing.Point(20, 90);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(913, 580);
+            this.panel1.Size = new System.Drawing.Size(873, 540);
             this.panel1.TabIndex = 7;
             // 
-            // MHolidayManager
+            // View_BBSHolidayManage2
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(239, 238, 248);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ptop);
-            this.Name = "MHolidayManager";
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.Name = "View_BBSHolidayManage2";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(913, 650);
             this.Load += new System.EventHandler(this.MHolidayManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.holidaybindingSource2)).EndInit();

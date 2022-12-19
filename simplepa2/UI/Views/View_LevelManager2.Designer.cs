@@ -79,9 +79,9 @@
             this.ptop.Controls.Add(this.comboBox2);
             this.ptop.Controls.Add(this.comboBox1);
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
-            this.ptop.Location = new System.Drawing.Point(0, 0);
+            this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(837, 70);
+            this.ptop.Size = new System.Drawing.Size(797, 70);
             this.ptop.TabIndex = 4;
             this.ptop.TabStop = true;
             // 
@@ -128,7 +128,7 @@
             this.comboBox2.LabelText = "비상 방송 볼륨선택";
             this.comboBox2.Location = new System.Drawing.Point(341, 10);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 53);
+            this.comboBox2.Size = new System.Drawing.Size(120, 73);
             this.comboBox2.TabIndex = 1;
             // 
             // comboBox1
@@ -147,16 +147,16 @@
             this.comboBox1.LabelText = "일반 방송 볼륨선택";
             this.comboBox1.Location = new System.Drawing.Point(8, 10);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 53);
+            this.comboBox1.Size = new System.Drawing.Size(120, 73);
             this.comboBox1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 70);
+            this.panel2.Location = new System.Drawing.Point(20, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(837, 450);
+            this.panel2.Size = new System.Drawing.Size(797, 410);
             this.panel2.TabIndex = 5;
             this.panel2.TabStop = true;
             // 
@@ -177,7 +177,7 @@
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(837, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(797, 410);
             this.dataGridView1.TabIndex = 3;
             // 
             // colDeviceid
@@ -259,11 +259,14 @@
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
             // 
-            // BSLevelManager
+            // View_LevelManager2
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ptop);
-            this.Name = "BSLevelManager";
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.Name = "View_LevelManager2";
+            this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(837, 520);
             this.Load += new System.EventHandler(this.BSLevelManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
