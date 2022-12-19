@@ -1,6 +1,6 @@
-﻿namespace simplepa2.win
+﻿namespace simplepa2.UI.Views
 {
-    partial class View_EMManager2
+    partial class View_BBCEmergency2
     {
         /// <summary> 
         /// Required designer variable.

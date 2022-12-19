@@ -2,7 +2,7 @@
 using System.Linq;
 using Wisej.Web;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
     public partial class View_SystemAccount2 : Wisej.Web.UserControl
     {

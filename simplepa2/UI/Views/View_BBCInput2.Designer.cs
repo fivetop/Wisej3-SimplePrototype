@@ -1,6 +1,6 @@
-﻿namespace simplepa2.win
+﻿namespace simplepa2.UI.Views
 {
-    partial class View_InManager2
+    partial class View_BBCInput2
     {
         /// <summary> 
         /// Required designer variable.
@@ -166,12 +166,13 @@
             // 
             this.deviceTableAdapter1.ClearBeforeFill = true;
             // 
-            // View_InManager2
+            // View_BBCInput2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ptop);
-            this.Name = "View_InManager2";
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.Name = "View_BBCInput2";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(838, 539);
             this.Load += new System.EventHandler(this.BSInManager_Load);

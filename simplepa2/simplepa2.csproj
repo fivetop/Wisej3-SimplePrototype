@@ -737,17 +737,17 @@
     <EmbeddedResource Include="UI\Views\View_BBCDevice2.resx">
       <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_EMManager2.resx">
-      <DependentUpon>View_EMManager2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCEmergency2.resx">
+      <DependentUpon>View_BBCEmergency2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_InManager2.resx">
-      <DependentUpon>View_InManager2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCInput2.resx">
+      <DependentUpon>View_BBCInput2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_LevelManager2.resx">
-      <DependentUpon>View_LevelManager2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCMusic2.resx">
+      <DependentUpon>View_BBCMusic2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_OutManager2.resx">
-      <DependentUpon>View_OutManager2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Views\View_BBCOutput2.resx">
+      <DependentUpon>View_BBCOutput2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_GroupManager2.resx">
       <DependentUpon>View_GroupManager2.cs</DependentUpon>
@@ -1285,29 +1285,29 @@
     <Compile Include="UI\Views\View_BBCDevice2.Designer.cs">
       <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_EMManager2.cs">
+    <Compile Include="UI\Views\View_BBCEmergency2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\View_EMManager2.Designer.cs">
-      <DependentUpon>View_EMManager2.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCEmergency2.Designer.cs">
+      <DependentUpon>View_BBCEmergency2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_InManager2.cs">
+    <Compile Include="UI\Views\View_BBCInput2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\View_InManager2.Designer.cs">
-      <DependentUpon>View_InManager2.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCInput2.Designer.cs">
+      <DependentUpon>View_BBCInput2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_LevelManager2.cs">
+    <Compile Include="UI\Views\View_BBCMusic2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\View_LevelManager2.Designer.cs">
-      <DependentUpon>View_LevelManager2.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCMusic2.Designer.cs">
+      <DependentUpon>View_BBCMusic2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_OutManager2.cs">
+    <Compile Include="UI\Views\View_BBCOutput2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\View_OutManager2.Designer.cs">
-      <DependentUpon>View_OutManager2.cs</DependentUpon>
+    <Compile Include="UI\Views\View_BBCOutput2.Designer.cs">
+      <DependentUpon>View_BBCOutput2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_GroupManager2.cs">
       <SubType>UserControl</SubType>

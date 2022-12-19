@@ -1,6 +1,6 @@
-﻿namespace simplepa2.win
+﻿namespace simplepa2.UI.Views
 {
-    partial class View_OutManager2
+    partial class View_BBCOutput2
     {
         /// <summary> 
         /// Required designer variable.
@@ -197,12 +197,13 @@
             this.panel2.TabIndex = 4;
             this.panel2.TabStop = true;
             // 
-            // View_OutManager2
+            // View_BBCOutput2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ptop);
-            this.Name = "View_OutManager2";
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.Name = "View_BBCOutput2";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(836, 514);
             this.Load += new System.EventHandler(this.BSOutManager_Load);

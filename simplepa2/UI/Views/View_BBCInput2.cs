@@ -4,11 +4,11 @@ using System.Data;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
-    public partial class View_InManager2 : Wisej.Web.UserControl
+    public partial class View_BBCInput2 : Wisej.Web.UserControl
     {
-        public View_InManager2()
+        public View_BBCInput2()
         {
             InitializeComponent();
         }

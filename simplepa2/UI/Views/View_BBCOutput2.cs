@@ -5,11 +5,11 @@ using System.Data;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
-    public partial class View_OutManager2 : Wisej.Web.UserControl
+    public partial class View_BBCOutput2 : Wisej.Web.UserControl
     {
-        public View_OutManager2()
+        public View_BBCOutput2()
         {
             InitializeComponent();
         }

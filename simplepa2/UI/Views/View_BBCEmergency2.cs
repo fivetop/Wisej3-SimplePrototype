@@ -6,11 +6,11 @@ using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
-    public partial class View_EMManager2 : Wisej.Web.UserControl
+    public partial class View_BBCEmergency2 : Wisej.Web.UserControl
     {
-        public View_EMManager2()
+        public View_BBCEmergency2()
         {
             InitializeComponent();
         }

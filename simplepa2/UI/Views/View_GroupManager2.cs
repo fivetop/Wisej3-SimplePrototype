@@ -4,7 +4,7 @@ using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
     public partial class View_GroupManager2 : Wisej.Web.UserControl
     {

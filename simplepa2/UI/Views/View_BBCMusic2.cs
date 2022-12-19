@@ -2,11 +2,11 @@
 using System;
 using Wisej.Web;
 
-namespace simplepa2.win
+namespace simplepa2.UI.Views
 {
-    public partial class View_LevelManager2 : Wisej.Web.UserControl
+    public partial class View_BBCMusic2 : Wisej.Web.UserControl
     {
-        public View_LevelManager2()
+        public View_BBCMusic2()
         {
             InitializeComponent();
         }

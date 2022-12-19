@@ -175,18 +175,25 @@ namespace simplepa2.UI.Pages
             }
         }
 
-        View_BBCAsset2 view_BBCAsset2 = new View_BBCAsset2();
-        View_BBCDevice2 view_BBCDevice2 = new View_BBCDevice2();
-
-        View_DashBoard2 view_DashBoard2 = new View_DashBoard2();
-        View_BBSAnchor2 view_BBSAnchor2 = new View_BBSAnchor2();
-        View_BBSGroupManage2 view_BBSGroupManage2 = new View_BBSGroupManage2();
+        View_BBCAsset2 view_BBCAsset2  = new View_BBCAsset2();
+        View_BBCDevice2 view_BBCDevice2  = new View_BBCDevice2();
+        View_DashBoard2 view_DashBoard2  = new View_DashBoard2();
+        View_BBSAnchor2 view_BBSAnchor2  = new View_BBSAnchor2();
+        View_BBSGroupManage2 view_BBSGroupManage2  = new View_BBSGroupManage2();
+        View_BBSHolidayManage2 view_BBSHolidayManage2  = new View_BBSHolidayManage2();
+        View_BBSMusicManage2 view_BBSMusicManage2  = new View_BBSMusicManage2();
+        View_BBCEmergency2 view_BBCEMManager2  = new View_BBCEmergency2();
+        View_GroupManager2 view_GroupManager2  = new View_GroupManager2();
+        View_BBCInput2 view_BBCInput2  = new View_BBCInput2();
+        View_BBCMusic2 view_BBCMusic2 = new View_BBCMusic2();
+        View_BBCOutput2 view_BBCOutput2  = new View_BBCOutput2();
+        View_SystemAccount2 view_SystemAccount2  = new View_SystemAccount2();
 
         public void openContentsView(string menuAccessibleName)
         {
             switch (menuAccessibleName)
             {
-                //
+                // 운영
                 case "dashboardBarItems": view_DashBoard2 = bringFrontView<View_DashBoard2>("View_DashBoard2", false); break;
                 case "anchorBBSBarItem": view_BBSAnchor2 = bringFrontView<View_BBSAnchor2>("View_BBSAnchor2", false); break;
                 case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;
@@ -195,23 +202,24 @@ namespace simplepa2.UI.Pages
                 case "iotApplicationBarItem": view_BBSIotApplication = bringFrontView<View_BBSIoTApplication>("View_BBSIoTApplication", false); break;
                 case "musicConfigurationBarItem": view_BBSMusicManage = bringFrontView<View_BBSMusicManage>("View_BBSMusicManage", false); break;
                 case "holidayBarItem": view_BBSHolidayManage = bringFrontView<View_BBSHolidayManage>("View_BBSHolidayManage", false); break;
-                //
+                // 설정 // navigationBarItem1 추가
                 case "assetBarItem": view_BBCAsset2 = bringFrontView<View_BBCAsset2>("View_BBCAsset2", false); break;
                 case "deviceManageBarItem": view_BBCDevice2 = bringFrontView<View_BBCDevice2>("View_BBCDevice2", false); break;
+                case "navigationBarItem1": view_GroupManager2 = bringFrontView<View_GroupManager2>("View_GroupManager2", false); break; 
                 case "siteManageBarItem": view_BBCSite = bringFrontView<View_BBCSite>("View_BBCSite", false); break;
                 case "zoneManageBarItem": view_BBCZone = bringFrontView<View_BBCZone>("View_BBCZone", false); break;
-                case "inputManageBarItem": view_BBCInput = bringFrontView<View_BBCInput>("View_BBCInput", false); break;
-                case "outputManageBarItem": view_BBCOutput = bringFrontView<View_BBCOutput>("View_BBCOutput", false); break;
-                case "musicManageBarItem": view_BBCMusic = bringFrontView<View_BBCMusic>("View_BBCMusic", false); break;
+                case "inputManageBarItem": view_BBCInput2 = bringFrontView<View_BBCInput2>("View_BBCInput2", false); break;
+                case "outputManageBarItem": view_BBCOutput2 = bringFrontView<View_BBCOutput2>("View_BBCOutput2", false); break;
+                case "musicManageBarItem": view_BBCMusic2 = bringFrontView<View_BBCMusic2>("View_BBCMusic2", false); break;
                 case "emergencyManageBarItem": view_BBCEmergency = bringFrontView<View_BBCEmergency>("View_BBCEmergency", false); break;
                 case "ampFailoverBarItem": view_BBCAmpFailover = bringFrontView<View_BBCAmpFailover>("View_BBCAmpFailover", false); break;
-                //               
+                // 기록               
                 case "bbsHistoryBarItem": view_HistoryBBS = bringFrontView<View_HistoryBBS>("View_HistoryBBS", false); break;
                 case "deviceHistoryBarItem": view_HistoryDevice = bringFrontView<View_HistoryDevice>("View_HistoryDevice", false); break;
                 case "fireCallHistoryBarItem": view_HistoryFireSignal = bringFrontView<View_HistoryFireSignal>("View_HistoryFireSignal", false); break;
                 case "outCallHistoryBarItem": view_HistoryOutMsgs = bringFrontView<View_HistoryOutMsgs>("View_HistoryOutMsgs", false); break;
                 case "systemVerifyHistoryBarItem": view_HistorySystemChanges = bringFrontView<View_HistorySystemChanges>("View_HistorySystemChanges", false); break;
-                //    
+                //시스템    
                 case "accountManageBarItem": view_SystemAccount = bringFrontView<View_SystemAccount>("View_SystemAccount", false); break;
                 case "emailManageBarItem": view_SystemEmail = bringFrontView<View_SystemEmail>("View_SystemEmail", false); break;
                 case "smsRegistrationBarItem": view_SystemSMSRegistration = bringFrontView<View_SystemSMSRegistration>("View_SystemSMSRegistration", false); break;
