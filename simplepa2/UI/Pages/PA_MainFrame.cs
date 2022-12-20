@@ -188,6 +188,7 @@ namespace simplepa2.UI.Pages
         View_BBCMusic2 view_BBCMusic2 = new View_BBCMusic2();
         View_BBCOutput2 view_BBCOutput2  = new View_BBCOutput2();
         View_SystemAccount2 view_SystemAccount2  = new View_SystemAccount2();
+        View_BBSEMManage2 view_BBSEMManage2 = new View_BBSEMManage2();
 
         public void openContentsView(string menuAccessibleName)
         {
@@ -205,7 +206,8 @@ namespace simplepa2.UI.Pages
                 // 설정 // navigationBarItem1 추가
                 case "assetBarItem": view_BBCAsset2 = bringFrontView<View_BBCAsset2>("View_BBCAsset2", false); break;
                 case "deviceManageBarItem": view_BBCDevice2 = bringFrontView<View_BBCDevice2>("View_BBCDevice2", false); break;
-                case "navigationBarItem1": view_GroupManager2 = bringFrontView<View_GroupManager2>("View_GroupManager2", false); break; 
+                case "navigationBarItem1": view_GroupManager2 = bringFrontView<View_GroupManager2>("View_GroupManager2", false); break;
+                case "navigationBarItem2": view_BBSEMManage2 = bringFrontView<View_BBSEMManage2>("View_BBSEMManage2", false); break;
                 case "siteManageBarItem": view_BBCSite = bringFrontView<View_BBCSite>("View_BBCSite", false); break;
                 case "zoneManageBarItem": view_BBCZone = bringFrontView<View_BBCZone>("View_BBCZone", false); break;
                 case "inputManageBarItem": view_BBCInput2 = bringFrontView<View_BBCInput2>("View_BBCInput2", false); break;
