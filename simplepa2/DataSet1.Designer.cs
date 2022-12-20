@@ -6798,6 +6798,16 @@ namespace simplepa2 {
                 this.columnnet_dante.MaxLength = 2147483647;
                 this.columndsp_ctrl.MaxLength = 2147483647;
                 this.columndsp_dante.MaxLength = 2147483647;
+                this.columnemtest.DefaultValue = ((int)(0));
+                this.columnfire.DefaultValue = ((int)(0));
+                this.columnerr.DefaultValue = ((int)(0));
+                this.columnsw_4.DefaultValue = ((int)(0));
+                this.columnsw_3.DefaultValue = ((int)(0));
+                this.columnsw_2.DefaultValue = ((int)(0));
+                this.columnsw_1.DefaultValue = ((int)(0));
+                this.columnsw_all.DefaultValue = ((int)(0));
+                this.columncom_Rtype_state.DefaultValue = ((int)(0));
+                this.columncom_gpio_state.DefaultValue = ((int)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11589,11 +11599,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string com_gpio {
                 get {
-                    try {
-                        return ((string)(this[this.tableEMServer.com_gpioColumn]));
+                    if (this.Iscom_gpioNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'com_gpio\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableEMServer.com_gpioColumn]));
                     }
                 }
                 set {
@@ -11605,11 +11615,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string com_Rtype {
                 get {
-                    try {
-                        return ((string)(this[this.tableEMServer.com_RtypeColumn]));
+                    if (this.Iscom_RtypeNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'com_Rtype\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableEMServer.com_RtypeColumn]));
                     }
                 }
                 set {
@@ -11621,11 +11631,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string net_local {
                 get {
-                    try {
-                        return ((string)(this[this.tableEMServer.net_localColumn]));
+                    if (this.Isnet_localNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'net_local\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableEMServer.net_localColumn]));
                     }
                 }
                 set {
@@ -11637,11 +11647,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string net_dante {
                 get {
-                    try {
-                        return ((string)(this[this.tableEMServer.net_danteColumn]));
+                    if (this.Isnet_danteNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'net_dante\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableEMServer.net_danteColumn]));
                     }
                 }
                 set {
@@ -11653,11 +11663,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string dsp_ctrl {
                 get {
-                    try {
-                        return ((string)(this[this.tableEMServer.dsp_ctrlColumn]));
+                    if (this.Isdsp_ctrlNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'dsp_ctrl\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableEMServer.dsp_ctrlColumn]));
                     }
                 }
                 set {
@@ -11669,11 +11679,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string dsp_dante {
                 get {
-                    try {
-                        return ((string)(this[this.tableEMServer.dsp_danteColumn]));
+                    if (this.Isdsp_danteNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'dsp_dante\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableEMServer.dsp_danteColumn]));
                     }
                 }
                 set {

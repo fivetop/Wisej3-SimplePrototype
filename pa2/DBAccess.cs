@@ -89,6 +89,85 @@ namespace pa
             }
         }
 
+        public void Dbupdate<T>(string url, EMServerRow te1)
+        {
+            try
+            {
+                EMServer e1 = new EMServer();
+                e1.EMServerId = te1.EMServerId;
+                e1.EMNAME = te1.EMNAME;
+                e1.state = te1.state;
+                /*
+                e1.state_old = te1.state_old;
+                e1.com_gpio = te1.com_gpio;
+                e1.com_Rtype = te1.com_Rtype;
+                e1.net_local = te1.net_local;
+                e1.net_dante = te1.net_dante;
+                e1.dsp_ctrl = te1.dsp_ctrl;
+                e1.dsp_dante = te1.dsp_dante;
+                e1.com_gpio_state = te1.com_gpio_state;
+                e1.com_Rtype_state = te1.com_Rtype_state;
+                e1.sw_all = te1.sw_all;
+                e1.sw_1 = te1.sw_1;
+                e1.sw_2 = te1.sw_2;
+                e1.sw_3 = te1.sw_3;
+                e1.sw_4 = te1.sw_4;
+                e1.err = te1.err;
+                e1.fire = te1.fire;
+                e1.emtest = te1.emtest;
+                */
+
+                string jsonEmp = JsonConvert.SerializeObject(e1);
+                var url2 = g._EMClient.WebAPIURL + url +"/" + e1.EMServerId.ToString(); 
+                StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
+                var res = httpClient.PutAsync(url2, stringC).Result;
+                //var res2 = httpClient. .p .PutAsJsonAsync(url2, stringC).Result;
+                //var t2 = res.EnsureSuccessStatusCode();
+            }
+            catch (Exception e1)
+            {
+                return;
+            }
+            /*
+            using (var response = httpClient.PutAsync(url, requestBody).Result)
+            {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine("Success");
+                }
+            }
+            */
+        }
+
+        public void UpUser()
+        {
+            UserTrees a = new UserTrees();
+            a.UserTreeId = 5;
+            a.user_name = "cccccccc";
+
+            var jsonEmp = JsonConvert.SerializeObject(a);
+            var url2 = @"http://localhost:9921/api/UserTrees/5"; //Строка по которой производиться обращение к таблице
+
+            //var url2 = g._EMClient.WebAPIURL + "UserTrees" + "/" + a.UserTreeId.ToString();
+            StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
+            var res = httpClient.PutAsync(url2, stringC).Result; //отправляем 
+        }
+
+        public void RemoveEMServer(string url, int id)
+        {
+            try
+            {
+                var url2 = g._EMClient.WebAPIURL + url + "/" + id.ToString();
+                var res = httpClient.DeleteAsync(url2).Result; //отправляем 
+            }
+            catch (Exception e1)
+            { 
+                Console.WriteLine(e1);
+            }
+
+        }
+
+
         #endregion
 
         /*
@@ -497,6 +576,19 @@ namespace pa
             {
                 Console.WriteLine(e1.Message);
             }
+        }
+        #endregion
+
+        #region //  emServer 
+
+        public EMServerRow EMServerGet()
+        {
+            EMServerRow ret;
+            ret = EMServer.FirstOrDefault(p=>p.EMNAME == g._EMClient.EM_NAME);
+
+            if (ret == null)
+                return null;
+            return ret;
         }
         #endregion
     }

@@ -46,6 +46,7 @@ namespace pa
 
         public DBAccess dBAccess { get; set; } = new DBAccess();
 
+        public EMServerRow EMServerRow { get; set; }
         WireSharkRunning wireShark { get; set; } = new WireSharkRunning();
 
         int em_status { get; set; } = 0;  // 화재 1,2 시험 알람 3,4 가스 5,6  
@@ -113,6 +114,14 @@ namespace pa
             dBAccess.DBInit();
             if (dBAccess.Simplepa == null)
             {
+                Initialtimer.Start();
+                return;
+            }
+
+            EMServerRow = dBAccess.EMServerGet();
+            if (EMServerRow == null)
+            {
+                // EMServer 가 없으면 문제 있음 
                 Initialtimer.Start();
                 return;
             }
@@ -204,6 +213,7 @@ namespace pa
 
             systemcheck();
             g.Log("Initialize OK..");
+            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow);
         }
 
         private int systemcheck()
@@ -280,7 +290,7 @@ namespace pa
                 Resolver.intfindx = t3.NetworkCardmDNS;
                 Resolver.localIP = t3.ipv4;
                 g.Log("Local IP :" + t3.ipv4);
-
+                EMServerRow.net_local = t3.ipv4;
                 g.resolver = new Resolver();
                 g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
             }
@@ -533,13 +543,15 @@ namespace pa
 
         private void _but6_Click(object sender, RoutedEventArgs e)
         {
+            dBAccess.RemoveEMServer("EMServers", EMServerRow.EMServerId);
+            dBAccess.Dbsave<EMServerRow>("EMServers", EMServerRow);
 
             //SendSigR("PLAYING", eSignalRMsgType.ePlaying, 1, 0);
-            SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd, 0, 0);
+            //SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd, 0, 0);
 
             //SendSigR("Hello Client", eSignalRMsgType.eEM, 0, 0);
 
-            alarmtest = !alarmtest;
+            //alarmtest = !alarmtest;
 
             /*
             if (first)

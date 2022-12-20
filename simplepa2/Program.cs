@@ -141,25 +141,15 @@ namespace simplepa2
 
 		public static void Register(HttpConfiguration config)
 		{
+
 			try
 			{
-				// Attribute routing.
-				config.MapHttpAttributeRoutes();
-
 				config.Routes.MapHttpRoute(
-					name: "Route1",
-					routeTemplate: "api/{controller}/{id}",
-					defaults: new { id = RouteParameter.Optional }
+				name: "DefaultApi",
+				routeTemplate: "api/{controller}/{id}",
+				defaults: new { id = RouteParameter.Optional }
 				);
-
-				// Convention-based routing.
-				config.Routes.MapHttpRoute(
-					name: "DefaultApi",
-					routeTemplate: "api/{controller}/{id}",
-					defaults: new { id = RouteParameter.Optional },
-					constraints: null,
-					handler: new MessageHandler()
-				);
+				//config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}",	new { id = RouteParameter.Optional });
 			}
 			catch (Exception e1)
 			{

@@ -1909,58 +1909,58 @@ FROM     SimpleUserTrees</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="com_gpio" msprop:Generator_UserColumnName="com_gpio" msprop:Generator_ColumnPropNameInTable="com_gpioColumn" msprop:Generator_ColumnPropNameInRow="com_gpio" msprop:Generator_ColumnVarNameInTable="columncom_gpio" minOccurs="0">
+              <xs:element name="com_gpio" msprop:Generator_ColumnPropNameInTable="com_gpioColumn" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="com_gpio" msprop:Generator_UserColumnName="com_gpio" msprop:Generator_ColumnVarNameInTable="columncom_gpio" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="com_Rtype" msprop:Generator_UserColumnName="com_Rtype" msprop:Generator_ColumnPropNameInTable="com_RtypeColumn" msprop:Generator_ColumnPropNameInRow="com_Rtype" msprop:Generator_ColumnVarNameInTable="columncom_Rtype" minOccurs="0">
+              <xs:element name="com_Rtype" msprop:Generator_ColumnPropNameInTable="com_RtypeColumn" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="com_Rtype" msprop:Generator_UserColumnName="com_Rtype" msprop:Generator_ColumnVarNameInTable="columncom_Rtype" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="net_local" msprop:Generator_UserColumnName="net_local" msprop:Generator_ColumnPropNameInTable="net_localColumn" msprop:Generator_ColumnPropNameInRow="net_local" msprop:Generator_ColumnVarNameInTable="columnnet_local" minOccurs="0">
+              <xs:element name="net_local" msprop:Generator_ColumnPropNameInTable="net_localColumn" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="net_local" msprop:Generator_UserColumnName="net_local" msprop:Generator_ColumnVarNameInTable="columnnet_local" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="net_dante" msprop:Generator_UserColumnName="net_dante" msprop:Generator_ColumnPropNameInTable="net_danteColumn" msprop:Generator_ColumnPropNameInRow="net_dante" msprop:Generator_ColumnVarNameInTable="columnnet_dante" minOccurs="0">
+              <xs:element name="net_dante" msprop:Generator_ColumnPropNameInTable="net_danteColumn" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="net_dante" msprop:Generator_UserColumnName="net_dante" msprop:Generator_ColumnVarNameInTable="columnnet_dante" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="dsp_ctrl" msprop:Generator_UserColumnName="dsp_ctrl" msprop:Generator_ColumnPropNameInTable="dsp_ctrlColumn" msprop:Generator_ColumnPropNameInRow="dsp_ctrl" msprop:Generator_ColumnVarNameInTable="columndsp_ctrl" minOccurs="0">
+              <xs:element name="dsp_ctrl" msprop:Generator_ColumnPropNameInTable="dsp_ctrlColumn" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="dsp_ctrl" msprop:Generator_UserColumnName="dsp_ctrl" msprop:Generator_ColumnVarNameInTable="columndsp_ctrl" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="dsp_dante" msprop:Generator_UserColumnName="dsp_dante" msprop:Generator_ColumnPropNameInTable="dsp_danteColumn" msprop:Generator_ColumnPropNameInRow="dsp_dante" msprop:Generator_ColumnVarNameInTable="columndsp_dante" minOccurs="0">
+              <xs:element name="dsp_dante" msprop:Generator_ColumnPropNameInTable="dsp_danteColumn" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="dsp_dante" msprop:Generator_UserColumnName="dsp_dante" msprop:Generator_ColumnVarNameInTable="columndsp_dante" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="emtest" msprop:Generator_ColumnPropNameInRow="emtest" msprop:Generator_ColumnPropNameInTable="emtestColumn" msprop:Generator_ColumnVarNameInTable="columnemtest" msprop:Generator_UserColumnName="emtest" type="xs:int" minOccurs="0" />
-              <xs:element name="fire" msprop:Generator_ColumnPropNameInRow="fire" msprop:Generator_ColumnPropNameInTable="fireColumn" msprop:Generator_ColumnVarNameInTable="columnfire" msprop:Generator_UserColumnName="fire" type="xs:int" minOccurs="0" />
-              <xs:element name="err" msprop:Generator_ColumnPropNameInRow="err" msprop:Generator_ColumnPropNameInTable="errColumn" msprop:Generator_ColumnVarNameInTable="columnerr" msprop:Generator_UserColumnName="err" type="xs:int" minOccurs="0" />
-              <xs:element name="sw_4" msprop:Generator_ColumnPropNameInRow="sw_4" msprop:Generator_ColumnPropNameInTable="sw_4Column" msprop:Generator_ColumnVarNameInTable="columnsw_4" msprop:Generator_UserColumnName="sw_4" type="xs:int" minOccurs="0" />
-              <xs:element name="sw_3" msprop:Generator_ColumnPropNameInRow="sw_3" msprop:Generator_ColumnPropNameInTable="sw_3Column" msprop:Generator_ColumnVarNameInTable="columnsw_3" msprop:Generator_UserColumnName="sw_3" type="xs:int" minOccurs="0" />
-              <xs:element name="sw_2" msprop:Generator_ColumnPropNameInRow="sw_2" msprop:Generator_ColumnPropNameInTable="sw_2Column" msprop:Generator_ColumnVarNameInTable="columnsw_2" msprop:Generator_UserColumnName="sw_2" type="xs:int" minOccurs="0" />
-              <xs:element name="sw_1" msprop:Generator_ColumnPropNameInRow="sw_1" msprop:Generator_ColumnPropNameInTable="sw_1Column" msprop:Generator_ColumnVarNameInTable="columnsw_1" msprop:Generator_UserColumnName="sw_1" type="xs:int" minOccurs="0" />
-              <xs:element name="sw_all" msprop:Generator_ColumnPropNameInRow="sw_all" msprop:Generator_ColumnPropNameInTable="sw_allColumn" msprop:Generator_ColumnVarNameInTable="columnsw_all" msprop:Generator_UserColumnName="sw_all" type="xs:int" minOccurs="0" />
-              <xs:element name="com_Rtype_state" msprop:Generator_ColumnPropNameInRow="com_Rtype_state" msprop:Generator_ColumnPropNameInTable="com_Rtype_stateColumn" msprop:Generator_ColumnVarNameInTable="columncom_Rtype_state" msprop:Generator_UserColumnName="com_Rtype_state" type="xs:int" minOccurs="0" />
-              <xs:element name="com_gpio_state" msprop:Generator_ColumnPropNameInRow="com_gpio_state" msprop:Generator_ColumnPropNameInTable="com_gpio_stateColumn" msprop:Generator_ColumnVarNameInTable="columncom_gpio_state" msprop:Generator_UserColumnName="com_gpio_state" type="xs:int" minOccurs="0" />
+              <xs:element name="emtest" msprop:Generator_UserColumnName="emtest" msprop:Generator_ColumnPropNameInTable="emtestColumn" msprop:Generator_ColumnPropNameInRow="emtest" msprop:Generator_ColumnVarNameInTable="columnemtest" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="fire" msprop:Generator_UserColumnName="fire" msprop:Generator_ColumnPropNameInTable="fireColumn" msprop:Generator_ColumnPropNameInRow="fire" msprop:Generator_ColumnVarNameInTable="columnfire" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="err" msprop:Generator_UserColumnName="err" msprop:Generator_ColumnPropNameInTable="errColumn" msprop:Generator_ColumnPropNameInRow="err" msprop:Generator_ColumnVarNameInTable="columnerr" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="sw_4" msprop:Generator_UserColumnName="sw_4" msprop:Generator_ColumnPropNameInTable="sw_4Column" msprop:Generator_ColumnPropNameInRow="sw_4" msprop:Generator_ColumnVarNameInTable="columnsw_4" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="sw_3" msprop:Generator_UserColumnName="sw_3" msprop:Generator_ColumnPropNameInTable="sw_3Column" msprop:Generator_ColumnPropNameInRow="sw_3" msprop:Generator_ColumnVarNameInTable="columnsw_3" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="sw_2" msprop:Generator_UserColumnName="sw_2" msprop:Generator_ColumnPropNameInTable="sw_2Column" msprop:Generator_ColumnPropNameInRow="sw_2" msprop:Generator_ColumnVarNameInTable="columnsw_2" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="sw_1" msprop:Generator_UserColumnName="sw_1" msprop:Generator_ColumnPropNameInTable="sw_1Column" msprop:Generator_ColumnPropNameInRow="sw_1" msprop:Generator_ColumnVarNameInTable="columnsw_1" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="sw_all" msprop:Generator_UserColumnName="sw_all" msprop:Generator_ColumnPropNameInTable="sw_allColumn" msprop:Generator_ColumnPropNameInRow="sw_all" msprop:Generator_ColumnVarNameInTable="columnsw_all" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="com_Rtype_state" msprop:Generator_UserColumnName="com_Rtype_state" msprop:Generator_ColumnPropNameInTable="com_Rtype_stateColumn" msprop:Generator_ColumnPropNameInRow="com_Rtype_state" msprop:Generator_ColumnVarNameInTable="columncom_Rtype_state" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="com_gpio_state" msprop:Generator_UserColumnName="com_gpio_state" msprop:Generator_ColumnPropNameInTable="com_gpio_stateColumn" msprop:Generator_ColumnPropNameInRow="com_gpio_state" msprop:Generator_ColumnVarNameInTable="columncom_gpio_state" type="xs:int" default="0" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
