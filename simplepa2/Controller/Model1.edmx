@@ -126,6 +126,22 @@
           <Property Name="EMNAME" Type="text" />
           <Property Name="state" Type="text" />
           <Property Name="state_old" Type="text" />
+          <Property Name="com_gpio" Type="text" />
+          <Property Name="com_Rtype" Type="text" />
+          <Property Name="net_local" Type="text" />
+          <Property Name="net_dante" Type="text" />
+          <Property Name="dsp_ctrl" Type="text" />
+          <Property Name="dsp_dante" Type="text" />
+          <Property Name="com_gpio_state" Type="int" />
+          <Property Name="com_Rtype_state" Type="int" />
+          <Property Name="sw_all" Type="int" />
+          <Property Name="sw_1" Type="int" />
+          <Property Name="sw_2" Type="int" />
+          <Property Name="sw_3" Type="int" />
+          <Property Name="sw_4" Type="int" />
+          <Property Name="err" Type="int" />
+          <Property Name="fire" Type="int" />
+          <Property Name="emtest" Type="int" />
         </EntityType>
         <EntityType Name="Eventvm">
           <Key>
@@ -397,6 +413,22 @@
           <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="state_old" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="com_gpio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="com_Rtype" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="net_local" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="net_dante" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dsp_ctrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dsp_dante" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="com_gpio_state" Type="Int32" />
+          <Property Name="com_Rtype_state" Type="Int32" />
+          <Property Name="sw_all" Type="Int32" />
+          <Property Name="sw_1" Type="Int32" />
+          <Property Name="sw_2" Type="Int32" />
+          <Property Name="sw_3" Type="Int32" />
+          <Property Name="sw_4" Type="Int32" />
+          <Property Name="err" Type="Int32" />
+          <Property Name="fire" Type="Int32" />
+          <Property Name="emtest" Type="Int32" />
         </EntityType>
         <EntityType Name="Eventvm">
           <Key>
@@ -663,6 +695,22 @@
           <EntitySetMapping Name="EMServer">
             <EntityTypeMapping TypeName="simplePAModel.EMServer">
               <MappingFragment StoreEntitySet="EMServer">
+                <ScalarProperty Name="emtest" ColumnName="emtest" />
+                <ScalarProperty Name="fire" ColumnName="fire" />
+                <ScalarProperty Name="err" ColumnName="err" />
+                <ScalarProperty Name="sw_4" ColumnName="sw_4" />
+                <ScalarProperty Name="sw_3" ColumnName="sw_3" />
+                <ScalarProperty Name="sw_2" ColumnName="sw_2" />
+                <ScalarProperty Name="sw_1" ColumnName="sw_1" />
+                <ScalarProperty Name="sw_all" ColumnName="sw_all" />
+                <ScalarProperty Name="com_Rtype_state" ColumnName="com_Rtype_state" />
+                <ScalarProperty Name="com_gpio_state" ColumnName="com_gpio_state" />
+                <ScalarProperty Name="dsp_dante" ColumnName="dsp_dante" />
+                <ScalarProperty Name="dsp_ctrl" ColumnName="dsp_ctrl" />
+                <ScalarProperty Name="net_dante" ColumnName="net_dante" />
+                <ScalarProperty Name="net_local" ColumnName="net_local" />
+                <ScalarProperty Name="com_Rtype" ColumnName="com_Rtype" />
+                <ScalarProperty Name="com_gpio" ColumnName="com_gpio" />
                 <ScalarProperty Name="EMServerId" ColumnName="EMServerId" />
                 <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
                 <ScalarProperty Name="state" ColumnName="state" />

@@ -1,6 +1,6 @@
 USE [simplePA]
 GO
-/****** Object:  Table [dbo].[AssetGroups]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[AssetGroups]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[AssetGroups](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Assets]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[Assets]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -51,7 +51,7 @@ CREATE TABLE [dbo].[Assets](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BSroom]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[BSroom]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -67,7 +67,7 @@ CREATE TABLE [dbo].[BSroom](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BSTree]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[BSTree]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -90,7 +90,7 @@ CREATE TABLE [dbo].[BSTree](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BSTreeC]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[BSTreeC]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -106,7 +106,7 @@ CREATE TABLE [dbo].[BSTreeC](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Device]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[Device]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -136,7 +136,7 @@ CREATE TABLE [dbo].[Device](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DeviceChannel]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[DeviceChannel]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -157,7 +157,7 @@ CREATE TABLE [dbo].[DeviceChannel](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EMBs]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[EMBs]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -173,7 +173,7 @@ CREATE TABLE [dbo].[EMBs](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EMServer]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[EMServer]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -183,13 +183,29 @@ CREATE TABLE [dbo].[EMServer](
 	[EMNAME] [text] NULL,
 	[state] [text] NULL,
 	[state_old] [text] NULL,
+	[com_gpio] [text] NULL,
+	[com_Rtype] [text] NULL,
+	[net_local] [text] NULL,
+	[net_dante] [text] NULL,
+	[dsp_ctrl] [text] NULL,
+	[dsp_dante] [text] NULL,
+	[com_gpio_state] [int] NULL,
+	[com_Rtype_state] [int] NULL,
+	[sw_all] [int] NULL,
+	[sw_1] [int] NULL,
+	[sw_2] [int] NULL,
+	[sw_3] [int] NULL,
+	[sw_4] [int] NULL,
+	[err] [int] NULL,
+	[fire] [int] NULL,
+	[emtest] [int] NULL,
  CONSTRAINT [PK_EMServer] PRIMARY KEY CLUSTERED 
 (
 	[EMServerId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Eventvm]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[Eventvm]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -209,7 +225,7 @@ CREATE TABLE [dbo].[Eventvm](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Holidays]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[Holidays]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -224,7 +240,7 @@ CREATE TABLE [dbo].[Holidays](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Musics]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[Musics]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -241,7 +257,7 @@ CREATE TABLE [dbo].[Musics](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PlayItem]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[PlayItem]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -262,7 +278,7 @@ CREATE TABLE [dbo].[PlayItem](
 	[p_run] [int] NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Simplepa]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[Simplepa]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -322,7 +338,7 @@ CREATE TABLE [dbo].[Simplepa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserTrees]    Script Date: 2022-12-19 오후 3:24:03 ******/
+/****** Object:  Table [dbo].[UserTrees]    Script Date: 2022-12-20 오후 12:02:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -371,6 +387,26 @@ GO
 ALTER TABLE [dbo].[DeviceChannel] ADD  CONSTRAINT [DF__DeviceCha__Devic__4BAC3F29]  DEFAULT ((0)) FOR [DeviceId]
 GO
 ALTER TABLE [dbo].[DeviceChannel] ADD  CONSTRAINT [DF__DeviceChanne__io__4CA06362]  DEFAULT ((0)) FOR [io]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_com_gpio_state]  DEFAULT ((0)) FOR [com_gpio_state]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_com_Rtype_state]  DEFAULT ((0)) FOR [com_Rtype_state]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_sw_all]  DEFAULT ((0)) FOR [sw_all]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_sw_1]  DEFAULT ((0)) FOR [sw_1]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_sw_2]  DEFAULT ((0)) FOR [sw_2]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_sw_3]  DEFAULT ((0)) FOR [sw_3]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_sw_4]  DEFAULT ((0)) FOR [sw_4]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_err]  DEFAULT ((0)) FOR [err]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_fire]  DEFAULT ((0)) FOR [fire]
+GO
+ALTER TABLE [dbo].[EMServer] ADD  CONSTRAINT [DF_EMServer_emtest]  DEFAULT ((0)) FOR [emtest]
 GO
 ALTER TABLE [dbo].[Eventvm] ADD  CONSTRAINT [DF__Eventvm__alarm__412EB0B6]  DEFAULT ((0)) FOR [alarm]
 GO

@@ -18,5 +18,21 @@ namespace simplepa2.Controller
         public string EMNAME { get; set; }
         public string state { get; set; }
         public string state_old { get; set; }
+        public string com_gpio { get; set; }
+        public string com_Rtype { get; set; }
+        public string net_local { get; set; }
+        public string net_dante { get; set; }
+        public string dsp_ctrl { get; set; }
+        public string dsp_dante { get; set; }
+        public Nullable<int> com_gpio_state { get; set; }
+        public Nullable<int> com_Rtype_state { get; set; }
+        public Nullable<int> sw_all { get; set; }
+        public Nullable<int> sw_1 { get; set; }
+        public Nullable<int> sw_2 { get; set; }
+        public Nullable<int> sw_3 { get; set; }
+        public Nullable<int> sw_4 { get; set; }
+        public Nullable<int> err { get; set; }
+        public Nullable<int> fire { get; set; }
+        public Nullable<int> emtest { get; set; }
     }
 }

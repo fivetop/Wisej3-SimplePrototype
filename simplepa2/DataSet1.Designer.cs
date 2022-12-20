@@ -6383,6 +6383,38 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnEMNAME;
             
+            private global::System.Data.DataColumn columncom_gpio;
+            
+            private global::System.Data.DataColumn columncom_Rtype;
+            
+            private global::System.Data.DataColumn columnnet_local;
+            
+            private global::System.Data.DataColumn columnnet_dante;
+            
+            private global::System.Data.DataColumn columndsp_ctrl;
+            
+            private global::System.Data.DataColumn columndsp_dante;
+            
+            private global::System.Data.DataColumn columnemtest;
+            
+            private global::System.Data.DataColumn columnfire;
+            
+            private global::System.Data.DataColumn columnerr;
+            
+            private global::System.Data.DataColumn columnsw_4;
+            
+            private global::System.Data.DataColumn columnsw_3;
+            
+            private global::System.Data.DataColumn columnsw_2;
+            
+            private global::System.Data.DataColumn columnsw_1;
+            
+            private global::System.Data.DataColumn columnsw_all;
+            
+            private global::System.Data.DataColumn columncom_Rtype_state;
+            
+            private global::System.Data.DataColumn columncom_gpio_state;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public EMServerDataTable() {
@@ -6450,6 +6482,134 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn com_gpioColumn {
+                get {
+                    return this.columncom_gpio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn com_RtypeColumn {
+                get {
+                    return this.columncom_Rtype;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn net_localColumn {
+                get {
+                    return this.columnnet_local;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn net_danteColumn {
+                get {
+                    return this.columnnet_dante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn dsp_ctrlColumn {
+                get {
+                    return this.columndsp_ctrl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn dsp_danteColumn {
+                get {
+                    return this.columndsp_dante;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn emtestColumn {
+                get {
+                    return this.columnemtest;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn fireColumn {
+                get {
+                    return this.columnfire;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn errColumn {
+                get {
+                    return this.columnerr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sw_4Column {
+                get {
+                    return this.columnsw_4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sw_3Column {
+                get {
+                    return this.columnsw_3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sw_2Column {
+                get {
+                    return this.columnsw_2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sw_1Column {
+                get {
+                    return this.columnsw_1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sw_allColumn {
+                get {
+                    return this.columnsw_all;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn com_Rtype_stateColumn {
+                get {
+                    return this.columncom_Rtype_state;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn com_gpio_stateColumn {
+                get {
+                    return this.columncom_gpio_state;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6485,13 +6645,48 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EMServerRow AddEMServerRow(string state, string state_old, string EMNAME) {
+            public EMServerRow AddEMServerRow(
+                        string state, 
+                        string state_old, 
+                        string EMNAME, 
+                        string com_gpio, 
+                        string com_Rtype, 
+                        string net_local, 
+                        string net_dante, 
+                        string dsp_ctrl, 
+                        string dsp_dante, 
+                        int emtest, 
+                        int fire, 
+                        int err, 
+                        int sw_4, 
+                        int sw_3, 
+                        int sw_2, 
+                        int sw_1, 
+                        int sw_all, 
+                        int com_Rtype_state, 
+                        int com_gpio_state) {
                 EMServerRow rowEMServerRow = ((EMServerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         state,
                         state_old,
-                        EMNAME};
+                        EMNAME,
+                        com_gpio,
+                        com_Rtype,
+                        net_local,
+                        net_dante,
+                        dsp_ctrl,
+                        dsp_dante,
+                        emtest,
+                        fire,
+                        err,
+                        sw_4,
+                        sw_3,
+                        sw_2,
+                        sw_1,
+                        sw_all,
+                        com_Rtype_state,
+                        com_gpio_state};
                 rowEMServerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEMServerRow);
                 return rowEMServerRow;
@@ -6525,6 +6720,22 @@ namespace simplepa2 {
                 this.columnstate = base.Columns["state"];
                 this.columnstate_old = base.Columns["state_old"];
                 this.columnEMNAME = base.Columns["EMNAME"];
+                this.columncom_gpio = base.Columns["com_gpio"];
+                this.columncom_Rtype = base.Columns["com_Rtype"];
+                this.columnnet_local = base.Columns["net_local"];
+                this.columnnet_dante = base.Columns["net_dante"];
+                this.columndsp_ctrl = base.Columns["dsp_ctrl"];
+                this.columndsp_dante = base.Columns["dsp_dante"];
+                this.columnemtest = base.Columns["emtest"];
+                this.columnfire = base.Columns["fire"];
+                this.columnerr = base.Columns["err"];
+                this.columnsw_4 = base.Columns["sw_4"];
+                this.columnsw_3 = base.Columns["sw_3"];
+                this.columnsw_2 = base.Columns["sw_2"];
+                this.columnsw_1 = base.Columns["sw_1"];
+                this.columnsw_all = base.Columns["sw_all"];
+                this.columncom_Rtype_state = base.Columns["com_Rtype_state"];
+                this.columncom_gpio_state = base.Columns["com_gpio_state"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6538,6 +6749,38 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnstate_old);
                 this.columnEMNAME = new global::System.Data.DataColumn("EMNAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEMNAME);
+                this.columncom_gpio = new global::System.Data.DataColumn("com_gpio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncom_gpio);
+                this.columncom_Rtype = new global::System.Data.DataColumn("com_Rtype", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncom_Rtype);
+                this.columnnet_local = new global::System.Data.DataColumn("net_local", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnet_local);
+                this.columnnet_dante = new global::System.Data.DataColumn("net_dante", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnet_dante);
+                this.columndsp_ctrl = new global::System.Data.DataColumn("dsp_ctrl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndsp_ctrl);
+                this.columndsp_dante = new global::System.Data.DataColumn("dsp_dante", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndsp_dante);
+                this.columnemtest = new global::System.Data.DataColumn("emtest", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemtest);
+                this.columnfire = new global::System.Data.DataColumn("fire", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfire);
+                this.columnerr = new global::System.Data.DataColumn("err", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnerr);
+                this.columnsw_4 = new global::System.Data.DataColumn("sw_4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsw_4);
+                this.columnsw_3 = new global::System.Data.DataColumn("sw_3", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsw_3);
+                this.columnsw_2 = new global::System.Data.DataColumn("sw_2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsw_2);
+                this.columnsw_1 = new global::System.Data.DataColumn("sw_1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsw_1);
+                this.columnsw_all = new global::System.Data.DataColumn("sw_all", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsw_all);
+                this.columncom_Rtype_state = new global::System.Data.DataColumn("com_Rtype_state", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncom_Rtype_state);
+                this.columncom_gpio_state = new global::System.Data.DataColumn("com_gpio_state", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncom_gpio_state);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEMServerId}, true));
                 this.columnEMServerId.AutoIncrement = true;
@@ -6549,6 +6792,12 @@ namespace simplepa2 {
                 this.columnstate.MaxLength = 2147483647;
                 this.columnstate_old.MaxLength = 2147483647;
                 this.columnEMNAME.MaxLength = 2147483647;
+                this.columncom_gpio.MaxLength = 2147483647;
+                this.columncom_Rtype.MaxLength = 2147483647;
+                this.columnnet_local.MaxLength = 2147483647;
+                this.columnnet_dante.MaxLength = 2147483647;
+                this.columndsp_ctrl.MaxLength = 2147483647;
+                this.columndsp_dante.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11338,6 +11587,262 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string com_gpio {
+                get {
+                    try {
+                        return ((string)(this[this.tableEMServer.com_gpioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'com_gpio\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.com_gpioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string com_Rtype {
+                get {
+                    try {
+                        return ((string)(this[this.tableEMServer.com_RtypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'com_Rtype\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.com_RtypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string net_local {
+                get {
+                    try {
+                        return ((string)(this[this.tableEMServer.net_localColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'net_local\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.net_localColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string net_dante {
+                get {
+                    try {
+                        return ((string)(this[this.tableEMServer.net_danteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'net_dante\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.net_danteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string dsp_ctrl {
+                get {
+                    try {
+                        return ((string)(this[this.tableEMServer.dsp_ctrlColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'dsp_ctrl\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.dsp_ctrlColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string dsp_dante {
+                get {
+                    try {
+                        return ((string)(this[this.tableEMServer.dsp_danteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'dsp_dante\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.dsp_danteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int emtest {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.emtestColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'emtest\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.emtestColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int fire {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.fireColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'fire\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.fireColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int err {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.errColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'err\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.errColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int sw_4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.sw_4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'sw_4\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.sw_4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int sw_3 {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.sw_3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'sw_3\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.sw_3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int sw_2 {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.sw_2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'sw_2\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.sw_2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int sw_1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.sw_1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'sw_1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.sw_1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int sw_all {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.sw_allColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'sw_all\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.sw_allColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int com_Rtype_state {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.com_Rtype_stateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'com_Rtype_state\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.com_Rtype_stateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int com_gpio_state {
+                get {
+                    try {
+                        return ((int)(this[this.tableEMServer.com_gpio_stateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'EMServer\' 테이블의 \'com_gpio_state\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableEMServer.com_gpio_stateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsstateNull() {
                 return this.IsNull(this.tableEMServer.stateColumn);
             }
@@ -11370,6 +11875,198 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetEMNAMENull() {
                 this[this.tableEMServer.EMNAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscom_gpioNull() {
+                return this.IsNull(this.tableEMServer.com_gpioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcom_gpioNull() {
+                this[this.tableEMServer.com_gpioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscom_RtypeNull() {
+                return this.IsNull(this.tableEMServer.com_RtypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcom_RtypeNull() {
+                this[this.tableEMServer.com_RtypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isnet_localNull() {
+                return this.IsNull(this.tableEMServer.net_localColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setnet_localNull() {
+                this[this.tableEMServer.net_localColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isnet_danteNull() {
+                return this.IsNull(this.tableEMServer.net_danteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setnet_danteNull() {
+                this[this.tableEMServer.net_danteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isdsp_ctrlNull() {
+                return this.IsNull(this.tableEMServer.dsp_ctrlColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setdsp_ctrlNull() {
+                this[this.tableEMServer.dsp_ctrlColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isdsp_danteNull() {
+                return this.IsNull(this.tableEMServer.dsp_danteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setdsp_danteNull() {
+                this[this.tableEMServer.dsp_danteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsemtestNull() {
+                return this.IsNull(this.tableEMServer.emtestColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetemtestNull() {
+                this[this.tableEMServer.emtestColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsfireNull() {
+                return this.IsNull(this.tableEMServer.fireColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetfireNull() {
+                this[this.tableEMServer.fireColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IserrNull() {
+                return this.IsNull(this.tableEMServer.errColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SeterrNull() {
+                this[this.tableEMServer.errColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issw_4Null() {
+                return this.IsNull(this.tableEMServer.sw_4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsw_4Null() {
+                this[this.tableEMServer.sw_4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issw_3Null() {
+                return this.IsNull(this.tableEMServer.sw_3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsw_3Null() {
+                this[this.tableEMServer.sw_3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issw_2Null() {
+                return this.IsNull(this.tableEMServer.sw_2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsw_2Null() {
+                this[this.tableEMServer.sw_2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issw_1Null() {
+                return this.IsNull(this.tableEMServer.sw_1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsw_1Null() {
+                this[this.tableEMServer.sw_1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issw_allNull() {
+                return this.IsNull(this.tableEMServer.sw_allColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsw_allNull() {
+                this[this.tableEMServer.sw_allColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscom_Rtype_stateNull() {
+                return this.IsNull(this.tableEMServer.com_Rtype_stateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcom_Rtype_stateNull() {
+                this[this.tableEMServer.com_Rtype_stateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscom_gpio_stateNull() {
+                return this.IsNull(this.tableEMServer.com_gpio_stateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcom_gpio_stateNull() {
+                this[this.tableEMServer.com_gpio_stateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -18126,6 +18823,22 @@ namespace simplepa2.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("state", "state");
             tableMapping.ColumnMappings.Add("state_old", "state_old");
             tableMapping.ColumnMappings.Add("EMNAME", "EMNAME");
+            tableMapping.ColumnMappings.Add("com_gpio", "com_gpio");
+            tableMapping.ColumnMappings.Add("com_Rtype", "com_Rtype");
+            tableMapping.ColumnMappings.Add("net_local", "net_local");
+            tableMapping.ColumnMappings.Add("net_dante", "net_dante");
+            tableMapping.ColumnMappings.Add("dsp_ctrl", "dsp_ctrl");
+            tableMapping.ColumnMappings.Add("dsp_dante", "dsp_dante");
+            tableMapping.ColumnMappings.Add("emtest", "emtest");
+            tableMapping.ColumnMappings.Add("fire", "fire");
+            tableMapping.ColumnMappings.Add("err", "err");
+            tableMapping.ColumnMappings.Add("sw_4", "sw_4");
+            tableMapping.ColumnMappings.Add("sw_3", "sw_3");
+            tableMapping.ColumnMappings.Add("sw_2", "sw_2");
+            tableMapping.ColumnMappings.Add("sw_1", "sw_1");
+            tableMapping.ColumnMappings.Add("sw_all", "sw_all");
+            tableMapping.ColumnMappings.Add("com_Rtype_state", "com_Rtype_state");
+            tableMapping.ColumnMappings.Add("com_gpio_state", "com_gpio_state");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -18134,20 +18847,50 @@ namespace simplepa2.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMServerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMServerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [EMServer] ([state], [state_old], [EMNAME]) VALUES (@state, @state_ol" +
-                "d, @EMNAME)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [EMServer] ([state], [state_old], [EMNAME], [com_gpio], [com_Rtype], [net_local], [net_dante], [dsp_ctrl], [dsp_dante], [emtest], [fire], [err], [sw_4], [sw_3], [sw_2], [sw_1], [sw_all], [com_Rtype_state], [com_gpio_state]) VALUES (@state, @state_old, @EMNAME, @com_gpio, @com_Rtype, @net_local, @net_dante, @dsp_ctrl, @dsp_dante, @emtest, @fire, @err, @sw_4, @sw_3, @sw_2, @sw_1, @sw_all, @com_Rtype_state, @com_gpio_state)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state_old", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state_old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@com_gpio", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "com_gpio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@com_Rtype", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "com_Rtype", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@net_local", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_local", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@net_dante", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_dante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dsp_ctrl", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dsp_ctrl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dsp_dante", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dsp_dante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emtest", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emtest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fire", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fire", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@err", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "err", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_all", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_all", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@com_Rtype_state", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "com_Rtype_state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@com_gpio_state", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "com_gpio_state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [EMServer] SET [state] = @state, [state_old] = @state_old, [EMNAME] = @EMN" +
-                "AME WHERE (([EMServerId] = @Original_EMServerId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [EMServer] SET [state] = @state, [state_old] = @state_old, [EMNAME] = @EMNAME, [com_gpio] = @com_gpio, [com_Rtype] = @com_Rtype, [net_local] = @net_local, [net_dante] = @net_dante, [dsp_ctrl] = @dsp_ctrl, [dsp_dante] = @dsp_dante, [emtest] = @emtest, [fire] = @fire, [err] = @err, [sw_4] = @sw_4, [sw_3] = @sw_3, [sw_2] = @sw_2, [sw_1] = @sw_1, [sw_all] = @sw_all, [com_Rtype_state] = @com_Rtype_state, [com_gpio_state] = @com_gpio_state WHERE (([EMServerId] = @Original_EMServerId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state_old", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state_old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@com_gpio", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "com_gpio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@com_Rtype", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "com_Rtype", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@net_local", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_local", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@net_dante", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "net_dante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dsp_ctrl", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dsp_ctrl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dsp_dante", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dsp_dante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emtest", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "emtest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fire", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fire", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@err", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "err", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sw_all", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sw_all", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@com_Rtype_state", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "com_Rtype_state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@com_gpio_state", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "com_gpio_state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EMServerId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMServerId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -18164,7 +18907,9 @@ namespace simplepa2.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  EMServerId, state, state_old, EMNAME\r\nFROM     EMServer";
+            this._commandCollection[0].CommandText = "SELECT  EMServerId, state, state_old, EMNAME, com_gpio, com_Rtype, net_local, net" +
+                "_dante, dsp_ctrl, dsp_dante, emtest, fire, err, sw_4, sw_3, sw_2, sw_1, sw_all, " +
+                "com_Rtype_state, \r\n               com_gpio_state\r\nFROM     EMServer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18247,7 +18992,26 @@ namespace simplepa2.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string state, string state_old, string EMNAME) {
+        public virtual int Insert(
+                    string state, 
+                    string state_old, 
+                    string EMNAME, 
+                    string com_gpio, 
+                    string com_Rtype, 
+                    string net_local, 
+                    string net_dante, 
+                    string dsp_ctrl, 
+                    string dsp_dante, 
+                    global::System.Nullable<int> emtest, 
+                    global::System.Nullable<int> fire, 
+                    global::System.Nullable<int> err, 
+                    global::System.Nullable<int> sw_4, 
+                    global::System.Nullable<int> sw_3, 
+                    global::System.Nullable<int> sw_2, 
+                    global::System.Nullable<int> sw_1, 
+                    global::System.Nullable<int> sw_all, 
+                    global::System.Nullable<int> com_Rtype_state, 
+                    global::System.Nullable<int> com_gpio_state) {
             if ((state == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -18265,6 +19029,102 @@ namespace simplepa2.DataSet1TableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(EMNAME));
+            }
+            if ((com_gpio == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(com_gpio));
+            }
+            if ((com_Rtype == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(com_Rtype));
+            }
+            if ((net_local == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(net_local));
+            }
+            if ((net_dante == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(net_dante));
+            }
+            if ((dsp_ctrl == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(dsp_ctrl));
+            }
+            if ((dsp_dante == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(dsp_dante));
+            }
+            if ((emtest.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(emtest.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((fire.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(fire.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((err.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(err.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((sw_4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(sw_4.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((sw_3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(sw_3.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((sw_2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((int)(sw_2.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((sw_1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((int)(sw_1.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((sw_all.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((int)(sw_all.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((com_Rtype_state.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(com_Rtype_state.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((com_gpio_state.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((int)(com_gpio_state.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -18286,7 +19146,27 @@ namespace simplepa2.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string state, string state_old, string EMNAME, int Original_EMServerId) {
+        public virtual int Update(
+                    string state, 
+                    string state_old, 
+                    string EMNAME, 
+                    string com_gpio, 
+                    string com_Rtype, 
+                    string net_local, 
+                    string net_dante, 
+                    string dsp_ctrl, 
+                    string dsp_dante, 
+                    global::System.Nullable<int> emtest, 
+                    global::System.Nullable<int> fire, 
+                    global::System.Nullable<int> err, 
+                    global::System.Nullable<int> sw_4, 
+                    global::System.Nullable<int> sw_3, 
+                    global::System.Nullable<int> sw_2, 
+                    global::System.Nullable<int> sw_1, 
+                    global::System.Nullable<int> sw_all, 
+                    global::System.Nullable<int> com_Rtype_state, 
+                    global::System.Nullable<int> com_gpio_state, 
+                    int Original_EMServerId) {
             if ((state == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -18305,7 +19185,103 @@ namespace simplepa2.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(EMNAME));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_EMServerId));
+            if ((com_gpio == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(com_gpio));
+            }
+            if ((com_Rtype == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(com_Rtype));
+            }
+            if ((net_local == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(net_local));
+            }
+            if ((net_dante == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(net_dante));
+            }
+            if ((dsp_ctrl == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(dsp_ctrl));
+            }
+            if ((dsp_dante == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(dsp_dante));
+            }
+            if ((emtest.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(emtest.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((fire.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(fire.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((err.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(err.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((sw_4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(sw_4.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((sw_3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(sw_3.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((sw_2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(sw_2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((sw_1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(sw_1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((sw_all.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(sw_all.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((com_Rtype_state.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(com_Rtype_state.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((com_gpio_state.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(com_gpio_state.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_EMServerId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
