@@ -11,6 +11,7 @@ using simplepa2.DataSet1TableAdapters;
 using static simplepa2.DataSet1;
 using System.Windows.Forms;
 using System.Data;
+using System.Web.UI;
 
 namespace simplepa2
 {
@@ -126,6 +127,24 @@ namespace simplepa2
                 return;
             m3.state_old = m3.state;
             m3.state = state;
+            Tam.EMServerTableAdapter.Update(Ds1.EMServer);
+        }
+
+        public void EMServerupdatePreset(string EMNAME, int po, int onoff)
+        {
+            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+
+            var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == EMNAME);
+            if (m3 == null)
+                return;
+            switch(po)
+            {
+                case 0: m3.sw_all = onoff; break;
+                case 1: m3.sw_1 = onoff; break;
+                case 2: m3.sw_2 = onoff; break;
+                case 3: m3.sw_3 = onoff; break;
+                case 4: m3.sw_4 = onoff; break;
+            }
             Tam.EMServerTableAdapter.Update(Ds1.EMServer);
         }
 

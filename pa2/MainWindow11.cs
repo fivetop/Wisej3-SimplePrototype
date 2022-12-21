@@ -124,7 +124,6 @@ namespace pa
         }
 
 
-
         internal static void SendSigR(string t1, eSignalRMsgType v1, int s1, int s2) // s1 = seq, s2=state
         {
             SignalRMsg msg1 = new SignalRMsg();

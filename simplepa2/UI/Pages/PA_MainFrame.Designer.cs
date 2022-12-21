@@ -42,6 +42,7 @@
             this.assetBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.deviceManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.navigationBarItem1 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.navigationBarItem2 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.siteManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.zoneManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.inputManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
@@ -66,7 +67,6 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
             this.pictureBox1 = new Wisej.Web.PictureBox();
-            this.navigationBarItem2 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.rightPanels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -205,6 +205,13 @@
             this.navigationBarItem1.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem1.Name = "NavigationBarItem";
             this.navigationBarItem1.Text = "기본그룹";
+            // 
+            // navigationBarItem2
+            // 
+            this.navigationBarItem2.AccessibleName = "navigationBarItem2";
+            this.navigationBarItem2.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.navigationBarItem2.Name = "NavigationBarItem";
+            this.navigationBarItem2.Text = "EM서버모니터링";
             // 
             // siteManageBarItem
             // 
@@ -391,13 +398,6 @@
             this.pictureBox1.Location = new System.Drawing.Point(58, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 24);
-            // 
-            // navigationBarItem2
-            // 
-            this.navigationBarItem2.AccessibleName = "navigationBarItem2";
-            this.navigationBarItem2.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.navigationBarItem2.Name = "NavigationBarItem";
-            this.navigationBarItem2.Text = "EM서버모니터링";
             // 
             // PA_MainFrame
             // 

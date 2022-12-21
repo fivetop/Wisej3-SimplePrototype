@@ -18,19 +18,26 @@ namespace simplepa2.UI.Views
 
 		internal void reDraw()
 		{
+			Eventbs.Filter = "alarm=0";
+			Eventbs.Sort = "write_time DESC";
+			reDraw2();
             Main_Load();
             // split 위치 설정 세로, 가로,  세로
             split_위치();
 			evdataGridView1.Refresh();
 		}
 
+		internal void reDraw2()
+		{
+			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+			this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
+		}
+
 		private void View_DashBoard_Load(object sender, EventArgs e)
         {
 			reDraw();
-
         }
-
-
 
         // split 위치 설정 세로, 가로,  세로
         private void split_위치()
@@ -51,11 +58,6 @@ namespace simplepa2.UI.Views
 
 		private void Main_Load()
 		{
-			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-			this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
-
-
 			// 입장하기 처리
 			foreach (var t3 in this.dataSet1.BSroom)
 			{
@@ -121,7 +123,8 @@ namespace simplepa2.UI.Views
 			Application.Cookies.Add("d3", splitContainer6.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 		}
 
-		/*
+
+        /*
 		// 입장하기 
         private void btnBS1_Click(object sender, EventArgs e)
         {
@@ -146,5 +149,5 @@ namespace simplepa2.UI.Views
 		}
 		
 		*/
-	}
+    }
 }

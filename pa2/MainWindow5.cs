@@ -490,7 +490,6 @@ namespace pa
                         g.DSP_MakeGroupSpeaker(null, 0, BS_DSP_STATE.PRESET_ALL);
                         Preset_chk();
                         SendSigR("All 프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, 0, 0);
-                        dBAccess.Eventvms("eEM_PRESET_SW", "All 프리셋 버튼 : Off", "OFF");
                     }
                     else
                     {
@@ -498,7 +497,6 @@ namespace pa
                         //_a1.IsChecked = true;
                         g.DSP_MakeGroupSpeaker(null, 1, BS_DSP_STATE.PRESET_ALL);
                         SendSigR("All 프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, 0, 1);
-                        dBAccess.Eventvms("eEM_PRESET_SW", "All 프리셋 버튼 : On", "ON");
                     }
                     break;
                 case 3:
@@ -510,6 +508,7 @@ namespace pa
                     if (GetBit(newbstr, chk) == 1)
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : Off");
+                        SendSigR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
                         sh = sh + cnt.ToString();
                         //Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
                         var t1 = dBAccess.AssetGroups.FirstOrDefault(p => p.Name == sh);
@@ -528,12 +527,11 @@ namespace pa
                         // make asset array to assetbase 
                         //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 0, BS_DSP_STATE.PRESET);
                         Preset_chk();
-                        SendSigR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
-                        dBAccess.Eventvms("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : Off", "OFF");
                     }
                     else
                     {
                         g.Log(cnt.ToString() + "번 프리셋 버튼 : On");
+                        SendSigR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
                         sh = sh + cnt.ToString();
                         //Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
                         var t1 = dBAccess.AssetGroups.FirstOrDefault(p => p.Name == sh);
@@ -551,8 +549,6 @@ namespace pa
                         }
                         // make asset array to assetbase 
                         //g.DSP_MakeGroupSpeaker(t1.child.ToList(), 1, BS_DSP_STATE.PRESET);
-                        SendSigR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
-                        dBAccess.Eventvms("eEM_PRESET_SW", cnt.ToString() + "번 프리셋 버튼 : On", "ON");
                     }
                     break;
                 // EM Test

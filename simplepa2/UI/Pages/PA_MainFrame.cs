@@ -290,16 +290,8 @@ namespace simplepa2.UI.Pages
         internal void RcvSigR(SignalRMsg msg1)
         {
             string addinfo = "";
-
+            bool disp = true;
             LabelON(9, true);
-
-            Wisej.Web.Application.Update(this, () =>
-            {
-                AlertBox.Show(msg1.message + ":" + addinfo);
-                gweb.Log(msg1.message + ":" + addinfo);
-                System.Diagnostics.Debug.WriteLine(msg1.message);
-            });
-
 
             switch (msg1.Msgtype)
             {
@@ -313,13 +305,32 @@ namespace simplepa2.UI.Pages
                     view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
-                    if (msg1.seqno == 1)
-                        LabelON(1, true);
-                    else
-                        LabelON(1, false);
+                    dBSqlite.Eventvm("EM_FIRE", msg1.message, msg1.seqno.ToString());
                     break;
                 case eSignalRMsgType.eEM_PRESET_SW:
-                    //presetdisp(msg1);
+                    string m0 = "PRESET_SW";
+                    string m1 = msg1.EMNAME +":"+ msg1.seqno.ToString() + "번 프리셋 버튼";
+                    string m2 = "OFF";
+
+                    if (msg1.state == 1) m2 = "ON";
+                    if (msg1.seqno == 0)
+                        m1 = msg1.EMNAME + ":" + "All 프리셋 버튼";
+
+                    switch (msg1.seqno)
+                    {
+                        case 0:
+                            dBSqlite.Eventvm(m0, m1, m2);
+                            break;
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                            dBSqlite.Eventvm(m0, m1, m2);
+                            break;
+                    }
+                    dBSqlite.EMServerupdatePreset(msg1.EMNAME,msg1.seqno, msg1.state);
+                    view_DashBoard2.reDraw2();
+                    view_BBSEMManage2.reDraw();
                     break;
                 case eSignalRMsgType.ePlay:
                     break;
@@ -349,6 +360,15 @@ namespace simplepa2.UI.Pages
             //view_Dashboard.Refresh();
             //this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
 
+            if (disp)
+            {
+                Wisej.Web.Application.Update(this, () =>
+                {
+                    AlertBox.Show(msg1.message + ":" + addinfo);
+                    gweb.Log(msg1.message + ":" + addinfo);
+                    System.Diagnostics.Debug.WriteLine(msg1.message);
+                });
+            }
         }
 
 

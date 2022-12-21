@@ -74,5 +74,6 @@ namespace simplepa2.UI.Views
                 dataGridView3.EndEdit();
             }
         }
+
     }
 }
