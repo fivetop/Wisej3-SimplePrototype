@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
-            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
+            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
+            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
             this.panel2 = new Wisej.Web.Panel();
             this.checkBox9 = new Wisej.Web.CheckBox();
             this.checkBox8 = new Wisej.Web.CheckBox();
@@ -51,23 +51,17 @@
             this.label_time = new Wisej.Web.Label();
             this.label_date = new Wisej.Web.Label();
             this.imageList3 = new Wisej.Web.ImageList(this.components);
+            this.panel6 = new Wisej.Web.Panel();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.checkBox9);
-            this.panel2.Controls.Add(this.checkBox8);
-            this.panel2.Controls.Add(this.checkBox7);
-            this.panel2.Controls.Add(this.checkBox6);
-            this.panel2.Controls.Add(this.checkBox5);
-            this.panel2.Controls.Add(this.checkBox4);
-            this.panel2.Controls.Add(this.checkBox3);
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.label_time);
@@ -84,7 +78,7 @@
             // 
             // checkBox9
             // 
-            this.checkBox9.Location = new System.Drawing.Point(507, 21);
+            this.checkBox9.Location = new System.Drawing.Point(493, 19);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(36, 23);
             this.checkBox9.TabIndex = 27;
@@ -92,7 +86,7 @@
             // 
             // checkBox8
             // 
-            this.checkBox8.Location = new System.Drawing.Point(447, 21);
+            this.checkBox8.Location = new System.Drawing.Point(433, 19);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(36, 23);
             this.checkBox8.TabIndex = 26;
@@ -100,7 +94,7 @@
             // 
             // checkBox7
             // 
-            this.checkBox7.Location = new System.Drawing.Point(387, 21);
+            this.checkBox7.Location = new System.Drawing.Point(373, 19);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(36, 23);
             this.checkBox7.TabIndex = 25;
@@ -108,7 +102,7 @@
             // 
             // checkBox6
             // 
-            this.checkBox6.Location = new System.Drawing.Point(267, 21);
+            this.checkBox6.Location = new System.Drawing.Point(253, 19);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(36, 23);
             this.checkBox6.TabIndex = 24;
@@ -116,7 +110,7 @@
             // 
             // checkBox5
             // 
-            this.checkBox5.Location = new System.Drawing.Point(207, 21);
+            this.checkBox5.Location = new System.Drawing.Point(193, 19);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(36, 23);
             this.checkBox5.TabIndex = 23;
@@ -124,7 +118,7 @@
             // 
             // checkBox4
             // 
-            this.checkBox4.Location = new System.Drawing.Point(327, 21);
+            this.checkBox4.Location = new System.Drawing.Point(313, 19);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(36, 23);
             this.checkBox4.TabIndex = 22;
@@ -132,7 +126,7 @@
             // 
             // checkBox3
             // 
-            this.checkBox3.Location = new System.Drawing.Point(147, 21);
+            this.checkBox3.Location = new System.Drawing.Point(133, 19);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(36, 23);
             this.checkBox3.TabIndex = 21;
@@ -140,7 +134,7 @@
             // 
             // checkBox2
             // 
-            this.checkBox2.Location = new System.Drawing.Point(87, 21);
+            this.checkBox2.Location = new System.Drawing.Point(73, 19);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(36, 23);
             this.checkBox2.TabIndex = 20;
@@ -148,7 +142,7 @@
             // 
             // checkBox1
             // 
-            this.checkBox1.Location = new System.Drawing.Point(27, 21);
+            this.checkBox1.Location = new System.Drawing.Point(13, 19);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(44, 23);
             this.checkBox1.TabIndex = 19;
@@ -270,8 +264,25 @@
             // imageList3
             // 
             this.imageList3.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry1,
-            imageListEntry2});
+            imageListEntry3,
+            imageListEntry4});
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.checkBox1);
+            this.panel6.Controls.Add(this.checkBox9);
+            this.panel6.Controls.Add(this.checkBox2);
+            this.panel6.Controls.Add(this.checkBox8);
+            this.panel6.Controls.Add(this.checkBox3);
+            this.panel6.Controls.Add(this.checkBox7);
+            this.panel6.Controls.Add(this.checkBox4);
+            this.panel6.Controls.Add(this.checkBox6);
+            this.panel6.Controls.Add(this.checkBox5);
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(561, 60);
+            this.panel6.TabIndex = 28;
+            this.panel6.Visible = false;
             // 
             // View_TopPanelBar
             // 
@@ -288,6 +299,8 @@
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -314,5 +327,6 @@
         private Wisej.Web.CheckBox checkBox5;
         private Wisej.Web.CheckBox checkBox4;
         private Wisej.Web.CheckBox checkBox9;
+        private Wisej.Web.Panel panel6;
     }
 }

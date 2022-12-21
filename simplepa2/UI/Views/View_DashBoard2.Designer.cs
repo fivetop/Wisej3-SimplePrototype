@@ -403,9 +403,9 @@
             // 
             this.panel9.Controls.Add(this.evdataGridView1);
             this.panel9.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 23);
+            this.panel9.Location = new System.Drawing.Point(0, 43);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(428, 308);
+            this.panel9.Size = new System.Drawing.Size(428, 288);
             this.panel9.TabIndex = 4;
             this.panel9.TabStop = true;
             // 
@@ -426,7 +426,7 @@
             this.evdataGridView1.MultiSelect = false;
             this.evdataGridView1.Name = "evdataGridView1";
             this.evdataGridView1.RowHeadersWidth = 14;
-            this.evdataGridView1.Size = new System.Drawing.Size(428, 308);
+            this.evdataGridView1.Size = new System.Drawing.Size(428, 288);
             this.evdataGridView1.TabIndex = 2;
             // 
             // colEventvmid
@@ -474,16 +474,17 @@
             this.panel11.Dock = Wisej.Web.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(428, 23);
+            this.panel11.Size = new System.Drawing.Size(428, 43);
             this.panel11.TabIndex = 5;
             this.panel11.TabStop = true;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label20.Location = new System.Drawing.Point(15, 5);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(185, 16);
+            this.label20.Size = new System.Drawing.Size(252, 22);
             this.label20.TabIndex = 3;
             this.label20.Text = "화재수신/방송 이벤트 정보";
             // 
@@ -491,9 +492,9 @@
             // 
             this.panel12.Controls.Add(this.evdataGridView3);
             this.panel12.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(0, 23);
+            this.panel12.Location = new System.Drawing.Point(0, 43);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(412, 308);
+            this.panel12.Size = new System.Drawing.Size(412, 288);
             this.panel12.TabIndex = 5;
             this.panel12.TabStop = true;
             // 
@@ -515,7 +516,7 @@
             this.evdataGridView3.MultiSelect = false;
             this.evdataGridView3.Name = "evdataGridView3";
             this.evdataGridView3.RowHeadersWidth = 14;
-            this.evdataGridView3.Size = new System.Drawing.Size(412, 308);
+            this.evdataGridView3.Size = new System.Drawing.Size(412, 288);
             this.evdataGridView3.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn5
@@ -570,7 +571,7 @@
             this.panel13.Dock = Wisej.Web.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(412, 23);
+            this.panel13.Size = new System.Drawing.Size(412, 43);
             this.panel13.TabIndex = 6;
             this.panel13.TabStop = true;
             // 
@@ -578,9 +579,10 @@
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.White;
+            this.label21.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label21.Location = new System.Drawing.Point(14, 5);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(120, 16);
+            this.label21.Size = new System.Drawing.Size(162, 22);
             this.label21.TabIndex = 4;
             this.label21.Text = "장치 이벤트 정보";
             // 
