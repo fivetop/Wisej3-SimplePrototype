@@ -19,14 +19,21 @@ namespace simplepa2.UI.Pages
                 Login();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Login();
         }
 
+		/*
+		private void button1_Click_1(object sender, EventArgs e)
+		{
+			this.Dispose();
+			Application.MainPage = new PA_MainFrame();
+			Application.LoadTheme("LSMaterial-3"); //"Material-3" 
+		}
+		*/
 		private void Login()
 		{
-			/*
 			string loginid = tloginid.Text;
 			string loginpw = tloginpw.Text;
 
@@ -44,12 +51,11 @@ namespace simplepa2.UI.Pages
 			}
 
 			Application.Session["isloggedon"] = "true";
-			Application.Session["user"] = t1.FirstOrDefault().login_id;
+			Application.Session["login_id"] = t1.FirstOrDefault().login_id;
 			Application.Session["user_name"] = t1.FirstOrDefault().user_name;
 			Application.MainPage = new PA_MainFrame();
 			this.Hide();
 			this.Dispose();
-			*/
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -80,11 +86,5 @@ namespace simplepa2.UI.Pages
 			}
 		}
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-			this.Dispose();
-			Application.MainPage = new PA_MainFrame();
-			Application.LoadTheme("LSMaterial-3"); //"Material-3" 
-		}
 	}
 }

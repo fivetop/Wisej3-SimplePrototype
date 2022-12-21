@@ -35,9 +35,9 @@
             this.panel2 = new Wisej.Web.Panel();
             this.button1 = new Wisej.Web.Button();
             this.panel4 = new Wisej.Web.Panel();
-            this.textBox2 = new Wisej.Web.TextBox();
+            this.tloginpw = new Wisej.Web.TextBox();
             this.panel5 = new Wisej.Web.Panel();
-            this.textBox1 = new Wisej.Web.TextBox();
+            this.tloginid = new Wisej.Web.TextBox();
             this.panel1 = new Wisej.Web.Panel();
             this.label3 = new Wisej.Web.Label();
             this.label2 = new Wisej.Web.Label();
@@ -69,13 +69,13 @@
             this.panel2.AppearanceKey = "rounded-panel";
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.tloginpw);
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.tloginid);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.linkLabel2);
             this.panel2.CssStyle = "border-radius:30px;";
-            this.panel2.Location = new System.Drawing.Point(373, 111);
+            this.panel2.Location = new System.Drawing.Point(595, 81);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new Wisej.Web.Padding(48);
             this.panel2.Size = new System.Drawing.Size(392, 476);
@@ -100,17 +100,17 @@
             this.panel4.Size = new System.Drawing.Size(296, 34);
             this.panel4.TabIndex = 17;
             // 
-            // textBox2
+            // tloginpw
             // 
-            this.textBox2.AutoSize = false;
-            this.textBox2.Dock = Wisej.Web.DockStyle.Top;
-            this.textBox2.InputType.Type = Wisej.Web.TextBoxType.Password;
-            this.textBox2.Location = new System.Drawing.Point(48, 220);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(296, 38);
-            this.textBox2.TabIndex = 16;
-            this.textBox2.Watermark = "비밀번호";
+            this.tloginpw.AutoSize = false;
+            this.tloginpw.Dock = Wisej.Web.DockStyle.Top;
+            this.tloginpw.InputType.Type = Wisej.Web.TextBoxType.Password;
+            this.tloginpw.Location = new System.Drawing.Point(48, 220);
+            this.tloginpw.Name = "tloginpw";
+            this.tloginpw.PasswordChar = '*';
+            this.tloginpw.Size = new System.Drawing.Size(296, 38);
+            this.tloginpw.TabIndex = 16;
+            this.tloginpw.Watermark = "비밀번호";
             // 
             // panel5
             // 
@@ -120,15 +120,15 @@
             this.panel5.Size = new System.Drawing.Size(296, 34);
             this.panel5.TabIndex = 15;
             // 
-            // textBox1
+            // tloginid
             // 
-            this.textBox1.AutoSize = false;
-            this.textBox1.Dock = Wisej.Web.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(48, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(296, 38);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.Watermark = "아이디";
+            this.tloginid.AutoSize = false;
+            this.tloginid.Dock = Wisej.Web.DockStyle.Top;
+            this.tloginid.Location = new System.Drawing.Point(48, 148);
+            this.tloginid.Name = "tloginid";
+            this.tloginid.Size = new System.Drawing.Size(296, 38);
+            this.tloginid.TabIndex = 14;
+            this.tloginid.Watermark = "아이디";
             // 
             // panel1
             // 
@@ -181,7 +181,7 @@
             this.panel3.CssStyle = "background: url(../images/login-logo.png) center no-repeat;\r\nbackground-size: 300" +
     "px 72px;";
             this.panel3.HeaderForeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(421, -12);
+            this.panel3.Location = new System.Drawing.Point(643, -42);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 72);
             this.panel3.TabIndex = 3;
@@ -195,7 +195,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "PA_Login";
-            this.Size = new System.Drawing.Size(1072, 531);
+            this.Size = new System.Drawing.Size(1517, 471);
             this.Load += new System.EventHandler(this.LoginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTreesBindingSource)).EndInit();
@@ -216,9 +216,9 @@
         private Wisej.Web.Label label2;
         private Wisej.Web.Button button1;
         private Wisej.Web.Panel panel4;
-        private Wisej.Web.TextBox textBox2;
+        private Wisej.Web.TextBox tloginpw;
         private Wisej.Web.Panel panel5;
-        private Wisej.Web.TextBox textBox1;
+        private Wisej.Web.TextBox tloginid;
         private Wisej.Web.Panel panel3;
     }
 }

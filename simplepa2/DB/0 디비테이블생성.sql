@@ -1,6 +1,6 @@
 USE [simplePA]
 GO
-/****** Object:  Table [dbo].[AssetGroups]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[AssetGroups]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[AssetGroups](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Assets]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[Assets]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -51,7 +51,7 @@ CREATE TABLE [dbo].[Assets](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BSroom]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[BSroom]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -67,7 +67,7 @@ CREATE TABLE [dbo].[BSroom](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BSTree]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[BSTree]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -90,7 +90,7 @@ CREATE TABLE [dbo].[BSTree](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[BSTreeC]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[BSTreeC]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -100,13 +100,14 @@ CREATE TABLE [dbo].[BSTreeC](
 	[BSTreeId] [int] NULL,
 	[AssetId] [int] NULL,
 	[MusicId] [int] NULL,
+	[user_name] [text] NULL,
  CONSTRAINT [PK_BSTreeC] PRIMARY KEY CLUSTERED 
 (
 	[BSTreeCId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Device]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[Device]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -136,7 +137,7 @@ CREATE TABLE [dbo].[Device](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DeviceChannel]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[DeviceChannel]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -157,7 +158,7 @@ CREATE TABLE [dbo].[DeviceChannel](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EMBs]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[EMBs]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -173,7 +174,7 @@ CREATE TABLE [dbo].[EMBs](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EMServer]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[EMServer]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -205,7 +206,7 @@ CREATE TABLE [dbo].[EMServer](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Eventvm]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[Eventvm]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -225,7 +226,7 @@ CREATE TABLE [dbo].[Eventvm](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Holidays]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[Holidays]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -240,7 +241,7 @@ CREATE TABLE [dbo].[Holidays](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Musics]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[Musics]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -257,7 +258,7 @@ CREATE TABLE [dbo].[Musics](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PlayItem]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[PlayItem]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -278,7 +279,7 @@ CREATE TABLE [dbo].[PlayItem](
 	[p_run] [int] NOT NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Simplepa]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[Simplepa]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -338,7 +339,7 @@ CREATE TABLE [dbo].[Simplepa](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserTrees]    Script Date: 2022-12-20 오후 12:02:02 ******/
+/****** Object:  Table [dbo].[UserTrees]    Script Date: 2022-12-21 오후 7:22:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

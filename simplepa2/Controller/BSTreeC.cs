@@ -18,5 +18,6 @@ namespace simplepa2.Controller
         public Nullable<int> BSTreeId { get; set; }
         public Nullable<int> AssetId { get; set; }
         public Nullable<int> MusicId { get; set; }
+        public string user_name { get; set; }
     }
 }

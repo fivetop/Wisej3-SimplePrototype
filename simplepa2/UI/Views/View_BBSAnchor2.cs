@@ -82,12 +82,19 @@ namespace simplepa2.UI.Views
 				return;
 			}
 
+			string ret1 = gweb.mainFrame.dBSqlite.BSTreeCCheck(SelAsset);
+
+			if (ret1 != "")
+			{
+				AlertBox.Show( ret1 + "님이 방송중인 지역 입니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+				return;
+			}
 			// 방송 채널 확보 
 			bSTreeRow = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
 			// 저장전 기존 데이터 있으면 삭제처리 
 			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
 			// 지역과 음원 저장 
-			gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId ,SelAsset, SelMusic);
+			gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId ,SelAsset, SelMusic, gweb.mainFrame.user_name);
 			// 해당 지역 서버에 명령 처리 
 			gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeRow, SelAsset, SelMusic);
 			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "방송시작");

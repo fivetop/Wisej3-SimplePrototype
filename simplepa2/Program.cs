@@ -49,9 +49,7 @@ namespace simplepa2
 
 			//Application.MainPage = new PA_Login();
 			Application.LoadTheme("LSMaterial-3"); //"Material-3" .
-
 			Application.MainPage = new PA_MainFrame();
-			//Application.MainPage = new Simple();
 
 			if (t2 == null)
 			{ 

@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
-            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
+            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
+            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
             this.panel2 = new Wisej.Web.Panel();
+            this.panel6 = new Wisej.Web.Panel();
+            this.checkBox1 = new Wisej.Web.CheckBox();
             this.checkBox9 = new Wisej.Web.CheckBox();
+            this.checkBox2 = new Wisej.Web.CheckBox();
             this.checkBox8 = new Wisej.Web.CheckBox();
+            this.checkBox3 = new Wisej.Web.CheckBox();
             this.checkBox7 = new Wisej.Web.CheckBox();
+            this.checkBox4 = new Wisej.Web.CheckBox();
             this.checkBox6 = new Wisej.Web.CheckBox();
             this.checkBox5 = new Wisej.Web.CheckBox();
-            this.checkBox4 = new Wisej.Web.CheckBox();
-            this.checkBox3 = new Wisej.Web.CheckBox();
-            this.checkBox2 = new Wisej.Web.CheckBox();
-            this.checkBox1 = new Wisej.Web.CheckBox();
             this.panel4 = new Wisej.Web.Panel();
             this.label3 = new Wisej.Web.Label();
             this.label1 = new Wisej.Web.Label();
@@ -51,11 +52,10 @@
             this.label_time = new Wisej.Web.Label();
             this.label_date = new Wisej.Web.Label();
             this.imageList3 = new Wisej.Web.ImageList(this.components);
-            this.panel6 = new Wisej.Web.Panel();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -76,6 +76,31 @@
             this.panel2.TabStop = true;
             this.panel2.Text = "bx";
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.checkBox1);
+            this.panel6.Controls.Add(this.checkBox9);
+            this.panel6.Controls.Add(this.checkBox2);
+            this.panel6.Controls.Add(this.checkBox8);
+            this.panel6.Controls.Add(this.checkBox3);
+            this.panel6.Controls.Add(this.checkBox7);
+            this.panel6.Controls.Add(this.checkBox4);
+            this.panel6.Controls.Add(this.checkBox6);
+            this.panel6.Controls.Add(this.checkBox5);
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(561, 60);
+            this.panel6.TabIndex = 28;
+            this.panel6.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(13, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(44, 23);
+            this.checkBox1.TabIndex = 19;
+            this.checkBox1.Text = "All";
+            // 
             // checkBox9
             // 
             this.checkBox9.Location = new System.Drawing.Point(493, 19);
@@ -83,6 +108,14 @@
             this.checkBox9.Size = new System.Drawing.Size(36, 23);
             this.checkBox9.TabIndex = 27;
             this.checkBox9.Text = "8";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Location = new System.Drawing.Point(73, 19);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(36, 23);
+            this.checkBox2.TabIndex = 20;
+            this.checkBox2.Text = "1";
             // 
             // checkBox8
             // 
@@ -92,6 +125,14 @@
             this.checkBox8.TabIndex = 26;
             this.checkBox8.Text = "7";
             // 
+            // checkBox3
+            // 
+            this.checkBox3.Location = new System.Drawing.Point(133, 19);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(36, 23);
+            this.checkBox3.TabIndex = 21;
+            this.checkBox3.Text = "2";
+            // 
             // checkBox7
             // 
             this.checkBox7.Location = new System.Drawing.Point(373, 19);
@@ -99,6 +140,14 @@
             this.checkBox7.Size = new System.Drawing.Size(36, 23);
             this.checkBox7.TabIndex = 25;
             this.checkBox7.Text = "6";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.Location = new System.Drawing.Point(313, 19);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(36, 23);
+            this.checkBox4.TabIndex = 22;
+            this.checkBox4.Text = "5";
             // 
             // checkBox6
             // 
@@ -116,38 +165,6 @@
             this.checkBox5.TabIndex = 23;
             this.checkBox5.Text = "3";
             // 
-            // checkBox4
-            // 
-            this.checkBox4.Location = new System.Drawing.Point(313, 19);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(36, 23);
-            this.checkBox4.TabIndex = 22;
-            this.checkBox4.Text = "5";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.Location = new System.Drawing.Point(133, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(36, 23);
-            this.checkBox3.TabIndex = 21;
-            this.checkBox3.Text = "2";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.Location = new System.Drawing.Point(73, 19);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(36, 23);
-            this.checkBox2.TabIndex = 20;
-            this.checkBox2.Text = "1";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Location = new System.Drawing.Point(13, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(44, 23);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "All";
-            // 
             // panel4
             // 
             this.panel4.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
@@ -157,10 +174,10 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(1107, 21);
+            this.panel4.Location = new System.Drawing.Point(1104, 21);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new Wisej.Web.Padding(6, 0, 6, 0);
-            this.panel4.Size = new System.Drawing.Size(163, 24);
+            this.panel4.Size = new System.Drawing.Size(166, 24);
             this.panel4.TabIndex = 18;
             // 
             // label3
@@ -169,7 +186,7 @@
             this.label3.Dock = Wisej.Web.DockStyle.Left;
             this.label3.Font = new System.Drawing.Font("@ns500", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.label3.Location = new System.Drawing.Point(87, 0);
+            this.label3.Location = new System.Drawing.Point(90, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 24);
             this.label3.TabIndex = 21;
@@ -180,12 +197,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = Wisej.Web.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("@ns500", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(52, 129, 255);
             this.label1.Location = new System.Drawing.Point(30, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new Wisej.Web.Padding(6, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(57, 24);
+            this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 20;
             this.label1.Text = "오정상";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -264,25 +281,8 @@
             // imageList3
             // 
             this.imageList3.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry3,
-            imageListEntry4});
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.checkBox1);
-            this.panel6.Controls.Add(this.checkBox9);
-            this.panel6.Controls.Add(this.checkBox2);
-            this.panel6.Controls.Add(this.checkBox8);
-            this.panel6.Controls.Add(this.checkBox3);
-            this.panel6.Controls.Add(this.checkBox7);
-            this.panel6.Controls.Add(this.checkBox4);
-            this.panel6.Controls.Add(this.checkBox6);
-            this.panel6.Controls.Add(this.checkBox5);
-            this.panel6.Location = new System.Drawing.Point(3, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(561, 60);
-            this.panel6.TabIndex = 28;
-            this.panel6.Visible = false;
+            imageListEntry1,
+            imageListEntry2});
             // 
             // View_TopPanelBar
             // 
@@ -295,12 +295,12 @@
             this.Disposed += new System.EventHandler(this.View_TopPanelBar_Disposed);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }

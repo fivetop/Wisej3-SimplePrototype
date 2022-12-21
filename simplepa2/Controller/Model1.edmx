@@ -71,6 +71,7 @@
           <Property Name="BSTreeId" Type="int" />
           <Property Name="AssetId" Type="int" />
           <Property Name="MusicId" Type="int" />
+          <Property Name="user_name" Type="text" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -574,6 +575,7 @@
           <Property Name="BSTreeId" Type="Int32" />
           <Property Name="AssetId" Type="Int32" />
           <Property Name="MusicId" Type="Int32" />
+          <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -842,6 +844,7 @@
           <EntitySetMapping Name="BSTreeC">
             <EntityTypeMapping TypeName="simplePAModel.BSTreeC">
               <MappingFragment StoreEntitySet="BSTreeC">
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
                 <ScalarProperty Name="MusicId" ColumnName="MusicId" />
                 <ScalarProperty Name="AssetId" ColumnName="AssetId" />
                 <ScalarProperty Name="BSTreeId" ColumnName="BSTreeId" />

@@ -45,7 +45,7 @@ namespace simplepa2
 			}
 
 			Application.Session["isloggedon"] = "true";
-			Application.Session["user"] = t1.FirstOrDefault().login_id;
+			Application.Session["login_id"] = t1.FirstOrDefault().login_id;
 			Application.Session["user_name"] = t1.FirstOrDefault().user_name;
 			Application.MainPage = new Simple();
 			this.Hide();

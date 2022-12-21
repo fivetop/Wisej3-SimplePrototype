@@ -6949,6 +6949,8 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnMusicId;
             
+            private global::System.Data.DataColumn columnuser_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BSTreeCDataTable() {
@@ -7016,6 +7018,14 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn user_nameColumn {
+                get {
+                    return this.columnuser_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7051,13 +7061,14 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BSTreeCRow AddBSTreeCRow(int BSTreeId, int AssetId, int MusicId) {
+            public BSTreeCRow AddBSTreeCRow(int BSTreeId, int AssetId, int MusicId, string user_name) {
                 BSTreeCRow rowBSTreeCRow = ((BSTreeCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         BSTreeId,
                         AssetId,
-                        MusicId};
+                        MusicId,
+                        user_name};
                 rowBSTreeCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBSTreeCRow);
                 return rowBSTreeCRow;
@@ -7091,6 +7102,7 @@ namespace simplepa2 {
                 this.columnBSTreeId = base.Columns["BSTreeId"];
                 this.columnAssetId = base.Columns["AssetId"];
                 this.columnMusicId = base.Columns["MusicId"];
+                this.columnuser_name = base.Columns["user_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7104,6 +7116,8 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnAssetId);
                 this.columnMusicId = new global::System.Data.DataColumn("MusicId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMusicId);
+                this.columnuser_name = new global::System.Data.DataColumn("user_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnBSTreeCId}, true));
                 this.columnBSTreeCId.AutoIncrement = true;
@@ -7112,6 +7126,7 @@ namespace simplepa2 {
                 this.columnBSTreeCId.AllowDBNull = false;
                 this.columnBSTreeCId.ReadOnly = true;
                 this.columnBSTreeCId.Unique = true;
+                this.columnuser_name.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12155,6 +12170,22 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string user_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableBSTreeC.user_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'BSTreeC\' 테이블의 \'user_name\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableBSTreeC.user_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsBSTreeIdNull() {
                 return this.IsNull(this.tableBSTreeC.BSTreeIdColumn);
             }
@@ -12187,6 +12218,18 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetMusicIdNull() {
                 this[this.tableBSTreeC.MusicIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isuser_nameNull() {
+                return this.IsNull(this.tableBSTreeC.user_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setuser_nameNull() {
+                this[this.tableBSTreeC.user_nameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19434,6 +19477,7 @@ namespace simplepa2.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("BSTreeId", "BSTreeId");
             tableMapping.ColumnMappings.Add("AssetId", "AssetId");
             tableMapping.ColumnMappings.Add("MusicId", "MusicId");
+            tableMapping.ColumnMappings.Add("user_name", "user_name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -19442,20 +19486,22 @@ namespace simplepa2.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BSTreeCId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BSTreeCId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [BSTreeC] ([BSTreeId], [AssetId], [MusicId]) VALUES (@BSTreeId, @Asse" +
-                "tId, @MusicId)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [BSTreeC] ([BSTreeId], [AssetId], [MusicId], [user_name]) VALUES (@BS" +
+                "TreeId, @AssetId, @MusicId, @user_name)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BSTreeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BSTreeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MusicId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusicId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_name", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [BSTreeC] SET [BSTreeId] = @BSTreeId, [AssetId] = @AssetId, [MusicId] = @M" +
-                "usicId WHERE (([BSTreeCId] = @Original_BSTreeCId))";
+                "usicId, [user_name] = @user_name WHERE (([BSTreeCId] = @Original_BSTreeCId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BSTreeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BSTreeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MusicId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusicId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user_name", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "user_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BSTreeCId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BSTreeCId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -19472,7 +19518,7 @@ namespace simplepa2.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  BSTreeCId, BSTreeId, AssetId, MusicId\r\nFROM     BSTreeC";
+            this._commandCollection[0].CommandText = "SELECT  BSTreeCId, BSTreeId, AssetId, MusicId, user_name\r\nFROM     BSTreeC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19555,7 +19601,7 @@ namespace simplepa2.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> BSTreeId, global::System.Nullable<int> AssetId, global::System.Nullable<int> MusicId) {
+        public virtual int Insert(global::System.Nullable<int> BSTreeId, global::System.Nullable<int> AssetId, global::System.Nullable<int> MusicId, string user_name) {
             if ((BSTreeId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(BSTreeId.Value));
             }
@@ -19573,6 +19619,12 @@ namespace simplepa2.DataSet1TableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((user_name == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(user_name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19594,7 +19646,7 @@ namespace simplepa2.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> BSTreeId, global::System.Nullable<int> AssetId, global::System.Nullable<int> MusicId, int Original_BSTreeCId) {
+        public virtual int Update(global::System.Nullable<int> BSTreeId, global::System.Nullable<int> AssetId, global::System.Nullable<int> MusicId, string user_name, int Original_BSTreeCId) {
             if ((BSTreeId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(BSTreeId.Value));
             }
@@ -19613,7 +19665,13 @@ namespace simplepa2.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_BSTreeCId));
+            if ((user_name == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(user_name));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_BSTreeCId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -52,6 +52,9 @@ namespace simplepa2.UI.Pages
         private View_SystemRestAPI view_SystemRestAPI;
 
         public DBController dBSqlite { get; set; } = new DBController(); // DB 처리용 
+
+        public string user_name { get; set; }
+        public string login_id { get; set; }
         #endregion
 
         public PA_MainFrame()
@@ -69,16 +72,6 @@ namespace simplepa2.UI.Pages
                 };
                 view_topPanelBar.BringToFront();
             }
-
-            // 초기화 사용자 
-            string t1 = Application.Session["user"];
-            if (t1 == null)
-            {
-                Application.Session["isloggedon"] = "true";
-                Application.Session["user"] = "Admin";
-                Application.Session["user_name"] = "관리자";
-            }
-            gweb.Log("Start Simple PA 2.0");
         }
 
         #region // 초기화 처리 
@@ -88,11 +81,21 @@ namespace simplepa2.UI.Pages
             //signalRClient.owner = this;
             //signalRClient.ConnectToSignalR();
 
-            var t1 = Application.Session["user"];
-            var t2 = Application.Session["user_name"];
+            // 초기화 사용자 
+            string t1 = Application.Session["login_id"];
+            if (t1 == null)
+            {
+                Application.Session["isloggedon"] = "true";
+                Application.Session["login_id"] = "hong";
+                Application.Session["user_name"] = "홍길동";
+            }
+            gweb.Log("Start Simple PA 2.0");
 
-            AlertBox.Show("Log-In : " + t2 + t1);
-
+            login_id = Application.Session["login_id"];
+            user_name = Application.Session["user_name"];
+            dBSqlite.UsertreeGet(login_id);
+            view_topPanelBar.User(user_name);
+            AlertBox.Show("Log-In : " + user_name +"("+ login_id +")");
             openContentsView("dashboardBarItems");
         }
         #endregion
@@ -257,7 +260,7 @@ namespace simplepa2.UI.Pages
         public void Logout()
         {
             Application.Session["isloggedon"] = "false";
-            Application.Session["user"] = "";
+            Application.Session["login_id"] = "";
             Application.Session["user_name"] = "";
 
             LoginPage loginPage = new LoginPage();
@@ -380,7 +383,7 @@ namespace simplepa2.UI.Pages
                 return;
             }
             SignalRMsg msg1 = new SignalRMsg();
-            msg1.user = Application.Session["user"];
+            msg1.user = Application.Session["login_id"];
             msg1.EMNAME = bSTreeRow.EMNAME;
             msg1.seqno = bSTreeRow.BSTreeId;
             msg1.chno = bSTreeRow.chno;
@@ -413,7 +416,7 @@ namespace simplepa2.UI.Pages
         internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0)
         {
             SignalRMsg msg1 = new SignalRMsg();
-            msg1.user = Application.Session["user"];
+            msg1.user = Application.Session["login_id"];
             msg1.EMNAME = "ALL";
 
             switch (eVolume)

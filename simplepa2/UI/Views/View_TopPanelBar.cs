@@ -25,6 +25,12 @@ namespace simplepa2.UI.Views
 
         }
 
+        public void User(string user)
+        {
+            this.label1.Text = user;
+            Application.Update(this);
+        }
+
         private void View_TopPanelBar_Disposed(object sender, EventArgs e)
         {
             this.timer.Dispose();
