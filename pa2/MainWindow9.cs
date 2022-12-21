@@ -180,7 +180,19 @@ namespace pa
             AThread.Start();
             Devicetimer.Stop();
             g.Log("Svae DB : OK");
+            keepMainDSP();
             return true;
+        }
+
+        private void keepMainDSP()
+        {
+            var s1 = dBAccess.Device.FirstOrDefault(p => p.device == 2 && p.chCount == 16 && p.EMNAME == g._EMClient.EM_NAME);
+
+            if (s1 == null) return;
+
+            EMServerRow.dsp_ctrl = s1.ip_dspctrl;
+            EMServerRow.dsp_dante = s1.ip;
+            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow);
         }
 
         private void updateAsset()

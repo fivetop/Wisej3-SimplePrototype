@@ -310,6 +310,7 @@ namespace simplepa2.UI.Pages
                         addinfo = "OFFLINE";
                     dBSqlite.Eventvm(addinfo, msg1.EMNAME, addinfo);
                     dBSqlite.EMServerupdate(msg1.EMNAME, addinfo);
+                    view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
                     if (msg1.seqno == 1)

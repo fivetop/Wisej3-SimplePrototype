@@ -68,6 +68,7 @@ namespace simplepa2.UI.Views
 			}
 			dataRepeater1.DataSource = dataSource;
 
+			DevicelistView1.Items.Clear();
 			// 장비 아이콘 보이기 
 			DevicelistView1.View = View.LargeIcon;
 			//DevicelistView1.View = View.Tile;

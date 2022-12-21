@@ -31,7 +31,9 @@ namespace pa
         public string HubURL { get; set; } = @"http://localhost:8080/signalr";
         public string processname { get; set; } = @"pa_em";
         public string processfile { get; set; } = @"pa_em.exe";
-
+        public string GPIOPort { get; set; } = @"COM4";
+        public string Rport { get; set; } = @"COM3";
+        
 
         public EMClient()
         {

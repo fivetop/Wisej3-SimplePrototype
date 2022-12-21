@@ -205,7 +205,7 @@ namespace pa
                 spP.Close();
                 //return;
             }
-            spP.PortName = g._BaseData.GPIOPort; // .sim "COM3";
+            spP.PortName = g._EMClient.GPIOPort; // .sim "COM3";
             spP.BaudRate = 115200;
             spP.DataBits = 8;
             spP.Parity = Parity.None;
@@ -213,7 +213,7 @@ namespace pa
 
             spP.DataReceived += new SerialDataReceivedEventHandler(SpP_DataReceived);
 
-            EMServerRow.com_gpio = g._BaseData.GPIOPort;
+            EMServerRow.com_gpio = g._EMClient.GPIOPort;
             try
             {
                 spP.Open();
@@ -265,6 +265,7 @@ namespace pa
 
             if (rcvsize < 17)
             {
+                g.Log("RX Size : " + rcvsize.ToString());
                 //Console.WriteLine("RX Size : " + rcvsize.ToString());
                 return;
             }
@@ -285,6 +286,7 @@ namespace pa
             }
             catch (Exception e1)
             {
+                g.Log(e1.Message);
                 Console.WriteLine(e1.Message);
             }
 
@@ -431,7 +433,7 @@ namespace pa
                     }
 
                     // 12 ~ 19 P형 수신기 포트수 12~15 10자리, 16~19 단자리  
-                    if (g._BaseData.Pport == 0 && g._BaseData.Rport == "")
+                    if (g._BaseData.Pport == 0 && g._EMClient.Rport == "")
                     {
                         switch (chk)
                         {
@@ -661,7 +663,7 @@ namespace pa
 
         public void OpenR()
         {
-            if (g._BaseData.Rport == "")
+            if (g._EMClient.Rport == "")
             {
                 g.Log("R형 없음..");
                 return;
@@ -671,7 +673,7 @@ namespace pa
                 spR.Close();
                 //return;
             }
-            spR.PortName = g._BaseData.Rport;  // .sim "COM3";
+            spR.PortName = g._EMClient.Rport;  // .sim "COM3";
             spR.BaudRate = 9600;                // R형 수신기 9600
             spR.DataBits = 8;
             spR.Parity = Parity.None;
@@ -679,7 +681,7 @@ namespace pa
 
             spR.DataReceived += new SerialDataReceivedEventHandler(SpR_DataReceived);
 
-            EMServerRow.com_Rtype = g._BaseData.Rport;
+            EMServerRow.com_Rtype = g._EMClient.Rport;
 
             try
             {

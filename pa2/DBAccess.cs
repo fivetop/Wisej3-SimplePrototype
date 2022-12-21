@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,11 +94,11 @@ namespace pa
         {
             try
             {
+                /*
                 EMServer e1 = new EMServer();
                 e1.EMServerId = te1.EMServerId;
                 e1.EMNAME = te1.EMNAME;
                 e1.state = te1.state;
-                /*
                 e1.state_old = te1.state_old;
                 e1.com_gpio = te1.com_gpio;
                 e1.com_Rtype = te1.com_Rtype;
@@ -117,26 +118,19 @@ namespace pa
                 e1.emtest = te1.emtest;
                 */
 
-                string jsonEmp = JsonConvert.SerializeObject(e1);
-                var url2 = g._EMClient.WebAPIURL + url +"/" + e1.EMServerId.ToString(); 
+                string jsonEmp = JsonConvert.SerializeObject(te1);
+                var url2 = g._EMClient.WebAPIURL + url +"/" + te1.EMServerId.ToString(); 
                 StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
                 var res = httpClient.PutAsync(url2, stringC).Result;
-                //var res2 = httpClient. .p .PutAsJsonAsync(url2, stringC).Result;
-                //var t2 = res.EnsureSuccessStatusCode();
+                if (res.StatusCode == HttpStatusCode.OK)
+                {
+                    Console.WriteLine("Success");
+                }
             }
             catch (Exception e1)
             {
                 return;
             }
-            /*
-            using (var response = httpClient.PutAsync(url, requestBody).Result)
-            {
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    Console.WriteLine("Success");
-                }
-            }
-            */
         }
 
         public void UpUser()

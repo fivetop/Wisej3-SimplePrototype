@@ -35,27 +35,27 @@
             this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEMNAME = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colCom_Gpio = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colCom_Gpio_State = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colCom_Rtype = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colCom_Rtype_State = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colNet_Local = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colNet_Dante = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Ctrl = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Dante = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colSw_All = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colSw_1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colSw_2 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colSw_3 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colSw_4 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colState_Old = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEmtest = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colFire = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colErr = new Wisej.Web.DataGridViewTextBoxColumn();
             this.eMServerBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
             this.button2 = new Wisej.Web.Button();
             this.ptop = new Wisej.Web.Panel();
             this.eMServerTableAdapter = new simplepa2.DataSet1TableAdapters.EMServerTableAdapter();
-            this.colEmtest = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colFire = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colErr = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colSw_4 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colSw_3 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colSw_2 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colSw_1 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colSw_All = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colCom_Rtype_State = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colCom_Gpio_State = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eMServerBindingSource)).BeginInit();
@@ -112,19 +112,21 @@
             this.colEmserverid.HeaderText = "번호";
             this.colEmserverid.Name = "colEmserverid";
             this.colEmserverid.ReadOnly = true;
-            this.colEmserverid.Width = 80;
+            this.colEmserverid.Width = 60;
             // 
             // colState
             // 
             this.colState.DataPropertyName = "state";
             this.colState.HeaderText = "상태";
             this.colState.Name = "colState";
+            this.colState.Width = 80;
             // 
             // colEMNAME
             // 
             this.colEMNAME.DataPropertyName = "EMNAME";
             this.colEMNAME.HeaderText = "EM이름";
             this.colEMNAME.Name = "colEMNAME";
+            this.colEMNAME.Width = 120;
             // 
             // colCom_Gpio
             // 
@@ -132,35 +134,88 @@
             this.colCom_Gpio.HeaderText = "GPIO";
             this.colCom_Gpio.Name = "colCom_Gpio";
             // 
+            // colCom_Gpio_State
+            // 
+            this.colCom_Gpio_State.DataPropertyName = "com_gpio_state";
+            this.colCom_Gpio_State.HeaderText = "상태";
+            this.colCom_Gpio_State.Name = "colCom_Gpio_State";
+            this.colCom_Gpio_State.Width = 50;
+            // 
             // colCom_Rtype
             // 
             this.colCom_Rtype.DataPropertyName = "com_Rtype";
             this.colCom_Rtype.HeaderText = "R형수신기";
             this.colCom_Rtype.Name = "colCom_Rtype";
             // 
+            // colCom_Rtype_State
+            // 
+            this.colCom_Rtype_State.DataPropertyName = "com_Rtype_state";
+            this.colCom_Rtype_State.HeaderText = "상태";
+            this.colCom_Rtype_State.Name = "colCom_Rtype_State";
+            this.colCom_Rtype_State.Width = 50;
+            // 
             // colNet_Local
             // 
             this.colNet_Local.DataPropertyName = "net_local";
             this.colNet_Local.HeaderText = "내부IP";
             this.colNet_Local.Name = "colNet_Local";
+            this.colNet_Local.Width = 110;
             // 
             // colNet_Dante
             // 
             this.colNet_Dante.DataPropertyName = "net_dante";
             this.colNet_Dante.HeaderText = "단테IP";
             this.colNet_Dante.Name = "colNet_Dante";
+            this.colNet_Dante.Width = 110;
             // 
             // colDsp_Ctrl
             // 
             this.colDsp_Ctrl.DataPropertyName = "dsp_ctrl";
             this.colDsp_Ctrl.HeaderText = "DSP제어IP";
             this.colDsp_Ctrl.Name = "colDsp_Ctrl";
+            this.colDsp_Ctrl.Width = 110;
             // 
             // colDsp_Dante
             // 
             this.colDsp_Dante.DataPropertyName = "dsp_dante";
             this.colDsp_Dante.HeaderText = "DSP단테IP";
             this.colDsp_Dante.Name = "colDsp_Dante";
+            this.colDsp_Dante.Width = 110;
+            // 
+            // colSw_All
+            // 
+            this.colSw_All.DataPropertyName = "sw_all";
+            this.colSw_All.HeaderText = "ALL sw";
+            this.colSw_All.Name = "colSw_All";
+            this.colSw_All.Width = 80;
+            // 
+            // colSw_1
+            // 
+            this.colSw_1.DataPropertyName = "sw_1";
+            this.colSw_1.HeaderText = "1번sw";
+            this.colSw_1.Name = "colSw_1";
+            this.colSw_1.Width = 80;
+            // 
+            // colSw_2
+            // 
+            this.colSw_2.DataPropertyName = "sw_2";
+            this.colSw_2.HeaderText = "2번sw";
+            this.colSw_2.Name = "colSw_2";
+            this.colSw_2.Width = 80;
+            // 
+            // colSw_3
+            // 
+            this.colSw_3.DataPropertyName = "sw_3";
+            this.colSw_3.HeaderText = "3번sw";
+            this.colSw_3.Name = "colSw_3";
+            this.colSw_3.Width = 80;
+            // 
+            // colSw_4
+            // 
+            this.colSw_4.DataPropertyName = "sw_4";
+            this.colSw_4.HeaderText = "4번sw";
+            this.colSw_4.Name = "colSw_4";
+            this.colSw_4.Width = 80;
             // 
             // colState_Old
             // 
@@ -168,6 +223,27 @@
             this.colState_Old.HeaderText = "이전상태";
             this.colState_Old.Name = "colState_Old";
             this.colState_Old.Visible = false;
+            // 
+            // colEmtest
+            // 
+            this.colEmtest.DataPropertyName = "emtest";
+            this.colEmtest.HeaderText = "emtest";
+            this.colEmtest.Name = "colEmtest";
+            this.colEmtest.Visible = false;
+            // 
+            // colFire
+            // 
+            this.colFire.DataPropertyName = "fire";
+            this.colFire.HeaderText = "fire";
+            this.colFire.Name = "colFire";
+            this.colFire.Visible = false;
+            // 
+            // colErr
+            // 
+            this.colErr.DataPropertyName = "err";
+            this.colErr.HeaderText = "err";
+            this.colErr.Name = "colErr";
+            this.colErr.Visible = false;
             // 
             // eMServerBindingSource
             // 
@@ -203,76 +279,6 @@
             // eMServerTableAdapter
             // 
             this.eMServerTableAdapter.ClearBeforeFill = true;
-            // 
-            // colEmtest
-            // 
-            this.colEmtest.DataPropertyName = "emtest";
-            this.colEmtest.HeaderText = "emtest";
-            this.colEmtest.Name = "colEmtest";
-            this.colEmtest.Visible = false;
-            // 
-            // colFire
-            // 
-            this.colFire.DataPropertyName = "fire";
-            this.colFire.HeaderText = "fire";
-            this.colFire.Name = "colFire";
-            this.colFire.Visible = false;
-            // 
-            // colErr
-            // 
-            this.colErr.DataPropertyName = "err";
-            this.colErr.HeaderText = "err";
-            this.colErr.Name = "colErr";
-            this.colErr.Visible = false;
-            // 
-            // colSw_4
-            // 
-            this.colSw_4.DataPropertyName = "sw_4";
-            this.colSw_4.HeaderText = "4번sw";
-            this.colSw_4.Name = "colSw_4";
-            this.colSw_4.Width = 80;
-            // 
-            // colSw_3
-            // 
-            this.colSw_3.DataPropertyName = "sw_3";
-            this.colSw_3.HeaderText = "3번sw";
-            this.colSw_3.Name = "colSw_3";
-            this.colSw_3.Width = 80;
-            // 
-            // colSw_2
-            // 
-            this.colSw_2.DataPropertyName = "sw_2";
-            this.colSw_2.HeaderText = "2번sw";
-            this.colSw_2.Name = "colSw_2";
-            this.colSw_2.Width = 80;
-            // 
-            // colSw_1
-            // 
-            this.colSw_1.DataPropertyName = "sw_1";
-            this.colSw_1.HeaderText = "1번sw";
-            this.colSw_1.Name = "colSw_1";
-            this.colSw_1.Width = 80;
-            // 
-            // colSw_All
-            // 
-            this.colSw_All.DataPropertyName = "sw_all";
-            this.colSw_All.HeaderText = "ALL sw";
-            this.colSw_All.Name = "colSw_All";
-            this.colSw_All.Width = 80;
-            // 
-            // colCom_Rtype_State
-            // 
-            this.colCom_Rtype_State.DataPropertyName = "com_Rtype_state";
-            this.colCom_Rtype_State.HeaderText = "상태";
-            this.colCom_Rtype_State.Name = "colCom_Rtype_State";
-            this.colCom_Rtype_State.Width = 60;
-            // 
-            // colCom_Gpio_State
-            // 
-            this.colCom_Gpio_State.DataPropertyName = "com_gpio_state";
-            this.colCom_Gpio_State.HeaderText = "상태";
-            this.colCom_Gpio_State.Name = "colCom_Gpio_State";
-            this.colCom_Gpio_State.Width = 60;
             // 
             // View_BBSEMManage2
             // 

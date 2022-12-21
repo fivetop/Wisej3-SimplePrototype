@@ -96,6 +96,22 @@ namespace simplepa2
                 m2.EMNAME = t1.emServer;
                 m2.state = "";
                 m2.state_old = "";
+                m2.com_gpio = "";
+                m2.com_Rtype = "";
+                m2.net_local = "";
+                m2.net_dante = "";
+                m2.dsp_ctrl = "";
+                m2.dsp_dante = "";
+                m2.com_gpio_state = 0;
+                m2.com_Rtype_state = 0;
+                m2.sw_all = 0;
+                m2.sw_1 = 0;
+                m2.sw_2 = 0;
+                m2.sw_3 = 0;
+                m2.sw_4 = 0;
+                m2.err = 0;
+                m2.fire = 0;
+                m2.emtest = 0;
                 Ds1.EMServer.Rows.Add(m2);
                 Tam.EMServerTableAdapter.Update(Ds1.EMServer);
             }

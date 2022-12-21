@@ -268,7 +268,7 @@ namespace pa
 
             foreach (var t1 in gl.networkCardList)
             {
-                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName);
+                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName + ":" + t1.ipv4);
             }
             _combo.ItemsSource = cl.ToList();
 
@@ -289,8 +289,7 @@ namespace pa
             {
                 Resolver.intfindx = t3.NetworkCardmDNS;
                 Resolver.localIP = t3.ipv4;
-                g.Log("Local IP :" + t3.ipv4);
-                EMServerRow.net_local = t3.ipv4;
+                EMServerRow.net_dante = t3.ipv4;
                 g.resolver = new Resolver();
                 g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
             }
