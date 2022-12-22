@@ -430,6 +430,9 @@ namespace pa
 
         public void Delete(int idno, int state)
         {
+            BStree = Dbread<BSTreeDataTable>("BStrees");
+            BStreeC = Dbread<BSTreeCDataTable>("BStreeCs");
+
             try
             {
                 var bt = BStree.FirstOrDefault(p => p.chno == idno && p.EMNAME == g._EMClient.EM_NAME);
@@ -438,12 +441,11 @@ namespace pa
                     var btc = BStreeC.Where(p => p.BSTreeId == bt.BSTreeId);
                     foreach (BSTreeCRow t2 in btc)
                     {
-                        t2.Delete();
+                        RemoveEMServer("BSTreeCs", t2.BSTreeCId);
                     }
                     bt.playing = "대기";
                 }
                 Dbupdate<BSTreeRow>("BSTrees", bt, bt.BSTreeId);
-                //Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
             }
             catch (Exception e1)
             {
