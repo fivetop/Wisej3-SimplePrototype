@@ -17,18 +17,13 @@ namespace simplepa2.UI.Views
 
 		internal void reDraw()
 		{
-			//throw new NotImplementedException();
 			View_BBSAnchor_Load(null, null);
 		}
 
-		public void refresh(SignalRMsg msg1)
+		public void refresh()
 		{
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
-			if (bSTreeRow == null) return;
-			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
-			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
-			bSTreeRow = null;
 		}
 
 		private void View_BBSAnchor_Load(object sender, EventArgs e)
@@ -45,7 +40,7 @@ namespace simplepa2.UI.Views
 		List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
 		List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
 
-		BSTreeRow bSTreeRow { get; set; } = null;
+		int bSTreeid { get; set; } = 0;
 
 		// 방송 시작
 		// 선택내용 확인
@@ -98,9 +93,8 @@ namespace simplepa2.UI.Views
 		{
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
-			if (bSTreeRow == null) return;
-			bSTreeRow = null;
 			방송중지로직();
+			bSTreeid = 0;
 		}
 
 		// 1. 방송 채널 확보 
@@ -108,13 +102,14 @@ namespace simplepa2.UI.Views
 		// 3. 지역과 음원 저장 
 		// 4. 해당 지역 서버에 명령 처리 
 		// 5. 버튼 상태 변경 
-        private void 방송처리로직()
+        private async void 방송처리로직()
         {
-			bSTreeRow = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
-			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
-			gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId, SelAsset, SelMusic, gweb.mainFrame.user_name);
-			gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeRow, SelAsset, SelMusic);
-			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "방송시작");
+			bSTreeid = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
+			if (bSTreeid == 0) return;
+			await gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
+			await gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeid, SelAsset, SelMusic, gweb.mainFrame.user_name);
+			await gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "방송시작");
+			gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeid, SelAsset, SelMusic);
 			this.btnStart.Enabled = false;
 			this.btnStop.Enabled = true;
 		}
@@ -124,9 +119,10 @@ namespace simplepa2.UI.Views
 		// 3. 방송트리 차일드 지우기 
         private void 방송중지로직()
         {
-			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeRow, null, null);
-			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
-			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
+			if (bSTreeid == 0) return;
+			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
+			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
+			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
         }
 
         private void Win_EventMusic(object sender, EventArgs e)

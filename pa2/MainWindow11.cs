@@ -22,6 +22,11 @@ namespace pa
     {
         internal async Task<bool> RcvSigR(SignalRMsg msg)
         {
+            if (msg.EMNAME != g._EMClient.EM_NAME)
+            {
+                if (msg.EMNAME != "ALL")
+                    return false;
+            }
             switch (msg.Msgtype)
             {
                 case eSignalRMsgType.eEM:
@@ -151,6 +156,7 @@ namespace pa
                     break;
                 case eSignalRMsgType.ePlayEnd:
                     msg1.message = "ePlayEnd";
+                    g.mainWindow.dBAccess.Delete(msg1.seqno, msg1.state);
                     break;
                 case eSignalRMsgType.eLoginUser:
                     msg1.EMNAME = g._EMClient.EM_NAME;

@@ -205,7 +205,7 @@ namespace simplepa2
 
         #region // BSTree 방송 처리 관리 부분 
 
-        internal void BSTreeCRemove(int bSTreeId)
+        internal async Task<bool> BSTreeCRemove(int bSTreeId)
         {
             Tam.BSTreeCTableAdapter.Fill(Ds1.BSTreeC);
             var drs = Ds1.BSTreeC.Where(p =>p.BSTreeId == bSTreeId);
@@ -219,6 +219,7 @@ namespace simplepa2
                 }
             }
             Tam.BSTreeCTableAdapter.Update(Ds1.BSTreeC);
+            return true;
         }
 
         // 기존 방송중 점유된 지역이 없는지 점검
@@ -238,7 +239,7 @@ namespace simplepa2
         }
 
 
-        internal void BSTreeCSave(int bSTreeId, List<AssetsRow> selAsset, List<MusicsRow> selMusic, string user_name )
+        internal async Task<bool> BSTreeCSave(int bSTreeId, List<AssetsRow> selAsset, List<MusicsRow> selMusic, string user_name )
         {
             Tam.BSTreeCTableAdapter.Fill(Ds1.BSTreeC);
 
@@ -262,11 +263,11 @@ namespace simplepa2
                 Ds1.BSTreeC.Rows.Add(m2);
                 Tam.BSTreeCTableAdapter.Update(Ds1.BSTreeC);
             }
-
+            return true;
         }
 
 
-        internal BSTreeRow BSTreeGetFreeCh(AssetsRow selAsset)
+        internal int BSTreeGetFreeCh(AssetsRow selAsset)
         {
             BSTreeRow ret = null;
 
@@ -280,11 +281,11 @@ namespace simplepa2
                     if (m1.playing == "대기")
                     { 
                         ret = m1;
-                        return ret;
+                        return ret.BSTreeId;
                     }
                 }
             }
-            return ret;
+            return 0;
         }
 
         // 대기, 방송시작, 방송중, 방송종료, 방송중지
@@ -302,17 +303,21 @@ namespace simplepa2
                     m2.EMNAME = t1.emServer;
                     m2.chno = i;
                     m2.playing = "대기";
+                    m2.wtime = DateTime.Now;
                     Ds1.BSTree.Rows.Add(m2);
                     Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
                 }
             }
         }
 
-        internal void BSTreeUpdate(BSTreeRow bSTreeRow, string p)
+        internal async Task<bool> BSTreeUpdate(int BSTreeId, string ps1)
         {
-            //Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
-            bSTreeRow.playing = p;
+            Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
+            var drs = Ds1.BSTree.FirstOrDefault(p => p.BSTreeId == BSTreeId);
+            drs.playing = ps1;
+            drs.wtime = DateTime.Now;
             Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+            return true;
         }
 
 
@@ -331,6 +336,14 @@ namespace simplepa2
             { 
             }
         }
+
+        internal BSTreeRow BSTreeGet(int bSTreeId)
+        {
+            var t2 = Ds1.BSTree.FirstOrDefault(p => p.BSTreeId == bSTreeId);
+            return t2;
+        }
+
+
         #endregion
 
         #region // Device 장치관리 부분 

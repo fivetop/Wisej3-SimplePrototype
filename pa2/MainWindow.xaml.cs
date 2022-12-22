@@ -213,7 +213,7 @@ namespace pa
 
             systemcheck();
             g.Log("Initialize OK..");
-            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow);
+            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
         }
 
         private int systemcheck()

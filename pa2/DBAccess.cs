@@ -90,7 +90,7 @@ namespace pa
             }
         }
 
-        public void Dbupdate<T>(string url, EMServerRow te1)
+        public void Dbupdate<T>(string url, DataRow te1, int id)
         {
             try
             {
@@ -119,7 +119,7 @@ namespace pa
                 */
 
                 string jsonEmp = JsonConvert.SerializeObject(te1);
-                var url2 = g._EMClient.WebAPIURL + url +"/" + te1.EMServerId.ToString(); 
+                var url2 = g._EMClient.WebAPIURL + url +"/" + id.ToString(); 
                 StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
                 var res = httpClient.PutAsync(url2, stringC).Result;
                 if (res.StatusCode == HttpStatusCode.OK)
@@ -428,15 +428,21 @@ namespace pa
 
         #region // BSTree 방송 처리 관리 부분 
 
-        public void Delete(int idno)
+        public void Delete(int idno, int state)
         {
             try
             {
-                var t2 = BStree.Where(p => p.chno == idno);
-                foreach (BSTreeRow t3 in t2)
+                var bt = BStree.FirstOrDefault(p => p.chno == idno && p.EMNAME == g._EMClient.EM_NAME);
+                if(bt != null)
                 {
-                    t3.Delete();
+                    var btc = BStreeC.Where(p => p.BSTreeId == bt.BSTreeId);
+                    foreach (BSTreeCRow t2 in btc)
+                    {
+                        t2.Delete();
+                    }
+                    bt.playing = "대기";
                 }
+                Dbupdate<BSTreeRow>("BSTrees", bt, bt.BSTreeId);
                 //Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
             }
             catch (Exception e1)

@@ -29,9 +29,15 @@ namespace simplepa2.UI.Views
 
 		internal void reDraw2()
 		{
-			this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
-			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-			this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
+			try
+			{
+				this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+				this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+				this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
+			}
+			catch (Exception e1)
+			{ 
+			}
 		}
 
 		private void View_DashBoard_Load(object sender, EventArgs e)

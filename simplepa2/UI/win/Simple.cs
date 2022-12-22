@@ -254,7 +254,6 @@ namespace simplepa2
 
 		private void BStabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-			view_BBSAnchor.reDraw();
 			bSInManager.reDraw(); 
 			bSOutManage.reDraw(); 
 			bSLevelManager.reDraw();
@@ -379,9 +378,7 @@ namespace simplepa2
 				case eSignalRMsgType.ePlay:
 					break;
 				case eSignalRMsgType.ePlayEnd:
-					//this.btnStart.Enabled = true;
-					//this.btnStop.Enabled = false;
-					view_BBSAnchor.refresh(msg1);
+					view_BBSAnchor.refresh();
 					break;
 				case eSignalRMsgType.ePlaying:
 					break;

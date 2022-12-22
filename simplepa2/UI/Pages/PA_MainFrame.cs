@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using Wisej.Web;
 using Wisej.Web.Ext.NavigationBar;
 using static simplepa2.DataSet1;
@@ -338,15 +339,17 @@ namespace simplepa2.UI.Pages
                     view_BBSEMManage2.reDraw();
                     break;
                 case eSignalRMsgType.ePlay:
+                    view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.ePlayEnd:
-                    //this.btnStart.Enabled = true;
-                    //this.btnStop.Enabled = false;
-                    view_BBSAnchor2.refresh(msg1);
+                    view_BBSEMChannel2.reDraw();
+                    view_BBSAnchor2.refresh();
                     break;
                 case eSignalRMsgType.ePlaying:
+                    view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.eStop:
+                    view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.eLoginUser:
                     break;
@@ -377,13 +380,15 @@ namespace simplepa2.UI.Pages
         }
 
 
-        internal void sendSigR(eSignalRMsgType v1, BSTreeRow bSTreeRow, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
+        internal async Task<bool> sendSigR(eSignalRMsgType v1, int BSTreeId, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
         {
             if (gweb._hub == null)
             {
                 AlertBox.Show("가용한 EM Server가 없습니다.");
-                return;
+                return false;
             }
+
+            var bSTreeRow = gweb.mainFrame.dBSqlite.BSTreeGet(BSTreeId);
             SignalRMsg msg1 = new SignalRMsg();
             msg1.user = Application.Session["login_id"];
             msg1.EMNAME = bSTreeRow.EMNAME;
@@ -413,6 +418,7 @@ namespace simplepa2.UI.Pages
             catch (Exception e1)
             {
             }
+            return true;
         }
 
         internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0)

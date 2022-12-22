@@ -192,7 +192,7 @@ namespace pa
 
             EMServerRow.dsp_ctrl = s1.ip_dspctrl;
             EMServerRow.dsp_dante = s1.ip;
-            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow);
+            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
         }
 
         private void updateAsset()

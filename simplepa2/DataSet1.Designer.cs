@@ -2402,6 +2402,8 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnplaying;
             
+            private static System.DateTime columnwtime_defaultValue = global::System.DateTime.Parse("2002-02-01T00:00:00");
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BSTreeDataTable() {
@@ -2601,6 +2603,10 @@ namespace simplepa2 {
                 this.columnBSTreeId.AllowDBNull = false;
                 this.columnBSTreeId.ReadOnly = true;
                 this.columnBSTreeId.Unique = true;
+                this.columnwtime.DefaultValue = ((System.DateTime)(BSTreeDataTable.columnwtime_defaultValue));
+                this.columnchno.DefaultValue = ((int)(0));
+                this.columnAssetId.DefaultValue = ((int)(0));
+                this.columnMusicId.DefaultValue = ((int)(0));
                 this.columnEMNAME.MaxLength = 2147483647;
                 this.columnplaying.MaxLength = 2147483647;
             }
@@ -8808,11 +8814,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string EMNAME {
                 get {
-                    try {
-                        return ((string)(this[this.tableBSTree.EMNAMEColumn]));
+                    if (this.IsEMNAMENull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'BSTree\' 테이블의 \'EMNAME\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableBSTree.EMNAMEColumn]));
                     }
                 }
                 set {
@@ -8824,11 +8830,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string playing {
                 get {
-                    try {
-                        return ((string)(this[this.tableBSTree.playingColumn]));
+                    if (this.IsplayingNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'BSTree\' 테이블의 \'playing\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableBSTree.playingColumn]));
                     }
                 }
                 set {
