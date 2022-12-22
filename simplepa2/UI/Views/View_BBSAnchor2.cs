@@ -47,10 +47,11 @@ namespace simplepa2.UI.Views
 
 		BSTreeRow bSTreeRow { get; set; } = null;
 
-		// BSTree 에서 해당 지역의 빈채널 선택
-		// BSTreeC 에 지역과 음원 저장 
-		// 시그날알 호출 처리 
-
+		// 방송 시작
+		// 선택내용 확인
+		// 해당 지역 서버 확인
+		// 사용중인 지역이 있는지 점검
+		// 방송 시작
 		private void btnStart_Click(object sender, EventArgs e)
 		{
 			SelAsset.Clear();
@@ -82,6 +83,7 @@ namespace simplepa2.UI.Views
 				return;
 			}
 
+			// 선택한 지역에 방송중인지 점검 
 			string ret1 = gweb.mainFrame.dBSqlite.BSTreeCCheck(SelAsset);
 
 			if (ret1 != "")
@@ -89,31 +91,45 @@ namespace simplepa2.UI.Views
 				AlertBox.Show( ret1 + "님이 방송중인 지역 입니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 				return;
 			}
-			// 방송 채널 확보 
+
+			방송처리로직();
+		}
+		private void btnStop_Click(object sender, EventArgs e)
+		{
+			this.btnStart.Enabled = true;
+			this.btnStop.Enabled = false;
+			if (bSTreeRow == null) return;
+			bSTreeRow = null;
+			방송중지로직();
+		}
+
+		// 1. 방송 채널 확보 
+		// 2. 저장전 기존 데이터 있으면 삭제처리 
+		// 3. 지역과 음원 저장 
+		// 4. 해당 지역 서버에 명령 처리 
+		// 5. 버튼 상태 변경 
+        private void 방송처리로직()
+        {
 			bSTreeRow = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
-			// 저장전 기존 데이터 있으면 삭제처리 
 			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
-			// 지역과 음원 저장 
-			gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId ,SelAsset, SelMusic, gweb.mainFrame.user_name);
-			// 해당 지역 서버에 명령 처리 
+			gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeRow.BSTreeId, SelAsset, SelMusic, gweb.mainFrame.user_name);
 			gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeRow, SelAsset, SelMusic);
 			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "방송시작");
 			this.btnStart.Enabled = false;
 			this.btnStop.Enabled = true;
 		}
 
-		private void btnStop_Click(object sender, EventArgs e)
-		{
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-			if (bSTreeRow == null) return;
+		// 1. 해당지역 서버에 중지 처리 
+		// 2. 방송트리 초기화 
+		// 3. 방송트리 차일드 지우기 
+        private void 방송중지로직()
+        {
 			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeRow, null, null);
 			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeRow, "대기");
 			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeRow.BSTreeId);
-			bSTreeRow = null;
-		}
+        }
 
-		private void Win_EventMusic(object sender, EventArgs e)
+        private void Win_EventMusic(object sender, EventArgs e)
 		{
 			this.dataGridView2.DataSource = SelMusic;
 			this.dataGridView2.Refresh();

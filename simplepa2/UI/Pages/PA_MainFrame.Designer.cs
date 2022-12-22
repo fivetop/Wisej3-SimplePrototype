@@ -67,6 +67,7 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
             this.pictureBox1 = new Wisej.Web.PictureBox();
+            this.navigationBarItem3 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.rightPanels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,6 +176,7 @@
             this.deviceManageBarItem,
             this.navigationBarItem1,
             this.navigationBarItem2,
+            this.navigationBarItem3,
             this.siteManageBarItem,
             this.zoneManageBarItem,
             this.inputManageBarItem,
@@ -399,6 +401,13 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 24);
             // 
+            // navigationBarItem3
+            // 
+            this.navigationBarItem3.AccessibleName = "navigationBarItem3";
+            this.navigationBarItem3.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.navigationBarItem3.Name = "NavigationBarItem";
+            this.navigationBarItem3.Text = "방송채널상태";
+            // 
             // PA_MainFrame
             // 
             this.Controls.Add(this.pictureBox1);
@@ -456,5 +465,6 @@
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem assetBarItem;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem1;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem2;
+        private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem3;
     }
 }
