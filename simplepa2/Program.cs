@@ -12,6 +12,7 @@ using System.Web.Http;
 using simplepa2.UI.Pages;
 using System.Threading;
 using simplepa2.SignalR;
+using System.ComponentModel;
 
 [assembly: OwinStartup(typeof(simplepa2.Startup))]
 
@@ -51,6 +52,8 @@ namespace simplepa2
 			Application.LoadTheme("LSMaterial-3"); //"Material-3" .
 			Application.MainPage = new PA_MainFrame();
 
+			//Application.SessionTimeout += Application_SessionTimeout;
+
 			if (t2 == null)
 			{ 
 				t2 = new Thread(new ThreadStart(DoSignalRThread));
@@ -58,8 +61,15 @@ namespace simplepa2
 			}
 		}
 
-		// SignalR Server
-		private static void DoSignalRThread()
+        private static void Application_SessionTimeout(object sender, HandledEventArgs e)
+        {
+			// do something
+			// suppress the built-in timeout window.
+			e.Handled = true;
+		}
+
+        // SignalR Server
+        private static void DoSignalRThread()
 		{
 			string url = "http://*:8080";
 			Console.WriteLine("Server running on {0}", url);
