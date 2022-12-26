@@ -4725,7 +4725,7 @@
 							},
 							"styles": {
 								"fillColor": "Gold",
-								"backgroundColor": "rgba(238,239,248,0.99)",
+								"backgroundColor": "window",
 								"backgroundRepeat": "no-repeat",
 								"backgroundSize": "20px 20px",
 								"backgroundPosition": ["center", "center"]
@@ -4762,7 +4762,7 @@
 					"states": {
 						"default": {
 							"styles": {
-								"backgroundColor": "rgba(219,220,239,0.64)"
+								"backgroundColor": "rgba(255,0,0,0.64)"
 							}
 						},
 						"vertical": {
@@ -7065,7 +7065,8 @@
 					"styles": {
 						"width": 0,
 						"color": "windowFrame",
-						"backgroundColor": "window"
+						"backgroundColor": "window",
+						"radius": 6
 					},
 					"properties": {
 						"height": 22,

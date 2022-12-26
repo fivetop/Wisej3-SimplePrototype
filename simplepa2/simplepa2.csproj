@@ -103,8 +103,11 @@
     <Content Include="Images\radio-on-80x80-g1.png" />
     <Content Include="Images\router.png" />
     <Content Include="Images\sample-001.jpg" />
+    <Content Include="Images\sample-002.png" />
     <Content Include="Images\search.png" />
     <Content Include="Images\select-t1-tri.png" />
+    <Content Include="Images\site_image_none.png" />
+    <Content Include="Images\site_image_none_250x141.png" />
     <Content Include="Images\splash.png" />
     <Content Include="Images\strike.png" />
     <Content Include="Images\tri-b-g1.png" />
@@ -175,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_SiteCard.resx">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_SiteDetailForm.resx">
+      <DependentUpon>Comp_SiteDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_ZoneButton.resx">
       <DependentUpon>Comp_ZoneButton.cs</DependentUpon>
@@ -960,6 +966,12 @@
     </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.Designer.cs">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_SiteDetailForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_SiteDetailForm.designer.cs">
+      <DependentUpon>Comp_SiteDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_ZoneButton.cs">
       <SubType>Component</SubType>
