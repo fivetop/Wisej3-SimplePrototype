@@ -12,10 +12,24 @@ namespace simplepa2.SignalR
     {
         public event EventHandler eConnect;
         public event EventHandler eDisConnect;
+        public event EventHandler<SignalRMsg> eRcvSignlR;
+
 
         public signalr()
         {
             gweb._hub = this;
+
+            foreach (var t1 in gweb.mgf)
+            {
+                try
+                {
+                    if(t1 != null)
+                        t1.hub();
+                }
+                catch (Exception e1)
+                { 
+                }
+            }
         }
 
         public override Task OnConnected()
@@ -58,8 +72,9 @@ namespace simplepa2.SignalR
         public void MessageC2S2(SignalRMsg message)
         {
             Clients.All.MessageC2S2(message);
-            if(gweb.mainFrame != null)
-                gweb.mainFrame.eRcvSigR(message);
+            eRcvSignlR?.Invoke(this, message);
+//            if (gweb.mainFrame != null)
+//                gweb.mainFrame.eRcvSigR(message);
         }
     }
 

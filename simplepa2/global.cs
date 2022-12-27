@@ -14,6 +14,8 @@ namespace simplepa2
         public static PA_MainFrame mainFrame { get; set; } = null;
         public static signalr _hub { get; set; } = null;
 
+        public static List<PA_MainFrame> mgf { get; set; } = new List<PA_MainFrame>(); 
+
         #region // 로그 처리 
         static string old_string = "";
         public static void Log(string str1)

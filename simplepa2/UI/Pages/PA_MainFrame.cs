@@ -1,4 +1,5 @@
 ﻿using DataClass;
+using Microsoft.AspNet.SignalR;
 using simplepa2.SignalR;
 using simplepa2.UI.Views;
 using simplepa2.win;
@@ -63,6 +64,7 @@ namespace simplepa2.UI.Pages
             InitializeComponent();
 
             gweb.mainFrame = this;
+            gweb.mgf.Add(this);
 
             // 초기화 탑
             if (view_topPanelBar == null)
@@ -73,6 +75,16 @@ namespace simplepa2.UI.Pages
                 };
                 view_topPanelBar.BringToFront();
             }
+        }
+
+        public void hub()
+        {
+            gweb._hub.eRcvSignlR += _hub_eRcvSignlR;
+        }
+
+        private void _hub_eRcvSignlR(object sender, SignalRMsg e)
+        {
+            RcvSigR(e);
         }
 
         #region // 초기화 처리 
