@@ -133,6 +133,7 @@ namespace simplepa2
                 d1.AssetId = a1.AssetId; 
                 d1.emData = a1.emData;
                 d1.path = a1.path;
+                d1.EMNAME = a1.emServer;
             }
             Tam.AssetsTableAdapter.Update(Ds1.Assets);
             Tam.DeviceTableAdapter.Update(Ds1.Device);

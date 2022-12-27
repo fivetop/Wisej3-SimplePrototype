@@ -46,6 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(796, 404);
+            this.dataGridView3.Size = new System.Drawing.Size(756, 434);
             this.dataGridView3.TabIndex = 2;
             // 
             // colDeviceid
@@ -180,10 +181,12 @@
             // ptop
             // 
             this.ptop.BackColor = System.Drawing.Color.White;
-            this.ptop.Dock = Wisej.Web.DockStyle.Top;
+            this.ptop.Controls.Add(this.panel2);
+            this.ptop.Dock = Wisej.Web.DockStyle.Fill;
             this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(796, 70);
+            this.ptop.Padding = new Wisej.Web.Padding(20);
+            this.ptop.Size = new System.Drawing.Size(796, 474);
             this.ptop.TabIndex = 3;
             this.ptop.TabStop = true;
             // 
@@ -191,16 +194,15 @@
             // 
             this.panel2.Controls.Add(this.dataGridView3);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(20, 90);
+            this.panel2.Location = new System.Drawing.Point(20, 20);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(796, 404);
+            this.panel2.Size = new System.Drawing.Size(756, 434);
             this.panel2.TabIndex = 4;
             this.panel2.TabStop = true;
             // 
             // View_BBCOutput2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ptop);
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_BBCOutput2";
@@ -210,6 +212,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.ptop.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
