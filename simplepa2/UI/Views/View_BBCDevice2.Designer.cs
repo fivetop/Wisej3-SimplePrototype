@@ -50,6 +50,7 @@
             this.popTestButton = new Wisej.Web.Button();
             this.button1 = new Wisej.Web.Button();
             this.panel2 = new Wisej.Web.Panel();
+            this.colIp_Dspctrl = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -83,6 +84,7 @@
             this.Column0,
             this.colIp,
             this.colPath_1,
+            this.colIp_Dspctrl,
             this.colDsp_Name,
             this.colDsp_Chno,
             this.colDsp_Vol_Em,
@@ -158,6 +160,7 @@
             this.colDsp_Name.HeaderText = "관리DSP";
             this.colDsp_Name.Name = "colDsp_Name";
             this.colDsp_Name.ReadOnly = true;
+            this.colDsp_Name.Visible = false;
             this.colDsp_Name.Width = 120;
             // 
             // colDsp_Chno
@@ -247,12 +250,19 @@
             this.panel2.TabIndex = 5;
             this.panel2.TabStop = true;
             // 
-            // View_BBCDevice
+            // colIp_Dspctrl
+            // 
+            this.colIp_Dspctrl.DataPropertyName = "ip_dspctrl";
+            this.colIp_Dspctrl.HeaderText = "DSP제어IP";
+            this.colIp_Dspctrl.Name = "colIp_Dspctrl";
+            this.colIp_Dspctrl.Width = 110;
+            // 
+            // View_BBCDevice2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
             this.Dock = Wisej.Web.DockStyle.Fill;
-            this.Name = "View_BBCDevice";
+            this.Name = "View_BBCDevice2";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(910, 616);
             this.Load += new System.EventHandler(this.BSDeviceManager_Load);
@@ -288,5 +298,6 @@
         private Wisej.Web.DataGridViewTextBoxColumn colEMNAME;
         private Wisej.Web.Button button4;
         private Wisej.Web.Button popTestButton;
+        private Wisej.Web.DataGridViewTextBoxColumn colIp_Dspctrl;
     }
 }

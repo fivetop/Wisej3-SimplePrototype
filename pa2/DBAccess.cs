@@ -374,11 +374,11 @@ namespace pa
             m1.DeviceName = t1.DeviceName;
             m1.device = t1.device;
             m1.ip = t1.ip;
-            m1.ip_dspctrl = t1.ip_dspctrl;
             m1.name = t1.name;
             m1.chCount = t1.ch.Count();
             m1.chspk = v;
             m1.dsp_chno = 0;
+            m1.ip_dspctrl = t1.ip_dspctrl;
             m1.dsp_name = "";
             m1.dsp_vol = 0;
             m1.dsp_vol_em = 0;
@@ -387,6 +387,13 @@ namespace pa
             m1.path = "";
             m1.AssetId = 0;
             m1.EMNAME = g._EMClient.EM_NAME;
+
+            if (g.mainWindow.MainDSPIP != "" && g.mainWindow.MainDSPName != "")
+            {
+                m1.ip_dspctrl = g.mainWindow.MainDSPIP;
+                m1.dsp_name = g.mainWindow.MainDSPName;
+            }
+
             Device.Rows.Add(m1);
             var t2 = Dbsave<DeviceRow>("Devices", m1);
             //Tam.DeviceTableAdapter.Update(Ds1.Device);

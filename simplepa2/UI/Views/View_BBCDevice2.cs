@@ -69,7 +69,7 @@ namespace simplepa2.UI.Views
                     else if (t2.ToString() == "3")
                         r1.Cells[5].Value = "AVIO";
                     else if (t2.ToString() == "9")
-                        r1.Cells[5].Value = "Computer";
+                        r1.Cells[5].Value = "8chSound";
                 }
                 dataGridView3.EndEdit();
             }

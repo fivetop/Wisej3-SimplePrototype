@@ -162,14 +162,24 @@ namespace pa
 
             try
             {
-                // DSP 와 채널 저장 
-                saveDBDSP_SC();
-                // 스피커 저장 
-                saveDBSP();
-                // 자산 업데이트 deviceid, ip
-                updateAsset();
-                // EMBs 저장 
-                saveDBEMBs();
+                if (MainDSPIP != "")
+                {
+                    // DSP 와 채널 저장 
+                    saveDBDSP_SC();
+                    // 스피커 저장 
+                    saveDBSP();
+                    // 자산 업데이트 deviceid, ip
+                    updateAsset();
+                    // EMBs 저장 
+                    saveDBEMBs();
+                }
+                else
+                {
+                    g.Log("DSP 혹은 버철사운드를 확인 바랍니다.");
+                    SendSigR("Find DSP check", eSignalRMsgType.eFindDSP, 0, 0);
+                    Devicetimer.Stop();
+                    return false;
+                }
             }
             catch (Exception e1)
             {
@@ -538,8 +548,8 @@ namespace pa
 
         static bool findDSP = false;
 
-        public string MainDSPName { get; private set; }
-        public string MainDSPIP { get; private set; }
+        public string MainDSPName { get; private set; } = "";
+        public string MainDSPIP { get; private set; } = "";
 
         // DSP Control IP 는  239.16.0.8 에서 확인 요
         // 처음 설치시 한번 필요 
