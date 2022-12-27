@@ -29,6 +29,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Network Card" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     <ComboBox x:Name="_combo" Margin="10,0,0,0" SelectionChanged="_combo_SelectionChanged" />
+                    <TextBlock x:Name="_maindsp" Text="Main DSP" Margin="10,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 </StackPanel>
             </Menu>
         </Grid>

@@ -538,6 +538,9 @@ namespace pa
 
         static bool findDSP = false;
 
+        public string MainDSPName { get; private set; }
+        public string MainDSPIP { get; private set; }
+
         // DSP Control IP 는  239.16.0.8 에서 확인 요
         // 처음 설치시 한번 필요 
         public void FindDSP()
@@ -599,6 +602,9 @@ namespace pa
                             g.Log("Find DSP Controller IP : " + t5.ip_dspctrl + " " + t31[i]);
                             g.Log("--------------------------------------------------------------------------------");
                             findDSP = true;
+                            _maindsp.Text = "Find DSP Controller IP : " + t5.ip_dspctrl + " " + t31[i];
+                            MainDSPName = t31[i];
+                            MainDSPIP = t5.ip_dspctrl;
                         }
                     }
                 }
