@@ -537,7 +537,7 @@ namespace pa
         // DSP 찾기
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (systemcheck() < 2) return;
+            //if (systemcheck() < 2) return;
             Devicetimer.Stop();
             //g.resolver.ResolveServiceName2(g._netaudio_arc);
             g.Log("Find DSP Running..");
@@ -576,7 +576,7 @@ namespace pa
             Console.WriteLine("End...");
             udpc1.Close();
 
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
 
             //LScap.g.CloseCap();
             var t2 = LScap.g.capData1;

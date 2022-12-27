@@ -58,8 +58,7 @@ namespace simplepa2.UI.Views
 
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
 
-            Simple myDesktop = (Simple)Application.MainPage;
-            myDesktop.sendSigR(eSignalRMsgType.eOutChMove, str2, str1, i2, i3); // dsp, dsp_chno
+            gweb.mainFrame.sendSigR(eSignalRMsgType.eOutChMove, str2, str1, i2, i3); // dsp, dsp_chno
         }
 
         internal void reDraw()
