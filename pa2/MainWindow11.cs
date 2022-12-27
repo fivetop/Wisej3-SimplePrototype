@@ -61,7 +61,7 @@ namespace pa
                     string l1 = "다원방송시작";
                     g.Log(l1 + p.chno.ToString() + " : " + line);
                     dBAccess.Eventvms(l1, msg.chno.ToString() + "번 채널", line);
-                    SendSigR("PLAYING", eSignalRMsgType.ePlaying, msg.seqno, msg.chno);
+                    SendSigR("PLAYCHECK", eSignalRMsgType.ePlayCheck, msg.seqno, msg.chno);
 
                     // window3 처리 
                     break;

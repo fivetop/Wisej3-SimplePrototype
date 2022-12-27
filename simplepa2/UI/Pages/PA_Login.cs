@@ -53,6 +53,7 @@ namespace simplepa2.UI.Pages
 			Application.Session["isloggedon"] = "true";
 			Application.Session["login_id"] = t1.FirstOrDefault().login_id;
 			Application.Session["user_name"] = t1.FirstOrDefault().user_name;
+			Application.LoadTheme("LSMaterial-3"); //"Material-3" .
 			Application.MainPage = new PA_MainFrame();
 			this.Hide();
 			this.Dispose();

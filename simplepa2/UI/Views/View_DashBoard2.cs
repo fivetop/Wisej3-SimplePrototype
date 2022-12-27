@@ -18,6 +18,8 @@ namespace simplepa2.UI.Views
 
 		internal void reDraw()
 		{
+			if (Eventbs.DataSource == null) 
+				return;
 			Eventbs.Filter = "alarm=0";
 			Eventbs.Sort = "write_time DESC";
 			reDraw2();

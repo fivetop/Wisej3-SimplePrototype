@@ -278,8 +278,9 @@ namespace simplepa2.UI.Pages
             Application.Session["login_id"] = "";
             Application.Session["user_name"] = "";
 
-            LoginPage loginPage = new LoginPage();
-            loginPage.Show();
+            Application.LoadTheme("LSMaterial-3"); //"Material-3" .
+            Application.MainPage = new PA_Login();
+            Application.MainPage.Show();
             this.Dispose(true);
         }
 
@@ -307,7 +308,7 @@ namespace simplepa2.UI.Pages
 
         internal void RcvSigR(SignalRMsg msg1)
         {
-            string addinfo = "";
+            string addinfo = msg1.EMNAME;
             bool disp = true;
             LabelON(9, true);
 
@@ -352,6 +353,8 @@ namespace simplepa2.UI.Pages
                     break;
                 case eSignalRMsgType.ePlay:
                     view_BBSEMChannel2.reDraw();
+                    break;
+                case eSignalRMsgType.ePlayCheck :
                     break;
                 case eSignalRMsgType.ePlayEnd:
                     view_BBSEMChannel2.reDraw();
