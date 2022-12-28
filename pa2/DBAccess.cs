@@ -337,6 +337,8 @@ namespace pa
                         r1.devicein = "";
                         r1.deviceinch = 0;
                         DeviceChannel.Rows.Add(r1);
+                        var t2 = Dbsave<DeviceChannel>("DeviceChannels", (DataRow)r1);
+
                     }
 
                     int num = 1;
@@ -356,6 +358,7 @@ namespace pa
                         r1.deviceinch = 0;
                         num++;
                         DeviceChannel.Rows.Add(r1);
+                        var t2 = Dbsave<DeviceChannel>("DeviceChannels", (DataRow)r1);
                     }
                     //Tam.DeviceChannelTableAdapter.Update(Ds1.DeviceChannel);
                 }

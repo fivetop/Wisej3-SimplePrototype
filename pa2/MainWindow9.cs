@@ -166,22 +166,25 @@ namespace pa
             {
                 if (MainDSPIP != "")
                 {
+                    dBAccess.Device = dBAccess.Dbread<DeviceDataTable>("Devices");
                     gs1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
-                    gs2 = gl.danteDevice._DanteDevice.Where(p => p.device == 9);
                     // DSP 
                     saveDBDSP(gs1);
-                    // DSP Ch
+                    // dsp 저장후 읽어와서 해당 디바이스 아이디로 상세정보 저장 , dsp ch info 저장 
+                    dBAccess.Device = dBAccess.Dbread<DeviceDataTable>("Devices");
                     dBAccess.saveDBDSPCH(gs1);
-                    saveDBDSPCH(gs1);
+
+                    gs2 = gl.danteDevice._DanteDevice.Where(p => p.device == 9);
                     // sound card
                     saveDBDSP(gs2);
 
                     // 스피커 저장 
-                    saveDBSP();
+                    gs1 = gl.danteDevice._DanteDevice.ToList();
+                    saveDB_Speaker(gs1);
                     // 자산 업데이트 deviceid, ip
-                    updateAsset();
                     // EMBs 저장 
-                    saveDBEMBs();
+                    // DBAccess.updateAsset();
+                    // DBAccess.SaveEMBs();
                 }
                 else
                 {
@@ -215,32 +218,6 @@ namespace pa
             dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
         }
 
-        private void updateAsset()
-        {
-            //DBAccess.updateAsset();
-        }
-        private void saveDBEMBs()
-        {
-            //DBAccess.SaveEMBs();
-        }
-
-        private void saveDBSP()
-        {
-            var gs1 = gl.danteDevice._DanteDevice.ToList();
-            saveDBDSP(gs1);
-        }
-
-        public void saveDBDSP_SC()
-        {
-            var gs1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
-            var gs2 = gl.danteDevice._DanteDevice.Where(p => p.device == 9);
-
-            saveDBDSP(gs1);
-            saveDBDSP(gs2);
-            saveDBDSPCH(gs1);
-        }
-
-
         // dsp , sound card 저장
         private void saveDBDSP(IEnumerable<Device> gs1)
         {
@@ -249,19 +226,9 @@ namespace pa
                 foreach (var t1 in gs1)
                 {
                     var s1 = dBAccess.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
-                    if (s1 != null)
-                    {
-                        continue;
-                    }
-
+                    if (s1 != null) continue;
                     dBAccess.NewDeviceRow(t1, 1);
-                    if (t1.DeviceName.Contains("MA1000T") || t1.DeviceName.Contains("MA2000T"))
-                    {
-                        //Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
-                        dBAccess.NewDeviceRow(t1, 2);
-                    }
                 }
-                //Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
             }
             catch (Exception e1)
             {
@@ -269,14 +236,27 @@ namespace pa
             }
         }
 
-        // dsp 저장후 상세정보 저장 
-        // dsp ch info 저장 
-        private void saveDBDSPCH(IEnumerable<Device> gs1)
+        // speaker 저장
+        private void saveDB_Speaker(IEnumerable<Device> gs1)
         {
-            dBAccess.saveDBDSPCH(gs1);
+            try
+            {
+                foreach (var t1 in gs1)
+                {
+                    var s1 = dBAccess.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    if (s1 != null) continue;
+                    dBAccess.NewDeviceRow(t1, 1);
+                    if (t1.DeviceName.Contains("MA1000T") || t1.DeviceName.Contains("MA2000T"))
+                    {
+                        dBAccess.NewDeviceRow(t1, 2);
+                    }
+                }
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.Message);
+            }
         }
-
-
 
         // 콤보 변경 
         private void _combo_SelectionChanged(object sender, SelectionChangedEventArgs e)

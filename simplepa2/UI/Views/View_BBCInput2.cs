@@ -83,6 +83,7 @@ namespace simplepa2.UI.Views
                 var t3 = t1.DataBoundItem;
                 DeviceChannelRow t2 = (DeviceChannelRow)((System.Data.DataRowView)t3).Row;
                 var t4 = dataSet1.Device.FindByDeviceId (t2.DeviceId);
+                if (t4 == null) continue;
                 t1.Cells["Column1"].Value = t4.DeviceName;
             }
         }

@@ -500,6 +500,9 @@ namespace simplepa2
                 m2.err = 0;
                 m2.fire = 0;
                 m2.emtest = 0;
+                m2.em_address = "";
+                m2.em_description = "";
+                m2.em_images= "";
                 Ds1.EMServer.Rows.Add(m2);
                 Tam.EMServerTableAdapter.Update(Ds1.EMServer);
             }
