@@ -55,8 +55,8 @@ namespace gClass
                 var nc1 = gl.networkCardList.First(p=>p.NetworkCardName == gl.NetworkCardName);
                 if(nc1 != null)
                 {
-                    nc1.NetworkCardNo = gl.NetworkCardNo;
-                    nc1.NetworkCardmDNS = gl.NetworkCardmDNS;
+                    gl.NetworkCardNo = nc1.NetworkCardNo;
+                    gl.NetworkCardmDNS = nc1.NetworkCardmDNS;
                 }
             }
 

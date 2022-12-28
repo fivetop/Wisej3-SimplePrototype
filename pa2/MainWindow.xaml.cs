@@ -54,7 +54,7 @@ namespace pa
         bool TestAlarm { get; set; } = false;
 
         public AThreadClass AThread { get; set; } = new AThreadClass();
-        public  DeviceDataTable _DanteDevice { get; set; }
+        public DeviceDataTable _DanteDevice { get; set; }
 
         static System.Timers.Timer Devicetimer { get; set; } = new System.Timers.Timer(10000);
         public AThread aThread { get; set; } = new AThread();
@@ -182,9 +182,20 @@ namespace pa
             // 다중 방송 초기화 처리 
             // 시험을 위해 막음 - 서비스시 오픈 처리 
             InitMultiBS();
+            NetworkInit();
+            initUI();
+            aThread.Start();
+            bThread.Start();
 
+            systemcheck();
+            g.Log("Initialize OK..");
+            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
+        }
+
+        private void NetworkInit()
+        {
             gl.NetWorkCardFind();
-            g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName );
+            g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName);
 
             if (gl.NetworkCardName != "이더넷")
             {
@@ -192,8 +203,8 @@ namespace pa
                 {
                     g.Log("Card initial err.."); // opencap
                 }
-                else 
-                { 
+                else
+                {
                     g.Log("Device Check Thread running..");
                     AThread.OnSpeakerCheck += AThread_OnSpeakerCheck;
                     AThread.OnAliveChk += AThread_OnAliveChk;
@@ -207,13 +218,6 @@ namespace pa
             // DSP thread start
             BSThreadClass.Start();
 
-            initUI();
-            aThread.Start();
-            bThread.Start();
-
-            systemcheck();
-            g.Log("Initialize OK..");
-            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
         }
 
         private int systemcheck()
@@ -247,22 +251,25 @@ namespace pa
             ComboBoxColumn.ItemsSource = null;
             ComboBoxColumn.ItemsSource = dsp_vol;
 
-            foreach (var t1 in _DanteDevice)
-            {
-                if (t1.device != 2)
-                    continue;
-                dsp_name.Add(t1.DeviceName);
-            }
-            ComboBoxColumn1.ItemsSource = null;
-            ComboBoxColumn1.ItemsSource = dsp_name;
+            if (_DanteDevice != null)
+            { 
+                foreach (var t1 in _DanteDevice)
+                {
+                    if (t1.device != 2)
+                        continue;
+                    dsp_name.Add(t1.DeviceName);
+                }
+                ComboBoxColumn1.ItemsSource = null;
+                ComboBoxColumn1.ItemsSource = dsp_name;
 
-            foreach (var t1 in _DanteDevice)
-            {
-                t1.path = sel(t1.DeviceName, t1.chspk);
+                foreach (var t1 in _DanteDevice)
+                {
+                    t1.path = sel(t1.DeviceName, t1.chspk);
+                }
+                var t2 = _DanteDevice.Where(p => p.device == 0).ToList();
+                _lv2.ItemsSource = null;
+                _lv2.ItemsSource = t2.ToList();
             }
-            var t2 = _DanteDevice.Where(p => p.device == 0).ToList();
-            _lv2.ItemsSource = null;
-            _lv2.ItemsSource = t2.ToList();
 
             List<string> cl = new List<string>();
 
@@ -289,9 +296,10 @@ namespace pa
             {
                 Resolver.intfindx = t3.NetworkCardmDNS;
                 Resolver.localIP = t3.ipv4;
-                EMServerRow.net_dante = t3.ipv4;
                 g.resolver = new Resolver();
                 g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
+                if(EMServerRow != null)
+                    EMServerRow.net_dante = t3.ipv4;
             }
             catch (Exception e1)
             {
@@ -406,8 +414,8 @@ namespace pa
 
         private void _mlog_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if (App.Current.MainWindow.Visibility == Visibility.Visible)
-                _tray.MinimizeToTray();
+            //if (App.Current.MainWindow.Visibility == Visibility.Visible)
+            //    _tray.MinimizeToTray();
         }
         private void AliveTimerJob()
         {
@@ -531,7 +539,6 @@ namespace pa
             msg1.Guid = testGuid;
             msg1.Msgtype = eSignalRMsgType.eStop;
             g.mainWindow.RcvSigR(msg1);
-
         }
 
         // 오디오 처리용 
@@ -542,8 +549,17 @@ namespace pa
 
         private void _but6_Click(object sender, RoutedEventArgs e)
         {
-            dBAccess.RemoveEMServer("EMServers", EMServerRow.EMServerId);
-            dBAccess.Dbsave<EMServerRow>("EMServers", EMServerRow);
+            gl.XMLDanteDevice(true);
+            NetworkInit();
+            initUI();
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.Msgtype = eSignalRMsgType.eScanAll;
+            msg1.message = "Scan All";
+            msg1.EMNAME = "ALL";
+            g.mainWindow.RcvSigR(msg1);
+
+            //dBAccess.RemoveEMServer("EMServers", EMServerRow.EMServerId);
+            //dBAccess.Dbsave<EMServerRow>("EMServers", EMServerRow);
 
             //SendSigR("PLAYING", eSignalRMsgType.ePlaying, 1, 0);
             //SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd, 0, 0);

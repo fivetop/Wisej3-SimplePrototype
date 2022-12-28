@@ -559,6 +559,8 @@ namespace pa
                 return;
 
             findDSP = true;
+            bool Dsp_detection = false;
+
             List<string> t21 = new List<string>();
             List<string> t31 = new List<string>();
 
@@ -611,15 +613,16 @@ namespace pa
                             g.Log("--------------------------------------------------------------------------------");
                             g.Log("Find DSP Controller IP : " + t5.ip_dspctrl + " " + t31[i]);
                             g.Log("--------------------------------------------------------------------------------");
-                            findDSP = true;
+                            Dsp_detection = true;
                             _maindsp.Text = "Find DSP Controller IP : " + t5.ip_dspctrl + " " + t31[i];
                             MainDSPName = t31[i];
                             MainDSPIP = t5.ip_dspctrl;
+                            break;
                         }
                     }
                 }
             }
-            if(findDSP)
+            if(Dsp_detection)
                 SaveDB();
             findDSP = false;
         }

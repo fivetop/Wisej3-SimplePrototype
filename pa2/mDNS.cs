@@ -415,9 +415,12 @@ namespace pa
 				socket.Client.SetSocketOption( SocketOptionLevel.IP, SocketOptionName.AddMembership, options );
 			}
 			catch (Exception e1)
-			{ 
+			{
+				Console.WriteLine(e1.Message);
+				g.Log("intfindx Error : " + intfindx.ToString());
+
 			}
-        }
+		}
 
 		public void StartListening()
 		{
