@@ -152,6 +152,7 @@
     </Content>
     <Content Include="applicationhost.config" />
     <Content Include="DB\datav2.csv" />
+    <Content Include="DB\datav3.csv" />
     <None Include="imgs\nav-quit-777.png" />
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
@@ -182,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_SiteDetailForm.resx">
       <DependentUpon>Comp_SiteDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_ZoneBuildingPanels.resx">
+      <DependentUpon>Comp_ZoneBuildingPanels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_ZoneButton.resx">
       <DependentUpon>Comp_ZoneButton.cs</DependentUpon>
@@ -973,6 +977,12 @@
     </Compile>
     <Compile Include="UI\Components\Comp_SiteDetailForm.designer.cs">
       <DependentUpon>Comp_SiteDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_ZoneBuildingPanels.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_ZoneBuildingPanels.Designer.cs">
+      <DependentUpon>Comp_ZoneBuildingPanels.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_ZoneButton.cs">
       <SubType>Component</SubType>

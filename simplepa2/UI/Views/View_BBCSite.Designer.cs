@@ -34,13 +34,9 @@
             this.pn_listFrame = new Wisej.Web.Panel();
             this.fpn_sitePanel = new Wisej.Web.FlowLayoutPanel();
             this.pn_siteBar = new Wisej.Web.Panel();
-            this.bt_siteAdd = new Wisej.Web.Button();
             this.label23 = new Wisej.Web.Label();
-            this.spa_siteTableAdapter1 = new simplepa2.DataSet1TableAdapters.spa_siteTableAdapter();
-            this.siteDataDetailTableAdapter1 = new simplepa2.DataSet1TableAdapters.siteDataDetailTableAdapter();
             this.dataSet11 = new simplepa2.DataSet1();
-            this.spa_bd_structTableAdapter1 = new simplepa2.DataSet1TableAdapters.spa_bd_structTableAdapter();
-            this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
+            this.emServerNDeviceNameTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerNDeviceNameTableAdapter();
             this.panel1.SuspendLayout();
             this.pn_listFrame.SuspendLayout();
             this.pn_siteBar.SuspendLayout();
@@ -101,27 +97,12 @@
             // pn_siteBar
             // 
             this.pn_siteBar.BackColor = System.Drawing.Color.Transparent;
-            this.pn_siteBar.Controls.Add(this.bt_siteAdd);
             this.pn_siteBar.Controls.Add(this.label23);
             this.pn_siteBar.Dock = Wisej.Web.DockStyle.Top;
             this.pn_siteBar.Location = new System.Drawing.Point(20, 20);
             this.pn_siteBar.Name = "pn_siteBar";
             this.pn_siteBar.Size = new System.Drawing.Size(600, 52);
             this.pn_siteBar.TabIndex = 50;
-            // 
-            // bt_siteAdd
-            // 
-            this.bt_siteAdd.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.bt_siteAdd.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.bt_siteAdd.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.bt_siteAdd.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_siteAdd.Location = new System.Drawing.Point(500, 0);
-            this.bt_siteAdd.Margin = new Wisej.Web.Padding(0);
-            this.bt_siteAdd.Name = "bt_siteAdd";
-            this.bt_siteAdd.Size = new System.Drawing.Size(100, 32);
-            this.bt_siteAdd.TabIndex = 34;
-            this.bt_siteAdd.Text = "추가";
-            this.bt_siteAdd.Click += new System.EventHandler(this.bt_siteAdd_Click);
             // 
             // label23
             // 
@@ -131,29 +112,17 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(223, 32);
             this.label23.TabIndex = 33;
-            this.label23.Text = "사이트 리스트";
+            this.label23.Text = "등록 사이트";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // spa_siteTableAdapter1
-            // 
-            this.spa_siteTableAdapter1.ClearBeforeFill = true;
-            // 
-            // siteDataDetailTableAdapter1
-            // 
-            this.siteDataDetailTableAdapter1.ClearBeforeFill = true;
             // 
             // dataSet11
             // 
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // spa_bd_structTableAdapter1
+            // emServerNDeviceNameTableAdapter1
             // 
-            this.spa_bd_structTableAdapter1.ClearBeforeFill = true;
-            // 
-            // deviceTableAdapter1
-            // 
-            this.deviceTableAdapter1.ClearBeforeFill = true;
+            this.emServerNDeviceNameTableAdapter1.ClearBeforeFill = true;
             // 
             // View_BBCSite
             // 
@@ -176,15 +145,11 @@
         private Wisej.Web.Panel panel1;
         private Wisej.Web.Panel pn_listFrame;
         private Wisej.Web.Panel pn_siteBar;
-        private Wisej.Web.Button bt_siteAdd;
         private Wisej.Web.Label label23;
         private Wisej.Web.Panel pn_Spacer;
-        private DataSet1TableAdapters.spa_siteTableAdapter spa_siteTableAdapter1;
-        private DataSet1TableAdapters.siteDataDetailTableAdapter siteDataDetailTableAdapter1;
         private DataSet1 dataSet11;
         private Wisej.Web.FlowLayoutPanel fpn_sitePanel;
         private Wisej.Web.Panel pn_contents;
-        private DataSet1TableAdapters.spa_bd_structTableAdapter spa_bd_structTableAdapter1;
-        private DataSet1TableAdapters.DeviceTableAdapter deviceTableAdapter1;
+        private DataSet1TableAdapters.EMServerNDeviceNameTableAdapter emServerNDeviceNameTableAdapter1;
     }
 }

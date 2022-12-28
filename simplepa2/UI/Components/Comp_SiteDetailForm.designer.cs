@@ -28,27 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle36 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle37 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle38 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle39 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle40 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle41 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle42 = new Wisej.Web.DataGridViewCellStyle();
             this.panel3 = new Wisej.Web.Panel();
             this.panel8 = new Wisej.Web.Panel();
-            this.dg_buildingStruct = new Wisej.Web.DataGridView();
-            this.bd_id = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.bd_name = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.max_floor_no = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.under_floor_no = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.num_of_stairs = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.bd_fire_id = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.bd_description = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel11 = new Wisej.Web.Panel();
+            this.textBox4 = new Wisej.Web.TextBox();
+            this.label8 = new Wisej.Web.Label();
+            this.panel9 = new Wisej.Web.Panel();
+            this.textBox3 = new Wisej.Web.TextBox();
+            this.label5 = new Wisej.Web.Label();
+            this.panel5 = new Wisej.Web.Panel();
+            this.textBox2 = new Wisej.Web.TextBox();
+            this.label4 = new Wisej.Web.Label();
+            this.panel1 = new Wisej.Web.Panel();
+            this.textBox1 = new Wisej.Web.TextBox();
+            this.label3 = new Wisej.Web.Label();
             this.line2 = new Wisej.Web.Line();
             this.panel34 = new Wisej.Web.Panel();
-            this.bt_newBuilding = new Wisej.Web.Button();
-            this.bt_selectBuildDelete = new Wisej.Web.Button();
             this.label2 = new Wisej.Web.Label();
             this.label22 = new Wisej.Web.Label();
             this.panel7 = new Wisej.Web.Panel();
@@ -58,14 +53,11 @@
             this.pic_upload = new Wisej.Web.Upload();
             this.bt_deletePic = new Wisej.Web.Button();
             this.panel10 = new Wisej.Web.Panel();
-            this.cb_emServer = new Wisej.Web.ComboBox();
+            this.tb_emName = new Wisej.Web.TextBox();
             this.label7 = new Wisej.Web.Label();
             this.panel2 = new Wisej.Web.Panel();
             this.tb_siteDescrip = new Wisej.Web.TextBox();
             this.label6 = new Wisej.Web.Label();
-            this.panel1 = new Wisej.Web.Panel();
-            this.tb_siteContact = new Wisej.Web.TextBox();
-            this.label5 = new Wisej.Web.Label();
             this.panel4 = new Wisej.Web.Panel();
             this.tb_siteAddr = new Wisej.Web.TextBox();
             this.label1 = new Wisej.Web.Label();
@@ -77,17 +69,18 @@
             this.bt_delete = new Wisej.Web.Button();
             this.bt_store = new Wisej.Web.Button();
             this.label26 = new Wisej.Web.Label();
-            this.panel22 = new Wisej.Web.Panel();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_buildingStruct)).BeginInit();
+            this.panel11.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel89.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_sitePreImage)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel35.SuspendLayout();
             this.panel27.SuspendLayout();
@@ -100,7 +93,6 @@
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel89);
             this.panel3.Controls.Add(this.panel27);
-            this.panel3.Controls.Add(this.panel22);
             this.panel3.Dock = Wisej.Web.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -112,110 +104,162 @@
             // 
             this.panel8.AutoSize = true;
             this.panel8.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel8.Controls.Add(this.dg_buildingStruct);
+            this.panel8.Controls.Add(this.panel11);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Controls.Add(this.panel5);
+            this.panel8.Controls.Add(this.panel1);
             this.panel8.Controls.Add(this.line2);
             this.panel8.Controls.Add(this.panel34);
-            this.panel8.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(20, 513);
+            this.panel8.Dock = Wisej.Web.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(20, 457);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new Wisej.Web.Padding(20);
-            this.panel8.Size = new System.Drawing.Size(620, 287);
+            this.panel8.Size = new System.Drawing.Size(620, 302);
             this.panel8.TabIndex = 169;
             // 
-            // dg_buildingStruct
+            // panel11
             // 
-            this.dg_buildingStruct.AutoGenerateColumns = false;
-            this.dg_buildingStruct.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.bd_id,
-            this.bd_name,
-            this.max_floor_no,
-            this.under_floor_no,
-            this.num_of_stairs,
-            this.bd_fire_id,
-            this.bd_description});
-            this.dg_buildingStruct.Dock = Wisej.Web.DockStyle.Fill;
-            this.dg_buildingStruct.Location = new System.Drawing.Point(20, 58);
-            this.dg_buildingStruct.Name = "dg_buildingStruct";
-            this.dg_buildingStruct.RowHeadersVisible = false;
-            this.dg_buildingStruct.Size = new System.Drawing.Size(580, 209);
-            this.dg_buildingStruct.TabIndex = 171;
-            this.dg_buildingStruct.CellMouseDoubleClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dg_buildingStruct_CellMouseDoubleClick);
+            this.panel11.Controls.Add(this.textBox4);
+            this.panel11.Controls.Add(this.label8);
+            this.panel11.Dock = Wisej.Web.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(20, 226);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
+            this.panel11.Size = new System.Drawing.Size(580, 56);
+            this.panel11.TabIndex = 184;
             // 
-            // bd_id
+            // textBox4
             // 
-            this.bd_id.DataPropertyName = "bd_id";
-            dataGridViewCellStyle36.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.bd_id.DefaultCellStyle = dataGridViewCellStyle36;
-            this.bd_id.HeaderText = "빌딩ID";
-            this.bd_id.MaximumWidth = 80;
-            this.bd_id.Name = "bd_id";
-            this.bd_id.Width = 60;
+            this.textBox4.AutoSize = false;
+            this.textBox4.Dock = Wisej.Web.DockStyle.Fill;
+            this.textBox4.Location = new System.Drawing.Point(123, 20);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(457, 36);
+            this.textBox4.TabIndex = 139;
+            this.textBox4.Text = "논의 후 결정";
             // 
-            // bd_name
+            // label8
             // 
-            this.bd_name.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
-            this.bd_name.DataPropertyName = "bd_name";
-            dataGridViewCellStyle37.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.bd_name.DefaultCellStyle = dataGridViewCellStyle37;
-            this.bd_name.HeaderText = "빌딩명";
-            this.bd_name.MaximumWidth = 180;
-            this.bd_name.MinimumWidth = 50;
-            this.bd_name.Name = "bd_name";
-            this.bd_name.Width = 140;
+            this.label8.AutoEllipsis = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Dock = Wisej.Web.DockStyle.Left;
+            this.label8.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label8.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label8.Location = new System.Drawing.Point(0, 20);
+            this.label8.Margin = new Wisej.Web.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(123, 36);
+            this.label8.TabIndex = 136;
+            this.label8.Text = "ZPC 수량";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // max_floor_no
+            // panel9
             // 
-            this.max_floor_no.DataPropertyName = "max_floor_no";
-            dataGridViewCellStyle38.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.max_floor_no.DefaultCellStyle = dataGridViewCellStyle38;
-            this.max_floor_no.HeaderText = "최고층";
-            this.max_floor_no.MaximumWidth = 80;
-            this.max_floor_no.MinimumWidth = 20;
-            this.max_floor_no.Name = "max_floor_no";
-            this.max_floor_no.Width = 60;
+            this.panel9.Controls.Add(this.textBox3);
+            this.panel9.Controls.Add(this.label5);
+            this.panel9.Dock = Wisej.Web.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(20, 170);
+            this.panel9.Name = "panel9";
+            this.panel9.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
+            this.panel9.Size = new System.Drawing.Size(580, 56);
+            this.panel9.TabIndex = 183;
             // 
-            // under_floor_no
+            // textBox3
             // 
-            this.under_floor_no.DataPropertyName = "under_floor_no";
-            dataGridViewCellStyle39.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.under_floor_no.DefaultCellStyle = dataGridViewCellStyle39;
-            this.under_floor_no.HeaderText = "지하층";
-            this.under_floor_no.MaximumWidth = 80;
-            this.under_floor_no.MinimumWidth = 20;
-            this.under_floor_no.Name = "under_floor_no";
-            this.under_floor_no.Width = 60;
+            this.textBox3.AutoSize = false;
+            this.textBox3.Dock = Wisej.Web.DockStyle.Fill;
+            this.textBox3.Location = new System.Drawing.Point(123, 20);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(457, 36);
+            this.textBox3.TabIndex = 139;
+            this.textBox3.Text = "논의 후 결정";
             // 
-            // num_of_stairs
+            // label5
             // 
-            this.num_of_stairs.DataPropertyName = "num_of_stairs";
-            dataGridViewCellStyle40.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.num_of_stairs.DefaultCellStyle = dataGridViewCellStyle40;
-            this.num_of_stairs.HeaderText = "계단수";
-            this.num_of_stairs.MaximumWidth = 80;
-            this.num_of_stairs.MinimumWidth = 20;
-            this.num_of_stairs.Name = "num_of_stairs";
-            this.num_of_stairs.Width = 60;
+            this.label5.AutoEllipsis = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = Wisej.Web.DockStyle.Left;
+            this.label5.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label5.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label5.Location = new System.Drawing.Point(0, 20);
+            this.label5.Margin = new Wisej.Web.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 36);
+            this.label5.TabIndex = 136;
+            this.label5.Text = "앰프 수량";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // bd_fire_id
+            // panel5
             // 
-            this.bd_fire_id.DataPropertyName = "bd_fire_id";
-            dataGridViewCellStyle41.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.bd_fire_id.DefaultCellStyle = dataGridViewCellStyle41;
-            this.bd_fire_id.HeaderText = "화재수신번호";
-            this.bd_fire_id.MaximumWidth = 150;
-            this.bd_fire_id.MinimumWidth = 20;
-            this.bd_fire_id.Name = "bd_fire_id";
+            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Dock = Wisej.Web.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(20, 114);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
+            this.panel5.Size = new System.Drawing.Size(580, 56);
+            this.panel5.TabIndex = 182;
             // 
-            // bd_description
+            // textBox2
             // 
-            this.bd_description.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
-            this.bd_description.DataPropertyName = "bd_description";
-            dataGridViewCellStyle42.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.bd_description.DefaultCellStyle = dataGridViewCellStyle42;
-            this.bd_description.HeaderText = "부가설명";
-            this.bd_description.MaximumWidth = 1000;
-            this.bd_description.MinimumWidth = 100;
-            this.bd_description.Name = "bd_description";
+            this.textBox2.AutoSize = false;
+            this.textBox2.Dock = Wisej.Web.DockStyle.Fill;
+            this.textBox2.Location = new System.Drawing.Point(123, 20);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(457, 36);
+            this.textBox2.TabIndex = 139;
+            this.textBox2.Text = "논의 후 결정";
+            // 
+            // label4
+            // 
+            this.label4.AutoEllipsis = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Dock = Wisej.Web.DockStyle.Left;
+            this.label4.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label4.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label4.Location = new System.Drawing.Point(0, 20);
+            this.label4.Margin = new Wisej.Web.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 36);
+            this.label4.TabIndex = 136;
+            this.label4.Text = "등록 Zone 수";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = Wisej.Web.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(20, 58);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
+            this.panel1.Size = new System.Drawing.Size(580, 56);
+            this.panel1.TabIndex = 181;
+            // 
+            // textBox1
+            // 
+            this.textBox1.AutoSize = false;
+            this.textBox1.Dock = Wisej.Web.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(123, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(457, 36);
+            this.textBox1.TabIndex = 139;
+            this.textBox1.Text = "논의 후 결정";
+            // 
+            // label3
+            // 
+            this.label3.AutoEllipsis = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = Wisej.Web.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label3.Location = new System.Drawing.Point(0, 20);
+            this.label3.Margin = new Wisej.Web.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 36);
+            this.label3.TabIndex = 136;
+            this.label3.Text = "등록 빌딩 수";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // line2
             // 
@@ -227,8 +271,6 @@
             // 
             // panel34
             // 
-            this.panel34.Controls.Add(this.bt_newBuilding);
-            this.panel34.Controls.Add(this.bt_selectBuildDelete);
             this.panel34.Controls.Add(this.label2);
             this.panel34.Controls.Add(this.label22);
             this.panel34.Dock = Wisej.Web.DockStyle.Top;
@@ -236,34 +278,6 @@
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(580, 37);
             this.panel34.TabIndex = 161;
-            // 
-            // bt_newBuilding
-            // 
-            this.bt_newBuilding.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.bt_newBuilding.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.bt_newBuilding.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.bt_newBuilding.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_newBuilding.Location = new System.Drawing.Point(376, 0);
-            this.bt_newBuilding.Margin = new Wisej.Web.Padding(0);
-            this.bt_newBuilding.Name = "bt_newBuilding";
-            this.bt_newBuilding.Size = new System.Drawing.Size(100, 32);
-            this.bt_newBuilding.TabIndex = 165;
-            this.bt_newBuilding.Text = "신규";
-            this.bt_newBuilding.Click += new System.EventHandler(this.bt_newBuilding_Click);
-            // 
-            // bt_selectBuildDelete
-            // 
-            this.bt_selectBuildDelete.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.bt_selectBuildDelete.BackColor = System.Drawing.Color.FromName("@button2BG");
-            this.bt_selectBuildDelete.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.bt_selectBuildDelete.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_selectBuildDelete.Location = new System.Drawing.Point(480, 0);
-            this.bt_selectBuildDelete.Margin = new Wisej.Web.Padding(0);
-            this.bt_selectBuildDelete.Name = "bt_selectBuildDelete";
-            this.bt_selectBuildDelete.Size = new System.Drawing.Size(100, 32);
-            this.bt_selectBuildDelete.TabIndex = 163;
-            this.bt_selectBuildDelete.Text = "선택수정";
-            this.bt_selectBuildDelete.Click += new System.EventHandler(this.bt_selectBuildDelete_Click);
             // 
             // label2
             // 
@@ -276,7 +290,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(344, 24);
             this.label2.TabIndex = 134;
-            this.label2.Text = "관리 건물";
+            this.label2.Text = "관리 요약";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label22
@@ -297,7 +311,7 @@
             // panel7
             // 
             this.panel7.Dock = Wisej.Web.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(20, 493);
+            this.panel7.Location = new System.Drawing.Point(20, 437);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(620, 20);
             this.panel7.TabIndex = 168;
@@ -309,7 +323,6 @@
             this.panel89.Controls.Add(this.panel6);
             this.panel89.Controls.Add(this.panel10);
             this.panel89.Controls.Add(this.panel2);
-            this.panel89.Controls.Add(this.panel1);
             this.panel89.Controls.Add(this.panel4);
             this.panel89.Controls.Add(this.panel35);
             this.panel89.Controls.Add(this.line5);
@@ -317,7 +330,8 @@
             this.panel89.Location = new System.Drawing.Point(20, 72);
             this.panel89.Name = "panel89";
             this.panel89.Padding = new Wisej.Web.Padding(20);
-            this.panel89.Size = new System.Drawing.Size(620, 421);
+            this.panel89.ShowCloseButton = false;
+            this.panel89.Size = new System.Drawing.Size(620, 365);
             this.panel89.TabIndex = 167;
             // 
             // panel6
@@ -326,7 +340,7 @@
             this.panel6.Controls.Add(this.pic_upload);
             this.panel6.Controls.Add(this.bt_deletePic);
             this.panel6.Dock = Wisej.Web.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(20, 281);
+            this.panel6.Location = new System.Drawing.Point(20, 225);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
             this.panel6.Size = new System.Drawing.Size(580, 120);
@@ -368,23 +382,23 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.cb_emServer);
+            this.panel10.Controls.Add(this.tb_emName);
             this.panel10.Controls.Add(this.label7);
             this.panel10.Dock = Wisej.Web.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(20, 225);
+            this.panel10.Location = new System.Drawing.Point(20, 169);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
             this.panel10.Size = new System.Drawing.Size(580, 56);
             this.panel10.TabIndex = 180;
             // 
-            // cb_emServer
+            // tb_emName
             // 
-            this.cb_emServer.DisplayMember = "name";
-            this.cb_emServer.Dock = Wisej.Web.DockStyle.Fill;
-            this.cb_emServer.Location = new System.Drawing.Point(123, 20);
-            this.cb_emServer.Name = "cb_emServer";
-            this.cb_emServer.Size = new System.Drawing.Size(457, 36);
-            this.cb_emServer.TabIndex = 139;
+            this.tb_emName.AutoSize = false;
+            this.tb_emName.Dock = Wisej.Web.DockStyle.Fill;
+            this.tb_emName.Location = new System.Drawing.Point(123, 20);
+            this.tb_emName.Name = "tb_emName";
+            this.tb_emName.Size = new System.Drawing.Size(457, 36);
+            this.tb_emName.TabIndex = 139;
             // 
             // label7
             // 
@@ -406,7 +420,7 @@
             this.panel2.Controls.Add(this.tb_siteDescrip);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Dock = Wisej.Web.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(20, 169);
+            this.panel2.Location = new System.Drawing.Point(20, 113);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
             this.panel2.Size = new System.Drawing.Size(580, 56);
@@ -435,41 +449,6 @@
             this.label6.TabIndex = 136;
             this.label6.Text = "사이트 설명";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tb_siteContact);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Dock = Wisej.Web.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(20, 113);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(580, 56);
-            this.panel1.TabIndex = 169;
-            // 
-            // tb_siteContact
-            // 
-            this.tb_siteContact.AutoSize = false;
-            this.tb_siteContact.Dock = Wisej.Web.DockStyle.Fill;
-            this.tb_siteContact.Location = new System.Drawing.Point(123, 20);
-            this.tb_siteContact.Name = "tb_siteContact";
-            this.tb_siteContact.Size = new System.Drawing.Size(457, 36);
-            this.tb_siteContact.TabIndex = 138;
-            // 
-            // label5
-            // 
-            this.label5.AutoEllipsis = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = Wisej.Web.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label5.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label5.Location = new System.Drawing.Point(0, 20);
-            this.label5.Margin = new Wisej.Web.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 36);
-            this.label5.TabIndex = 136;
-            this.label5.Text = "연락처";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel4
             // 
@@ -598,17 +577,6 @@
             this.label26.Text = "사이트 편집";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel22
-            // 
-            this.panel22.AutoScroll = true;
-            this.panel22.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel22.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
-            this.panel22.Location = new System.Drawing.Point(20, 20);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(620, 780);
-            this.panel22.TabIndex = 58;
-            this.panel22.Text = "listPanel";
-            // 
             // Comp_SiteDetailForm
             // 
             this.Controls.Add(this.panel3);
@@ -618,15 +586,16 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dg_buildingStruct)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
             this.panel89.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_sitePreImage)).EndInit();
             this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
             this.panel27.ResumeLayout(false);
@@ -638,11 +607,6 @@
 
         private Wisej.Web.Panel panel3;
         private Wisej.Web.Panel panel8;
-        private Wisej.Web.DataGridView dg_buildingStruct;
-        private Wisej.Web.DataGridViewTextBoxColumn bd_name;
-        private Wisej.Web.DataGridViewTextBoxColumn max_floor_no;
-        private Wisej.Web.DataGridViewTextBoxColumn under_floor_no;
-        private Wisej.Web.Button bt_selectBuildDelete;
         private Wisej.Web.Line line2;
         private Wisej.Web.Panel panel34;
         private Wisej.Web.Label label2;
@@ -661,23 +625,26 @@
         private Wisej.Web.Button bt_delete;
         private Wisej.Web.Button bt_store;
         private Wisej.Web.Label label26;
-        private Wisej.Web.Panel panel22;
         private Wisej.Web.Panel panel10;
-        private Wisej.Web.ComboBox cb_emServer;
         private Wisej.Web.Label label7;
         private Wisej.Web.Panel panel2;
         private Wisej.Web.TextBox tb_siteDescrip;
         private Wisej.Web.Label label6;
-        private Wisej.Web.Panel panel1;
-        private Wisej.Web.TextBox tb_siteContact;
-        private Wisej.Web.Label label5;
-        private Wisej.Web.Button bt_newBuilding;
         private Wisej.Web.Upload pic_upload;
         private Wisej.Web.Button bt_deletePic;
         private Wisej.Web.PictureBox pb_sitePreImage;
-        private Wisej.Web.DataGridViewTextBoxColumn num_of_stairs;
-        private Wisej.Web.DataGridViewTextBoxColumn bd_fire_id;
-        private Wisej.Web.DataGridViewTextBoxColumn bd_description;
-        private Wisej.Web.DataGridViewTextBoxColumn bd_id;
+        private Wisej.Web.Panel panel11;
+        private Wisej.Web.TextBox textBox4;
+        private Wisej.Web.Label label8;
+        private Wisej.Web.Panel panel9;
+        private Wisej.Web.TextBox textBox3;
+        private Wisej.Web.Label label5;
+        private Wisej.Web.Panel panel5;
+        private Wisej.Web.TextBox textBox2;
+        private Wisej.Web.Label label4;
+        private Wisej.Web.Panel panel1;
+        private Wisej.Web.TextBox textBox1;
+        private Wisej.Web.Label label3;
+        private Wisej.Web.TextBox tb_emName;
     }
 }

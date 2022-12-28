@@ -32,9 +32,9 @@ namespace simplepa2.UI.Components
                 return;
 
             // 01. 데이터를 담고
-            this.zoneData = dataList.aStr_Zonelist;
+           // this.zoneData = dataList.aStr_Zonelist;
             this.strFloorName = dataList.floorName;
-            this.bAddButton = isAddButton;  
+            this.bAddButton = isAddButton;
 
             // 02. Zone 리스트를 만들고, Zone의 번호와 Zone명을 입력 > 상기는 예제로 이름을 두번 넣었음 
             zoneList = new List<Comp_ZoneButton>();

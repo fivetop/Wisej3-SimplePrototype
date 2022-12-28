@@ -12,7 +12,7 @@ namespace simplepa2.UI.Components
     {
         /*===========  데이터 바인딩 프로퍼티 ===========  */
         // 선택된 사이트 한개의 일반 정보 
-        private DataSet1.spa_siteRow currentSiteDataSet;
+        private DataSet1.EMServerNDeviceNameRow currentSiteDataSet;
 
         // 사이트에서 관리하는 E.M의 장비를 매칭하는 Device List 
         private DataRow[] deviceDataDR;
@@ -27,8 +27,7 @@ namespace simplepa2.UI.Components
         // 빌딩의 플로어 편집 팝업
         private Popup_BBCSiteForm popup_BBCSiteForm;
 
-        /*===========  파일업로드 관련 프로퍼티 ===========  */
-        private string strFileUploadPath =@"C:\SimplePA2" + "\\Uploaded_Files\\";
+        /*===========  파일업로드 관련 프로퍼티 ===========  */        
         private Stream fileStream;
         private String uploadFilename;
         private HttpPostedFile httpFileCol; 
@@ -43,54 +42,32 @@ namespace simplepa2.UI.Components
             LoadImage(e.Files[0]);
         }
 
-        public Comp_SiteDetailForm(int site_index, DataRow siteDataSet, 
-            DataSet1.spa_bd_structDataTable buildingsList, DataSet1.siteDataDetailDataTable floorDataList,
-            DataRow[] deviceDataTable)
+        public Comp_SiteDetailForm(DataRow siteDataSet)
         {
             InitializeComponent();
-            
-            this.currentSiteDataSet = siteDataSet as DataSet1.spa_siteRow;
-            this.dsBuildingListDataTable = buildingsList;
-            this.dsAllBuildingFloorDetailDataTable = floorDataList;
-            this.deviceDataDR = deviceDataTable;
 
-            initUI(site_index);
+            this.currentSiteDataSet = siteDataSet as DataSet1.EMServerNDeviceNameRow;
+
+            initUI();
         }
 
-        public void initUI(int site_index)
+        public void initUI()
         {
             // 사이트 일반정보 로드
-            tb_siteAddr.Text = currentSiteDataSet.site_address;
-            tb_siteName.Text = currentSiteDataSet.site_name;
-            tb_siteDescrip.Text = currentSiteDataSet.site_description;
-            tb_siteContact.Text = currentSiteDataSet.site_contact;
-            cb_emServer.DataSource = deviceDataDR;                  
-            
-            
-            // Combo 위치를 저장된 데이터로 돌려주기 
-            foreach (DataSet1.DeviceRow singleDevice in deviceDataDR)
-            {
-                if (singleDevice.DeviceId == currentSiteDataSet.em_device_id)
-                {
-                    cb_emServer.SelectedItem = singleDevice;
-                }
-            }
+            tb_siteAddr.Text = currentSiteDataSet.em_address;
+            tb_emName.Text = currentSiteDataSet.DeviceName;
+            tb_siteDescrip.Text = currentSiteDataSet.em_description;
+            tb_siteName.Text = currentSiteDataSet.EMNAME;
 
             // 사이트의 이미지 설정 + 업로드된 이미지의 위치와 이미지명 
-            if (currentSiteDataSet.site_images == null)
+            if (currentSiteDataSet.em_images == null)
             {
                 this.pb_sitePreImage.ImageSource = "Images\\site_image_none.png";
             }
             else
             {
-                this.pb_sitePreImage.ImageSource = currentSiteDataSet.site_images;
+                this.pb_sitePreImage.ImageSource = currentSiteDataSet.em_images;
             }
-
-            // 사이트의 빌딩 정보 로드해서 아래의 표에 넣어주기
-            //   DataRow[] dataRowArray = this.dataSet11.spa_site.Select("site_index = '" + site_index + "'");
-            DataRow[] siteBuidlingRowArray = this.dsBuildingListDataTable.Select("refer_site_id= '" + site_index + "'");
-            this.dg_buildingStruct.DataSource = siteBuidlingRowArray;
-
         }
 
         public void setImages(string imagePath)
@@ -100,13 +77,13 @@ namespace simplepa2.UI.Components
         private void bt_deletePic_Click(object sender, EventArgs e)
         {
             this.pb_sitePreImage.ImageSource = "Images\\site_image_none.png";
-            this.currentSiteDataSet.site_images = "";
+            this.currentSiteDataSet.em_images = "";
         }
 
-        public void initUIBySiteData(int site_index, DataRow siteDataSet)
+        public void initUIBySiteData(DataRow siteDataSet)
         {
-            this.currentSiteDataSet = siteDataSet as DataSet1.spa_siteRow;
-            initUI(site_index);
+            this.currentSiteDataSet = siteDataSet as DataSet1.EMServerNDeviceNameRow;
+            initUI();
         }
 
         private void bt_newBuilding_Click(object sender, EventArgs e)
@@ -116,20 +93,6 @@ namespace simplepa2.UI.Components
 
             // 폼 클린 해줌
             this.popup_BBCSiteForm.setupUItoNewForm();
-        }
-
-        private void bt_selectBuildDelete_Click(object sender, EventArgs e)
-        {
-            var dgv = this.dg_buildingStruct;
-
-            var selectedIndexCount = dgv.SelectedRows.Count;
-
-            // 그리드에서 한개를 눌렀을 경우 해당 데이터의 팝업을 열어줌 
-            if(selectedIndexCount == 1)
-            {                
-                var r1 = dgv.Rows[0];
-                openSiteFloorPopupWithDataGridIndex(r1.DataBoundItem as DataSet1.spa_bd_structRow);
-            }            
         }
 
         /*  빌딩 정보 그리드에서 마우스 클릭이 들어올 경우 */

@@ -34,12 +34,8 @@ namespace simplepa2.UI.Views
         public void siteDataReLoad()
         {
             try
-            {
-                this.siteDataDetailTableAdapter1.Fill(this.dataSet11.siteDataDetail);
-                this.spa_bd_structTableAdapter1.Fill(this.dataSet11.spa_bd_struct);
-                this.deviceTableAdapter1.Fill(this.dataSet11.Device);
-                this.spa_siteTableAdapter1.Fill(this.dataSet11.spa_site);
-
+            {      
+                this.emServerNDeviceNameTableAdapter1.Fill(this.dataSet11.EMServerNDeviceName);
             }
             catch(Exception e)
             {
@@ -52,7 +48,7 @@ namespace simplepa2.UI.Views
         {
             try
             {
-                foreach (var siteData in this.dataSet11.spa_site)
+                foreach (var siteData in this.dataSet11.EMServerNDeviceName)
                 {
                     this.siteCardList.Add(new Comp_SiteCard(siteData));
                 }
@@ -75,14 +71,14 @@ namespace simplepa2.UI.Views
             // 01. 사용자가 눌른 사이트 번호 알기 args 에서 
             try
             {
-                DataRow[] dataSiteArray = this.dataSet11.spa_site.Select("site_index = '" + site_index + "'");
-                DataRow[] dataDeviceArray = this.dataSet11.Device.Select("device = '" + EMDeviceID + "'");            
-
-                if (dataSiteArray.Length == 1)   // 뭔가 있으면 고른거임
+                foreach (var siteData in this.dataSet11.EMServerNDeviceName)
                 {
-                    //setupSiteFormData(this.dataSet11.siteDataDetail, site_index, dataRowArray[0], this.dataSet11.spa_bd_struct);
-                    setupSiteFormView(site_index, dataSiteArray[0], this.dataSet11.spa_bd_struct, this.dataSet11.siteDataDetail, dataDeviceArray);
+                    if(siteData.EMServerId == site_index)
+                    {
+                        setupSiteFormView(siteData);
+                    }
                 }
+
             } catch (Exception e)
             {
                 MessageBox.Show("LAW TEXT : BBC 사이트를 클릭하여 로드 하는 중  예외 발생 - " + e.ToString());
@@ -94,20 +90,18 @@ namespace simplepa2.UI.Views
 
 
         /*사이트 View 폼을 셋업 해주는 기능 */
-        private void setupSiteFormView(int site_index, DataRow siteDataSet, 
-            DataSet1.spa_bd_structDataTable buildingsList, DataSet1.siteDataDetailDataTable floorDataList,
-            DataRow[] deviceDataList) 
+        private void setupSiteFormView(DataRow emSiteDataSet) 
         {
             try
             {
                 if (comp_SiteDetailForm == null)
                 {
-                    comp_SiteDetailForm = new Comp_SiteDetailForm(site_index, siteDataSet, buildingsList, floorDataList, deviceDataList);
+                    comp_SiteDetailForm = new Comp_SiteDetailForm(emSiteDataSet);
                     this.pn_contents.Controls.Add(comp_SiteDetailForm);
                 }
                 else
                 {
-                    comp_SiteDetailForm.initUIBySiteData(site_index, siteDataSet);
+                    comp_SiteDetailForm.initUIBySiteData(emSiteDataSet);
                 }
             } catch (Exception e)
             {

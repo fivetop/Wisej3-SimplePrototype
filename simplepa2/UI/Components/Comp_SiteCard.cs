@@ -7,13 +7,13 @@ namespace simplepa2.UI.Components
     {
         public event CompSiteCardVerify verifyClick;
 
-		private DataSet1.spa_siteRow siteData;
+		private DataSet1.EMServerNDeviceNameRow siteData;
         public Comp_SiteCard()
         {
             InitializeComponent();
         }
 
-		public Comp_SiteCard(DataSet1.spa_siteRow siteData)
+		public Comp_SiteCard(DataSet1.EMServerNDeviceNameRow siteData)
         {
 			InitializeComponent();
 
@@ -22,18 +22,29 @@ namespace simplepa2.UI.Components
 		}
 
 		public void setupDBData()
-        {
-			this.lb_siteName.Text = this.siteData.site_name;
-			this.lb_dong.Text = Convert.ToString(this.siteData.num_of_bd);
-			this.lb_address.Text = this.siteData.site_address;
-			this.lb_description.Text = this.siteData.site_description;
-			this.lb_BServer.Text = Convert.ToString(this.siteData.em_device_id);
-			this.pb_siteImage.ImageSource = this.siteData.site_images;
+		{
+			this.lb_siteName.Text = this.siteData.EMNAME;
+			this.lb_siteNo.Text = Convert.ToString(this.siteData.EMServerId);
+			this.lb_siteAddress.Text = this.siteData.em_address;
+			this.lb_EMName.Text = this.siteData.DeviceName;
+			
+			if(this.siteData.state == "ON")
+            {
+				this.lb_EMStatus.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
+			}
+            else
+            {
+				this.lb_EMStatus.BackColor = System.Drawing.Color.FromName("@bStatusRed");
+			}
+			
+
+			
+			this.pb_siteImage.ImageSource = this.siteData.em_images;
 		}
 
 		private void bt_siteDelete_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("추가 작업 : 해당 사이트 데이터를 삭제 합니다.");
+			MessageBox.Show("LAW TEXT : 사이트삭제는 지원되지 않습니다.");
 
 		}
 
@@ -41,7 +52,7 @@ namespace simplepa2.UI.Components
 		{
 			if (this.verifyClick != null)
 			{
-				verifyClick(this, new CompSiteCardVerifyClickedEventArgs(this.siteData.site_index));
+				verifyClick(this, new CompSiteCardVerifyClickedEventArgs(this.siteData.EMServerId));
 			}
 		}
 

@@ -47,7 +47,6 @@
             this.panel8.Dock = Wisej.Web.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(5, 5);
             this.panel8.Name = "panel8";
-            this.panel8.Padding = new Wisej.Web.Padding(20);
             this.panel8.Size = new System.Drawing.Size(1310, 170);
             this.panel8.TabIndex = 6;
             // 
@@ -56,17 +55,17 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Dock = Wisej.Web.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 70);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1270, 80);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1310, 120);
             this.flowLayoutPanel1.TabIndex = 164;
             // 
             // panel11
             // 
             this.panel11.Dock = Wisej.Web.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(20, 50);
+            this.panel11.Location = new System.Drawing.Point(0, 30);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1270, 20);
+            this.panel11.Size = new System.Drawing.Size(1310, 20);
             this.panel11.TabIndex = 136;
             // 
             // panel10
@@ -74,9 +73,9 @@
             this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.Controls.Add(this.ch_floor);
             this.panel10.Dock = Wisej.Web.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(20, 20);
+            this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1270, 30);
+            this.panel10.Size = new System.Drawing.Size(1310, 30);
             this.panel10.TabIndex = 52;
             // 
             // ch_floor
@@ -87,7 +86,7 @@
             this.ch_floor.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.ch_floor.Location = new System.Drawing.Point(0, 0);
             this.ch_floor.Name = "ch_floor";
-            this.ch_floor.Size = new System.Drawing.Size(52, 24);
+            this.ch_floor.Size = new System.Drawing.Size(52, 23);
             this.ch_floor.TabIndex = 3;
             this.ch_floor.Text = "1층";
             this.ch_floor.CheckedChanged += new System.EventHandler(this.ch_floor_CheckedChanged);

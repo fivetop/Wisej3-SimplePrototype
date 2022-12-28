@@ -39,8 +39,12 @@
             this.bt_StoreData = new Wisej.Web.Button();
             this.bt_SelectLoading = new Wisej.Web.Button();
             this.bt_ImportCSV = new Wisej.Web.Button();
+            this.assetsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
+            this.dataSet11 = new simplepa2.DataSet1();
+            this.emServerTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerTableAdapter();
             this.pn_ViewMain.SuspendLayout();
             this.pn_TopBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // pn_ViewMain
@@ -117,12 +121,13 @@
             this.lb_BuildingName.Name = "lb_BuildingName";
             this.lb_BuildingName.Size = new System.Drawing.Size(68, 32);
             this.lb_BuildingName.TabIndex = 92;
-            this.lb_BuildingName.Text = "건물명";
+            this.lb_BuildingName.Text = "사이트명";
             this.lb_BuildingName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cb_SiteName
             // 
             this.cb_SiteName.AutoSize = false;
+            this.cb_SiteName.DisplayMember = "EMNAME";
             this.cb_SiteName.Location = new System.Drawing.Point(71, 0);
             this.cb_SiteName.Margin = new Wisej.Web.Padding(0);
             this.cb_SiteName.Name = "cb_SiteName";
@@ -172,6 +177,19 @@
             this.bt_ImportCSV.Text = "Import CSV";
             this.bt_ImportCSV.Click += new System.EventHandler(this.bt_ImportCSV_Click);
             // 
+            // assetsTableAdapter1
+            // 
+            this.assetsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // emServerTableAdapter1
+            // 
+            this.emServerTableAdapter1.ClearBeforeFill = true;
+            // 
             // View_BBCZone
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -181,9 +199,9 @@
             this.Name = "View_BBCZone";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
-            this.Load += new System.EventHandler(this.View_BBCZone_Load);
             this.pn_ViewMain.ResumeLayout(false);
             this.pn_TopBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,5 +217,8 @@
         private Wisej.Web.Button bt_ExportCSV;
         private Wisej.Web.Panel pn_Contents;
         private Wisej.Web.Button bt_WholeSelect;
+        private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter1;
+        private DataSet1 dataSet11;
+        private DataSet1TableAdapters.EMServerTableAdapter emServerTableAdapter1;
     }
 }

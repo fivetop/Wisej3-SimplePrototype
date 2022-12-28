@@ -78,5 +78,10 @@ namespace simplepa2.UI.Popups
             public string floorIdenfier { get; set; }
             public string floorValue { get; set; }
         }
+
+        private void bt_generateNewFloor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

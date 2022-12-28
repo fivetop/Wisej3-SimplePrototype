@@ -30,21 +30,20 @@
         {
             this.pn_cardFrame = new Wisej.Web.Panel();
             this.pn_forthRow = new Wisej.Web.Panel();
-            this.lb_BServer = new Wisej.Web.Label();
+            this.lb_EMStatus = new Wisej.Web.Label();
             this.lb_titleBServer = new Wisej.Web.Label();
             this.pn_thirdRow = new Wisej.Web.Panel();
-            this.lb_description = new Wisej.Web.Label();
+            this.lb_EMName = new Wisej.Web.Label();
             this.lb_titleDescription = new Wisej.Web.Label();
             this.pn_secondRow = new Wisej.Web.Panel();
-            this.lb_address = new Wisej.Web.Label();
-            this.lb_titleAddress = new Wisej.Web.Label();
+            this.lb_siteAddress = new Wisej.Web.Label();
+            this.lb2 = new Wisej.Web.Label();
             this.pn_firstRow = new Wisej.Web.Panel();
-            this.lb_dong = new Wisej.Web.Label();
-            this.lb_titleBdNum = new Wisej.Web.Label();
+            this.lb_siteNo = new Wisej.Web.Label();
+            this.lb1 = new Wisej.Web.Label();
             this.pb_siteImage = new Wisej.Web.PictureBox();
             this.pn_spacer = new Wisej.Web.Panel();
             this.pn_topPanel = new Wisej.Web.Panel();
-            this.bt_siteDelete = new Wisej.Web.Button();
             this.bt_siteVerfiy = new Wisej.Web.Button();
             this.lb_siteName = new Wisej.Web.Label();
             this.pn_cardFrame.SuspendLayout();
@@ -75,7 +74,7 @@
             // 
             // pn_forthRow
             // 
-            this.pn_forthRow.Controls.Add(this.lb_BServer);
+            this.pn_forthRow.Controls.Add(this.lb_EMStatus);
             this.pn_forthRow.Controls.Add(this.lb_titleBServer);
             this.pn_forthRow.Dock = Wisej.Web.DockStyle.Top;
             this.pn_forthRow.Location = new System.Drawing.Point(20, 329);
@@ -83,20 +82,21 @@
             this.pn_forthRow.Size = new System.Drawing.Size(250, 36);
             this.pn_forthRow.TabIndex = 168;
             // 
-            // lb_BServer
+            // lb_EMStatus
             // 
-            this.lb_BServer.AutoEllipsis = true;
-            this.lb_BServer.BackColor = System.Drawing.Color.Transparent;
-            this.lb_BServer.Dock = Wisej.Web.DockStyle.Fill;
-            this.lb_BServer.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_BServer.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_BServer.Location = new System.Drawing.Point(76, 0);
-            this.lb_BServer.Margin = new Wisej.Web.Padding(0);
-            this.lb_BServer.Name = "lb_BServer";
-            this.lb_BServer.Size = new System.Drawing.Size(174, 36);
-            this.lb_BServer.TabIndex = 137;
-            this.lb_BServer.Text = "동작 중";
-            this.lb_BServer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_EMStatus.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left)));
+            this.lb_EMStatus.AutoEllipsis = true;
+            this.lb_EMStatus.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
+            this.lb_EMStatus.CssStyle = "border-radius:15px";
+            this.lb_EMStatus.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_EMStatus.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_EMStatus.Location = new System.Drawing.Point(101, 9);
+            this.lb_EMStatus.Margin = new Wisej.Web.Padding(0);
+            this.lb_EMStatus.Name = "lb_EMStatus";
+            this.lb_EMStatus.Size = new System.Drawing.Size(20, 20);
+            this.lb_EMStatus.TabIndex = 146;
+            this.lb_EMStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lb_titleBServer
             // 
@@ -108,14 +108,14 @@
             this.lb_titleBServer.Location = new System.Drawing.Point(0, 0);
             this.lb_titleBServer.Margin = new Wisej.Web.Padding(0);
             this.lb_titleBServer.Name = "lb_titleBServer";
-            this.lb_titleBServer.Size = new System.Drawing.Size(76, 36);
+            this.lb_titleBServer.Size = new System.Drawing.Size(100, 36);
             this.lb_titleBServer.TabIndex = 136;
-            this.lb_titleBServer.Text = "방송서버";
+            this.lb_titleBServer.Text = "서버상태";
             this.lb_titleBServer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pn_thirdRow
             // 
-            this.pn_thirdRow.Controls.Add(this.lb_description);
+            this.pn_thirdRow.Controls.Add(this.lb_EMName);
             this.pn_thirdRow.Controls.Add(this.lb_titleDescription);
             this.pn_thirdRow.Dock = Wisej.Web.DockStyle.Top;
             this.pn_thirdRow.Location = new System.Drawing.Point(20, 293);
@@ -123,20 +123,20 @@
             this.pn_thirdRow.Size = new System.Drawing.Size(250, 36);
             this.pn_thirdRow.TabIndex = 167;
             // 
-            // lb_description
+            // lb_EMName
             // 
-            this.lb_description.AutoEllipsis = true;
-            this.lb_description.BackColor = System.Drawing.Color.Transparent;
-            this.lb_description.Dock = Wisej.Web.DockStyle.Fill;
-            this.lb_description.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_description.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_description.Location = new System.Drawing.Point(76, 0);
-            this.lb_description.Margin = new Wisej.Web.Padding(0);
-            this.lb_description.Name = "lb_description";
-            this.lb_description.Size = new System.Drawing.Size(174, 36);
-            this.lb_description.TabIndex = 137;
-            this.lb_description.Text = "대명리조트 강원";
-            this.lb_description.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_EMName.AutoEllipsis = true;
+            this.lb_EMName.BackColor = System.Drawing.Color.Transparent;
+            this.lb_EMName.Dock = Wisej.Web.DockStyle.Fill;
+            this.lb_EMName.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_EMName.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_EMName.Location = new System.Drawing.Point(100, 0);
+            this.lb_EMName.Margin = new Wisej.Web.Padding(0);
+            this.lb_EMName.Name = "lb_EMName";
+            this.lb_EMName.Size = new System.Drawing.Size(150, 36);
+            this.lb_EMName.TabIndex = 137;
+            this.lb_EMName.Text = "대명리조트 강원";
+            this.lb_EMName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lb_titleDescription
             // 
@@ -148,55 +148,55 @@
             this.lb_titleDescription.Location = new System.Drawing.Point(0, 0);
             this.lb_titleDescription.Margin = new Wisej.Web.Padding(0);
             this.lb_titleDescription.Name = "lb_titleDescription";
-            this.lb_titleDescription.Size = new System.Drawing.Size(76, 36);
+            this.lb_titleDescription.Size = new System.Drawing.Size(100, 36);
             this.lb_titleDescription.TabIndex = 136;
-            this.lb_titleDescription.Text = "설명";
+            this.lb_titleDescription.Text = "메인E.M";
             this.lb_titleDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pn_secondRow
             // 
-            this.pn_secondRow.Controls.Add(this.lb_address);
-            this.pn_secondRow.Controls.Add(this.lb_titleAddress);
+            this.pn_secondRow.Controls.Add(this.lb_siteAddress);
+            this.pn_secondRow.Controls.Add(this.lb2);
             this.pn_secondRow.Dock = Wisej.Web.DockStyle.Top;
             this.pn_secondRow.Location = new System.Drawing.Point(20, 257);
             this.pn_secondRow.Name = "pn_secondRow";
             this.pn_secondRow.Size = new System.Drawing.Size(250, 36);
             this.pn_secondRow.TabIndex = 166;
             // 
-            // lb_address
+            // lb_siteAddress
             // 
-            this.lb_address.AutoEllipsis = true;
-            this.lb_address.BackColor = System.Drawing.Color.Transparent;
-            this.lb_address.Dock = Wisej.Web.DockStyle.Fill;
-            this.lb_address.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_address.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_address.Location = new System.Drawing.Point(76, 0);
-            this.lb_address.Margin = new Wisej.Web.Padding(0);
-            this.lb_address.Name = "lb_address";
-            this.lb_address.Size = new System.Drawing.Size(174, 36);
-            this.lb_address.TabIndex = 137;
-            this.lb_address.Text = "강원도 홍천";
-            this.lb_address.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_siteAddress.AutoEllipsis = true;
+            this.lb_siteAddress.BackColor = System.Drawing.Color.Transparent;
+            this.lb_siteAddress.Dock = Wisej.Web.DockStyle.Fill;
+            this.lb_siteAddress.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_siteAddress.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_siteAddress.Location = new System.Drawing.Point(100, 0);
+            this.lb_siteAddress.Margin = new Wisej.Web.Padding(0);
+            this.lb_siteAddress.Name = "lb_siteAddress";
+            this.lb_siteAddress.Size = new System.Drawing.Size(150, 36);
+            this.lb_siteAddress.TabIndex = 137;
+            this.lb_siteAddress.Text = "강원도 홍천";
+            this.lb_siteAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lb_titleAddress
+            // lb2
             // 
-            this.lb_titleAddress.AutoEllipsis = true;
-            this.lb_titleAddress.BackColor = System.Drawing.Color.Transparent;
-            this.lb_titleAddress.Dock = Wisej.Web.DockStyle.Left;
-            this.lb_titleAddress.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_titleAddress.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_titleAddress.Location = new System.Drawing.Point(0, 0);
-            this.lb_titleAddress.Margin = new Wisej.Web.Padding(0);
-            this.lb_titleAddress.Name = "lb_titleAddress";
-            this.lb_titleAddress.Size = new System.Drawing.Size(76, 36);
-            this.lb_titleAddress.TabIndex = 136;
-            this.lb_titleAddress.Text = "주소";
-            this.lb_titleAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb2.AutoEllipsis = true;
+            this.lb2.BackColor = System.Drawing.Color.Transparent;
+            this.lb2.Dock = Wisej.Web.DockStyle.Left;
+            this.lb2.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb2.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb2.Location = new System.Drawing.Point(0, 0);
+            this.lb2.Margin = new Wisej.Web.Padding(0);
+            this.lb2.Name = "lb2";
+            this.lb2.Size = new System.Drawing.Size(100, 36);
+            this.lb2.TabIndex = 136;
+            this.lb2.Text = "사이트주소";
+            this.lb2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pn_firstRow
             // 
-            this.pn_firstRow.Controls.Add(this.lb_dong);
-            this.pn_firstRow.Controls.Add(this.lb_titleBdNum);
+            this.pn_firstRow.Controls.Add(this.lb_siteNo);
+            this.pn_firstRow.Controls.Add(this.lb1);
             this.pn_firstRow.Dock = Wisej.Web.DockStyle.Top;
             this.pn_firstRow.Location = new System.Drawing.Point(20, 211);
             this.pn_firstRow.Name = "pn_firstRow";
@@ -204,35 +204,35 @@
             this.pn_firstRow.Size = new System.Drawing.Size(250, 46);
             this.pn_firstRow.TabIndex = 165;
             // 
-            // lb_dong
+            // lb_siteNo
             // 
-            this.lb_dong.AutoEllipsis = true;
-            this.lb_dong.BackColor = System.Drawing.Color.Transparent;
-            this.lb_dong.Dock = Wisej.Web.DockStyle.Fill;
-            this.lb_dong.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_dong.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_dong.Location = new System.Drawing.Point(76, 10);
-            this.lb_dong.Margin = new Wisej.Web.Padding(0);
-            this.lb_dong.Name = "lb_dong";
-            this.lb_dong.Size = new System.Drawing.Size(174, 36);
-            this.lb_dong.TabIndex = 137;
-            this.lb_dong.Text = "2동";
-            this.lb_dong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_siteNo.AutoEllipsis = true;
+            this.lb_siteNo.BackColor = System.Drawing.Color.Transparent;
+            this.lb_siteNo.Dock = Wisej.Web.DockStyle.Fill;
+            this.lb_siteNo.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_siteNo.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_siteNo.Location = new System.Drawing.Point(100, 10);
+            this.lb_siteNo.Margin = new Wisej.Web.Padding(0);
+            this.lb_siteNo.Name = "lb_siteNo";
+            this.lb_siteNo.Size = new System.Drawing.Size(150, 36);
+            this.lb_siteNo.TabIndex = 137;
+            this.lb_siteNo.Text = "2동";
+            this.lb_siteNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lb_titleBdNum
+            // lb1
             // 
-            this.lb_titleBdNum.AutoEllipsis = true;
-            this.lb_titleBdNum.BackColor = System.Drawing.Color.Transparent;
-            this.lb_titleBdNum.Dock = Wisej.Web.DockStyle.Left;
-            this.lb_titleBdNum.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_titleBdNum.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_titleBdNum.Location = new System.Drawing.Point(0, 10);
-            this.lb_titleBdNum.Margin = new Wisej.Web.Padding(0);
-            this.lb_titleBdNum.Name = "lb_titleBdNum";
-            this.lb_titleBdNum.Size = new System.Drawing.Size(76, 36);
-            this.lb_titleBdNum.TabIndex = 136;
-            this.lb_titleBdNum.Text = "건물 수";
-            this.lb_titleBdNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb1.AutoEllipsis = true;
+            this.lb1.BackColor = System.Drawing.Color.Transparent;
+            this.lb1.Dock = Wisej.Web.DockStyle.Left;
+            this.lb1.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb1.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb1.Location = new System.Drawing.Point(0, 10);
+            this.lb1.Margin = new Wisej.Web.Padding(0);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(100, 36);
+            this.lb1.TabIndex = 136;
+            this.lb1.Text = "사이트번호";
+            this.lb1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pb_siteImage
             // 
@@ -255,7 +255,6 @@
             // pn_topPanel
             // 
             this.pn_topPanel.BackColor = System.Drawing.Color.Transparent;
-            this.pn_topPanel.Controls.Add(this.bt_siteDelete);
             this.pn_topPanel.Controls.Add(this.bt_siteVerfiy);
             this.pn_topPanel.Controls.Add(this.lb_siteName);
             this.pn_topPanel.Dock = Wisej.Web.DockStyle.Top;
@@ -263,20 +262,6 @@
             this.pn_topPanel.Name = "pn_topPanel";
             this.pn_topPanel.Size = new System.Drawing.Size(250, 30);
             this.pn_topPanel.TabIndex = 52;
-            // 
-            // bt_siteDelete
-            // 
-            this.bt_siteDelete.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.bt_siteDelete.BackColor = System.Drawing.Color.FromName("@button2BG");
-            this.bt_siteDelete.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.bt_siteDelete.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_siteDelete.Location = new System.Drawing.Point(127, 0);
-            this.bt_siteDelete.Margin = new Wisej.Web.Padding(0);
-            this.bt_siteDelete.Name = "bt_siteDelete";
-            this.bt_siteDelete.Size = new System.Drawing.Size(60, 32);
-            this.bt_siteDelete.TabIndex = 36;
-            this.bt_siteDelete.Text = "삭제";
-            this.bt_siteDelete.Click += new System.EventHandler(this.bt_siteDelete_Click);
             // 
             // bt_siteVerfiy
             // 
@@ -302,7 +287,7 @@
             this.lb_siteName.Name = "lb_siteName";
             this.lb_siteName.Size = new System.Drawing.Size(250, 30);
             this.lb_siteName.TabIndex = 17;
-            this.lb_siteName.Text = "오크동";
+            this.lb_siteName.Text = "사이트명";
             this.lb_siteName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Comp_SiteCard
@@ -327,22 +312,21 @@
 
         private Wisej.Web.Panel pn_cardFrame;
         private Wisej.Web.Panel pn_forthRow;
-        private Wisej.Web.Label lb_BServer;
         private Wisej.Web.Label lb_titleBServer;
         private Wisej.Web.Panel pn_thirdRow;
-        private Wisej.Web.Label lb_description;
+        private Wisej.Web.Label lb_EMName;
         private Wisej.Web.Label lb_titleDescription;
         private Wisej.Web.Panel pn_secondRow;
-        private Wisej.Web.Label lb_address;
-        private Wisej.Web.Label lb_titleAddress;
+        private Wisej.Web.Label lb_siteAddress;
+        private Wisej.Web.Label lb2;
         private Wisej.Web.Panel pn_firstRow;
-        private Wisej.Web.Label lb_dong;
-        private Wisej.Web.Label lb_titleBdNum;
+        private Wisej.Web.Label lb1;
         private Wisej.Web.Panel pn_spacer;
         private Wisej.Web.Panel pn_topPanel;
-        private Wisej.Web.Button bt_siteDelete;
         private Wisej.Web.Button bt_siteVerfiy;
         private Wisej.Web.Label lb_siteName;
         private Wisej.Web.PictureBox pb_siteImage;
+        private Wisej.Web.Label lb_siteNo;
+        private Wisej.Web.Label lb_EMStatus;
     }
 }
