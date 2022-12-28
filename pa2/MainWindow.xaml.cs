@@ -549,6 +549,11 @@ namespace pa
 
         private void _but6_Click(object sender, RoutedEventArgs e)
         {
+            g._EMClient.WebAPIURL = "http://localhost:9921/api/";
+            dBAccess.DBInit();
+            EMServerRow = dBAccess.EMServerGet();
+            _DanteDevice = dBAccess.Device;
+
             gl.XMLDanteDevice(true);
             NetworkInit();
             initUI();

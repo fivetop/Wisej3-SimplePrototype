@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Timers;
@@ -581,12 +583,19 @@ namespace pa
 
             udpClient udpc1;
             udpc1 = new udpClient();
+
+            // 네트웍카드 인덱스 잡기 위함 
+            IPAddress a1 = IPAddress.Parse("239.16.0.8");
+            var o1 = new MulticastOption(a1, gl.NetworkCardmDNS);
+            //udpc1.udp.Client.Bind( ); // .SetSocketOption( );
+            udpc1.udp.Client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, o1);
+            //udpc1.udp.EnableBroadcast = true;
             udpc1.send("239.16.0.8", 6001, b1);
             //Thread.Sleep(500);
             Console.WriteLine("End...");
             udpc1.Close();
 
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
 
             //LScap.g.CloseCap();
             var t2 = LScap.g.capData1;
