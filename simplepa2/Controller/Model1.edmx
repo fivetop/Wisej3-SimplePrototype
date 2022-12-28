@@ -10,24 +10,24 @@
             <PropertyRef Name="AssetGroupId" />
           </Key>
           <Property Name="AssetGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="text" />
-          <Property Name="AssetId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="AssetId" Type="int" />
         </EntityType>
         <EntityType Name="Assets">
           <Key>
             <PropertyRef Name="AssetId" />
           </Key>
           <Property Name="AssetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="emServer" Type="text" />
-          <Property Name="ip" Type="text" />
-          <Property Name="GroupName" Type="text" />
-          <Property Name="ZoneName" Type="text" />
-          <Property Name="SpeakerName" Type="text" />
-          <Property Name="path" Type="text" />
+          <Property Name="emServer" Type="varchar(max)" />
+          <Property Name="ip" Type="varchar(max)" />
+          <Property Name="GroupName" Type="varchar(max)" />
+          <Property Name="ZoneName" Type="varchar(max)" />
+          <Property Name="SpeakerName" Type="varchar(max)" />
+          <Property Name="path" Type="varchar(max)" />
           <Property Name="floor" Type="int" />
-          <Property Name="DeviceName" Type="text" />
-          <Property Name="state" Type="text" />
-          <Property Name="state_old" Type="text" />
+          <Property Name="DeviceName" Type="varchar(max)" />
+          <Property Name="state" Type="varchar(max)" />
+          <Property Name="state_old" Type="varchar(max)" />
           <Property Name="chk" Type="int" />
           <Property Name="seq" Type="int" />
           <Property Name="ch" Type="int" />
@@ -35,10 +35,10 @@
           <Property Name="em2" Type="int" />
           <Property Name="em3" Type="int" />
           <Property Name="DeviceId" Type="int" />
-          <Property Name="emData" Type="text" />
-          <Property Name="building" Type="text" />
-          <Property Name="floorname" Type="text" />
-          <Property Name="zpc" Type="text" />
+          <Property Name="emData" Type="varchar(max)" />
+          <Property Name="building" Type="varchar(max)" />
+          <Property Name="floorname" Type="varchar(max)" />
+          <Property Name="zpc" Type="varchar(max)" />
           <Property Name="zpci" Type="int" />
           <Property Name="zpco" Type="int" />
         </EntityType>
@@ -47,7 +47,7 @@
             <PropertyRef Name="BSroomid" />
           </Key>
           <Property Name="BSroomid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="user_name" Type="text" />
+          <Property Name="user_name" Type="varchar(max)" />
           <Property Name="state" Type="int" />
           <Property Name="mode" Type="int" />
         </EntityType>
@@ -56,10 +56,10 @@
             <PropertyRef Name="BSTreeId" />
           </Key>
           <Property Name="BSTreeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMNAME" Type="text" />
+          <Property Name="EMNAME" Type="varchar(max)" Nullable="false" />
           <Property Name="wtime" Type="datetime" />
           <Property Name="chno" Type="int" />
-          <Property Name="playing" Type="text" />
+          <Property Name="playing" Type="varchar(max)" />
           <Property Name="AssetId" Type="int" />
           <Property Name="MusicId" Type="int" />
         </EntityType>
@@ -71,7 +71,7 @@
           <Property Name="BSTreeId" Type="int" />
           <Property Name="AssetId" Type="int" />
           <Property Name="MusicId" Type="int" />
-          <Property Name="user_name" Type="text" />
+          <Property Name="user_name" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -79,35 +79,35 @@
           </Key>
           <Property Name="DeviceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="device" Type="int" />
-          <Property Name="ip" Type="text" />
-          <Property Name="ip_dspctrl" Type="text" />
-          <Property Name="name" Type="text" />
-          <Property Name="DeviceName" Type="text" />
-          <Property Name="DanteModelName" Type="text" />
+          <Property Name="ip" Type="varchar(max)" />
+          <Property Name="ip_dspctrl" Type="varchar(max)" />
+          <Property Name="name" Type="varchar(max)" />
+          <Property Name="DeviceName" Type="varchar(max)" />
+          <Property Name="DanteModelName" Type="varchar(max)" />
           <Property Name="chspk" Type="int" />
-          <Property Name="dsp_name" Type="text" />
+          <Property Name="dsp_name" Type="varchar(max)" />
           <Property Name="dsp_chno" Type="int" />
           <Property Name="dsp_vol" Type="int" />
           <Property Name="dsp_vol_em" Type="int" />
-          <Property Name="path" Type="text" />
+          <Property Name="path" Type="varchar(max)" />
           <Property Name="floor_em" Type="int" />
-          <Property Name="emData" Type="text" />
+          <Property Name="emData" Type="varchar(max)" />
           <Property Name="chCount" Type="int" />
           <Property Name="AssetId" Type="int" />
-          <Property Name="EMNAME" Type="text" />
+          <Property Name="EMNAME" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="DeviceChannel">
           <Key>
             <PropertyRef Name="DeviceChnnelId" />
           </Key>
           <Property Name="DeviceChnnelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="chno" Type="text" />
-          <Property Name="chname" Type="text" />
-          <Property Name="dsp_out_ch1" Type="text" />
-          <Property Name="dsp_out_ch2" Type="text" />
+          <Property Name="chno" Type="varchar(max)" />
+          <Property Name="chname" Type="varchar(max)" />
+          <Property Name="dsp_out_ch1" Type="varchar(max)" />
+          <Property Name="dsp_out_ch2" Type="varchar(max)" />
           <Property Name="DeviceId" Type="int" Nullable="false" />
           <Property Name="io" Type="int" />
-          <Property Name="devicein" Type="text" />
+          <Property Name="devicein" Type="varchar(max)" />
           <Property Name="deviceinch" Type="int" />
         </EntityType>
         <EntityType Name="EMBs">
@@ -115,24 +115,24 @@
             <PropertyRef Name="EMBsId" />
           </Key>
           <Property Name="EMBsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="emData" Type="text" />
+          <Property Name="emData" Type="varchar(max)" />
           <Property Name="DeviceId" Type="int" />
-          <Property Name="path" Type="text" />
+          <Property Name="path" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="EMServer">
           <Key>
             <PropertyRef Name="EMServerId" />
           </Key>
           <Property Name="EMServerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMNAME" Type="text" />
-          <Property Name="state" Type="text" />
-          <Property Name="state_old" Type="text" />
-          <Property Name="com_gpio" Type="text" />
-          <Property Name="com_Rtype" Type="text" />
-          <Property Name="net_local" Type="text" />
-          <Property Name="net_dante" Type="text" />
-          <Property Name="dsp_ctrl" Type="text" />
-          <Property Name="dsp_dante" Type="text" />
+          <Property Name="EMNAME" Type="varchar(max)" />
+          <Property Name="state" Type="varchar(max)" />
+          <Property Name="state_old" Type="varchar(max)" />
+          <Property Name="com_gpio" Type="varchar(max)" />
+          <Property Name="com_Rtype" Type="varchar(max)" />
+          <Property Name="net_local" Type="varchar(max)" />
+          <Property Name="net_dante" Type="varchar(max)" />
+          <Property Name="dsp_ctrl" Type="varchar(max)" />
+          <Property Name="dsp_dante" Type="varchar(max)" />
           <Property Name="com_gpio_state" Type="int" />
           <Property Name="com_Rtype_state" Type="int" />
           <Property Name="sw_all" Type="int" />
@@ -143,6 +143,9 @@
           <Property Name="err" Type="int" />
           <Property Name="fire" Type="int" />
           <Property Name="emtest" Type="int" />
+          <Property Name="em_address" Type="varchar(max)" />
+          <Property Name="em_description" Type="varchar(max)" />
+          <Property Name="em_images" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Eventvm">
           <Key>
@@ -150,11 +153,11 @@
           </Key>
           <Property Name="EventVMId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="write_time" Type="datetime" Nullable="false" />
-          <Property Name="event_text" Type="text" />
-          <Property Name="ip" Type="text" />
-          <Property Name="path" Type="text" />
-          <Property Name="DeviceName" Type="text" />
-          <Property Name="state" Type="text" />
+          <Property Name="event_text" Type="varchar(max)" />
+          <Property Name="ip" Type="varchar(max)" />
+          <Property Name="path" Type="varchar(max)" />
+          <Property Name="DeviceName" Type="varchar(max)" />
+          <Property Name="state" Type="varchar(max)" />
           <Property Name="alarm" Type="int" />
         </EntityType>
         <EntityType Name="Holidays">
@@ -163,17 +166,17 @@
           </Key>
           <Property Name="HolidayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="hDate" Type="datetime" Nullable="false" />
-          <Property Name="Description" Type="text" />
+          <Property Name="Description" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Musics">
           <Key>
             <PropertyRef Name="MusicId" />
           </Key>
           <Property Name="MusicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FileName" Type="text" />
-          <Property Name="FileContent" Type="text" />
-          <Property Name="deletable" Type="text" />
-          <Property Name="duration" Type="text" />
+          <Property Name="FileName" Type="varchar(max)" />
+          <Property Name="FileContent" Type="varchar(max)" />
+          <Property Name="deletable" Type="varchar(max)" />
+          <Property Name="duration" Type="varchar(max)" />
         </EntityType>
         <!--생성 중 오류 발생:
 경고 6002: 테이블/뷰 'simplePA.dbo.PlayItem'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
@@ -189,11 +192,11 @@
           <Property Name="playflag_onair" Type="int" Nullable="false" />
           <Property Name="idno" Type="int" Nullable="false" />
           <Property Name="chno" Type="int" Nullable="false" />
-          <Property Name="kind" Type="text" />
-          <Property Name="Name" Type="text" />
+          <Property Name="kind" Type="varchar(max)" />
+          <Property Name="Name" Type="varchar(max)" />
           <Property Name="Start" Type="datetime" />
           <Property Name="End" Type="datetime" />
-          <Property Name="state" Type="text" />
+          <Property Name="state" Type="varchar(max)" />
           <Property Name="playcnt" Type="int" />
           <Property Name="current" Type="datetime" />
           <Property Name="duration" Type="datetime" />
@@ -210,25 +213,25 @@
           <Property Name="Zoom" Type="real" Nullable="false" />
           <Property Name="debug" Type="int" Nullable="false" />
           <Property Name="SpeakerIconSize" Type="int" Nullable="false" />
-          <Property Name="UserName" Type="text" />
-          <Property Name="EMServerIP" Type="text" />
-          <Property Name="ServerIP" Type="text" />
-          <Property Name="ServerPort" Type="text" />
-          <Property Name="Reserved1" Type="text" />
-          <Property Name="Reserved2" Type="text" />
-          <Property Name="Reserved3" Type="text" />
-          <Property Name="Reserved4" Type="text" />
-          <Property Name="Reserved5" Type="text" />
-          <Property Name="Reserved6" Type="text" />
-          <Property Name="Reserved7" Type="text" />
-          <Property Name="Reserved8" Type="text" />
-          <Property Name="Reserved9" Type="text" />
-          <Property Name="Reserved10" Type="text" />
-          <Property Name="Reserved11" Type="text" />
-          <Property Name="GPIOPort" Type="text" />
-          <Property Name="Rport" Type="text" />
-          <Property Name="Reserved15" Type="text" />
-          <Property Name="Reserved16" Type="text" />
+          <Property Name="UserName" Type="varchar(max)" />
+          <Property Name="EMServerIP" Type="varchar(max)" />
+          <Property Name="ServerIP" Type="varchar(max)" />
+          <Property Name="ServerPort" Type="varchar(max)" />
+          <Property Name="Reserved1" Type="varchar(max)" />
+          <Property Name="Reserved2" Type="varchar(max)" />
+          <Property Name="Reserved3" Type="varchar(max)" />
+          <Property Name="Reserved4" Type="varchar(max)" />
+          <Property Name="Reserved5" Type="varchar(max)" />
+          <Property Name="Reserved6" Type="varchar(max)" />
+          <Property Name="Reserved7" Type="varchar(max)" />
+          <Property Name="Reserved8" Type="varchar(max)" />
+          <Property Name="Reserved9" Type="varchar(max)" />
+          <Property Name="Reserved10" Type="varchar(max)" />
+          <Property Name="Reserved11" Type="varchar(max)" />
+          <Property Name="GPIOPort" Type="varchar(max)" />
+          <Property Name="Rport" Type="varchar(max)" />
+          <Property Name="Reserved15" Type="varchar(max)" />
+          <Property Name="Reserved16" Type="varchar(max)" />
           <Property Name="Jigsangbalhwa" Type="int" Nullable="false" />
           <Property Name="SpeakerTimer" Type="int" Nullable="false" />
           <Property Name="inputvolume" Type="real" Nullable="false" />
@@ -236,7 +239,7 @@
           <Property Name="disp" Type="int" Nullable="false" />
           <Property Name="Multi_Ch" Type="int" Nullable="false" />
           <Property Name="SoundDeviceNum" Type="int" Nullable="false" />
-          <Property Name="SoundDeviceName" Type="text" />
+          <Property Name="SoundDeviceName" Type="varchar(max)" />
           <Property Name="Reserved17" Type="int" Nullable="false" />
           <Property Name="scalelength" Type="real" />
           <Property Name="length" Type="real" />
@@ -245,25 +248,25 @@
           <Property Name="noise2" Type="int" />
           <Property Name="dsp_vol" Type="int" Nullable="false" />
           <Property Name="dsp_vol_em" Type="int" Nullable="false" />
-          <Property Name="sms_server" Type="text" />
-          <Property Name="sms_id" Type="text" />
-          <Property Name="sms_pw" Type="text" />
-          <Property Name="sms_rcvno" Type="text" />
+          <Property Name="sms_server" Type="varchar(max)" />
+          <Property Name="sms_id" Type="varchar(max)" />
+          <Property Name="sms_pw" Type="varchar(max)" />
+          <Property Name="sms_rcvno" Type="varchar(max)" />
           <Property Name="Pport" Type="int" Nullable="false" />
-          <Property Name="EmMusic" Type="text" />
+          <Property Name="EmMusic" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="UserTrees">
           <Key>
             <PropertyRef Name="UserTreeId" />
           </Key>
           <Property Name="UserTreeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="user_group" Type="text" />
-          <Property Name="user_name" Type="text" />
-          <Property Name="login_id" Type="text" />
-          <Property Name="login_password" Type="text" />
-          <Property Name="login_password2" Type="text" />
-          <Property Name="mobile" Type="text" />
-          <Property Name="email" Type="text" />
+          <Property Name="user_group" Type="varchar(max)" />
+          <Property Name="user_name" Type="varchar(max)" />
+          <Property Name="login_id" Type="varchar(max)" />
+          <Property Name="login_password" Type="varchar(max)" />
+          <Property Name="login_password2" Type="varchar(max)" />
+          <Property Name="mobile" Type="varchar(max)" />
+          <Property Name="email" Type="varchar(max)" />
         </EntityType>
         <EntityContainer Name="simplePAModelStoreContainer">
           <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" Schema="dbo" store:Type="Tables" />
@@ -308,7 +311,7 @@
           </Key>
           <Property Name="AssetGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="AssetId" Type="Int32" Nullable="false" />
+          <Property Name="AssetId" Type="Int32" />
         </EntityType>
         <EntityType Name="Assets">
           <Key>
@@ -357,7 +360,7 @@
           <Property Name="chno" Type="Int32" />
           <Property Name="AssetId" Type="Int32" />
           <Property Name="MusicId" Type="Int32" />
-          <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="playing" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Device">
@@ -430,6 +433,9 @@
           <Property Name="err" Type="Int32" />
           <Property Name="fire" Type="Int32" />
           <Property Name="emtest" Type="Int32" />
+          <Property Name="em_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="em_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="em_images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Eventvm">
           <Key>
@@ -697,6 +703,9 @@
           <EntitySetMapping Name="EMServer">
             <EntityTypeMapping TypeName="simplePAModel.EMServer">
               <MappingFragment StoreEntitySet="EMServer">
+                <ScalarProperty Name="em_images" ColumnName="em_images" />
+                <ScalarProperty Name="em_description" ColumnName="em_description" />
+                <ScalarProperty Name="em_address" ColumnName="em_address" />
                 <ScalarProperty Name="emtest" ColumnName="emtest" />
                 <ScalarProperty Name="fire" ColumnName="fire" />
                 <ScalarProperty Name="err" ColumnName="err" />

@@ -34,5 +34,8 @@ namespace simplepa2.Controller
         public Nullable<int> err { get; set; }
         public Nullable<int> fire { get; set; }
         public Nullable<int> emtest { get; set; }
+        public string em_address { get; set; }
+        public string em_description { get; set; }
+        public string em_images { get; set; }
     }
 }

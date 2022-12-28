@@ -16,6 +16,6 @@ namespace simplepa2.Controller
     {
         public int AssetGroupId { get; set; }
         public string Name { get; set; }
-        public int AssetId { get; set; }
+        public Nullable<int> AssetId { get; set; }
     }
 }
