@@ -392,7 +392,7 @@ namespace pa
             src1.dsp_name = dspname;
             src1.ip_dspctrl = dsp1.ip_dspctrl; //추적후 넣기 romee 2021-06-30
             src1.chspk = device_chno;
-            //Tam.DeviceTableAdapter.Update(dBSqlite.Ds1.Device);
+            dBAccess.Dbupdate<Device>("Devices", src1, src1.DeviceId);
         }
 
         // 사운드 카드 채널번호를 DSP할당 

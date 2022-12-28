@@ -79,13 +79,19 @@ namespace pa
                     break;
                 case eSignalRMsgType.eVolume:
                     // db 처리 선행 필요 
+                    dBAccess.DBRead();
+                    _DanteDevice = dBAccess.Device;
                     InitVolume();
                     break;
                 case eSignalRMsgType.eOutChMove:
+                    dBAccess.DBRead();
+                    _DanteDevice = dBAccess.Device;
                     SpeakerAssignDSP(msg.message, msg.user_data1, msg.state, msg.user_data4);
                     g.Log("eOutChMove" + " : " + msg.message + " : " + msg.user_data1 + " : " + msg.state.ToString() + " : " + msg.user_data4.ToString());
                     break;
                 case eSignalRMsgType.eInChMove:
+                    dBAccess.DBRead();
+                    _DanteDevice = dBAccess.Device;
                     MoveInputChannel(msg.user_data1, msg.state, msg.message, msg.user_data4);
                     g.Log("eInChMove" + " : " + msg.user_data1 + " : " + msg.state.ToString() + " : " + msg.message + " : " + msg.user_data4.ToString());
                     break;

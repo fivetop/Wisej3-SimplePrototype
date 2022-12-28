@@ -559,23 +559,14 @@ namespace pa
             NetworkInit();
             initUI();
             //*/
-            SignalRMsg msg1 = new SignalRMsg();
-            msg1.Msgtype = eSignalRMsgType.eOutChMove;
-            msg1.user = "AAA";
-            msg1.EMNAME = "ALL";
-            msg1.message = "DPCB-30-93d87c";
-            msg1.state = 18;
-            msg1.user_data1 = "DSP-16D-011652";
-            msg1.user_data4 = 1;
-            g.mainWindow.RcvSigR(msg1);
 
-            /*
+            ///*
             SignalRMsg msg1 = new SignalRMsg();
             msg1.Msgtype = eSignalRMsgType.eScanAll;
             msg1.message = "Scan All";
             msg1.EMNAME = "ALL";
             g.mainWindow.RcvSigR(msg1);
-            */
+            //*/
             //dBAccess.RemoveEMServer("EMServers", EMServerRow.EMServerId);
             //dBAccess.Dbsave<EMServerRow>("EMServers", EMServerRow);
 
@@ -605,6 +596,20 @@ namespace pa
                 //BSThreadClass.AddData(i.ToString());
             }
             // */
+        }
+
+        private void _but7_Click(object sender, RoutedEventArgs e)
+        {
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.Msgtype = eSignalRMsgType.eOutChMove;
+            msg1.user = "AAA";
+            msg1.EMNAME = "ALL";
+            msg1.message = "DPCB-30-93d87c";
+            msg1.state = 18;
+            msg1.user_data1 = "DSP-16D-011652";
+            msg1.user_data4 = 1;
+            g.mainWindow.RcvSigR(msg1);
+
         }
 
 

@@ -55,6 +55,12 @@ namespace pa
             UserTrees = Dbread<UserTreesDataTable>("UserTrees");
         }
 
+        public void DBRead()
+        {
+            Device = Dbread<DeviceDataTable>("Devices");
+            DeviceChannel = Dbread<DeviceChannelDataTable>("DeviceChannels");
+        }
+
         public T Dbread <T>(string url)
         {
             try

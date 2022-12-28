@@ -25,6 +25,7 @@
                     <MenuItem x:Name="_ts4" Header="Test(Play)" Click="_but4_Click" />
                     <MenuItem x:Name="_ts5" Header="Test(Stop)" Click="_but5_Click" />
                     <MenuItem x:Name="_ts6" Header="진단" Click="_but6_Click" />
+                    <MenuItem x:Name="_ts7" Header="sigr" Click="_but7_Click" />
                 </MenuItem>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Network Card" HorizontalAlignment="Right" VerticalAlignment="Center"/>
