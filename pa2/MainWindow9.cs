@@ -164,8 +164,16 @@ namespace pa
             {
                 if (MainDSPIP != "")
                 {
-                    // DSP 와 채널 저장 
-                    saveDBDSP_SC();
+                    gs1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2);
+                    gs2 = gl.danteDevice._DanteDevice.Where(p => p.device == 9);
+                    // DSP 
+                    saveDBDSP(gs1);
+                    // DSP Ch
+                    dBAccess.saveDBDSPCH(gs1);
+                    saveDBDSPCH(gs1);
+                    // sound card
+                    saveDBDSP(gs2);
+
                     // 스피커 저장 
                     saveDBSP();
                     // 자산 업데이트 deviceid, ip
@@ -263,7 +271,7 @@ namespace pa
         // dsp ch info 저장 
         private void saveDBDSPCH(IEnumerable<Device> gs1)
         {
-            //dBSqlite.saveDBDSPCH(gs1);
+            dBAccess.saveDBDSPCH(gs1);
         }
 
 
