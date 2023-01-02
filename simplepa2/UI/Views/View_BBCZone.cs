@@ -12,9 +12,8 @@ namespace simplepa2.UI.Views
         private Popup_BBCZoneForm pop_BBCZoneForm;
         private Form_BBCZoneImport form_BBCZoneImport;
 
-        private List<Zone_DataList> zone_list;
-        private Object[] site_list;
-        private List<Comp_ZoneFloorCardList> cardList;
+        private List<Comp_ZoneBuildingPanels> buildPanelDataList;
+
 
         private string strSelectRelease = "선택해제";
         private string strSelectAll = "모두선택";
@@ -32,7 +31,7 @@ namespace simplepa2.UI.Views
             comboUISetup();
 
             // List Setup 
-            zone_list = new List<Zone_DataList>();
+            // zone_list = new List<Zone_DataList>();
         }
 
         public void dbInit()
@@ -41,12 +40,12 @@ namespace simplepa2.UI.Views
             {
                 this.assetsTableAdapter1.Fill(this.dataSet11.Assets);
                 this.emServerTableAdapter1.Fill(this.dataSet11.EMServer);
+                this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
             }
             catch(Exception e)
             {
                 MessageBox.Show("LAW TEXT : Asset 데이터를 가져오는 중 예외발생 -"+e.Message);
-            }           
-            
+            }                       
         }
 
         public void comboUISetup()
@@ -60,50 +59,33 @@ namespace simplepa2.UI.Views
             // 선택된 사이트명 확인 (EM명)
             string selectedItem = (((this.cb_SiteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerRow).EMNAME;
 
-            // E.M 명으로 데이터 정렬 
-            DataRow[] dataZoneArray = this.dataSet11.Assets.Select("emServer = '" + selectedItem + "'");
+            this.buildPanelDataList = buildingDataUISetup(selectedItem);
             
-            setupZoneCardUI(dataZoneArray);
-
-            /*
-            if (this.cb_SiteName.SelectedItem.Equals("오크동"))
-            {
-                zone_list = exampleZoneList();
-                // Zone 내역을 UI에 셋업  
-                setupZoneInterface(zone_list);
-            }
-            else
-            {
-                MessageBox.Show("데이터가 없습니다., DB 연결 구현 필요");
-            }
-            */
-
-
         }
 
-        private void setupZoneCardUI(DataRow[] dataSiteArray)
+        private List<Comp_ZoneBuildingPanels> buildingDataUISetup(string selectedItem)
         {
-            if(cardList == null)
-            {
-                cardList = new List<Comp_ZoneFloorCardList>();
-            }
-            else
-            {
-                cardList.Clear();
-            }
+            List<Comp_ZoneBuildingPanels> dataList = new List<Comp_ZoneBuildingPanels>();
 
-            foreach(DataRow drR in dataSiteArray)
-            {
-                // Comp_ZoneFloorCardList czf = new Comp_ZoneFloorCardList(drR, true);
-                //cardList.Add(czf);
-                //this.pn_Contents.Controls.Add(czf);
-            }
+            // 빌딩 데이터 가져오기
+            DataRow[] buildList = this.dataSet11.AssetsSitenBuilding.Select("emServer = '" + selectedItem + "'");
             
+            // 기존 패널 클리어
+            this.pn_Contents.Controls.Clear();
 
+            // 각 빌딩 데이터 셋을 Building UI에 넣고 Panel에 생성 
+            foreach (DataRow dr in buildList)
+            {
+                string buildName = (dr as DataSet1.AssetsSitenBuildingRow).building;
+                Comp_ZoneBuildingPanels uiCZB = new Comp_ZoneBuildingPanels(buildName, this.dataSet11.Assets.Select("building = '" + buildName + "'"));
 
+                dataList.Add(uiCZB);
 
-            // TODO : Interface Setup and making CardList 
-        } 
+                this.pn_Contents.Controls.Add(uiCZB);
+            }
+
+            return dataList;
+        }        
 
         private void popTestButton_Click(object sender, EventArgs e)
         {
@@ -124,7 +106,7 @@ namespace simplepa2.UI.Views
         private void bt_WholeSelect_Click(object sender, EventArgs e)
         {
             bZoneSelectAll = !bZoneSelectAll;
-
+            /*
             if(bZoneSelectAll == true)
             {
                 foreach (Comp_ZoneFloorCardList zoneCard in cardList)
@@ -141,6 +123,7 @@ namespace simplepa2.UI.Views
                     this.bt_WholeSelect.Text = strSelectAll;
                 }
             }
+            */
         }
 
         private void bt_StoreData_Click(object sender, EventArgs e)
@@ -168,13 +151,4 @@ namespace simplepa2.UI.Views
 
         }
     }
-
-
-    public class Zone_DataList
-    {
-        public string floorName;
-        public DataRow[] dataSiteArray;
-
-
-    }   
 }

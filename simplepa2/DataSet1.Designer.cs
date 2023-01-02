@@ -9478,6 +9478,10 @@ namespace simplepa2 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class AssetsSitenBuildingDataTable : global::System.Data.TypedTableBase<AssetsSitenBuildingRow> {
             
+            private global::System.Data.DataColumn columnemServer;
+            
+            private global::System.Data.DataColumn columnbuilding;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AssetsSitenBuildingDataTable() {
@@ -9509,6 +9513,22 @@ namespace simplepa2 {
             protected AssetsSitenBuildingDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn emServerColumn {
+                get {
+                    return this.columnemServer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn buildingColumn {
+                get {
+                    return this.columnbuilding;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9548,9 +9568,11 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssetsSitenBuildingRow AddAssetsSitenBuildingRow() {
+            public AssetsSitenBuildingRow AddAssetsSitenBuildingRow(string emServer, string building) {
                 AssetsSitenBuildingRow rowAssetsSitenBuildingRow = ((AssetsSitenBuildingRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        emServer,
+                        building};
                 rowAssetsSitenBuildingRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAssetsSitenBuildingRow);
                 return rowAssetsSitenBuildingRow;
@@ -9573,11 +9595,19 @@ namespace simplepa2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnemServer = base.Columns["emServer"];
+                this.columnbuilding = base.Columns["building"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnemServer = new global::System.Data.DataColumn("emServer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemServer);
+                this.columnbuilding = new global::System.Data.DataColumn("building", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbuilding);
+                this.columnemServer.MaxLength = 2147483647;
+                this.columnbuilding.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16367,6 +16397,62 @@ namespace simplepa2 {
             internal AssetsSitenBuildingRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableAssetsSitenBuilding = ((AssetsSitenBuildingDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string emServer {
+                get {
+                    try {
+                        return ((string)(this[this.tableAssetsSitenBuilding.emServerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'AssetsSitenBuilding\' 테이블의 \'emServer\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssetsSitenBuilding.emServerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string building {
+                get {
+                    try {
+                        return ((string)(this[this.tableAssetsSitenBuilding.buildingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'AssetsSitenBuilding\' 테이블의 \'building\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssetsSitenBuilding.buildingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsemServerNull() {
+                return this.IsNull(this.tableAssetsSitenBuilding.emServerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetemServerNull() {
+                this[this.tableAssetsSitenBuilding.emServerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsbuildingNull() {
+                return this.IsNull(this.tableAssetsSitenBuilding.buildingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetbuildingNull() {
+                this[this.tableAssetsSitenBuilding.buildingColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -25509,6 +25595,12 @@ FROM     EMServer AS a LEFT OUTER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitAdapter() {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AssetsSitenBuilding";
+            tableMapping.ColumnMappings.Add("emServer", "emServer");
+            tableMapping.ColumnMappings.Add("building", "building");
+            this._adapter.TableMappings.Add(tableMapping);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25524,7 +25616,7 @@ FROM     EMServer AS a LEFT OUTER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT emServer, building, AssetId FROM Assets GROUP BY emServer, building";
+            this._commandCollection[0].CommandText = "SELECT emServer, building FROM Assets GROUP BY emServer, building";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

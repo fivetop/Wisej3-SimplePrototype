@@ -9,15 +9,12 @@ namespace simplepa2.UI.Components
     public partial class Comp_ZoneFloorCardList : Wisej.Web.UserControl
     {
         private Popup_BBCZoneForm pop_BBCZoneForm;
-        private string[] zoneData;
+
         private List<Comp_ZoneButton> zoneList;
         private bool bAddButton = false;
 
-
-
         private string strFloorName;
         private string strAddButton;
-
 
         public Comp_ZoneFloorCardList()
         {            
@@ -39,9 +36,10 @@ namespace simplepa2.UI.Components
             // 02. Zone 리스트를 만들고, Zone의 번호와 Zone명을 입력 > 상기는 예제로 이름을 두번 넣었음 
             zoneList = new List<Comp_ZoneButton>();
 
-            foreach (string zoneItem in zoneData)
+            foreach (var zoneItem in dataList.zoneListArray)
             {
-                zoneList.Add(new Comp_ZoneButton(zoneItem, zoneItem));
+                string zoneNo = Convert.ToString(zoneItem.AssetId);
+                zoneList.Add(new Comp_ZoneButton(zoneNo, zoneItem.ZoneName));
             }
 
             // 03 .UI 구현 처리 

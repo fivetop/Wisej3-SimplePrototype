@@ -222,7 +222,7 @@ namespace simplepa2.UI.Pages
                 case "holidayBarItem": view_BBSHolidayManage = bringFrontView<View_BBSHolidayManage>("View_BBSHolidayManage", false); break;
                 // 설정 // navigationBarItem1 추가
                 case "assetBarItem": view_BBCAsset2 = bringFrontView<View_BBCAsset2>("View_BBCAsset2", false); break;
-                case "deviceManageBarItem": view_BBCDevice2 = bringFrontView<View_BBCDevice2>("View_BBCDevice2", false); break;
+                case "deviceManageBarItem": view_BBCDevice = bringFrontView<View_BBCDevice>("View_BBCDevice", false); break;
                 case "navigationBarItem1": view_GroupManager2 = bringFrontView<View_GroupManager2>("View_GroupManager2", false); break;
                 case "navigationBarItem2": view_BBSEMManage2 = bringFrontView<View_BBSEMManage2>("View_BBSEMManage2", false); break;
                 case "navigationBarItem3": view_BBSEMChannel2 = bringFrontView<View_BBSEMChannel2>("View_BBSEMChannel2", false); break;

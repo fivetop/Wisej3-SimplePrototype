@@ -1,6 +1,7 @@
 ﻿using DataClass;
 using simplepa2.UI.Popups;
 using System;
+using System.Data;
 using System.IO;
 using Wisej.Web;
 
@@ -11,7 +12,7 @@ namespace simplepa2.UI.Views
         private Popup_BBCDeviceForm popup_bbcDeviceForm;
         public View_BBCDevice()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         /*
@@ -33,8 +34,14 @@ namespace simplepa2.UI.Views
         */
         private void BSDeviceManager_Load(object sender, EventArgs e)
         {
-           //  this.deviceTableAdapter.Fill(this.dataSet1.Device);
+            this.deviceTableAdapter1.Fill(this.dataSet11.Device);
+            this.emServerTableAdapter1.Fill(this.dataSet11.EMServer);
+
+            this.dg_deviceView.DataSource = dataSet11.Device;
+            this.cb_siteName.DataSource = this.dataSet11.EMServer;
+            this.cb_siteName.SelectedIndex = 0;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -57,10 +64,10 @@ namespace simplepa2.UI.Views
 
         private void dataGridView3_DataUpdated(object sender, DataGridViewDataUpdatedEventArgs e)
         {
-            foreach (var t1 in dataGridView3.Rows)
+            foreach (var t1 in dg_deviceView.Rows)
             {
-                dataGridView3.BeginEdit(true);
-                foreach (var r1 in dataGridView3.Rows)
+                dg_deviceView.BeginEdit(true);
+                foreach (var r1 in dg_deviceView.Rows)
                 {
                     var t2 = r1.Cells[3].Value;
                     if (t2.ToString() == "0")
@@ -72,7 +79,7 @@ namespace simplepa2.UI.Views
                     else if (t2.ToString() == "9")
                         r1.Cells[4].Value = "Computer";
                 }
-                dataGridView3.EndEdit();
+                dg_deviceView.EndEdit();
             }
         }
 
@@ -93,8 +100,25 @@ namespace simplepa2.UI.Views
                 this.popup_bbcDeviceForm.Height = this.Parent.Parent.Height;
                 this.popup_bbcDeviceForm.ShowPopup(this.Parent);
             }
+        }
 
+        private void bt_scanStart_Click(object sender, EventArgs e)
+        {
+            if (gweb.mainFrame.isSignalR())
+            {
+                //AlertBox.Show("서버에 전체 Scan을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
+                gweb.mainFrame.sendSigR(eSignalRMsgType.eScanAll); // dsp, dsp_chno
+            }
+            else
+            {
+                AlertBox.Show("취소되었습니다. - 서버 상태를 확인바랍니다.");
+            }
+        }
 
+        private void cb_siteName_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            string selectedItem = (((this.cb_siteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerRow).EMNAME;
+            this.dg_deviceView.DataSource = dataSet11.Device.Select("EMNAME = '" + selectedItem + "'");
         }
     }
 }

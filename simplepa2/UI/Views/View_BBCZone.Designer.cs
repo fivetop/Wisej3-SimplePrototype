@@ -42,6 +42,7 @@
             this.assetsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.dataSet11 = new simplepa2.DataSet1();
             this.emServerTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerTableAdapter();
+            this.assetsSitenBuildingTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsSitenBuildingTableAdapter();
             this.pn_ViewMain.SuspendLayout();
             this.pn_TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -61,11 +62,11 @@
             // pn_Contents
             // 
             this.pn_Contents.AutoScroll = true;
-            this.pn_Contents.Dock = Wisej.Web.DockStyle.Top;
+            this.pn_Contents.Dock = Wisej.Web.DockStyle.Fill;
             this.pn_Contents.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
             this.pn_Contents.Location = new System.Drawing.Point(20, 72);
             this.pn_Contents.Name = "pn_Contents";
-            this.pn_Contents.Size = new System.Drawing.Size(1320, 770);
+            this.pn_Contents.Size = new System.Drawing.Size(1320, 768);
             this.pn_Contents.TabIndex = 52;
             this.pn_Contents.Text = "listPanel";
             // 
@@ -190,6 +191,10 @@
             // 
             this.emServerTableAdapter1.ClearBeforeFill = true;
             // 
+            // assetsSitenBuildingTableAdapter1
+            // 
+            this.assetsSitenBuildingTableAdapter1.ClearBeforeFill = true;
+            // 
             // View_BBCZone
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -220,5 +225,6 @@
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter1;
         private DataSet1 dataSet11;
         private DataSet1TableAdapters.EMServerTableAdapter emServerTableAdapter1;
+        private DataSet1TableAdapters.AssetsSitenBuildingTableAdapter assetsSitenBuildingTableAdapter1;
     }
 }

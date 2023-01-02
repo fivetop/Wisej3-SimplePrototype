@@ -45,9 +45,10 @@
             this.panel8.Controls.Add(this.panel11);
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(5, 5);
+            this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1310, 170);
+            this.panel8.Padding = new Wisej.Web.Padding(20);
+            this.panel8.Size = new System.Drawing.Size(1600, 180);
             this.panel8.TabIndex = 6;
             // 
             // flowLayoutPanel1
@@ -55,17 +56,17 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Dock = Wisej.Web.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 70);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1310, 120);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1560, 90);
             this.flowLayoutPanel1.TabIndex = 164;
             // 
             // panel11
             // 
             this.panel11.Dock = Wisej.Web.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 30);
+            this.panel11.Location = new System.Drawing.Point(20, 50);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1310, 20);
+            this.panel11.Size = new System.Drawing.Size(1560, 20);
             this.panel11.TabIndex = 136;
             // 
             // panel10
@@ -73,9 +74,9 @@
             this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.Controls.Add(this.ch_floor);
             this.panel10.Dock = Wisej.Web.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Location = new System.Drawing.Point(20, 20);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1310, 30);
+            this.panel10.Size = new System.Drawing.Size(1560, 30);
             this.panel10.TabIndex = 52;
             // 
             // ch_floor
@@ -95,10 +96,9 @@
             // 
             this.Controls.Add(this.panel8);
             this.Dock = Wisej.Web.DockStyle.Top;
-            this.Margin = new Wisej.Web.Padding(0, 0, 0, 20);
+            this.Margin = new Wisej.Web.Padding(0);
             this.Name = "Comp_ZoneFloorCardList";
-            this.Padding = new Wisej.Web.Padding(5);
-            this.Size = new System.Drawing.Size(1320, 180);
+            this.Size = new System.Drawing.Size(1600, 180);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel10.ResumeLayout(false);
