@@ -2,6 +2,8 @@
 using System;
 using Wisej.Web;
 
+
+// 볼륨조정 처리 
 namespace simplepa2.UI.Views
 {
     public partial class View_BBCMusic2 : Wisej.Web.UserControl
@@ -55,8 +57,7 @@ namespace simplepa2.UI.Views
             this.dataSet1.AcceptChanges();
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
 
-            Simple myDesktop = (Simple)Application.MainPage;
-            myDesktop.sendSigR(eSignalRMsgType.eVolume);
+            gweb.mainFrame.sendSigR(eSignalRMsgType.eVolume);
         }
 
         internal void reDraw()

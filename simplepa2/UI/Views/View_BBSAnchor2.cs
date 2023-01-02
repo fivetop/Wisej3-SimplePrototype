@@ -6,6 +6,8 @@ using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
+
+// 앵커방송 처리 
 namespace simplepa2.UI.Views
 {
     public partial class View_BBSAnchor2 : Wisej.Web.UserControl

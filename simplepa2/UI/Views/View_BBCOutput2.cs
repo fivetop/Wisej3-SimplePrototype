@@ -5,6 +5,8 @@ using System.Data;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
+
+// 출력 관리
 namespace simplepa2.UI.Views
 {
     public partial class View_BBCOutput2 : Wisej.Web.UserControl

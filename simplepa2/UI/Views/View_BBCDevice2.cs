@@ -4,6 +4,8 @@ using System;
 using System.IO;
 using Wisej.Web;
 
+
+// 장비 관리 
 namespace simplepa2.UI.Views
 {
     public partial class View_BBCDevice2 : Wisej.Web.UserControl

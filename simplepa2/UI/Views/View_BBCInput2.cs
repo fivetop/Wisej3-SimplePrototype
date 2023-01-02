@@ -5,6 +5,7 @@ using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
+// 입력 채널 관리
 namespace simplepa2.UI.Views
 {
     public partial class View_BBCInput2 : Wisej.Web.UserControl
