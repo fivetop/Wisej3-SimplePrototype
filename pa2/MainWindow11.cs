@@ -82,6 +82,7 @@ namespace pa
                     dBAccess.DBRead();
                     _DanteDevice = dBAccess.Device;
                     InitVolume();
+                    g.Log("eVolume");
                     break;
                 case eSignalRMsgType.eOutChMove:
                     dBAccess.DBRead();

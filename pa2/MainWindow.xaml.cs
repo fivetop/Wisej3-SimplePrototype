@@ -555,12 +555,20 @@ namespace pa
             EMServerRow = dBAccess.EMServerGet();
             _DanteDevice = dBAccess.Device;
 
+
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.Msgtype = eSignalRMsgType.eVolume;
+            msg1.user = "AAA";
+            msg1.EMNAME = "ALL";
+            g.mainWindow.RcvSigR(msg1);
+
+/*
             gl.XMLDanteDevice(true);
             NetworkInit();
             initUI();
             //*/
 
-            ///*
+            /*
             SignalRMsg msg1 = new SignalRMsg();
             msg1.Msgtype = eSignalRMsgType.eScanAll;
             msg1.message = "Scan All";
@@ -600,6 +608,8 @@ namespace pa
 
         private void _but7_Click(object sender, RoutedEventArgs e)
         {
+
+/*
             // 채널 인 시험 
             SignalRMsg msg1 = new SignalRMsg();
             msg1.Msgtype = eSignalRMsgType.eInChMove;
@@ -610,7 +620,7 @@ namespace pa
             msg1.user_data1 = "169.254.217.51";
             msg1.user_data4 = 16;
             g.mainWindow.RcvSigR(msg1);
-
+*/
             // 채널 아웃 시험 
 /*
             SignalRMsg msg1 = new SignalRMsg();

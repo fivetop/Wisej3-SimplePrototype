@@ -67,7 +67,7 @@ namespace simplepa2.UI.Views
                 return;
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 1분 정도 소요됩니다.");
 
-            gweb.mainFrame.sendSigR(eSignalRMsgType.eInChMove, str2, str1, i2, i3); // dsp, dsp_chno
+            gweb.mainFrame.sendSigR(eSignalRMsgType.eInChMove, str2, str1, i2, i3, t4.EMNAME); // dsp, dsp_chno
             this.deviceChannelBindingSource.EndEdit();
             this.deviceChannelTableAdapter.Update(this.dataSet1.DeviceChannel);
         }

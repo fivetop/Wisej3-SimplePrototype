@@ -436,7 +436,7 @@ namespace simplepa2.UI.Pages
             return true;
         }
 
-        internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0)
+        internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0, string emname = "")
         {
             SignalRMsg msg1 = new SignalRMsg();
             msg1.user = Application.Session["login_id"];
@@ -450,6 +450,7 @@ namespace simplepa2.UI.Pages
                     break;
 
                 case eSignalRMsgType.eOutChMove:
+                    msg1.EMNAME = emname;
                     msg1.message = device_name;
                     msg1.Msgtype = eVolume;
                     msg1.state = dsp_ch;
@@ -458,7 +459,7 @@ namespace simplepa2.UI.Pages
                     break;
 
                 case eSignalRMsgType.eInChMove:
-                    msg1.EMNAME = "ALL";
+                    msg1.EMNAME = emname;
                     msg1.message = device_name; // pc
                     msg1.Msgtype = eVolume;
                     msg1.state = dsp_ch; // no

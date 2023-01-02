@@ -129,9 +129,16 @@ namespace pa
                     if (sp1 == null) continue;
                     if (sp1.ip == "" || sp1.ip_dspctrl == "") continue;
                     if (emflag)
-                        g.dsp.makeVolumn(sp1.dsp_chno, sp1.dsp_vol_em, sp1.ip_dspctrl);
+                    {
+                        //for (int i = 16; i < 32; i++)
+                        { 
+                            g.dsp.makeVolumn(sp1.dsp_chno, sp1.dsp_vol_em, sp1.ip_dspctrl);
+                        }
+                    }
                     else
+                    { 
                         g.dsp.makeVolumn(sp1.dsp_chno, sp1.dsp_vol, sp1.ip_dspctrl);
+                    }
                 }
                 catch (Exception e1)
                 {

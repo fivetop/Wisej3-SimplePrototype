@@ -187,8 +187,8 @@ namespace gClass
 		// Out ch no / vol 
 		public void makeVolumn(int chno, long v1, string ip)
 		{
-			var d1 = gl.danteDevice._DanteDevice.First(p => p.ip_dspctrl == ip && p.device == 2);
-			if (d1 == null) return;
+			//var d1 = gl.danteDevice._DanteDevice.First(p => p.ip_dspctrl == ip && p.device == 2);
+			//if (d1 == null) return;
 
 			int v2 = (int)v1;
 			int no = 0;
