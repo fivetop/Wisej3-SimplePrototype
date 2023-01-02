@@ -452,7 +452,6 @@ namespace pa
             aThreadData.ip = ip;
             aThreadData.b1 = b1;
             aThread.AddData(aThreadData);
-
         }
 
         // DSP 각 채널에 스피커를 할당한다. 

@@ -600,6 +600,19 @@ namespace pa
 
         private void _but7_Click(object sender, RoutedEventArgs e)
         {
+            // 채널 인 시험 
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.Msgtype = eSignalRMsgType.eInChMove;
+            msg1.user = "AAA";
+            msg1.EMNAME = "ALL";
+            msg1.message = "DESKTOP-KVOOQ6I";
+            msg1.state = 2;
+            msg1.user_data1 = "169.254.217.51";
+            msg1.user_data4 = 16;
+            g.mainWindow.RcvSigR(msg1);
+
+            // 채널 아웃 시험 
+/*
             SignalRMsg msg1 = new SignalRMsg();
             msg1.Msgtype = eSignalRMsgType.eOutChMove;
             msg1.user = "AAA";
@@ -609,7 +622,7 @@ namespace pa
             msg1.user_data1 = "DSP-16D-011652";
             msg1.user_data4 = 1;
             g.mainWindow.RcvSigR(msg1);
-
+*/
         }
 
 

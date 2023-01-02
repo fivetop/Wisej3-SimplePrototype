@@ -458,6 +458,7 @@ namespace simplepa2.UI.Pages
                     break;
 
                 case eSignalRMsgType.eInChMove:
+                    msg1.EMNAME = "ALL";
                     msg1.message = device_name; // pc
                     msg1.Msgtype = eVolume;
                     msg1.state = dsp_ch; // no

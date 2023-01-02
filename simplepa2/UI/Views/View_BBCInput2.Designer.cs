@@ -43,6 +43,7 @@
             this.ptop = new Wisej.Web.Panel();
             this.deviceChannelTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceChannelTableAdapter();
             this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
+            this.Column2 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceChannelBindingSource)).BeginInit();
@@ -66,6 +67,7 @@
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colDevicechnnelid,
+            this.Column2,
             this.Column1,
             this.colChname,
             this.colDevicein,
@@ -100,7 +102,6 @@
             this.colChname.DataPropertyName = "chname";
             this.colChname.HeaderText = "DSP CH";
             this.colChname.Name = "colChname";
-            this.colChname.Width = 60;
             // 
             // colDevicein
             // 
@@ -123,7 +124,6 @@
             "7",
             "8"});
             this.colDeviceinch.Name = "colDeviceinch";
-            this.colDeviceinch.Width = 60;
             // 
             // Column0
             // 
@@ -170,6 +170,11 @@
             // 
             this.deviceTableAdapter1.ClearBeforeFill = true;
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "지역";
+            this.Column2.Name = "Column2";
+            // 
             // View_BBCInput2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -204,5 +209,6 @@
         private DataSet1TableAdapters.DeviceTableAdapter deviceTableAdapter1;
         private Wisej.Web.DataGridViewComboBoxColumn colDevicein;
         private Wisej.Web.DataGridViewComboBoxColumn colDeviceinch;
+        private Wisej.Web.DataGridViewTextBoxColumn Column2;
     }
 }

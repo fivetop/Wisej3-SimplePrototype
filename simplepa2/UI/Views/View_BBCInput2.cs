@@ -1,6 +1,7 @@
 ﻿using DataClass;
 using System;
 using System.Data;
+using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
@@ -31,7 +32,7 @@ namespace simplepa2.UI.Views
                 b1.Dock = DockStyle.Fill;
                 b1.Click += B1_Click;
                 b1.ToolTipText = t1.Index.ToString();
-                t1[5].Control = b1;
+                t1["Column0"].Control = b1;
             }
 
             var dsp = this.dataSet1.Device.Where(p => p.device == 9);
@@ -65,8 +66,7 @@ namespace simplepa2.UI.Views
                 return;
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 1분 정도 소요됩니다.");
 
-            Simple myDesktop = (Simple)Application.MainPage;
-            myDesktop.sendSigR(eSignalRMsgType.eInChMove, str2, str1, i2, i3); // dsp, dsp_chno
+            gweb.mainFrame.sendSigR(eSignalRMsgType.eInChMove, str2, str1, i2, i3); // dsp, dsp_chno
             this.deviceChannelBindingSource.EndEdit();
             this.deviceChannelTableAdapter.Update(this.dataSet1.DeviceChannel);
         }
@@ -84,7 +84,14 @@ namespace simplepa2.UI.Views
                 DeviceChannelRow t2 = (DeviceChannelRow)((System.Data.DataRowView)t3).Row;
                 var t4 = dataSet1.Device.FindByDeviceId (t2.DeviceId);
                 if (t4 == null) continue;
+                t1.Cells["Column2"].Value = t4.EMNAME;
                 t1.Cells["Column1"].Value = t4.DeviceName;
+
+                var t5 = dataSet1.Device.FirstOrDefault(p=>p.ip_dspctrl == t4.ip_dspctrl && p.device == 9); 
+                if (t5 == null) continue;
+                t1.Cells["colDevicein"].Value = t5.DeviceName;
+                if(int.Parse(t2.chno) < 25)
+                    t1.Cells["colDeviceinch"].Value = (int.Parse(t2.chno) -16).ToString();
             }
         }
     }
