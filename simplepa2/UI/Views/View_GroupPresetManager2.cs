@@ -19,7 +19,8 @@ namespace simplepa2.UI.Views
 		}
 
 		// 콤보 처리용 
-		DataListAssetPresetGroup DataList { get; set; } = new DataListAssetPresetGroup();
+		DataListAssetPresetGroup sitename { get; set; } = new DataListAssetPresetGroup();
+		DataListAssetPresetGroup presetname { get; set; } = new DataListAssetPresetGroup();
 		// 선택된 차일드 
 
 		#region // 기본 처리 
@@ -31,10 +32,17 @@ namespace simplepa2.UI.Views
 			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 
 			var t1 = dataSet1.AssetPresetGroups.GroupBy(p => p.Name).Select(x => x.First()).ToList();
-			DataList.lstAssetPresetGroups = t1.ToList();
-			gbindingSource1.DataSource = DataList;
+			presetname.lstAssetPresetGroups = t1.ToList();
+			var t2 = dataSet1.AssetPresetGroups.GroupBy(p => p.EMNAME).Select(x => x.First()).ToList();
+			sitename.lstAssetPresetGroups = t2.ToList();
+			gbindingSource1.DataSource = presetname;
+			sitebindingSource1.DataSource = sitename;
+
 			this.gcomboBox1.DataBindings.Clear();
 			this.gcomboBox1.DataBindings.Add(new Wisej.Web.Binding("DataSource", this.gbindingSource1, "lstAssetPresetGroups", true, Wisej.Web.DataSourceUpdateMode.OnPropertyChanged));
+
+			this.sitecomboBox1.DataBindings.Clear();
+			this.sitecomboBox1.DataBindings.Add(new Wisej.Web.Binding("DataSource", this.sitebindingSource1, "lstAssetPresetGroups", true, Wisej.Web.DataSourceUpdateMode.OnPropertyChanged));
 			//comboBox1.DataSource = DataList.lstAssetPresetGroups;
 		}
 
