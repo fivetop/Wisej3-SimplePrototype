@@ -71,7 +71,7 @@ namespace simplepa2
             }
         }
 
-        internal void AssetPresetSave(EmSpeakerPosition t1)
+        internal void AssetPresetSave()
         {
             List<string> preset = new List<string>();
             preset.Add("PRESET1");
@@ -95,6 +95,7 @@ namespace simplepa2
                     m2.Name = preset[i];
                     m2.AssetId = a1.AssetId;
                     m2.EMNAME = a1.emServer;
+                    m2.chk = 1;
                     Ds1.AssetPresetGroups.Rows.Add(m2);
                     Tam.AssetPresetGroupsTableAdapter.Update(Ds1.AssetPresetGroups);
                 }

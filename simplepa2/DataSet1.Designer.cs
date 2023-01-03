@@ -9068,6 +9068,8 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnAssetId;
             
+            private global::System.Data.DataColumn columnchk;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public AssetPresetGroupsDataTable() {
@@ -9135,6 +9137,14 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn chkColumn {
+                get {
+                    return this.columnchk;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9170,13 +9180,14 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssetPresetGroupsRow AddAssetPresetGroupsRow(string Name, string EMNAME, int AssetId) {
+            public AssetPresetGroupsRow AddAssetPresetGroupsRow(string Name, string EMNAME, int AssetId, int chk) {
                 AssetPresetGroupsRow rowAssetPresetGroupsRow = ((AssetPresetGroupsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
                         EMNAME,
-                        AssetId};
+                        AssetId,
+                        chk};
                 rowAssetPresetGroupsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAssetPresetGroupsRow);
                 return rowAssetPresetGroupsRow;
@@ -9210,6 +9221,7 @@ namespace simplepa2 {
                 this.columnName = base.Columns["Name"];
                 this.columnEMNAME = base.Columns["EMNAME"];
                 this.columnAssetId = base.Columns["AssetId"];
+                this.columnchk = base.Columns["chk"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9223,6 +9235,8 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnEMNAME);
                 this.columnAssetId = new global::System.Data.DataColumn("AssetId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAssetId);
+                this.columnchk = new global::System.Data.DataColumn("chk", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnchk);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAssetPresetGroupId}, true));
                 this.columnAssetPresetGroupId.AutoIncrement = true;
@@ -9233,6 +9247,8 @@ namespace simplepa2 {
                 this.columnAssetPresetGroupId.Unique = true;
                 this.columnName.MaxLength = 2147483647;
                 this.columnEMNAME.MaxLength = 2147483647;
+                this.columnAssetId.DefaultValue = ((int)(0));
+                this.columnchk.DefaultValue = ((int)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15908,6 +15924,22 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int chk {
+                get {
+                    try {
+                        return ((int)(this[this.tableAssetPresetGroups.chkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'AssetPresetGroups\' 테이블의 \'chk\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableAssetPresetGroups.chkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNameNull() {
                 return this.IsNull(this.tableAssetPresetGroups.NameColumn);
             }
@@ -15940,6 +15972,18 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAssetIdNull() {
                 this[this.tableAssetPresetGroups.AssetIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IschkNull() {
+                return this.IsNull(this.tableAssetPresetGroups.chkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetchkNull() {
+                this[this.tableAssetPresetGroups.chkColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24882,6 +24926,7 @@ FROM     EMServer";
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("EMNAME", "EMNAME");
             tableMapping.ColumnMappings.Add("AssetId", "AssetId");
+            tableMapping.ColumnMappings.Add("chk", "chk");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -24891,20 +24936,23 @@ FROM     EMServer";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssetPresetGroupId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetPresetGroupId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [AssetPresetGroups] ([Name], [EMNAME], [AssetId]) VALUES (@Name, @EMN" +
-                "AME, @AssetId)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [AssetPresetGroups] ([Name], [EMNAME], [AssetId], [chk]) VALUES (@Nam" +
+                "e, @EMNAME, @AssetId, @chk)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@chk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "chk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [AssetPresetGroups] SET [Name] = @Name, [EMNAME] = @EMNAME, [AssetId] = @A" +
-                "ssetId WHERE (([AssetPresetGroupId] = @Original_AssetPresetGroupId))";
+                "ssetId, [chk] = @chk WHERE (([AssetPresetGroupId] = @Original_AssetPresetGroupId" +
+                "))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@chk", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "chk", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssetPresetGroupId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetPresetGroupId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -24921,7 +24969,8 @@ FROM     EMServer";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  AssetPresetGroupId, Name, EMNAME, AssetId\r\nFROM     AssetPresetGroups";
+            this._commandCollection[0].CommandText = "SELECT  AssetPresetGroupId, Name, EMNAME, AssetId, chk\r\nFROM     AssetPresetGroup" +
+                "s";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -25004,7 +25053,7 @@ FROM     EMServer";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, string EMNAME, global::System.Nullable<int> AssetId) {
+        public virtual int Insert(string Name, string EMNAME, global::System.Nullable<int> AssetId, global::System.Nullable<int> chk) {
             if ((Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -25022,6 +25071,12 @@ FROM     EMServer";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((chk.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(chk.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -25043,7 +25098,7 @@ FROM     EMServer";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string EMNAME, global::System.Nullable<int> AssetId, int Original_AssetPresetGroupId) {
+        public virtual int Update(string Name, string EMNAME, global::System.Nullable<int> AssetId, global::System.Nullable<int> chk, int Original_AssetPresetGroupId) {
             if ((Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -25062,7 +25117,13 @@ FROM     EMServer";
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_AssetPresetGroupId));
+            if ((chk.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(chk.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_AssetPresetGroupId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

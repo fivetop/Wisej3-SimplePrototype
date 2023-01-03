@@ -87,8 +87,8 @@ namespace simplepa2.UI.Views
                 gweb.mainFrame.dBSqlite.SaveAssets(t1);
                 gweb.mainFrame.dBSqlite.EMServerSave(t1);
                 gweb.mainFrame.dBSqlite.BSTreeSave(t1);
-                gweb.mainFrame.dBSqlite.AssetPresetSave(t1);
             }
+            gweb.mainFrame.dBSqlite.AssetPresetSave();
         }
 
         private void button1_Click(object sender, EventArgs e)
