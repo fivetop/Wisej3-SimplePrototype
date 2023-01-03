@@ -13,7 +13,6 @@ namespace simplepa2.UI.Views
             InitializeComponent();
         }
 
-
 		private void MGroupManager_Load(object sender, EventArgs e)
 		{
 			gLoadData();
