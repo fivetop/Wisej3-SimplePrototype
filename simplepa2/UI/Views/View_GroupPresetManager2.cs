@@ -19,7 +19,7 @@ namespace simplepa2.UI.Views
 		}
 
 		// 콤보 처리용 
-		DataListAssetGroup DataList { get; set; } = new DataListAssetGroup();
+		DataListAssetPresetGroup DataList { get; set; } = new DataListAssetPresetGroup();
 		// 선택된 차일드 
 
 		#region // 기본 처리 
@@ -27,15 +27,15 @@ namespace simplepa2.UI.Views
 		{
 			this.gdataGridView1.DataSource = null;
 			this.gdataGridView1.DataSource = gbindingSource2;
-			this.assetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
+			this.assetPresetGroupsTableAdapter1.Fill(this.dataSet1.AssetPresetGroups);
 			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 
-			var t1 = dataSet1.AssetGroups.GroupBy(p => p.Name).Select(x => x.First()).ToList();
-			DataList.lstAssetGroups = t1.ToList();
+			var t1 = dataSet1.AssetPresetGroups.GroupBy(p => p.Name).Select(x => x.First()).ToList();
+			DataList.lstAssetPresetGroups = t1.ToList();
 			gbindingSource1.DataSource = DataList;
 			this.gcomboBox1.DataBindings.Clear();
-			this.gcomboBox1.DataBindings.Add(new Wisej.Web.Binding("DataSource", this.gbindingSource1, "lstAssetGroups", true, Wisej.Web.DataSourceUpdateMode.OnPropertyChanged));
-			//comboBox1.DataSource = DataList.lstAssetGroups;
+			this.gcomboBox1.DataBindings.Add(new Wisej.Web.Binding("DataSource", this.gbindingSource1, "lstAssetPresetGroups", true, Wisej.Web.DataSourceUpdateMode.OnPropertyChanged));
+			//comboBox1.DataSource = DataList.lstAssetPresetGroups;
 		}
 
 		#endregion
@@ -48,13 +48,12 @@ namespace simplepa2.UI.Views
 		}
 		private void gcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			AssetGroupsRow asset = (AssetGroupsRow)gcomboBox1.SelectedItem;
+			AssetPresetGroupsRow asset = (AssetPresetGroupsRow)gcomboBox1.SelectedItem;
 			if (asset == null)
 				return;
-			gtextBox1.Text = asset.Name;
 
 			this.dataSet1.Assets.ForEach(p => p.chk = 0);
-			var s1 = this.dataSet1.AssetGroups.Where(p => p.Name == gtextBox1.Text && p.AssetId != 0).ToList();
+			var s1 = this.dataSet1.AssetPresetGroups.Where(p => p.Name == asset.Name && p.AssetId != 0).ToList();
 			var s2 = (from q1 in this.dataSet1.Assets
 					  join q2 in s1
 					  on q1.AssetId equals q2.AssetId
@@ -71,32 +70,37 @@ namespace simplepa2.UI.Views
 
 		private void UpGroup()
 		{
+			AssetPresetGroupsRow asset = (AssetPresetGroupsRow)gcomboBox1.SelectedItem;
+			if (asset == null)
+				return;
+
 			int cnt = 0;
-			var s1 = this.dataSet1.AssetGroups.Where(p => p.Name == gtextBox1.Text && p.AssetId != 0).ToList();
+			var s1 = this.dataSet1.AssetPresetGroups.Where(p => p.Name == asset.Name && p.AssetId != 0).ToList();
 
 			foreach (var s2 in s1)
 			{
-				this.dataSet1.AssetGroups.RemoveAssetGroupsRow(s2);
+				this.dataSet1.AssetPresetGroups.RemoveAssetPresetGroupsRow(s2);
 			}
 
 			foreach (var t1 in this.dataSet1.Assets)
 			{
 				if (t1.chk != 1) continue;
 
-				var m1 = this.dataSet1.AssetGroups.NewAssetGroupsRow();
+				var m1 = this.dataSet1.AssetPresetGroups.NewAssetPresetGroupsRow();
 				m1.AssetId = t1.AssetId;
-				m1.Name = gtextBox1.Text;
-				this.dataSet1.AssetGroups.Rows.Add(m1);
+				m1.Name = asset.Name;
+				this.dataSet1.AssetPresetGroups.Rows.Add(m1);
 				cnt++;
 			}
-			this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
+			this.assetPresetGroupsTableAdapter1.Update(this.dataSet1.AssetPresetGroups);
 			this.dataSet1.AcceptChanges();
 			SetStatusText("Update " + cnt.ToString() + " records.");
 		}
 
 		private void AddGroup()
 		{
-			string str1 = gtextBox1.Text;
+			/*
+						string str1 = gtextBox1.Text;
 			if (str1 == "")
 			{
 				return;
@@ -131,11 +135,14 @@ namespace simplepa2.UI.Views
 			AlertBox.Show("신규 데이터가 등록 되었습니다." + str1);
 			SetStatusText("Add " + cnt.ToString() + " records.");
 			gLoadData();
+
+			 */
 		}
 
 		// AssetGroup, AssetBase
 		private void DeleteGroup()
 		{
+/*
 			AssetGroupsRow asset = (AssetGroupsRow)gcomboBox1.SelectedItem;
 			string str1 = asset.Name;
 
@@ -173,6 +180,7 @@ namespace simplepa2.UI.Views
 			{
 				MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
 			}
+*/
 		}
 
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -196,16 +204,6 @@ namespace simplepa2.UI.Views
 		private void gbutton1_Click(object sender, EventArgs e)
 		{
 			UpGroup();
-		}
-
-		private void gbutton2_Click(object sender, EventArgs e)
-		{
-			AddGroup();
-		}
-
-		private void gbutton3_Click(object sender, EventArgs e)
-		{
-			DeleteGroup();
 		}
 
     }

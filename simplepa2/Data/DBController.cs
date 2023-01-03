@@ -35,6 +35,7 @@ namespace simplepa2
                 {
                     AssetsTableAdapter = new AssetsTableAdapter(),
                     AssetGroupsTableAdapter = new AssetGroupsTableAdapter(),
+                    AssetPresetGroupsTableAdapter = new AssetPresetGroupsTableAdapter(),
                     BSTreeTableAdapter = new BSTreeTableAdapter(),
                     BSTreeCTableAdapter = new BSTreeCTableAdapter(),
                     BSroomTableAdapter = new BSroomTableAdapter(),
@@ -50,6 +51,7 @@ namespace simplepa2
                 };
                 Tam.AssetsTableAdapter.Fill(Ds1.Assets);
                 Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
+                Tam.AssetPresetGroupsTableAdapter.Fill(Ds1.AssetPresetGroups);
                 Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
                 Tam.BSTreeCTableAdapter.Fill(Ds1.BSTreeC);
                 Tam.BSroomTableAdapter.Fill(Ds1.BSroom);
@@ -66,6 +68,36 @@ namespace simplepa2
             catch (Exception e1)
             {
                 Console.WriteLine(e1.Message);
+            }
+        }
+
+        internal void AssetPresetSave(EmSpeakerPosition t1)
+        {
+            List<string> preset = new List<string>();
+            preset.Add("PRESET1");
+            preset.Add("PRESET2");
+            preset.Add("PRESET3");
+            preset.Add("PRESET4");
+
+            Tam.AssetsTableAdapter.Fill(Ds1.Assets);
+            Tam.AssetPresetGroupsTableAdapter.Fill(Ds1.AssetPresetGroups);
+
+            var m3 = Ds1.AssetPresetGroups.FirstOrDefault(p => p.Name == "PRESET1");
+
+            if (m3 != null) 
+                return;
+
+            for (int i=0; i < 4;i++)
+            { 
+                foreach (AssetsRow a1 in Ds1.Assets)
+                { 
+                    AssetPresetGroupsRow m2 = Ds1.AssetPresetGroups.NewAssetPresetGroupsRow();
+                    m2.Name = preset[i];
+                    m2.AssetId = a1.AssetId;
+                    m2.EMNAME = a1.emServer;
+                    Ds1.AssetPresetGroups.Rows.Add(m2);
+                    Tam.AssetPresetGroupsTableAdapter.Update(Ds1.AssetPresetGroups);
+                }
             }
         }
 

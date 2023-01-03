@@ -200,13 +200,14 @@ namespace simplepa2.UI.Pages
         View_BBSMusicManage2 view_BBSMusicManage2  = new View_BBSMusicManage2();
         View_BBCEmergency2 view_BBCEMManager2  = new View_BBCEmergency2();
         View_GroupManager2 view_GroupManager2  = new View_GroupManager2();
+        View_GroupPresetManager2 view_GroupPresetManager2 = new View_GroupPresetManager2(); 
         View_BBCInput2 view_BBCInput2  = new View_BBCInput2();
         View_BBCMusic2 view_BBCMusic2 = new View_BBCMusic2();
         View_BBCOutput2 view_BBCOutput2  = new View_BBCOutput2();
         View_SystemAccount2 view_SystemAccount2  = new View_SystemAccount2();
         View_BBSEMManage2 view_BBSEMManage2 = new View_BBSEMManage2();
         View_BBSEMChannel2 view_BBSEMChannel2 = new View_BBSEMChannel2();
-
+        
         public void openContentsView(string menuAccessibleName)
         {
             switch (menuAccessibleName)
@@ -224,6 +225,7 @@ namespace simplepa2.UI.Pages
                 case "assetBarItem": view_BBCAsset2 = bringFrontView<View_BBCAsset2>("View_BBCAsset2", false); break;
                 case "deviceManageBarItem": view_BBCDevice = bringFrontView<View_BBCDevice>("View_BBCDevice", false); break;
                 case "navigationBarItem1": view_GroupManager2 = bringFrontView<View_GroupManager2>("View_GroupManager2", false); break;
+                case "navigationBarItem4": view_GroupPresetManager2 = bringFrontView<View_GroupPresetManager2>("View_GroupPresetManager2", false); break;
                 case "navigationBarItem2": view_BBSEMManage2 = bringFrontView<View_BBSEMManage2>("View_BBSEMManage2", false); break;
                 case "navigationBarItem3": view_BBSEMChannel2 = bringFrontView<View_BBSEMChannel2>("View_BBSEMChannel2", false); break;
                 case "siteManageBarItem": view_BBCSite = bringFrontView<View_BBCSite>("View_BBCSite", false); break;

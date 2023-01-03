@@ -68,6 +68,7 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
             this.pictureBox1 = new Wisej.Web.PictureBox();
+            this.navigationBarItem4 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.rightPanels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,7 +89,7 @@
             this.mainMenuBar.Name = "mainMenuBar";
             this.mainMenuBar.RightToLeft = Wisej.Web.RightToLeft.No;
             this.mainMenuBar.ShowUser = false;
-            this.mainMenuBar.Size = new System.Drawing.Size(250, 434);
+            this.mainMenuBar.Size = new System.Drawing.Size(250, 425);
             this.mainMenuBar.TabIndex = 0;
             this.mainMenuBar.ItemClick += new Wisej.Web.Ext.NavigationBar.NavigationBarItemClickEventHandler(this.mainMenuBar_ItemClick);
             this.mainMenuBar.SelectedItemChanged += new System.EventHandler(this.mainMenuBar_SelectedItemChanged);
@@ -175,6 +176,7 @@
             this.assetBarItem,
             this.deviceManageBarItem,
             this.navigationBarItem1,
+            this.navigationBarItem4,
             this.navigationBarItem2,
             this.navigationBarItem3,
             this.siteManageBarItem,
@@ -369,7 +371,7 @@
             this.rightPanels.Dock = Wisej.Web.DockStyle.Fill;
             this.rightPanels.Location = new System.Drawing.Point(250, 0);
             this.rightPanels.Name = "rightPanels";
-            this.rightPanels.Size = new System.Drawing.Size(541, 434);
+            this.rightPanels.Size = new System.Drawing.Size(486, 425);
             this.rightPanels.TabIndex = 1;
             // 
             // contentsPanel
@@ -379,7 +381,7 @@
             this.contentsPanel.Dock = Wisej.Web.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 66);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(541, 368);
+            this.contentsPanel.Size = new System.Drawing.Size(486, 359);
             this.contentsPanel.TabIndex = 0;
             // 
             // topPanels
@@ -389,7 +391,7 @@
             this.topPanels.Dock = Wisej.Web.DockStyle.Top;
             this.topPanels.Location = new System.Drawing.Point(0, 0);
             this.topPanels.Name = "topPanels";
-            this.topPanels.Size = new System.Drawing.Size(541, 66);
+            this.topPanels.Size = new System.Drawing.Size(486, 66);
             this.topPanels.TabIndex = 2;
             // 
             // dataSet1
@@ -408,13 +410,21 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 24);
             // 
+            // navigationBarItem4
+            // 
+            this.navigationBarItem4.AccessibleDescription = "";
+            this.navigationBarItem4.AccessibleName = "navigationBarItem4";
+            this.navigationBarItem4.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.navigationBarItem4.Name = "NavigationBarItem";
+            this.navigationBarItem4.Text = "PRESET그룹";
+            // 
             // PA_MainFrame
             // 
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rightPanels);
             this.Controls.Add(this.mainMenuBar);
             this.Name = "PA_MainFrame";
-            this.Size = new System.Drawing.Size(791, 434);
+            this.Size = new System.Drawing.Size(736, 425);
             this.Text = "PA_MainFrame";
             this.Load += new System.EventHandler(this.PA_MainFrame_Load);
             this.rightPanels.ResumeLayout(false);
@@ -466,5 +476,6 @@
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem1;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem2;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem3;
+        private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem4;
     }
 }
