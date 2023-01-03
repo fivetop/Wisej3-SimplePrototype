@@ -1,6 +1,7 @@
 USE [simplePA]
 GO
 
+DELETE FROM [dbo].[AssetPresetGroups]
 DELETE FROM [dbo].[AssetGroups]
 DELETE FROM [dbo].Assets
 DELETE FROM [dbo].BSTree

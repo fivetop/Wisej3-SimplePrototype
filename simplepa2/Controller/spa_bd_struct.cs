@@ -12,11 +12,15 @@ namespace simplepa2.Controller
     using System;
     using System.Collections.Generic;
     
-    public partial class AssetGroups
+    public partial class spa_bd_struct
     {
-        public int AssetGroupId { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> AssetId { get; set; }
-        public string EMNAME { get; set; }
+        public int bd_id { get; set; }
+        public string bd_name { get; set; }
+        public int refer_site_id { get; set; }
+        public Nullable<int> max_floor_no { get; set; }
+        public Nullable<int> under_floor_no { get; set; }
+        public Nullable<int> num_of_stairs { get; set; }
+        public Nullable<int> bd_fire_id { get; set; }
+        public string bd_description { get; set; }
     }
 }

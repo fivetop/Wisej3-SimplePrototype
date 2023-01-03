@@ -40,5 +40,8 @@ namespace simplepa2.Controller
         public virtual DbSet<UserTrees> UserTrees { get; set; }
         public virtual DbSet<PlayItem> PlayItem { get; set; }
         public virtual DbSet<BSTreeC> BSTreeC { get; set; }
+        public virtual DbSet<AssetPresetGroups> AssetPresetGroups { get; set; }
+        public virtual DbSet<spa_bd_struct> spa_bd_struct { get; set; }
+        public virtual DbSet<spa_site> spa_site { get; set; }
     }
 }

@@ -12,9 +12,9 @@ namespace simplepa2.Controller
     using System;
     using System.Collections.Generic;
     
-    public partial class AssetGroups
+    public partial class AssetPresetGroups
     {
-        public int AssetGroupId { get; set; }
+        public int AssetPresetGroupId { get; set; }
         public string Name { get; set; }
         public Nullable<int> AssetId { get; set; }
         public string EMNAME { get; set; }
