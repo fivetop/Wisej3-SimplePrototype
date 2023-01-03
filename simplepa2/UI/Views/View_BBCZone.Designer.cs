@@ -41,8 +41,9 @@
             this.bt_ImportCSV = new Wisej.Web.Button();
             this.assetsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.dataSet11 = new simplepa2.DataSet1();
-            this.emServerTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerTableAdapter();
             this.assetsSitenBuildingTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsSitenBuildingTableAdapter();
+            this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
+            this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
             this.pn_ViewMain.SuspendLayout();
             this.pn_TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -129,6 +130,8 @@
             // 
             this.cb_SiteName.AutoSize = false;
             this.cb_SiteName.DisplayMember = "EMNAME";
+            this.cb_SiteName.Items.AddRange(new object[] {
+            "전체"});
             this.cb_SiteName.Location = new System.Drawing.Point(71, 0);
             this.cb_SiteName.Margin = new Wisej.Web.Padding(0);
             this.cb_SiteName.Name = "cb_SiteName";
@@ -187,13 +190,17 @@
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // emServerTableAdapter1
-            // 
-            this.emServerTableAdapter1.ClearBeforeFill = true;
-            // 
             // assetsSitenBuildingTableAdapter1
             // 
             this.assetsSitenBuildingTableAdapter1.ClearBeforeFill = true;
+            // 
+            // emServerWithWholeColTableAdapter1
+            // 
+            this.emServerWithWholeColTableAdapter1.ClearBeforeFill = true;
+            // 
+            // deviceTableAdapter1
+            // 
+            this.deviceTableAdapter1.ClearBeforeFill = true;
             // 
             // View_BBCZone
             // 
@@ -224,7 +231,8 @@
         private Wisej.Web.Button bt_WholeSelect;
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter1;
         private DataSet1 dataSet11;
-        private DataSet1TableAdapters.EMServerTableAdapter emServerTableAdapter1;
         private DataSet1TableAdapters.AssetsSitenBuildingTableAdapter assetsSitenBuildingTableAdapter1;
+        private DataSet1TableAdapters.EMServerWithWholeColTableAdapter emServerWithWholeColTableAdapter1;
+        private DataSet1TableAdapters.DeviceTableAdapter deviceTableAdapter1;
     }
 }

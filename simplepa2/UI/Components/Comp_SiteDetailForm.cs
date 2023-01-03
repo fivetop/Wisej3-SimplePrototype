@@ -21,7 +21,7 @@ namespace simplepa2.UI.Components
         private DataSet1.spa_bd_structDataTable dsBuildingListDataTable;
 
         // 사이트의 빌딩 층정보 상세 테이블 
-        private DataSet1.siteDataDetailDataTable dsAllBuildingFloorDetailDataTable;
+        //private DataSet1.siteDataDetailDataTable dsAllBuildingFloorDetailDataTable;
 
         /*===========  UI  바인딩 프로퍼티 ===========  */
         // 빌딩의 플로어 편집 팝업
@@ -114,13 +114,13 @@ namespace simplepa2.UI.Components
             DataSet1.spa_bd_structRow structRow = boundingData;
 
             // 02. 층 데이터를 편집
-            DataRow[] drBuildingFloorData = this.dsAllBuildingFloorDetailDataTable.Select("refer_bd_id= '" + structRow.bd_id + "'");
+            //DataRow[] drBuildingFloorData = this.dsAllBuildingFloorDetailDataTable.Select("refer_bd_id= '" + structRow.bd_id + "'");
 
             // 03. 팝업 열고
             openBBCSiteFromPopup();
 
             // 04. Popup 객체에 사전 셋업 
-            popup_BBCSiteForm.setupUIwithData(structRow, drBuildingFloorData);
+            //popup_BBCSiteForm.setupUIwithData(structRow, drBuildingFloorData);
 
         }
 

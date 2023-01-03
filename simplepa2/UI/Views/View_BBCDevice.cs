@@ -12,7 +12,7 @@ namespace simplepa2.UI.Views
         private Popup_BBCDeviceForm popup_bbcDeviceForm;
         public View_BBCDevice()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         /*
@@ -35,10 +35,11 @@ namespace simplepa2.UI.Views
         private void BSDeviceManager_Load(object sender, EventArgs e)
         {
             this.deviceTableAdapter1.Fill(this.dataSet11.Device);
-            this.emServerTableAdapter1.Fill(this.dataSet11.EMServer);
+            this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
+            this.deviceTableAdapter1.Fill(this.dataSet11.Device);
 
             this.dg_deviceView.DataSource = dataSet11.Device;
-            this.cb_siteName.DataSource = this.dataSet11.EMServer;
+            this.cb_siteName.DataSource = this.dataSet11.EMServerWithWholeCol;
             this.cb_siteName.SelectedIndex = 0;
         }
 
@@ -59,7 +60,10 @@ namespace simplepa2.UI.Views
 
         internal void reDraw()
         {
-           //  this.deviceTableAdapter.Fill(this.dataSet1.Device);
+            this.cb_siteName.SelectedIndex = 0;
+            // sort by site name
+            this.deviceTableAdapter1.Fill(this.dataSet11.Device);
+            dg_deviceView.DataSource = this.dataSet11.Device;
         }
 
         private void dataGridView3_DataUpdated(object sender, DataGridViewDataUpdatedEventArgs e)
@@ -117,8 +121,18 @@ namespace simplepa2.UI.Views
 
         private void cb_siteName_SelectedIndexChanged(object sender, EventArgs e)
         {            
-            string selectedItem = (((this.cb_siteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerRow).EMNAME;
-            this.dg_deviceView.DataSource = dataSet11.Device.Select("EMNAME = '" + selectedItem + "'");
+            string selectedItem = ((this.cb_siteName.SelectedItem as DataRowView).Row as DataSet1.EMServerWithWholeColRow).EMNAME;
+
+            if (!selectedItem.Equals("전체"))
+                this.dg_deviceView.DataSource = dataSet11.Device.Select("EMNAME = '" + selectedItem + "'");
+            else
+                this.dg_deviceView.DataSource = dataSet11.Device;
+        }
+
+        private void bt_reloading_Click(object sender, EventArgs e)
+        {
+            this.deviceTableAdapter1.Fill(this.dataSet11.Device);
+            this.dg_deviceView.DataSource = dataSet11.Device;
         }
     }
 }

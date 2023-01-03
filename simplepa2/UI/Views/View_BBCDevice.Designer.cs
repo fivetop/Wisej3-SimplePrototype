@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_BBCDevice));
             this.panel2 = new Wisej.Web.Panel();
             this.dg_deviceView = new Wisej.Web.DataGridView();
             this.DeviceId = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.device_Category = new Wisej.Web.DataGridViewTextBoxColumn();
             this.device = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.DanteModelName = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ip = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ip_dspctrl = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.DanteModelName = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.device_Category = new Wisej.Web.DataGridViewTextBoxColumn();
             this.chspk = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_name = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_chno = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_vol = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1 = new Wisej.Web.Panel();
+            this.bt_reloading = new Wisej.Web.Button();
+            this.cb_siteName = new Wisej.Web.ComboBox();
             this.bt_scanStart = new Wisej.Web.Button();
             this.button4 = new Wisej.Web.Button();
             this.popTestButton = new Wisej.Web.Button();
             this.label3 = new Wisej.Web.Label();
             this.dataSet11 = new simplepa2.DataSet1();
             this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
-            this.cb_siteName = new Wisej.Web.ComboBox();
-            this.emServerTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerTableAdapter();
             this.emServerNDeviceNameTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerNDeviceNameTableAdapter();
-            this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_deviceView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,12 +101,32 @@
             this.DeviceId.Name = "DeviceId";
             this.DeviceId.Width = 50;
             // 
+            // device_Category
+            // 
+            this.device_Category.DataPropertyName = "device";
+            this.device_Category.HeaderText = "장비카테고리(DB)";
+            this.device_Category.Name = "device_Category";
+            this.device_Category.Width = 150;
+            // 
             // device
             // 
             this.device.DataPropertyName = "path";
             this.device.HeaderText = "지역";
             this.device.Name = "device";
             this.device.Width = 140;
+            // 
+            // Column0
+            // 
+            this.Column0.DataPropertyName = "DeviceName";
+            this.Column0.HeaderText = "장비이름";
+            this.Column0.Name = "Column0";
+            // 
+            // DanteModelName
+            // 
+            this.DanteModelName.DataPropertyName = "DanteModelName";
+            this.DanteModelName.HeaderText = "단테모델명";
+            this.DanteModelName.Name = "DanteModelName";
+            this.DanteModelName.Width = 200;
             // 
             // ip
             // 
@@ -118,20 +140,6 @@
             this.ip_dspctrl.DataPropertyName = "ip_dspctrl";
             this.ip_dspctrl.HeaderText = "DSP IP주소";
             this.ip_dspctrl.Name = "ip_dspctrl";
-            // 
-            // DanteModelName
-            // 
-            this.DanteModelName.DataPropertyName = "DanteModelName";
-            this.DanteModelName.HeaderText = "단테모델명";
-            this.DanteModelName.Name = "DanteModelName";
-            this.DanteModelName.Width = 200;
-            // 
-            // device_Category
-            // 
-            this.device_Category.DataPropertyName = "device";
-            this.device_Category.HeaderText = "장비카테고리(DB)";
-            this.device_Category.Name = "device_Category";
-            this.device_Category.Width = 150;
             // 
             // chspk
             // 
@@ -161,6 +169,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bt_reloading);
             this.panel1.Controls.Add(this.cb_siteName);
             this.panel1.Controls.Add(this.bt_scanStart);
             this.panel1.Controls.Add(this.button4);
@@ -172,6 +181,31 @@
             this.panel1.ShowCloseButton = false;
             this.panel1.Size = new System.Drawing.Size(1320, 52);
             this.panel1.TabIndex = 66;
+            // 
+            // bt_reloading
+            // 
+            this.bt_reloading.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.bt_reloading.CssStyle = resources.GetString("bt_reloading.CssStyle");
+            this.bt_reloading.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_reloading.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_reloading.Location = new System.Drawing.Point(363, 1);
+            this.bt_reloading.Margin = new Wisej.Web.Padding(0);
+            this.bt_reloading.Name = "bt_reloading";
+            this.bt_reloading.Size = new System.Drawing.Size(100, 32);
+            this.bt_reloading.TabIndex = 87;
+            this.bt_reloading.Text = "재로딩";
+            this.bt_reloading.Click += new System.EventHandler(this.bt_reloading_Click);
+            // 
+            // cb_siteName
+            // 
+            this.cb_siteName.DisplayMember = "EMNAME";
+            this.cb_siteName.Items.AddRange(new object[] {
+            "전체"});
+            this.cb_siteName.Location = new System.Drawing.Point(99, 0);
+            this.cb_siteName.Name = "cb_siteName";
+            this.cb_siteName.Size = new System.Drawing.Size(251, 36);
+            this.cb_siteName.TabIndex = 86;
+            this.cb_siteName.SelectedIndexChanged += new System.EventHandler(this.cb_siteName_SelectedIndexChanged);
             // 
             // bt_scanStart
             // 
@@ -233,30 +267,13 @@
             // 
             this.deviceTableAdapter1.ClearBeforeFill = true;
             // 
-            // cb_siteName
-            // 
-            this.cb_siteName.DisplayMember = "EMNAME";
-            this.cb_siteName.Items.AddRange(new object[] {
-            "전체"});
-            this.cb_siteName.Location = new System.Drawing.Point(99, 0);
-            this.cb_siteName.Name = "cb_siteName";
-            this.cb_siteName.Size = new System.Drawing.Size(251, 36);
-            this.cb_siteName.TabIndex = 86;
-            this.cb_siteName.SelectedIndexChanged += new System.EventHandler(this.cb_siteName_SelectedIndexChanged);
-            // 
-            // emServerTableAdapter1
-            // 
-            this.emServerTableAdapter1.ClearBeforeFill = true;
-            // 
             // emServerNDeviceNameTableAdapter1
             // 
             this.emServerNDeviceNameTableAdapter1.ClearBeforeFill = true;
             // 
-            // Column0
+            // emServerWithWholeColTableAdapter1
             // 
-            this.Column0.DataPropertyName = "DeviceName";
-            this.Column0.HeaderText = "장비이름";
-            this.Column0.Name = "Column0";
+            this.emServerWithWholeColTableAdapter1.ClearBeforeFill = true;
             // 
             // View_BBCDevice
             // 
@@ -298,8 +315,9 @@
         private Wisej.Web.DataGridViewTextBoxColumn ip_dspctrl;
         private Wisej.Web.DataGridViewTextBoxColumn chspk;
         private Wisej.Web.ComboBox cb_siteName;
-        private DataSet1TableAdapters.EMServerTableAdapter emServerTableAdapter1;
         private DataSet1TableAdapters.EMServerNDeviceNameTableAdapter emServerNDeviceNameTableAdapter1;
+        private DataSet1TableAdapters.EMServerWithWholeColTableAdapter emServerWithWholeColTableAdapter1;
         private Wisej.Web.DataGridViewTextBoxColumn Column0;
+        private Wisej.Web.Button bt_reloading;
     }
 }

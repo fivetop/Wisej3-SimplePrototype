@@ -15,6 +15,7 @@ namespace simplepa2.UI.Views
         private List<Comp_ZoneBuildingPanels> buildPanelDataList;
 
 
+        private string comboWholeText = "전체";
         private string strSelectRelease = "선택해제";
         private string strSelectAll = "모두선택";
         private bool bZoneSelectAll = false; 
@@ -39,7 +40,7 @@ namespace simplepa2.UI.Views
             try
             {
                 this.assetsTableAdapter1.Fill(this.dataSet11.Assets);
-                this.emServerTableAdapter1.Fill(this.dataSet11.EMServer);
+                this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
                 this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
             }
             catch(Exception e)
@@ -50,14 +51,15 @@ namespace simplepa2.UI.Views
 
         public void comboUISetup()
         {
-            cb_SiteName.DataSource = this.dataSet11.EMServer;
+            // cb_SiteName
+            cb_SiteName.DataSource = this.dataSet11.EMServerWithWholeCol;            
             this.cb_SiteName.SelectedIndex = 0;
         }
 
         private void bt_SelectLoading_Click(object sender, EventArgs e)
         {
-            // 선택된 사이트명 확인 (EM명)
-            string selectedItem = (((this.cb_SiteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerRow).EMNAME;
+            // 선택된 사이트명 확인 (EM명)            
+            string selectedItem = (((this.cb_SiteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerWithWholeColRow).EMNAME;
 
             this.buildPanelDataList = buildingDataUISetup(selectedItem);
             
@@ -68,7 +70,17 @@ namespace simplepa2.UI.Views
             List<Comp_ZoneBuildingPanels> dataList = new List<Comp_ZoneBuildingPanels>();
 
             // 빌딩 데이터 가져오기
-            DataRow[] buildList = this.dataSet11.AssetsSitenBuilding.Select("emServer = '" + selectedItem + "'");
+            DataRow[] buildList;
+            
+            if(selectedItem.Equals("전체"))
+            {
+                buildList = this.dataSet11.AssetsSitenBuilding.Select();
+            }
+            else
+            {
+                buildList = this.dataSet11.AssetsSitenBuilding.Select("emServer = '" + selectedItem + "'");
+            }
+            
             
             // 기존 패널 클리어
             this.pn_Contents.Controls.Clear();
