@@ -50,8 +50,10 @@ namespace simplepa2.UI.Components
         {
             if (zoneButtonSet == null)
                 return;
-            
-                // 02. 개별 컴포넌트 생성
+            else if (zoneButtonSet.Count < 3)
+                this.Size = new System.Drawing.Size(1600, 120);
+
+            // 02. 개별 컴포넌트 생성
             ch_floor.Text = strFloorName;
 
             foreach (Comp_ZoneButton zoneItem in zoneButtonSet)

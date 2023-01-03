@@ -32,7 +32,6 @@
             this.panel10 = new Wisej.Web.Panel();
             this.lb_buildingName = new Wisej.Web.Label();
             this.label22 = new Wisej.Web.Label();
-            this.pn_main.SuspendLayout();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,11 +39,10 @@
             // 
             this.pn_main.AutoSize = true;
             this.pn_main.BackColor = System.Drawing.Color.White;
-            this.pn_main.Controls.Add(this.panel10);
             this.pn_main.Dock = Wisej.Web.DockStyle.Fill;
-            this.pn_main.Location = new System.Drawing.Point(0, 0);
+            this.pn_main.Location = new System.Drawing.Point(0, 40);
             this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1380, 41);
+            this.pn_main.Size = new System.Drawing.Size(1380, 1);
             this.pn_main.TabIndex = 7;
             // 
             // panel10
@@ -90,10 +88,10 @@
             // Comp_ZoneBuildingPanels
             // 
             this.Controls.Add(this.pn_main);
+            this.Controls.Add(this.panel10);
             this.Dock = Wisej.Web.DockStyle.Top;
             this.Name = "Comp_ZoneBuildingPanels";
             this.Size = new System.Drawing.Size(1380, 41);
-            this.pn_main.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

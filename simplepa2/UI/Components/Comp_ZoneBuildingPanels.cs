@@ -7,7 +7,7 @@ namespace simplepa2.UI.Components
 {    
     public partial class Comp_ZoneBuildingPanels : Wisej.Web.UserControl
     {
-        // original data
+        // original  data
         private DataRow[] buildList;
 
         // 1차 가공 데이터
@@ -25,6 +25,7 @@ namespace simplepa2.UI.Components
         public Comp_ZoneBuildingPanels(string buildingName, DataRow[] buildList)
         {
             InitializeComponent();
+
             this.buildList = buildList;
 
             lb_buildingName.Text = buildingName;
