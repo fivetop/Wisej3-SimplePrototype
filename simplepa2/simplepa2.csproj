@@ -1482,6 +1482,9 @@
     </PackageReference>
     <PackageReference Include="Wisej-3" Version="3.*-*" />
     <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp">
+      <HintPath>Data\taglib-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Wisej.Ext.FontAwesome">
       <HintPath>..\Wisej.CodeProject\wisejExt\Wisej.Ext.FontAwesome.dll</HintPath>
     </Reference>

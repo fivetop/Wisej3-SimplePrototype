@@ -6,13 +6,18 @@ namespace simplepa2.UI.Views
 {
     public partial class View_BBSMusicManage2 : Wisej.Web.UserControl
     {
-        public View_BBSMusicManage2()
+		string strFileUploadPath;
+		Stream stream;
+		String filename;
+
+		public View_BBSMusicManage2()
         {
             InitializeComponent();
         }
 
 		private void MMusicManager_Load(object sender, EventArgs e)
 		{
+			strFileUploadPath = @"C:\SimplePA2" + "\\Music\\";
 
 			this.mupload1.CreateControl();
 
@@ -25,41 +30,21 @@ namespace simplepa2.UI.Views
               }});", this.mupload1.Handle));
 
 			this.musicsTableAdapter.Fill(this.dataSet1.Musics);
+			gweb.mainFrame.dBSqlite.MusicSave();
+			this.musicsTableAdapter.Fill(this.dataSet1.Musics);
 		}
 
-		private void DeleteRecord()
-		{
-			// this method shows server-side modal.
+        internal void reDraw()
+        {
+            this.musicsTableAdapter.Fill(this.dataSet1.Musics);
+        }
 
-			try
-			{
-				var row = this.mdataGridView1.CurrentRow?.Index ?? -1;
-				if (row > -1)
-				{
-					if (MessageBox.Show(
-						"Are you sure you want to delete this record?",
-						icon: MessageBoxIcon.Question,
-						buttons: MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
-					{
-						this.mbindingSource1.RemoveCurrent();
-						var count = this.musicsTableAdapter.Update(this.dataSet1.Musics);
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
-			}
-		}
-
-		private void SaveData()
+        private void SaveData()
 		{
 			try
 			{
 				this.mbindingSource1.EndEdit();
 				var count = this.musicsTableAdapter.Update(this.dataSet1.Musics);
-				//this.mdataGridView1.Tools["Save"].Enabled = false;
-
 				AlertBox.Show("Saved!");
 			}
 			catch (Exception ex)
@@ -68,47 +53,46 @@ namespace simplepa2.UI.Views
 			}
 		}
 
-		private void AddNewRecord()
-		{
-			try
-			{
-				this.mbindingSource1.AddNew();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
-			}
-		}
-
-		private void mbutton1_Click(object sender, EventArgs e)
-		{
-			SaveData();
-		}
-
 		private void mbutton2_Click(object sender, EventArgs e)
 		{
-			//this.upload1.UploadFiles();
-			//AddNewRecord();
-		}
-
-		private void mbutton3_Click(object sender, EventArgs e)
-		{
-			DeleteRecord();
-		}
+            mupload1.Text = "";
+            if (filename == "" || filename == null)
+                return;
+            SaveStreamAsFile(strFileUploadPath, stream, filename);
+            DBInsert(strFileUploadPath + filename);
+            reDraw();
+        }
 
 		private void mupload1_Uploaded(object sender, UploadedEventArgs e)
 		{
-			string strExeDir = Path.GetDirectoryName(Application.ExecutablePath);
-			string strFileUploadPath = strExeDir + "\\Uploaded_Files\\";
-			if (!Directory.Exists(strExeDir + "\\Uploaded_Files"))
-			{
-				Directory.CreateDirectory(strExeDir + "\\Uploaded_Files");
-				strFileUploadPath = strExeDir + "\\Uploaded_Files\\";
-			}
-			e.Files[0].SaveAs(strFileUploadPath + e.Files[0].FileName);
-
-			//e.Files[0].SaveAs("C:\\Test-upload" + e.Files[0].FileName);
+			stream = e.Files[0].InputStream;
+			filename = e.Files[0].FileName;
 		}
+
+
+        private void SaveStreamAsFile(string filePath, Stream inputStream, string fileName)
+        {
+            //validation each saved file because another process could delete 
+            //the directory
+            DirectoryInfo info = new DirectoryInfo(filePath);
+            if (!info.Exists)
+            {
+                info.Create();
+            }
+
+            string path = Path.Combine(filePath, fileName);
+            using (FileStream outputFileStream = new FileStream(path, FileMode.Create))
+            {
+                inputStream.CopyTo(outputFileStream);
+            }
+        }
+
+
+        private void DBInsert(string strFileUploadPath)
+        {
+            gweb.mainFrame.dBSqlite.DBInit();
+
+        }
 
     }
 }
