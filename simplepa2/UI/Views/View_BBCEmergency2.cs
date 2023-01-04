@@ -14,8 +14,10 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
         }
+
         private void BSEMManager_Load(object sender, EventArgs e)
         {
+            gweb.mainFrame.dBSqlite.SaveEMBs();
             this.deviceTableAdapter.Fill(this.dataSet1.Device);
             this.emBsTableAdapter.Fill(this.dataSet1.EMBs);
 
