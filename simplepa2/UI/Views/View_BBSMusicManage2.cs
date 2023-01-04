@@ -18,17 +18,17 @@ namespace simplepa2.UI.Views
 		private void MMusicManager_Load(object sender, EventArgs e)
 		{
 			strFileUploadPath = @"C:\SimplePA2" + "\\Music\\";
-
+/*
 			this.mupload1.CreateControl();
 
-			this.mbutton2.Eval(
+			this.mbuttonAdd.Eval(
 	   String.Format(@"
             this.uploadButton = Wisej.Core.getComponent(""id_{0}"");
             this.addListener(""execute"", function(e)
               {{
                  this.uploadButton.upload();
               }});", this.mupload1.Handle));
-
+*/
 			this.musicsTableAdapter.Fill(this.dataSet1.Musics);
 			gweb.mainFrame.dBSqlite.MusicSave();
 			this.musicsTableAdapter.Fill(this.dataSet1.Musics);
@@ -53,12 +53,16 @@ namespace simplepa2.UI.Views
 			}
 		}
 
-		private void mbutton2_Click(object sender, EventArgs e)
-		{
-            mupload1.Text = "";
+        private void mbuttonAdd_Click(object sender, EventArgs e)
+        {
             if (filename == "" || filename == null)
                 return;
-            SaveStreamAsFile(strFileUploadPath, stream, filename);
+
+            if (SaveStreamAsFile(strFileUploadPath, stream, filename) == false)
+            {
+                AlertBox.Show ("파일이 존재 합니다.");
+                return;
+            }
             DBInsert(strFileUploadPath + filename);
             reDraw();
         }
@@ -70,7 +74,7 @@ namespace simplepa2.UI.Views
 		}
 
 
-        private void SaveStreamAsFile(string filePath, Stream inputStream, string fileName)
+        private bool SaveStreamAsFile(string filePath, Stream inputStream, string fileName)
         {
             //validation each saved file because another process could delete 
             //the directory
@@ -81,17 +85,22 @@ namespace simplepa2.UI.Views
             }
 
             string path = Path.Combine(filePath, fileName);
+
+            if (File.Exists(path))
+                return false;
+
             using (FileStream outputFileStream = new FileStream(path, FileMode.Create))
             {
                 inputStream.CopyTo(outputFileStream);
             }
+            return true;
         }
 
 
-        private void DBInsert(string strFileUploadPath)
+        private void DBInsert(string path)
         {
             gweb.mainFrame.dBSqlite.DBInit();
-
+            gweb.mainFrame.dBSqlite.MusicFileSave(strFileUploadPath, filename);
         }
 
     }

@@ -71,6 +71,7 @@ namespace simplepa2
             }
         }
 
+
         internal void AssetPresetSave()
         {
             List<string> preset = new List<string>();
@@ -623,6 +624,29 @@ namespace simplepa2
         #endregion
 
         #region // 음원 처리
+
+        internal bool MusicFileSave(string path, string filename)
+        {
+
+            string path1 = Path.Combine(path, filename);
+            var mu1 = TagLib.File.Create(path1);
+            Thread.Sleep(50);
+            MusicsRow m2 = Ds1.Musics.NewMusicsRow();
+            string str1 = "00:00:00";
+            var r1 = mu1.Properties.Duration;
+            m2.FileName = filename;
+            m2.FileContent = "";
+            m2.deletable = "N";
+            Thread.Sleep(50);
+            str1 = r1.ToString(@"hh\:mm\:ss");
+            if (str1 == "00:00:00")
+                str1 = "00:00:01";
+            m2.duration = str1;
+            Ds1.Musics.Rows.Add(m2);
+            Tam.MusicsTableAdapter.Update(Ds1.Musics);
+            return true;
+        }
+
         // 음원 폴더에서 가져와 디비 생성 
         // 듀레이션은 시간이 걸리므로 타이머 쓰레드 처리 
         public void MusicSave()

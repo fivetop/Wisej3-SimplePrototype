@@ -33,7 +33,7 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.musicsTableAdapter = new simplepa2.DataSet1TableAdapters.MusicsTableAdapter();
             this.ptop = new Wisej.Web.Panel();
-            this.mbutton2 = new Wisej.Web.Button();
+            this.mbuttonAdd = new Wisej.Web.Button();
             this.mupload1 = new Wisej.Web.Upload();
             this.mdataGridView1 = new Wisej.Web.DataGridView();
             this.colMusicid = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -64,7 +64,7 @@
             // ptop
             // 
             this.ptop.BackColor = System.Drawing.Color.White;
-            this.ptop.Controls.Add(this.mbutton2);
+            this.ptop.Controls.Add(this.mbuttonAdd);
             this.ptop.Controls.Add(this.mupload1);
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
             this.ptop.Location = new System.Drawing.Point(20, 20);
@@ -73,14 +73,14 @@
             this.ptop.TabIndex = 1;
             this.ptop.TabStop = true;
             // 
-            // mbutton2
+            // mbuttonAdd
             // 
-            this.mbutton2.Location = new System.Drawing.Point(324, 3);
-            this.mbutton2.Name = "mbutton2";
-            this.mbutton2.Size = new System.Drawing.Size(57, 27);
-            this.mbutton2.TabIndex = 12;
-            this.mbutton2.Text = "등록";
-            this.mbutton2.Click += new System.EventHandler(this.mbutton2_Click);
+            this.mbuttonAdd.Location = new System.Drawing.Point(324, 3);
+            this.mbuttonAdd.Name = "mbuttonAdd";
+            this.mbuttonAdd.Size = new System.Drawing.Size(57, 27);
+            this.mbuttonAdd.TabIndex = 12;
+            this.mbuttonAdd.Text = "등록";
+            this.mbuttonAdd.Click += new System.EventHandler(this.mbuttonAdd_Click);
             // 
             // mupload1
             // 
@@ -172,7 +172,7 @@
         private Wisej.Web.DataGridViewTextBoxColumn colMusicid;
         private Wisej.Web.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private Wisej.Web.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private Wisej.Web.Button mbutton2;
+        private Wisej.Web.Button mbuttonAdd;
         private Wisej.Web.Upload mupload1;
         private Wisej.Web.Panel panel1;
     }
