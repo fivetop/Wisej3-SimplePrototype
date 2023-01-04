@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gbindingSource2 = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
-            this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.gbindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.gdataGridView1 = new Wisej.Web.DataGridView();
-            this.colAssetbaseid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new Wisej.Web.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.gbutton1 = new Wisej.Web.Button();
@@ -47,7 +44,8 @@
             this.panel2 = new Wisej.Web.Panel();
             this.assetPresetGroupsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetPresetGroupsTableAdapter();
             this.sitebindingSource1 = new Wisej.Web.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).BeginInit();
+            this.gbindingSource2 = new Wisej.Web.BindingSource(this.components);
+            this.colAssetpresetgroupid = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdataGridView1)).BeginInit();
@@ -55,29 +53,26 @@
             this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sitebindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gbindingSource2
-            // 
-            this.gbindingSource2.DataMember = "Assets";
-            this.gbindingSource2.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // assetsTableAdapter
-            // 
-            this.assetsTableAdapter.ClearBeforeFill = true;
-            // 
             // gdataGridView1
             // 
             this.gdataGridView1.AutoGenerateColumns = false;
             this.gdataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.colAssetbaseid,
+            this.colAssetpresetgroupid,
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn1});
+            // 
+            // gbindingSource2
+            // 
+            this.gbindingSource2.DataMember = "AssetPresetGroups";
+            this.gbindingSource2.DataSource = this.dataSet1;
             this.gdataGridView1.DataSource = this.gbindingSource2;
             this.gdataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.gdataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
@@ -88,14 +83,6 @@
             this.gdataGridView1.Size = new System.Drawing.Size(832, 503);
             this.gdataGridView1.TabIndex = 12;
             this.gdataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // colAssetbaseid
-            // 
-            this.colAssetbaseid.DataPropertyName = "AssetId";
-            this.colAssetbaseid.HeaderText = "No";
-            this.colAssetbaseid.Name = "colAssetbaseid";
-            this.colAssetbaseid.ReadOnly = true;
-            this.colAssetbaseid.Width = 40;
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -224,6 +211,18 @@
             // 
             this.assetPresetGroupsTableAdapter1.ClearBeforeFill = true;
             // 
+            // gbindingSource2
+            // 
+            this.gbindingSource2.DataMember = "AssetPresetGroups";
+            this.gbindingSource2.DataSource = this.dataSet1;
+            // 
+            // colAssetpresetgroupid
+            // 
+            this.colAssetpresetgroupid.DataPropertyName = "AssetPresetGroupId";
+            this.colAssetpresetgroupid.HeaderText = "No";
+            this.colAssetpresetgroupid.Name = "colAssetpresetgroupid";
+            this.colAssetpresetgroupid.ReadOnly = true;
+            // 
             // View_GroupPresetManager2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -233,26 +232,23 @@
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(912, 635);
             this.Load += new System.EventHandler(this.MGroupManager_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdataGridView1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.ptop.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sitebindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Wisej.Web.BindingSource gbindingSource2;
         private DataSet1 dataSet1;
         private Wisej.Web.BindingSource gbindingSource1;
-        private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
         private Wisej.Web.DataGridView gdataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn colAssetbaseid;
         private Wisej.Web.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private Wisej.Web.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private Wisej.Web.Button gbutton1;
@@ -265,5 +261,7 @@
         private Wisej.Web.ComboBox sitecomboBox1;
         private Wisej.Web.Label label1;
         private Wisej.Web.BindingSource sitebindingSource1;
+        private Wisej.Web.DataGridViewTextBoxColumn colAssetpresetgroupid;
+        private Wisej.Web.BindingSource gbindingSource2;
     }
 }

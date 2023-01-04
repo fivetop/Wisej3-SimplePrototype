@@ -1319,7 +1319,18 @@ FROM     AssetPresetGroups</CommandText>
               <Mapping SourceColumn="AssetId" DataSetColumn="AssetId" />
               <Mapping SourceColumn="chk" DataSetColumn="chk" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  AssetPresetGroups.AssetPresetGroupId, AssetPresetGroups.Name, AssetPresetGroups.EMNAME, AssetPresetGroups.AssetId, AssetPresetGroups.chk, Assets.path
+FROM     AssetPresetGroups INNER JOIN
+               Assets ON AssetPresetGroups.AssetId = Assets.AssetId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="spa_bd_structTableAdapter" GeneratorDataComponentClassName="spa_bd_structTableAdapter" Name="spa_bd_struct" UserDataComponentName="spa_bd_structTableAdapter">
             <MainSource>
@@ -2499,7 +2510,7 @@ FROM     DataType</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="AssetId" msprop:Generator_ColumnPropNameInTable="AssetIdColumn" msprop:Generator_ColumnPropNameInRow="AssetId" msprop:Generator_UserColumnName="AssetId" msprop:Generator_ColumnVarNameInTable="columnAssetId" type="xs:int" minOccurs="0" />
-              <xs:element name="chk" msprop:Generator_ColumnPropNameInRow="chk" msprop:Generator_ColumnPropNameInTable="chkColumn" msprop:Generator_ColumnVarNameInTable="columnchk" msprop:Generator_UserColumnName="chk" type="xs:int" minOccurs="0" />
+              <xs:element name="chk" msprop:Generator_UserColumnName="chk" msprop:Generator_ColumnPropNameInTable="chkColumn" msprop:Generator_ColumnPropNameInRow="chk" msprop:Generator_ColumnVarNameInTable="columnchk" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2574,20 +2585,20 @@ FROM     DataType</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataType" msprop:Generator_RowEvHandlerName="DataTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTypeRowDeleted" msprop:Generator_RowDeletingName="DataTypeRowDeleting" msprop:Generator_RowEvArgName="DataTypeRowChangeEvent" msprop:Generator_TablePropName="DataType" msprop:Generator_RowChangedName="DataTypeRowChanged" msprop:Generator_RowChangingName="DataTypeRowChanging" msprop:Generator_TableClassName="DataTypeDataTable" msprop:Generator_RowClassName="DataTypeRow" msprop:Generator_TableVarName="tableDataType" msprop:Generator_UserTableName="DataType">
+        <xs:element name="DataType" msprop:Generator_RowClassName="DataTypeRow" msprop:Generator_RowEvHandlerName="DataTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTypeRowDeleted" msprop:Generator_RowDeletingName="DataTypeRowDeleting" msprop:Generator_RowEvArgName="DataTypeRowChangeEvent" msprop:Generator_TablePropName="DataType" msprop:Generator_RowChangedName="DataTypeRowChanged" msprop:Generator_UserTableName="DataType" msprop:Generator_RowChangingName="DataTypeRowChanging" msprop:Generator_TableClassName="DataTypeDataTable" msprop:Generator_TableVarName="tableDataType">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="data_indexs" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="data_indexs" msprop:Generator_ColumnPropNameInTable="data_indexsColumn" msprop:Generator_ColumnVarNameInTable="columndata_indexs" msprop:Generator_UserColumnName="data_indexs" type="xs:int" />
-              <xs:element name="data_group_no" msprop:Generator_ColumnPropNameInRow="data_group_no" msprop:Generator_ColumnPropNameInTable="data_group_noColumn" msprop:Generator_ColumnVarNameInTable="columndata_group_no" msprop:Generator_UserColumnName="data_group_no" type="xs:int" minOccurs="0" />
-              <xs:element name="data_number" msprop:Generator_ColumnPropNameInRow="data_number" msprop:Generator_ColumnPropNameInTable="data_numberColumn" msprop:Generator_ColumnVarNameInTable="columndata_number" msprop:Generator_UserColumnName="data_number" type="xs:int" minOccurs="0" />
-              <xs:element name="data_value" msprop:Generator_ColumnPropNameInRow="data_value" msprop:Generator_ColumnPropNameInTable="data_valueColumn" msprop:Generator_ColumnVarNameInTable="columndata_value" msprop:Generator_UserColumnName="data_value" minOccurs="0">
+              <xs:element name="data_indexs" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="data_indexs" msprop:Generator_ColumnPropNameInTable="data_indexsColumn" msprop:Generator_ColumnPropNameInRow="data_indexs" msprop:Generator_ColumnVarNameInTable="columndata_indexs" type="xs:int" />
+              <xs:element name="data_group_no" msprop:Generator_UserColumnName="data_group_no" msprop:Generator_ColumnPropNameInTable="data_group_noColumn" msprop:Generator_ColumnPropNameInRow="data_group_no" msprop:Generator_ColumnVarNameInTable="columndata_group_no" type="xs:int" minOccurs="0" />
+              <xs:element name="data_number" msprop:Generator_UserColumnName="data_number" msprop:Generator_ColumnPropNameInTable="data_numberColumn" msprop:Generator_ColumnPropNameInRow="data_number" msprop:Generator_ColumnVarNameInTable="columndata_number" type="xs:int" minOccurs="0" />
+              <xs:element name="data_value" msprop:Generator_UserColumnName="data_value" msprop:Generator_ColumnPropNameInTable="data_valueColumn" msprop:Generator_ColumnPropNameInRow="data_value" msprop:Generator_ColumnVarNameInTable="columndata_value" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="data_description" msprop:Generator_ColumnPropNameInRow="data_description" msprop:Generator_ColumnPropNameInTable="data_descriptionColumn" msprop:Generator_ColumnVarNameInTable="columndata_description" msprop:Generator_UserColumnName="data_description" minOccurs="0">
+              <xs:element name="data_description" msprop:Generator_UserColumnName="data_description" msprop:Generator_ColumnPropNameInTable="data_descriptionColumn" msprop:Generator_ColumnPropNameInRow="data_description" msprop:Generator_ColumnVarNameInTable="columndata_description" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
