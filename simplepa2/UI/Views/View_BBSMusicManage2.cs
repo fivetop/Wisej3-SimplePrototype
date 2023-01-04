@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataClass;
+using System;
 using System.IO;
 using Wisej.Web;
 
@@ -65,9 +66,20 @@ namespace simplepa2.UI.Views
             }
             DBInsert(strFileUploadPath + filename);
             reDraw();
+
+
+            if (gweb.mainFrame.isSignalR())
+            {
+                gweb.mainFrame.sendSigR(eSignalRMsgType.eFileDown, filename); // dsp, dsp_chno
+            }
+            else
+            {
+                AlertBox.Show("취소되었습니다. - 서버 상태를 확인바랍니다.");
+            }
+
         }
 
-		private void mupload1_Uploaded(object sender, UploadedEventArgs e)
+        private void mupload1_Uploaded(object sender, UploadedEventArgs e)
 		{
 			stream = e.Files[0].InputStream;
 			filename = e.Files[0].FileName;

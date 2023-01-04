@@ -25,6 +25,7 @@ namespace DataClass
         eFindDSP = 14,          // Find DSP     S2C
         eReturn = 15,
         eInChMove = 16,         // DSP, Sound 이동  C2S
+        eFileDown = 17,         // file download   S2C 
     }
 
     public enum eEventCode

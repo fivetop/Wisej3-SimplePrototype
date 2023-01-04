@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using simplepa2;
 using simplepa2.DataSet1TableAdapters;
 using static simplepa2.DataSet1;
+using System.Net;
 
 namespace pa
 {
@@ -107,6 +108,10 @@ namespace pa
                         SendSigR(eSignalRMsgType.eReturn, "Server : 처리(진행)중 입니다.");
                     }
                     break;
+                case eSignalRMsgType.eFileDown:
+                    g.Log("eFileDown FileName : " + msg.user_data1);
+                    downloadFile(msg.user_data1);
+                    break;
             }
             return true;
         }
@@ -190,6 +195,15 @@ namespace pa
             //g.Log(v1 + ";" + s1.ToString() + ";" + s2.ToString());
         }
 
+
+        private void downloadFile(string url)
+        {
+            // url 등록 필요  romee
+            return;
+            string file = System.IO.Path.GetFileName(url);
+            WebClient cln = new WebClient();
+            cln.DownloadFile(url, file);
+        }
 
     }
 }

@@ -452,6 +452,12 @@ namespace simplepa2.UI.Pages
                     msg1.Msgtype = eVolume;
                     break;
 
+                case eSignalRMsgType.eFileDown:
+                    msg1.message = "eFileDown";
+                    msg1.Msgtype = eVolume;
+                    msg1.user_data1 = device_name;
+                    break;
+
                 case eSignalRMsgType.eOutChMove:
                     msg1.EMNAME = emname;
                     msg1.message = device_name;
