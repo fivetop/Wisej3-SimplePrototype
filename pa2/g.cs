@@ -33,7 +33,10 @@ namespace pa
         public string processfile { get; set; } = @"pa_em.exe";
         public string GPIOPort { get; set; } = @"COM4";
         public string Rport { get; set; } = @"COM3";
-        
+        public int Pport { get; set; } = 0;
+        public int Jigsangbalhwa { get; set; } = 0;
+
+
 
         public EMClient()
         {

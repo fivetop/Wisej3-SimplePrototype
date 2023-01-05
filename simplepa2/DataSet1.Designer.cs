@@ -9485,77 +9485,7 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnSimplePAId;
             
-            private global::System.Data.DataColumn columnEMNAME;
-            
             private global::System.Data.DataColumn columnUserName;
-            
-            private global::System.Data.DataColumn columnEMServerIP;
-            
-            private global::System.Data.DataColumn columnServerIP;
-            
-            private global::System.Data.DataColumn columnServerPort;
-            
-            private global::System.Data.DataColumn columnReserved1;
-            
-            private global::System.Data.DataColumn columnReserved2;
-            
-            private global::System.Data.DataColumn columnReserved3;
-            
-            private global::System.Data.DataColumn columnReserved4;
-            
-            private global::System.Data.DataColumn columnReserved5;
-            
-            private global::System.Data.DataColumn columnReserved6;
-            
-            private global::System.Data.DataColumn columnReserved7;
-            
-            private global::System.Data.DataColumn columnReserved8;
-            
-            private global::System.Data.DataColumn columnReserved9;
-            
-            private global::System.Data.DataColumn columnReserved10;
-            
-            private global::System.Data.DataColumn columnReserved11;
-            
-            private global::System.Data.DataColumn columnGPIOPort;
-            
-            private global::System.Data.DataColumn columnRport;
-            
-            private global::System.Data.DataColumn columnReserved15;
-            
-            private global::System.Data.DataColumn columnReserved16;
-            
-            private global::System.Data.DataColumn columnJigsangbalhwa;
-            
-            private global::System.Data.DataColumn columnSpeakerTimer;
-            
-            private global::System.Data.DataColumn columninputvolume;
-            
-            private global::System.Data.DataColumn columnoutputvolume;
-            
-            private global::System.Data.DataColumn columndisp;
-            
-            private global::System.Data.DataColumn columnMulti_Ch;
-            
-            private global::System.Data.DataColumn columnSoundDeviceNum;
-            
-            private global::System.Data.DataColumn columnSoundDeviceName;
-            
-            private global::System.Data.DataColumn columnReserved17;
-            
-            private global::System.Data.DataColumn columnscalelength;
-            
-            private global::System.Data.DataColumn columnlength;
-            
-            private global::System.Data.DataColumn columnscale;
-            
-            private global::System.Data.DataColumn columnnoise1;
-            
-            private global::System.Data.DataColumn columnnoise2;
-            
-            private global::System.Data.DataColumn columndsp_vol;
-            
-            private global::System.Data.DataColumn columndsp_vol_em;
             
             private global::System.Data.DataColumn columnsms_server;
             
@@ -9564,8 +9494,6 @@ namespace simplepa2 {
             private global::System.Data.DataColumn columnsms_pw;
             
             private global::System.Data.DataColumn columnsms_rcvno;
-            
-            private global::System.Data.DataColumn columnPport;
             
             private global::System.Data.DataColumn columnEmMusic;
             
@@ -9612,289 +9540,9 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EMNAMEColumn {
-                get {
-                    return this.columnEMNAME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn UserNameColumn {
                 get {
                     return this.columnUserName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EMServerIPColumn {
-                get {
-                    return this.columnEMServerIP;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ServerIPColumn {
-                get {
-                    return this.columnServerIP;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ServerPortColumn {
-                get {
-                    return this.columnServerPort;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved1Column {
-                get {
-                    return this.columnReserved1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved2Column {
-                get {
-                    return this.columnReserved2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved3Column {
-                get {
-                    return this.columnReserved3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved4Column {
-                get {
-                    return this.columnReserved4;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved5Column {
-                get {
-                    return this.columnReserved5;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved6Column {
-                get {
-                    return this.columnReserved6;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved7Column {
-                get {
-                    return this.columnReserved7;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved8Column {
-                get {
-                    return this.columnReserved8;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved9Column {
-                get {
-                    return this.columnReserved9;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved10Column {
-                get {
-                    return this.columnReserved10;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved11Column {
-                get {
-                    return this.columnReserved11;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GPIOPortColumn {
-                get {
-                    return this.columnGPIOPort;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn RportColumn {
-                get {
-                    return this.columnRport;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved15Column {
-                get {
-                    return this.columnReserved15;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved16Column {
-                get {
-                    return this.columnReserved16;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn JigsangbalhwaColumn {
-                get {
-                    return this.columnJigsangbalhwa;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SpeakerTimerColumn {
-                get {
-                    return this.columnSpeakerTimer;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn inputvolumeColumn {
-                get {
-                    return this.columninputvolume;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn outputvolumeColumn {
-                get {
-                    return this.columnoutputvolume;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn dispColumn {
-                get {
-                    return this.columndisp;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Multi_ChColumn {
-                get {
-                    return this.columnMulti_Ch;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SoundDeviceNumColumn {
-                get {
-                    return this.columnSoundDeviceNum;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SoundDeviceNameColumn {
-                get {
-                    return this.columnSoundDeviceName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Reserved17Column {
-                get {
-                    return this.columnReserved17;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn scalelengthColumn {
-                get {
-                    return this.columnscalelength;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn lengthColumn {
-                get {
-                    return this.columnlength;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn scaleColumn {
-                get {
-                    return this.columnscale;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn noise1Column {
-                get {
-                    return this.columnnoise1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn noise2Column {
-                get {
-                    return this.columnnoise2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn dsp_volColumn {
-                get {
-                    return this.columndsp_vol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn dsp_vol_emColumn {
-                get {
-                    return this.columndsp_vol_em;
                 }
             }
             
@@ -9927,14 +9575,6 @@ namespace simplepa2 {
             public global::System.Data.DataColumn sms_rcvnoColumn {
                 get {
                     return this.columnsms_rcvno;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PportColumn {
-                get {
-                    return this.columnPport;
                 }
             }
             
@@ -9983,93 +9623,15 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SimplepaRow AddSimplepaRow(
-                        string EMNAME, 
-                        string UserName, 
-                        string EMServerIP, 
-                        string ServerIP, 
-                        string ServerPort, 
-                        string Reserved1, 
-                        string Reserved2, 
-                        string Reserved3, 
-                        string Reserved4, 
-                        string Reserved5, 
-                        string Reserved6, 
-                        string Reserved7, 
-                        string Reserved8, 
-                        string Reserved9, 
-                        string Reserved10, 
-                        string Reserved11, 
-                        string GPIOPort, 
-                        string Rport, 
-                        string Reserved15, 
-                        string Reserved16, 
-                        int Jigsangbalhwa, 
-                        int SpeakerTimer, 
-                        float inputvolume, 
-                        float outputvolume, 
-                        int disp, 
-                        int Multi_Ch, 
-                        int SoundDeviceNum, 
-                        string SoundDeviceName, 
-                        int Reserved17, 
-                        float scalelength, 
-                        float length, 
-                        float scale, 
-                        int noise1, 
-                        int noise2, 
-                        int dsp_vol, 
-                        int dsp_vol_em, 
-                        string sms_server, 
-                        string sms_id, 
-                        string sms_pw, 
-                        string sms_rcvno, 
-                        int Pport, 
-                        string EmMusic) {
+            public SimplepaRow AddSimplepaRow(string UserName, string sms_server, string sms_id, string sms_pw, string sms_rcvno, string EmMusic) {
                 SimplepaRow rowSimplepaRow = ((SimplepaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        EMNAME,
                         UserName,
-                        EMServerIP,
-                        ServerIP,
-                        ServerPort,
-                        Reserved1,
-                        Reserved2,
-                        Reserved3,
-                        Reserved4,
-                        Reserved5,
-                        Reserved6,
-                        Reserved7,
-                        Reserved8,
-                        Reserved9,
-                        Reserved10,
-                        Reserved11,
-                        GPIOPort,
-                        Rport,
-                        Reserved15,
-                        Reserved16,
-                        Jigsangbalhwa,
-                        SpeakerTimer,
-                        inputvolume,
-                        outputvolume,
-                        disp,
-                        Multi_Ch,
-                        SoundDeviceNum,
-                        SoundDeviceName,
-                        Reserved17,
-                        scalelength,
-                        length,
-                        scale,
-                        noise1,
-                        noise2,
-                        dsp_vol,
-                        dsp_vol_em,
                         sms_server,
                         sms_id,
                         sms_pw,
                         sms_rcvno,
-                        Pport,
                         EmMusic};
                 rowSimplepaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSimplepaRow);
@@ -10101,47 +9663,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnSimplePAId = base.Columns["SimplePAId"];
-                this.columnEMNAME = base.Columns["EMNAME"];
                 this.columnUserName = base.Columns["UserName"];
-                this.columnEMServerIP = base.Columns["EMServerIP"];
-                this.columnServerIP = base.Columns["ServerIP"];
-                this.columnServerPort = base.Columns["ServerPort"];
-                this.columnReserved1 = base.Columns["Reserved1"];
-                this.columnReserved2 = base.Columns["Reserved2"];
-                this.columnReserved3 = base.Columns["Reserved3"];
-                this.columnReserved4 = base.Columns["Reserved4"];
-                this.columnReserved5 = base.Columns["Reserved5"];
-                this.columnReserved6 = base.Columns["Reserved6"];
-                this.columnReserved7 = base.Columns["Reserved7"];
-                this.columnReserved8 = base.Columns["Reserved8"];
-                this.columnReserved9 = base.Columns["Reserved9"];
-                this.columnReserved10 = base.Columns["Reserved10"];
-                this.columnReserved11 = base.Columns["Reserved11"];
-                this.columnGPIOPort = base.Columns["GPIOPort"];
-                this.columnRport = base.Columns["Rport"];
-                this.columnReserved15 = base.Columns["Reserved15"];
-                this.columnReserved16 = base.Columns["Reserved16"];
-                this.columnJigsangbalhwa = base.Columns["Jigsangbalhwa"];
-                this.columnSpeakerTimer = base.Columns["SpeakerTimer"];
-                this.columninputvolume = base.Columns["inputvolume"];
-                this.columnoutputvolume = base.Columns["outputvolume"];
-                this.columndisp = base.Columns["disp"];
-                this.columnMulti_Ch = base.Columns["Multi_Ch"];
-                this.columnSoundDeviceNum = base.Columns["SoundDeviceNum"];
-                this.columnSoundDeviceName = base.Columns["SoundDeviceName"];
-                this.columnReserved17 = base.Columns["Reserved17"];
-                this.columnscalelength = base.Columns["scalelength"];
-                this.columnlength = base.Columns["length"];
-                this.columnscale = base.Columns["scale"];
-                this.columnnoise1 = base.Columns["noise1"];
-                this.columnnoise2 = base.Columns["noise2"];
-                this.columndsp_vol = base.Columns["dsp_vol"];
-                this.columndsp_vol_em = base.Columns["dsp_vol_em"];
                 this.columnsms_server = base.Columns["sms_server"];
                 this.columnsms_id = base.Columns["sms_id"];
                 this.columnsms_pw = base.Columns["sms_pw"];
                 this.columnsms_rcvno = base.Columns["sms_rcvno"];
-                this.columnPport = base.Columns["Pport"];
                 this.columnEmMusic = base.Columns["EmMusic"];
             }
             
@@ -10150,78 +9676,8 @@ namespace simplepa2 {
             private void InitClass() {
                 this.columnSimplePAId = new global::System.Data.DataColumn("SimplePAId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSimplePAId);
-                this.columnEMNAME = new global::System.Data.DataColumn("EMNAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEMNAME);
                 this.columnUserName = new global::System.Data.DataColumn("UserName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserName);
-                this.columnEMServerIP = new global::System.Data.DataColumn("EMServerIP", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEMServerIP);
-                this.columnServerIP = new global::System.Data.DataColumn("ServerIP", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnServerIP);
-                this.columnServerPort = new global::System.Data.DataColumn("ServerPort", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnServerPort);
-                this.columnReserved1 = new global::System.Data.DataColumn("Reserved1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved1);
-                this.columnReserved2 = new global::System.Data.DataColumn("Reserved2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved2);
-                this.columnReserved3 = new global::System.Data.DataColumn("Reserved3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved3);
-                this.columnReserved4 = new global::System.Data.DataColumn("Reserved4", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved4);
-                this.columnReserved5 = new global::System.Data.DataColumn("Reserved5", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved5);
-                this.columnReserved6 = new global::System.Data.DataColumn("Reserved6", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved6);
-                this.columnReserved7 = new global::System.Data.DataColumn("Reserved7", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved7);
-                this.columnReserved8 = new global::System.Data.DataColumn("Reserved8", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved8);
-                this.columnReserved9 = new global::System.Data.DataColumn("Reserved9", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved9);
-                this.columnReserved10 = new global::System.Data.DataColumn("Reserved10", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved10);
-                this.columnReserved11 = new global::System.Data.DataColumn("Reserved11", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved11);
-                this.columnGPIOPort = new global::System.Data.DataColumn("GPIOPort", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGPIOPort);
-                this.columnRport = new global::System.Data.DataColumn("Rport", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRport);
-                this.columnReserved15 = new global::System.Data.DataColumn("Reserved15", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved15);
-                this.columnReserved16 = new global::System.Data.DataColumn("Reserved16", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved16);
-                this.columnJigsangbalhwa = new global::System.Data.DataColumn("Jigsangbalhwa", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnJigsangbalhwa);
-                this.columnSpeakerTimer = new global::System.Data.DataColumn("SpeakerTimer", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSpeakerTimer);
-                this.columninputvolume = new global::System.Data.DataColumn("inputvolume", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columninputvolume);
-                this.columnoutputvolume = new global::System.Data.DataColumn("outputvolume", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnoutputvolume);
-                this.columndisp = new global::System.Data.DataColumn("disp", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndisp);
-                this.columnMulti_Ch = new global::System.Data.DataColumn("Multi_Ch", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMulti_Ch);
-                this.columnSoundDeviceNum = new global::System.Data.DataColumn("SoundDeviceNum", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSoundDeviceNum);
-                this.columnSoundDeviceName = new global::System.Data.DataColumn("SoundDeviceName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSoundDeviceName);
-                this.columnReserved17 = new global::System.Data.DataColumn("Reserved17", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReserved17);
-                this.columnscalelength = new global::System.Data.DataColumn("scalelength", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnscalelength);
-                this.columnlength = new global::System.Data.DataColumn("length", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlength);
-                this.columnscale = new global::System.Data.DataColumn("scale", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnscale);
-                this.columnnoise1 = new global::System.Data.DataColumn("noise1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnoise1);
-                this.columnnoise2 = new global::System.Data.DataColumn("noise2", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnoise2);
-                this.columndsp_vol = new global::System.Data.DataColumn("dsp_vol", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndsp_vol);
-                this.columndsp_vol_em = new global::System.Data.DataColumn("dsp_vol_em", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndsp_vol_em);
                 this.columnsms_server = new global::System.Data.DataColumn("sms_server", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsms_server);
                 this.columnsms_id = new global::System.Data.DataColumn("sms_id", typeof(string), null, global::System.Data.MappingType.Element);
@@ -10230,8 +9686,6 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnsms_pw);
                 this.columnsms_rcvno = new global::System.Data.DataColumn("sms_rcvno", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsms_rcvno);
-                this.columnPport = new global::System.Data.DataColumn("Pport", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPport);
                 this.columnEmMusic = new global::System.Data.DataColumn("EmMusic", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmMusic);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -10242,42 +9696,11 @@ namespace simplepa2 {
                 this.columnSimplePAId.AllowDBNull = false;
                 this.columnSimplePAId.ReadOnly = true;
                 this.columnSimplePAId.Unique = true;
-                this.columnEMNAME.MaxLength = 2147483647;
                 this.columnUserName.MaxLength = 2147483647;
-                this.columnEMServerIP.MaxLength = 2147483647;
-                this.columnServerIP.MaxLength = 2147483647;
-                this.columnServerPort.MaxLength = 2147483647;
-                this.columnReserved1.MaxLength = 2147483647;
-                this.columnReserved2.MaxLength = 2147483647;
-                this.columnReserved3.MaxLength = 2147483647;
-                this.columnReserved4.MaxLength = 2147483647;
-                this.columnReserved5.MaxLength = 2147483647;
-                this.columnReserved6.MaxLength = 2147483647;
-                this.columnReserved7.MaxLength = 2147483647;
-                this.columnReserved8.MaxLength = 2147483647;
-                this.columnReserved9.MaxLength = 2147483647;
-                this.columnReserved10.MaxLength = 2147483647;
-                this.columnReserved11.MaxLength = 2147483647;
-                this.columnGPIOPort.MaxLength = 2147483647;
-                this.columnRport.MaxLength = 2147483647;
-                this.columnReserved15.MaxLength = 2147483647;
-                this.columnReserved16.MaxLength = 2147483647;
-                this.columnJigsangbalhwa.AllowDBNull = false;
-                this.columnSpeakerTimer.AllowDBNull = false;
-                this.columninputvolume.AllowDBNull = false;
-                this.columnoutputvolume.AllowDBNull = false;
-                this.columndisp.AllowDBNull = false;
-                this.columnMulti_Ch.AllowDBNull = false;
-                this.columnSoundDeviceNum.AllowDBNull = false;
-                this.columnSoundDeviceName.MaxLength = 2147483647;
-                this.columnReserved17.AllowDBNull = false;
-                this.columndsp_vol.AllowDBNull = false;
-                this.columndsp_vol_em.AllowDBNull = false;
                 this.columnsms_server.MaxLength = 2147483647;
                 this.columnsms_id.MaxLength = 2147483647;
                 this.columnsms_pw.MaxLength = 2147483647;
                 this.columnsms_rcvno.MaxLength = 2147483647;
-                this.columnPport.AllowDBNull = false;
                 this.columnEmMusic.MaxLength = 2147483647;
             }
             
@@ -16487,22 +15910,6 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EMNAME {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.EMNAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'EMNAME\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.EMNAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string UserName {
                 get {
                     try {
@@ -16514,500 +15921,6 @@ namespace simplepa2 {
                 }
                 set {
                     this[this.tableSimplepa.UserNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EMServerIP {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.EMServerIPColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'EMServerIP\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.EMServerIPColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ServerIP {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.ServerIPColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'ServerIP\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.ServerIPColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ServerPort {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.ServerPortColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'ServerPort\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.ServerPortColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved1\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved2 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved2\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved3 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved3\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved4 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved4Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved4\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved4Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved5 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved5Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved5\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved5Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved6 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved6Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved6\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved6Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved7 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved7Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved7\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved7Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved8 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved8Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved8\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved8Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved9 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved9Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved9\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved9Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved10 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved10Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved10\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved10Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved11 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved11Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved11\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved11Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string GPIOPort {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.GPIOPortColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'GPIOPort\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.GPIOPortColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Rport {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.RportColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Rport\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.RportColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved15 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved15Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved15\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved15Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Reserved16 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.Reserved16Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved16\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.Reserved16Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Jigsangbalhwa {
-                get {
-                    return ((int)(this[this.tableSimplepa.JigsangbalhwaColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.JigsangbalhwaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int SpeakerTimer {
-                get {
-                    return ((int)(this[this.tableSimplepa.SpeakerTimerColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.SpeakerTimerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public float inputvolume {
-                get {
-                    return ((float)(this[this.tableSimplepa.inputvolumeColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.inputvolumeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public float outputvolume {
-                get {
-                    return ((float)(this[this.tableSimplepa.outputvolumeColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.outputvolumeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int disp {
-                get {
-                    return ((int)(this[this.tableSimplepa.dispColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.dispColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Multi_Ch {
-                get {
-                    return ((int)(this[this.tableSimplepa.Multi_ChColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.Multi_ChColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int SoundDeviceNum {
-                get {
-                    return ((int)(this[this.tableSimplepa.SoundDeviceNumColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.SoundDeviceNumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string SoundDeviceName {
-                get {
-                    try {
-                        return ((string)(this[this.tableSimplepa.SoundDeviceNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'SoundDeviceName\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.SoundDeviceNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Reserved17 {
-                get {
-                    return ((int)(this[this.tableSimplepa.Reserved17Column]));
-                }
-                set {
-                    this[this.tableSimplepa.Reserved17Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public float scalelength {
-                get {
-                    try {
-                        return ((float)(this[this.tableSimplepa.scalelengthColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'scalelength\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.scalelengthColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public float length {
-                get {
-                    try {
-                        return ((float)(this[this.tableSimplepa.lengthColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'length\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.lengthColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public float scale {
-                get {
-                    try {
-                        return ((float)(this[this.tableSimplepa.scaleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'scale\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.scaleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int noise1 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSimplepa.noise1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'noise1\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.noise1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int noise2 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSimplepa.noise2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'noise2\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSimplepa.noise2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int dsp_vol {
-                get {
-                    return ((int)(this[this.tableSimplepa.dsp_volColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.dsp_volColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int dsp_vol_em {
-                get {
-                    return ((int)(this[this.tableSimplepa.dsp_vol_emColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.dsp_vol_emColumn] = value;
                 }
             }
             
@@ -17077,17 +15990,6 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Pport {
-                get {
-                    return ((int)(this[this.tableSimplepa.PportColumn]));
-                }
-                set {
-                    this[this.tableSimplepa.PportColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string EmMusic {
                 get {
                     try {
@@ -17104,18 +16006,6 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEMNAMENull() {
-                return this.IsNull(this.tableSimplepa.EMNAMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEMNAMENull() {
-                this[this.tableSimplepa.EMNAMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsUserNameNull() {
                 return this.IsNull(this.tableSimplepa.UserNameColumn);
             }
@@ -17124,294 +16014,6 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetUserNameNull() {
                 this[this.tableSimplepa.UserNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEMServerIPNull() {
-                return this.IsNull(this.tableSimplepa.EMServerIPColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEMServerIPNull() {
-                this[this.tableSimplepa.EMServerIPColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsServerIPNull() {
-                return this.IsNull(this.tableSimplepa.ServerIPColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetServerIPNull() {
-                this[this.tableSimplepa.ServerIPColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsServerPortNull() {
-                return this.IsNull(this.tableSimplepa.ServerPortColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetServerPortNull() {
-                this[this.tableSimplepa.ServerPortColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved1Null() {
-                return this.IsNull(this.tableSimplepa.Reserved1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved1Null() {
-                this[this.tableSimplepa.Reserved1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved2Null() {
-                return this.IsNull(this.tableSimplepa.Reserved2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved2Null() {
-                this[this.tableSimplepa.Reserved2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved3Null() {
-                return this.IsNull(this.tableSimplepa.Reserved3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved3Null() {
-                this[this.tableSimplepa.Reserved3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved4Null() {
-                return this.IsNull(this.tableSimplepa.Reserved4Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved4Null() {
-                this[this.tableSimplepa.Reserved4Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved5Null() {
-                return this.IsNull(this.tableSimplepa.Reserved5Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved5Null() {
-                this[this.tableSimplepa.Reserved5Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved6Null() {
-                return this.IsNull(this.tableSimplepa.Reserved6Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved6Null() {
-                this[this.tableSimplepa.Reserved6Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved7Null() {
-                return this.IsNull(this.tableSimplepa.Reserved7Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved7Null() {
-                this[this.tableSimplepa.Reserved7Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved8Null() {
-                return this.IsNull(this.tableSimplepa.Reserved8Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved8Null() {
-                this[this.tableSimplepa.Reserved8Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved9Null() {
-                return this.IsNull(this.tableSimplepa.Reserved9Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved9Null() {
-                this[this.tableSimplepa.Reserved9Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved10Null() {
-                return this.IsNull(this.tableSimplepa.Reserved10Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved10Null() {
-                this[this.tableSimplepa.Reserved10Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved11Null() {
-                return this.IsNull(this.tableSimplepa.Reserved11Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved11Null() {
-                this[this.tableSimplepa.Reserved11Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGPIOPortNull() {
-                return this.IsNull(this.tableSimplepa.GPIOPortColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGPIOPortNull() {
-                this[this.tableSimplepa.GPIOPortColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsRportNull() {
-                return this.IsNull(this.tableSimplepa.RportColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetRportNull() {
-                this[this.tableSimplepa.RportColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved15Null() {
-                return this.IsNull(this.tableSimplepa.Reserved15Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved15Null() {
-                this[this.tableSimplepa.Reserved15Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsReserved16Null() {
-                return this.IsNull(this.tableSimplepa.Reserved16Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetReserved16Null() {
-                this[this.tableSimplepa.Reserved16Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSoundDeviceNameNull() {
-                return this.IsNull(this.tableSimplepa.SoundDeviceNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSoundDeviceNameNull() {
-                this[this.tableSimplepa.SoundDeviceNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsscalelengthNull() {
-                return this.IsNull(this.tableSimplepa.scalelengthColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetscalelengthNull() {
-                this[this.tableSimplepa.scalelengthColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IslengthNull() {
-                return this.IsNull(this.tableSimplepa.lengthColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetlengthNull() {
-                this[this.tableSimplepa.lengthColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsscaleNull() {
-                return this.IsNull(this.tableSimplepa.scaleColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetscaleNull() {
-                this[this.tableSimplepa.scaleColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isnoise1Null() {
-                return this.IsNull(this.tableSimplepa.noise1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setnoise1Null() {
-                this[this.tableSimplepa.noise1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isnoise2Null() {
-                return this.IsNull(this.tableSimplepa.noise2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setnoise2Null() {
-                this[this.tableSimplepa.noise2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26529,47 +25131,11 @@ FROM     AssetPresetGroups INNER JOIN
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Simplepa";
             tableMapping.ColumnMappings.Add("SimplePAId", "SimplePAId");
-            tableMapping.ColumnMappings.Add("EMNAME", "EMNAME");
             tableMapping.ColumnMappings.Add("UserName", "UserName");
-            tableMapping.ColumnMappings.Add("EMServerIP", "EMServerIP");
-            tableMapping.ColumnMappings.Add("ServerIP", "ServerIP");
-            tableMapping.ColumnMappings.Add("ServerPort", "ServerPort");
-            tableMapping.ColumnMappings.Add("Reserved1", "Reserved1");
-            tableMapping.ColumnMappings.Add("Reserved2", "Reserved2");
-            tableMapping.ColumnMappings.Add("Reserved3", "Reserved3");
-            tableMapping.ColumnMappings.Add("Reserved4", "Reserved4");
-            tableMapping.ColumnMappings.Add("Reserved5", "Reserved5");
-            tableMapping.ColumnMappings.Add("Reserved6", "Reserved6");
-            tableMapping.ColumnMappings.Add("Reserved7", "Reserved7");
-            tableMapping.ColumnMappings.Add("Reserved8", "Reserved8");
-            tableMapping.ColumnMappings.Add("Reserved9", "Reserved9");
-            tableMapping.ColumnMappings.Add("Reserved10", "Reserved10");
-            tableMapping.ColumnMappings.Add("Reserved11", "Reserved11");
-            tableMapping.ColumnMappings.Add("GPIOPort", "GPIOPort");
-            tableMapping.ColumnMappings.Add("Rport", "Rport");
-            tableMapping.ColumnMappings.Add("Reserved15", "Reserved15");
-            tableMapping.ColumnMappings.Add("Reserved16", "Reserved16");
-            tableMapping.ColumnMappings.Add("Jigsangbalhwa", "Jigsangbalhwa");
-            tableMapping.ColumnMappings.Add("SpeakerTimer", "SpeakerTimer");
-            tableMapping.ColumnMappings.Add("inputvolume", "inputvolume");
-            tableMapping.ColumnMappings.Add("outputvolume", "outputvolume");
-            tableMapping.ColumnMappings.Add("disp", "disp");
-            tableMapping.ColumnMappings.Add("Multi_Ch", "Multi_Ch");
-            tableMapping.ColumnMappings.Add("SoundDeviceNum", "SoundDeviceNum");
-            tableMapping.ColumnMappings.Add("SoundDeviceName", "SoundDeviceName");
-            tableMapping.ColumnMappings.Add("Reserved17", "Reserved17");
-            tableMapping.ColumnMappings.Add("scalelength", "scalelength");
-            tableMapping.ColumnMappings.Add("length", "length");
-            tableMapping.ColumnMappings.Add("scale", "scale");
-            tableMapping.ColumnMappings.Add("noise1", "noise1");
-            tableMapping.ColumnMappings.Add("noise2", "noise2");
-            tableMapping.ColumnMappings.Add("dsp_vol", "dsp_vol");
-            tableMapping.ColumnMappings.Add("dsp_vol_em", "dsp_vol_em");
             tableMapping.ColumnMappings.Add("sms_server", "sms_server");
             tableMapping.ColumnMappings.Add("sms_id", "sms_id");
             tableMapping.ColumnMappings.Add("sms_pw", "sms_pw");
             tableMapping.ColumnMappings.Add("sms_rcvno", "sms_rcvno");
-            tableMapping.ColumnMappings.Add("Pport", "Pport");
             tableMapping.ColumnMappings.Add("EmMusic", "EmMusic");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -26579,95 +25145,27 @@ FROM     AssetPresetGroups INNER JOIN
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SimplePAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SimplePAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Simplepa] ([EMNAME], [UserName], [EMServerIP], [ServerIP], [ServerPort], [Reserved1], [Reserved2], [Reserved3], [Reserved4], [Reserved5], [Reserved6], [Reserved7], [Reserved8], [Reserved9], [Reserved10], [Reserved11], [GPIOPort], [Rport], [Reserved15], [Reserved16], [Jigsangbalhwa], [SpeakerTimer], [inputvolume], [outputvolume], [disp], [Multi_Ch], [SoundDeviceNum], [SoundDeviceName], [Reserved17], [scalelength], [length], [scale], [noise1], [noise2], [dsp_vol], [dsp_vol_em], [sms_server], [sms_id], [sms_pw], [sms_rcvno], [Pport], [EmMusic]) VALUES (@EMNAME, @UserName, @EMServerIP, @ServerIP, @ServerPort, @Reserved1, @Reserved2, @Reserved3, @Reserved4, @Reserved5, @Reserved6, @Reserved7, @Reserved8, @Reserved9, @Reserved10, @Reserved11, @GPIOPort, @Rport, @Reserved15, @Reserved16, @Jigsangbalhwa, @SpeakerTimer, @inputvolume, @outputvolume, @disp, @Multi_Ch, @SoundDeviceNum, @SoundDeviceName, @Reserved17, @scalelength, @length, @scale, @noise1, @noise2, @dsp_vol, @dsp_vol_em, @sms_server, @sms_id, @sms_pw, @sms_rcvno, @Pport, @EmMusic)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Simplepa] ([UserName], [sms_server], [sms_id], [sms_pw], [sms_rcvno]" +
+                ", [EmMusic]) VALUES (@UserName, @sms_server, @sms_id, @sms_pw, @sms_rcvno, @EmMu" +
+                "sic)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMServerIP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMServerIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerIP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerPort", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerPort", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPIOPort", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPIOPort", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rport", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rport", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved16", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved16", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Jigsangbalhwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jigsangbalhwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpeakerTimer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpeakerTimer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inputvolume", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "inputvolume", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@outputvolume", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "outputvolume", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@disp", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "disp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Multi_Ch", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Multi_Ch", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoundDeviceNum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoundDeviceNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoundDeviceName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoundDeviceName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved17", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved17", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scalelength", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scalelength", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@length", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scale", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noise1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noise1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noise2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noise2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dsp_vol", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dsp_vol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dsp_vol_em", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dsp_vol_em", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sms_server", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sms_server", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sms_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sms_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sms_pw", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sms_pw", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sms_rcvno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sms_rcvno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pport", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pport", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmMusic", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmMusic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Simplepa] SET [EMNAME] = @EMNAME, [UserName] = @UserName, [EMServerIP] = @EMServerIP, [ServerIP] = @ServerIP, [ServerPort] = @ServerPort, [Reserved1] = @Reserved1, [Reserved2] = @Reserved2, [Reserved3] = @Reserved3, [Reserved4] = @Reserved4, [Reserved5] = @Reserved5, [Reserved6] = @Reserved6, [Reserved7] = @Reserved7, [Reserved8] = @Reserved8, [Reserved9] = @Reserved9, [Reserved10] = @Reserved10, [Reserved11] = @Reserved11, [GPIOPort] = @GPIOPort, [Rport] = @Rport, [Reserved15] = @Reserved15, [Reserved16] = @Reserved16, [Jigsangbalhwa] = @Jigsangbalhwa, [SpeakerTimer] = @SpeakerTimer, [inputvolume] = @inputvolume, [outputvolume] = @outputvolume, [disp] = @disp, [Multi_Ch] = @Multi_Ch, [SoundDeviceNum] = @SoundDeviceNum, [SoundDeviceName] = @SoundDeviceName, [Reserved17] = @Reserved17, [scalelength] = @scalelength, [length] = @length, [scale] = @scale, [noise1] = @noise1, [noise2] = @noise2, [dsp_vol] = @dsp_vol, [dsp_vol_em] = @dsp_vol_em, [sms_server] = @sms_server, [sms_id] = @sms_id, [sms_pw] = @sms_pw, [sms_rcvno] = @sms_rcvno, [Pport] = @Pport, [EmMusic] = @EmMusic WHERE (([SimplePAId] = @Original_SimplePAId))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Simplepa] SET [UserName] = @UserName, [sms_server] = @sms_server, [sms_id" +
+                "] = @sms_id, [sms_pw] = @sms_pw, [sms_rcvno] = @sms_rcvno, [EmMusic] = @EmMusic " +
+                "WHERE (([SimplePAId] = @Original_SimplePAId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMServerIP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMServerIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerIP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerPort", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerPort", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPIOPort", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPIOPort", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rport", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rport", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved16", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved16", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Jigsangbalhwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jigsangbalhwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpeakerTimer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpeakerTimer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inputvolume", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "inputvolume", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@outputvolume", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "outputvolume", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@disp", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "disp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Multi_Ch", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Multi_Ch", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoundDeviceNum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoundDeviceNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoundDeviceName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoundDeviceName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved17", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved17", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scalelength", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scalelength", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@length", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scale", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noise1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noise1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@noise2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "noise2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dsp_vol", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dsp_vol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dsp_vol_em", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dsp_vol_em", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sms_server", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sms_server", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sms_id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sms_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sms_pw", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sms_pw", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sms_rcvno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sms_rcvno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pport", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pport", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmMusic", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmMusic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SimplePAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SimplePAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -26685,10 +25183,8 @@ FROM     AssetPresetGroups INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT  SimplePAId, EMNAME, UserName, EMServerIP, ServerIP, ServerPort, Reserved1, Reserved2, Reserved3, Reserved4, Reserved5, Reserved6, Reserved7, Reserved8, Reserved9, 
-               Reserved10, Reserved11, GPIOPort, Rport, Reserved15, Reserved16, Jigsangbalhwa, SpeakerTimer, inputvolume, outputvolume, disp, Multi_Ch, SoundDeviceNum, SoundDeviceName, 
-               Reserved17, scalelength, length, scale, noise1, noise2, dsp_vol, dsp_vol_em, sms_server, sms_id, sms_pw, sms_rcvno, Pport, EmMusic
-FROM     Simplepa";
+            this._commandCollection[0].CommandText = "SELECT  SimplePAId, UserName, sms_server, sms_id, sms_pw, sms_rcvno, EmMusic\r\nFRO" +
+                "M     Simplepa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -26771,245 +25267,42 @@ FROM     Simplepa";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    string EMNAME, 
-                    string UserName, 
-                    string EMServerIP, 
-                    string ServerIP, 
-                    string ServerPort, 
-                    string Reserved1, 
-                    string Reserved2, 
-                    string Reserved3, 
-                    string Reserved4, 
-                    string Reserved5, 
-                    string Reserved6, 
-                    string Reserved7, 
-                    string Reserved8, 
-                    string Reserved9, 
-                    string Reserved10, 
-                    string Reserved11, 
-                    string GPIOPort, 
-                    string Rport, 
-                    string Reserved15, 
-                    string Reserved16, 
-                    int Jigsangbalhwa, 
-                    int SpeakerTimer, 
-                    float inputvolume, 
-                    float outputvolume, 
-                    int disp, 
-                    int Multi_Ch, 
-                    int SoundDeviceNum, 
-                    string SoundDeviceName, 
-                    int Reserved17, 
-                    global::System.Nullable<float> scalelength, 
-                    global::System.Nullable<float> length, 
-                    global::System.Nullable<float> scale, 
-                    global::System.Nullable<int> noise1, 
-                    global::System.Nullable<int> noise2, 
-                    int dsp_vol, 
-                    int dsp_vol_em, 
-                    string sms_server, 
-                    string sms_id, 
-                    string sms_pw, 
-                    string sms_rcvno, 
-                    int Pport, 
-                    string EmMusic) {
-            if ((EMNAME == null)) {
+        public virtual int Insert(string UserName, string sms_server, string sms_id, string sms_pw, string sms_rcvno, string EmMusic) {
+            if ((UserName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(EMNAME));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(UserName));
             }
-            if ((UserName == null)) {
+            if ((sms_server == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(UserName));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(sms_server));
             }
-            if ((EMServerIP == null)) {
+            if ((sms_id == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(EMServerIP));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(sms_id));
             }
-            if ((ServerIP == null)) {
+            if ((sms_pw == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ServerIP));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(sms_pw));
             }
-            if ((ServerPort == null)) {
+            if ((sms_rcvno == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ServerPort));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(sms_rcvno));
             }
-            if ((Reserved1 == null)) {
+            if ((EmMusic == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Reserved1));
-            }
-            if ((Reserved2 == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Reserved2));
-            }
-            if ((Reserved3 == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Reserved3));
-            }
-            if ((Reserved4 == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Reserved4));
-            }
-            if ((Reserved5 == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Reserved5));
-            }
-            if ((Reserved6 == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Reserved6));
-            }
-            if ((Reserved7 == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Reserved7));
-            }
-            if ((Reserved8 == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Reserved8));
-            }
-            if ((Reserved9 == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Reserved9));
-            }
-            if ((Reserved10 == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(Reserved10));
-            }
-            if ((Reserved11 == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Reserved11));
-            }
-            if ((GPIOPort == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(GPIOPort));
-            }
-            if ((Rport == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Rport));
-            }
-            if ((Reserved15 == null)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Reserved15));
-            }
-            if ((Reserved16 == null)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Reserved16));
-            }
-            this.Adapter.InsertCommand.Parameters[20].Value = ((int)(Jigsangbalhwa));
-            this.Adapter.InsertCommand.Parameters[21].Value = ((int)(SpeakerTimer));
-            this.Adapter.InsertCommand.Parameters[22].Value = ((float)(inputvolume));
-            this.Adapter.InsertCommand.Parameters[23].Value = ((float)(outputvolume));
-            this.Adapter.InsertCommand.Parameters[24].Value = ((int)(disp));
-            this.Adapter.InsertCommand.Parameters[25].Value = ((int)(Multi_Ch));
-            this.Adapter.InsertCommand.Parameters[26].Value = ((int)(SoundDeviceNum));
-            if ((SoundDeviceName == null)) {
-                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(SoundDeviceName));
-            }
-            this.Adapter.InsertCommand.Parameters[28].Value = ((int)(Reserved17));
-            if ((scalelength.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((float)(scalelength.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            if ((length.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((float)(length.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            if ((scale.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((float)(scale.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            if ((noise1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[32].Value = ((int)(noise1.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            if ((noise2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[33].Value = ((int)(noise2.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[34].Value = ((int)(dsp_vol));
-            this.Adapter.InsertCommand.Parameters[35].Value = ((int)(dsp_vol_em));
-            if ((sms_server == null)) {
-                this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(sms_server));
-            }
-            if ((sms_id == null)) {
-                this.Adapter.InsertCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[37].Value = ((string)(sms_id));
-            }
-            if ((sms_pw == null)) {
-                this.Adapter.InsertCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[38].Value = ((string)(sms_pw));
-            }
-            if ((sms_rcvno == null)) {
-                this.Adapter.InsertCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[39].Value = ((string)(sms_rcvno));
-            }
-            this.Adapter.InsertCommand.Parameters[40].Value = ((int)(Pport));
-            if ((EmMusic == null)) {
-                this.Adapter.InsertCommand.Parameters[41].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[41].Value = ((string)(EmMusic));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(EmMusic));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -27031,248 +25324,44 @@ FROM     Simplepa";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string EMNAME, 
-                    string UserName, 
-                    string EMServerIP, 
-                    string ServerIP, 
-                    string ServerPort, 
-                    string Reserved1, 
-                    string Reserved2, 
-                    string Reserved3, 
-                    string Reserved4, 
-                    string Reserved5, 
-                    string Reserved6, 
-                    string Reserved7, 
-                    string Reserved8, 
-                    string Reserved9, 
-                    string Reserved10, 
-                    string Reserved11, 
-                    string GPIOPort, 
-                    string Rport, 
-                    string Reserved15, 
-                    string Reserved16, 
-                    int Jigsangbalhwa, 
-                    int SpeakerTimer, 
-                    float inputvolume, 
-                    float outputvolume, 
-                    int disp, 
-                    int Multi_Ch, 
-                    int SoundDeviceNum, 
-                    string SoundDeviceName, 
-                    int Reserved17, 
-                    global::System.Nullable<float> scalelength, 
-                    global::System.Nullable<float> length, 
-                    global::System.Nullable<float> scale, 
-                    global::System.Nullable<int> noise1, 
-                    global::System.Nullable<int> noise2, 
-                    int dsp_vol, 
-                    int dsp_vol_em, 
-                    string sms_server, 
-                    string sms_id, 
-                    string sms_pw, 
-                    string sms_rcvno, 
-                    int Pport, 
-                    string EmMusic, 
-                    int Original_SimplePAId) {
-            if ((EMNAME == null)) {
+        public virtual int Update(string UserName, string sms_server, string sms_id, string sms_pw, string sms_rcvno, string EmMusic, int Original_SimplePAId) {
+            if ((UserName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(EMNAME));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(UserName));
             }
-            if ((UserName == null)) {
+            if ((sms_server == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(UserName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(sms_server));
             }
-            if ((EMServerIP == null)) {
+            if ((sms_id == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(EMServerIP));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(sms_id));
             }
-            if ((ServerIP == null)) {
+            if ((sms_pw == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ServerIP));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(sms_pw));
             }
-            if ((ServerPort == null)) {
+            if ((sms_rcvno == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ServerPort));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(sms_rcvno));
             }
-            if ((Reserved1 == null)) {
+            if ((EmMusic == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Reserved1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(EmMusic));
             }
-            if ((Reserved2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Reserved2));
-            }
-            if ((Reserved3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Reserved3));
-            }
-            if ((Reserved4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Reserved4));
-            }
-            if ((Reserved5 == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Reserved5));
-            }
-            if ((Reserved6 == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Reserved6));
-            }
-            if ((Reserved7 == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Reserved7));
-            }
-            if ((Reserved8 == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Reserved8));
-            }
-            if ((Reserved9 == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Reserved9));
-            }
-            if ((Reserved10 == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Reserved10));
-            }
-            if ((Reserved11 == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Reserved11));
-            }
-            if ((GPIOPort == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(GPIOPort));
-            }
-            if ((Rport == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Rport));
-            }
-            if ((Reserved15 == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Reserved15));
-            }
-            if ((Reserved16 == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Reserved16));
-            }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Jigsangbalhwa));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(SpeakerTimer));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((float)(inputvolume));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((float)(outputvolume));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(disp));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Multi_Ch));
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(SoundDeviceNum));
-            if ((SoundDeviceName == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(SoundDeviceName));
-            }
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Reserved17));
-            if ((scalelength.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((float)(scalelength.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            if ((length.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((float)(length.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            if ((scale.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((float)(scale.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            if ((noise1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(noise1.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            if ((noise2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(noise2.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(dsp_vol));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(dsp_vol_em));
-            if ((sms_server == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(sms_server));
-            }
-            if ((sms_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(sms_id));
-            }
-            if ((sms_pw == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(sms_pw));
-            }
-            if ((sms_rcvno == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(sms_rcvno));
-            }
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Pport));
-            if ((EmMusic == null)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(EmMusic));
-            }
-            this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_SimplePAId));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_SimplePAId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

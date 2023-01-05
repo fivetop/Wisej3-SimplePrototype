@@ -712,30 +712,14 @@ namespace simplepa2
             SimplepaRow s = Ds1.Simplepa.NewSimplepaRow();
 
             s.UserName = "엘에스전선";
-            s.ServerIP = "192.168.1.1";
             s.SimplePAId = 1;
-            s.EMServerIP = "127.0.0.1";
-            s.GPIOPort = "COM3";
-            s.Rport = "COM4";
             s.EmMusic = "재난위험경보(3분).mp3";
-            s.Jigsangbalhwa = 1;
-            //s2.user = new List<UserTree>();
-            //s2.holiday = new List<Holiday>();
-            s.inputvolume = 0.5f;
-            s.outputvolume = 0.5f;
-            s.disp = 1;
-            s.SpeakerTimer = 10;
-            s.Multi_Ch = 3;
-            s.SoundDeviceNum = 0;
-            s.dsp_vol = 0;        // 초기 값
-            s.dsp_vol_em = 0;     // 초기 값 
             s.sms_server = "https://sms.nicesms.co.kr/cpsms_utf8/cpsms.html";
             s.sms_id = "lscnssms";
             s.sms_pw = "3ef5afb7e743196d9e0726dba16b02d9";
             s.sms_rcvno = "";
-            s.Pport = 0;
-            s.scalelength = 0;
-            s.length = 0;
+            //s.Jigsangbalhwa = 1;
+            //s.Pport = 0;
             Ds1.Simplepa.Rows.Add(s);
             Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
 

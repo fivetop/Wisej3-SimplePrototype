@@ -433,7 +433,7 @@ namespace pa
                     }
 
                     // 12 ~ 19 P형 수신기 포트수 12~15 10자리, 16~19 단자리  
-                    if (g._BaseData.Pport == 0 && g._EMClient.Rport == "")
+                    if (g._EMClient.Pport == 0 && g._EMClient.Rport == "")
                     {
                         switch (chk)
                         {
@@ -442,7 +442,7 @@ namespace pa
                                 int i1 = int.Parse(st1) * 10;
                                 string st2 = str1[4].ToString();
                                 int i2 = int.Parse(st2);
-                                g._BaseData.Pport = i1 + i2;
+                                g._EMClient.Pport = i1 + i2;
                                 break;
                         }
                     }
@@ -592,7 +592,7 @@ namespace pa
             }
 
             // 직상 발화가 아닌경우 
-            if (g._BaseData.Jigsangbalhwa != 2)
+            if (g._EMClient.Jigsangbalhwa != 2)
             {
                 foreach (var t1 in cur_embs_device)
                 {

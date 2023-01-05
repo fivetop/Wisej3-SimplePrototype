@@ -25,24 +25,10 @@ namespace pa.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var t1 = g.mainWindow.dBAccess.Device.Where(p => p.device == 2).ToList();
-            cboType.ItemsSource = t1;
-            cboType.DisplayMemberPath = "DeviceName";
-            cboType.SelectedValuePath = "name";
-            cboType.SelectedValue = g._BaseData.ServerIP;
-
-            //g.mainWindow.dBSqlite.Tam.MusicsTableAdapter.Fill(g.mainWindow.dBSqlite.Ds1.Musics);
-            var mt2 = g.mainWindow.dBAccess.Musics.ToList();
-
-            cboType2.ItemsSource = mt2;
-            cboType2.DisplayMemberPath = "FileName";
-            cboType2.SelectedValuePath = "FileName";
-            cboType2.SelectedValue = g._BaseData.EmMusic;
-
             var t4 = new string[] { "5층 이하, 연면적 3,000 이하", "5층 이상, 연면적 3,000 이상" };
             cboType6.ItemsSource = null;
             cboType6.ItemsSource = t4;
-            cboType6.SelectedIndex = (int)(g._BaseData.Jigsangbalhwa - 1);
+            cboType6.SelectedIndex = (int)(g._EMClient.Jigsangbalhwa - 1);
 
             List<string> cl = new List<string>();
 
@@ -68,27 +54,10 @@ namespace pa.Windows
 
         }
 
-        private void cboType_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DeviceRow t1 = (DeviceRow) e.AddedItems[0];
-            if (t1 == null)
-                return;
-            g._BaseData.ServerIP = t1.DeviceName;
-        }
-
-        private void cboType2_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            MusicsRow t1 = (MusicsRow)e.AddedItems[0];
-            if (t1 == null)
-                return;
-            g._BaseData.EmMusic = t1.FileName;
-
-        }
-
         private void cboType6_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int t1 = cboType6.SelectedIndex + 1;
-            g._BaseData.Jigsangbalhwa = t1;
+            g._EMClient.Jigsangbalhwa = t1;
         }
 
         private void _combo2_SelectionChanged(object sender, SelectionChangedEventArgs e)
