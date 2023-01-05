@@ -475,15 +475,10 @@ namespace pa
         {
             SimplepaRow s = Simplepa.NewSimplepaRow();
 
+            //s.SimplePAId = 0;
+            s.EMNAME = g._EMClient.EM_NAME;
             s.UserName = "엘에스전선";
             s.ServerIP = "192.168.1.1";
-            s.SimplePAId = 1;
-            s.SpeakerIconSize = 120;
-            s.debug = 0;
-            s.MapX = 4000;
-            s.MapY = 4000;
-            s.Zoom = 0.2f;
-            s.TileWidth = 180;
             s.EMServerIP = "127.0.0.1";
             s.Reserved1 = "0";
             s.Reserved2 = "0";
@@ -522,6 +517,7 @@ namespace pa
             s.length = 0;
             Simplepa.Rows.Add(s);
             //Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
+            var t2 = Dbsave<Simplepa>("Simplepas", (DataRow)s);
 
 
             for (int i = 0; i < 7; i++)

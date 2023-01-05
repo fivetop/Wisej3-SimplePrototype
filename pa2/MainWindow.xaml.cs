@@ -141,11 +141,11 @@ namespace pa
         {
             MakeSpeakerIP();
             ReadMusic();
-            g._BaseData = dBAccess.Simplepa.FirstOrDefault();
+            g._BaseData = dBAccess.Simplepa.FirstOrDefault(p=>p.EMNAME == g._EMClient.EM_NAME);
             if (g._BaseData == null)
             {
                 dBAccess.Init();
-                g._BaseData = dBAccess.Simplepa.FirstOrDefault();
+                g._BaseData = dBAccess.Simplepa.FirstOrDefault(p => p.EMNAME == g._EMClient.EM_NAME);
             }
 
             gl.XMLDanteDevice(true);
