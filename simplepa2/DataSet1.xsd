@@ -51,6 +51,14 @@
               <Mapping SourceColumn="AssetId" DataSetColumn="AssetId" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteAllQuery" Modifier="Public" Name="DeleteAllQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="DeleteAllQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [dbo].[AssetGroups]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
               <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -263,7 +271,16 @@ FROM     BSTree</CommandText>
               <Mapping SourceColumn="EMNAME" DataSetColumn="EMNAME" />
               <Mapping SourceColumn="playing" DataSetColumn="playing" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteAllQuery" Modifier="Public" Name="DeleteAllQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAllQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [BSTree] </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DeviceTableAdapter" GeneratorDataComponentClassName="DeviceTableAdapter" Name="Device" UserDataComponentName="DeviceTableAdapter">
             <MainSource>
@@ -897,7 +914,16 @@ FROM     Assets</CommandText>
               <Mapping SourceColumn="zpci" DataSetColumn="zpci" />
               <Mapping SourceColumn="zpco" DataSetColumn="zpco" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteAllQuery" Modifier="Public" Name="DeleteAllQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAllQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [Assets]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AssetsSitenBuildingTableAdapter" GeneratorDataComponentClassName="AssetsSitenBuildingTableAdapter" Name="AssetsSitenBuilding" UserDataComponentName="AssetsSitenBuildingTableAdapter">
             <MainSource>
@@ -1021,7 +1047,16 @@ FROM     EMServer</CommandText>
               <Mapping SourceColumn="em_description" DataSetColumn="em_description" />
               <Mapping SourceColumn="em_images" DataSetColumn="em_images" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteAllQuery" Modifier="Public" Name="DeleteAllQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAllQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [EMServer]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EMServerWithWholeColTableAdapter" GeneratorDataComponentClassName="EMServerWithWholeColTableAdapter" Name="EMServerWithWholeCol" UserDataComponentName="EMServerWithWholeColTableAdapter">
             <MainSource>
@@ -1095,6 +1130,14 @@ FROM     AssetPresetGroups</CommandText>
               <Mapping SourceColumn="chk" DataSetColumn="chk" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteAllQuery" Modifier="Public" Name="DeleteAllQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteAllQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [AssetPresetGroups]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
               <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -2425,12 +2468,12 @@ ORDER BY YEAR, 'Month', Day</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Holidays" msprop:Generator_RowClassName="HolidaysRow" msprop:Generator_RowEvHandlerName="HolidaysRowChangeEventHandler" msprop:Generator_RowDeletedName="HolidaysRowDeleted" msprop:Generator_RowDeletingName="HolidaysRowDeleting" msprop:Generator_RowEvArgName="HolidaysRowChangeEvent" msprop:Generator_TablePropName="Holidays" msprop:Generator_RowChangedName="HolidaysRowChanged" msprop:Generator_UserTableName="Holidays" msprop:Generator_RowChangingName="HolidaysRowChanging" msprop:Generator_TableClassName="HolidaysDataTable" msprop:Generator_TableVarName="tableHolidays">
+        <xs:element name="Holidays" msprop:Generator_RowEvHandlerName="HolidaysRowChangeEventHandler" msprop:Generator_RowDeletedName="HolidaysRowDeleted" msprop:Generator_RowDeletingName="HolidaysRowDeleting" msprop:Generator_RowEvArgName="HolidaysRowChangeEvent" msprop:Generator_TablePropName="Holidays" msprop:Generator_RowChangedName="HolidaysRowChanged" msprop:Generator_UserTableName="Holidays" msprop:Generator_RowChangingName="HolidaysRowChanging" msprop:Generator_RowClassName="HolidaysRow" msprop:Generator_TableClassName="HolidaysDataTable" msprop:Generator_TableVarName="tableHolidays">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="HolidayId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="HolidayId" msprop:Generator_ColumnPropNameInTable="HolidayIdColumn" msprop:Generator_ColumnPropNameInRow="HolidayId" msprop:Generator_ColumnVarNameInTable="columnHolidayId" type="xs:int" />
-              <xs:element name="hDate" msprop:Generator_UserColumnName="hDate" msprop:Generator_ColumnPropNameInTable="hDateColumn" msprop:Generator_ColumnPropNameInRow="hDate" msprop:Generator_ColumnVarNameInTable="columnhDate" type="xs:dateTime" />
-              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" minOccurs="0">
+              <xs:element name="HolidayId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="HolidayIdColumn" msprop:Generator_ColumnPropNameInRow="HolidayId" msprop:Generator_UserColumnName="HolidayId" msprop:Generator_ColumnVarNameInTable="columnHolidayId" type="xs:int" />
+              <xs:element name="hDate" msprop:Generator_ColumnPropNameInTable="hDateColumn" msprop:Generator_ColumnPropNameInRow="hDate" msprop:Generator_UserColumnName="hDate" msprop:Generator_ColumnVarNameInTable="columnhDate" type="xs:dateTime" />
+              <xs:element name="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
@@ -2440,15 +2483,15 @@ ORDER BY YEAR, 'Month', Day</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HolidaysDivideDate" msprop:Generator_RowClassName="HolidaysDivideDateRow" msprop:Generator_RowEvHandlerName="HolidaysDivideDateRowChangeEventHandler" msprop:Generator_RowDeletedName="HolidaysDivideDateRowDeleted" msprop:Generator_RowDeletingName="HolidaysDivideDateRowDeleting" msprop:Generator_RowEvArgName="HolidaysDivideDateRowChangeEvent" msprop:Generator_TablePropName="HolidaysDivideDate" msprop:Generator_RowChangedName="HolidaysDivideDateRowChanged" msprop:Generator_UserTableName="HolidaysDivideDate" msprop:Generator_RowChangingName="HolidaysDivideDateRowChanging" msprop:Generator_TableClassName="HolidaysDivideDateDataTable" msprop:Generator_TableVarName="tableHolidaysDivideDate">
+        <xs:element name="HolidaysDivideDate" msprop:Generator_RowEvHandlerName="HolidaysDivideDateRowChangeEventHandler" msprop:Generator_RowDeletedName="HolidaysDivideDateRowDeleted" msprop:Generator_RowDeletingName="HolidaysDivideDateRowDeleting" msprop:Generator_RowEvArgName="HolidaysDivideDateRowChangeEvent" msprop:Generator_TablePropName="HolidaysDivideDate" msprop:Generator_RowChangedName="HolidaysDivideDateRowChanged" msprop:Generator_UserTableName="HolidaysDivideDate" msprop:Generator_RowChangingName="HolidaysDivideDateRowChanging" msprop:Generator_RowClassName="HolidaysDivideDateRow" msprop:Generator_TableClassName="HolidaysDivideDateDataTable" msprop:Generator_TableVarName="tableHolidaysDivideDate">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="HolidayId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="HolidayId" msprop:Generator_ColumnPropNameInTable="HolidayIdColumn" msprop:Generator_ColumnPropNameInRow="HolidayId" msprop:Generator_ColumnVarNameInTable="columnHolidayId" type="xs:int" />
-              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" type="xs:int" minOccurs="0" />
-              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" type="xs:int" minOccurs="0" />
-              <xs:element name="Day" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Day" msprop:Generator_ColumnPropNameInTable="DayColumn" msprop:Generator_ColumnPropNameInRow="Day" msprop:Generator_ColumnVarNameInTable="columnDay" type="xs:int" minOccurs="0" />
-              <xs:element name="hDate" msprop:Generator_UserColumnName="hDate" msprop:Generator_ColumnPropNameInTable="hDateColumn" msprop:Generator_ColumnPropNameInRow="hDate" msprop:Generator_ColumnVarNameInTable="columnhDate" type="xs:dateTime" />
-              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" minOccurs="0">
+              <xs:element name="HolidayId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="HolidayIdColumn" msprop:Generator_ColumnPropNameInRow="HolidayId" msprop:Generator_UserColumnName="HolidayId" msprop:Generator_ColumnVarNameInTable="columnHolidayId" type="xs:int" />
+              <xs:element name="Year" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnVarNameInTable="columnYear" type="xs:int" minOccurs="0" />
+              <xs:element name="Month" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_UserColumnName="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" type="xs:int" minOccurs="0" />
+              <xs:element name="Day" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="DayColumn" msprop:Generator_ColumnPropNameInRow="Day" msprop:Generator_UserColumnName="Day" msprop:Generator_ColumnVarNameInTable="columnDay" type="xs:int" minOccurs="0" />
+              <xs:element name="hDate" msprop:Generator_ColumnPropNameInTable="hDateColumn" msprop:Generator_ColumnPropNameInRow="hDate" msprop:Generator_UserColumnName="hDate" msprop:Generator_ColumnVarNameInTable="columnhDate" type="xs:dateTime" />
+              <xs:element name="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />

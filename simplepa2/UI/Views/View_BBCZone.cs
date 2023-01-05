@@ -180,7 +180,8 @@ namespace simplepa2.UI.Views
                    if (MessageBox.Show("LAW TEXT : 선번 데이터를 모두 삭제 하시겠습니까?",
                         icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                    AlertBox.Show("TODO : 선번 삭제 처리 , 관련 데이터 처리 ");
+                        AlertBox.Show("TODO : 선번 삭제 처리 , 관련 데이터 처리 ");
+                        
                     }
                 
             }

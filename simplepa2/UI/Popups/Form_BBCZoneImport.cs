@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Text;
 using Wisej.Web;
+using static simplepa2.DataSet1;
 
 namespace simplepa2.UI.Popups
 {
@@ -13,6 +14,7 @@ namespace simplepa2.UI.Popups
         Stream stream;
         String filename;
 
+        
 
         public Form_BBCZoneImport()
         {
@@ -36,19 +38,25 @@ namespace simplepa2.UI.Popups
         {
             string[] arString = System.IO.File.ReadAllLines(filePath, Encoding.GetEncoding(949));
 
+            
+            
+            
             AlertBox.Show(" TODO : 그리드 입력 처리 후 수정 가능 + 컨펌 후 데이터 추가 처리");
             foreach (var strData in arString)
             {
-                DataSet1.AssetsDataTable dt = new DataSet1.AssetsDataTable();
-                
-                
+                AssetsRow ar = assetsTextParcer(strData);
 
+                if(ar != null)
+                {
+                    this.dataSet11.Assets.AddAssetsRow(ar);
+                }                
             }
-        }
+
+            dg_assetTextData.DataSource = this.dataSet11.Assets;
+        }        
 
         private void bt_inputDecision_Click(object sender, EventArgs e)
         {
- 
             
             DBInsert(strFileUploadPath + filename);            
         }
@@ -92,5 +100,45 @@ namespace simplepa2.UI.Popups
             }
             gweb.mainFrame.dBSqlite.AssetPresetSave();
         }
+
+        public AssetsRow assetsTextParcer(String text)
+        {
+            AssetsRow m2 = this.dataSet11.Assets.NewAssetsRow();
+
+            string[] aa = text.Split(',');
+
+            if (aa.Length < 12)
+                return null;
+            try
+            {
+                m2.seq = int.Parse(aa[0]);
+                m2.emServer = aa[1];
+                m2.building = aa[2];
+                m2.floorname = aa[3];
+                m2.GroupName = aa[2] + aa[3];
+                m2.ZoneName = aa[4];
+                m2.SpeakerName = aa[5];
+                m2.DeviceName = aa[6];
+                m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
+                m2.ch = int.Parse(aa[7]);
+                m2.zpc = aa[8];
+                m2.zpci = int.Parse(aa[9]);
+                m2.zpco = int.Parse(aa[10]);              // max 13
+                m2.floor = int.Parse(aa[11]) * 100 + int.Parse(aa[12]) * 10 + int.Parse(aa[13]);
+                if (m2.ch == 0)
+                    m2.ch = 1;
+                m2.chk = 0;
+
+                m2.ip = "";
+                m2.state = "";
+                m2.state_old = "";
+                m2.DeviceId = 0;
+            } catch (Exception e1)
+            {
+                m2 = null;
+            }
+            return m2;
+        }
+
     }
 }

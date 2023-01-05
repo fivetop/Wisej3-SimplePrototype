@@ -28,34 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle11 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle12 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle13 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle14 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle15 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle16 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle17 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle18 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle19 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle20 = new Wisej.Web.DataGridViewCellStyle();
             this.panel1 = new Wisej.Web.Panel();
-            this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.동 = new Wisej.Web.DataGridViewColumn();
-            this.층 = new Wisej.Web.DataGridViewColumn();
-            this.존이름 = new Wisej.Web.DataGridViewColumn();
-            this.스피커출력합 = new Wisej.Web.DataGridViewColumn();
-            this.앰프정보 = new Wisej.Web.DataGridViewColumn();
-            this.채널정보 = new Wisej.Web.DataGridViewColumn();
-            this.ZPC여부 = new Wisej.Web.DataGridViewColumn();
-            this.입력포트 = new Wisej.Web.DataGridViewColumn();
-            this.출력포트 = new Wisej.Web.DataGridViewColumn();
-            this.시스템확인 = new Wisej.Web.DataGridViewColumn();
-            this.비고 = new Wisej.Web.DataGridViewColumn();
+            this.dg_assetTextData = new Wisej.Web.DataGridView();
             this.panel2 = new Wisej.Web.Panel();
             this.panel136 = new Wisej.Web.Panel();
             this.upload1 = new Wisej.Web.Upload();
             this.button1 = new Wisej.Web.Button();
             this.button5 = new Wisej.Web.Button();
             this.bt_inputDecision = new Wisej.Web.Button();
+            this.dataSet11 = new simplepa2.DataSet1();
+            this.assetsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
+            this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.동 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.층 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.존이름 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.스피커이름 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.앰프정보 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.채널정보 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.ZPC = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.ZPC입력 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.ZPC출력 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_assetTextData)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel136.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dg_assetTextData);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -64,80 +76,29 @@
             this.panel1.Size = new System.Drawing.Size(1081, 577);
             this.panel1.TabIndex = 1;
             // 
-            // dataGridView1
+            // dg_assetTextData
             // 
-            this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
+            this.dg_assetTextData.AllowUserToOrderColumns = true;
+            this.dg_assetTextData.AutoGenerateColumns = false;
+            this.dg_assetTextData.AutoSize = true;
+            this.dg_assetTextData.AutoSizeColumnsMode = Wisej.Web.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dg_assetTextData.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
+            this.Column0,
             this.동,
             this.층,
             this.존이름,
-            this.스피커출력합,
+            this.스피커이름,
             this.앰프정보,
             this.채널정보,
-            this.ZPC여부,
-            this.입력포트,
-            this.출력포트,
-            this.시스템확인,
-            this.비고});
-            this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1041, 486);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // 동
-            // 
-            this.동.HeaderText = "동";
-            this.동.Name = "동";
-            // 
-            // 층
-            // 
-            this.층.HeaderText = "층";
-            this.층.Name = "층";
-            // 
-            // 존이름
-            // 
-            this.존이름.HeaderText = "존이름";
-            this.존이름.Name = "존이름";
-            // 
-            // 스피커출력합
-            // 
-            this.스피커출력합.HeaderText = "스피커출력합";
-            this.스피커출력합.Name = "스피커출력합";
-            // 
-            // 앰프정보
-            // 
-            this.앰프정보.HeaderText = "앰프정보";
-            this.앰프정보.Name = "앰프정보";
-            // 
-            // 채널정보
-            // 
-            this.채널정보.HeaderText = "채널정보";
-            this.채널정보.Name = "채널정보";
-            // 
-            // ZPC여부
-            // 
-            this.ZPC여부.HeaderText = "ZPC여부";
-            this.ZPC여부.Name = "ZPC여부";
-            // 
-            // 입력포트
-            // 
-            this.입력포트.HeaderText = "입력포트";
-            this.입력포트.Name = "입력포트";
-            // 
-            // 출력포트
-            // 
-            this.출력포트.HeaderText = "출력포트";
-            this.출력포트.Name = "출력포트";
-            // 
-            // 시스템확인
-            // 
-            this.시스템확인.HeaderText = "시스템확인";
-            this.시스템확인.Name = "시스템확인";
-            // 
-            // 비고
-            // 
-            this.비고.HeaderText = "비고";
-            this.비고.Name = "비고";
+            this.ZPC,
+            this.ZPC입력,
+            this.ZPC출력});
+            this.dg_assetTextData.Dock = Wisej.Web.DockStyle.Fill;
+            this.dg_assetTextData.Location = new System.Drawing.Point(20, 71);
+            this.dg_assetTextData.MultiSelect = false;
+            this.dg_assetTextData.Name = "dg_assetTextData";
+            this.dg_assetTextData.Size = new System.Drawing.Size(1041, 486);
+            this.dg_assetTextData.TabIndex = 0;
             // 
             // panel2
             // 
@@ -198,6 +159,7 @@
             this.button5.Size = new System.Drawing.Size(100, 32);
             this.button5.TabIndex = 35;
             this.button5.Text = "선택 편집";
+            this.button5.Visible = false;
             // 
             // bt_inputDecision
             // 
@@ -213,6 +175,117 @@
             this.bt_inputDecision.Text = "선번 입력";
             this.bt_inputDecision.Click += new System.EventHandler(this.bt_inputDecision_Click);
             // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // assetsTableAdapter1
+            // 
+            this.assetsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // Column0
+            // 
+            this.Column0.DataPropertyName = "emServer";
+            dataGridViewCellStyle11.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.Column0.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Column0.HeaderText = "사이트명";
+            this.Column0.Name = "Column0";
+            // 
+            // 동
+            // 
+            this.동.DataPropertyName = "building";
+            dataGridViewCellStyle12.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.동.DefaultCellStyle = dataGridViewCellStyle12;
+            this.동.HeaderText = "건물명";
+            this.동.Name = "동";
+            // 
+            // 층
+            // 
+            this.층.DataPropertyName = "floor";
+            dataGridViewCellStyle13.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.층.DefaultCellStyle = dataGridViewCellStyle13;
+            this.층.FillWeight = 70F;
+            this.층.HeaderText = "층";
+            this.층.MinimumWidth = 70;
+            this.층.Name = "층";
+            this.층.Width = 70;
+            // 
+            // 존이름
+            // 
+            this.존이름.DataPropertyName = "ZoneName";
+            dataGridViewCellStyle14.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.존이름.DefaultCellStyle = dataGridViewCellStyle14;
+            this.존이름.FillWeight = 120F;
+            this.존이름.HeaderText = "존이름";
+            this.존이름.MinimumWidth = 100;
+            this.존이름.Name = "존이름";
+            this.존이름.Width = 120;
+            // 
+            // 스피커이름
+            // 
+            this.스피커이름.DataPropertyName = "SpeakerName";
+            dataGridViewCellStyle15.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.스피커이름.DefaultCellStyle = dataGridViewCellStyle15;
+            this.스피커이름.FillWeight = 120F;
+            this.스피커이름.HeaderText = "스피커이름";
+            this.스피커이름.MinimumWidth = 100;
+            this.스피커이름.Name = "스피커이름";
+            this.스피커이름.Width = 120;
+            // 
+            // 앰프정보
+            // 
+            this.앰프정보.DataPropertyName = "DeviceName";
+            dataGridViewCellStyle16.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.앰프정보.DefaultCellStyle = dataGridViewCellStyle16;
+            this.앰프정보.FillWeight = 120F;
+            this.앰프정보.HeaderText = "앰프정보";
+            this.앰프정보.MinimumWidth = 100;
+            this.앰프정보.Name = "앰프정보";
+            this.앰프정보.Width = 120;
+            // 
+            // 채널정보
+            // 
+            this.채널정보.DataPropertyName = "ch";
+            dataGridViewCellStyle17.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.채널정보.DefaultCellStyle = dataGridViewCellStyle17;
+            this.채널정보.FillWeight = 70F;
+            this.채널정보.HeaderText = "채널정보";
+            this.채널정보.MinimumWidth = 70;
+            this.채널정보.Name = "채널정보";
+            this.채널정보.Width = 70;
+            // 
+            // ZPC
+            // 
+            this.ZPC.DataPropertyName = "zpc";
+            dataGridViewCellStyle18.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC.DefaultCellStyle = dataGridViewCellStyle18;
+            this.ZPC.HeaderText = "ZPC";
+            this.ZPC.MinimumWidth = 100;
+            this.ZPC.Name = "ZPC";
+            // 
+            // ZPC입력
+            // 
+            this.ZPC입력.DataPropertyName = "zpci";
+            dataGridViewCellStyle19.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC입력.DefaultCellStyle = dataGridViewCellStyle19;
+            this.ZPC입력.FillWeight = 70F;
+            this.ZPC입력.HeaderText = "ZPC입력";
+            this.ZPC입력.MinimumWidth = 70;
+            this.ZPC입력.Name = "ZPC입력";
+            this.ZPC입력.Width = 70;
+            // 
+            // ZPC출력
+            // 
+            this.ZPC출력.DataPropertyName = "zpco";
+            dataGridViewCellStyle20.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC출력.DefaultCellStyle = dataGridViewCellStyle20;
+            this.ZPC출력.FillWeight = 70F;
+            this.ZPC출력.HeaderText = "ZPC출력";
+            this.ZPC출력.MinimumWidth = 70;
+            this.ZPC출력.Name = "ZPC출력";
+            this.ZPC출력.Width = 70;
+            // 
             // Form_BBCZoneImport
             // 
             this.ClientSize = new System.Drawing.Size(1081, 577);
@@ -222,32 +295,35 @@
             this.StartPosition = Wisej.Web.FormStartPosition.CenterScreen;
             this.Text = "Zone 정보 Import";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_assetTextData)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel136.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Wisej.Web.Panel panel1;
-        private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewColumn 동;
-        private Wisej.Web.DataGridViewColumn 층;
-        private Wisej.Web.DataGridViewColumn 존이름;
-        private Wisej.Web.DataGridViewColumn 스피커출력합;
-        private Wisej.Web.DataGridViewColumn 앰프정보;
-        private Wisej.Web.DataGridViewColumn 채널정보;
-        private Wisej.Web.DataGridViewColumn ZPC여부;
-        private Wisej.Web.DataGridViewColumn 입력포트;
-        private Wisej.Web.DataGridViewColumn 출력포트;
-        private Wisej.Web.DataGridViewColumn 시스템확인;
-        private Wisej.Web.DataGridViewColumn 비고;
+        private Wisej.Web.DataGridView dg_assetTextData;
         private Wisej.Web.Panel panel2;
         private Wisej.Web.Panel panel136;
         private Wisej.Web.Button button1;
         private Wisej.Web.Button button5;
         private Wisej.Web.Button bt_inputDecision;
         private Wisej.Web.Upload upload1;
+        private DataSet1 dataSet11;
+        private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter1;
+        private Wisej.Web.DataGridViewTextBoxColumn Column0;
+        private Wisej.Web.DataGridViewTextBoxColumn 동;
+        private Wisej.Web.DataGridViewTextBoxColumn 층;
+        private Wisej.Web.DataGridViewTextBoxColumn 존이름;
+        private Wisej.Web.DataGridViewTextBoxColumn 스피커이름;
+        private Wisej.Web.DataGridViewTextBoxColumn 앰프정보;
+        private Wisej.Web.DataGridViewTextBoxColumn 채널정보;
+        private Wisej.Web.DataGridViewTextBoxColumn ZPC;
+        private Wisej.Web.DataGridViewTextBoxColumn ZPC입력;
+        private Wisej.Web.DataGridViewTextBoxColumn ZPC출력;
     }
 }

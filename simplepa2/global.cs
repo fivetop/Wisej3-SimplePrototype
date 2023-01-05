@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
+using static simplepa2.DataSet1;
 
 namespace simplepa2
 {
@@ -52,5 +53,9 @@ namespace simplepa2
         }
         #endregion
 
+
+        #region // 기타 공통 유틸
+
+        #endregion
     }
 }
