@@ -47,7 +47,6 @@ namespace pa
             }
             return true;
         }
-        */
         public bool Send_sms()
         {
             if (g._BaseData.sms_rcvno == "")
@@ -84,5 +83,6 @@ namespace pa
             }
             return true;
         }
+        */
     }
 }

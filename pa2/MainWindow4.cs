@@ -46,7 +46,7 @@ namespace pa
             var sst1 = _DanteDevice.Where(p => p.device == 2).ToList();
 
             // 직상층 발화 조건이 있으면 
-            if (g._EMClient.Jigsangbalhwa == 2 && run_pktr != null)
+            if (g._EMClient.Jigsangbalhwa == 1 && run_pktr != null)
             {
                 var emd = run_pktr.em_Data;
                 emd.getemData();

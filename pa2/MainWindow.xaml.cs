@@ -87,6 +87,15 @@ namespace pa
 
             if (firsttime)
             {
+                if (g._EMClient.Jigsangbalhwa == 1)
+                    _chk직상발화.IsChecked = true;
+                else
+                    _chk직상발화.IsChecked = false;
+
+                // 콤포트와 네트웍 살려 놓기 처리 
+                ComPort_Initial();
+                Network_Initial();
+
                 firsttime = false;
                 signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
                 signalRClient.eConnect += SignalRClient_eConnect;
@@ -100,6 +109,16 @@ namespace pa
             }
             //            if (App.Current.MainWindow.Visibility == Visibility.Visible)
             //                _tray.MinimizeToTray();
+        }
+
+        private void ComPort_Initial()
+        {
+            // 시리얼 통신 처리 
+            g.Log("GPIO & P type Serial Initial..");
+            OpenP();
+            g.Log("R type Serial Initial..");
+            OpenR();
+
         }
 
         private void Initialtimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
@@ -141,12 +160,6 @@ namespace pa
         {
             MakeSpeakerIP();
             ReadMusic();
-            g._BaseData = dBAccess.Simplepa.FirstOrDefault();
-            if (g._BaseData == null)
-            {
-                dBAccess.Init();
-                g._BaseData = dBAccess.Simplepa.FirstOrDefault();
-            }
 
             gl.XMLDanteDevice(true);
 
@@ -158,12 +171,7 @@ namespace pa
 
 
             g.dsp.OnReceiveMessage += Dsp_OnReceiveMessage;
-
-            // 시리얼 통신 처리 
-            g.Log("GPIO & P type Serial Initial..");
-            OpenP();
-            g.Log("R type Serial Initial..");
-            OpenR();
+            // ComPort_Initial();
             _tray = new TrayIcon();
 
             DSPDeviceCheck();
@@ -182,8 +190,12 @@ namespace pa
             // 다중 방송 초기화 처리 
             // 시험을 위해 막음 - 서비스시 오픈 처리 
             InitMultiBS();
-            NetworkInit();
-            initUI();
+            //Network_Initial();
+            g.Log("DSP Thread Initial..");
+            // DSP thread start
+            BSThreadClass.Start();
+            UI_Initial();
+            //Networkcard_initial();
             aThread.Start();
             bThread.Start();
 
@@ -192,10 +204,45 @@ namespace pa
             dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
         }
 
-        private void NetworkInit()
+        private void Network_Initial()
         {
             gl.NetWorkCardFind();
             g.Log("Network Card : " + gl.NetworkCardNo.ToString() + ":" + gl.NetworkCardmDNS.ToString() + ":" + gl.NetworkCardName);
+
+
+            List<string> cl = new List<string>();
+
+            foreach (var t1 in gl.networkCardList)
+            {
+                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName + ":" + t1.ipv4);
+            }
+            _combo.ItemsSource = cl.ToList();
+
+            var t3 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
+            if (t3 == null)
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo.SelectedIndex = 0;
+                return;
+            }
+            else
+            {
+                // 캡처 카드 인덱스 찾기 
+                _combo.SelectedItem = t3.NetworkCardNo.ToString() + ":" + t3.NetworkCardmDNS.ToString() + ":" + t3.NetworkCardName + ":" + t3.ipv4;
+            }
+
+            try
+            {
+                Resolver.intfindx = t3.NetworkCardmDNS;
+                Resolver.localIP = t3.ipv4;
+                g.resolver = new Resolver();
+                g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
+                if (EMServerRow != null)
+                    EMServerRow.net_dante = t3.ipv4;
+            }
+            catch (Exception e1)
+            {
+            }
 
             if (gl.NetworkCardName != "이더넷")
             {
@@ -213,11 +260,6 @@ namespace pa
                     wireShark.CheckStart();
                 }
             }
-
-            g.Log("DSP Thread Initial..");
-            // DSP thread start
-            BSThreadClass.Start();
-
         }
 
         private int systemcheck()
@@ -239,7 +281,7 @@ namespace pa
             return 3;
         }
 
-        private void initUI()
+        private void UI_Initial()
         {
             List<string> dsp_name = new List<string>();
             List<int> dsp_vol = new List<int>() { };
@@ -270,43 +312,11 @@ namespace pa
                 _lv2.ItemsSource = null;
                 _lv2.ItemsSource = t2.ToList();
             }
-
-            List<string> cl = new List<string>();
-
-            foreach (var t1 in gl.networkCardList)
-            {
-                cl.Add(t1.NetworkCardNo.ToString() + ":" + t1.NetworkCardmDNS.ToString() + ":" + t1.NetworkCardName + ":" + t1.ipv4);
-            }
-            _combo.ItemsSource = cl.ToList();
-
-            var t3 = gl.networkCardList.Find(p => p.NetworkCardName == gl.NetworkCardName); // cl.f .Find(p=>p.in);
-            if (t3 == null)
-            {
-                // 캡처 카드 인덱스 찾기 
-                _combo.SelectedIndex = 0;
-                return;
-            }
-            else
-            {
-                // 캡처 카드 인덱스 찾기 
-                _combo.SelectedItem = t3.NetworkCardNo.ToString() + ":" + t3.NetworkCardmDNS.ToString() + ":" + t3.NetworkCardName;
-            }
-
-            try
-            {
-                Resolver.intfindx = t3.NetworkCardmDNS;
-                Resolver.localIP = t3.ipv4;
-                g.resolver = new Resolver();
-                g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
-                if(EMServerRow != null)
-                    EMServerRow.net_dante = t3.ipv4;
-            }
-            catch (Exception e1)
-            {
-            }
-
         }
 
+        private void Networkcard_initial()
+        {
+        }
 
         private void SignalRClient_eDisConnect(object sender, EventArgs e)
         {
@@ -436,15 +446,6 @@ namespace pa
             }));
         }
 
-        // 설정 종료후 컴포트 재설정 처리 
-        private void _but1_Click(object sender, RoutedEventArgs e)
-        {
-            SetupWindow window = new SetupWindow();
-            window.ShowDialog();
-            OpenP();
-            OpenR();
-
-        }
         #endregion
 
         #region // 시험 버튼 유틸 처리 
@@ -704,5 +705,14 @@ namespace pa
 
         #endregion
 
+        private void _chk직상발화_Click(object sender, RoutedEventArgs e)
+        {
+            if (_chk직상발화.IsChecked == true)
+                g._EMClient.Jigsangbalhwa = 1;
+            else
+                g._EMClient.Jigsangbalhwa = 0;
+            g.XMLEMClient(false);
+
+        }
     }
 }

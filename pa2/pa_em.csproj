@@ -185,9 +185,6 @@
     <Compile Include="Windows\ProgressBarDialog4.xaml.cs">
       <DependentUpon>ProgressBarDialog4.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\SetupWindow.xaml.cs">
-      <DependentUpon>SetupWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="Properties\DesignTimeResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,10 +207,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\ProgressBarDialog4.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Windows\SetupWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

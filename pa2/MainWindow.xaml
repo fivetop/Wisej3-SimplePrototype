@@ -12,30 +12,34 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid>
             <Menu>
                 <MenuItem Header="설정">
-                    <MenuItem x:Name="_ts1" Header="환경 설정" Click="_but1_Click" />
-                    <Separator></Separator>
                     <MenuItem x:Name="_ts2" Header="LoopBack Test" Click="_but2_Click" />
                     <MenuItem x:Name="_ts3" Header="GPIO Test" Click="_but3_Click" />
+                    <Separator></Separator>
                     <MenuItem x:Name="_ts4" Header="Test(Play)" Click="_but4_Click" />
                     <MenuItem x:Name="_ts5" Header="Test(Stop)" Click="_but5_Click" />
                     <MenuItem x:Name="_ts6" Header="진단" Click="_but6_Click" />
                     <MenuItem x:Name="_ts7" Header="sigr" Click="_but7_Click" />
                 </MenuItem>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Network Card" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <ComboBox x:Name="_combo" Margin="10,0,0,0" SelectionChanged="_combo_SelectionChanged" />
-                    <TextBlock x:Name="_maindsp" Text="Main DSP" Margin="10,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                </StackPanel>
             </Menu>
         </Grid>
 
         <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Network Card" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox x:Name="_combo" Margin="10,0,0,0" SelectionChanged="_combo_SelectionChanged" />
+                <TextBlock x:Name="_maindsp" Text="Main DSP" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <CheckBox x:Name="_chk직상발화" Click="_chk직상발화_Click" Content="5층 이상, 연면적 3,000 이상" Margin="20,0,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
             <TabControl SelectionChanged="TabControl_SelectionChanged" FontSize="16">
                 <TabItem Header="Main">
                     <Grid>
@@ -147,7 +151,7 @@
             </TabControl>
         </Grid>
 
-        <StatusBar Grid.Row="2" Height="40">
+        <StatusBar Grid.Row="3" Height="40">
             <StatusBarItem x:Name="_Status" Content="EM Server.." FontSize="14"></StatusBarItem>
         </StatusBar>
     </Grid>

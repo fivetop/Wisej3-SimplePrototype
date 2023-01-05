@@ -52,10 +52,7 @@ namespace pa
         static public List<PlayItem> playItems { get; set; } = new List<PlayItem>(new PlayItem[9]);
         // DSP 제어을 위함 
         public static DSPControll dsp { get; set; } = new DSPControll(); // 볼륨과 뮤트 처리용 
-        public static SimplepaRow _BaseData { get; set; }
-
         static public EMClient _EMClient { get; set; } = new EMClient(); // 기초 정보
-
 
         // mdns ----------------
         // new DomainName("_services._dns-sd._udp.local"); 

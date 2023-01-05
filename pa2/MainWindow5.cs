@@ -213,7 +213,8 @@ namespace pa
 
             spP.DataReceived += new SerialDataReceivedEventHandler(SpP_DataReceived);
 
-            EMServerRow.com_gpio = g._EMClient.GPIOPort;
+            if(EMServerRow != null)
+                EMServerRow.com_gpio = g._EMClient.GPIOPort;
             try
             {
                 spP.Open();
@@ -222,11 +223,13 @@ namespace pa
                 g.Log("Comm Port EM Open : " + spP.PortName);
                 //sendErr(0xC1);
                 //sendErr(0x31);
-                EMServerRow.com_gpio_state = 1;
+                if (EMServerRow != null)
+                    EMServerRow.com_gpio_state = 1;
             }
             catch (IOException e1)
             {
-                EMServerRow.com_gpio_state = 0; 
+                if (EMServerRow != null)
+                    EMServerRow.com_gpio_state = 0; 
                 g.Log("Comm Port EM Error...." + e1.Message);
             }
         }
@@ -592,7 +595,7 @@ namespace pa
             }
 
             // 직상 발화가 아닌경우 
-            if (g._EMClient.Jigsangbalhwa != 2)
+            if (g._EMClient.Jigsangbalhwa != 1)
             {
                 foreach (var t1 in cur_embs_device)
                 {
@@ -677,18 +680,21 @@ namespace pa
 
             spR.DataReceived += new SerialDataReceivedEventHandler(SpR_DataReceived);
 
-            EMServerRow.com_Rtype = g._EMClient.Rport;
+            if (EMServerRow != null)
+                EMServerRow.com_Rtype = g._EMClient.Rport;
 
             try
             {
                 spR.Open();
                 g.Log("Comm Port R형 Open : " + spR.PortName);
-                EMServerRow.com_Rtype_state = 1;
+                if (EMServerRow != null)
+                    EMServerRow.com_Rtype_state = 1;
             }
             catch (Exception e1)
             {
                 g.Log("Comm Port R형 Error...." + e1.Message);
-                EMServerRow.com_Rtype_state = 0;
+                if (EMServerRow != null)
+                    EMServerRow.com_Rtype_state = 0;
             }
         }
 
