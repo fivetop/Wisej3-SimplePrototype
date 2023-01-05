@@ -56,6 +56,7 @@ namespace simplepa2.UI.Views
             this.cb_SiteName.SelectedIndex = 0;
         }
 
+        /* 로딩 버튼을 누른경우 */
         private void bt_SelectLoading_Click(object sender, EventArgs e)
         {
             // 선택된 사이트명 확인 (EM명)            
@@ -63,6 +64,13 @@ namespace simplepa2.UI.Views
 
             this.buildPanelDataList = buildingDataUISetup(selectedItem);
             
+        }
+        /*  콤보 돌린 경우 */
+        private void cb_SiteName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = (((this.cb_SiteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerWithWholeColRow).EMNAME;
+
+            this.buildPanelDataList = buildingDataUISetup(selectedItem);
         }
 
         private List<Comp_ZoneBuildingPanels> buildingDataUISetup(string selectedItem)
@@ -143,10 +151,7 @@ namespace simplepa2.UI.Views
             MessageBox.Show("TODO : Zone 추가 삭제된 내용을 Database에 저장하고 시스템에 반영합니다.");
         }
 
-        private void bt_ExportCSV_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("TODO : 현재의 Zone 리스트를 CSV 파일로 추출해 줍니다. ");
-        }
+        
 
         private void bt_ImportCSV_Click(object sender, EventArgs e)
         {
@@ -162,5 +167,28 @@ namespace simplepa2.UI.Views
             }      
 
         }
+
+        private void bt_dataDelete_Click(object sender, EventArgs e)
+        {
+            DeleteAllZoneRecord();
+        }
+
+        private void DeleteAllZoneRecord()
+        {
+            try
+            {                
+                   if (MessageBox.Show("LAW TEXT : 선번 데이터를 모두 삭제 하시겠습니까?",
+                        icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                    AlertBox.Show("TODO : 선번 삭제 처리 , 관련 데이터 처리 ");
+                    }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
+            }
+        }
+
     }
 }

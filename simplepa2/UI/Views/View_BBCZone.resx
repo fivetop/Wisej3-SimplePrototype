@@ -132,21 +132,6 @@
     font-weight: 700;
     float: left;</value>
   </data>
-  <data name="bt_ExportCSV.CssStyle" xml:space="preserve">
-    <value>    color: #fff !important;
-    background: #3A86FF !important;
-        border: 1px solid #3A86FF !important;
-    
-    display: block;
-    width: 100px;
-    height: 32px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 700;
-    float: left;</value>
-  </data>
   <data name="bt_StoreData.CssStyle" xml:space="preserve">
     <value>    color: #fff !important;
     background: #2C4771 !important;

@@ -43,12 +43,10 @@
             this.비고 = new Wisej.Web.DataGridViewColumn();
             this.panel2 = new Wisej.Web.Panel();
             this.panel136 = new Wisej.Web.Panel();
-            this.button5 = new Wisej.Web.Button();
-            this.button4 = new Wisej.Web.Button();
-            this.button1 = new Wisej.Web.Button();
-            this.button2 = new Wisej.Web.Button();
-            this.textBox2 = new Wisej.Web.TextBox();
             this.upload1 = new Wisej.Web.Upload();
+            this.button1 = new Wisej.Web.Button();
+            this.button5 = new Wisej.Web.Button();
+            this.bt_inputDecision = new Wisej.Web.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -63,7 +61,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new Wisej.Web.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(1081, 564);
+            this.panel1.Size = new System.Drawing.Size(1081, 577);
             this.panel1.TabIndex = 1;
             // 
             // dataGridView1
@@ -83,7 +81,7 @@
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 71);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1041, 473);
+            this.dataGridView1.Size = new System.Drawing.Size(1041, 486);
             this.dataGridView1.TabIndex = 0;
             // 
             // 동
@@ -154,42 +152,26 @@
             // 
             this.panel136.BackColor = System.Drawing.Color.Transparent;
             this.panel136.Controls.Add(this.upload1);
-            this.panel136.Controls.Add(this.textBox2);
-            this.panel136.Controls.Add(this.button2);
             this.panel136.Controls.Add(this.button1);
             this.panel136.Controls.Add(this.button5);
-            this.panel136.Controls.Add(this.button4);
+            this.panel136.Controls.Add(this.bt_inputDecision);
             this.panel136.Dock = Wisej.Web.DockStyle.Top;
             this.panel136.Location = new System.Drawing.Point(0, 0);
             this.panel136.Name = "panel136";
             this.panel136.Size = new System.Drawing.Size(1041, 52);
             this.panel136.TabIndex = 53;
             // 
-            // button5
+            // upload1
             // 
-            this.button5.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromName("@button2BG");
-            this.button5.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button5.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button5.Location = new System.Drawing.Point(831, 0);
-            this.button5.Margin = new Wisej.Web.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 32);
-            this.button5.TabIndex = 35;
-            this.button5.Text = "선택 편집";
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button4.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button4.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button4.Location = new System.Drawing.Point(941, 0);
-            this.button4.Margin = new Wisej.Web.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 32);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "정상 입력";
+            this.upload1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.upload1.CssStyle = "border-radius:6px;";
+            this.upload1.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.upload1.Location = new System.Drawing.Point(112, 0);
+            this.upload1.Name = "upload1";
+            this.upload1.Size = new System.Drawing.Size(292, 32);
+            this.upload1.TabIndex = 169;
+            this.upload1.Text = "파일 업로드";
+            this.upload1.Uploaded += new Wisej.Web.UploadedEventHandler(this.upload1_Uploaded);
             // 
             // button1
             // 
@@ -204,43 +186,36 @@
             this.button1.TabIndex = 36;
             this.button1.Text = "선번 샘플";
             // 
-            // button2
+            // button5
             // 
-            this.button2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button2.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button2.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button2.Location = new System.Drawing.Point(110, 0);
-            this.button2.Margin = new Wisej.Web.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 32);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "파일 열기";
+            this.button5.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.FromName("@button2BG");
+            this.button5.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button5.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.button5.Location = new System.Drawing.Point(831, 0);
+            this.button5.Margin = new Wisej.Web.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 32);
+            this.button5.TabIndex = 35;
+            this.button5.Text = "선택 편집";
             // 
-            // textBox2
+            // bt_inputDecision
             // 
-            this.textBox2.AutoSize = false;
-            this.textBox2.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox2.Location = new System.Drawing.Point(220, 0);
-            this.textBox2.Margin = new Wisej.Web.Padding(0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 32);
-            this.textBox2.TabIndex = 77;
-            // 
-            // upload1
-            // 
-            this.upload1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.upload1.CssStyle = "border-radius:6px;";
-            this.upload1.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.upload1.Location = new System.Drawing.Point(420, 0);
-            this.upload1.Name = "upload1";
-            this.upload1.Size = new System.Drawing.Size(292, 32);
-            this.upload1.TabIndex = 169;
-            this.upload1.Text = "파일 업로드";
+            this.bt_inputDecision.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_inputDecision.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.bt_inputDecision.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_inputDecision.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_inputDecision.Location = new System.Drawing.Point(941, 0);
+            this.bt_inputDecision.Margin = new Wisej.Web.Padding(0);
+            this.bt_inputDecision.Name = "bt_inputDecision";
+            this.bt_inputDecision.Size = new System.Drawing.Size(100, 32);
+            this.bt_inputDecision.TabIndex = 34;
+            this.bt_inputDecision.Text = "선번 입력";
+            this.bt_inputDecision.Click += new System.EventHandler(this.bt_inputDecision_Click);
             // 
             // Form_BBCZoneImport
             // 
-            this.ClientSize = new System.Drawing.Size(1081, 564);
+            this.ClientSize = new System.Drawing.Size(1081, 577);
             this.Controls.Add(this.panel1);
             this.HeaderBackColor = System.Drawing.Color.FromName("@button1BG");
             this.Name = "Form_BBCZoneImport";
@@ -270,11 +245,9 @@
         private Wisej.Web.DataGridViewColumn 비고;
         private Wisej.Web.Panel panel2;
         private Wisej.Web.Panel panel136;
-        private Wisej.Web.Button button2;
         private Wisej.Web.Button button1;
         private Wisej.Web.Button button5;
-        private Wisej.Web.Button button4;
-        private Wisej.Web.TextBox textBox2;
+        private Wisej.Web.Button bt_inputDecision;
         private Wisej.Web.Upload upload1;
     }
 }

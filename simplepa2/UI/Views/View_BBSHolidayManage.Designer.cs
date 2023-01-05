@@ -28,82 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button53 = new Wisej.Web.Button();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle6 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle7 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle8 = new Wisej.Web.DataGridViewCellStyle();
+            this.bt_updateoradd = new Wisej.Web.Button();
             this.panel32 = new Wisej.Web.Panel();
-            this.button1 = new Wisej.Web.Button();
-            this.comboBox3 = new Wisej.Web.ComboBox();
-            this.label27 = new Wisej.Web.Label();
-            this.comboBox2 = new Wisej.Web.ComboBox();
+            this.bt_openAddNewForm = new Wisej.Web.Button();
+            this.cb_year = new Wisej.Web.ComboBox();
             this.label21 = new Wisej.Web.Label();
             this.label15 = new Wisej.Web.Label();
             this.panel21 = new Wisej.Web.Panel();
             this.panel22 = new Wisej.Web.Panel();
             this.panel89 = new Wisej.Web.Panel();
-            this.panel37 = new Wisej.Web.Panel();
-            this.comboBox1 = new Wisej.Web.ComboBox();
-            this.label26 = new Wisej.Web.Label();
             this.panel36 = new Wisej.Web.Panel();
-            this.textBox21 = new Wisej.Web.TextBox();
+            this.tb_holidayDescription = new Wisej.Web.TextBox();
             this.label25 = new Wisej.Web.Label();
             this.panel35 = new Wisej.Web.Panel();
-            this.textBox1 = new Wisej.Web.TextBox();
+            this.dt_picker = new Wisej.Web.DateTimePicker();
             this.label24 = new Wisej.Web.Label();
             this.line5 = new Wisej.Web.Line();
             this.panel34 = new Wisej.Web.Panel();
             this.label23 = new Wisej.Web.Label();
             this.label22 = new Wisej.Web.Label();
             this.panel136 = new Wisej.Web.Panel();
-            this.button3 = new Wisej.Web.Button();
-            this.label66 = new Wisej.Web.Label();
+            this.bt_delete = new Wisej.Web.Button();
+            this.lb_text = new Wisej.Web.Label();
             this.panel1 = new Wisej.Web.Panel();
             this.panel48 = new Wisej.Web.Panel();
-            this.panel55 = new Wisej.Web.Panel();
-            this.panel20 = new Wisej.Web.Panel();
-            this.label51 = new Wisej.Web.Label();
-            this.comboBox4 = new Wisej.Web.ComboBox();
-            this.label52 = new Wisej.Web.Label();
-            this.button10 = new Wisej.Web.Button();
             this.panel2 = new Wisej.Web.Panel();
-            this.dataGridView1 = new Wisej.Web.DataGridView();
+            this.dg_holidayList = new Wisej.Web.DataGridView();
             this.연도 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.날짜 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.휴일내역 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.방송유무 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel55 = new Wisej.Web.Panel();
+            this.panel20 = new Wisej.Web.Panel();
+            this.label51 = new Wisej.Web.Label();
+            this.cb_monthAPI = new Wisej.Web.ComboBox();
+            this.label52 = new Wisej.Web.Label();
+            this.bt_gonggongUpdate = new Wisej.Web.Button();
+            this.dataSet11 = new simplepa2.DataSet1();
+            this.holidaysTableAdapter1 = new simplepa2.DataSet1TableAdapters.HolidaysTableAdapter();
+            this.holidaysYearListTableAdapter1 = new simplepa2.DataSet1TableAdapters.HolidaysYearListTableAdapter();
+            this.holidaysDivideDateTableAdapter1 = new simplepa2.DataSet1TableAdapters.HolidaysDivideDateTableAdapter();
             this.panel32.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel89.SuspendLayout();
-            this.panel37.SuspendLayout();
             this.panel36.SuspendLayout();
             this.panel35.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel136.SuspendLayout();
             this.panel48.SuspendLayout();
-            this.panel55.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_holidayList)).BeginInit();
+            this.panel55.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
             // 
-            // button53
+            // bt_updateoradd
             // 
-            this.button53.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button53.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button53.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button53.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button53.Location = new System.Drawing.Point(620, 0);
-            this.button53.Margin = new Wisej.Web.Padding(0);
-            this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(100, 32);
-            this.button53.TabIndex = 34;
-            this.button53.Text = "추가";
+            this.bt_updateoradd.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_updateoradd.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.bt_updateoradd.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_updateoradd.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_updateoradd.Location = new System.Drawing.Point(620, 0);
+            this.bt_updateoradd.Margin = new Wisej.Web.Padding(0);
+            this.bt_updateoradd.Name = "bt_updateoradd";
+            this.bt_updateoradd.Size = new System.Drawing.Size(100, 32);
+            this.bt_updateoradd.TabIndex = 34;
+            this.bt_updateoradd.Text = "추가";
+            this.bt_updateoradd.Click += new System.EventHandler(this.bt_updateoradd_Click);
             // 
             // panel32
             // 
             this.panel32.BackColor = System.Drawing.Color.Transparent;
-            this.panel32.Controls.Add(this.button1);
-            this.panel32.Controls.Add(this.comboBox3);
-            this.panel32.Controls.Add(this.label27);
-            this.panel32.Controls.Add(this.comboBox2);
+            this.panel32.Controls.Add(this.bt_openAddNewForm);
+            this.panel32.Controls.Add(this.cb_year);
             this.panel32.Controls.Add(this.label21);
             this.panel32.Controls.Add(this.label15);
             this.panel32.Dock = Wisej.Web.DockStyle.Top;
@@ -112,57 +113,38 @@
             this.panel32.Size = new System.Drawing.Size(540, 52);
             this.panel32.TabIndex = 50;
             // 
-            // button1
+            // bt_openAddNewForm
             // 
-            this.button1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button1.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button1.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button1.Location = new System.Drawing.Point(440, 0);
-            this.button1.Margin = new Wisej.Web.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 32);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "추가";
+            this.bt_openAddNewForm.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_openAddNewForm.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.bt_openAddNewForm.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_openAddNewForm.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_openAddNewForm.Location = new System.Drawing.Point(440, 0);
+            this.bt_openAddNewForm.Margin = new Wisej.Web.Padding(0);
+            this.bt_openAddNewForm.Name = "bt_openAddNewForm";
+            this.bt_openAddNewForm.Size = new System.Drawing.Size(100, 32);
+            this.bt_openAddNewForm.TabIndex = 40;
+            this.bt_openAddNewForm.Text = "신규";
+            this.bt_openAddNewForm.Click += new System.EventHandler(this.bt_openAddNewForm_Click);
             // 
-            // comboBox3
+            // cb_year
             // 
-            this.comboBox3.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.comboBox3.AutoSize = false;
-            this.comboBox3.Location = new System.Drawing.Point(356, 0);
-            this.comboBox3.Margin = new Wisej.Web.Padding(0);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(69, 32);
-            this.comboBox3.TabIndex = 39;
-            // 
-            // label27
-            // 
-            this.label27.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.label27.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label27.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label27.Location = new System.Drawing.Point(305, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(40, 32);
-            this.label27.TabIndex = 38;
-            this.label27.Text = "월";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.comboBox2.AutoSize = false;
-            this.comboBox2.Location = new System.Drawing.Point(209, 0);
-            this.comboBox2.Margin = new Wisej.Web.Padding(0);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(88, 32);
-            this.comboBox2.TabIndex = 37;
+            this.cb_year.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.cb_year.AutoSize = false;
+            this.cb_year.DisplayMember = "Yearlist";
+            this.cb_year.Location = new System.Drawing.Point(338, 0);
+            this.cb_year.Margin = new Wisej.Web.Padding(0);
+            this.cb_year.Name = "cb_year";
+            this.cb_year.Size = new System.Drawing.Size(88, 32);
+            this.cb_year.TabIndex = 37;
+            this.cb_year.SelectedIndexChanged += new System.EventHandler(this.cb_year_SelectedIndexChanged);
             // 
             // label21
             // 
             this.label21.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.label21.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label21.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label21.Location = new System.Drawing.Point(158, 0);
+            this.label21.Location = new System.Drawing.Point(287, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(40, 32);
             this.label21.TabIndex = 36;
@@ -195,6 +177,7 @@
             // panel22
             // 
             this.panel22.AutoScroll = true;
+            this.panel22.BackColor = System.Drawing.Color.Transparent;
             this.panel22.Controls.Add(this.panel89);
             this.panel22.Dock = Wisej.Web.DockStyle.Fill;
             this.panel22.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
@@ -208,7 +191,6 @@
             // 
             this.panel89.AutoSize = true;
             this.panel89.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.panel89.Controls.Add(this.panel37);
             this.panel89.Controls.Add(this.panel36);
             this.panel89.Controls.Add(this.panel35);
             this.panel89.Controls.Add(this.line5);
@@ -217,48 +199,12 @@
             this.panel89.Location = new System.Drawing.Point(0, 0);
             this.panel89.Name = "panel89";
             this.panel89.Padding = new Wisej.Web.Padding(20);
-            this.panel89.Size = new System.Drawing.Size(720, 246);
+            this.panel89.Size = new System.Drawing.Size(720, 190);
             this.panel89.TabIndex = 159;
-            // 
-            // panel37
-            // 
-            this.panel37.Controls.Add(this.comboBox1);
-            this.panel37.Controls.Add(this.label26);
-            this.panel37.Dock = Wisej.Web.DockStyle.Top;
-            this.panel37.Location = new System.Drawing.Point(20, 170);
-            this.panel37.Name = "panel37";
-            this.panel37.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
-            this.panel37.Size = new System.Drawing.Size(680, 56);
-            this.panel37.TabIndex = 166;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoSize = false;
-            this.comboBox1.Dock = Wisej.Web.DockStyle.Left;
-            this.comboBox1.Location = new System.Drawing.Point(123, 20);
-            this.comboBox1.Margin = new Wisej.Web.Padding(0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 36);
-            this.comboBox1.TabIndex = 139;
-            // 
-            // label26
-            // 
-            this.label26.AutoEllipsis = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Dock = Wisej.Web.DockStyle.Left;
-            this.label26.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label26.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label26.Location = new System.Drawing.Point(0, 20);
-            this.label26.Margin = new Wisej.Web.Padding(0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(123, 36);
-            this.label26.TabIndex = 136;
-            this.label26.Text = "예약방송유무";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel36
             // 
-            this.panel36.Controls.Add(this.textBox21);
+            this.panel36.Controls.Add(this.tb_holidayDescription);
             this.panel36.Controls.Add(this.label25);
             this.panel36.Dock = Wisej.Web.DockStyle.Top;
             this.panel36.Location = new System.Drawing.Point(20, 114);
@@ -267,14 +213,14 @@
             this.panel36.Size = new System.Drawing.Size(680, 56);
             this.panel36.TabIndex = 165;
             // 
-            // textBox21
+            // tb_holidayDescription
             // 
-            this.textBox21.AutoSize = false;
-            this.textBox21.Dock = Wisej.Web.DockStyle.Left;
-            this.textBox21.Location = new System.Drawing.Point(123, 20);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(240, 36);
-            this.textBox21.TabIndex = 137;
+            this.tb_holidayDescription.AutoSize = false;
+            this.tb_holidayDescription.Dock = Wisej.Web.DockStyle.Left;
+            this.tb_holidayDescription.Location = new System.Drawing.Point(123, 20);
+            this.tb_holidayDescription.Name = "tb_holidayDescription";
+            this.tb_holidayDescription.Size = new System.Drawing.Size(240, 36);
+            this.tb_holidayDescription.TabIndex = 137;
             // 
             // label25
             // 
@@ -293,7 +239,7 @@
             // 
             // panel35
             // 
-            this.panel35.Controls.Add(this.textBox1);
+            this.panel35.Controls.Add(this.dt_picker);
             this.panel35.Controls.Add(this.label24);
             this.panel35.Dock = Wisej.Web.DockStyle.Top;
             this.panel35.Location = new System.Drawing.Point(20, 58);
@@ -302,14 +248,19 @@
             this.panel35.Size = new System.Drawing.Size(680, 56);
             this.panel35.TabIndex = 164;
             // 
-            // textBox1
+            // dt_picker
             // 
-            this.textBox1.AutoSize = false;
-            this.textBox1.Dock = Wisej.Web.DockStyle.Left;
-            this.textBox1.Location = new System.Drawing.Point(123, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 36);
-            this.textBox1.TabIndex = 138;
+            this.dt_picker.BackColor = System.Drawing.Color.Transparent;
+            this.dt_picker.CustomFormat = "yyyy-MM-dd";
+            this.dt_picker.Dock = Wisej.Web.DockStyle.Left;
+            this.dt_picker.Format = Wisej.Web.DateTimePickerFormat.Custom;
+            this.dt_picker.Location = new System.Drawing.Point(123, 20);
+            this.dt_picker.MaxDate = new System.DateTime(2200, 12, 31, 0, 0, 0, 0);
+            this.dt_picker.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dt_picker.Name = "dt_picker";
+            this.dt_picker.Size = new System.Drawing.Size(240, 36);
+            this.dt_picker.TabIndex = 137;
+            this.dt_picker.Value = new System.DateTime(2023, 1, 4, 16, 41, 57, 927);
             // 
             // label24
             // 
@@ -376,38 +327,39 @@
             // panel136
             // 
             this.panel136.BackColor = System.Drawing.Color.Transparent;
-            this.panel136.Controls.Add(this.button3);
-            this.panel136.Controls.Add(this.button53);
-            this.panel136.Controls.Add(this.label66);
+            this.panel136.Controls.Add(this.bt_delete);
+            this.panel136.Controls.Add(this.bt_updateoradd);
+            this.panel136.Controls.Add(this.lb_text);
             this.panel136.Dock = Wisej.Web.DockStyle.Top;
             this.panel136.Location = new System.Drawing.Point(20, 20);
             this.panel136.Name = "panel136";
             this.panel136.Size = new System.Drawing.Size(720, 52);
             this.panel136.TabIndex = 50;
             // 
-            // button3
+            // bt_delete
             // 
-            this.button3.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromName("@button2BG");
-            this.button3.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button3.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button3.Location = new System.Drawing.Point(510, 0);
-            this.button3.Margin = new Wisej.Web.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 32);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "삭제";
+            this.bt_delete.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_delete.BackColor = System.Drawing.Color.FromName("@button2BG");
+            this.bt_delete.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_delete.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_delete.Location = new System.Drawing.Point(510, 0);
+            this.bt_delete.Margin = new Wisej.Web.Padding(0);
+            this.bt_delete.Name = "bt_delete";
+            this.bt_delete.Size = new System.Drawing.Size(100, 32);
+            this.bt_delete.TabIndex = 35;
+            this.bt_delete.Text = "삭제";
+            this.bt_delete.Click += new System.EventHandler(this.bt_delete_Click);
             // 
-            // label66
+            // lb_text
             // 
-            this.label66.CssStyle = "\r\n";
-            this.label66.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label66.Location = new System.Drawing.Point(0, 0);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(418, 32);
-            this.label66.TabIndex = 33;
-            this.label66.Text = "휴일 편집 : 2022-05-05";
-            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_text.CssStyle = "\r\n";
+            this.lb_text.Font = new System.Drawing.Font("@boxTitle", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_text.Location = new System.Drawing.Point(0, 0);
+            this.lb_text.Name = "lb_text";
+            this.lb_text.Size = new System.Drawing.Size(418, 32);
+            this.lb_text.TabIndex = 33;
+            this.lb_text.Text = "휴일 편집";
+            this.lb_text.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -431,14 +383,71 @@
             this.panel48.Size = new System.Drawing.Size(580, 860);
             this.panel48.TabIndex = 54;
             // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.dg_holidayList);
+            this.panel2.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel2.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
+            this.panel2.Location = new System.Drawing.Point(20, 72);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(540, 698);
+            this.panel2.TabIndex = 165;
+            this.panel2.Text = "listPanel";
+            // 
+            // dg_holidayList
+            // 
+            this.dg_holidayList.AutoGenerateColumns = false;
+            this.dg_holidayList.AutoSize = true;
+            dataGridViewCellStyle5.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.dg_holidayList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dg_holidayList.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
+            this.연도,
+            this.날짜,
+            this.휴일내역});
+            this.dg_holidayList.Dock = Wisej.Web.DockStyle.Fill;
+            this.dg_holidayList.Location = new System.Drawing.Point(0, 0);
+            this.dg_holidayList.Name = "dg_holidayList";
+            this.dg_holidayList.RowHeadersVisible = false;
+            this.dg_holidayList.Size = new System.Drawing.Size(540, 698);
+            this.dg_holidayList.TabIndex = 135;
+            this.dg_holidayList.CellMouseClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dg_holidayList_CellMouseClick);
+            // 
+            // 연도
+            // 
+            this.연도.DataPropertyName = "Year";
+            dataGridViewCellStyle6.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.연도.DefaultCellStyle = dataGridViewCellStyle6;
+            this.연도.HeaderText = "연도";
+            this.연도.Name = "연도";
+            this.연도.Width = 90;
+            // 
+            // 날짜
+            // 
+            this.날짜.DataPropertyName = "hDate";
+            dataGridViewCellStyle7.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.날짜.DefaultCellStyle = dataGridViewCellStyle7;
+            this.날짜.HeaderText = "날짜";
+            this.날짜.Name = "날짜";
+            this.날짜.Width = 200;
+            // 
+            // 휴일내역
+            // 
+            this.휴일내역.DataPropertyName = "Description";
+            dataGridViewCellStyle8.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.휴일내역.DefaultCellStyle = dataGridViewCellStyle8;
+            this.휴일내역.HeaderText = "휴일내역";
+            this.휴일내역.Name = "휴일내역";
+            this.휴일내역.Width = 230;
+            // 
             // panel55
             // 
             this.panel55.BackColor = System.Drawing.Color.White;
             this.panel55.Controls.Add(this.panel20);
             this.panel55.Controls.Add(this.label51);
-            this.panel55.Controls.Add(this.comboBox4);
+            this.panel55.Controls.Add(this.cb_monthAPI);
             this.panel55.Controls.Add(this.label52);
-            this.panel55.Controls.Add(this.button10);
+            this.panel55.Controls.Add(this.bt_gonggongUpdate);
             this.panel55.Dock = Wisej.Web.DockStyle.Bottom;
             this.panel55.Location = new System.Drawing.Point(20, 770);
             this.panel55.Name = "panel55";
@@ -459,22 +468,35 @@
             this.label51.CssStyle = "\r\n";
             this.label51.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label51.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label51.Location = new System.Drawing.Point(0, 18);
+            this.label51.Location = new System.Drawing.Point(2, 18);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(180, 32);
             this.label51.TabIndex = 40;
             this.label51.Text = "공공데이터 API 공휴일 연동";
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox4
+            // cb_monthAPI
             // 
-            this.comboBox4.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.comboBox4.AutoSize = false;
-            this.comboBox4.Location = new System.Drawing.Point(285, 18);
-            this.comboBox4.Margin = new Wisej.Web.Padding(0);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(96, 32);
-            this.comboBox4.TabIndex = 39;
+            this.cb_monthAPI.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.cb_monthAPI.AutoSize = false;
+            this.cb_monthAPI.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cb_monthAPI.Location = new System.Drawing.Point(285, 18);
+            this.cb_monthAPI.Margin = new Wisej.Web.Padding(0);
+            this.cb_monthAPI.Name = "cb_monthAPI";
+            this.cb_monthAPI.Size = new System.Drawing.Size(96, 32);
+            this.cb_monthAPI.TabIndex = 39;
             // 
             // label52
             // 
@@ -488,67 +510,36 @@
             this.label52.Text = "월선택";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button10
+            // bt_gonggongUpdate
             // 
-            this.button10.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.button10.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button10.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button10.Location = new System.Drawing.Point(390, 18);
-            this.button10.Margin = new Wisej.Web.Padding(0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(149, 32);
-            this.button10.TabIndex = 34;
-            this.button10.Text = "휴일 업데이트";
+            this.bt_gonggongUpdate.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_gonggongUpdate.BackColor = System.Drawing.Color.FromName("@button1BG");
+            this.bt_gonggongUpdate.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_gonggongUpdate.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_gonggongUpdate.Location = new System.Drawing.Point(390, 18);
+            this.bt_gonggongUpdate.Margin = new Wisej.Web.Padding(0);
+            this.bt_gonggongUpdate.Name = "bt_gonggongUpdate";
+            this.bt_gonggongUpdate.Size = new System.Drawing.Size(149, 32);
+            this.bt_gonggongUpdate.TabIndex = 34;
+            this.bt_gonggongUpdate.Text = "휴일 가져오기";
+            this.bt_gonggongUpdate.Click += new System.EventHandler(this.bt_gonggongUpdate_Click);
             // 
-            // panel2
+            // dataSet11
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
-            this.panel2.Location = new System.Drawing.Point(20, 72);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 698);
-            this.panel2.TabIndex = 165;
-            this.panel2.Text = "listPanel";
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridView1
+            // holidaysTableAdapter1
             // 
-            this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.연도,
-            this.날짜,
-            this.휴일내역,
-            this.방송유무});
-            this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(540, 698);
-            this.dataGridView1.TabIndex = 135;
+            this.holidaysTableAdapter1.ClearBeforeFill = true;
             // 
-            // 연도
+            // holidaysYearListTableAdapter1
             // 
-            this.연도.HeaderText = "연도";
-            this.연도.Name = "연도";
-            this.연도.Width = 90;
+            this.holidaysYearListTableAdapter1.ClearBeforeFill = true;
             // 
-            // 날짜
+            // holidaysDivideDateTableAdapter1
             // 
-            this.날짜.HeaderText = "날짜";
-            this.날짜.Name = "날짜";
-            this.날짜.Width = 120;
-            // 
-            // 휴일내역
-            // 
-            this.휴일내역.HeaderText = "휴일내역";
-            this.휴일내역.Name = "휴일내역";
-            this.휴일내역.Width = 180;
-            // 
-            // 방송유무
-            // 
-            this.방송유무.HeaderText = "방송유무";
-            this.방송유무.Name = "방송유무";
-            this.방송유무.Width = 70;
+            this.holidaysDivideDateTableAdapter1.ClearBeforeFill = true;
             // 
             // View_BBSHolidayManage
             // 
@@ -566,61 +557,61 @@
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
             this.panel89.ResumeLayout(false);
-            this.panel37.ResumeLayout(false);
             this.panel36.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
+            this.panel35.PerformLayout();
             this.panel34.ResumeLayout(false);
             this.panel136.ResumeLayout(false);
             this.panel48.ResumeLayout(false);
-            this.panel55.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_holidayList)).EndInit();
+            this.panel55.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Wisej.Web.Button button53;
+        private Wisej.Web.Button bt_updateoradd;
         private Wisej.Web.Panel panel32;
         private Wisej.Web.Label label15;
         private Wisej.Web.Panel panel21;
         private Wisej.Web.Panel panel22;
         private Wisej.Web.Panel panel89;
-        private Wisej.Web.Panel panel37;
-        private Wisej.Web.ComboBox comboBox1;
-        private Wisej.Web.Label label26;
         private Wisej.Web.Panel panel36;
-        private Wisej.Web.TextBox textBox21;
+        private Wisej.Web.TextBox tb_holidayDescription;
         private Wisej.Web.Label label25;
         private Wisej.Web.Panel panel35;
-        private Wisej.Web.TextBox textBox1;
         private Wisej.Web.Label label24;
         private Wisej.Web.Line line5;
         private Wisej.Web.Panel panel34;
         private Wisej.Web.Label label23;
         private Wisej.Web.Label label22;
         private Wisej.Web.Panel panel136;
-        private Wisej.Web.Button button3;
-        private Wisej.Web.Label label66;
+        private Wisej.Web.Button bt_delete;
+        private Wisej.Web.Label lb_text;
         private Wisej.Web.Panel panel1;
         private Wisej.Web.Panel panel48;
-        private Wisej.Web.ComboBox comboBox3;
-        private Wisej.Web.Label label27;
-        private Wisej.Web.ComboBox comboBox2;
+        private Wisej.Web.ComboBox cb_year;
         private Wisej.Web.Label label21;
-        private Wisej.Web.Button button1;
+        private Wisej.Web.Button bt_openAddNewForm;
         private Wisej.Web.Panel panel55;
         private Wisej.Web.Panel panel20;
         private Wisej.Web.Label label51;
-        private Wisej.Web.ComboBox comboBox4;
+        private Wisej.Web.ComboBox cb_monthAPI;
         private Wisej.Web.Label label52;
-        private Wisej.Web.Button button10;
+        private Wisej.Web.Button bt_gonggongUpdate;
         private Wisej.Web.Panel panel2;
-        private Wisej.Web.DataGridView dataGridView1;
         private Wisej.Web.DataGridViewTextBoxColumn 연도;
         private Wisej.Web.DataGridViewTextBoxColumn 날짜;
         private Wisej.Web.DataGridViewTextBoxColumn 휴일내역;
-        private Wisej.Web.DataGridViewTextBoxColumn 방송유무;
+        private DataSet1 dataSet11;
+        private DataSet1TableAdapters.HolidaysTableAdapter holidaysTableAdapter1;
+        private Wisej.Web.DataGridView dg_holidayList;
+        private DataSet1TableAdapters.HolidaysYearListTableAdapter holidaysYearListTableAdapter1;
+        private DataSet1TableAdapters.HolidaysDivideDateTableAdapter holidaysDivideDateTableAdapter1;
+        private Wisej.Web.DateTimePicker dt_picker;
     }
 }

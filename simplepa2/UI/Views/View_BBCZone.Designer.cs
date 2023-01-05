@@ -33,7 +33,7 @@
             this.pn_Contents = new Wisej.Web.Panel();
             this.pn_TopBar = new Wisej.Web.Panel();
             this.bt_WholeSelect = new Wisej.Web.Button();
-            this.bt_ExportCSV = new Wisej.Web.Button();
+            this.bt_dataDelete = new Wisej.Web.Button();
             this.lb_BuildingName = new Wisej.Web.Label();
             this.cb_SiteName = new Wisej.Web.ComboBox();
             this.bt_StoreData = new Wisej.Web.Button();
@@ -75,7 +75,7 @@
             // 
             this.pn_TopBar.BackColor = System.Drawing.Color.Transparent;
             this.pn_TopBar.Controls.Add(this.bt_WholeSelect);
-            this.pn_TopBar.Controls.Add(this.bt_ExportCSV);
+            this.pn_TopBar.Controls.Add(this.bt_dataDelete);
             this.pn_TopBar.Controls.Add(this.lb_BuildingName);
             this.pn_TopBar.Controls.Add(this.cb_SiteName);
             this.pn_TopBar.Controls.Add(this.bt_StoreData);
@@ -93,7 +93,7 @@
             this.bt_WholeSelect.CssStyle = resources.GetString("bt_WholeSelect.CssStyle");
             this.bt_WholeSelect.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_WholeSelect.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_WholeSelect.Location = new System.Drawing.Point(508, 1);
+            this.bt_WholeSelect.Location = new System.Drawing.Point(283, 1);
             this.bt_WholeSelect.Margin = new Wisej.Web.Padding(0);
             this.bt_WholeSelect.Name = "bt_WholeSelect";
             this.bt_WholeSelect.Size = new System.Drawing.Size(100, 32);
@@ -101,20 +101,20 @@
             this.bt_WholeSelect.Text = "전체선택";
             this.bt_WholeSelect.Click += new System.EventHandler(this.bt_WholeSelect_Click);
             // 
-            // bt_ExportCSV
+            // bt_dataDelete
             // 
-            this.bt_ExportCSV.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.bt_ExportCSV.BackColor = System.Drawing.Color.FromName("@activeCaption");
-            this.bt_ExportCSV.CssStyle = resources.GetString("bt_ExportCSV.CssStyle");
-            this.bt_ExportCSV.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.bt_ExportCSV.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_ExportCSV.Location = new System.Drawing.Point(1110, 0);
-            this.bt_ExportCSV.Margin = new Wisej.Web.Padding(0);
-            this.bt_ExportCSV.Name = "bt_ExportCSV";
-            this.bt_ExportCSV.Size = new System.Drawing.Size(100, 32);
-            this.bt_ExportCSV.TabIndex = 93;
-            this.bt_ExportCSV.Text = "Export CSV";
-            this.bt_ExportCSV.Click += new System.EventHandler(this.bt_ExportCSV_Click);
+            this.bt_dataDelete.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_dataDelete.BackColor = System.Drawing.Color.FromName("@activeCaption");
+            this.bt_dataDelete.CssStyle = "    color: #fff !important;";
+            this.bt_dataDelete.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.bt_dataDelete.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
+            this.bt_dataDelete.Location = new System.Drawing.Point(1220, 1);
+            this.bt_dataDelete.Margin = new Wisej.Web.Padding(0);
+            this.bt_dataDelete.Name = "bt_dataDelete";
+            this.bt_dataDelete.Size = new System.Drawing.Size(100, 32);
+            this.bt_dataDelete.TabIndex = 93;
+            this.bt_dataDelete.Text = "전체 삭제";
+            this.bt_dataDelete.Click += new System.EventHandler(this.bt_dataDelete_Click);
             // 
             // lb_BuildingName
             // 
@@ -137,6 +137,7 @@
             this.cb_SiteName.Name = "cb_SiteName";
             this.cb_SiteName.Size = new System.Drawing.Size(200, 32);
             this.cb_SiteName.TabIndex = 91;
+            this.cb_SiteName.SelectedIndexChanged += new System.EventHandler(this.cb_SiteName_SelectedIndexChanged);
             // 
             // bt_StoreData
             // 
@@ -144,12 +145,13 @@
             this.bt_StoreData.CssStyle = resources.GetString("bt_StoreData.CssStyle");
             this.bt_StoreData.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_StoreData.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_StoreData.Location = new System.Drawing.Point(398, 1);
+            this.bt_StoreData.Location = new System.Drawing.Point(503, 0);
             this.bt_StoreData.Margin = new Wisej.Web.Padding(0);
             this.bt_StoreData.Name = "bt_StoreData";
             this.bt_StoreData.Size = new System.Drawing.Size(100, 32);
             this.bt_StoreData.TabIndex = 90;
             this.bt_StoreData.Text = "변경저장";
+            this.bt_StoreData.Visible = false;
             this.bt_StoreData.Click += new System.EventHandler(this.bt_StoreData_Click);
             // 
             // bt_SelectLoading
@@ -158,12 +160,13 @@
             this.bt_SelectLoading.CssStyle = resources.GetString("bt_SelectLoading.CssStyle");
             this.bt_SelectLoading.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_SelectLoading.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_SelectLoading.Location = new System.Drawing.Point(289, 0);
+            this.bt_SelectLoading.Location = new System.Drawing.Point(612, 0);
             this.bt_SelectLoading.Margin = new Wisej.Web.Padding(0);
             this.bt_SelectLoading.Name = "bt_SelectLoading";
             this.bt_SelectLoading.Size = new System.Drawing.Size(100, 32);
             this.bt_SelectLoading.TabIndex = 36;
             this.bt_SelectLoading.Text = "선택로딩";
+            this.bt_SelectLoading.Visible = false;
             this.bt_SelectLoading.Click += new System.EventHandler(this.bt_SelectLoading_Click);
             // 
             // bt_ImportCSV
@@ -173,7 +176,7 @@
             this.bt_ImportCSV.CssStyle = resources.GetString("bt_ImportCSV.CssStyle");
             this.bt_ImportCSV.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_ImportCSV.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_ImportCSV.Location = new System.Drawing.Point(1220, 1);
+            this.bt_ImportCSV.Location = new System.Drawing.Point(1113, 1);
             this.bt_ImportCSV.Margin = new Wisej.Web.Padding(0);
             this.bt_ImportCSV.Name = "bt_ImportCSV";
             this.bt_ImportCSV.Size = new System.Drawing.Size(100, 32);
@@ -226,7 +229,7 @@
         private Wisej.Web.Button bt_StoreData;
         private Wisej.Web.Label lb_BuildingName;
         private Wisej.Web.ComboBox cb_SiteName;
-        private Wisej.Web.Button bt_ExportCSV;
+        private Wisej.Web.Button bt_dataDelete;
         private Wisej.Web.Panel pn_Contents;
         private Wisej.Web.Button bt_WholeSelect;
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter1;
