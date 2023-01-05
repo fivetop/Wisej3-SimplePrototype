@@ -59,16 +59,26 @@ namespace simplepa2.UI.Views
         /* 로딩 버튼을 누른경우 */
         private void bt_SelectLoading_Click(object sender, EventArgs e)
         {
-            // 선택된 사이트명 확인 (EM명)            
-            string selectedItem = (((this.cb_SiteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerWithWholeColRow).EMNAME;
+            dbInit();
 
-            this.buildPanelDataList = buildingDataUISetup(selectedItem);
-            
+            comboUISetup();
         }
         /*  콤보 돌린 경우 */
         private void cb_SiteName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = (((this.cb_SiteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerWithWholeColRow).EMNAME;
+            string selectedItem;
+
+            if (dataSet11.EMServerWithWholeCol.Count == 0)
+                return;
+
+            try {
+                selectedItem =(((this.cb_SiteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerWithWholeColRow).EMNAME;
+            } catch (Exception e2)
+            {
+                selectedItem = null;
+                return;
+            }
+             
 
             this.buildPanelDataList = buildingDataUISetup(selectedItem);
         }
@@ -159,6 +169,7 @@ namespace simplepa2.UI.Views
             if (this.form_BBCZoneImport == null)
             {
                 this.form_BBCZoneImport = new Form_BBCZoneImport();
+                this.form_BBCZoneImport.Disposed += new System.EventHandler(this.formDisposed);
                 this.form_BBCZoneImport.ShowDialog();
             }
             else
@@ -166,6 +177,12 @@ namespace simplepa2.UI.Views
                 this.form_BBCZoneImport.ShowDialog();
             }      
 
+        }
+
+        private void formDisposed(object sender, EventArgs e)
+        {
+            dbInit();
+            comboUISetup();
         }
 
         private void bt_dataDelete_Click(object sender, EventArgs e)
@@ -177,11 +194,14 @@ namespace simplepa2.UI.Views
         {
             try
             {                
-                   if (MessageBox.Show("LAW TEXT : 선번 데이터를 모두 삭제 하시겠습니까?",
+                   if (MessageBox.Show("모든 선번 및 관련 데이터를 모두 삭제하시겠습니까?",
                         icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        AlertBox.Show("TODO : 선번 삭제 처리 , 관련 데이터 처리 ");
-                        
+                    assetPresetGroupsTableAdapter1.DeleteAllQuery();
+                    assetGroupsTableAdapter1.DeleteAllQuery();
+                    assetsTableAdapter1.DeleteAllQuery();
+                    bsTreeTableAdapter1.DeleteAllQuery();
+                    emServerTableAdapter1.DeleteAllQuery();                        
                     }
                 
             }
@@ -189,6 +209,10 @@ namespace simplepa2.UI.Views
             {
                 MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
             }
+
+            // DB Call
+            dbInit();
+ 
         }
 
     }

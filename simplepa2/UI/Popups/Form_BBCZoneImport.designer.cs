@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle11 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle12 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle13 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle14 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle15 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle16 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle17 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle18 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle19 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle20 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle6 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle7 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle8 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle9 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle10 = new Wisej.Web.DataGridViewCellStyle();
             this.panel1 = new Wisej.Web.Panel();
             this.dg_assetTextData = new Wisej.Web.DataGridView();
-            this.panel2 = new Wisej.Web.Panel();
-            this.panel136 = new Wisej.Web.Panel();
-            this.upload1 = new Wisej.Web.Upload();
-            this.button1 = new Wisej.Web.Button();
-            this.button5 = new Wisej.Web.Button();
-            this.bt_inputDecision = new Wisej.Web.Button();
-            this.dataSet11 = new simplepa2.DataSet1();
-            this.assetsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.동 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.층 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -58,6 +50,14 @@
             this.ZPC = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ZPC입력 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ZPC출력 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel2 = new Wisej.Web.Panel();
+            this.panel136 = new Wisej.Web.Panel();
+            this.upload1 = new Wisej.Web.Upload();
+            this.button1 = new Wisej.Web.Button();
+            this.button5 = new Wisej.Web.Button();
+            this.bt_inputDecision = new Wisej.Web.Button();
+            this.dataSet11 = new simplepa2.DataSet1();
+            this.assetsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_assetTextData)).BeginInit();
             this.panel2.SuspendLayout();
@@ -99,6 +99,108 @@
             this.dg_assetTextData.Name = "dg_assetTextData";
             this.dg_assetTextData.Size = new System.Drawing.Size(1041, 486);
             this.dg_assetTextData.TabIndex = 0;
+            // 
+            // Column0
+            // 
+            this.Column0.DataPropertyName = "emServer";
+            dataGridViewCellStyle1.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.Column0.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column0.HeaderText = "사이트명";
+            this.Column0.Name = "Column0";
+            // 
+            // 동
+            // 
+            this.동.DataPropertyName = "building";
+            dataGridViewCellStyle2.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.동.DefaultCellStyle = dataGridViewCellStyle2;
+            this.동.HeaderText = "건물명";
+            this.동.Name = "동";
+            // 
+            // 층
+            // 
+            this.층.DataPropertyName = "floor";
+            dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.층.DefaultCellStyle = dataGridViewCellStyle3;
+            this.층.FillWeight = 70F;
+            this.층.HeaderText = "층";
+            this.층.MinimumWidth = 70;
+            this.층.Name = "층";
+            this.층.Width = 70;
+            // 
+            // 존이름
+            // 
+            this.존이름.DataPropertyName = "ZoneName";
+            dataGridViewCellStyle4.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.존이름.DefaultCellStyle = dataGridViewCellStyle4;
+            this.존이름.FillWeight = 120F;
+            this.존이름.HeaderText = "존이름";
+            this.존이름.MinimumWidth = 100;
+            this.존이름.Name = "존이름";
+            this.존이름.Width = 120;
+            // 
+            // 스피커이름
+            // 
+            this.스피커이름.DataPropertyName = "SpeakerName";
+            dataGridViewCellStyle5.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.스피커이름.DefaultCellStyle = dataGridViewCellStyle5;
+            this.스피커이름.FillWeight = 120F;
+            this.스피커이름.HeaderText = "스피커이름";
+            this.스피커이름.MinimumWidth = 100;
+            this.스피커이름.Name = "스피커이름";
+            this.스피커이름.Width = 120;
+            // 
+            // 앰프정보
+            // 
+            this.앰프정보.DataPropertyName = "DeviceName";
+            dataGridViewCellStyle6.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.앰프정보.DefaultCellStyle = dataGridViewCellStyle6;
+            this.앰프정보.FillWeight = 120F;
+            this.앰프정보.HeaderText = "앰프정보";
+            this.앰프정보.MinimumWidth = 100;
+            this.앰프정보.Name = "앰프정보";
+            this.앰프정보.Width = 120;
+            // 
+            // 채널정보
+            // 
+            this.채널정보.DataPropertyName = "ch";
+            dataGridViewCellStyle7.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.채널정보.DefaultCellStyle = dataGridViewCellStyle7;
+            this.채널정보.FillWeight = 70F;
+            this.채널정보.HeaderText = "채널정보";
+            this.채널정보.MinimumWidth = 70;
+            this.채널정보.Name = "채널정보";
+            this.채널정보.Width = 70;
+            // 
+            // ZPC
+            // 
+            this.ZPC.DataPropertyName = "zpc";
+            dataGridViewCellStyle8.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ZPC.HeaderText = "ZPC";
+            this.ZPC.MinimumWidth = 100;
+            this.ZPC.Name = "ZPC";
+            // 
+            // ZPC입력
+            // 
+            this.ZPC입력.DataPropertyName = "zpci";
+            dataGridViewCellStyle9.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC입력.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ZPC입력.FillWeight = 70F;
+            this.ZPC입력.HeaderText = "ZPC입력";
+            this.ZPC입력.MinimumWidth = 70;
+            this.ZPC입력.Name = "ZPC입력";
+            this.ZPC입력.Width = 70;
+            // 
+            // ZPC출력
+            // 
+            this.ZPC출력.DataPropertyName = "zpco";
+            dataGridViewCellStyle10.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC출력.DefaultCellStyle = dataGridViewCellStyle10;
+            this.ZPC출력.FillWeight = 70F;
+            this.ZPC출력.HeaderText = "ZPC출력";
+            this.ZPC출력.MinimumWidth = 70;
+            this.ZPC출력.Name = "ZPC출력";
+            this.ZPC출력.Width = 70;
             // 
             // panel2
             // 
@@ -184,108 +286,6 @@
             // 
             this.assetsTableAdapter1.ClearBeforeFill = true;
             // 
-            // Column0
-            // 
-            this.Column0.DataPropertyName = "emServer";
-            dataGridViewCellStyle11.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.Column0.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Column0.HeaderText = "사이트명";
-            this.Column0.Name = "Column0";
-            // 
-            // 동
-            // 
-            this.동.DataPropertyName = "building";
-            dataGridViewCellStyle12.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.동.DefaultCellStyle = dataGridViewCellStyle12;
-            this.동.HeaderText = "건물명";
-            this.동.Name = "동";
-            // 
-            // 층
-            // 
-            this.층.DataPropertyName = "floor";
-            dataGridViewCellStyle13.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.층.DefaultCellStyle = dataGridViewCellStyle13;
-            this.층.FillWeight = 70F;
-            this.층.HeaderText = "층";
-            this.층.MinimumWidth = 70;
-            this.층.Name = "층";
-            this.층.Width = 70;
-            // 
-            // 존이름
-            // 
-            this.존이름.DataPropertyName = "ZoneName";
-            dataGridViewCellStyle14.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.존이름.DefaultCellStyle = dataGridViewCellStyle14;
-            this.존이름.FillWeight = 120F;
-            this.존이름.HeaderText = "존이름";
-            this.존이름.MinimumWidth = 100;
-            this.존이름.Name = "존이름";
-            this.존이름.Width = 120;
-            // 
-            // 스피커이름
-            // 
-            this.스피커이름.DataPropertyName = "SpeakerName";
-            dataGridViewCellStyle15.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.스피커이름.DefaultCellStyle = dataGridViewCellStyle15;
-            this.스피커이름.FillWeight = 120F;
-            this.스피커이름.HeaderText = "스피커이름";
-            this.스피커이름.MinimumWidth = 100;
-            this.스피커이름.Name = "스피커이름";
-            this.스피커이름.Width = 120;
-            // 
-            // 앰프정보
-            // 
-            this.앰프정보.DataPropertyName = "DeviceName";
-            dataGridViewCellStyle16.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.앰프정보.DefaultCellStyle = dataGridViewCellStyle16;
-            this.앰프정보.FillWeight = 120F;
-            this.앰프정보.HeaderText = "앰프정보";
-            this.앰프정보.MinimumWidth = 100;
-            this.앰프정보.Name = "앰프정보";
-            this.앰프정보.Width = 120;
-            // 
-            // 채널정보
-            // 
-            this.채널정보.DataPropertyName = "ch";
-            dataGridViewCellStyle17.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.채널정보.DefaultCellStyle = dataGridViewCellStyle17;
-            this.채널정보.FillWeight = 70F;
-            this.채널정보.HeaderText = "채널정보";
-            this.채널정보.MinimumWidth = 70;
-            this.채널정보.Name = "채널정보";
-            this.채널정보.Width = 70;
-            // 
-            // ZPC
-            // 
-            this.ZPC.DataPropertyName = "zpc";
-            dataGridViewCellStyle18.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.ZPC.DefaultCellStyle = dataGridViewCellStyle18;
-            this.ZPC.HeaderText = "ZPC";
-            this.ZPC.MinimumWidth = 100;
-            this.ZPC.Name = "ZPC";
-            // 
-            // ZPC입력
-            // 
-            this.ZPC입력.DataPropertyName = "zpci";
-            dataGridViewCellStyle19.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.ZPC입력.DefaultCellStyle = dataGridViewCellStyle19;
-            this.ZPC입력.FillWeight = 70F;
-            this.ZPC입력.HeaderText = "ZPC입력";
-            this.ZPC입력.MinimumWidth = 70;
-            this.ZPC입력.Name = "ZPC입력";
-            this.ZPC입력.Width = 70;
-            // 
-            // ZPC출력
-            // 
-            this.ZPC출력.DataPropertyName = "zpco";
-            dataGridViewCellStyle20.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.ZPC출력.DefaultCellStyle = dataGridViewCellStyle20;
-            this.ZPC출력.FillWeight = 70F;
-            this.ZPC출력.HeaderText = "ZPC출력";
-            this.ZPC출력.MinimumWidth = 70;
-            this.ZPC출력.Name = "ZPC출력";
-            this.ZPC출력.Width = 70;
-            // 
             // Form_BBCZoneImport
             // 
             this.ClientSize = new System.Drawing.Size(1081, 577);
@@ -293,7 +293,7 @@
             this.HeaderBackColor = System.Drawing.Color.FromName("@button1BG");
             this.Name = "Form_BBCZoneImport";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterScreen;
-            this.Text = "Zone 정보 Import";
+            this.Text = "Zone 정보 Import";            
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_assetTextData)).EndInit();

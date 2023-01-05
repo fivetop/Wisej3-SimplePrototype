@@ -44,6 +44,10 @@
             this.assetsSitenBuildingTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetsSitenBuildingTableAdapter();
             this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
             this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
+            this.assetGroupsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetGroupsTableAdapter();
+            this.assetPresetGroupsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetPresetGroupsTableAdapter();
+            this.emServerTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerTableAdapter();
+            this.bsTreeTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeTableAdapter();
             this.pn_ViewMain.SuspendLayout();
             this.pn_TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -156,17 +160,17 @@
             // 
             // bt_SelectLoading
             // 
+            this.bt_SelectLoading.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.bt_SelectLoading.BackColor = System.Drawing.Color.FromName("@activeCaption");
             this.bt_SelectLoading.CssStyle = resources.GetString("bt_SelectLoading.CssStyle");
             this.bt_SelectLoading.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_SelectLoading.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_SelectLoading.Location = new System.Drawing.Point(612, 0);
+            this.bt_SelectLoading.Location = new System.Drawing.Point(1003, 1);
             this.bt_SelectLoading.Margin = new Wisej.Web.Padding(0);
             this.bt_SelectLoading.Name = "bt_SelectLoading";
             this.bt_SelectLoading.Size = new System.Drawing.Size(100, 32);
             this.bt_SelectLoading.TabIndex = 36;
-            this.bt_SelectLoading.Text = "선택로딩";
-            this.bt_SelectLoading.Visible = false;
+            this.bt_SelectLoading.Text = "재로딩";
             this.bt_SelectLoading.Click += new System.EventHandler(this.bt_SelectLoading_Click);
             // 
             // bt_ImportCSV
@@ -205,6 +209,22 @@
             // 
             this.deviceTableAdapter1.ClearBeforeFill = true;
             // 
+            // assetGroupsTableAdapter1
+            // 
+            this.assetGroupsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // assetPresetGroupsTableAdapter1
+            // 
+            this.assetPresetGroupsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // emServerTableAdapter1
+            // 
+            this.emServerTableAdapter1.ClearBeforeFill = true;
+            // 
+            // bsTreeTableAdapter1
+            // 
+            this.bsTreeTableAdapter1.ClearBeforeFill = true;
+            // 
             // View_BBCZone
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -237,5 +257,9 @@
         private DataSet1TableAdapters.AssetsSitenBuildingTableAdapter assetsSitenBuildingTableAdapter1;
         private DataSet1TableAdapters.EMServerWithWholeColTableAdapter emServerWithWholeColTableAdapter1;
         private DataSet1TableAdapters.DeviceTableAdapter deviceTableAdapter1;
+        private DataSet1TableAdapters.AssetGroupsTableAdapter assetGroupsTableAdapter1;
+        private DataSet1TableAdapters.AssetPresetGroupsTableAdapter assetPresetGroupsTableAdapter1;
+        private DataSet1TableAdapters.EMServerTableAdapter emServerTableAdapter1;
+        private DataSet1TableAdapters.BSTreeTableAdapter bsTreeTableAdapter1;
     }
 }

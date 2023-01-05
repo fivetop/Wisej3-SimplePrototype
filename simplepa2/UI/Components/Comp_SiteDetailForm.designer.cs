@@ -290,7 +290,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(344, 24);
             this.label2.TabIndex = 134;
-            this.label2.Text = "관리 요약";
+            this.label2.Text = "E.M 서버 상태";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label22

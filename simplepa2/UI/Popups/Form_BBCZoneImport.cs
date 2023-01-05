@@ -1,4 +1,5 @@
 ﻿using DataClass;
+using simplepa2.UI.Views;
 using System;
 using System.IO;
 using System.Text;
@@ -99,6 +100,8 @@ namespace simplepa2.UI.Popups
                 gweb.mainFrame.dBSqlite.BSTreeSave(t1);
             }
             gweb.mainFrame.dBSqlite.AssetPresetSave();
+
+            this.Close();
         }
 
         public AssetsRow assetsTextParcer(String text)
@@ -139,6 +142,5 @@ namespace simplepa2.UI.Popups
             }
             return m2;
         }
-
     }
 }
