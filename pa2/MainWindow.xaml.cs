@@ -95,6 +95,8 @@ namespace pa
                 // 콤포트와 네트웍 살려 놓기 처리 
                 ComPort_Initial();
                 Network_Initial();
+                // 다중 방송 초기화 처리 // 시험을 위해 막음 - 서비스시 오픈 처리 
+                InitMultiBS();
 
                 firsttime = false;
                 signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
@@ -187,9 +189,8 @@ namespace pa
             InitVolume();
 
             g.Log("multiBS Thread running..");
-            // 다중 방송 초기화 처리 
-            // 시험을 위해 막음 - 서비스시 오픈 처리 
-            InitMultiBS();
+            // 다중 방송 초기화 처리 // 시험을 위해 막음 - 서비스시 오픈 처리 
+            //InitMultiBS();
             //Network_Initial();
             g.Log("DSP Thread Initial..");
             // DSP thread start
