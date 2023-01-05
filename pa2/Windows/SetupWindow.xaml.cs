@@ -17,8 +17,6 @@ namespace pa.Windows
     /// </summary>
     public partial class SetupWindow : Window
     {
-        public List<int> dsp_vol { get; set; } = new List<int>() { };
-
         public SetupWindow()
         {
             this.DataContext = g._BaseData;
@@ -40,22 +38,6 @@ namespace pa.Windows
             cboType2.DisplayMemberPath = "FileName";
             cboType2.SelectedValuePath = "FileName";
             cboType2.SelectedValue = g._BaseData.EmMusic;
-
-            var t3 = new string[] { "R형 자동 검출", "R형 제조사 10", "R형 제조사 12"};
-
-            cboType1.ItemsSource = t3;
-            cboType1.SelectedValue = g._BaseData.Reserved16;
-
-            for (int i = 1; i < 11; i++)
-            {
-                dsp_vol.Add(i);
-            }
-            cboType3.ItemsSource = null;
-            cboType3.ItemsSource = dsp_vol;
-            cboType3.SelectedIndex = (int)(g._BaseData.dsp_vol-1);
-            cboType4.ItemsSource = null;
-            cboType4.ItemsSource = dsp_vol;
-            cboType4.SelectedIndex = (int)(g._BaseData.dsp_vol_em-1);
 
             var t4 = new string[] { "5층 이하, 연면적 3,000 이하", "5층 이상, 연면적 3,000 이상" };
             cboType6.ItemsSource = null;
@@ -103,51 +85,6 @@ namespace pa.Windows
 
         }
 
-        private void cboType1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string t1 = (string)e.AddedItems[0];
-            if (t1 == null)
-                return;
-            g._BaseData.Reserved16 = t1;
-
-        }
-
-        private void _btn1_Click(object sender, RoutedEventArgs e)
-        {
-            // 일반방송
-            int t1 = cboType3.SelectedIndex + 1;
-
-            if (MessageBox.Show("전체 적용됩니다. 적용하시겠습니까?", "전체적용", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
-                return;
-
-            var dsp1 = g.mainWindow._DanteDevice.Where(p => p.device == 0).ToList();
-
-            foreach (var dsp in dsp1)
-            {
-                dsp.dsp_vol = t1;
-            }
-            g._BaseData.dsp_vol = t1;
-            msg pkt = new msg("V", "0", "V", "1","");
-        }
-
-        private void _btn2_Click(object sender, RoutedEventArgs e)
-        {
-            // 비상방송 
-            int t1 = cboType4.SelectedIndex + 1;
-
-            if (MessageBox.Show("전체 적용됩니다. 적용하시겠습니까?", "전체적용", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
-                return;
-            var dsp1 = g.mainWindow._DanteDevice.Where(p => p.device == 0).ToList();
-
-            foreach (var dsp in dsp1)
-            {
-                dsp.dsp_vol_em = t1;
-            }
-            g._BaseData.dsp_vol_em = t1;
-            msg pkt = new msg("V", "0", "V", "2", "");
-            //g.mainWindow.s1.Send(pkt.pkt);
-        }
-
         private void cboType6_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int t1 = cboType6.SelectedIndex + 1;
@@ -171,19 +108,6 @@ namespace pa.Windows
             Close();
         }
 
-        private void cboType3_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int t1 = cboType3.SelectedIndex + 1;
-            g._BaseData.dsp_vol = t1;
-
-        }
-
-        private void cboType4_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int t1 = cboType4.SelectedIndex + 1;
-            g._BaseData.dsp_vol_em = t1;
-
-        }
     }
 
 }
