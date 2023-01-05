@@ -40,8 +40,6 @@ namespace simplepa2 {
         
         private EventvmDataTable tableEventvm;
         
-        private HolidaysDataTable tableHolidays;
-        
         private MusicsDataTable tableMusics;
         
         private PlayItemDataTable tablePlayItem;
@@ -68,11 +66,13 @@ namespace simplepa2 {
         
         private DataTypeDataTable tableDataType;
         
-        private HolidaysDivideDateDataTable tableHolidaysDivideDate;
-        
         private HolidaysYearListDataTable tableHolidaysYearList;
         
         private SimplepaDataTable tableSimplepa;
+        
+        private HolidaysDataTable tableHolidays;
+        
+        private HolidaysDivideDateDataTable tableHolidaysDivideDate;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -126,9 +126,6 @@ namespace simplepa2 {
                 if ((ds.Tables["Eventvm"] != null)) {
                     base.Tables.Add(new EventvmDataTable(ds.Tables["Eventvm"]));
                 }
-                if ((ds.Tables["Holidays"] != null)) {
-                    base.Tables.Add(new HolidaysDataTable(ds.Tables["Holidays"]));
-                }
                 if ((ds.Tables["Musics"] != null)) {
                     base.Tables.Add(new MusicsDataTable(ds.Tables["Musics"]));
                 }
@@ -168,14 +165,17 @@ namespace simplepa2 {
                 if ((ds.Tables["DataType"] != null)) {
                     base.Tables.Add(new DataTypeDataTable(ds.Tables["DataType"]));
                 }
-                if ((ds.Tables["HolidaysDivideDate"] != null)) {
-                    base.Tables.Add(new HolidaysDivideDateDataTable(ds.Tables["HolidaysDivideDate"]));
-                }
                 if ((ds.Tables["HolidaysYearList"] != null)) {
                     base.Tables.Add(new HolidaysYearListDataTable(ds.Tables["HolidaysYearList"]));
                 }
                 if ((ds.Tables["Simplepa"] != null)) {
                     base.Tables.Add(new SimplepaDataTable(ds.Tables["Simplepa"]));
+                }
+                if ((ds.Tables["Holidays"] != null)) {
+                    base.Tables.Add(new HolidaysDataTable(ds.Tables["Holidays"]));
+                }
+                if ((ds.Tables["HolidaysDivideDate"] != null)) {
+                    base.Tables.Add(new HolidaysDivideDateDataTable(ds.Tables["HolidaysDivideDate"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -272,16 +272,6 @@ namespace simplepa2 {
         public EventvmDataTable Eventvm {
             get {
                 return this.tableEventvm;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HolidaysDataTable Holidays {
-            get {
-                return this.tableHolidays;
             }
         }
         
@@ -419,16 +409,6 @@ namespace simplepa2 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HolidaysDivideDateDataTable HolidaysDivideDate {
-            get {
-                return this.tableHolidaysDivideDate;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public HolidaysYearListDataTable HolidaysYearList {
             get {
                 return this.tableHolidaysYearList;
@@ -442,6 +422,26 @@ namespace simplepa2 {
         public SimplepaDataTable Simplepa {
             get {
                 return this.tableSimplepa;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public HolidaysDataTable Holidays {
+            get {
+                return this.tableHolidays;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public HolidaysDivideDateDataTable HolidaysDivideDate {
+            get {
+                return this.tableHolidaysDivideDate;
             }
         }
         
@@ -536,9 +536,6 @@ namespace simplepa2 {
                 if ((ds.Tables["Eventvm"] != null)) {
                     base.Tables.Add(new EventvmDataTable(ds.Tables["Eventvm"]));
                 }
-                if ((ds.Tables["Holidays"] != null)) {
-                    base.Tables.Add(new HolidaysDataTable(ds.Tables["Holidays"]));
-                }
                 if ((ds.Tables["Musics"] != null)) {
                     base.Tables.Add(new MusicsDataTable(ds.Tables["Musics"]));
                 }
@@ -578,14 +575,17 @@ namespace simplepa2 {
                 if ((ds.Tables["DataType"] != null)) {
                     base.Tables.Add(new DataTypeDataTable(ds.Tables["DataType"]));
                 }
-                if ((ds.Tables["HolidaysDivideDate"] != null)) {
-                    base.Tables.Add(new HolidaysDivideDateDataTable(ds.Tables["HolidaysDivideDate"]));
-                }
                 if ((ds.Tables["HolidaysYearList"] != null)) {
                     base.Tables.Add(new HolidaysYearListDataTable(ds.Tables["HolidaysYearList"]));
                 }
                 if ((ds.Tables["Simplepa"] != null)) {
                     base.Tables.Add(new SimplepaDataTable(ds.Tables["Simplepa"]));
+                }
+                if ((ds.Tables["Holidays"] != null)) {
+                    base.Tables.Add(new HolidaysDataTable(ds.Tables["Holidays"]));
+                }
+                if ((ds.Tables["HolidaysDivideDate"] != null)) {
+                    base.Tables.Add(new HolidaysDivideDateDataTable(ds.Tables["HolidaysDivideDate"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -668,12 +668,6 @@ namespace simplepa2 {
                     this.tableEventvm.InitVars();
                 }
             }
-            this.tableHolidays = ((HolidaysDataTable)(base.Tables["Holidays"]));
-            if ((initTable == true)) {
-                if ((this.tableHolidays != null)) {
-                    this.tableHolidays.InitVars();
-                }
-            }
             this.tableMusics = ((MusicsDataTable)(base.Tables["Musics"]));
             if ((initTable == true)) {
                 if ((this.tableMusics != null)) {
@@ -752,12 +746,6 @@ namespace simplepa2 {
                     this.tableDataType.InitVars();
                 }
             }
-            this.tableHolidaysDivideDate = ((HolidaysDivideDateDataTable)(base.Tables["HolidaysDivideDate"]));
-            if ((initTable == true)) {
-                if ((this.tableHolidaysDivideDate != null)) {
-                    this.tableHolidaysDivideDate.InitVars();
-                }
-            }
             this.tableHolidaysYearList = ((HolidaysYearListDataTable)(base.Tables["HolidaysYearList"]));
             if ((initTable == true)) {
                 if ((this.tableHolidaysYearList != null)) {
@@ -768,6 +756,18 @@ namespace simplepa2 {
             if ((initTable == true)) {
                 if ((this.tableSimplepa != null)) {
                     this.tableSimplepa.InitVars();
+                }
+            }
+            this.tableHolidays = ((HolidaysDataTable)(base.Tables["Holidays"]));
+            if ((initTable == true)) {
+                if ((this.tableHolidays != null)) {
+                    this.tableHolidays.InitVars();
+                }
+            }
+            this.tableHolidaysDivideDate = ((HolidaysDivideDateDataTable)(base.Tables["HolidaysDivideDate"]));
+            if ((initTable == true)) {
+                if ((this.tableHolidaysDivideDate != null)) {
+                    this.tableHolidaysDivideDate.InitVars();
                 }
             }
         }
@@ -796,8 +796,6 @@ namespace simplepa2 {
             base.Tables.Add(this.tableEMBs);
             this.tableEventvm = new EventvmDataTable();
             base.Tables.Add(this.tableEventvm);
-            this.tableHolidays = new HolidaysDataTable();
-            base.Tables.Add(this.tableHolidays);
             this.tableMusics = new MusicsDataTable();
             base.Tables.Add(this.tableMusics);
             this.tablePlayItem = new PlayItemDataTable();
@@ -824,12 +822,14 @@ namespace simplepa2 {
             base.Tables.Add(this.tablespa_site);
             this.tableDataType = new DataTypeDataTable();
             base.Tables.Add(this.tableDataType);
-            this.tableHolidaysDivideDate = new HolidaysDivideDateDataTable();
-            base.Tables.Add(this.tableHolidaysDivideDate);
             this.tableHolidaysYearList = new HolidaysYearListDataTable();
             base.Tables.Add(this.tableHolidaysYearList);
             this.tableSimplepa = new SimplepaDataTable();
             base.Tables.Add(this.tableSimplepa);
+            this.tableHolidays = new HolidaysDataTable();
+            base.Tables.Add(this.tableHolidays);
+            this.tableHolidaysDivideDate = new HolidaysDivideDateDataTable();
+            base.Tables.Add(this.tableHolidaysDivideDate);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -877,12 +877,6 @@ namespace simplepa2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeEventvm() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeHolidays() {
             return false;
         }
         
@@ -966,12 +960,6 @@ namespace simplepa2 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeHolidaysDivideDate() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeHolidaysYearList() {
             return false;
         }
@@ -979,6 +967,18 @@ namespace simplepa2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeSimplepa() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeHolidays() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeHolidaysDivideDate() {
             return false;
         }
         
@@ -1062,9 +1062,6 @@ namespace simplepa2 {
         public delegate void EventvmRowChangeEventHandler(object sender, EventvmRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void HolidaysRowChangeEventHandler(object sender, HolidaysRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void MusicsRowChangeEventHandler(object sender, MusicsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1104,13 +1101,16 @@ namespace simplepa2 {
         public delegate void DataTypeRowChangeEventHandler(object sender, DataTypeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void HolidaysDivideDateRowChangeEventHandler(object sender, HolidaysDivideDateRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void HolidaysYearListRowChangeEventHandler(object sender, HolidaysYearListRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void SimplepaRowChangeEventHandler(object sender, SimplepaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void HolidaysRowChangeEventHandler(object sender, HolidaysRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void HolidaysDivideDateRowChangeEventHandler(object sender, HolidaysDivideDateRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3983,298 +3983,6 @@ namespace simplepa2 {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "EventvmDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HolidaysDataTable : global::System.Data.TypedTableBase<HolidaysRow> {
-            
-            private global::System.Data.DataColumn columnHolidayId;
-            
-            private global::System.Data.DataColumn columnhDate;
-            
-            private global::System.Data.DataColumn columnDescription;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysDataTable() {
-                this.TableName = "Holidays";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal HolidaysDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected HolidaysDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn HolidayIdColumn {
-                get {
-                    return this.columnHolidayId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn hDateColumn {
-                get {
-                    return this.columnhDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
-                get {
-                    return this.columnDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysRow this[int index] {
-                get {
-                    return ((HolidaysRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HolidaysRowChangeEventHandler HolidaysRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HolidaysRowChangeEventHandler HolidaysRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HolidaysRowChangeEventHandler HolidaysRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HolidaysRowChangeEventHandler HolidaysRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddHolidaysRow(HolidaysRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysRow AddHolidaysRow(System.DateTime hDate, string Description) {
-                HolidaysRow rowHolidaysRow = ((HolidaysRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        hDate,
-                        Description};
-                rowHolidaysRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHolidaysRow);
-                return rowHolidaysRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysRow FindByHolidayId(int HolidayId) {
-                return ((HolidaysRow)(this.Rows.Find(new object[] {
-                            HolidayId})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                HolidaysDataTable cln = ((HolidaysDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new HolidaysDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnHolidayId = base.Columns["HolidayId"];
-                this.columnhDate = base.Columns["hDate"];
-                this.columnDescription = base.Columns["Description"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnHolidayId = new global::System.Data.DataColumn("HolidayId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHolidayId);
-                this.columnhDate = new global::System.Data.DataColumn("hDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnhDate);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnHolidayId}, true));
-                this.columnHolidayId.AutoIncrement = true;
-                this.columnHolidayId.AutoIncrementSeed = -1;
-                this.columnHolidayId.AutoIncrementStep = -1;
-                this.columnHolidayId.AllowDBNull = false;
-                this.columnHolidayId.ReadOnly = true;
-                this.columnHolidayId.Unique = true;
-                this.columnhDate.AllowDBNull = false;
-                this.columnDescription.MaxLength = 2147483647;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysRow NewHolidaysRow() {
-                return ((HolidaysRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HolidaysRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(HolidaysRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.HolidaysRowChanged != null)) {
-                    this.HolidaysRowChanged(this, new HolidaysRowChangeEvent(((HolidaysRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.HolidaysRowChanging != null)) {
-                    this.HolidaysRowChanging(this, new HolidaysRowChangeEvent(((HolidaysRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.HolidaysRowDeleted != null)) {
-                    this.HolidaysRowDeleted(this, new HolidaysRowChangeEvent(((HolidaysRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.HolidaysRowDeleting != null)) {
-                    this.HolidaysRowDeleting(this, new HolidaysRowChangeEvent(((HolidaysRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveHolidaysRow(HolidaysRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HolidaysDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -9509,343 +9217,6 @@ namespace simplepa2 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HolidaysDivideDateDataTable : global::System.Data.TypedTableBase<HolidaysDivideDateRow> {
-            
-            private global::System.Data.DataColumn columnHolidayId;
-            
-            private global::System.Data.DataColumn columnYear;
-            
-            private global::System.Data.DataColumn columnMonth;
-            
-            private global::System.Data.DataColumn columnDay;
-            
-            private global::System.Data.DataColumn columnhDate;
-            
-            private global::System.Data.DataColumn columnDescription;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysDivideDateDataTable() {
-                this.TableName = "HolidaysDivideDate";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal HolidaysDivideDateDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected HolidaysDivideDateDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn HolidayIdColumn {
-                get {
-                    return this.columnHolidayId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn YearColumn {
-                get {
-                    return this.columnYear;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MonthColumn {
-                get {
-                    return this.columnMonth;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DayColumn {
-                get {
-                    return this.columnDay;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn hDateColumn {
-                get {
-                    return this.columnhDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
-                get {
-                    return this.columnDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysDivideDateRow this[int index] {
-                get {
-                    return ((HolidaysDivideDateRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HolidaysDivideDateRowChangeEventHandler HolidaysDivideDateRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HolidaysDivideDateRowChangeEventHandler HolidaysDivideDateRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HolidaysDivideDateRowChangeEventHandler HolidaysDivideDateRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HolidaysDivideDateRowChangeEventHandler HolidaysDivideDateRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddHolidaysDivideDateRow(HolidaysDivideDateRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysDivideDateRow AddHolidaysDivideDateRow(int Year, int Month, int Day, System.DateTime hDate, string Description) {
-                HolidaysDivideDateRow rowHolidaysDivideDateRow = ((HolidaysDivideDateRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Year,
-                        Month,
-                        Day,
-                        hDate,
-                        Description};
-                rowHolidaysDivideDateRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHolidaysDivideDateRow);
-                return rowHolidaysDivideDateRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysDivideDateRow FindByHolidayId(int HolidayId) {
-                return ((HolidaysDivideDateRow)(this.Rows.Find(new object[] {
-                            HolidayId})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                HolidaysDivideDateDataTable cln = ((HolidaysDivideDateDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new HolidaysDivideDateDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnHolidayId = base.Columns["HolidayId"];
-                this.columnYear = base.Columns["Year"];
-                this.columnMonth = base.Columns["Month"];
-                this.columnDay = base.Columns["Day"];
-                this.columnhDate = base.Columns["hDate"];
-                this.columnDescription = base.Columns["Description"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnHolidayId = new global::System.Data.DataColumn("HolidayId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHolidayId);
-                this.columnYear = new global::System.Data.DataColumn("Year", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnYear);
-                this.columnMonth = new global::System.Data.DataColumn("Month", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMonth);
-                this.columnDay = new global::System.Data.DataColumn("Day", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDay);
-                this.columnhDate = new global::System.Data.DataColumn("hDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnhDate);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnHolidayId}, true));
-                this.columnHolidayId.AutoIncrement = true;
-                this.columnHolidayId.AutoIncrementSeed = -1;
-                this.columnHolidayId.AutoIncrementStep = -1;
-                this.columnHolidayId.AllowDBNull = false;
-                this.columnHolidayId.ReadOnly = true;
-                this.columnHolidayId.Unique = true;
-                this.columnYear.ReadOnly = true;
-                this.columnMonth.ReadOnly = true;
-                this.columnDay.ReadOnly = true;
-                this.columnhDate.AllowDBNull = false;
-                this.columnDescription.MaxLength = 2147483647;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysDivideDateRow NewHolidaysDivideDateRow() {
-                return ((HolidaysDivideDateRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HolidaysDivideDateRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(HolidaysDivideDateRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.HolidaysDivideDateRowChanged != null)) {
-                    this.HolidaysDivideDateRowChanged(this, new HolidaysDivideDateRowChangeEvent(((HolidaysDivideDateRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.HolidaysDivideDateRowChanging != null)) {
-                    this.HolidaysDivideDateRowChanging(this, new HolidaysDivideDateRowChangeEvent(((HolidaysDivideDateRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.HolidaysDivideDateRowDeleted != null)) {
-                    this.HolidaysDivideDateRowDeleted(this, new HolidaysDivideDateRowChangeEvent(((HolidaysDivideDateRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.HolidaysDivideDateRowDeleting != null)) {
-                    this.HolidaysDivideDateRowDeleting(this, new HolidaysDivideDateRowChangeEvent(((HolidaysDivideDateRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveHolidaysDivideDateRow(HolidaysDivideDateRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HolidaysDivideDateDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class HolidaysYearListDataTable : global::System.Data.TypedTableBase<HolidaysYearListRow> {
             
             private global::System.Data.DataColumn columntindex;
@@ -10124,9 +9495,35 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columnServerPort;
             
+            private global::System.Data.DataColumn columnReserved1;
+            
+            private global::System.Data.DataColumn columnReserved2;
+            
+            private global::System.Data.DataColumn columnReserved3;
+            
+            private global::System.Data.DataColumn columnReserved4;
+            
+            private global::System.Data.DataColumn columnReserved5;
+            
+            private global::System.Data.DataColumn columnReserved6;
+            
+            private global::System.Data.DataColumn columnReserved7;
+            
+            private global::System.Data.DataColumn columnReserved8;
+            
+            private global::System.Data.DataColumn columnReserved9;
+            
+            private global::System.Data.DataColumn columnReserved10;
+            
+            private global::System.Data.DataColumn columnReserved11;
+            
             private global::System.Data.DataColumn columnGPIOPort;
             
             private global::System.Data.DataColumn columnRport;
+            
+            private global::System.Data.DataColumn columnReserved15;
+            
+            private global::System.Data.DataColumn columnReserved16;
             
             private global::System.Data.DataColumn columnJigsangbalhwa;
             
@@ -10143,6 +9540,8 @@ namespace simplepa2 {
             private global::System.Data.DataColumn columnSoundDeviceNum;
             
             private global::System.Data.DataColumn columnSoundDeviceName;
+            
+            private global::System.Data.DataColumn columnReserved17;
             
             private global::System.Data.DataColumn columnscalelength;
             
@@ -10253,6 +9652,94 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved1Column {
+                get {
+                    return this.columnReserved1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved2Column {
+                get {
+                    return this.columnReserved2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved3Column {
+                get {
+                    return this.columnReserved3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved4Column {
+                get {
+                    return this.columnReserved4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved5Column {
+                get {
+                    return this.columnReserved5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved6Column {
+                get {
+                    return this.columnReserved6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved7Column {
+                get {
+                    return this.columnReserved7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved8Column {
+                get {
+                    return this.columnReserved8;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved9Column {
+                get {
+                    return this.columnReserved9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved10Column {
+                get {
+                    return this.columnReserved10;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved11Column {
+                get {
+                    return this.columnReserved11;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn GPIOPortColumn {
                 get {
                     return this.columnGPIOPort;
@@ -10264,6 +9751,22 @@ namespace simplepa2 {
             public global::System.Data.DataColumn RportColumn {
                 get {
                     return this.columnRport;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved15Column {
+                get {
+                    return this.columnReserved15;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved16Column {
+                get {
+                    return this.columnReserved16;
                 }
             }
             
@@ -10328,6 +9831,14 @@ namespace simplepa2 {
             public global::System.Data.DataColumn SoundDeviceNameColumn {
                 get {
                     return this.columnSoundDeviceName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Reserved17Column {
+                get {
+                    return this.columnReserved17;
                 }
             }
             
@@ -10478,8 +9989,21 @@ namespace simplepa2 {
                         string EMServerIP, 
                         string ServerIP, 
                         string ServerPort, 
+                        string Reserved1, 
+                        string Reserved2, 
+                        string Reserved3, 
+                        string Reserved4, 
+                        string Reserved5, 
+                        string Reserved6, 
+                        string Reserved7, 
+                        string Reserved8, 
+                        string Reserved9, 
+                        string Reserved10, 
+                        string Reserved11, 
                         string GPIOPort, 
                         string Rport, 
+                        string Reserved15, 
+                        string Reserved16, 
                         int Jigsangbalhwa, 
                         int SpeakerTimer, 
                         float inputvolume, 
@@ -10488,6 +10012,7 @@ namespace simplepa2 {
                         int Multi_Ch, 
                         int SoundDeviceNum, 
                         string SoundDeviceName, 
+                        int Reserved17, 
                         float scalelength, 
                         float length, 
                         float scale, 
@@ -10509,8 +10034,21 @@ namespace simplepa2 {
                         EMServerIP,
                         ServerIP,
                         ServerPort,
+                        Reserved1,
+                        Reserved2,
+                        Reserved3,
+                        Reserved4,
+                        Reserved5,
+                        Reserved6,
+                        Reserved7,
+                        Reserved8,
+                        Reserved9,
+                        Reserved10,
+                        Reserved11,
                         GPIOPort,
                         Rport,
+                        Reserved15,
+                        Reserved16,
                         Jigsangbalhwa,
                         SpeakerTimer,
                         inputvolume,
@@ -10519,6 +10057,7 @@ namespace simplepa2 {
                         Multi_Ch,
                         SoundDeviceNum,
                         SoundDeviceName,
+                        Reserved17,
                         scalelength,
                         length,
                         scale,
@@ -10567,8 +10106,21 @@ namespace simplepa2 {
                 this.columnEMServerIP = base.Columns["EMServerIP"];
                 this.columnServerIP = base.Columns["ServerIP"];
                 this.columnServerPort = base.Columns["ServerPort"];
+                this.columnReserved1 = base.Columns["Reserved1"];
+                this.columnReserved2 = base.Columns["Reserved2"];
+                this.columnReserved3 = base.Columns["Reserved3"];
+                this.columnReserved4 = base.Columns["Reserved4"];
+                this.columnReserved5 = base.Columns["Reserved5"];
+                this.columnReserved6 = base.Columns["Reserved6"];
+                this.columnReserved7 = base.Columns["Reserved7"];
+                this.columnReserved8 = base.Columns["Reserved8"];
+                this.columnReserved9 = base.Columns["Reserved9"];
+                this.columnReserved10 = base.Columns["Reserved10"];
+                this.columnReserved11 = base.Columns["Reserved11"];
                 this.columnGPIOPort = base.Columns["GPIOPort"];
                 this.columnRport = base.Columns["Rport"];
+                this.columnReserved15 = base.Columns["Reserved15"];
+                this.columnReserved16 = base.Columns["Reserved16"];
                 this.columnJigsangbalhwa = base.Columns["Jigsangbalhwa"];
                 this.columnSpeakerTimer = base.Columns["SpeakerTimer"];
                 this.columninputvolume = base.Columns["inputvolume"];
@@ -10577,6 +10129,7 @@ namespace simplepa2 {
                 this.columnMulti_Ch = base.Columns["Multi_Ch"];
                 this.columnSoundDeviceNum = base.Columns["SoundDeviceNum"];
                 this.columnSoundDeviceName = base.Columns["SoundDeviceName"];
+                this.columnReserved17 = base.Columns["Reserved17"];
                 this.columnscalelength = base.Columns["scalelength"];
                 this.columnlength = base.Columns["length"];
                 this.columnscale = base.Columns["scale"];
@@ -10607,10 +10160,36 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnServerIP);
                 this.columnServerPort = new global::System.Data.DataColumn("ServerPort", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnServerPort);
+                this.columnReserved1 = new global::System.Data.DataColumn("Reserved1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved1);
+                this.columnReserved2 = new global::System.Data.DataColumn("Reserved2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved2);
+                this.columnReserved3 = new global::System.Data.DataColumn("Reserved3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved3);
+                this.columnReserved4 = new global::System.Data.DataColumn("Reserved4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved4);
+                this.columnReserved5 = new global::System.Data.DataColumn("Reserved5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved5);
+                this.columnReserved6 = new global::System.Data.DataColumn("Reserved6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved6);
+                this.columnReserved7 = new global::System.Data.DataColumn("Reserved7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved7);
+                this.columnReserved8 = new global::System.Data.DataColumn("Reserved8", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved8);
+                this.columnReserved9 = new global::System.Data.DataColumn("Reserved9", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved9);
+                this.columnReserved10 = new global::System.Data.DataColumn("Reserved10", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved10);
+                this.columnReserved11 = new global::System.Data.DataColumn("Reserved11", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved11);
                 this.columnGPIOPort = new global::System.Data.DataColumn("GPIOPort", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGPIOPort);
                 this.columnRport = new global::System.Data.DataColumn("Rport", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRport);
+                this.columnReserved15 = new global::System.Data.DataColumn("Reserved15", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved15);
+                this.columnReserved16 = new global::System.Data.DataColumn("Reserved16", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved16);
                 this.columnJigsangbalhwa = new global::System.Data.DataColumn("Jigsangbalhwa", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJigsangbalhwa);
                 this.columnSpeakerTimer = new global::System.Data.DataColumn("SpeakerTimer", typeof(int), null, global::System.Data.MappingType.Element);
@@ -10627,6 +10206,8 @@ namespace simplepa2 {
                 base.Columns.Add(this.columnSoundDeviceNum);
                 this.columnSoundDeviceName = new global::System.Data.DataColumn("SoundDeviceName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoundDeviceName);
+                this.columnReserved17 = new global::System.Data.DataColumn("Reserved17", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReserved17);
                 this.columnscalelength = new global::System.Data.DataColumn("scalelength", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnscalelength);
                 this.columnlength = new global::System.Data.DataColumn("length", typeof(float), null, global::System.Data.MappingType.Element);
@@ -10666,8 +10247,21 @@ namespace simplepa2 {
                 this.columnEMServerIP.MaxLength = 2147483647;
                 this.columnServerIP.MaxLength = 2147483647;
                 this.columnServerPort.MaxLength = 2147483647;
+                this.columnReserved1.MaxLength = 2147483647;
+                this.columnReserved2.MaxLength = 2147483647;
+                this.columnReserved3.MaxLength = 2147483647;
+                this.columnReserved4.MaxLength = 2147483647;
+                this.columnReserved5.MaxLength = 2147483647;
+                this.columnReserved6.MaxLength = 2147483647;
+                this.columnReserved7.MaxLength = 2147483647;
+                this.columnReserved8.MaxLength = 2147483647;
+                this.columnReserved9.MaxLength = 2147483647;
+                this.columnReserved10.MaxLength = 2147483647;
+                this.columnReserved11.MaxLength = 2147483647;
                 this.columnGPIOPort.MaxLength = 2147483647;
                 this.columnRport.MaxLength = 2147483647;
+                this.columnReserved15.MaxLength = 2147483647;
+                this.columnReserved16.MaxLength = 2147483647;
                 this.columnJigsangbalhwa.AllowDBNull = false;
                 this.columnSpeakerTimer.AllowDBNull = false;
                 this.columninputvolume.AllowDBNull = false;
@@ -10676,6 +10270,7 @@ namespace simplepa2 {
                 this.columnMulti_Ch.AllowDBNull = false;
                 this.columnSoundDeviceNum.AllowDBNull = false;
                 this.columnSoundDeviceName.MaxLength = 2147483647;
+                this.columnReserved17.AllowDBNull = false;
                 this.columndsp_vol.AllowDBNull = false;
                 this.columndsp_vol_em.AllowDBNull = false;
                 this.columnsms_server.MaxLength = 2147483647;
@@ -10770,6 +10365,635 @@ namespace simplepa2 {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SimplepaDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class HolidaysDataTable : global::System.Data.TypedTableBase<HolidaysRow> {
+            
+            private global::System.Data.DataColumn columnHolidayId;
+            
+            private global::System.Data.DataColumn columnhDate;
+            
+            private global::System.Data.DataColumn columnDescription;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysDataTable() {
+                this.TableName = "Holidays";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal HolidaysDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected HolidaysDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn HolidayIdColumn {
+                get {
+                    return this.columnHolidayId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn hDateColumn {
+                get {
+                    return this.columnhDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysRow this[int index] {
+                get {
+                    return ((HolidaysRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event HolidaysRowChangeEventHandler HolidaysRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event HolidaysRowChangeEventHandler HolidaysRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event HolidaysRowChangeEventHandler HolidaysRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event HolidaysRowChangeEventHandler HolidaysRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddHolidaysRow(HolidaysRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysRow AddHolidaysRow(System.DateTime hDate, string Description) {
+                HolidaysRow rowHolidaysRow = ((HolidaysRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        hDate,
+                        Description};
+                rowHolidaysRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHolidaysRow);
+                return rowHolidaysRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysRow FindByhDate(System.DateTime hDate) {
+                return ((HolidaysRow)(this.Rows.Find(new object[] {
+                            hDate})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                HolidaysDataTable cln = ((HolidaysDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new HolidaysDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnHolidayId = base.Columns["HolidayId"];
+                this.columnhDate = base.Columns["hDate"];
+                this.columnDescription = base.Columns["Description"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnHolidayId = new global::System.Data.DataColumn("HolidayId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHolidayId);
+                this.columnhDate = new global::System.Data.DataColumn("hDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhDate);
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnhDate}, true));
+                this.columnHolidayId.AutoIncrement = true;
+                this.columnHolidayId.AutoIncrementSeed = -1;
+                this.columnHolidayId.AutoIncrementStep = -1;
+                this.columnHolidayId.AllowDBNull = false;
+                this.columnHolidayId.ReadOnly = true;
+                this.columnhDate.AllowDBNull = false;
+                this.columnhDate.Unique = true;
+                this.columnDescription.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysRow NewHolidaysRow() {
+                return ((HolidaysRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new HolidaysRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(HolidaysRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.HolidaysRowChanged != null)) {
+                    this.HolidaysRowChanged(this, new HolidaysRowChangeEvent(((HolidaysRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.HolidaysRowChanging != null)) {
+                    this.HolidaysRowChanging(this, new HolidaysRowChangeEvent(((HolidaysRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.HolidaysRowDeleted != null)) {
+                    this.HolidaysRowDeleted(this, new HolidaysRowChangeEvent(((HolidaysRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.HolidaysRowDeleting != null)) {
+                    this.HolidaysRowDeleting(this, new HolidaysRowChangeEvent(((HolidaysRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveHolidaysRow(HolidaysRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "HolidaysDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class HolidaysDivideDateDataTable : global::System.Data.TypedTableBase<HolidaysDivideDateRow> {
+            
+            private global::System.Data.DataColumn columnHolidayId;
+            
+            private global::System.Data.DataColumn columnYear;
+            
+            private global::System.Data.DataColumn columnMonth;
+            
+            private global::System.Data.DataColumn columnDay;
+            
+            private global::System.Data.DataColumn columnhDate;
+            
+            private global::System.Data.DataColumn columnDescription;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysDivideDateDataTable() {
+                this.TableName = "HolidaysDivideDate";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal HolidaysDivideDateDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected HolidaysDivideDateDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn HolidayIdColumn {
+                get {
+                    return this.columnHolidayId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn YearColumn {
+                get {
+                    return this.columnYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MonthColumn {
+                get {
+                    return this.columnMonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DayColumn {
+                get {
+                    return this.columnDay;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn hDateColumn {
+                get {
+                    return this.columnhDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysDivideDateRow this[int index] {
+                get {
+                    return ((HolidaysDivideDateRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event HolidaysDivideDateRowChangeEventHandler HolidaysDivideDateRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event HolidaysDivideDateRowChangeEventHandler HolidaysDivideDateRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event HolidaysDivideDateRowChangeEventHandler HolidaysDivideDateRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event HolidaysDivideDateRowChangeEventHandler HolidaysDivideDateRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddHolidaysDivideDateRow(HolidaysDivideDateRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysDivideDateRow AddHolidaysDivideDateRow(int Year, int Month, int Day, System.DateTime hDate, string Description) {
+                HolidaysDivideDateRow rowHolidaysDivideDateRow = ((HolidaysDivideDateRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Year,
+                        Month,
+                        Day,
+                        hDate,
+                        Description};
+                rowHolidaysDivideDateRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHolidaysDivideDateRow);
+                return rowHolidaysDivideDateRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysDivideDateRow FindByhDate(System.DateTime hDate) {
+                return ((HolidaysDivideDateRow)(this.Rows.Find(new object[] {
+                            hDate})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                HolidaysDivideDateDataTable cln = ((HolidaysDivideDateDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new HolidaysDivideDateDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnHolidayId = base.Columns["HolidayId"];
+                this.columnYear = base.Columns["Year"];
+                this.columnMonth = base.Columns["Month"];
+                this.columnDay = base.Columns["Day"];
+                this.columnhDate = base.Columns["hDate"];
+                this.columnDescription = base.Columns["Description"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnHolidayId = new global::System.Data.DataColumn("HolidayId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHolidayId);
+                this.columnYear = new global::System.Data.DataColumn("Year", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYear);
+                this.columnMonth = new global::System.Data.DataColumn("Month", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonth);
+                this.columnDay = new global::System.Data.DataColumn("Day", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDay);
+                this.columnhDate = new global::System.Data.DataColumn("hDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhDate);
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnhDate}, true));
+                this.columnHolidayId.AutoIncrement = true;
+                this.columnHolidayId.AutoIncrementSeed = -1;
+                this.columnHolidayId.AutoIncrementStep = -1;
+                this.columnHolidayId.AllowDBNull = false;
+                this.columnHolidayId.ReadOnly = true;
+                this.columnYear.ReadOnly = true;
+                this.columnMonth.ReadOnly = true;
+                this.columnDay.ReadOnly = true;
+                this.columnhDate.AllowDBNull = false;
+                this.columnhDate.Unique = true;
+                this.columnDescription.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysDivideDateRow NewHolidaysDivideDateRow() {
+                return ((HolidaysDivideDateRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new HolidaysDivideDateRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(HolidaysDivideDateRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.HolidaysDivideDateRowChanged != null)) {
+                    this.HolidaysDivideDateRowChanged(this, new HolidaysDivideDateRowChangeEvent(((HolidaysDivideDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.HolidaysDivideDateRowChanging != null)) {
+                    this.HolidaysDivideDateRowChanging(this, new HolidaysDivideDateRowChangeEvent(((HolidaysDivideDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.HolidaysDivideDateRowDeleted != null)) {
+                    this.HolidaysDivideDateRowDeleted(this, new HolidaysDivideDateRowChangeEvent(((HolidaysDivideDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.HolidaysDivideDateRowDeleting != null)) {
+                    this.HolidaysDivideDateRowDeleting(this, new HolidaysDivideDateRowChangeEvent(((HolidaysDivideDateRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveHolidaysDivideDateRow(HolidaysDivideDateRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "HolidaysDivideDateDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -12476,71 +12700,6 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetalarmNull() {
                 this[this.tableEventvm.alarmColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class HolidaysRow : global::System.Data.DataRow {
-            
-            private HolidaysDataTable tableHolidays;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal HolidaysRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableHolidays = ((HolidaysDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int HolidayId {
-                get {
-                    return ((int)(this[this.tableHolidays.HolidayIdColumn]));
-                }
-                set {
-                    this[this.tableHolidays.HolidayIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime hDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tableHolidays.hDateColumn]));
-                }
-                set {
-                    this[this.tableHolidays.hDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Description {
-                get {
-                    try {
-                        return ((string)(this[this.tableHolidays.DescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'Holidays\' 테이블의 \'Description\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableHolidays.DescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableHolidays.DescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableHolidays.DescriptionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -16233,155 +16392,6 @@ namespace simplepa2 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class HolidaysDivideDateRow : global::System.Data.DataRow {
-            
-            private HolidaysDivideDateDataTable tableHolidaysDivideDate;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal HolidaysDivideDateRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableHolidaysDivideDate = ((HolidaysDivideDateDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int HolidayId {
-                get {
-                    return ((int)(this[this.tableHolidaysDivideDate.HolidayIdColumn]));
-                }
-                set {
-                    this[this.tableHolidaysDivideDate.HolidayIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Year {
-                get {
-                    try {
-                        return ((int)(this[this.tableHolidaysDivideDate.YearColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'HolidaysDivideDate\' 테이블의 \'Year\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableHolidaysDivideDate.YearColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Month {
-                get {
-                    try {
-                        return ((int)(this[this.tableHolidaysDivideDate.MonthColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'HolidaysDivideDate\' 테이블의 \'Month\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableHolidaysDivideDate.MonthColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Day {
-                get {
-                    try {
-                        return ((int)(this[this.tableHolidaysDivideDate.DayColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'HolidaysDivideDate\' 테이블의 \'Day\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableHolidaysDivideDate.DayColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime hDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tableHolidaysDivideDate.hDateColumn]));
-                }
-                set {
-                    this[this.tableHolidaysDivideDate.hDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Description {
-                get {
-                    try {
-                        return ((string)(this[this.tableHolidaysDivideDate.DescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'HolidaysDivideDate\' 테이블의 \'Description\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableHolidaysDivideDate.DescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsYearNull() {
-                return this.IsNull(this.tableHolidaysDivideDate.YearColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetYearNull() {
-                this[this.tableHolidaysDivideDate.YearColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMonthNull() {
-                return this.IsNull(this.tableHolidaysDivideDate.MonthColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMonthNull() {
-                this[this.tableHolidaysDivideDate.MonthColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDayNull() {
-                return this.IsNull(this.tableHolidaysDivideDate.DayColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDayNull() {
-                this[this.tableHolidaysDivideDate.DayColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableHolidaysDivideDate.DescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableHolidaysDivideDate.DescriptionColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class HolidaysYearListRow : global::System.Data.DataRow {
             
             private HolidaysYearListDataTable tableHolidaysYearList;
@@ -16557,6 +16567,182 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved2\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved3\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved4\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved5\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved6\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved7\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved8\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved8Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved9 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved9Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved9\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved10 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved10Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved10\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved10Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved11 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved11Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved11\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved11Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string GPIOPort {
                 get {
                     try {
@@ -16584,6 +16770,38 @@ namespace simplepa2 {
                 }
                 set {
                     this[this.tableSimplepa.RportColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved15 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved15Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved15\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved15Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Reserved16 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSimplepa.Reserved16Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Simplepa\' 테이블의 \'Reserved16\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSimplepa.Reserved16Column] = value;
                 }
             }
             
@@ -16677,6 +16895,17 @@ namespace simplepa2 {
                 }
                 set {
                     this[this.tableSimplepa.SoundDeviceNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Reserved17 {
+                get {
+                    return ((int)(this[this.tableSimplepa.Reserved17Column]));
+                }
+                set {
+                    this[this.tableSimplepa.Reserved17Column] = value;
                 }
             }
             
@@ -16935,6 +17164,138 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved1Null() {
+                return this.IsNull(this.tableSimplepa.Reserved1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved1Null() {
+                this[this.tableSimplepa.Reserved1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved2Null() {
+                return this.IsNull(this.tableSimplepa.Reserved2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved2Null() {
+                this[this.tableSimplepa.Reserved2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved3Null() {
+                return this.IsNull(this.tableSimplepa.Reserved3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved3Null() {
+                this[this.tableSimplepa.Reserved3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved4Null() {
+                return this.IsNull(this.tableSimplepa.Reserved4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved4Null() {
+                this[this.tableSimplepa.Reserved4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved5Null() {
+                return this.IsNull(this.tableSimplepa.Reserved5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved5Null() {
+                this[this.tableSimplepa.Reserved5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved6Null() {
+                return this.IsNull(this.tableSimplepa.Reserved6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved6Null() {
+                this[this.tableSimplepa.Reserved6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved7Null() {
+                return this.IsNull(this.tableSimplepa.Reserved7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved7Null() {
+                this[this.tableSimplepa.Reserved7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved8Null() {
+                return this.IsNull(this.tableSimplepa.Reserved8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved8Null() {
+                this[this.tableSimplepa.Reserved8Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved9Null() {
+                return this.IsNull(this.tableSimplepa.Reserved9Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved9Null() {
+                this[this.tableSimplepa.Reserved9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved10Null() {
+                return this.IsNull(this.tableSimplepa.Reserved10Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved10Null() {
+                this[this.tableSimplepa.Reserved10Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved11Null() {
+                return this.IsNull(this.tableSimplepa.Reserved11Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved11Null() {
+                this[this.tableSimplepa.Reserved11Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsGPIOPortNull() {
                 return this.IsNull(this.tableSimplepa.GPIOPortColumn);
             }
@@ -16955,6 +17316,30 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetRportNull() {
                 this[this.tableSimplepa.RportColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved15Null() {
+                return this.IsNull(this.tableSimplepa.Reserved15Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved15Null() {
+                this[this.tableSimplepa.Reserved15Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsReserved16Null() {
+                return this.IsNull(this.tableSimplepa.Reserved16Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetReserved16Null() {
+                this[this.tableSimplepa.Reserved16Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17087,6 +17472,220 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetEmMusicNull() {
                 this[this.tableSimplepa.EmMusicColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class HolidaysRow : global::System.Data.DataRow {
+            
+            private HolidaysDataTable tableHolidays;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal HolidaysRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableHolidays = ((HolidaysDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int HolidayId {
+                get {
+                    return ((int)(this[this.tableHolidays.HolidayIdColumn]));
+                }
+                set {
+                    this[this.tableHolidays.HolidayIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime hDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableHolidays.hDateColumn]));
+                }
+                set {
+                    this[this.tableHolidays.hDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Description {
+                get {
+                    try {
+                        return ((string)(this[this.tableHolidays.DescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Holidays\' 테이블의 \'Description\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableHolidays.DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDescriptionNull() {
+                return this.IsNull(this.tableHolidays.DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDescriptionNull() {
+                this[this.tableHolidays.DescriptionColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class HolidaysDivideDateRow : global::System.Data.DataRow {
+            
+            private HolidaysDivideDateDataTable tableHolidaysDivideDate;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal HolidaysDivideDateRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableHolidaysDivideDate = ((HolidaysDivideDateDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int HolidayId {
+                get {
+                    return ((int)(this[this.tableHolidaysDivideDate.HolidayIdColumn]));
+                }
+                set {
+                    this[this.tableHolidaysDivideDate.HolidayIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Year {
+                get {
+                    try {
+                        return ((int)(this[this.tableHolidaysDivideDate.YearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'HolidaysDivideDate\' 테이블의 \'Year\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableHolidaysDivideDate.YearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Month {
+                get {
+                    try {
+                        return ((int)(this[this.tableHolidaysDivideDate.MonthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'HolidaysDivideDate\' 테이블의 \'Month\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableHolidaysDivideDate.MonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Day {
+                get {
+                    try {
+                        return ((int)(this[this.tableHolidaysDivideDate.DayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'HolidaysDivideDate\' 테이블의 \'Day\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableHolidaysDivideDate.DayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime hDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableHolidaysDivideDate.hDateColumn]));
+                }
+                set {
+                    this[this.tableHolidaysDivideDate.hDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Description {
+                get {
+                    try {
+                        return ((string)(this[this.tableHolidaysDivideDate.DescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'HolidaysDivideDate\' 테이블의 \'Description\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableHolidaysDivideDate.DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsYearNull() {
+                return this.IsNull(this.tableHolidaysDivideDate.YearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetYearNull() {
+                this[this.tableHolidaysDivideDate.YearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMonthNull() {
+                return this.IsNull(this.tableHolidaysDivideDate.MonthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMonthNull() {
+                this[this.tableHolidaysDivideDate.MonthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDayNull() {
+                return this.IsNull(this.tableHolidaysDivideDate.DayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDayNull() {
+                this[this.tableHolidaysDivideDate.DayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDescriptionNull() {
+                return this.IsNull(this.tableHolidaysDivideDate.DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDescriptionNull() {
+                this[this.tableHolidaysDivideDate.DescriptionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -17348,40 +17947,6 @@ namespace simplepa2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public EventvmRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class HolidaysRowChangeEvent : global::System.EventArgs {
-            
-            private HolidaysRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysRowChangeEvent(HolidaysRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -17842,40 +18407,6 @@ namespace simplepa2 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class HolidaysDivideDateRowChangeEvent : global::System.EventArgs {
-            
-            private HolidaysDivideDateRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysDivideDateRowChangeEvent(HolidaysDivideDateRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HolidaysDivideDateRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public class HolidaysYearListRowChangeEvent : global::System.EventArgs {
             
             private HolidaysYearListRow eventRow;
@@ -17926,6 +18457,74 @@ namespace simplepa2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SimplepaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class HolidaysRowChangeEvent : global::System.EventArgs {
+            
+            private HolidaysRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysRowChangeEvent(HolidaysRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class HolidaysDivideDateRowChangeEvent : global::System.EventArgs {
+            
+            private HolidaysDivideDateRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysDivideDateRowChangeEvent(HolidaysDivideDateRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HolidaysDivideDateRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -21110,303 +21709,6 @@ namespace simplepa2.DataSet1TableAdapters {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_EventVMId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class HolidaysTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public HolidaysTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Holidays";
-            tableMapping.ColumnMappings.Add("HolidayId", "HolidayId");
-            tableMapping.ColumnMappings.Add("hDate", "hDate");
-            tableMapping.ColumnMappings.Add("Description", "Description");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Holidays] WHERE (([HolidayId] = @Original_HolidayId))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HolidayId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HolidayId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Holidays] ([hDate], [Description]) VALUES (@hDate, @Descriptio" +
-                "n)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Holidays] SET [hDate] = @hDate, [Description] = @Description WHERE " +
-                "(([HolidayId] = @Original_HolidayId))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HolidayId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HolidayId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["simplePAConnectionString"].ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT HolidayId, hDate, Description FROM dbo.Holidays";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.HolidaysDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.HolidaysDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.HolidaysDataTable dataTable = new DataSet1.HolidaysDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.HolidaysDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Holidays");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_HolidayId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_HolidayId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime hDate, string Description) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(hDate));
-            if ((Description == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Description));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime hDate, string Description, int Original_HolidayId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(hDate));
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_HolidayId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -25944,306 +26246,6 @@ FROM     AssetPresetGroups INNER JOIN
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class HolidaysDivideDateTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public HolidaysDivideDateTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "HolidaysDivideDate";
-            tableMapping.ColumnMappings.Add("HolidayId", "HolidayId");
-            tableMapping.ColumnMappings.Add("Year", "Year");
-            tableMapping.ColumnMappings.Add("Month", "Month");
-            tableMapping.ColumnMappings.Add("Day", "Day");
-            tableMapping.ColumnMappings.Add("hDate", "hDate");
-            tableMapping.ColumnMappings.Add("Description", "Description");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Holidays] WHERE (([HolidayId] = @Original_HolidayId))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HolidayId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HolidayId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Holidays] ([hDate], [Description]) VALUES (@hDate, @Description)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Holidays] SET [hDate] = @hDate, [Description] = @Description WHERE (([Hol" +
-                "idayId] = @Original_HolidayId))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HolidayId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HolidayId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["simplePAConnectionString"].ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  HolidayId, YEAR(hDate) AS \'Year\', MONTH(hDate) AS \'Month\', DAY(hDate) AS " +
-                "Day, hDate, Description\r\nFROM     Holidays\r\nORDER BY YEAR, \'Month\', Day";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.HolidaysDivideDateDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.HolidaysDivideDateDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.HolidaysDivideDateDataTable dataTable = new DataSet1.HolidaysDivideDateDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.HolidaysDivideDateDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "HolidaysDivideDate");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_HolidayId) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_HolidayId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime hDate, string Description) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(hDate));
-            if ((Description == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Description));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime hDate, string Description, int Original_HolidayId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(hDate));
-            if ((Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_HolidayId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class HolidaysYearListTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -26532,8 +26534,21 @@ FROM     AssetPresetGroups INNER JOIN
             tableMapping.ColumnMappings.Add("EMServerIP", "EMServerIP");
             tableMapping.ColumnMappings.Add("ServerIP", "ServerIP");
             tableMapping.ColumnMappings.Add("ServerPort", "ServerPort");
+            tableMapping.ColumnMappings.Add("Reserved1", "Reserved1");
+            tableMapping.ColumnMappings.Add("Reserved2", "Reserved2");
+            tableMapping.ColumnMappings.Add("Reserved3", "Reserved3");
+            tableMapping.ColumnMappings.Add("Reserved4", "Reserved4");
+            tableMapping.ColumnMappings.Add("Reserved5", "Reserved5");
+            tableMapping.ColumnMappings.Add("Reserved6", "Reserved6");
+            tableMapping.ColumnMappings.Add("Reserved7", "Reserved7");
+            tableMapping.ColumnMappings.Add("Reserved8", "Reserved8");
+            tableMapping.ColumnMappings.Add("Reserved9", "Reserved9");
+            tableMapping.ColumnMappings.Add("Reserved10", "Reserved10");
+            tableMapping.ColumnMappings.Add("Reserved11", "Reserved11");
             tableMapping.ColumnMappings.Add("GPIOPort", "GPIOPort");
             tableMapping.ColumnMappings.Add("Rport", "Rport");
+            tableMapping.ColumnMappings.Add("Reserved15", "Reserved15");
+            tableMapping.ColumnMappings.Add("Reserved16", "Reserved16");
             tableMapping.ColumnMappings.Add("Jigsangbalhwa", "Jigsangbalhwa");
             tableMapping.ColumnMappings.Add("SpeakerTimer", "SpeakerTimer");
             tableMapping.ColumnMappings.Add("inputvolume", "inputvolume");
@@ -26542,6 +26557,7 @@ FROM     AssetPresetGroups INNER JOIN
             tableMapping.ColumnMappings.Add("Multi_Ch", "Multi_Ch");
             tableMapping.ColumnMappings.Add("SoundDeviceNum", "SoundDeviceNum");
             tableMapping.ColumnMappings.Add("SoundDeviceName", "SoundDeviceName");
+            tableMapping.ColumnMappings.Add("Reserved17", "Reserved17");
             tableMapping.ColumnMappings.Add("scalelength", "scalelength");
             tableMapping.ColumnMappings.Add("length", "length");
             tableMapping.ColumnMappings.Add("scale", "scale");
@@ -26563,15 +26579,28 @@ FROM     AssetPresetGroups INNER JOIN
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SimplePAId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SimplePAId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Simplepa] ([EMNAME], [UserName], [EMServerIP], [ServerIP], [ServerPort], [GPIOPort], [Rport], [Jigsangbalhwa], [SpeakerTimer], [inputvolume], [outputvolume], [disp], [Multi_Ch], [SoundDeviceNum], [SoundDeviceName], [scalelength], [length], [scale], [noise1], [noise2], [dsp_vol], [dsp_vol_em], [sms_server], [sms_id], [sms_pw], [sms_rcvno], [Pport], [EmMusic]) VALUES (@EMNAME, @UserName, @EMServerIP, @ServerIP, @ServerPort, @GPIOPort, @Rport, @Jigsangbalhwa, @SpeakerTimer, @inputvolume, @outputvolume, @disp, @Multi_Ch, @SoundDeviceNum, @SoundDeviceName, @scalelength, @length, @scale, @noise1, @noise2, @dsp_vol, @dsp_vol_em, @sms_server, @sms_id, @sms_pw, @sms_rcvno, @Pport, @EmMusic)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Simplepa] ([EMNAME], [UserName], [EMServerIP], [ServerIP], [ServerPort], [Reserved1], [Reserved2], [Reserved3], [Reserved4], [Reserved5], [Reserved6], [Reserved7], [Reserved8], [Reserved9], [Reserved10], [Reserved11], [GPIOPort], [Rport], [Reserved15], [Reserved16], [Jigsangbalhwa], [SpeakerTimer], [inputvolume], [outputvolume], [disp], [Multi_Ch], [SoundDeviceNum], [SoundDeviceName], [Reserved17], [scalelength], [length], [scale], [noise1], [noise2], [dsp_vol], [dsp_vol_em], [sms_server], [sms_id], [sms_pw], [sms_rcvno], [Pport], [EmMusic]) VALUES (@EMNAME, @UserName, @EMServerIP, @ServerIP, @ServerPort, @Reserved1, @Reserved2, @Reserved3, @Reserved4, @Reserved5, @Reserved6, @Reserved7, @Reserved8, @Reserved9, @Reserved10, @Reserved11, @GPIOPort, @Rport, @Reserved15, @Reserved16, @Jigsangbalhwa, @SpeakerTimer, @inputvolume, @outputvolume, @disp, @Multi_Ch, @SoundDeviceNum, @SoundDeviceName, @Reserved17, @scalelength, @length, @scale, @noise1, @noise2, @dsp_vol, @dsp_vol_em, @sms_server, @sms_id, @sms_pw, @sms_rcvno, @Pport, @EmMusic)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMServerIP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMServerIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerIP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerPort", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerPort", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPIOPort", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPIOPort", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rport", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rport", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved16", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved16", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Jigsangbalhwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jigsangbalhwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpeakerTimer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpeakerTimer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inputvolume", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "inputvolume", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26580,6 +26609,7 @@ FROM     AssetPresetGroups INNER JOIN
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Multi_Ch", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Multi_Ch", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoundDeviceNum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoundDeviceNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoundDeviceName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoundDeviceName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved17", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved17", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scalelength", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scalelength", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@length", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scale", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26595,15 +26625,28 @@ FROM     AssetPresetGroups INNER JOIN
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmMusic", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmMusic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Simplepa] SET [EMNAME] = @EMNAME, [UserName] = @UserName, [EMServerIP] = @EMServerIP, [ServerIP] = @ServerIP, [ServerPort] = @ServerPort, [GPIOPort] = @GPIOPort, [Rport] = @Rport, [Jigsangbalhwa] = @Jigsangbalhwa, [SpeakerTimer] = @SpeakerTimer, [inputvolume] = @inputvolume, [outputvolume] = @outputvolume, [disp] = @disp, [Multi_Ch] = @Multi_Ch, [SoundDeviceNum] = @SoundDeviceNum, [SoundDeviceName] = @SoundDeviceName, [scalelength] = @scalelength, [length] = @length, [scale] = @scale, [noise1] = @noise1, [noise2] = @noise2, [dsp_vol] = @dsp_vol, [dsp_vol_em] = @dsp_vol_em, [sms_server] = @sms_server, [sms_id] = @sms_id, [sms_pw] = @sms_pw, [sms_rcvno] = @sms_rcvno, [Pport] = @Pport, [EmMusic] = @EmMusic WHERE (([SimplePAId] = @Original_SimplePAId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Simplepa] SET [EMNAME] = @EMNAME, [UserName] = @UserName, [EMServerIP] = @EMServerIP, [ServerIP] = @ServerIP, [ServerPort] = @ServerPort, [Reserved1] = @Reserved1, [Reserved2] = @Reserved2, [Reserved3] = @Reserved3, [Reserved4] = @Reserved4, [Reserved5] = @Reserved5, [Reserved6] = @Reserved6, [Reserved7] = @Reserved7, [Reserved8] = @Reserved8, [Reserved9] = @Reserved9, [Reserved10] = @Reserved10, [Reserved11] = @Reserved11, [GPIOPort] = @GPIOPort, [Rport] = @Rport, [Reserved15] = @Reserved15, [Reserved16] = @Reserved16, [Jigsangbalhwa] = @Jigsangbalhwa, [SpeakerTimer] = @SpeakerTimer, [inputvolume] = @inputvolume, [outputvolume] = @outputvolume, [disp] = @disp, [Multi_Ch] = @Multi_Ch, [SoundDeviceNum] = @SoundDeviceNum, [SoundDeviceName] = @SoundDeviceName, [Reserved17] = @Reserved17, [scalelength] = @scalelength, [length] = @length, [scale] = @scale, [noise1] = @noise1, [noise2] = @noise2, [dsp_vol] = @dsp_vol, [dsp_vol_em] = @dsp_vol_em, [sms_server] = @sms_server, [sms_id] = @sms_id, [sms_pw] = @sms_pw, [sms_rcvno] = @sms_rcvno, [Pport] = @Pport, [EmMusic] = @EmMusic WHERE (([SimplePAId] = @Original_SimplePAId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMServerIP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMServerIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerIP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServerPort", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServerPort", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved8", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPIOPort", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPIOPort", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Rport", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Rport", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved16", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved16", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Jigsangbalhwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jigsangbalhwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpeakerTimer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpeakerTimer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inputvolume", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "inputvolume", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26612,6 +26655,7 @@ FROM     AssetPresetGroups INNER JOIN
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Multi_Ch", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Multi_Ch", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoundDeviceNum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoundDeviceNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoundDeviceName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoundDeviceName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reserved17", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reserved17", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scalelength", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scalelength", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@length", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "length", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@scale", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "scale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26641,8 +26685,9 @@ FROM     AssetPresetGroups INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT  SimplePAId, EMNAME, UserName, EMServerIP, ServerIP, ServerPort, GPIOPort, Rport, Jigsangbalhwa, SpeakerTimer, inputvolume, outputvolume, disp, Multi_Ch, SoundDeviceNum, 
-               SoundDeviceName, scalelength, length, scale, noise1, noise2, dsp_vol, dsp_vol_em, sms_server, sms_id, sms_pw, sms_rcvno, Pport, EmMusic
+            this._commandCollection[0].CommandText = @"SELECT  SimplePAId, EMNAME, UserName, EMServerIP, ServerIP, ServerPort, Reserved1, Reserved2, Reserved3, Reserved4, Reserved5, Reserved6, Reserved7, Reserved8, Reserved9, 
+               Reserved10, Reserved11, GPIOPort, Rport, Reserved15, Reserved16, Jigsangbalhwa, SpeakerTimer, inputvolume, outputvolume, disp, Multi_Ch, SoundDeviceNum, SoundDeviceName, 
+               Reserved17, scalelength, length, scale, noise1, noise2, dsp_vol, dsp_vol_em, sms_server, sms_id, sms_pw, sms_rcvno, Pport, EmMusic
 FROM     Simplepa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -26732,8 +26777,21 @@ FROM     Simplepa";
                     string EMServerIP, 
                     string ServerIP, 
                     string ServerPort, 
+                    string Reserved1, 
+                    string Reserved2, 
+                    string Reserved3, 
+                    string Reserved4, 
+                    string Reserved5, 
+                    string Reserved6, 
+                    string Reserved7, 
+                    string Reserved8, 
+                    string Reserved9, 
+                    string Reserved10, 
+                    string Reserved11, 
                     string GPIOPort, 
                     string Rport, 
+                    string Reserved15, 
+                    string Reserved16, 
                     int Jigsangbalhwa, 
                     int SpeakerTimer, 
                     float inputvolume, 
@@ -26742,6 +26800,7 @@ FROM     Simplepa";
                     int Multi_Ch, 
                     int SoundDeviceNum, 
                     string SoundDeviceName, 
+                    int Reserved17, 
                     global::System.Nullable<float> scalelength, 
                     global::System.Nullable<float> length, 
                     global::System.Nullable<float> scale, 
@@ -26785,93 +26844,172 @@ FROM     Simplepa";
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ServerPort));
             }
-            if ((GPIOPort == null)) {
+            if ((Reserved1 == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(GPIOPort));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Reserved1));
             }
-            if ((Rport == null)) {
+            if ((Reserved2 == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Rport));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Reserved2));
             }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Jigsangbalhwa));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(SpeakerTimer));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((float)(inputvolume));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((float)(outputvolume));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(disp));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(Multi_Ch));
-            this.Adapter.InsertCommand.Parameters[13].Value = ((int)(SoundDeviceNum));
-            if ((SoundDeviceName == null)) {
+            if ((Reserved3 == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Reserved3));
+            }
+            if ((Reserved4 == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Reserved4));
+            }
+            if ((Reserved5 == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Reserved5));
+            }
+            if ((Reserved6 == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Reserved6));
+            }
+            if ((Reserved7 == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Reserved7));
+            }
+            if ((Reserved8 == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Reserved8));
+            }
+            if ((Reserved9 == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Reserved9));
+            }
+            if ((Reserved10 == null)) {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(SoundDeviceName));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(Reserved10));
             }
-            if ((scalelength.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((float)(scalelength.Value));
-            }
-            else {
+            if ((Reserved11 == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((length.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((float)(length.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Reserved11));
+            }
+            if ((GPIOPort == null)) {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((scale.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((float)(scale.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(GPIOPort));
+            }
+            if ((Rport == null)) {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((noise1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((int)(noise1.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Rport));
+            }
+            if ((Reserved15 == null)) {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((noise2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((int)(noise2.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Reserved15));
+            }
+            if ((Reserved16 == null)) {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[20].Value = ((int)(dsp_vol));
-            this.Adapter.InsertCommand.Parameters[21].Value = ((int)(dsp_vol_em));
-            if ((sms_server == null)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(sms_server));
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Reserved16));
             }
-            if ((sms_id == null)) {
-                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(sms_id));
-            }
-            if ((sms_pw == null)) {
-                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(sms_pw));
-            }
-            if ((sms_rcvno == null)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(sms_rcvno));
-            }
-            this.Adapter.InsertCommand.Parameters[26].Value = ((int)(Pport));
-            if ((EmMusic == null)) {
+            this.Adapter.InsertCommand.Parameters[20].Value = ((int)(Jigsangbalhwa));
+            this.Adapter.InsertCommand.Parameters[21].Value = ((int)(SpeakerTimer));
+            this.Adapter.InsertCommand.Parameters[22].Value = ((float)(inputvolume));
+            this.Adapter.InsertCommand.Parameters[23].Value = ((float)(outputvolume));
+            this.Adapter.InsertCommand.Parameters[24].Value = ((int)(disp));
+            this.Adapter.InsertCommand.Parameters[25].Value = ((int)(Multi_Ch));
+            this.Adapter.InsertCommand.Parameters[26].Value = ((int)(SoundDeviceNum));
+            if ((SoundDeviceName == null)) {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(EmMusic));
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(SoundDeviceName));
+            }
+            this.Adapter.InsertCommand.Parameters[28].Value = ((int)(Reserved17));
+            if ((scalelength.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((float)(scalelength.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((length.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[30].Value = ((float)(length.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((scale.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((float)(scale.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((noise1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((int)(noise1.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((noise2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[33].Value = ((int)(noise2.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[34].Value = ((int)(dsp_vol));
+            this.Adapter.InsertCommand.Parameters[35].Value = ((int)(dsp_vol_em));
+            if ((sms_server == null)) {
+                this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(sms_server));
+            }
+            if ((sms_id == null)) {
+                this.Adapter.InsertCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[37].Value = ((string)(sms_id));
+            }
+            if ((sms_pw == null)) {
+                this.Adapter.InsertCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[38].Value = ((string)(sms_pw));
+            }
+            if ((sms_rcvno == null)) {
+                this.Adapter.InsertCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[39].Value = ((string)(sms_rcvno));
+            }
+            this.Adapter.InsertCommand.Parameters[40].Value = ((int)(Pport));
+            if ((EmMusic == null)) {
+                this.Adapter.InsertCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[41].Value = ((string)(EmMusic));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -26899,8 +27037,21 @@ FROM     Simplepa";
                     string EMServerIP, 
                     string ServerIP, 
                     string ServerPort, 
+                    string Reserved1, 
+                    string Reserved2, 
+                    string Reserved3, 
+                    string Reserved4, 
+                    string Reserved5, 
+                    string Reserved6, 
+                    string Reserved7, 
+                    string Reserved8, 
+                    string Reserved9, 
+                    string Reserved10, 
+                    string Reserved11, 
                     string GPIOPort, 
                     string Rport, 
+                    string Reserved15, 
+                    string Reserved16, 
                     int Jigsangbalhwa, 
                     int SpeakerTimer, 
                     float inputvolume, 
@@ -26909,6 +27060,7 @@ FROM     Simplepa";
                     int Multi_Ch, 
                     int SoundDeviceNum, 
                     string SoundDeviceName, 
+                    int Reserved17, 
                     global::System.Nullable<float> scalelength, 
                     global::System.Nullable<float> length, 
                     global::System.Nullable<float> scale, 
@@ -26953,95 +27105,174 @@ FROM     Simplepa";
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ServerPort));
             }
-            if ((GPIOPort == null)) {
+            if ((Reserved1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(GPIOPort));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Reserved1));
             }
-            if ((Rport == null)) {
+            if ((Reserved2 == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Rport));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Reserved2));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Jigsangbalhwa));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(SpeakerTimer));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((float)(inputvolume));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((float)(outputvolume));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(disp));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Multi_Ch));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(SoundDeviceNum));
-            if ((SoundDeviceName == null)) {
+            if ((Reserved3 == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Reserved3));
+            }
+            if ((Reserved4 == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Reserved4));
+            }
+            if ((Reserved5 == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Reserved5));
+            }
+            if ((Reserved6 == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Reserved6));
+            }
+            if ((Reserved7 == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Reserved7));
+            }
+            if ((Reserved8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Reserved8));
+            }
+            if ((Reserved9 == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Reserved9));
+            }
+            if ((Reserved10 == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(SoundDeviceName));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Reserved10));
             }
-            if ((scalelength.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((float)(scalelength.Value));
-            }
-            else {
+            if ((Reserved11 == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((length.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((float)(length.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Reserved11));
+            }
+            if ((GPIOPort == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((scale.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((float)(scale.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(GPIOPort));
+            }
+            if ((Rport == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((noise1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(noise1.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Rport));
+            }
+            if ((Reserved15 == null)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((noise2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(noise2.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Reserved15));
+            }
+            if ((Reserved16 == null)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(dsp_vol));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(dsp_vol_em));
-            if ((sms_server == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(sms_server));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Reserved16));
             }
-            if ((sms_id == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(sms_id));
-            }
-            if ((sms_pw == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(sms_pw));
-            }
-            if ((sms_rcvno == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(sms_rcvno));
-            }
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Pport));
-            if ((EmMusic == null)) {
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Jigsangbalhwa));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(SpeakerTimer));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((float)(inputvolume));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((float)(outputvolume));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(disp));
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Multi_Ch));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(SoundDeviceNum));
+            if ((SoundDeviceName == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(EmMusic));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(SoundDeviceName));
             }
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_SimplePAId));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Reserved17));
+            if ((scalelength.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((float)(scalelength.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((length.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((float)(length.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((scale.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((float)(scale.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((noise1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(noise1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((noise2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(noise2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(dsp_vol));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(dsp_vol_em));
+            if ((sms_server == null)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(sms_server));
+            }
+            if ((sms_id == null)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(sms_id));
+            }
+            if ((sms_pw == null)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(sms_pw));
+            }
+            if ((sms_rcvno == null)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(sms_rcvno));
+            }
+            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Pport));
+            if ((EmMusic == null)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(EmMusic));
+            }
+            this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_SimplePAId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -27056,6 +27287,667 @@ FROM     Simplepa";
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class HolidaysTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public HolidaysTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Holidays";
+            tableMapping.ColumnMappings.Add("HolidayId", "HolidayId");
+            tableMapping.ColumnMappings.Add("hDate", "hDate");
+            tableMapping.ColumnMappings.Add("Description", "Description");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Holidays] WHERE (([hDate] = @Original_hDate))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Holidays] ([hDate], [Description]) VALUES (@hDate, @Descriptio" +
+                "n)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Holidays] SET [hDate] = @hDate, [Description] = @Description WHERE " +
+                "(([hDate] = @Original_hDate))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["simplePAConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT HolidayId, hDate, Description FROM dbo.Holidays";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[Holidays] ([hDate], [Description]) VALUES (@hDate, @Description)
+
+
+IF EXISTS(SELECT hDate FROM Holidays WHERE hDate = @hDate)
+    BEGIN
+         UPDATE Holidays SET Description = @Description WHERE hDate = @hDate
+    END  
+
+ELSE
+    BEGIN
+	    INSERT INTO Holidays (hDate, Description) VALUES (@hDate,@Description) 
+
+END";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.HolidaysDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.HolidaysDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.HolidaysDataTable dataTable = new DataSet1.HolidaysDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.HolidaysDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "Holidays");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(System.DateTime Original_hDate) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((System.DateTime)(Original_hDate));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(System.DateTime hDate, string Description) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(hDate));
+            if ((Description == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Description));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(System.DateTime hDate, string Description, System.DateTime Original_hDate) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(hDate));
+            if ((Description == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Original_hDate));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Description, System.DateTime Original_hDate) {
+            return this.Update(Original_hDate, Description, Original_hDate);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertUpdateQuery(System.DateTime hDate, string Description) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((System.DateTime)(hDate));
+            if ((Description == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Description));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class HolidaysDivideDateTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public HolidaysDivideDateTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "HolidaysDivideDate";
+            tableMapping.ColumnMappings.Add("HolidayId", "HolidayId");
+            tableMapping.ColumnMappings.Add("Year", "Year");
+            tableMapping.ColumnMappings.Add("Month", "Month");
+            tableMapping.ColumnMappings.Add("Day", "Day");
+            tableMapping.ColumnMappings.Add("hDate", "hDate");
+            tableMapping.ColumnMappings.Add("Description", "Description");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Holidays] WHERE (([hDate] = @Original_hDate))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Holidays] ([hDate], [Description]) VALUES (@hDate, @Description)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Holidays] SET [hDate] = @hDate, [Description] = @Description WHERE (([hDa" +
+                "te] = @Original_hDate))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_hDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "hDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["simplePAConnectionString"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT  HolidayId, YEAR(hDate) AS \'Year\', MONTH(hDate) AS \'Month\', DAY(hDate) AS " +
+                "Day, hDate, Description\r\nFROM     Holidays\r\nORDER BY YEAR, \'Month\', Day";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.HolidaysDivideDateDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.HolidaysDivideDateDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.HolidaysDivideDateDataTable dataTable = new DataSet1.HolidaysDivideDateDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.HolidaysDivideDateDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "HolidaysDivideDate");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(System.DateTime Original_hDate) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((System.DateTime)(Original_hDate));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(System.DateTime hDate, string Description) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(hDate));
+            if ((Description == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Description));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(System.DateTime hDate, string Description, System.DateTime Original_hDate) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(hDate));
+            if ((Description == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Original_hDate));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Description, System.DateTime Original_hDate) {
+            return this.Update(Original_hDate, Description, Original_hDate);
         }
     }
     
@@ -27087,8 +27979,6 @@ FROM     Simplepa";
         
         private EventvmTableAdapter _eventvmTableAdapter;
         
-        private HolidaysTableAdapter _holidaysTableAdapter;
-        
         private MusicsTableAdapter _musicsTableAdapter;
         
         private PlayItemTableAdapter _playItemTableAdapter;
@@ -27109,9 +27999,11 @@ FROM     Simplepa";
         
         private DataTypeTableAdapter _dataTypeTableAdapter;
         
-        private HolidaysDivideDateTableAdapter _holidaysDivideDateTableAdapter;
-        
         private SimplepaTableAdapter _simplepaTableAdapter;
+        
+        private HolidaysTableAdapter _holidaysTableAdapter;
+        
+        private HolidaysDivideDateTableAdapter _holidaysDivideDateTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -27237,20 +28129,6 @@ FROM     Simplepa";
             }
             set {
                 this._eventvmTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public HolidaysTableAdapter HolidaysTableAdapter {
-            get {
-                return this._holidaysTableAdapter;
-            }
-            set {
-                this._holidaysTableAdapter = value;
             }
         }
         
@@ -27399,12 +28277,12 @@ FROM     Simplepa";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public HolidaysDivideDateTableAdapter HolidaysDivideDateTableAdapter {
+        public SimplepaTableAdapter SimplepaTableAdapter {
             get {
-                return this._holidaysDivideDateTableAdapter;
+                return this._simplepaTableAdapter;
             }
             set {
-                this._holidaysDivideDateTableAdapter = value;
+                this._simplepaTableAdapter = value;
             }
         }
         
@@ -27413,12 +28291,26 @@ FROM     Simplepa";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public SimplepaTableAdapter SimplepaTableAdapter {
+        public HolidaysTableAdapter HolidaysTableAdapter {
             get {
-                return this._simplepaTableAdapter;
+                return this._holidaysTableAdapter;
             }
             set {
-                this._simplepaTableAdapter = value;
+                this._holidaysTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public HolidaysDivideDateTableAdapter HolidaysDivideDateTableAdapter {
+            get {
+                return this._holidaysDivideDateTableAdapter;
+            }
+            set {
+                this._holidaysDivideDateTableAdapter = value;
             }
         }
         
@@ -27473,10 +28365,6 @@ FROM     Simplepa";
                             && (this._eventvmTableAdapter.Connection != null))) {
                     return this._eventvmTableAdapter.Connection;
                 }
-                if (((this._holidaysTableAdapter != null) 
-                            && (this._holidaysTableAdapter.Connection != null))) {
-                    return this._holidaysTableAdapter.Connection;
-                }
                 if (((this._musicsTableAdapter != null) 
                             && (this._musicsTableAdapter.Connection != null))) {
                     return this._musicsTableAdapter.Connection;
@@ -27517,13 +28405,17 @@ FROM     Simplepa";
                             && (this._dataTypeTableAdapter.Connection != null))) {
                     return this._dataTypeTableAdapter.Connection;
                 }
-                if (((this._holidaysDivideDateTableAdapter != null) 
-                            && (this._holidaysDivideDateTableAdapter.Connection != null))) {
-                    return this._holidaysDivideDateTableAdapter.Connection;
-                }
                 if (((this._simplepaTableAdapter != null) 
                             && (this._simplepaTableAdapter.Connection != null))) {
                     return this._simplepaTableAdapter.Connection;
+                }
+                if (((this._holidaysTableAdapter != null) 
+                            && (this._holidaysTableAdapter.Connection != null))) {
+                    return this._holidaysTableAdapter.Connection;
+                }
+                if (((this._holidaysDivideDateTableAdapter != null) 
+                            && (this._holidaysDivideDateTableAdapter.Connection != null))) {
+                    return this._holidaysDivideDateTableAdapter.Connection;
                 }
                 return null;
             }
@@ -27562,9 +28454,6 @@ FROM     Simplepa";
                 if ((this._eventvmTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._holidaysTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._musicsTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -27595,10 +28484,13 @@ FROM     Simplepa";
                 if ((this._dataTypeTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._holidaysDivideDateTableAdapter != null)) {
+                if ((this._simplepaTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._simplepaTableAdapter != null)) {
+                if ((this._holidaysTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._holidaysDivideDateTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -27621,12 +28513,12 @@ FROM     Simplepa";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._holidaysDivideDateTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.HolidaysDivideDate.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._simplepaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Simplepa.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._holidaysDivideDateTableAdapter.Update(updatedRows));
+                    result = (result + this._simplepaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27684,12 +28576,21 @@ FROM     Simplepa";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._simpleUserTreesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SimpleUserTrees.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._holidaysTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Holidays.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._simpleUserTreesTableAdapter.Update(updatedRows));
+                    result = (result + this._holidaysTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._bSTreeCTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.BSTreeC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._bSTreeCTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27708,15 +28609,6 @@ FROM     Simplepa";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._musicsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._holidaysTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Holidays.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._holidaysTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27783,21 +28675,21 @@ FROM     Simplepa";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._bSTreeCTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.BSTreeC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._simpleUserTreesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SimpleUserTrees.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._bSTreeCTableAdapter.Update(updatedRows));
+                    result = (result + this._simpleUserTreesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._simplepaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Simplepa.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._holidaysDivideDateTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.HolidaysDivideDate.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._simplepaTableAdapter.Update(updatedRows));
+                    result = (result + this._holidaysDivideDateTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27819,11 +28711,11 @@ FROM     Simplepa";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._holidaysDivideDateTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.HolidaysDivideDate.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._simplepaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Simplepa.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._holidaysDivideDateTableAdapter.Update(addedRows));
+                    result = (result + this._simplepaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27875,11 +28767,19 @@ FROM     Simplepa";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._simpleUserTreesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SimpleUserTrees.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._holidaysTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Holidays.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._simpleUserTreesTableAdapter.Update(addedRows));
+                    result = (result + this._holidaysTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._bSTreeCTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.BSTreeC.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._bSTreeCTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27896,14 +28796,6 @@ FROM     Simplepa";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._musicsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._holidaysTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Holidays.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._holidaysTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27963,19 +28855,19 @@ FROM     Simplepa";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._bSTreeCTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.BSTreeC.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._simpleUserTreesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SimpleUserTrees.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._bSTreeCTableAdapter.Update(addedRows));
+                    result = (result + this._simpleUserTreesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._simplepaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Simplepa.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._holidaysDivideDateTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.HolidaysDivideDate.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._simplepaTableAdapter.Update(addedRows));
+                    result = (result + this._holidaysDivideDateTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27989,19 +28881,19 @@ FROM     Simplepa";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._simplepaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Simplepa.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._holidaysDivideDateTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.HolidaysDivideDate.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._simplepaTableAdapter.Update(deletedRows));
+                    result = (result + this._holidaysDivideDateTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._bSTreeCTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.BSTreeC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._simpleUserTreesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SimpleUserTrees.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._bSTreeCTableAdapter.Update(deletedRows));
+                    result = (result + this._simpleUserTreesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28061,14 +28953,6 @@ FROM     Simplepa";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._holidaysTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Holidays.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._holidaysTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._musicsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Musics.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -28085,11 +28969,19 @@ FROM     Simplepa";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._simpleUserTreesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SimpleUserTrees.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._bSTreeCTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.BSTreeC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._simpleUserTreesTableAdapter.Update(deletedRows));
+                    result = (result + this._bSTreeCTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._holidaysTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Holidays.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._holidaysTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28141,11 +29033,11 @@ FROM     Simplepa";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._holidaysDivideDateTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.HolidaysDivideDate.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._simplepaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Simplepa.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._holidaysDivideDateTableAdapter.Update(deletedRows));
+                    result = (result + this._simplepaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28228,10 +29120,6 @@ FROM     Simplepa";
                         && (this.MatchTableAdapterConnection(this._eventvmTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
             }
-            if (((this._holidaysTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._holidaysTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
-            }
             if (((this._musicsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._musicsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
@@ -28272,12 +29160,16 @@ FROM     Simplepa";
                         && (this.MatchTableAdapterConnection(this._dataTypeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
             }
-            if (((this._holidaysDivideDateTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._holidaysDivideDateTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
-            }
             if (((this._simplepaTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._simplepaTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
+            }
+            if (((this._holidaysTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._holidaysTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
+            }
+            if (((this._holidaysDivideDateTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._holidaysDivideDateTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -28383,15 +29275,6 @@ FROM     Simplepa";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._eventvmTableAdapter.Adapter);
                     }
                 }
-                if ((this._holidaysTableAdapter != null)) {
-                    revertConnections.Add(this._holidaysTableAdapter, this._holidaysTableAdapter.Connection);
-                    this._holidaysTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._holidaysTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._holidaysTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._holidaysTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._holidaysTableAdapter.Adapter);
-                    }
-                }
                 if ((this._musicsTableAdapter != null)) {
                     revertConnections.Add(this._musicsTableAdapter, this._musicsTableAdapter.Connection);
                     this._musicsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -28482,15 +29365,6 @@ FROM     Simplepa";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._dataTypeTableAdapter.Adapter);
                     }
                 }
-                if ((this._holidaysDivideDateTableAdapter != null)) {
-                    revertConnections.Add(this._holidaysDivideDateTableAdapter, this._holidaysDivideDateTableAdapter.Connection);
-                    this._holidaysDivideDateTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._holidaysDivideDateTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._holidaysDivideDateTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._holidaysDivideDateTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._holidaysDivideDateTableAdapter.Adapter);
-                    }
-                }
                 if ((this._simplepaTableAdapter != null)) {
                     revertConnections.Add(this._simplepaTableAdapter, this._simplepaTableAdapter.Connection);
                     this._simplepaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -28498,6 +29372,24 @@ FROM     Simplepa";
                     if (this._simplepaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._simplepaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._simplepaTableAdapter.Adapter);
+                    }
+                }
+                if ((this._holidaysTableAdapter != null)) {
+                    revertConnections.Add(this._holidaysTableAdapter, this._holidaysTableAdapter.Connection);
+                    this._holidaysTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._holidaysTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._holidaysTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._holidaysTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._holidaysTableAdapter.Adapter);
+                    }
+                }
+                if ((this._holidaysDivideDateTableAdapter != null)) {
+                    revertConnections.Add(this._holidaysDivideDateTableAdapter, this._holidaysDivideDateTableAdapter.Connection);
+                    this._holidaysDivideDateTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._holidaysDivideDateTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._holidaysDivideDateTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._holidaysDivideDateTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._holidaysDivideDateTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -28590,10 +29482,6 @@ FROM     Simplepa";
                     this._eventvmTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eventvmTableAdapter]));
                     this._eventvmTableAdapter.Transaction = null;
                 }
-                if ((this._holidaysTableAdapter != null)) {
-                    this._holidaysTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._holidaysTableAdapter]));
-                    this._holidaysTableAdapter.Transaction = null;
-                }
                 if ((this._musicsTableAdapter != null)) {
                     this._musicsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._musicsTableAdapter]));
                     this._musicsTableAdapter.Transaction = null;
@@ -28634,13 +29522,17 @@ FROM     Simplepa";
                     this._dataTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._dataTypeTableAdapter]));
                     this._dataTypeTableAdapter.Transaction = null;
                 }
-                if ((this._holidaysDivideDateTableAdapter != null)) {
-                    this._holidaysDivideDateTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._holidaysDivideDateTableAdapter]));
-                    this._holidaysDivideDateTableAdapter.Transaction = null;
-                }
                 if ((this._simplepaTableAdapter != null)) {
                     this._simplepaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._simplepaTableAdapter]));
                     this._simplepaTableAdapter.Transaction = null;
+                }
+                if ((this._holidaysTableAdapter != null)) {
+                    this._holidaysTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._holidaysTableAdapter]));
+                    this._holidaysTableAdapter.Transaction = null;
+                }
+                if ((this._holidaysDivideDateTableAdapter != null)) {
+                    this._holidaysDivideDateTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._holidaysDivideDateTableAdapter]));
+                    this._holidaysDivideDateTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -480,6 +480,7 @@
             this.cb_monthAPI.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.cb_monthAPI.AutoSize = false;
             this.cb_monthAPI.Items.AddRange(new object[] {
+            "All",
             "1",
             "2",
             "3",

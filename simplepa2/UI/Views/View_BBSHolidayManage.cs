@@ -57,26 +57,40 @@ namespace simplepa2.UI.Views
         }
 
         private void bt_gonggongUpdate_Click(object sender, EventArgs e)
-        {
+        {            
             string callMonth = cb_monthAPI.SelectedItem.ToString();
+            AlertBox.Show("공공 데이터로 부터 " + callMonth + "월의 휴일 데이터를 받아 옵니다.");
+
+            this.ShowLoader = true;
 
             try
             {
-                AlertBox.Show("공공 데이터로 부터 " + callMonth + "월의 휴일 데이터를 받아 옵니다.");
-                this.ShowLoader = true;
+       
 
-                // 데이터 받아오기
-                getAPI(callMonth);
+                if(callMonth.Equals("All"))
+                {
+                    for(int i=1; i < 13; i++)
+                    {
+                        // 데이터 받아오기
+                        getAPI(i.ToString());
+                    }
 
-                // 데이터 다시 로드
-                holidayDataLoad();
-
-                this.ShowLoader = false;
+                }
+                else
+                {
+                    // 데이터 받아오기
+                    getAPI(callMonth);
+                }                           
 
             } catch(Exception e1)
             {
                 MessageBox.Show("예외 발생 - 메시지 : " + e1.ToString());
-            }            
+            }
+
+            // 데이터 다시 로드
+            holidayDataLoad();
+
+            this.ShowLoader = false;
         }
 
         private void dg_holidayList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -103,7 +117,7 @@ namespace simplepa2.UI.Views
         {
             if(this.selectedHolidayID == 0)   // 0 이면 신규 
             {
-                this.holidaysDivideDateTableAdapter1.Insert(dt_picker.Value.Date, tb_holidayDescription.Text);
+                this.holidaysTableAdapter1.InsertUpdateQuery(dt_picker.Value.Date, tb_holidayDescription.Text);                    
                 AlertBox.Show("데이터를 저장 하였습니다.");
  
             }
@@ -165,9 +179,9 @@ namespace simplepa2.UI.Views
                         int day1 = int.Parse(locdate.Substring(6, 2));
                         int month1 = int.Parse(locdate.Substring(4, 2));
 
-                        DateTime dt2 = new DateTime(t1.Year, month1, day1);
-
-                        this.holidaysDivideDateTableAdapter1.Insert(dt2, dateName);
+                        DateTime dt2 = new DateTime(t1.Year, month1, day1);                        
+                        
+                        this.holidaysTableAdapter1.InsertUpdateQuery(dt2, dateName);
 
                     }
                 }                
@@ -196,7 +210,7 @@ namespace simplepa2.UI.Views
         private void bt_delete_Click(object sender, EventArgs e)
         {
             var row = dg_holidayList.SelectedRows;
-            this.holidaysDivideDateTableAdapter1.Delete(this.selectedHolidayID);
+            this.holidaysDivideDateTableAdapter1.Delete(holidayData.hDate);
 
             holidayDataLoad();
         }
