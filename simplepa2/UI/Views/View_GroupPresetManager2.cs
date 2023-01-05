@@ -1,5 +1,7 @@
 ﻿using Microsoft.Ajax.Utilities;
+using Nancy.Extensions;
 using System;
+using System.Data;
 using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
@@ -19,176 +21,67 @@ namespace simplepa2.UI.Views
 		}
 
 		// 콤보 처리용 
-		DataListAssetPresetGroup DataList { get; set; } = new DataListAssetPresetGroup();
+		DataListAssetPresetGroup sitename { get; set; } = new DataListAssetPresetGroup();
+		DataListAssetPresetGroup presetname { get; set; } = new DataListAssetPresetGroup();
 		// 선택된 차일드 
 
 		#region // 기본 처리 
 		private void gLoadData()
 		{
+			this.assetPresetGroupsTableAdapter1.FillBy(this.dataSet1.AssetPresetGroups);
+			var dt1 = this.dataSet1.AssetPresetGroups.Columns;
+
 			this.gdataGridView1.DataSource = null;
 			this.gdataGridView1.DataSource = gbindingSource2;
-			this.assetPresetGroupsTableAdapter1.Fill(this.dataSet1.AssetPresetGroups);
-			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+			//this.gdataGridView1.DataSource = this.dataSet1.AssetPresetGroups;
 
 			var t1 = dataSet1.AssetPresetGroups.GroupBy(p => p.Name).Select(x => x.First()).ToList();
-			DataList.lstAssetPresetGroups = t1.ToList();
-			gbindingSource1.DataSource = DataList;
+			presetname.lstAssetPresetGroups = t1.ToList();
+			var t2 = dataSet1.AssetPresetGroups.GroupBy(p => p.EMNAME).Select(x => x.First()).ToList();
+			sitename.lstAssetPresetGroups = t2.ToList();
+			gbindingSource1.DataSource = presetname;
+			sitebindingSource1.DataSource = sitename;
+
 			this.gcomboBox1.DataBindings.Clear();
 			this.gcomboBox1.DataBindings.Add(new Wisej.Web.Binding("DataSource", this.gbindingSource1, "lstAssetPresetGroups", true, Wisej.Web.DataSourceUpdateMode.OnPropertyChanged));
-			//comboBox1.DataSource = DataList.lstAssetPresetGroups;
+
+			this.sitecomboBox1.DataBindings.Clear();
+			this.sitecomboBox1.DataBindings.Add(new Wisej.Web.Binding("DataSource", this.sitebindingSource1, "lstAssetPresetGroups", true, Wisej.Web.DataSourceUpdateMode.OnPropertyChanged));
 		}
-
 		#endregion
-
 
 		#region // 콤보 및 컨트롤 처리 
 
-		private void SetStatusText(string text)
-		{
-		}
+		DataView dataView = new DataView();
+
 		private void gcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			AssetPresetGroupsRow asset = (AssetPresetGroupsRow)gcomboBox1.SelectedItem;
-			if (asset == null)
+			AssetPresetGroupsRow preset = (AssetPresetGroupsRow)gcomboBox1.SelectedItem;
+			AssetPresetGroupsRow site = (AssetPresetGroupsRow) sitecomboBox1.SelectedItem;
+			if (preset == null || site == null)
 				return;
 
-			this.dataSet1.Assets.ForEach(p => p.chk = 0);
-			var s1 = this.dataSet1.AssetPresetGroups.Where(p => p.Name == asset.Name && p.AssetId != 0).ToList();
-			var s2 = (from q1 in this.dataSet1.Assets
-					  join q2 in s1
-					  on q1.AssetId equals q2.AssetId
-					  select q1).ToList();
+			string f1 = "Name='" + preset.Name + "'";
+			string f2 = f1 + " and EMNAME='" + site.EMNAME + "'";
+			gbindingSource2.Filter = f2;
+			dataView = (DataView)gbindingSource2.List;
+			this.gdataGridView1.DataSource = dataView.ToTable();
+			//this.gdataGridView1.DataSource = this.dataSet1.AssetPresetGroups.Where(x => x.Name == preset.Name && x.EMNAME == site.EMNAME).ToList();
+			//			this.assetPresetGroupsTableAdapter1.FillBy(this.dataSet1.AssetPresetGroups);
 
-			foreach (var t1 in s2)
-			{
-				t1.chk = 1;
-			}
+			//			gbindingSource2.ResetBindings (true);
+			//			this.gdataGridView1.DataSource = null;
+			//			this.gdataGridView1.DataSource = gbindingSource2;
+			//this.assetPresetGroupsTableAdapter1.Fill(this.dataSet1.AssetPresetGroups);
 		}
 
-		#endregion
-
-
-		private void UpGroup()
-		{
-			AssetPresetGroupsRow asset = (AssetPresetGroupsRow)gcomboBox1.SelectedItem;
-			if (asset == null)
-				return;
-
-			int cnt = 0;
-			var s1 = this.dataSet1.AssetPresetGroups.Where(p => p.Name == asset.Name && p.AssetId != 0).ToList();
-
-			foreach (var s2 in s1)
-			{
-				this.dataSet1.AssetPresetGroups.RemoveAssetPresetGroupsRow(s2);
-			}
-
-			foreach (var t1 in this.dataSet1.Assets)
-			{
-				if (t1.chk != 1) continue;
-
-				var m1 = this.dataSet1.AssetPresetGroups.NewAssetPresetGroupsRow();
-				m1.AssetId = t1.AssetId;
-				m1.Name = asset.Name;
-				this.dataSet1.AssetPresetGroups.Rows.Add(m1);
-				cnt++;
-			}
-			this.assetPresetGroupsTableAdapter1.Update(this.dataSet1.AssetPresetGroups);
-			this.dataSet1.AcceptChanges();
-			SetStatusText("Update " + cnt.ToString() + " records.");
-		}
-
-		private void AddGroup()
-		{
-			/*
-						string str1 = gtextBox1.Text;
-			if (str1 == "")
-			{
-				return;
-			}
-
-			var t1 = this.assetGroupsTableAdapter.Find(str1);
-			if (t1 != null)
-			{
-				AlertBox.Show("동일한 이름이 존재합니다 :" + str1);
-				return;
-			}
-			this.assetGroupsTableAdapter.InsertQuery(str1);
-			this.dataSet1.AcceptChanges();
-			this.assetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
-
-			t1 = this.assetGroupsTableAdapter.Find(str1);
-
-			int cnt = 0;
-			foreach (var a1 in this.dataSet1.Assets)
-			{
-				if (a1.chk != 1) continue;
-
-				var m1 = this.dataSet1.AssetGroups.NewAssetGroupsRow();
-				m1.AssetId = a1.AssetId;
-				m1.Name = gtextBox1.Text;
-				this.dataSet1.AssetGroups.Rows.Add(m1);
-				this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
-				cnt++;
-			}
-			this.dataSet1.AcceptChanges();
-
-			AlertBox.Show("신규 데이터가 등록 되었습니다." + str1);
-			SetStatusText("Add " + cnt.ToString() + " records.");
-			gLoadData();
-
-			 */
-		}
-
-		// AssetGroup, AssetBase
-		private void DeleteGroup()
-		{
-/*
-			AssetGroupsRow asset = (AssetGroupsRow)gcomboBox1.SelectedItem;
-			string str1 = asset.Name;
-
-			if (str1 == "PRESET1" || str1 == "PRESET2" || str1 == "PRESET3" || str1 == "PRESET4")
-			{
-				AlertBox.Show("PRESET1~4 는 예약어 입니다.");
-				return;
-			}
-
-			// this method shows server-side modal.
-			if (MessageBox.Show(
-					"Are you sure you want to delete this record?", icon: MessageBoxIcon.Question,
-					buttons: MessageBoxButtons.YesNoCancel) == DialogResult.No)
-				return;
-
-
-			try
-			{
-				int cnt = 0;
-				var s1 = this.dataSet1.AssetGroups.Where(p => p.Name == gtextBox1.Text).ToList();
-
-				foreach (var s2 in s1)
-				{
-					s2.Delete();
-					cnt++;
-				}
-				this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
-				this.dataSet1.AcceptChanges();
-				SetStatusText("Delete " + cnt.ToString() + " records.");
-
-				gtextBox1.Text = "";
-				gLoadData();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
-			}
-*/
-		}
 
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.RowIndex < 0 || e.ColumnIndex < 1)
 				return;
 			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)gdataGridView1.Rows[e.RowIndex].Cells[1];
-			gdataGridView1.BeginEdit(true);
+			//gdataGridView1.BeginEdit(true);
 
 			if (Convert.ToBoolean(this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value) == false)
 			{
@@ -198,12 +91,28 @@ namespace simplepa2.UI.Views
 			{
 				this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value = false;
 			}
-			gdataGridView1.EndEdit();
+			//gdataGridView1.EndEdit();
+			//gbindingSource2.ResetBindings(false);
+			//gbindingSource2.ResumeBinding(); // .ResetItem(); // .ResetAllowNew();// .ResetBindings(false);
 		}
+		#endregion
 
 		private void gbutton1_Click(object sender, EventArgs e)
 		{
-			UpGroup();
+			foreach (var t1 in gdataGridView1.Rows)
+			{
+				DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)t1.Cells[1]; //DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)gdataGridView1.Rows[e.RowIndex].Cells[1];
+				int t2 = (int)t1.Cells[0].Value;
+				var dt1 = this.dataSet1.AssetPresetGroups.FirstOrDefault(p=>p.AssetPresetGroupId == t2);
+				int rlt = Convert.ToBoolean(checkedCell.Value) == true ? 1 : 0;
+
+				if (dt1.chk == rlt) continue;
+
+				dt1.chk = rlt;
+				this.assetPresetGroupsTableAdapter1.Update(this.dataSet1.AssetPresetGroups);
+				this.dataSet1.AcceptChanges();
+			}
+
 		}
 
     }

@@ -1319,7 +1319,18 @@ FROM     AssetPresetGroups</CommandText>
               <Mapping SourceColumn="AssetId" DataSetColumn="AssetId" />
               <Mapping SourceColumn="chk" DataSetColumn="chk" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  AssetPresetGroups.AssetPresetGroupId, AssetPresetGroups.Name, AssetPresetGroups.EMNAME, AssetPresetGroups.AssetId, AssetPresetGroups.chk, Assets.path
+FROM     AssetPresetGroups INNER JOIN
+               Assets ON AssetPresetGroups.AssetId = Assets.AssetId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="spa_bd_structTableAdapter" GeneratorDataComponentClassName="spa_bd_structTableAdapter" Name="spa_bd_struct" UserDataComponentName="spa_bd_structTableAdapter">
             <MainSource>
@@ -2570,7 +2581,7 @@ ORDER BY tindex DESC</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="AssetId" msprop:Generator_ColumnPropNameInTable="AssetIdColumn" msprop:Generator_ColumnPropNameInRow="AssetId" msprop:Generator_UserColumnName="AssetId" msprop:Generator_ColumnVarNameInTable="columnAssetId" type="xs:int" minOccurs="0" />
-              <xs:element name="chk" msprop:Generator_ColumnPropNameInTable="chkColumn" msprop:Generator_ColumnPropNameInRow="chk" msprop:Generator_UserColumnName="chk" msprop:Generator_ColumnVarNameInTable="columnchk" type="xs:int" minOccurs="0" />
+              <xs:element name="chk" msprop:Generator_UserColumnName="chk" msprop:Generator_ColumnPropNameInTable="chkColumn" msprop:Generator_ColumnPropNameInRow="chk" msprop:Generator_ColumnVarNameInTable="columnchk" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

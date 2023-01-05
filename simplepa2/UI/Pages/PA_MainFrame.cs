@@ -207,7 +207,8 @@ namespace simplepa2.UI.Pages
         View_SystemAccount2 view_SystemAccount2  = new View_SystemAccount2();
         View_BBSEMManage2 view_BBSEMManage2 = new View_BBSEMManage2();
         View_BBSEMChannel2 view_BBSEMChannel2 = new View_BBSEMChannel2();
-        
+        View_BBCEmergency2 view_BBCEmergency2 = new View_BBCEmergency2();
+
         public void openContentsView(string menuAccessibleName)
         {
             switch (menuAccessibleName)
@@ -219,7 +220,7 @@ namespace simplepa2.UI.Pages
                 case "presetBarItem": view_BBSPresetManage = bringFrontView<View_BBSPresetManage>("View_BBSPresetManage", false); break;
                 case "groupBarItem": view_BBSGroupManage = bringFrontView<View_BBSGroupManage>("View_BBSGroupManage", false); break;
                 case "iotApplicationBarItem": view_BBSIotApplication = bringFrontView<View_BBSIoTApplication>("View_BBSIoTApplication", false); break;
-                case "musicConfigurationBarItem": view_BBSMusicManage = bringFrontView<View_BBSMusicManage>("View_BBSMusicManage", false); break;
+                case "musicConfigurationBarItem": view_BBSMusicManage2 = bringFrontView<View_BBSMusicManage2>("View_BBSMusicManage2", false); break;
                 case "holidayBarItem": view_BBSHolidayManage = bringFrontView<View_BBSHolidayManage>("View_BBSHolidayManage", false); break;
                 // 설정 // navigationBarItem1 추가
                 case "assetBarItem": view_BBCAsset2 = bringFrontView<View_BBCAsset2>("View_BBCAsset2", false); break;
@@ -233,7 +234,7 @@ namespace simplepa2.UI.Pages
                 case "inputManageBarItem": view_BBCInput2 = bringFrontView<View_BBCInput2>("View_BBCInput2", false); break;
                 case "outputManageBarItem": view_BBCOutput2 = bringFrontView<View_BBCOutput2>("View_BBCOutput2", false); break;
                 case "musicManageBarItem": view_BBCMusic2 = bringFrontView<View_BBCMusic2>("View_BBCMusic2", false); break;
-                case "emergencyManageBarItem": view_BBCEmergency = bringFrontView<View_BBCEmergency>("View_BBCEmergency", false); break;
+                case "emergencyManageBarItem": view_BBCEmergency2 = bringFrontView<View_BBCEmergency2>("View_BBCEmergency2", false); break;
                 case "ampFailoverBarItem": view_BBCAmpFailover = bringFrontView<View_BBCAmpFailover>("View_BBCAmpFailover", false); break;
                 // 기록               
                 case "bbsHistoryBarItem": view_HistoryBBS = bringFrontView<View_HistoryBBS>("View_HistoryBBS", false); break;
@@ -449,6 +450,12 @@ namespace simplepa2.UI.Pages
                 case eSignalRMsgType.eVolume:
                     msg1.message = "Volume";
                     msg1.Msgtype = eVolume;
+                    break;
+
+                case eSignalRMsgType.eFileDown:
+                    msg1.message = "eFileDown";
+                    msg1.Msgtype = eVolume;
+                    msg1.user_data1 = device_name;
                     break;
 
                 case eSignalRMsgType.eOutChMove:

@@ -71,6 +71,7 @@ namespace simplepa2
             }
         }
 
+
         internal void AssetPresetSave()
         {
             List<string> preset = new List<string>();
@@ -618,6 +619,88 @@ namespace simplepa2
             em.state = t3.state;
             em.alarm = 2;
             this.Save(em);
+        }
+
+        #endregion
+
+        #region // 음원 처리
+
+        internal bool MusicFileSave(string path, string filename)
+        {
+
+            string path1 = Path.Combine(path, filename);
+            var mu1 = TagLib.File.Create(path1);
+            Thread.Sleep(50);
+            MusicsRow m2 = Ds1.Musics.NewMusicsRow();
+            string str1 = "00:00:00";
+            var r1 = mu1.Properties.Duration;
+            m2.FileName = filename;
+            m2.FileContent = "";
+            m2.deletable = "N";
+            Thread.Sleep(50);
+            str1 = r1.ToString(@"hh\:mm\:ss");
+            if (str1 == "00:00:00")
+                str1 = "00:00:01";
+            m2.duration = str1;
+            Ds1.Musics.Rows.Add(m2);
+            Tam.MusicsTableAdapter.Update(Ds1.Musics);
+            return true;
+        }
+
+        // 음원 폴더에서 가져와 디비 생성 
+        // 듀레이션은 시간이 걸리므로 타이머 쓰레드 처리 
+        public void MusicSave()
+        {
+            if (Ds1.Musics.Count > 1)
+                return;
+            string strFileUploadPath = @"C:\SimplePA2" + "\\Music\\";
+
+            if (!Directory.Exists(strFileUploadPath))
+            {
+                Directory.CreateDirectory(strFileUploadPath);
+            }
+
+            var directoryInfo = new DirectoryInfo(strFileUploadPath);
+            if (directoryInfo.Exists)
+            {
+                var files = directoryInfo.GetFiles("*.mp3");
+
+                foreach (var fileInfo in files)
+                {
+                    var mu1 = TagLib.File.Create(fileInfo.FullName);
+                    var m3 = Ds1.Musics.FirstOrDefault(p => p.FileName == fileInfo.Name);
+                    if (m3 != null)
+                    {
+                        if (m3.duration == "" || m3.duration == "00:00:00")
+                        {
+                            Thread.Sleep(50);
+                            string str2 = "00:00:00";
+                            var r1 = mu1.Properties.Duration;
+                            str2 = r1.ToString(@"hh\:mm\:ss");
+                            if (str2 == "00:00:00")
+                                str2 = "00:00:01";
+                            m3.duration = str2;
+                            Tam.MusicsTableAdapter.Update(Ds1.Musics);
+                        }
+                    }
+                    else
+                    {
+                        MusicsRow m2 = Ds1.Musics.NewMusicsRow();
+                        string str1 = "00:00:00";
+                        var r1 = mu1.Properties.Duration;
+                        m2.FileName = fileInfo.Name;
+                        m2.FileContent = "";
+                        m2.deletable = "N";
+                        Thread.Sleep(50);
+                        str1 = r1.ToString(@"hh\:mm\:ss");
+                        if (str1 == "00:00:00")
+                            str1 = "00:00:01";
+                        m2.duration = str1;
+                        Ds1.Musics.Rows.Add(m2);
+                        Tam.MusicsTableAdapter.Update(Ds1.Musics);
+                    }
+                }
+            }
         }
 
         #endregion
