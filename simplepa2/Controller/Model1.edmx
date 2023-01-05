@@ -14,8 +14,6 @@
           <Property Name="AssetId" Type="int" />
           <Property Name="EMNAME" Type="varchar(max)" />
         </EntityType>
-        <!--생성 중 오류 발생:
-경고 6002: 테이블/뷰 'simplePA.dbo.AssetPresetGroups'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
         <EntityType Name="AssetPresetGroups">
           <Key>
             <PropertyRef Name="AssetPresetGroupId" />
@@ -24,6 +22,7 @@
           <Property Name="Name" Type="varchar(max)" />
           <Property Name="AssetId" Type="int" />
           <Property Name="EMNAME" Type="varchar(max)" />
+          <Property Name="chk" Type="int" />
         </EntityType>
         <EntityType Name="Assets">
           <Key>
@@ -219,52 +218,11 @@
             <PropertyRef Name="SimplePAId" />
           </Key>
           <Property Name="SimplePAId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TileWidth" Type="int" Nullable="false" />
-          <Property Name="MapX" Type="int" Nullable="false" />
-          <Property Name="MapY" Type="int" Nullable="false" />
-          <Property Name="Zoom" Type="real" Nullable="false" />
-          <Property Name="debug" Type="int" Nullable="false" />
-          <Property Name="SpeakerIconSize" Type="int" Nullable="false" />
           <Property Name="UserName" Type="varchar(max)" />
-          <Property Name="EMServerIP" Type="varchar(max)" />
-          <Property Name="ServerIP" Type="varchar(max)" />
-          <Property Name="ServerPort" Type="varchar(max)" />
-          <Property Name="Reserved1" Type="varchar(max)" />
-          <Property Name="Reserved2" Type="varchar(max)" />
-          <Property Name="Reserved3" Type="varchar(max)" />
-          <Property Name="Reserved4" Type="varchar(max)" />
-          <Property Name="Reserved5" Type="varchar(max)" />
-          <Property Name="Reserved6" Type="varchar(max)" />
-          <Property Name="Reserved7" Type="varchar(max)" />
-          <Property Name="Reserved8" Type="varchar(max)" />
-          <Property Name="Reserved9" Type="varchar(max)" />
-          <Property Name="Reserved10" Type="varchar(max)" />
-          <Property Name="Reserved11" Type="varchar(max)" />
-          <Property Name="GPIOPort" Type="varchar(max)" />
-          <Property Name="Rport" Type="varchar(max)" />
-          <Property Name="Reserved15" Type="varchar(max)" />
-          <Property Name="Reserved16" Type="varchar(max)" />
-          <Property Name="Jigsangbalhwa" Type="int" Nullable="false" />
-          <Property Name="SpeakerTimer" Type="int" Nullable="false" />
-          <Property Name="inputvolume" Type="real" Nullable="false" />
-          <Property Name="outputvolume" Type="real" Nullable="false" />
-          <Property Name="disp" Type="int" Nullable="false" />
-          <Property Name="Multi_Ch" Type="int" Nullable="false" />
-          <Property Name="SoundDeviceNum" Type="int" Nullable="false" />
-          <Property Name="SoundDeviceName" Type="varchar(max)" />
-          <Property Name="Reserved17" Type="int" Nullable="false" />
-          <Property Name="scalelength" Type="real" />
-          <Property Name="length" Type="real" />
-          <Property Name="scale" Type="real" />
-          <Property Name="noise1" Type="int" />
-          <Property Name="noise2" Type="int" />
-          <Property Name="dsp_vol" Type="int" Nullable="false" />
-          <Property Name="dsp_vol_em" Type="int" Nullable="false" />
           <Property Name="sms_server" Type="varchar(max)" />
           <Property Name="sms_id" Type="varchar(max)" />
           <Property Name="sms_pw" Type="varchar(max)" />
           <Property Name="sms_rcvno" Type="varchar(max)" />
-          <Property Name="Pport" Type="int" Nullable="false" />
           <Property Name="EmMusic" Type="varchar(max)" />
         </EntityType>
         <!--생성 중 오류 발생:
@@ -315,6 +273,7 @@
         </EntityType>
         <EntityContainer Name="simplePAModelStoreContainer">
           <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssetPresetGroups" EntityType="Self.AssetPresetGroups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Assets" EntityType="Self.Assets" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BSroom" EntityType="Self.BSroom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BSTree" EntityType="Self.BSTree" Schema="dbo" store:Type="Tables" />
@@ -328,14 +287,6 @@
           <EntitySet Name="Musics" EntityType="Self.Musics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Simplepa" EntityType="Self.Simplepa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserTrees" EntityType="Self.UserTrees" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AssetPresetGroups" EntityType="Self.AssetPresetGroups" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [AssetPresetGroups].[AssetPresetGroupId] AS [AssetPresetGroupId], 
-    [AssetPresetGroups].[Name] AS [Name], 
-    [AssetPresetGroups].[AssetId] AS [AssetId], 
-    [AssetPresetGroups].[EMNAME] AS [EMNAME]
-    FROM [dbo].[AssetPresetGroups] AS [AssetPresetGroups]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="PlayItem" EntityType="Self.PlayItem" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [PlayItem].[PlayItemId] AS [PlayItemId], 
@@ -547,59 +498,6 @@
           <Property Name="deletable" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="duration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Simplepa">
-          <Key>
-            <PropertyRef Name="SimplePAId" />
-          </Key>
-          <Property Name="SimplePAId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TileWidth" Type="Int32" Nullable="false" />
-          <Property Name="MapX" Type="Int32" Nullable="false" />
-          <Property Name="MapY" Type="Int32" Nullable="false" />
-          <Property Name="Zoom" Type="Single" Nullable="false" />
-          <Property Name="debug" Type="Int32" Nullable="false" />
-          <Property Name="SpeakerIconSize" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="EMServerIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ServerIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ServerPort" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved11" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="GPIOPort" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Rport" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved15" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved16" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Jigsangbalhwa" Type="Int32" Nullable="false" />
-          <Property Name="SpeakerTimer" Type="Int32" Nullable="false" />
-          <Property Name="inputvolume" Type="Single" Nullable="false" />
-          <Property Name="outputvolume" Type="Single" Nullable="false" />
-          <Property Name="disp" Type="Int32" Nullable="false" />
-          <Property Name="Multi_Ch" Type="Int32" Nullable="false" />
-          <Property Name="SoundDeviceNum" Type="Int32" Nullable="false" />
-          <Property Name="SoundDeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Reserved17" Type="Int32" Nullable="false" />
-          <Property Name="scalelength" Type="Single" />
-          <Property Name="length" Type="Single" />
-          <Property Name="scale" Type="Single" />
-          <Property Name="noise1" Type="Int32" />
-          <Property Name="noise2" Type="Int32" />
-          <Property Name="dsp_vol" Type="Int32" Nullable="false" />
-          <Property Name="dsp_vol_em" Type="Int32" Nullable="false" />
-          <Property Name="sms_server" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="sms_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="sms_pw" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="sms_rcvno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Pport" Type="Int32" Nullable="false" />
-          <Property Name="EmMusic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="UserTrees">
           <Key>
             <PropertyRef Name="UserTreeId" />
@@ -647,13 +545,13 @@
           <EntitySet Name="Eventvm" EntityType="Self.Eventvm" />
           <EntitySet Name="Holidays" EntityType="Self.Holidays" />
           <EntitySet Name="Musics" EntityType="Self.Musics" />
-          <EntitySet Name="Simplepa" EntityType="Self.Simplepa" />
           <EntitySet Name="UserTrees" EntityType="Self.UserTrees" />
           <EntitySet Name="PlayItem" EntityType="Self.PlayItem" />
           <EntitySet Name="BSTreeC" EntityType="simplePAModel.BSTreeC" />
           <EntitySet Name="AssetPresetGroups" EntityType="simplePAModel.AssetPresetGroups" />
           <EntitySet Name="spa_bd_struct" EntityType="simplePAModel.spa_bd_struct" />
           <EntitySet Name="spa_site" EntityType="simplePAModel.spa_site" />
+          <EntitySet Name="Simplepa" EntityType="simplePAModel.Simplepa" />
         </EntityContainer>
         <EntityType Name="BSTreeC">
           <Key>
@@ -673,6 +571,7 @@
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="AssetId" Type="Int32" />
           <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="chk" Type="Int32" />
         </EntityType>
         <EntityType Name="spa_bd_struct">
           <Key>
@@ -702,6 +601,18 @@
           <Property Name="site_contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="site_images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="is_deleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Simplepa">
+          <Key>
+            <PropertyRef Name="SimplePAId" />
+          </Key>
+          <Property Name="SimplePAId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sms_server" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sms_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sms_pw" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sms_rcvno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EmMusic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -884,60 +795,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Simplepa">
-            <EntityTypeMapping TypeName="simplePAModel.Simplepa">
-              <MappingFragment StoreEntitySet="Simplepa">
-                <ScalarProperty Name="SimplePAId" ColumnName="SimplePAId" />
-                <ScalarProperty Name="TileWidth" ColumnName="TileWidth" />
-                <ScalarProperty Name="MapX" ColumnName="MapX" />
-                <ScalarProperty Name="MapY" ColumnName="MapY" />
-                <ScalarProperty Name="Zoom" ColumnName="Zoom" />
-                <ScalarProperty Name="debug" ColumnName="debug" />
-                <ScalarProperty Name="SpeakerIconSize" ColumnName="SpeakerIconSize" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="EMServerIP" ColumnName="EMServerIP" />
-                <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
-                <ScalarProperty Name="ServerPort" ColumnName="ServerPort" />
-                <ScalarProperty Name="Reserved1" ColumnName="Reserved1" />
-                <ScalarProperty Name="Reserved2" ColumnName="Reserved2" />
-                <ScalarProperty Name="Reserved3" ColumnName="Reserved3" />
-                <ScalarProperty Name="Reserved4" ColumnName="Reserved4" />
-                <ScalarProperty Name="Reserved5" ColumnName="Reserved5" />
-                <ScalarProperty Name="Reserved6" ColumnName="Reserved6" />
-                <ScalarProperty Name="Reserved7" ColumnName="Reserved7" />
-                <ScalarProperty Name="Reserved8" ColumnName="Reserved8" />
-                <ScalarProperty Name="Reserved9" ColumnName="Reserved9" />
-                <ScalarProperty Name="Reserved10" ColumnName="Reserved10" />
-                <ScalarProperty Name="Reserved11" ColumnName="Reserved11" />
-                <ScalarProperty Name="GPIOPort" ColumnName="GPIOPort" />
-                <ScalarProperty Name="Rport" ColumnName="Rport" />
-                <ScalarProperty Name="Reserved15" ColumnName="Reserved15" />
-                <ScalarProperty Name="Reserved16" ColumnName="Reserved16" />
-                <ScalarProperty Name="Jigsangbalhwa" ColumnName="Jigsangbalhwa" />
-                <ScalarProperty Name="SpeakerTimer" ColumnName="SpeakerTimer" />
-                <ScalarProperty Name="inputvolume" ColumnName="inputvolume" />
-                <ScalarProperty Name="outputvolume" ColumnName="outputvolume" />
-                <ScalarProperty Name="disp" ColumnName="disp" />
-                <ScalarProperty Name="Multi_Ch" ColumnName="Multi_Ch" />
-                <ScalarProperty Name="SoundDeviceNum" ColumnName="SoundDeviceNum" />
-                <ScalarProperty Name="SoundDeviceName" ColumnName="SoundDeviceName" />
-                <ScalarProperty Name="Reserved17" ColumnName="Reserved17" />
-                <ScalarProperty Name="scalelength" ColumnName="scalelength" />
-                <ScalarProperty Name="length" ColumnName="length" />
-                <ScalarProperty Name="scale" ColumnName="scale" />
-                <ScalarProperty Name="noise1" ColumnName="noise1" />
-                <ScalarProperty Name="noise2" ColumnName="noise2" />
-                <ScalarProperty Name="dsp_vol" ColumnName="dsp_vol" />
-                <ScalarProperty Name="dsp_vol_em" ColumnName="dsp_vol_em" />
-                <ScalarProperty Name="sms_server" ColumnName="sms_server" />
-                <ScalarProperty Name="sms_id" ColumnName="sms_id" />
-                <ScalarProperty Name="sms_pw" ColumnName="sms_pw" />
-                <ScalarProperty Name="sms_rcvno" ColumnName="sms_rcvno" />
-                <ScalarProperty Name="Pport" ColumnName="Pport" />
-                <ScalarProperty Name="EmMusic" ColumnName="EmMusic" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="UserTrees">
             <EntityTypeMapping TypeName="simplePAModel.UserTrees">
               <MappingFragment StoreEntitySet="UserTrees">
@@ -985,6 +842,7 @@
           <EntitySetMapping Name="AssetPresetGroups">
             <EntityTypeMapping TypeName="simplePAModel.AssetPresetGroups">
               <MappingFragment StoreEntitySet="AssetPresetGroups">
+                <ScalarProperty Name="chk" ColumnName="chk" />
                 <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
                 <ScalarProperty Name="AssetId" ColumnName="AssetId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1018,6 +876,19 @@
                 <ScalarProperty Name="site_description" ColumnName="site_description" />
                 <ScalarProperty Name="site_name" ColumnName="site_name" />
                 <ScalarProperty Name="site_index" ColumnName="site_index" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Simplepa">
+            <EntityTypeMapping TypeName="simplePAModel.Simplepa">
+              <MappingFragment StoreEntitySet="Simplepa">
+                <ScalarProperty Name="EmMusic" ColumnName="EmMusic" />
+                <ScalarProperty Name="sms_rcvno" ColumnName="sms_rcvno" />
+                <ScalarProperty Name="sms_pw" ColumnName="sms_pw" />
+                <ScalarProperty Name="sms_id" ColumnName="sms_id" />
+                <ScalarProperty Name="sms_server" ColumnName="sms_server" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="SimplePAId" ColumnName="SimplePAId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

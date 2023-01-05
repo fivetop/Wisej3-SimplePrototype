@@ -18,5 +18,6 @@ namespace simplepa2.Controller
         public string Name { get; set; }
         public Nullable<int> AssetId { get; set; }
         public string EMNAME { get; set; }
+        public Nullable<int> chk { get; set; }
     }
 }

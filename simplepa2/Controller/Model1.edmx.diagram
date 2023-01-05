@@ -16,13 +16,13 @@
         <EntityTypeShape EntityType="simplePAModel.Eventvm" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.Holidays" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.Musics" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="simplePAModel.Simplepa" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.UserTrees" Width="1.5" PointX="4.625" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.PlayItem" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.BSTreeC" Width="1.5" PointX="4.75" PointY="6.375" />
         <EntityTypeShape EntityType="simplePAModel.AssetPresetGroups" Width="1.5" PointX="7.375" PointY="10.75" />
         <EntityTypeShape EntityType="simplePAModel.spa_bd_struct" Width="1.5" PointX="9.375" PointY="11.75" />
         <EntityTypeShape EntityType="simplePAModel.spa_site" Width="1.5" PointX="11.375" PointY="11.75" />
+        <EntityTypeShape EntityType="simplePAModel.Simplepa" Width="1.5" PointX="10.625" PointY="0.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

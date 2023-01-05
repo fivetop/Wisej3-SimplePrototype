@@ -15,52 +15,11 @@ namespace simplepa2.Controller
     public partial class Simplepa
     {
         public int SimplePAId { get; set; }
-        public int TileWidth { get; set; }
-        public int MapX { get; set; }
-        public int MapY { get; set; }
-        public float Zoom { get; set; }
-        public int debug { get; set; }
-        public int SpeakerIconSize { get; set; }
         public string UserName { get; set; }
-        public string EMServerIP { get; set; }
-        public string ServerIP { get; set; }
-        public string ServerPort { get; set; }
-        public string Reserved1 { get; set; }
-        public string Reserved2 { get; set; }
-        public string Reserved3 { get; set; }
-        public string Reserved4 { get; set; }
-        public string Reserved5 { get; set; }
-        public string Reserved6 { get; set; }
-        public string Reserved7 { get; set; }
-        public string Reserved8 { get; set; }
-        public string Reserved9 { get; set; }
-        public string Reserved10 { get; set; }
-        public string Reserved11 { get; set; }
-        public string GPIOPort { get; set; }
-        public string Rport { get; set; }
-        public string Reserved15 { get; set; }
-        public string Reserved16 { get; set; }
-        public int Jigsangbalhwa { get; set; }
-        public int SpeakerTimer { get; set; }
-        public float inputvolume { get; set; }
-        public float outputvolume { get; set; }
-        public int disp { get; set; }
-        public int Multi_Ch { get; set; }
-        public int SoundDeviceNum { get; set; }
-        public string SoundDeviceName { get; set; }
-        public int Reserved17 { get; set; }
-        public Nullable<float> scalelength { get; set; }
-        public Nullable<float> length { get; set; }
-        public Nullable<float> scale { get; set; }
-        public Nullable<int> noise1 { get; set; }
-        public Nullable<int> noise2 { get; set; }
-        public int dsp_vol { get; set; }
-        public int dsp_vol_em { get; set; }
         public string sms_server { get; set; }
         public string sms_id { get; set; }
         public string sms_pw { get; set; }
         public string sms_rcvno { get; set; }
-        public int Pport { get; set; }
         public string EmMusic { get; set; }
     }
 }
