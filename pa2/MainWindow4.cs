@@ -142,14 +142,7 @@ namespace pa
 
         private void EMMetrixChOff()
         {
-            if (em_play.Count() == 0)
-                return;
-
-            if (_DanteDevice != null)
-            {
-                g.DSP_EMMakeGroupSpeaker(em_play, 0, BS_DSP_STATE.EM_BS_OFF, 0);
-            }
-            else
+            if (_DanteDevice == null)
             {
                 // 서버가 없으면 강제 방송 처리 
                 var splist1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2).ToList();
@@ -173,9 +166,11 @@ namespace pa
                     {
                     }
                 }
-
+                return;
             }
-
+            if (em_play.Count() == 0)
+                return;
+            g.DSP_EMMakeGroupSpeaker(em_play, 0, BS_DSP_STATE.EM_BS_OFF, 0);
             em_play = new List<DeviceRow>();
         }
 
