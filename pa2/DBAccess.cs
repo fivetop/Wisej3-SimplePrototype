@@ -511,6 +511,7 @@ namespace pa
 
         public void Eventvms(string event_text, string base_text, string state)
         {
+            if (g.mainWindow._DanteDevice == null) return;
             EventvmRow em = Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.event_text = event_text;
@@ -523,6 +524,7 @@ namespace pa
 
         public void EventvmIP(AssetsRow t3)
         {
+            if (g.mainWindow._DanteDevice == null) return;
             EventvmRow em = Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.ip = t3.ip;

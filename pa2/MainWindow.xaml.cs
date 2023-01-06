@@ -92,11 +92,7 @@ namespace pa
                 else
                     _chk직상발화.IsChecked = false;
 
-                // 콤포트와 네트웍 살려 놓기 처리 
-                ComPort_Initial();
-                Network_Initial();
-                // 다중 방송 초기화 처리 // 시험을 위해 막음 - 서비스시 오픈 처리 
-                InitMultiBS();
+                Initial_P1();
 
                 firsttime = false;
                 signalRClient.eRcvSigR += SignalRClient_eRcvSigR1;
@@ -113,15 +109,31 @@ namespace pa
             //                _tray.MinimizeToTray();
         }
 
-        private void ComPort_Initial()
+        // 서버가 없으면 로컬의 데이터로 비상방송 처리 되게 로직 구성 
+        // 만일 디비가 있다면 로컬은 무시하고 서버 데이터로 재구성 
+        // 내부에서는 gl.danteDevice._DanteDevice 만사용 
+
+        private void Initial_P1()
         {
+            gl.XMLDanteDevice(true);
+
+            // 다중방송 준비 
+            g.Log("MultiSound/Alive Inter Message Initial..");
+            IPC();
+            AliveTimerJob();
+            AliveMessage = GlobalMessage.Register("Alive");
+
             // 시리얼 통신 처리 
             g.Log("GPIO & P type Serial Initial..");
             OpenP();
             g.Log("R type Serial Initial..");
             OpenR();
-
+            // 네트웍 살려 놓기 처리 
+            Network_Initial();
+            // 다중 방송 초기화 처리 // 시험을 위해 막음 - 서비스시 오픈 처리 
+            InitMultiBS();
         }
+
 
         private void Initialtimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
@@ -147,48 +159,79 @@ namespace pa
                 return;
             }
             _DanteDevice = dBAccess.Device;
+            if (_DanteDevice != null)
+            {
+                if (_DanteDevice.Count >= gl.danteDevice._DanteDevice.Count)
+                {
+                    DB2LocalData();
+                }
+            }
             g.Log("SignalR Hub Connected ..");
 
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
             {
-                Init();
+                Initial_P3();
                 // 초기 화면 열리면서 한번 수행 
                 // GPIO 상태 받아오기
                 sendErr(0xFF);
             }));
         }
 
-        public void Init()
+        private void DB2LocalData()
+        {
+            foreach (var t1 in _DanteDevice)
+            {
+                var t2 = gl.danteDevice._DanteDevice.FirstOrDefault(p=>p.DeviceName == t1.DeviceName);
+
+                if (t2 == null)
+                {
+                    Device d1 = new Device();
+                    d1.DeviceName = t1.DeviceName;
+                    d1.chspk = t1.chspk;
+                    d1.EMNAME = t1.EMNAME;
+                    d1.ip_dspctrl = t1.ip_dspctrl;
+                    d1.DanteModelName = t1.DanteModelName;
+                    d1.device = t1.device;
+                    d1.ip = t1.ip;
+                    d1.ip_dspctrl = t1.ip_dspctrl;
+                    d1.name = t1.name;
+
+                    //gl.danteDevice._DanteDevice.Add(d1);
+                    //gl.XMLDanteDevice(false);
+                }
+                else 
+                {
+                    t2.chspk = t1.chspk;
+                    t2.EMNAME = t1.EMNAME;
+                    t2.dsp_chno = t1.dsp_chno;
+                    gl.XMLDanteDevice(false);
+                }
+            }
+        }
+
+
+        // 서버 연결후 처리 
+        public void Initial_P3()
         {
             MakeSpeakerIP();
             ReadMusic();
+            _tray = new TrayIcon();
+            //BSqlite.DBCopy();
 
             gl.XMLDanteDevice(true);
 
             //DBCopy();
 
             g.Log("DataBase Initial..");
-            //BSqlite.DBCopy();
             //g.Load("SimplePA EM Server가 로딩중입니다..");
-
-
             g.dsp.OnReceiveMessage += Dsp_OnReceiveMessage;
             // ComPort_Initial();
-            _tray = new TrayIcon();
-
             DSPDeviceCheck();
-            g.Log("MultiSound/Alive Inter Message Initial..");
-            IPC();
-
-            AliveTimerJob();
-            AliveMessage = GlobalMessage.Register("Alive");
-
 
             g.Log("Volume Initial..");
             // 볼륨 초기화 처리  
-            InitVolume();
-
             g.Log("multiBS Thread running..");
+            InitVolume();
             // 다중 방송 초기화 처리 // 시험을 위해 막음 - 서비스시 오픈 처리 
             //InitMultiBS();
             //Network_Initial();
@@ -516,6 +559,10 @@ namespace pa
         Guid testGuid;
         private async void _but4_Click(object sender, RoutedEventArgs e)
         {
+            checkPreset("11111110", 7, "11111111");
+            //checkPreset("111111111", 8, "111111110");
+
+
             /*
             testGuid = Guid.NewGuid();
             SignalRMsg msg1 = new SignalRMsg();
@@ -535,12 +582,15 @@ namespace pa
 
         private void _but5_Click(object sender, RoutedEventArgs e)
         {
+            checkPreset("111111111", 8, "111111110");
+            /*
             SignalRMsg msg1 = new SignalRMsg();
             msg1.message = "Stop";
             msg1.EMNAME = g._EMClient.EM_NAME;
             msg1.Guid = testGuid;
             msg1.Msgtype = eSignalRMsgType.eStop;
             g.mainWindow.RcvSigR(msg1);
+            */
         }
 
         // 오디오 처리용 

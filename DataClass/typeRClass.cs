@@ -22,8 +22,9 @@ namespace DataClass
         MUL_BS = 5,
         EM_BS_ON = 6,
         EM_BS_OFF = 7,
-        MIC_BS = 8,
-        RESERVED = 9
+        EM_LOCAL= 8,
+        MIC_BS = 9,
+        RESERVED = 10
     }
 
     public enum COMM_ASC : byte

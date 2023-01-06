@@ -18,6 +18,7 @@ namespace DataClass
 		public string ip { get; set; }
 		public string EMNAME { get; set; }
 		public string ip_dspctrl { get; set; } // DSP Controller IP 
+		public int dsp_chno { get; set; } // DSP Controller IP 
 		public string name { get; set; }
 		public string DeviceName { get; set; }
 		public string DanteModelName { get; set; }
@@ -37,7 +38,7 @@ namespace DataClass
 			EMNAME = "";
 			ip_dspctrl = "";
 			name = "";
-
+			chspk = 1;
 			DeviceName = "";
 			DanteModelName = "";
 
