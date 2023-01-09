@@ -342,13 +342,13 @@ namespace simplepa2.UI.Pages
                     switch (msg1.seqno)
                     {
                         case 0:
-                            dBSqlite.Eventvm(m0, m1, m2);
+                            dBSqlite.Eventpreset(m0, m1, m2);
                             break;
                         case 1:
                         case 2:
                         case 3:
                         case 4:
-                            dBSqlite.Eventvm(m0, m1, m2);
+                            dBSqlite.Eventpreset(m0, m1, m2);
                             break;
                     }
                     dBSqlite.EMServerupdatePreset(msg1.EMNAME,msg1.seqno, msg1.state);

@@ -611,6 +611,17 @@ namespace simplepa2
             Tam.EventsyslogTableAdapter.Update(Ds1.Eventsyslog);
         }
 
+        public void Eventpreset(string event_text, string base_text, string state)
+        {
+            EventpresetRow em = Ds1.Eventpreset.NewEventpresetRow();
+            em.write_time = DateTime.Now;
+            em.event_text = event_text;
+            em.path = base_text;
+            em.state = state;
+            em.alarm = 0;
+            Ds1.Eventpreset.Rows.Add(em);
+            Tam.EventpresetTableAdapter.Update(Ds1.Eventpreset);
+        }
         public void Eventvm(string event_text, string base_text, string state)
         {
             EventvmRow em = Ds1.Eventvm.NewEventvmRow();
