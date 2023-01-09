@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
-            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
-            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry5 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry6 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry7 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.ImageListEntry imageListEntry8 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry9 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry10 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry11 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry12 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry13 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
+            Wisej.Web.ImageListEntry imageListEntry14 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
+            Wisej.Web.ImageListEntry imageListEntry15 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry16 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry17 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry18 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry19 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry20 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry21 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry22 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry23 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry24 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
             this.imageList3 = new Wisej.Web.ImageList(this.components);
             this.imageList1 = new Wisej.Web.ImageList(this.components);
             this.imageList2 = new Wisej.Web.ImageList(this.components);
@@ -103,27 +103,27 @@
             // imageList3
             // 
             this.imageList3.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry1,
-            imageListEntry2});
+            imageListEntry13,
+            imageListEntry14});
             // 
             // imageList1
             // 
             this.imageList1.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry3,
-            imageListEntry4,
-            imageListEntry5,
-            imageListEntry6,
-            imageListEntry7});
+            imageListEntry15,
+            imageListEntry16,
+            imageListEntry17,
+            imageListEntry18,
+            imageListEntry19});
             this.imageList1.ImageSize = new System.Drawing.Size(64, 64);
             // 
             // imageList2
             // 
             this.imageList2.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry8,
-            imageListEntry9,
-            imageListEntry10,
-            imageListEntry11,
-            imageListEntry12});
+            imageListEntry20,
+            imageListEntry21,
+            imageListEntry22,
+            imageListEntry23,
+            imageListEntry24});
             this.imageList2.ImageSize = new System.Drawing.Size(32, 32);
             // 
             // Eventbs
@@ -310,6 +310,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 190);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 14;
             this.dataGridView1.RowHeadersWidthSizeMode = Wisej.Web.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ShowFocusCell = false;
@@ -322,7 +323,7 @@
             this.colSeq.DataPropertyName = "seq";
             this.colSeq.HeaderText = "No";
             this.colSeq.Name = "colSeq";
-            this.colSeq.Width = 50;
+            this.colSeq.Width = 60;
             // 
             // chk
             // 

@@ -164,6 +164,7 @@
             this.hdataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditOnEnter;
             this.hdataGridView1.Location = new System.Drawing.Point(0, 0);
             this.hdataGridView1.Name = "hdataGridView1";
+            this.hdataGridView1.RowHeadersVisible = false;
             this.hdataGridView1.Size = new System.Drawing.Size(873, 540);
             this.hdataGridView1.TabIndex = 4;
             componentTool2.ImageSource = "resource.wx/Wisej.Ext.MaterialDesign/square-add-button.svg?color=#3F76BF";

@@ -83,6 +83,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(756, 434);
             this.dataGridView3.TabIndex = 2;
             // 
@@ -92,7 +93,7 @@
             this.colDeviceid.HeaderText = "No";
             this.colDeviceid.Name = "colDeviceid";
             this.colDeviceid.ReadOnly = true;
-            this.colDeviceid.Width = 40;
+            this.colDeviceid.Width = 60;
             // 
             // colDevicename
             // 

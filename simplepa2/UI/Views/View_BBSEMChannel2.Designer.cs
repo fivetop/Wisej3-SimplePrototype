@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colBstreeid = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -75,6 +75,7 @@
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 20);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(822, 484);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -106,8 +107,8 @@
             // colWtime
             // 
             this.colWtime.DataPropertyName = "wtime";
-            dataGridViewCellStyle2.Format = "G";
-            this.colWtime.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "G";
+            this.colWtime.DefaultCellStyle = dataGridViewCellStyle1;
             this.colWtime.HeaderText = "시작시간";
             this.colWtime.Name = "colWtime";
             // 

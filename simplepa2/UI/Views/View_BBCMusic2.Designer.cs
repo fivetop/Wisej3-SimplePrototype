@@ -178,6 +178,7 @@
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 72);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(820, 388);
             this.dataGridView1.TabIndex = 3;
             // 
@@ -187,7 +188,7 @@
             this.colDeviceid.HeaderText = "No";
             this.colDeviceid.Name = "colDeviceid";
             this.colDeviceid.ReadOnly = true;
-            this.colDeviceid.Width = 40;
+            this.colDeviceid.Width = 60;
             // 
             // colDevicename
             // 

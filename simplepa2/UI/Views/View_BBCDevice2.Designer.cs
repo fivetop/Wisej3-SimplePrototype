@@ -41,6 +41,7 @@
             this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colIp_Dspctrl = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Name = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Chno = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Vol_Em = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -50,7 +51,6 @@
             this.popTestButton = new Wisej.Web.Button();
             this.button1 = new Wisej.Web.Button();
             this.panel2 = new Wisej.Web.Panel();
-            this.colIp_Dspctrl = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -93,6 +93,7 @@
             this.dataGridView3.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(20, 72);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(830, 484);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.DataUpdated += new Wisej.Web.DataGridViewDataUpdatedEventHandler(this.dataGridView3_DataUpdated);
@@ -103,7 +104,7 @@
             this.colDeviceid.HeaderText = "No";
             this.colDeviceid.Name = "colDeviceid";
             this.colDeviceid.ReadOnly = true;
-            this.colDeviceid.Width = 40;
+            this.colDeviceid.Width = 60;
             // 
             // colEMNAME
             // 
@@ -153,6 +154,13 @@
             this.colPath_1.Name = "colPath_1";
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
+            // 
+            // colIp_Dspctrl
+            // 
+            this.colIp_Dspctrl.DataPropertyName = "ip_dspctrl";
+            this.colIp_Dspctrl.HeaderText = "DSP제어IP";
+            this.colIp_Dspctrl.Name = "colIp_Dspctrl";
+            this.colIp_Dspctrl.Width = 110;
             // 
             // colDsp_Name
             // 
@@ -249,13 +257,6 @@
             this.panel2.Size = new System.Drawing.Size(870, 576);
             this.panel2.TabIndex = 5;
             this.panel2.TabStop = true;
-            // 
-            // colIp_Dspctrl
-            // 
-            this.colIp_Dspctrl.DataPropertyName = "ip_dspctrl";
-            this.colIp_Dspctrl.HeaderText = "DSP제어IP";
-            this.colIp_Dspctrl.Name = "colIp_Dspctrl";
-            this.colIp_Dspctrl.Width = 110;
             // 
             // View_BBCDevice2
             // 

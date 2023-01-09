@@ -97,6 +97,7 @@
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 20);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.Size = new System.Drawing.Size(822, 484);
             this.dataGridView1.TabIndex = 0;
@@ -270,13 +271,13 @@
             // 
             this.assetsTableAdapter.ClearBeforeFill = true;
             // 
-            // View_BBCAsset
+            // View_BBCAsset2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ptop);
             this.Dock = Wisej.Web.DockStyle.Fill;
-            this.Name = "View_BBCAsset";
+            this.Name = "View_BBCAsset2";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(902, 616);
             this.Load += new System.EventHandler(this.BSAsset_Load);

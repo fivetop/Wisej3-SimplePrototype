@@ -99,7 +99,7 @@
             this.DeviceId.DataPropertyName = "DeviceId";
             this.DeviceId.HeaderText = "No";
             this.DeviceId.Name = "DeviceId";
-            this.DeviceId.Width = 50;
+            this.DeviceId.Width = 60;
             // 
             // device_Category
             // 

@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry13 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
-            Wisej.Web.ImageListEntry imageListEntry14 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
-            Wisej.Web.ImageListEntry imageListEntry15 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry16 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry17 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry18 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry19 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.ImageListEntry imageListEntry20 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry21 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry22 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry23 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry24 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
+            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
+            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry5 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry6 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry7 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry8 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry9 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry10 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry11 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry12 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
             this.imageList3 = new Wisej.Web.ImageList(this.components);
             this.imageList1 = new Wisej.Web.ImageList(this.components);
             this.imageList2 = new Wisej.Web.ImageList(this.components);
@@ -123,27 +123,27 @@
             // imageList3
             // 
             this.imageList3.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry13,
-            imageListEntry14});
+            imageListEntry1,
+            imageListEntry2});
             // 
             // imageList1
             // 
             this.imageList1.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry15,
-            imageListEntry16,
-            imageListEntry17,
-            imageListEntry18,
-            imageListEntry19});
+            imageListEntry3,
+            imageListEntry4,
+            imageListEntry5,
+            imageListEntry6,
+            imageListEntry7});
             this.imageList1.ImageSize = new System.Drawing.Size(64, 64);
             // 
             // imageList2
             // 
             this.imageList2.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry20,
-            imageListEntry21,
-            imageListEntry22,
-            imageListEntry23,
-            imageListEntry24});
+            imageListEntry8,
+            imageListEntry9,
+            imageListEntry10,
+            imageListEntry11,
+            imageListEntry12});
             this.imageList2.ImageSize = new System.Drawing.Size(32, 32);
             // 
             // Eventbs
@@ -403,6 +403,7 @@
             this.evdataGridView1.Margin = new Wisej.Web.Padding(10);
             this.evdataGridView1.MultiSelect = false;
             this.evdataGridView1.Name = "evdataGridView1";
+            this.evdataGridView1.RowHeadersVisible = false;
             this.evdataGridView1.RowHeadersWidth = 14;
             this.evdataGridView1.Size = new System.Drawing.Size(428, 288);
             this.evdataGridView1.TabIndex = 2;
@@ -418,9 +419,9 @@
             // colWrite_Time
             // 
             this.colWrite_Time.DataPropertyName = "write_time";
-            dataGridViewCellStyle3.Format = "f";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "f";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
             this.colWrite_Time.HeaderText = "발생일자";
             this.colWrite_Time.Name = "colWrite_Time";
             this.colWrite_Time.Width = 210;
@@ -493,6 +494,7 @@
             this.evdataGridView3.Margin = new Wisej.Web.Padding(10);
             this.evdataGridView3.MultiSelect = false;
             this.evdataGridView3.Name = "evdataGridView3";
+            this.evdataGridView3.RowHeadersVisible = false;
             this.evdataGridView3.RowHeadersWidth = 14;
             this.evdataGridView3.Size = new System.Drawing.Size(412, 288);
             this.evdataGridView3.TabIndex = 3;
@@ -535,9 +537,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "write_time";
-            dataGridViewCellStyle4.Format = "f";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "f";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn6.HeaderText = "변경일자";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 210;
