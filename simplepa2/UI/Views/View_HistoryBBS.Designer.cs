@@ -33,17 +33,17 @@
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colEventbsid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송종류 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송결과 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송소유자 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송음원 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송시간 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
-            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colAlarm = new Wisej.Web.DataGridViewTextBoxColumn();
             this.eventbsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
@@ -110,6 +110,35 @@
             this.colEventbsid.ReadOnly = true;
             this.colEventbsid.Width = 60;
             // 
+            // colWrite_Time
+            // 
+            this.colWrite_Time.DataPropertyName = "write_time";
+            dataGridViewCellStyle1.Format = "G";
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colWrite_Time.HeaderText = "방송시작";
+            this.colWrite_Time.Name = "colWrite_Time";
+            this.colWrite_Time.Width = 200;
+            // 
+            // colPath
+            // 
+            this.colPath.DataPropertyName = "path";
+            this.colPath.HeaderText = "방송위치";
+            this.colPath.Name = "colPath";
+            this.colPath.Width = 140;
+            // 
+            // colEvent_Text
+            // 
+            this.colEvent_Text.DataPropertyName = "event_text";
+            this.colEvent_Text.HeaderText = "방송내용";
+            this.colEvent_Text.Name = "colEvent_Text";
+            this.colEvent_Text.Width = 120;
+            // 
+            // colState
+            // 
+            this.colState.DataPropertyName = "state";
+            this.colState.HeaderText = "state";
+            this.colState.Name = "colState";
+            // 
             // 방송종류
             // 
             this.방송종류.HeaderText = "방송종류";
@@ -143,46 +172,17 @@
             this.방송시간.Visible = false;
             this.방송시간.Width = 200;
             // 
-            // colWrite_Time
-            // 
-            this.colWrite_Time.DataPropertyName = "write_time";
-            dataGridViewCellStyle1.Format = "G";
-            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colWrite_Time.HeaderText = "방송시작";
-            this.colWrite_Time.Name = "colWrite_Time";
-            this.colWrite_Time.Width = 200;
-            // 
-            // colEvent_Text
-            // 
-            this.colEvent_Text.DataPropertyName = "event_text";
-            this.colEvent_Text.HeaderText = "방송내용";
-            this.colEvent_Text.Name = "colEvent_Text";
-            this.colEvent_Text.Width = 120;
-            // 
             // colIp
             // 
             this.colIp.DataPropertyName = "ip";
             this.colIp.HeaderText = "ip";
             this.colIp.Name = "colIp";
             // 
-            // colPath
-            // 
-            this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "방송위치";
-            this.colPath.Name = "colPath";
-            this.colPath.Width = 140;
-            // 
             // colDevicename
             // 
             this.colDevicename.DataPropertyName = "DeviceName";
             this.colDevicename.HeaderText = "DeviceName";
             this.colDevicename.Name = "colDevicename";
-            // 
-            // colState
-            // 
-            this.colState.DataPropertyName = "state";
-            this.colState.HeaderText = "state";
-            this.colState.Name = "colState";
             // 
             // colAlarm
             // 
@@ -252,6 +252,7 @@
             this.popTestButton.Size = new System.Drawing.Size(100, 32);
             this.popTestButton.TabIndex = 83;
             this.popTestButton.Text = "검색";
+            this.popTestButton.Click += new System.EventHandler(this.popTestButton_Click);
             // 
             // button3
             // 

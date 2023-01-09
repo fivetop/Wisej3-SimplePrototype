@@ -32,16 +32,16 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.수신장비 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.수신방법 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.수신정보 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEventpresetid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
-            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.수신방법 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.수신정보 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.수신장비 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colAlarm = new Wisej.Web.DataGridViewTextBoxColumn();
             this.eventpresetBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
@@ -100,24 +100,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 68;
             // 
-            // 수신장비
-            // 
-            this.수신장비.HeaderText = "수신장비";
-            this.수신장비.Name = "수신장비";
-            this.수신장비.Width = 200;
-            // 
-            // 수신방법
-            // 
-            this.수신방법.HeaderText = "수신방법";
-            this.수신방법.Name = "수신방법";
-            this.수신방법.Width = 150;
-            // 
-            // 수신정보
-            // 
-            this.수신정보.HeaderText = "수신정보";
-            this.수신정보.Name = "수신정보";
-            this.수신정보.Width = 150;
-            // 
             // colEventpresetid
             // 
             this.colEventpresetid.DataPropertyName = "EventpresetId";
@@ -135,19 +117,6 @@
             this.colWrite_Time.Name = "colWrite_Time";
             this.colWrite_Time.Width = 200;
             // 
-            // colEvent_Text
-            // 
-            this.colEvent_Text.DataPropertyName = "event_text";
-            this.colEvent_Text.HeaderText = "내역";
-            this.colEvent_Text.Name = "colEvent_Text";
-            this.colEvent_Text.Width = 120;
-            // 
-            // colIp
-            // 
-            this.colIp.DataPropertyName = "ip";
-            this.colIp.HeaderText = "ip";
-            this.colIp.Name = "colIp";
-            // 
             // colPath
             // 
             this.colPath.DataPropertyName = "path";
@@ -155,11 +124,12 @@
             this.colPath.Name = "colPath";
             this.colPath.Width = 140;
             // 
-            // colDevicename
+            // colEvent_Text
             // 
-            this.colDevicename.DataPropertyName = "DeviceName";
-            this.colDevicename.HeaderText = "DeviceName";
-            this.colDevicename.Name = "colDevicename";
+            this.colEvent_Text.DataPropertyName = "event_text";
+            this.colEvent_Text.HeaderText = "내역";
+            this.colEvent_Text.Name = "colEvent_Text";
+            this.colEvent_Text.Width = 120;
             // 
             // colState
             // 
@@ -167,6 +137,36 @@
             this.colState.HeaderText = "상세";
             this.colState.Name = "colState";
             this.colState.Width = 140;
+            // 
+            // 수신방법
+            // 
+            this.수신방법.HeaderText = "수신방법";
+            this.수신방법.Name = "수신방법";
+            this.수신방법.Width = 150;
+            // 
+            // 수신정보
+            // 
+            this.수신정보.HeaderText = "수신정보";
+            this.수신정보.Name = "수신정보";
+            this.수신정보.Width = 150;
+            // 
+            // 수신장비
+            // 
+            this.수신장비.HeaderText = "수신장비";
+            this.수신장비.Name = "수신장비";
+            this.수신장비.Width = 200;
+            // 
+            // colIp
+            // 
+            this.colIp.DataPropertyName = "ip";
+            this.colIp.HeaderText = "ip";
+            this.colIp.Name = "colIp";
+            // 
+            // colDevicename
+            // 
+            this.colDevicename.DataPropertyName = "DeviceName";
+            this.colDevicename.HeaderText = "DeviceName";
+            this.colDevicename.Name = "colDevicename";
             // 
             // colAlarm
             // 
@@ -259,6 +259,7 @@
             this.button4.Size = new System.Drawing.Size(100, 32);
             this.button4.TabIndex = 83;
             this.button4.Text = "검색";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 

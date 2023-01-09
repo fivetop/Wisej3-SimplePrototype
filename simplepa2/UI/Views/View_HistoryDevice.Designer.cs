@@ -34,16 +34,16 @@
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colEventdeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.장비종류 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colAlarm = new Wisej.Web.DataGridViewTextBoxColumn();
             this.카테고리 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.변경이력 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.상세 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colAlarm = new Wisej.Web.DataGridViewTextBoxColumn();
             this.eventdeviceBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
             this.panel3 = new Wisej.Web.Panel();
@@ -119,6 +119,24 @@
             this.colWrite_Time.Name = "colWrite_Time";
             this.colWrite_Time.Width = 200;
             // 
+            // colPath
+            // 
+            this.colPath.DataPropertyName = "path";
+            this.colPath.HeaderText = "장비위치";
+            this.colPath.Name = "colPath";
+            // 
+            // colEvent_Text
+            // 
+            this.colEvent_Text.DataPropertyName = "event_text";
+            this.colEvent_Text.HeaderText = "event_text";
+            this.colEvent_Text.Name = "colEvent_Text";
+            // 
+            // colDevicename
+            // 
+            this.colDevicename.DataPropertyName = "DeviceName";
+            this.colDevicename.HeaderText = "장비명";
+            this.colDevicename.Name = "colDevicename";
+            // 
             // 장비종류
             // 
             this.장비종류.HeaderText = "장비종류";
@@ -131,6 +149,18 @@
             this.colIp.HeaderText = "IP주소";
             this.colIp.Name = "colIp";
             this.colIp.Width = 120;
+            // 
+            // colState
+            // 
+            this.colState.DataPropertyName = "state";
+            this.colState.HeaderText = "state";
+            this.colState.Name = "colState";
+            // 
+            // colAlarm
+            // 
+            this.colAlarm.DataPropertyName = "alarm";
+            this.colAlarm.HeaderText = "alarm";
+            this.colAlarm.Name = "colAlarm";
             // 
             // 카테고리
             // 
@@ -149,36 +179,6 @@
             this.상세.HeaderText = "상세";
             this.상세.Name = "상세";
             this.상세.Width = 200;
-            // 
-            // colEvent_Text
-            // 
-            this.colEvent_Text.DataPropertyName = "event_text";
-            this.colEvent_Text.HeaderText = "event_text";
-            this.colEvent_Text.Name = "colEvent_Text";
-            // 
-            // colPath
-            // 
-            this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "장비위치";
-            this.colPath.Name = "colPath";
-            // 
-            // colDevicename
-            // 
-            this.colDevicename.DataPropertyName = "DeviceName";
-            this.colDevicename.HeaderText = "장비명";
-            this.colDevicename.Name = "colDevicename";
-            // 
-            // colState
-            // 
-            this.colState.DataPropertyName = "state";
-            this.colState.HeaderText = "state";
-            this.colState.Name = "colState";
-            // 
-            // colAlarm
-            // 
-            this.colAlarm.DataPropertyName = "alarm";
-            this.colAlarm.HeaderText = "alarm";
-            this.colAlarm.Name = "colAlarm";
             // 
             // eventdeviceBindingSource
             // 
@@ -265,6 +265,7 @@
             this.button4.Size = new System.Drawing.Size(100, 32);
             this.button4.TabIndex = 83;
             this.button4.Text = "검색";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 

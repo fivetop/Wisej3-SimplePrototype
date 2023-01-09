@@ -34,9 +34,9 @@
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colEventvmid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.수신반타입 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.포트번호 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.수신정보 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -121,6 +121,13 @@
             this.colWrite_Time.Name = "colWrite_Time";
             this.colWrite_Time.Width = 200;
             // 
+            // colPath
+            // 
+            this.colPath.DataPropertyName = "path";
+            this.colPath.HeaderText = "수신위치";
+            this.colPath.Name = "colPath";
+            this.colPath.Width = 140;
+            // 
             // colEvent_Text
             // 
             this.colEvent_Text.DataPropertyName = "event_text";
@@ -134,13 +141,6 @@
             this.colState.HeaderText = "상태";
             this.colState.Name = "colState";
             this.colState.Width = 140;
-            // 
-            // colPath
-            // 
-            this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "수신위치";
-            this.colPath.Name = "colPath";
-            this.colPath.Width = 140;
             // 
             // 수신반타입
             // 
@@ -275,6 +275,7 @@
             this.popTestButton.Size = new System.Drawing.Size(100, 32);
             this.popTestButton.TabIndex = 83;
             this.popTestButton.Text = "검색";
+            this.popTestButton.Click += new System.EventHandler(this.popTestButton_Click);
             // 
             // button3
             // 

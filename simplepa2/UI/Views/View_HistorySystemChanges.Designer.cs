@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
+            this.colEventsyslogid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
             this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -40,6 +41,8 @@
             this.변경계정 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.eventsyslogBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.dataSet1 = new simplepa2.DataSet1();
             this.panel1 = new Wisej.Web.Panel();
             this.label5 = new Wisej.Web.Label();
             this.comboBox2 = new Wisej.Web.ComboBox();
@@ -53,15 +56,12 @@
             this.label4 = new Wisej.Web.Label();
             this.label3 = new Wisej.Web.Label();
             this.textBox2 = new Wisej.Web.TextBox();
-            this.dataSet1 = new simplepa2.DataSet1();
-            this.eventsyslogBindingSource = new Wisej.Web.BindingSource(this.components);
             this.eventsyslogTableAdapter = new simplepa2.DataSet1TableAdapters.EventsyslogTableAdapter();
-            this.colEventsyslogid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsyslogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -96,11 +96,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 65;
             // 
+            // colEventsyslogid
+            // 
+            this.colEventsyslogid.DataPropertyName = "EventsyslogId";
+            this.colEventsyslogid.HeaderText = "No";
+            this.colEventsyslogid.Name = "colEventsyslogid";
+            this.colEventsyslogid.ReadOnly = true;
+            this.colEventsyslogid.Width = 60;
+            // 
             // colWrite_Time
             // 
             this.colWrite_Time.DataPropertyName = "write_time";
-            dataGridViewCellStyle2.Format = "G";
-            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "G";
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
             this.colWrite_Time.HeaderText = "변경시각";
             this.colWrite_Time.Name = "colWrite_Time";
             this.colWrite_Time.Width = 200;
@@ -155,6 +163,16 @@
             this.colDevicename.Name = "colDevicename";
             this.colDevicename.Visible = false;
             this.colDevicename.Width = 50;
+            // 
+            // eventsyslogBindingSource
+            // 
+            this.eventsyslogBindingSource.DataMember = "Eventsyslog";
+            this.eventsyslogBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -231,6 +249,7 @@
             this.popTestButton.Size = new System.Drawing.Size(100, 32);
             this.popTestButton.TabIndex = 83;
             this.popTestButton.Text = "검색";
+            this.popTestButton.Click += new System.EventHandler(this.popTestButton_Click);
             // 
             // button3
             // 
@@ -311,27 +330,9 @@
             this.textBox2.Size = new System.Drawing.Size(130, 32);
             this.textBox2.TabIndex = 76;
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // eventsyslogBindingSource
-            // 
-            this.eventsyslogBindingSource.DataMember = "Eventsyslog";
-            this.eventsyslogBindingSource.DataSource = this.dataSet1;
-            // 
             // eventsyslogTableAdapter
             // 
             this.eventsyslogTableAdapter.ClearBeforeFill = true;
-            // 
-            // colEventsyslogid
-            // 
-            this.colEventsyslogid.DataPropertyName = "EventsyslogId";
-            this.colEventsyslogid.HeaderText = "No";
-            this.colEventsyslogid.Name = "colEventsyslogid";
-            this.colEventsyslogid.ReadOnly = true;
-            this.colEventsyslogid.Width = 60;
             // 
             // View_HistorySystemChanges
             // 
@@ -344,9 +345,9 @@
             this.Load += new System.EventHandler(this.View_HistorySystemChanges_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventsyslogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

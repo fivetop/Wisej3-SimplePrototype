@@ -39,6 +39,11 @@ namespace simplepa2.UI.Views
         // log out 처리 
         private void button_LogOut_Click(object sender, EventArgs e)
         {
+            var login_id = Application.Session["login_id"];
+            var user_name = Application.Session["user_name"];
+
+            gweb.mainFrame.dBSqlite.Eventsyslog("Log-Out", user_name, login_id);
+
             PA_MainFrame pA_MainFrame = (PA_MainFrame)Application.MainPage;
 
             pA_MainFrame.Logout();

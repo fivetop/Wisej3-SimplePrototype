@@ -109,6 +109,7 @@ namespace simplepa2.UI.Pages
             dBSqlite.UsertreeGet(login_id);
             view_topPanelBar.User(user_name);
             AlertBox.Show("Log-In : " + user_name +"("+ login_id +")");
+            dBSqlite.Eventsyslog("Log-In", user_name, login_id);
             openContentsView("dashboardBarItems");
         }
         #endregion

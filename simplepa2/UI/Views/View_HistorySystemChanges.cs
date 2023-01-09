@@ -22,6 +22,10 @@ namespace simplepa2.UI.Views
             this.eventsyslogTableAdapter.Fill(this.dataSet1.Eventsyslog);
         }
 
+        private void popTestButton_Click(object sender, EventArgs e)
+        {
+            reDraw();
 
+        }
     }
 }

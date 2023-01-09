@@ -19,5 +19,11 @@ namespace simplepa2.UI.Views
         {
             reDraw();
         }
+
+        private void popTestButton_Click(object sender, EventArgs e)
+        {
+            reDraw();
+
+        }
     }
 }

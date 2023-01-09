@@ -20,5 +20,11 @@ namespace simplepa2.UI.Views
             reDraw();
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            reDraw();
+
+        }
     }
 }
