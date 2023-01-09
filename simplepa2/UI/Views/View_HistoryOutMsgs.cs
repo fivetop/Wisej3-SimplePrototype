@@ -9,5 +9,16 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
         }
+
+        internal void reDraw()
+        {
+            this.eventpresetTableAdapter.Fill(this.dataSet1.Eventpreset);
+        }
+
+        private void View_HistoryOutMsgs_Load(object sender, EventArgs e)
+        {
+            reDraw();
+
+        }
     }
 }

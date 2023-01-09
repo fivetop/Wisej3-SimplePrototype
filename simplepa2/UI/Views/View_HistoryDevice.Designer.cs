@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.장비아이디 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -38,6 +40,16 @@
             this.변경이력 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.상세 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.발생시간 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEventdeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colAlarm = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.eventdeviceBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.dataSet1 = new simplepa2.DataSet1();
             this.panel3 = new Wisej.Web.Panel();
             this.label1 = new Wisej.Web.Label();
             this.comboBox3 = new Wisej.Web.ComboBox();
@@ -51,8 +63,11 @@
             this.label7 = new Wisej.Web.Label();
             this.label8 = new Wisej.Web.Label();
             this.textBox4 = new Wisej.Web.TextBox();
+            this.eventdeviceTableAdapter = new simplepa2.DataSet1TableAdapters.EventdeviceTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventdeviceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +93,16 @@
             this.카테고리,
             this.변경이력,
             this.상세,
-            this.발생시간});
+            this.발생시간,
+            this.colEventdeviceid,
+            this.colWrite_Time,
+            this.colEvent_Text,
+            this.colIp,
+            this.colPath,
+            this.colDevicename,
+            this.colState,
+            this.colAlarm});
+            this.dataGridView1.DataSource = this.eventdeviceBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 72);
             this.dataGridView1.Name = "dataGridView1";
@@ -131,6 +155,67 @@
             this.발생시간.HeaderText = "발생시간";
             this.발생시간.Name = "발생시간";
             this.발생시간.Width = 180;
+            // 
+            // colEventdeviceid
+            // 
+            this.colEventdeviceid.DataPropertyName = "EventdeviceId";
+            this.colEventdeviceid.HeaderText = "EventdeviceId";
+            this.colEventdeviceid.Name = "colEventdeviceid";
+            this.colEventdeviceid.ReadOnly = true;
+            // 
+            // colWrite_Time
+            // 
+            this.colWrite_Time.DataPropertyName = "write_time";
+            dataGridViewCellStyle1.Format = "G";
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colWrite_Time.HeaderText = "write_time";
+            this.colWrite_Time.Name = "colWrite_Time";
+            // 
+            // colEvent_Text
+            // 
+            this.colEvent_Text.DataPropertyName = "event_text";
+            this.colEvent_Text.HeaderText = "event_text";
+            this.colEvent_Text.Name = "colEvent_Text";
+            // 
+            // colIp
+            // 
+            this.colIp.DataPropertyName = "ip";
+            this.colIp.HeaderText = "ip";
+            this.colIp.Name = "colIp";
+            // 
+            // colPath
+            // 
+            this.colPath.DataPropertyName = "path";
+            this.colPath.HeaderText = "path";
+            this.colPath.Name = "colPath";
+            // 
+            // colDevicename
+            // 
+            this.colDevicename.DataPropertyName = "DeviceName";
+            this.colDevicename.HeaderText = "DeviceName";
+            this.colDevicename.Name = "colDevicename";
+            // 
+            // colState
+            // 
+            this.colState.DataPropertyName = "state";
+            this.colState.HeaderText = "state";
+            this.colState.Name = "colState";
+            // 
+            // colAlarm
+            // 
+            this.colAlarm.DataPropertyName = "alarm";
+            this.colAlarm.HeaderText = "alarm";
+            this.colAlarm.Name = "colAlarm";
+            // 
+            // eventdeviceBindingSource
+            // 
+            this.eventdeviceBindingSource.DataMember = "Eventdevice";
+            this.eventdeviceBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel3
             // 
@@ -287,6 +372,10 @@
             this.textBox4.Size = new System.Drawing.Size(130, 32);
             this.textBox4.TabIndex = 76;
             // 
+            // eventdeviceTableAdapter
+            // 
+            this.eventdeviceTableAdapter.ClearBeforeFill = true;
+            // 
             // View_HistoryDevice
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -295,8 +384,11 @@
             this.Name = "View_HistoryDevice";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
+            this.Load += new System.EventHandler(this.View_HistoryDevice_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventdeviceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -327,5 +419,16 @@
         private Wisej.Web.Label label7;
         private Wisej.Web.Label label8;
         private Wisej.Web.TextBox textBox4;
+        private Wisej.Web.DataGridViewTextBoxColumn colEventdeviceid;
+        private Wisej.Web.DataGridViewDateTimePickerColumn colWrite_Time;
+        private Wisej.Web.DataGridViewTextBoxColumn colEvent_Text;
+        private Wisej.Web.DataGridViewTextBoxColumn colIp;
+        private Wisej.Web.DataGridViewTextBoxColumn colPath;
+        private Wisej.Web.DataGridViewTextBoxColumn colDevicename;
+        private Wisej.Web.DataGridViewTextBoxColumn colState;
+        private Wisej.Web.DataGridViewTextBoxColumn colAlarm;
+        private Wisej.Web.BindingSource eventdeviceBindingSource;
+        private DataSet1 dataSet1;
+        private DataSet1TableAdapters.EventdeviceTableAdapter eventdeviceTableAdapter;
     }
 }

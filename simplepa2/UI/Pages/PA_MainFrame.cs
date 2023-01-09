@@ -356,18 +356,22 @@ namespace simplepa2.UI.Pages
                     view_BBSEMManage2.reDraw();
                     break;
                 case eSignalRMsgType.ePlay:
+                    dBSqlite.Eventbs("Play", msg1.message, msg1.seqno.ToString());
                     view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.ePlayCheck :
                     break;
                 case eSignalRMsgType.ePlayEnd:
+                    dBSqlite.Eventbs("PlayEns", msg1.message, msg1.seqno.ToString());
                     view_BBSEMChannel2.reDraw();
                     view_BBSAnchor2.refresh();
                     break;
                 case eSignalRMsgType.ePlaying:
+                    dBSqlite.Eventbs("Playing", msg1.message, msg1.seqno.ToString());
                     view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.eStop:
+                    dBSqlite.Eventbs("PlayStop", msg1.message, msg1.seqno.ToString());
                     view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.eLoginUser:
