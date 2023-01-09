@@ -534,7 +534,10 @@ namespace pa
             em.path =  Assets.FirstOrDefault(p=>p.ip == t3.ip).path;
             em.DeviceName = t3.DeviceName;
             em.state = t3.state;
-            em.alarm = 2;
+            if(t3.state == "")
+                em.state = "Off-Line";
+            em.alarm = 0;
+            em.event_text = t3.ip +" : " + t3.state;
             //this.Save(em);
             var t2 = Dbsave<Eventdevice>("Eventdevices", (DataRow)em);
         }

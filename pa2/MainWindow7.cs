@@ -35,13 +35,14 @@ namespace pa
 
             if (v == 1)
             {
-                if (t3.state == "On-Line") return;
+                if (t3.state == "On-Line" && t3.state_old == "On-Line") return;
                 t3.state = "On-Line";
+                t3.state_old = "On-Line";
                 g.Log("On-Line :" + str2);
             }
             else
             {
-                if (t3.state == "") return;
+                if (t3.state == "" && t3.state_old == "") return;
                 t3.state = "";
                 t3.state_old = "";
                 g.Log("Off-Line:" + str2);
