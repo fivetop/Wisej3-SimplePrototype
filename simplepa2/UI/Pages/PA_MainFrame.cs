@@ -328,6 +328,7 @@ namespace simplepa2.UI.Pages
                     break;
                 case eSignalRMsgType.eEM_FIRE:
                     dBSqlite.Eventvm("EM_FIRE", msg1.message, msg1.seqno.ToString());
+                    view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_PRESET_SW:
                     string m0 = "PRESET_SW";
