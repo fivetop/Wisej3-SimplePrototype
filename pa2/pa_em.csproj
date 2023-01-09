@@ -163,6 +163,7 @@
     <Compile Include="BSAsset.cs" />
     <Compile Include="BSThreadClass.cs" />
     <Compile Include="classes\common.cs" />
+    <Compile Include="DSPControll.cs" />
     <Compile Include="classes\TrayIcon.cs" />
     <Compile Include="DBAccess.cs" />
     <Compile Include="ExtProcess.cs" />

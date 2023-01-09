@@ -105,6 +105,7 @@
             this.mdataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
             this.mdataGridView1.Location = new System.Drawing.Point(20, 72);
             this.mdataGridView1.Name = "mdataGridView1";
+            this.mdataGridView1.RowHeadersVisible = false;
             this.mdataGridView1.RowHeadersWidth = 16;
             this.mdataGridView1.Size = new System.Drawing.Size(825, 485);
             this.mdataGridView1.TabIndex = 9;

@@ -144,6 +144,7 @@
             this.udataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
             this.udataGridView1.Location = new System.Drawing.Point(0, 0);
             this.udataGridView1.Name = "udataGridView1";
+            this.udataGridView1.RowHeadersVisible = false;
             this.udataGridView1.Size = new System.Drawing.Size(656, 502);
             this.udataGridView1.TabIndex = 9;
             // 

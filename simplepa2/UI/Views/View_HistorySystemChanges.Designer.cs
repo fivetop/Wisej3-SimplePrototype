@@ -32,16 +32,16 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
+            this.colEventsyslogid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
-            this.변경계정 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colAlarm = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colEventvmid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.변경계정 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.dataSet1BindingSource = new Wisej.Web.BindingSource(this.components);
+            this.eventsyslogBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
             this.panel1 = new Wisej.Web.Panel();
             this.label5 = new Wisej.Web.Label();
@@ -56,10 +56,10 @@
             this.label4 = new Wisej.Web.Label();
             this.label3 = new Wisej.Web.Label();
             this.textBox2 = new Wisej.Web.TextBox();
-            this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
+            this.eventsyslogTableAdapter = new simplepa2.DataSet1TableAdapters.EventsyslogTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventsyslogBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,21 +79,30 @@
             // dataGridView1
             // 
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.colEventvmid,
+            this.colEventsyslogid,
             this.colWrite_Time,
-            this.변경계정,
             this.colPath,
             this.colEvent_Text,
             this.colState,
             this.colAlarm,
+            this.변경계정,
             this.colIp,
             this.colDevicename});
-            this.dataGridView1.DataSource = this.dataSet1BindingSource;
+            this.dataGridView1.DataSource = this.eventsyslogBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 72);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 65;
+            // 
+            // colEventsyslogid
+            // 
+            this.colEventsyslogid.DataPropertyName = "EventsyslogId";
+            this.colEventsyslogid.HeaderText = "No";
+            this.colEventsyslogid.Name = "colEventsyslogid";
+            this.colEventsyslogid.ReadOnly = true;
+            this.colEventsyslogid.Width = 60;
             // 
             // colWrite_Time
             // 
@@ -104,62 +113,61 @@
             this.colWrite_Time.Name = "colWrite_Time";
             this.colWrite_Time.Width = 200;
             // 
-            // 변경계정
+            // colPath
             // 
-            this.변경계정.HeaderText = "변경계정";
-            this.변경계정.Name = "변경계정";
-            this.변경계정.Width = 200;
+            this.colPath.DataPropertyName = "path";
+            this.colPath.HeaderText = "메뉴위치";
+            this.colPath.Name = "colPath";
+            this.colPath.Width = 140;
             // 
             // colEvent_Text
             // 
             this.colEvent_Text.DataPropertyName = "event_text";
             this.colEvent_Text.HeaderText = "변경내역";
             this.colEvent_Text.Name = "colEvent_Text";
+            this.colEvent_Text.Width = 120;
             // 
             // colState
             // 
             this.colState.DataPropertyName = "state";
             this.colState.HeaderText = "결과";
             this.colState.Name = "colState";
+            this.colState.Width = 140;
             // 
             // colAlarm
             // 
             this.colAlarm.DataPropertyName = "alarm";
             this.colAlarm.HeaderText = "상세내역";
             this.colAlarm.Name = "colAlarm";
+            this.colAlarm.Visible = false;
             // 
-            // colEventvmid
+            // 변경계정
             // 
-            this.colEventvmid.DataPropertyName = "EventVMId";
-            this.colEventvmid.HeaderText = "번호";
-            this.colEventvmid.Name = "colEventvmid";
-            this.colEventvmid.ReadOnly = true;
-            this.colEventvmid.Width = 60;
+            this.변경계정.HeaderText = "변경계정";
+            this.변경계정.Name = "변경계정";
+            this.변경계정.Visible = false;
+            this.변경계정.Width = 200;
             // 
             // colIp
             // 
             this.colIp.DataPropertyName = "ip";
             this.colIp.HeaderText = "ip";
             this.colIp.Name = "colIp";
+            this.colIp.Visible = false;
             this.colIp.Width = 50;
-            // 
-            // colPath
-            // 
-            this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "메뉴위치";
-            this.colPath.Name = "colPath";
             // 
             // colDevicename
             // 
             this.colDevicename.DataPropertyName = "DeviceName";
             this.colDevicename.HeaderText = "DeviceName";
             this.colDevicename.Name = "colDevicename";
+            this.colDevicename.Visible = false;
             this.colDevicename.Width = 50;
             // 
-            // dataSet1BindingSource
+            // eventsyslogBindingSource
             // 
-            this.dataSet1BindingSource.DataMember = "Eventvm";
-            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.eventsyslogBindingSource.DataMember = "Eventsyslog";
+            this.eventsyslogBindingSource.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
@@ -241,6 +249,7 @@
             this.popTestButton.Size = new System.Drawing.Size(100, 32);
             this.popTestButton.TabIndex = 83;
             this.popTestButton.Text = "검색";
+            this.popTestButton.Click += new System.EventHandler(this.popTestButton_Click);
             // 
             // button3
             // 
@@ -321,9 +330,9 @@
             this.textBox2.Size = new System.Drawing.Size(130, 32);
             this.textBox2.TabIndex = 76;
             // 
-            // eventvmTableAdapter
+            // eventsyslogTableAdapter
             // 
-            this.eventvmTableAdapter.ClearBeforeFill = true;
+            this.eventsyslogTableAdapter.ClearBeforeFill = true;
             // 
             // View_HistorySystemChanges
             // 
@@ -336,7 +345,7 @@
             this.Load += new System.EventHandler(this.View_HistorySystemChanges_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventsyslogBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -365,12 +374,12 @@
         private Wisej.Web.DataGridViewTextBoxColumn colEvent_Text;
         private Wisej.Web.DataGridViewTextBoxColumn colState;
         private Wisej.Web.DataGridViewTextBoxColumn colAlarm;
-        private Wisej.Web.DataGridViewTextBoxColumn colEventvmid;
         private Wisej.Web.DataGridViewTextBoxColumn colIp;
         private Wisej.Web.DataGridViewTextBoxColumn colPath;
         private Wisej.Web.DataGridViewTextBoxColumn colDevicename;
+        private Wisej.Web.DataGridViewTextBoxColumn colEventsyslogid;
+        private Wisej.Web.BindingSource eventsyslogBindingSource;
         private DataSet1 dataSet1;
-        private Wisej.Web.BindingSource dataSet1BindingSource;
-        private DataSet1TableAdapters.EventvmTableAdapter eventvmTableAdapter;
+        private DataSet1TableAdapters.EventsyslogTableAdapter eventsyslogTableAdapter;
     }
 }

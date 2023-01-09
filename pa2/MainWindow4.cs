@@ -27,8 +27,38 @@ namespace pa
             // 비상방송 연동정지시 방송 처리 안함. 
             if (eM_MODE == EM_MODE.연동정지)
                 return;
-            EMMetrixChOn();
-            InitVolume(true);
+
+            if (_DanteDevice != null)
+            {
+                EMMetrixChOn();
+                InitVolume(true);
+            }
+            else
+            {
+                // 서버가 없으면 강제 방송 처리 
+                var splist1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2).ToList();
+
+                foreach (Device sp1 in splist1)
+                {
+                    try
+                    {
+                        if (sp1 == null) continue;
+                        if (sp1.ip == "" || sp1.ip_dspctrl == "") continue;
+                        Console.WriteLine("--" + "DSP Metrix Out ==> In :" + sp1.ip_dspctrl);
+
+                        for (int i = 17; i < 33; i++)
+                        { 
+                            g.dsp.Matrix(16, i, 1, sp1.ip_dspctrl);
+                            Thread.Sleep(10);
+                        }
+                        //g.dsp.makeVolumn(17, 10, sp1.ip_dspctrl);
+                    }
+                    catch (Exception e1)
+                    {
+                    }
+                }
+
+            }
 
             // 연속적인 알람은 
             if (Alarm == 1 || TestAlarm)
@@ -112,6 +142,32 @@ namespace pa
 
         private void EMMetrixChOff()
         {
+            if (_DanteDevice == null)
+            {
+                // 서버가 없으면 강제 방송 처리 
+                var splist1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2).ToList();
+
+                foreach (Device sp1 in splist1)
+                {
+                    try
+                    {
+                        if (sp1 == null) continue;
+                        if (sp1.ip == "" || sp1.ip_dspctrl == "") continue;
+                        Console.WriteLine("--" + "DSP Metrix Out ==> In :" + sp1.ip_dspctrl);
+
+                        for (int i = 17; i < 33; i++)
+                        {
+                            g.dsp.Matrix(16, i, 0, sp1.ip_dspctrl);
+                            Thread.Sleep(10);
+                        }
+                        //g.dsp.makeVolumn(17, 6, sp1.ip_dspctrl);
+                    }
+                    catch (Exception e1)
+                    {
+                    }
+                }
+                return;
+            }
             if (em_play.Count() == 0)
                 return;
             g.DSP_EMMakeGroupSpeaker(em_play, 0, BS_DSP_STATE.EM_BS_OFF, 0);
@@ -120,6 +176,7 @@ namespace pa
 
         public void InitVolume(bool emflag = false)
         {
+            if (_DanteDevice == null) return;
             var splist1 = _DanteDevice.Where(p => p.device == 0).ToList();
 
             foreach (var sp1 in splist1)

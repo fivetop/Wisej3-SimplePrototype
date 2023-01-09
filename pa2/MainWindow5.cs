@@ -514,7 +514,7 @@ namespace pa
                         SendSigR("프리셋 버튼 : Off", eSignalRMsgType.eEM_PRESET_SW, cnt, 0);
                         sh = sh + cnt.ToString();
                         //Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
-                        var t1 = dBAccess.AssetGroups.FirstOrDefault(p => p.Name == sh);
+                        var t1 = dBAccess.AssetPresetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
                             g.Log("Check : 프리셋 그룹");
@@ -537,7 +537,7 @@ namespace pa
                         SendSigR("프리셋 버튼 : On", eSignalRMsgType.eEM_PRESET_SW, cnt, 1);
                         sh = sh + cnt.ToString();
                         //Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
-                        var t1 = dBAccess.AssetGroups.FirstOrDefault(p => p.Name == sh);
+                        var t1 = dBAccess.AssetPresetGroups.FirstOrDefault(p => p.Name == sh);
                         if (t1 == null)
                         {
                             g.Log("Check : 프리셋 그룹");

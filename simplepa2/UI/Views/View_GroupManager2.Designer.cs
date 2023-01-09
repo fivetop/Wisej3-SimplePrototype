@@ -88,6 +88,7 @@
             this.gdataGridView1.Location = new System.Drawing.Point(0, 0);
             this.gdataGridView1.MultiSelect = false;
             this.gdataGridView1.Name = "gdataGridView1";
+            this.gdataGridView1.RowHeadersVisible = false;
             this.gdataGridView1.ShowFocusCell = false;
             this.gdataGridView1.Size = new System.Drawing.Size(832, 503);
             this.gdataGridView1.TabIndex = 12;
@@ -99,7 +100,7 @@
             this.colAssetbaseid.HeaderText = "No";
             this.colAssetbaseid.Name = "colAssetbaseid";
             this.colAssetbaseid.ReadOnly = true;
-            this.colAssetbaseid.Width = 40;
+            this.colAssetbaseid.Width = 60;
             // 
             // dataGridViewCheckBoxColumn1
             // 

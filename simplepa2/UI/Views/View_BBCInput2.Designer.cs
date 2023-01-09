@@ -32,6 +32,7 @@
             this.panel1 = new Wisej.Web.Panel();
             this.dataGridView3 = new Wisej.Web.DataGridView();
             this.colDevicechnnelid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.Column2 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Column1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colChname = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicein = new Wisej.Web.DataGridViewComboBoxColumn();
@@ -43,7 +44,6 @@
             this.ptop = new Wisej.Web.Panel();
             this.deviceChannelTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceChannelTableAdapter();
             this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
-            this.Column2 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceChannelBindingSource)).BeginInit();
@@ -79,6 +79,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(758, 459);
             this.dataGridView3.TabIndex = 2;
             this.dataGridView3.DataUpdated += new Wisej.Web.DataGridViewDataUpdatedEventHandler(this.dataGridView3_DataUpdated);
@@ -90,6 +91,11 @@
             this.colDevicechnnelid.Name = "colDevicechnnelid";
             this.colDevicechnnelid.ReadOnly = true;
             this.colDevicechnnelid.Width = 60;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "지역";
+            this.Column2.Name = "Column2";
             // 
             // Column1
             // 
@@ -169,11 +175,6 @@
             // deviceTableAdapter1
             // 
             this.deviceTableAdapter1.ClearBeforeFill = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "지역";
-            this.Column2.Name = "Column2";
             // 
             // View_BBCInput2
             // 

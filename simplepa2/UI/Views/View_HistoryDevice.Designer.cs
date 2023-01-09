@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.장비아이디 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.장비명 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEventdeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.장비종류 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.IP주소 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colAlarm = new Wisej.Web.DataGridViewTextBoxColumn();
             this.카테고리 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.변경이력 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.상세 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.발생시간 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.eventdeviceBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.dataSet1 = new simplepa2.DataSet1();
             this.panel3 = new Wisej.Web.Panel();
             this.label1 = new Wisej.Web.Label();
             this.comboBox3 = new Wisej.Web.ComboBox();
@@ -51,8 +59,11 @@
             this.label7 = new Wisej.Web.Label();
             this.label8 = new Wisej.Web.Label();
             this.textBox4 = new Wisej.Web.TextBox();
+            this.eventdeviceTableAdapter = new simplepa2.DataSet1TableAdapters.EventdeviceTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventdeviceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,42 +82,85 @@
             // dataGridView1
             // 
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.장비아이디,
-            this.장비명,
+            this.colEventdeviceid,
+            this.colWrite_Time,
+            this.colPath,
+            this.colEvent_Text,
+            this.colDevicename,
             this.장비종류,
-            this.IP주소,
+            this.colIp,
+            this.colState,
+            this.colAlarm,
             this.카테고리,
             this.변경이력,
-            this.상세,
-            this.발생시간});
+            this.상세});
+            this.dataGridView1.DataSource = this.eventdeviceBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 72);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 68;
             // 
-            // 장비아이디
+            // colEventdeviceid
             // 
-            this.장비아이디.HeaderText = "장비아이디";
-            this.장비아이디.Name = "장비아이디";
-            this.장비아이디.Width = 140;
+            this.colEventdeviceid.DataPropertyName = "EventdeviceId";
+            this.colEventdeviceid.HeaderText = "No";
+            this.colEventdeviceid.Name = "colEventdeviceid";
+            this.colEventdeviceid.ReadOnly = true;
+            this.colEventdeviceid.Width = 60;
             // 
-            // 장비명
+            // colWrite_Time
             // 
-            this.장비명.HeaderText = "장비명";
-            this.장비명.Name = "장비명";
-            this.장비명.Width = 200;
+            this.colWrite_Time.DataPropertyName = "write_time";
+            dataGridViewCellStyle1.Format = "G";
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colWrite_Time.HeaderText = "발생시간";
+            this.colWrite_Time.Name = "colWrite_Time";
+            this.colWrite_Time.Width = 200;
+            // 
+            // colPath
+            // 
+            this.colPath.DataPropertyName = "path";
+            this.colPath.HeaderText = "장비위치";
+            this.colPath.Name = "colPath";
+            // 
+            // colEvent_Text
+            // 
+            this.colEvent_Text.DataPropertyName = "event_text";
+            this.colEvent_Text.HeaderText = "event_text";
+            this.colEvent_Text.Name = "colEvent_Text";
+            // 
+            // colDevicename
+            // 
+            this.colDevicename.DataPropertyName = "DeviceName";
+            this.colDevicename.HeaderText = "장비명";
+            this.colDevicename.Name = "colDevicename";
             // 
             // 장비종류
             // 
             this.장비종류.HeaderText = "장비종류";
             this.장비종류.Name = "장비종류";
+            this.장비종류.Width = 120;
             // 
-            // IP주소
+            // colIp
             // 
-            this.IP주소.HeaderText = "IP주소";
-            this.IP주소.Name = "IP주소";
-            this.IP주소.Width = 150;
+            this.colIp.DataPropertyName = "ip";
+            this.colIp.HeaderText = "IP주소";
+            this.colIp.Name = "colIp";
+            this.colIp.Width = 120;
+            // 
+            // colState
+            // 
+            this.colState.DataPropertyName = "state";
+            this.colState.HeaderText = "state";
+            this.colState.Name = "colState";
+            // 
+            // colAlarm
+            // 
+            this.colAlarm.DataPropertyName = "alarm";
+            this.colAlarm.HeaderText = "alarm";
+            this.colAlarm.Name = "colAlarm";
             // 
             // 카테고리
             // 
@@ -126,11 +180,15 @@
             this.상세.Name = "상세";
             this.상세.Width = 200;
             // 
-            // 발생시간
+            // eventdeviceBindingSource
             // 
-            this.발생시간.HeaderText = "발생시간";
-            this.발생시간.Name = "발생시간";
-            this.발생시간.Width = 180;
+            this.eventdeviceBindingSource.DataMember = "Eventdevice";
+            this.eventdeviceBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel3
             // 
@@ -207,6 +265,7 @@
             this.button4.Size = new System.Drawing.Size(100, 32);
             this.button4.TabIndex = 83;
             this.button4.Text = "검색";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -287,6 +346,10 @@
             this.textBox4.Size = new System.Drawing.Size(130, 32);
             this.textBox4.TabIndex = 76;
             // 
+            // eventdeviceTableAdapter
+            // 
+            this.eventdeviceTableAdapter.ClearBeforeFill = true;
+            // 
             // View_HistoryDevice
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -295,8 +358,11 @@
             this.Name = "View_HistoryDevice";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
+            this.Load += new System.EventHandler(this.View_HistoryDevice_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventdeviceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -306,14 +372,10 @@
 
         private Wisej.Web.Panel panel2;
         private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn 장비아이디;
-        private Wisej.Web.DataGridViewTextBoxColumn 장비명;
         private Wisej.Web.DataGridViewTextBoxColumn 장비종류;
-        private Wisej.Web.DataGridViewTextBoxColumn IP주소;
         private Wisej.Web.DataGridViewTextBoxColumn 카테고리;
         private Wisej.Web.DataGridViewTextBoxColumn 변경이력;
         private Wisej.Web.DataGridViewTextBoxColumn 상세;
-        private Wisej.Web.DataGridViewTextBoxColumn 발생시간;
         private Wisej.Web.Panel panel3;
         private Wisej.Web.Label label1;
         private Wisej.Web.ComboBox comboBox3;
@@ -327,5 +389,16 @@
         private Wisej.Web.Label label7;
         private Wisej.Web.Label label8;
         private Wisej.Web.TextBox textBox4;
+        private Wisej.Web.DataGridViewTextBoxColumn colEventdeviceid;
+        private Wisej.Web.DataGridViewDateTimePickerColumn colWrite_Time;
+        private Wisej.Web.DataGridViewTextBoxColumn colEvent_Text;
+        private Wisej.Web.DataGridViewTextBoxColumn colIp;
+        private Wisej.Web.DataGridViewTextBoxColumn colPath;
+        private Wisej.Web.DataGridViewTextBoxColumn colDevicename;
+        private Wisej.Web.DataGridViewTextBoxColumn colState;
+        private Wisej.Web.DataGridViewTextBoxColumn colAlarm;
+        private Wisej.Web.BindingSource eventdeviceBindingSource;
+        private DataSet1 dataSet1;
+        private DataSet1TableAdapters.EventdeviceTableAdapter eventdeviceTableAdapter;
     }
 }

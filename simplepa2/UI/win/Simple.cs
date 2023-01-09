@@ -363,7 +363,7 @@ namespace simplepa2
 						addinfo = "ONLINE";
 					else
 						addinfo = "OFFLINE";
-					dBSqlite.Eventvm(addinfo, msg1.EMNAME, addinfo);
+					dBSqlite.Eventsyslog(addinfo, msg1.EMNAME, addinfo);
 					dBSqlite.EMServerupdate(msg1.EMNAME, addinfo);
 					break;
 				case eSignalRMsgType.eEM_FIRE:

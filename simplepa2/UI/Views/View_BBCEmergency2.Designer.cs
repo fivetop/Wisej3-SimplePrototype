@@ -126,6 +126,7 @@
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(404, 336);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellMouseDoubleClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
@@ -136,7 +137,7 @@
             this.colDeviceid.HeaderText = "No";
             this.colDeviceid.Name = "colDeviceid";
             this.colDeviceid.ReadOnly = true;
-            this.colDeviceid.Width = 40;
+            this.colDeviceid.Width = 60;
             // 
             // colDevicename
             // 
@@ -182,6 +183,7 @@
             this.dataGridView2.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(336, 336);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellMouseDoubleClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);

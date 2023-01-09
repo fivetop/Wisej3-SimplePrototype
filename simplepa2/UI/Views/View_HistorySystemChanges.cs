@@ -12,16 +12,20 @@ namespace simplepa2.UI.Views
 
         private void View_HistorySystemChanges_Load(object sender, EventArgs e)
         {
-            dataSet1BindingSource.Filter = "[alarm]=0";
-            dataSet1BindingSource.Sort = "EventVMId DESC";
+            //dataSet1BindingSource.Filter = "[alarm]=0";
+            //dataSet1BindingSource.Sort = "EventVMId DESC";
             reDraw();
 
         }
         internal void reDraw()
         {
-            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+            this.eventsyslogTableAdapter.Fill(this.dataSet1.Eventsyslog);
         }
 
+        private void popTestButton_Click(object sender, EventArgs e)
+        {
+            reDraw();
 
+        }
     }
 }

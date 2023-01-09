@@ -109,6 +109,7 @@ namespace simplepa2.UI.Pages
             dBSqlite.UsertreeGet(login_id);
             view_topPanelBar.User(user_name);
             AlertBox.Show("Log-In : " + user_name +"("+ login_id +")");
+            dBSqlite.Eventsyslog("Log-In", user_name, login_id);
             openContentsView("dashboardBarItems");
         }
         #endregion
@@ -322,12 +323,13 @@ namespace simplepa2.UI.Pages
                         addinfo = "ONLINE";
                     else
                         addinfo = "OFFLINE";
-                    dBSqlite.Eventvm(addinfo, msg1.EMNAME, addinfo);
+                    dBSqlite.Eventsyslog(addinfo, msg1.EMNAME, addinfo);
                     dBSqlite.EMServerupdate(msg1.EMNAME, addinfo);
                     view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
                     dBSqlite.Eventvm("EM_FIRE", msg1.message, msg1.seqno.ToString());
+                    view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_PRESET_SW:
                     string m0 = "PRESET_SW";
@@ -341,13 +343,13 @@ namespace simplepa2.UI.Pages
                     switch (msg1.seqno)
                     {
                         case 0:
-                            dBSqlite.Eventvm(m0, m1, m2);
+                            dBSqlite.Eventpreset(m0, m1, m2);
                             break;
                         case 1:
                         case 2:
                         case 3:
                         case 4:
-                            dBSqlite.Eventvm(m0, m1, m2);
+                            dBSqlite.Eventpreset(m0, m1, m2);
                             break;
                     }
                     dBSqlite.EMServerupdatePreset(msg1.EMNAME,msg1.seqno, msg1.state);
@@ -355,18 +357,22 @@ namespace simplepa2.UI.Pages
                     view_BBSEMManage2.reDraw();
                     break;
                 case eSignalRMsgType.ePlay:
+                    dBSqlite.Eventbs("Play", msg1.message, msg1.seqno.ToString());
                     view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.ePlayCheck :
                     break;
                 case eSignalRMsgType.ePlayEnd:
+                    dBSqlite.Eventbs("PlayEns", msg1.message, msg1.seqno.ToString());
                     view_BBSEMChannel2.reDraw();
                     view_BBSAnchor2.refresh();
                     break;
                 case eSignalRMsgType.ePlaying:
+                    dBSqlite.Eventbs("Playing", msg1.message, msg1.seqno.ToString());
                     view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.eStop:
+                    dBSqlite.Eventbs("PlayStop", msg1.message, msg1.seqno.ToString());
                     view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.eLoginUser:

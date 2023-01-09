@@ -19,6 +19,7 @@ namespace pa
     {
         HttpClient httpClient = new HttpClient();
 
+        public AssetPresetGroupsDataTable AssetPresetGroups { get; set; } = new AssetPresetGroupsDataTable();
         public AssetGroupsDataTable AssetGroups { get; set; } = new AssetGroupsDataTable();
         public AssetsDataTable Assets { get; set; } = new AssetsDataTable();
         public BSroomDataTable BSroom { get; set; } = new BSroomDataTable();
@@ -38,6 +39,7 @@ namespace pa
         #region // Database 초기화 처리
         public void DBInit()
         {
+            AssetPresetGroups = Dbread<AssetPresetGroupsDataTable>("AssetPresetGroups");
             AssetGroups = Dbread<AssetGroupsDataTable>("AssetGroups");
             Assets = Dbread<AssetsDataTable>("Assets");
             BSroom = Dbread<BSroomDataTable>("BSrooms");
@@ -511,6 +513,7 @@ namespace pa
 
         public void Eventvms(string event_text, string base_text, string state)
         {
+            if (g.mainWindow._DanteDevice == null) return;
             EventvmRow em = Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.event_text = event_text;
@@ -523,6 +526,7 @@ namespace pa
 
         public void EventvmIP(AssetsRow t3)
         {
+            if (g.mainWindow._DanteDevice == null) return;
             EventvmRow em = Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.ip = t3.ip;

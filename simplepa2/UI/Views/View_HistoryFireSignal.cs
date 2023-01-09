@@ -9,5 +9,21 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
         }
+
+        internal void reDraw()
+        {
+            this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+        }
+
+        private void View_HistoryFireSignal_Load(object sender, EventArgs e)
+        {
+            reDraw();
+        }
+
+        private void popTestButton_Click(object sender, EventArgs e)
+        {
+            reDraw();
+
+        }
     }
 }

@@ -10,8 +10,20 @@ namespace simplepa2.UI.Views
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        internal void reDraw()
         {
+            this.eventdeviceTableAdapter.Fill(this.dataSet1.Eventdevice);
+        }
+
+        private void View_HistoryDevice_Load(object sender, EventArgs e)
+        {
+            reDraw();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            reDraw();
 
         }
     }

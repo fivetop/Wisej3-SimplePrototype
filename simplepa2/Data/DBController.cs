@@ -43,6 +43,10 @@ namespace simplepa2
                     DeviceChannelTableAdapter = new DeviceChannelTableAdapter(),
                     EMBsTableAdapter = new EMBsTableAdapter(),
                     EventvmTableAdapter = new EventvmTableAdapter(),
+                    EventsyslogTableAdapter = new EventsyslogTableAdapter(),
+                    EventdeviceTableAdapter = new EventdeviceTableAdapter(),
+                    EventpresetTableAdapter = new EventpresetTableAdapter(),
+                    EventbsTableAdapter = new EventbsTableAdapter(),
                     HolidaysTableAdapter = new HolidaysTableAdapter(),
                     MusicsTableAdapter = new MusicsTableAdapter(),
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
@@ -599,6 +603,41 @@ namespace simplepa2
 
         #region // Eventvm 이벤트처리 관리 부분 
 
+        public void Eventbs(string event_text, string base_text, string state)
+        {
+            EventbsRow em = Ds1.Eventbs.NewEventbsRow();
+            em.write_time = DateTime.Now;
+            em.event_text = event_text;
+            em.path = base_text;
+            em.state = state;
+            em.alarm = 0;
+            Ds1.Eventbs.Rows.Add(em);
+            Tam.EventbsTableAdapter.Update(Ds1.Eventbs);
+        }
+
+        public void Eventsyslog(string event_text, string base_text, string state)
+        {
+            EventsyslogRow em = Ds1.Eventsyslog.NewEventsyslogRow();
+            em.write_time = DateTime.Now;
+            em.event_text = event_text;
+            em.path = base_text;
+            em.state = state;
+            em.alarm = 0;
+            Ds1.Eventsyslog.Rows.Add(em);
+            Tam.EventsyslogTableAdapter.Update(Ds1.Eventsyslog);
+        }
+
+        public void Eventpreset(string event_text, string base_text, string state)
+        {
+            EventpresetRow em = Ds1.Eventpreset.NewEventpresetRow();
+            em.write_time = DateTime.Now;
+            em.event_text = event_text;
+            em.path = base_text;
+            em.state = state;
+            em.alarm = 0;
+            Ds1.Eventpreset.Rows.Add(em);
+            Tam.EventpresetTableAdapter.Update(Ds1.Eventpreset);
+        }
         public void Eventvm(string event_text, string base_text, string state)
         {
             EventvmRow em = Ds1.Eventvm.NewEventvmRow();
@@ -607,18 +646,20 @@ namespace simplepa2
             em.path = base_text;
             em.state = state;
             em.alarm = 0;
-            Save(em);
+            Ds1.Eventvm.Rows.Add(em);
+            Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
         }
-        public void EventvmIP(AssetsRow t3)
+        public void Eventdevice(AssetsRow t3)
         {
-            EventvmRow em = Ds1.Eventvm.NewEventvmRow();
+            EventdeviceRow em = Ds1.Eventdevice.NewEventdeviceRow();
             em.write_time = DateTime.Now;
             em.ip = t3.ip;
             em.path = t3.path;
             em.DeviceName = t3.DeviceName;
             em.state = t3.state;
             em.alarm = 2;
-            this.Save(em);
+            Ds1.Eventdevice.Rows.Add(em);
+            Tam.EventdeviceTableAdapter.Update(Ds1.Eventdevice);
         }
 
         #endregion

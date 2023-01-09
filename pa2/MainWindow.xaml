@@ -22,8 +22,8 @@
                     <MenuItem x:Name="_ts2" Header="LoopBack Test" Click="_but2_Click" />
                     <MenuItem x:Name="_ts3" Header="GPIO Test" Click="_but3_Click" />
                     <Separator></Separator>
-                    <MenuItem x:Name="_ts4" Header="Test(Play)" Click="_but4_Click" />
-                    <MenuItem x:Name="_ts5" Header="Test(Stop)" Click="_but5_Click" />
+                    <MenuItem x:Name="_ts4" Header="EM Test Start" Click="_but4_Click" />
+                    <MenuItem x:Name="_ts5" Header="EM Test Stop" Click="_but5_Click" />
                     <MenuItem x:Name="_ts6" Header="진단" Click="_but6_Click" />
                     <MenuItem x:Name="_ts7" Header="sigr" Click="_but7_Click" />
                 </MenuItem>

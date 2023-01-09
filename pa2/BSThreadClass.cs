@@ -155,6 +155,23 @@ namespace pa
 
                         }
 
+                        // 뮤트온한다음 1,17,32 채널 오프 시킴 모든 DSP 에 대해서 
+                        // 버젼 1.0 확인 필요 
+                        foreach (var d1 in ld1)
+                        {
+                            //string str1 = d1.Key;
+                            string str1 = d1.ip_dspctrl;
+                            if (data.onoff == 1)
+                            {
+                                g.dsp.DSPmuteInOFF(str1, 1);
+                                g.dsp.DSPmuteInOFF(str1, 17);
+                                g.dsp.DSPmuteInOFF(str1, 32);
+                            }
+                            else
+                            {
+                            }
+                        }
+
                         // 앰프 처리하고 
                         // 특정 Asset List 만 처리
                         foreach (var t1 in data.device)

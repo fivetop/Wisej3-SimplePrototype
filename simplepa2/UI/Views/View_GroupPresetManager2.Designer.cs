@@ -32,8 +32,10 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.gbindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.gdataGridView1 = new Wisej.Web.DataGridView();
+            this.colAssetpresetgroupid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new Wisej.Web.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.gbindingSource2 = new Wisej.Web.BindingSource(this.components);
             this.gbutton1 = new Wisej.Web.Button();
             this.tableLayoutPanel4 = new Wisej.Web.TableLayoutPanel();
             this.sitecomboBox1 = new Wisej.Web.ComboBox();
@@ -44,16 +46,14 @@
             this.panel2 = new Wisej.Web.Panel();
             this.assetPresetGroupsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetPresetGroupsTableAdapter();
             this.sitebindingSource1 = new Wisej.Web.BindingSource(this.components);
-            this.gbindingSource2 = new Wisej.Web.BindingSource(this.components);
-            this.colAssetpresetgroupid = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sitebindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -68,21 +68,24 @@
             this.colAssetpresetgroupid,
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn1});
-            // 
-            // gbindingSource2
-            // 
-            this.gbindingSource2.DataMember = "AssetPresetGroups";
-            this.gbindingSource2.DataSource = this.dataSet1;
             this.gdataGridView1.DataSource = this.gbindingSource2;
             this.gdataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.gdataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
             this.gdataGridView1.Location = new System.Drawing.Point(0, 0);
             this.gdataGridView1.MultiSelect = false;
             this.gdataGridView1.Name = "gdataGridView1";
+            this.gdataGridView1.RowHeadersVisible = false;
             this.gdataGridView1.ShowFocusCell = false;
             this.gdataGridView1.Size = new System.Drawing.Size(832, 503);
             this.gdataGridView1.TabIndex = 12;
             this.gdataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // colAssetpresetgroupid
+            // 
+            this.colAssetpresetgroupid.DataPropertyName = "AssetPresetGroupId";
+            this.colAssetpresetgroupid.HeaderText = "No";
+            this.colAssetpresetgroupid.Name = "colAssetpresetgroupid";
+            this.colAssetpresetgroupid.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -100,6 +103,11 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "지역";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // gbindingSource2
+            // 
+            this.gbindingSource2.DataMember = "AssetPresetGroups";
+            this.gbindingSource2.DataSource = this.dataSet1;
             // 
             // gbutton1
             // 
@@ -211,18 +219,6 @@
             // 
             this.assetPresetGroupsTableAdapter1.ClearBeforeFill = true;
             // 
-            // gbindingSource2
-            // 
-            this.gbindingSource2.DataMember = "AssetPresetGroups";
-            this.gbindingSource2.DataSource = this.dataSet1;
-            // 
-            // colAssetpresetgroupid
-            // 
-            this.colAssetpresetgroupid.DataPropertyName = "AssetPresetGroupId";
-            this.colAssetpresetgroupid.HeaderText = "No";
-            this.colAssetpresetgroupid.Name = "colAssetpresetgroupid";
-            this.colAssetpresetgroupid.ReadOnly = true;
-            // 
             // View_GroupPresetManager2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -234,13 +230,12 @@
             this.Load += new System.EventHandler(this.MGroupManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.ptop.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sitebindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }

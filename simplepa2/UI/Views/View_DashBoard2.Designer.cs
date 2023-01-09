@@ -50,9 +50,6 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.Eventbs2 = new Wisej.Web.BindingSource(this.components);
             this.assetsBindingSource = new Wisej.Web.BindingSource(this.components);
-            this.contextMenu1 = new Wisej.Web.ContextMenu(this.components);
-            this.menuItem1 = new Wisej.Web.MenuItem();
-            this.menuItem3 = new Wisej.Web.MenuItem();
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.assetGroupsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetGroupsTableAdapter();
             this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
@@ -173,25 +170,6 @@
             this.assetsBindingSource.DataMember = "Assets";
             this.assetsBindingSource.DataSource = this.dataSet1;
             this.assetsBindingSource.Sort = "seq";
-            // 
-            // contextMenu1
-            // 
-            this.contextMenu1.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
-            this.menuItem1,
-            this.menuItem3});
-            this.contextMenu1.Name = "contextMenu1";
-            // 
-            // menuItem1
-            // 
-            this.menuItem1.Index = 0;
-            this.menuItem1.Name = "menuItem1";
-            this.menuItem1.Text = "menuItem1";
-            // 
-            // menuItem3
-            // 
-            this.menuItem3.Index = 1;
-            this.menuItem3.Name = "menuItem3";
-            this.menuItem3.Text = "menuItem2";
             // 
             // assetsTableAdapter
             // 
@@ -425,6 +403,7 @@
             this.evdataGridView1.Margin = new Wisej.Web.Padding(10);
             this.evdataGridView1.MultiSelect = false;
             this.evdataGridView1.Name = "evdataGridView1";
+            this.evdataGridView1.RowHeadersVisible = false;
             this.evdataGridView1.RowHeadersWidth = 14;
             this.evdataGridView1.Size = new System.Drawing.Size(428, 288);
             this.evdataGridView1.TabIndex = 2;
@@ -515,6 +494,7 @@
             this.evdataGridView3.Margin = new Wisej.Web.Padding(10);
             this.evdataGridView3.MultiSelect = false;
             this.evdataGridView3.Name = "evdataGridView3";
+            this.evdataGridView3.RowHeadersVisible = false;
             this.evdataGridView3.RowHeadersWidth = 14;
             this.evdataGridView3.Size = new System.Drawing.Size(412, 288);
             this.evdataGridView3.TabIndex = 3;
@@ -641,9 +621,6 @@
         private DataSet1 dataSet1;
         private Wisej.Web.BindingSource Eventbs2;
         private Wisej.Web.BindingSource assetsBindingSource;
-        private Wisej.Web.ContextMenu contextMenu1;
-        private Wisej.Web.MenuItem menuItem1;
-        private Wisej.Web.MenuItem menuItem3;
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
         private DataSet1TableAdapters.AssetGroupsTableAdapter assetGroupsTableAdapter;
         private DataSet1TableAdapters.EventvmTableAdapter eventvmTableAdapter;
