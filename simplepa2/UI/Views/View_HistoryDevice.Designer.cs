@@ -32,18 +32,14 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.장비아이디 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.장비명 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEventdeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
             this.장비종류 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.IP주소 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.카테고리 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.변경이력 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.상세 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.발생시간 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colEventdeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
             this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -86,51 +82,55 @@
             // dataGridView1
             // 
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.장비아이디,
-            this.장비명,
-            this.장비종류,
-            this.IP주소,
-            this.카테고리,
-            this.변경이력,
-            this.상세,
-            this.발생시간,
             this.colEventdeviceid,
             this.colWrite_Time,
-            this.colEvent_Text,
-            this.colIp,
             this.colPath,
+            this.colEvent_Text,
             this.colDevicename,
+            this.장비종류,
+            this.colIp,
             this.colState,
-            this.colAlarm});
+            this.colAlarm,
+            this.카테고리,
+            this.변경이력,
+            this.상세});
             this.dataGridView1.DataSource = this.eventdeviceBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 72);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 68;
             // 
-            // 장비아이디
+            // colEventdeviceid
             // 
-            this.장비아이디.HeaderText = "장비아이디";
-            this.장비아이디.Name = "장비아이디";
-            this.장비아이디.Width = 140;
+            this.colEventdeviceid.DataPropertyName = "EventdeviceId";
+            this.colEventdeviceid.HeaderText = "No";
+            this.colEventdeviceid.Name = "colEventdeviceid";
+            this.colEventdeviceid.ReadOnly = true;
+            this.colEventdeviceid.Width = 60;
             // 
-            // 장비명
+            // colWrite_Time
             // 
-            this.장비명.HeaderText = "장비명";
-            this.장비명.Name = "장비명";
-            this.장비명.Width = 200;
+            this.colWrite_Time.DataPropertyName = "write_time";
+            dataGridViewCellStyle1.Format = "G";
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colWrite_Time.HeaderText = "발생시간";
+            this.colWrite_Time.Name = "colWrite_Time";
+            this.colWrite_Time.Width = 200;
             // 
             // 장비종류
             // 
             this.장비종류.HeaderText = "장비종류";
             this.장비종류.Name = "장비종류";
+            this.장비종류.Width = 120;
             // 
-            // IP주소
+            // colIp
             // 
-            this.IP주소.HeaderText = "IP주소";
-            this.IP주소.Name = "IP주소";
-            this.IP주소.Width = 150;
+            this.colIp.DataPropertyName = "ip";
+            this.colIp.HeaderText = "IP주소";
+            this.colIp.Name = "colIp";
+            this.colIp.Width = 120;
             // 
             // 카테고리
             // 
@@ -150,49 +150,22 @@
             this.상세.Name = "상세";
             this.상세.Width = 200;
             // 
-            // 발생시간
-            // 
-            this.발생시간.HeaderText = "발생시간";
-            this.발생시간.Name = "발생시간";
-            this.발생시간.Width = 180;
-            // 
-            // colEventdeviceid
-            // 
-            this.colEventdeviceid.DataPropertyName = "EventdeviceId";
-            this.colEventdeviceid.HeaderText = "EventdeviceId";
-            this.colEventdeviceid.Name = "colEventdeviceid";
-            this.colEventdeviceid.ReadOnly = true;
-            // 
-            // colWrite_Time
-            // 
-            this.colWrite_Time.DataPropertyName = "write_time";
-            dataGridViewCellStyle1.Format = "G";
-            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colWrite_Time.HeaderText = "write_time";
-            this.colWrite_Time.Name = "colWrite_Time";
-            // 
             // colEvent_Text
             // 
             this.colEvent_Text.DataPropertyName = "event_text";
             this.colEvent_Text.HeaderText = "event_text";
             this.colEvent_Text.Name = "colEvent_Text";
             // 
-            // colIp
-            // 
-            this.colIp.DataPropertyName = "ip";
-            this.colIp.HeaderText = "ip";
-            this.colIp.Name = "colIp";
-            // 
             // colPath
             // 
             this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "path";
+            this.colPath.HeaderText = "장비위치";
             this.colPath.Name = "colPath";
             // 
             // colDevicename
             // 
             this.colDevicename.DataPropertyName = "DeviceName";
-            this.colDevicename.HeaderText = "DeviceName";
+            this.colDevicename.HeaderText = "장비명";
             this.colDevicename.Name = "colDevicename";
             // 
             // colState
@@ -398,14 +371,10 @@
 
         private Wisej.Web.Panel panel2;
         private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn 장비아이디;
-        private Wisej.Web.DataGridViewTextBoxColumn 장비명;
         private Wisej.Web.DataGridViewTextBoxColumn 장비종류;
-        private Wisej.Web.DataGridViewTextBoxColumn IP주소;
         private Wisej.Web.DataGridViewTextBoxColumn 카테고리;
         private Wisej.Web.DataGridViewTextBoxColumn 변경이력;
         private Wisej.Web.DataGridViewTextBoxColumn 상세;
-        private Wisej.Web.DataGridViewTextBoxColumn 발생시간;
         private Wisej.Web.Panel panel3;
         private Wisej.Web.Label label1;
         private Wisej.Web.ComboBox comboBox3;

@@ -33,10 +33,7 @@
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colEventbsid = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.방송시작 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송종류 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.방송위치 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.방송내용 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송결과 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송소유자 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.방송음원 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -85,58 +82,39 @@
             // 
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colEventbsid,
-            this.방송시작,
+            this.colWrite_Time,
+            this.colPath,
+            this.colEvent_Text,
+            this.colState,
             this.방송종류,
-            this.방송위치,
-            this.방송내용,
             this.방송결과,
             this.방송소유자,
             this.방송음원,
             this.방송시간,
-            this.colWrite_Time,
-            this.colEvent_Text,
             this.colIp,
-            this.colPath,
             this.colDevicename,
-            this.colState,
             this.colAlarm});
             this.dataGridView1.DataSource = this.eventbsBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 72);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 70;
             // 
             // colEventbsid
             // 
             this.colEventbsid.DataPropertyName = "EventbsId";
-            this.colEventbsid.HeaderText = "EventbsId";
+            this.colEventbsid.HeaderText = "No";
             this.colEventbsid.Name = "colEventbsid";
             this.colEventbsid.ReadOnly = true;
-            // 
-            // 방송시작
-            // 
-            this.방송시작.HeaderText = "방송시작";
-            this.방송시작.Name = "방송시작";
-            this.방송시작.Width = 200;
+            this.colEventbsid.Width = 60;
             // 
             // 방송종류
             // 
             this.방송종류.HeaderText = "방송종류";
             this.방송종류.Name = "방송종류";
             this.방송종류.Width = 150;
-            // 
-            // 방송위치
-            // 
-            this.방송위치.HeaderText = "방송위치";
-            this.방송위치.Name = "방송위치";
-            this.방송위치.Width = 150;
-            // 
-            // 방송내용
-            // 
-            this.방송내용.HeaderText = "방송내용";
-            this.방송내용.Name = "방송내용";
-            this.방송내용.Width = 150;
             // 
             // 방송결과
             // 
@@ -170,14 +148,16 @@
             this.colWrite_Time.DataPropertyName = "write_time";
             dataGridViewCellStyle1.Format = "G";
             this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colWrite_Time.HeaderText = "write_time";
+            this.colWrite_Time.HeaderText = "방송시작";
             this.colWrite_Time.Name = "colWrite_Time";
+            this.colWrite_Time.Width = 200;
             // 
             // colEvent_Text
             // 
             this.colEvent_Text.DataPropertyName = "event_text";
-            this.colEvent_Text.HeaderText = "event_text";
+            this.colEvent_Text.HeaderText = "방송내용";
             this.colEvent_Text.Name = "colEvent_Text";
+            this.colEvent_Text.Width = 120;
             // 
             // colIp
             // 
@@ -188,8 +168,9 @@
             // colPath
             // 
             this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "path";
+            this.colPath.HeaderText = "방송위치";
             this.colPath.Name = "colPath";
+            this.colPath.Width = 140;
             // 
             // colDevicename
             // 
@@ -377,11 +358,8 @@
 
         private Wisej.Web.Panel panel2;
         private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn 방송시작;
         private Wisej.Web.DataGridViewTextBoxColumn 방송시간;
         private Wisej.Web.DataGridViewTextBoxColumn 방송종류;
-        private Wisej.Web.DataGridViewTextBoxColumn 방송내용;
-        private Wisej.Web.DataGridViewTextBoxColumn 방송위치;
         private Wisej.Web.DataGridViewTextBoxColumn 방송음원;
         private Wisej.Web.DataGridViewTextBoxColumn 방송결과;
         private Wisej.Web.DataGridViewTextBoxColumn 방송소유자;

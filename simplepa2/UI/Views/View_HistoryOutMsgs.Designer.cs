@@ -32,13 +32,9 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.수신시각 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.수신장비 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.수신위치 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.수신방법 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.수신정보 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.결과 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.상세 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colEventpresetid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
             this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -85,45 +81,30 @@
             // dataGridView1
             // 
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.수신시각,
-            this.수신장비,
-            this.수신위치,
-            this.수신방법,
-            this.수신정보,
-            this.결과,
-            this.상세,
             this.colEventpresetid,
             this.colWrite_Time,
-            this.colEvent_Text,
-            this.colIp,
             this.colPath,
-            this.colDevicename,
+            this.colEvent_Text,
             this.colState,
+            this.수신방법,
+            this.수신정보,
+            this.수신장비,
+            this.colIp,
+            this.colDevicename,
             this.colAlarm});
             this.dataGridView1.DataSource = this.eventpresetBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(20, 72);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 68;
-            // 
-            // 수신시각
-            // 
-            this.수신시각.HeaderText = "수신시각";
-            this.수신시각.Name = "수신시각";
-            this.수신시각.Width = 140;
             // 
             // 수신장비
             // 
             this.수신장비.HeaderText = "수신장비";
             this.수신장비.Name = "수신장비";
             this.수신장비.Width = 200;
-            // 
-            // 수신위치
-            // 
-            this.수신위치.HeaderText = "수신위치";
-            this.수신위치.Name = "수신위치";
-            this.수신위치.Width = 200;
             // 
             // 수신방법
             // 
@@ -137,38 +118,29 @@
             this.수신정보.Name = "수신정보";
             this.수신정보.Width = 150;
             // 
-            // 결과
-            // 
-            this.결과.HeaderText = "결과";
-            this.결과.Name = "결과";
-            this.결과.Width = 150;
-            // 
-            // 상세
-            // 
-            this.상세.HeaderText = "상세";
-            this.상세.Name = "상세";
-            this.상세.Width = 250;
-            // 
             // colEventpresetid
             // 
             this.colEventpresetid.DataPropertyName = "EventpresetId";
-            this.colEventpresetid.HeaderText = "EventpresetId";
+            this.colEventpresetid.HeaderText = "No";
             this.colEventpresetid.Name = "colEventpresetid";
             this.colEventpresetid.ReadOnly = true;
+            this.colEventpresetid.Width = 60;
             // 
             // colWrite_Time
             // 
             this.colWrite_Time.DataPropertyName = "write_time";
             dataGridViewCellStyle1.Format = "G";
             this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colWrite_Time.HeaderText = "write_time";
+            this.colWrite_Time.HeaderText = "수신시각";
             this.colWrite_Time.Name = "colWrite_Time";
+            this.colWrite_Time.Width = 200;
             // 
             // colEvent_Text
             // 
             this.colEvent_Text.DataPropertyName = "event_text";
-            this.colEvent_Text.HeaderText = "event_text";
+            this.colEvent_Text.HeaderText = "내역";
             this.colEvent_Text.Name = "colEvent_Text";
+            this.colEvent_Text.Width = 120;
             // 
             // colIp
             // 
@@ -179,8 +151,9 @@
             // colPath
             // 
             this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "path";
+            this.colPath.HeaderText = "수신위치";
             this.colPath.Name = "colPath";
+            this.colPath.Width = 140;
             // 
             // colDevicename
             // 
@@ -191,8 +164,9 @@
             // colState
             // 
             this.colState.DataPropertyName = "state";
-            this.colState.HeaderText = "state";
+            this.colState.HeaderText = "상세";
             this.colState.Name = "colState";
+            this.colState.Width = 140;
             // 
             // colAlarm
             // 
@@ -391,13 +365,9 @@
 
         private Wisej.Web.Panel panel2;
         private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn 수신시각;
         private Wisej.Web.DataGridViewTextBoxColumn 수신장비;
-        private Wisej.Web.DataGridViewTextBoxColumn 수신위치;
         private Wisej.Web.DataGridViewTextBoxColumn 수신방법;
         private Wisej.Web.DataGridViewTextBoxColumn 수신정보;
-        private Wisej.Web.DataGridViewTextBoxColumn 결과;
-        private Wisej.Web.DataGridViewTextBoxColumn 상세;
         private Wisej.Web.Panel panel3;
         private Wisej.Web.Label label1;
         private Wisej.Web.ComboBox comboBox3;

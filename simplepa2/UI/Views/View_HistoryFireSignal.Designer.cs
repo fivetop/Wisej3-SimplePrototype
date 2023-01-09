@@ -32,18 +32,18 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
+            this.colEventvmid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.수신반타입 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.포트번호 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.수신정보 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.수신명령 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.상세 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colEventvmid = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colWrite_Time = new Wisej.Web.DataGridViewDateTimePickerColumn();
-            this.colEvent_Text = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colAlarm = new Wisej.Web.DataGridViewTextBoxColumn();
             this.eventvmBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
@@ -85,9 +85,9 @@
             this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colEventvmid,
             this.colWrite_Time,
+            this.colPath,
             this.colEvent_Text,
             this.colState,
-            this.colPath,
             this.수신반타입,
             this.포트번호,
             this.수신정보,
@@ -103,6 +103,44 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1320, 768);
             this.dataGridView1.TabIndex = 67;
+            // 
+            // colEventvmid
+            // 
+            this.colEventvmid.DataPropertyName = "EventVMId";
+            this.colEventvmid.HeaderText = "No";
+            this.colEventvmid.Name = "colEventvmid";
+            this.colEventvmid.ReadOnly = true;
+            this.colEventvmid.Width = 60;
+            // 
+            // colWrite_Time
+            // 
+            this.colWrite_Time.DataPropertyName = "write_time";
+            dataGridViewCellStyle1.Format = "G";
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colWrite_Time.HeaderText = "수신시각";
+            this.colWrite_Time.Name = "colWrite_Time";
+            this.colWrite_Time.Width = 200;
+            // 
+            // colEvent_Text
+            // 
+            this.colEvent_Text.DataPropertyName = "event_text";
+            this.colEvent_Text.HeaderText = "내용";
+            this.colEvent_Text.Name = "colEvent_Text";
+            this.colEvent_Text.Width = 120;
+            // 
+            // colState
+            // 
+            this.colState.DataPropertyName = "state";
+            this.colState.HeaderText = "상태";
+            this.colState.Name = "colState";
+            this.colState.Width = 140;
+            // 
+            // colPath
+            // 
+            this.colPath.DataPropertyName = "path";
+            this.colPath.HeaderText = "수신위치";
+            this.colPath.Name = "colPath";
+            this.colPath.Width = 140;
             // 
             // 수신반타입
             // 
@@ -134,51 +172,17 @@
             this.상세.Name = "상세";
             this.상세.Width = 200;
             // 
-            // colEventvmid
-            // 
-            this.colEventvmid.DataPropertyName = "EventVMId";
-            this.colEventvmid.HeaderText = "No";
-            this.colEventvmid.Name = "colEventvmid";
-            this.colEventvmid.ReadOnly = true;
-            this.colEventvmid.Width = 60;
-            // 
-            // colWrite_Time
-            // 
-            this.colWrite_Time.DataPropertyName = "write_time";
-            dataGridViewCellStyle1.Format = "G";
-            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colWrite_Time.HeaderText = "수신시각";
-            this.colWrite_Time.Name = "colWrite_Time";
-            // 
-            // colEvent_Text
-            // 
-            this.colEvent_Text.DataPropertyName = "event_text";
-            this.colEvent_Text.HeaderText = "내용";
-            this.colEvent_Text.Name = "colEvent_Text";
-            // 
             // colIp
             // 
             this.colIp.DataPropertyName = "ip";
             this.colIp.HeaderText = "ip";
             this.colIp.Name = "colIp";
             // 
-            // colPath
-            // 
-            this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "수신위치";
-            this.colPath.Name = "colPath";
-            // 
             // colDevicename
             // 
             this.colDevicename.DataPropertyName = "DeviceName";
             this.colDevicename.HeaderText = "DeviceName";
             this.colDevicename.Name = "colDevicename";
-            // 
-            // colState
-            // 
-            this.colState.DataPropertyName = "state";
-            this.colState.HeaderText = "상태";
-            this.colState.Name = "colState";
             // 
             // colAlarm
             // 
