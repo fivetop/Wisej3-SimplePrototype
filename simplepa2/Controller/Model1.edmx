@@ -158,6 +158,58 @@
           <Property Name="em_description" Type="varchar(max)" />
           <Property Name="em_images" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="Eventbs">
+          <Key>
+            <PropertyRef Name="EventbsId" />
+          </Key>
+          <Property Name="EventbsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="write_time" Type="datetime" Nullable="false" />
+          <Property Name="event_text" Type="varchar(max)" />
+          <Property Name="ip" Type="varchar(max)" />
+          <Property Name="path" Type="varchar(max)" />
+          <Property Name="DeviceName" Type="varchar(max)" />
+          <Property Name="state" Type="varchar(max)" />
+          <Property Name="alarm" Type="int" />
+        </EntityType>
+        <EntityType Name="Eventdevice">
+          <Key>
+            <PropertyRef Name="EventdeviceId" />
+          </Key>
+          <Property Name="EventdeviceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="write_time" Type="datetime" Nullable="false" />
+          <Property Name="event_text" Type="varchar(max)" />
+          <Property Name="ip" Type="varchar(max)" />
+          <Property Name="path" Type="varchar(max)" />
+          <Property Name="DeviceName" Type="varchar(max)" />
+          <Property Name="state" Type="varchar(max)" />
+          <Property Name="alarm" Type="int" />
+        </EntityType>
+        <EntityType Name="Eventpreset">
+          <Key>
+            <PropertyRef Name="EventpresetId" />
+          </Key>
+          <Property Name="EventpresetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="write_time" Type="datetime" Nullable="false" />
+          <Property Name="event_text" Type="varchar(max)" />
+          <Property Name="ip" Type="varchar(max)" />
+          <Property Name="path" Type="varchar(max)" />
+          <Property Name="DeviceName" Type="varchar(max)" />
+          <Property Name="state" Type="varchar(max)" />
+          <Property Name="alarm" Type="int" />
+        </EntityType>
+        <EntityType Name="Eventsyslog">
+          <Key>
+            <PropertyRef Name="EventsyslogId" />
+          </Key>
+          <Property Name="EventsyslogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="write_time" Type="datetime" Nullable="false" />
+          <Property Name="event_text" Type="varchar(max)" />
+          <Property Name="ip" Type="varchar(max)" />
+          <Property Name="path" Type="varchar(max)" />
+          <Property Name="DeviceName" Type="varchar(max)" />
+          <Property Name="state" Type="varchar(max)" />
+          <Property Name="alarm" Type="int" />
+        </EntityType>
         <EntityType Name="Eventvm">
           <Key>
             <PropertyRef Name="EventVMId" />
@@ -173,7 +225,7 @@
         </EntityType>
         <EntityType Name="Holidays">
           <Key>
-            <PropertyRef Name="HolidayId" />
+            <PropertyRef Name="hDate" />
           </Key>
           <Property Name="HolidayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="hDate" Type="datetime" Nullable="false" />
@@ -282,6 +334,10 @@
           <EntitySet Name="DeviceChannel" EntityType="Self.DeviceChannel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EMBs" EntityType="Self.EMBs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EMServer" EntityType="Self.EMServer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eventbs" EntityType="Self.Eventbs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eventdevice" EntityType="Self.Eventdevice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eventpreset" EntityType="Self.Eventpreset" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eventsyslog" EntityType="Self.Eventsyslog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Eventvm" EntityType="Self.Eventvm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Holidays" EntityType="Self.Holidays" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Musics" EntityType="Self.Musics" Schema="dbo" store:Type="Tables" />
@@ -480,14 +536,6 @@
           <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="alarm" Type="Int32" />
         </EntityType>
-        <EntityType Name="Holidays">
-          <Key>
-            <PropertyRef Name="HolidayId" />
-          </Key>
-          <Property Name="HolidayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="hDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="Musics">
           <Key>
             <PropertyRef Name="MusicId" />
@@ -543,7 +591,6 @@
           <EntitySet Name="EMBs" EntityType="Self.EMBs" />
           <EntitySet Name="EMServer" EntityType="Self.EMServer" />
           <EntitySet Name="Eventvm" EntityType="Self.Eventvm" />
-          <EntitySet Name="Holidays" EntityType="Self.Holidays" />
           <EntitySet Name="Musics" EntityType="Self.Musics" />
           <EntitySet Name="UserTrees" EntityType="Self.UserTrees" />
           <EntitySet Name="PlayItem" EntityType="Self.PlayItem" />
@@ -552,6 +599,11 @@
           <EntitySet Name="spa_bd_struct" EntityType="simplePAModel.spa_bd_struct" />
           <EntitySet Name="spa_site" EntityType="simplePAModel.spa_site" />
           <EntitySet Name="Simplepa" EntityType="simplePAModel.Simplepa" />
+          <EntitySet Name="Eventbs" EntityType="simplePAModel.Eventbs" />
+          <EntitySet Name="Eventdevice" EntityType="simplePAModel.Eventdevice" />
+          <EntitySet Name="Eventpreset" EntityType="simplePAModel.Eventpreset" />
+          <EntitySet Name="Eventsyslog" EntityType="simplePAModel.Eventsyslog" />
+          <EntitySet Name="Holidays" EntityType="simplePAModel.Holidays" />
         </EntityContainer>
         <EntityType Name="BSTreeC">
           <Key>
@@ -613,6 +665,66 @@
           <Property Name="sms_pw" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="sms_rcvno" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EmMusic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Eventbs">
+          <Key>
+            <PropertyRef Name="EventbsId" />
+          </Key>
+          <Property Name="EventbsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="write_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="event_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="alarm" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Eventdevice">
+          <Key>
+            <PropertyRef Name="EventdeviceId" />
+          </Key>
+          <Property Name="EventdeviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="write_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="event_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="alarm" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Eventpreset">
+          <Key>
+            <PropertyRef Name="EventpresetId" />
+          </Key>
+          <Property Name="EventpresetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="write_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="event_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="alarm" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Eventsyslog">
+          <Key>
+            <PropertyRef Name="EventsyslogId" />
+          </Key>
+          <Property Name="EventsyslogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="write_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="event_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="alarm" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Holidays">
+          <Key>
+            <PropertyRef Name="hDate" />
+          </Key>
+          <Property Name="HolidayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -775,15 +887,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Holidays">
-            <EntityTypeMapping TypeName="simplePAModel.Holidays">
-              <MappingFragment StoreEntitySet="Holidays">
-                <ScalarProperty Name="HolidayId" ColumnName="HolidayId" />
-                <ScalarProperty Name="hDate" ColumnName="hDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Musics">
             <EntityTypeMapping TypeName="simplePAModel.Musics">
               <MappingFragment StoreEntitySet="Musics">
@@ -889,6 +992,71 @@
                 <ScalarProperty Name="sms_server" ColumnName="sms_server" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="SimplePAId" ColumnName="SimplePAId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eventbs">
+            <EntityTypeMapping TypeName="simplePAModel.Eventbs">
+              <MappingFragment StoreEntitySet="Eventbs">
+                <ScalarProperty Name="alarm" ColumnName="alarm" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="event_text" ColumnName="event_text" />
+                <ScalarProperty Name="write_time" ColumnName="write_time" />
+                <ScalarProperty Name="EventbsId" ColumnName="EventbsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eventdevice">
+            <EntityTypeMapping TypeName="simplePAModel.Eventdevice">
+              <MappingFragment StoreEntitySet="Eventdevice">
+                <ScalarProperty Name="alarm" ColumnName="alarm" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="event_text" ColumnName="event_text" />
+                <ScalarProperty Name="write_time" ColumnName="write_time" />
+                <ScalarProperty Name="EventdeviceId" ColumnName="EventdeviceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eventpreset">
+            <EntityTypeMapping TypeName="simplePAModel.Eventpreset">
+              <MappingFragment StoreEntitySet="Eventpreset">
+                <ScalarProperty Name="alarm" ColumnName="alarm" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="event_text" ColumnName="event_text" />
+                <ScalarProperty Name="write_time" ColumnName="write_time" />
+                <ScalarProperty Name="EventpresetId" ColumnName="EventpresetId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eventsyslog">
+            <EntityTypeMapping TypeName="simplePAModel.Eventsyslog">
+              <MappingFragment StoreEntitySet="Eventsyslog">
+                <ScalarProperty Name="alarm" ColumnName="alarm" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="event_text" ColumnName="event_text" />
+                <ScalarProperty Name="write_time" ColumnName="write_time" />
+                <ScalarProperty Name="EventsyslogId" ColumnName="EventsyslogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Holidays">
+            <EntityTypeMapping TypeName="simplePAModel.Holidays">
+              <MappingFragment StoreEntitySet="Holidays">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="hDate" ColumnName="hDate" />
+                <ScalarProperty Name="HolidayId" ColumnName="HolidayId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

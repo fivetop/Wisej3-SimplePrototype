@@ -30,6 +30,7 @@ namespace pa
         public EMBsDataTable EMBs { get; set; } = new EMBsDataTable();
         public EMServerDataTable EMServer { get; set; } = new EMServerDataTable();
         public EventvmDataTable Eventvm { get; set; } = new EventvmDataTable();
+        public EventdeviceDataTable Eventdevice { get; set; } = new EventdeviceDataTable();
         public HolidaysDataTable Holidays { get; set; } = new HolidaysDataTable();
         public MusicsDataTable Musics { get; set; } = new MusicsDataTable();
         public PlayItemDataTable PlayItem { get; set; } = new PlayItemDataTable();
@@ -524,17 +525,18 @@ namespace pa
 
         }
 
-        public void EventvmIP(AssetsRow t3)
+        public void EventvmIP(DataClass.Device t3)
         {
             if (g.mainWindow._DanteDevice == null) return;
-            EventvmRow em = Eventvm.NewEventvmRow();
+            EventdeviceRow em = Eventdevice.NewEventdeviceRow();
             em.write_time = DateTime.Now;
             em.ip = t3.ip;
-            em.path = t3.path;
+            em.path =  Assets.FirstOrDefault(p=>p.ip == t3.ip).path;
             em.DeviceName = t3.DeviceName;
             em.state = t3.state;
             em.alarm = 2;
-            this.Save(em);
+            //this.Save(em);
+            var t2 = Dbsave<Eventdevice>("Eventdevices", (DataRow)em);
         }
 
         public void Save(object o1)

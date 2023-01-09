@@ -878,6 +878,19 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controller\EMServersController.cs" />
+    <Compile Include="Controller\Eventbs.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Eventdevice.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\EventdevicesController.cs" />
+    <Compile Include="Controller\Eventpreset.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Eventsyslog.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controller\Eventvm.cs">
       <DependentUpon>Model1.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -885,7 +898,6 @@
     <Compile Include="Controller\EventvmsController.cs" />
     <Compile Include="Controller\Holidays.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controller\HolidaysController.cs" />
     <Compile Include="Controller\Model1.Context.cs">

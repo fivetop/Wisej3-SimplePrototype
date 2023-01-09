@@ -25,11 +25,11 @@ namespace pa
         // 상태가 변경되었을 경우만 디스플레이
         private void SpeakerCheck(string str2, int v)
         {
-            var t4 = dBAccess.Assets.Where(p => p.ip == str2);
+            var t4 = gl.danteDevice._DanteDevice.Where(p => p.ip == str2);
             if (t4.Count() == 0)
                 return;
 
-            var t3 = dBAccess.Assets.First(p => p.ip == str2);
+            var t3 = gl.danteDevice._DanteDevice.First(p => p.ip == str2);
             if (t3 == null)
                 return;
 
@@ -92,19 +92,21 @@ namespace pa
                 try
                 {
                     g.Log("Device Check : " + t2.Count.ToString());
-                    foreach (var t1 in dBAccess.Assets)
+                    foreach (var t1 in gl.danteDevice._DanteDevice)
                     {
                         if (t1.state != t1.state_old)
                             t1.state_old = t1.state;
                         t1.state = ""; // "Off-Line";
                     }
 
-                    foreach (var t3 in dBAccess.Assets)
+                    foreach (var t3 in gl.danteDevice._DanteDevice)
                     {
+                        if (t3.ip == "")
+                            continue;
                         var t4 = t2.Contains(t3.ip);
                         if (t4)
                         {
-                            //g.Log("Alive IP.. : " + t3.ip);
+                            g.Log("Alive On IP.. : " + t3.ip);
                             t3.state = "On-Line";
                             // 올드가 오프라인이면 
                             if (t3.state_old == "")
@@ -114,6 +116,7 @@ namespace pa
                         }
                         else
                         {
+                            g.Log("Alive Check IP.. : " + t3.ip);
                             // 온라인이었다가 오프라인이면 
                             if (t3.state != t3.state_old)
                             {

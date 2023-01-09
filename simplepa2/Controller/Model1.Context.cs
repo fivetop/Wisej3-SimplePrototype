@@ -34,7 +34,6 @@ namespace simplepa2.Controller
         public virtual DbSet<EMBs> EMBs { get; set; }
         public virtual DbSet<EMServer> EMServer { get; set; }
         public virtual DbSet<Eventvm> Eventvm { get; set; }
-        public virtual DbSet<Holidays> Holidays { get; set; }
         public virtual DbSet<Musics> Musics { get; set; }
         public virtual DbSet<UserTrees> UserTrees { get; set; }
         public virtual DbSet<PlayItem> PlayItem { get; set; }
@@ -43,5 +42,10 @@ namespace simplepa2.Controller
         public virtual DbSet<spa_bd_struct> spa_bd_struct { get; set; }
         public virtual DbSet<spa_site> spa_site { get; set; }
         public virtual DbSet<Simplepa> Simplepa { get; set; }
+        public virtual DbSet<Eventbs> Eventbs { get; set; }
+        public virtual DbSet<Eventdevice> Eventdevice { get; set; }
+        public virtual DbSet<Eventpreset> Eventpreset { get; set; }
+        public virtual DbSet<Eventsyslog> Eventsyslog { get; set; }
+        public virtual DbSet<Holidays> Holidays { get; set; }
     }
 }

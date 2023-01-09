@@ -60,6 +60,7 @@ namespace pa
                 directoryInfo.Create();
 
             g.XMLRead();
+            gl.XMLDanteDevice(true);
 
             Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 

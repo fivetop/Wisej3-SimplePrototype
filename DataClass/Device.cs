@@ -31,6 +31,9 @@ namespace DataClass
 		public List<String> srvdomain { get; set; }
 		public List<String> txtdomain { get; set; }
 
+		public string state { get; set; } = "";
+		public string state_old { get; set; } = "";
+
 		public Device()
 		{
 			device = 0; // 0 speaker , 1 amp , 2 dsp , 3 avio 
