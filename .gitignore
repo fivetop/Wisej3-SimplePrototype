@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/WatchDog/Web.config
+/simplepa2/Images/logo_navBar.png

@@ -1,4 +1,5 @@
 ﻿using simplepa2.UI.Pages;
+using simplepa2.UI.Widget;
 using System;
 using System.ComponentModel;
 using System.Drawing;
@@ -9,18 +10,30 @@ namespace simplepa2.UI.Views
 {
     public partial class View_DashBoard : Wisej.Web.UserControl
     {
+        private Widget_BBSMultiDeck bbs_multiDeck = new Widget_BBSMultiDeck();
+        private Widget_DeviceHeatMap device_heatMap = new Widget_DeviceHeatMap();
+
         public View_DashBoard()
         {
             InitializeComponent();
+
+            setupUI();
         }
 
         BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
         public void Refresh()
         {
+            
             /*
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
             this.bSroomTableAdapter.Fill(this.dataSet1.BSroom); */
+        }
+        public void setupUI()
+        {
+            pn_multiDeck.Controls.Add(bbs_multiDeck);
+            pn_heatMap.Controls.Add(device_heatMap);
+            
         }
 
         private void View_DashBoard_Load(object sender, EventArgs e)

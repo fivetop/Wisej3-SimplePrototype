@@ -157,6 +157,12 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="UI\Components\Comp_BBSDeckButton.resx">
+      <DependentUpon>Comp_BBSDeckButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_DashBoardBBSDeck.resx">
+      <DependentUpon>Comp_DashBoardBBSDeck.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_GroupDetailPanel.resx">
       <DependentUpon>Comp_GroupDetailPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +309,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_TopPanelBar.resx">
       <DependentUpon>View_TopPanelBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Widget\Widget_BBSMultiDeck.resx">
+      <DependentUpon>Widget_BBSMultiDeck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Widget\Widget_DeviceHeatMap.resx">
+      <DependentUpon>Widget_DeviceHeatMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\Page2.resx">
       <DependentUpon>Page2.cs</DependentUpon>
@@ -949,6 +961,15 @@
     </Compile>
     <Compile Include="global.cs" />
     <Compile Include="SignalR\SignalRHub.cs" />
+    <Compile Include="UI\Components\Comp_BBSDeckButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_DashBoardBBSDeck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_DashBoardBBSDeck.Designer.cs">
+      <DependentUpon>Comp_DashBoardBBSDeck.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Comp_GroupDetailPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1299,6 +1320,36 @@
       <DependentUpon>Handler1.ashx</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="UI\Widget\Widget_BBSForecastList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_BBSForecastList.Designer.cs">
+      <DependentUpon>Widget_BBSForecastList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_BBSHistoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_BBSHistoryList.Designer.cs">
+      <DependentUpon>Widget_BBSHistoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_BBSMultiDeck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_BBSMultiDeck.Designer.cs">
+      <DependentUpon>Widget_BBSMultiDeck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_DeviceHeatMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_DeviceHeatMap.Designer.cs">
+      <DependentUpon>Widget_DeviceHeatMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_HistoryFromOutCall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Widget\Widget_HistoryFromOutCall.Designer.cs">
+      <DependentUpon>Widget_HistoryFromOutCall.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\win\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1457,6 +1508,9 @@
     </PackageReference>
     <PackageReference Include="Wisej-3-FullCalendar">
       <Version>3.1.5</Version>
+    </PackageReference>
+    <PackageReference Include="Wisej-3-JustGage">
+      <Version>3.1.6</Version>
     </PackageReference>
     <PackageReference Include="Wisej-3-NavigationBar">
       <Version>3.1.2</Version>

@@ -19,7 +19,7 @@ namespace simplepa2.UI.Pages
         #region // 화면 변수 선언 
         private View_TopPanelBar view_topPanelBar;
 
-        private View_DashBoard view_Dashboard;
+        private View_DashBoard view_DashBoard;
 
         private View_BBSAnchor view_BBSAnchor;
         private View_BBSReservation view_BBSReservation;
