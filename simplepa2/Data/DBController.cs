@@ -599,6 +599,18 @@ namespace simplepa2
 
         #region // Eventvm 이벤트처리 관리 부분 
 
+        public void Eventsyslog(string event_text, string base_text, string state)
+        {
+            EventsyslogRow em = Ds1.Eventsyslog.NewEventsyslogRow();
+            em.write_time = DateTime.Now;
+            em.event_text = event_text;
+            em.path = base_text;
+            em.state = state;
+            em.alarm = 0;
+            Ds1.Eventsyslog.Rows.Add(em);
+            Tam.EventsyslogTableAdapter.Update(Ds1.Eventsyslog);
+        }
+
         public void Eventvm(string event_text, string base_text, string state)
         {
             EventvmRow em = Ds1.Eventvm.NewEventvmRow();
