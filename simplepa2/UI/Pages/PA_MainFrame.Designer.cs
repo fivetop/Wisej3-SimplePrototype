@@ -42,6 +42,7 @@
             this.assetBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.deviceManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.navigationBarItem1 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.navigationBarItem4 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.navigationBarItem2 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.navigationBarItem3 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.siteManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
@@ -67,11 +68,8 @@
             this.topPanels = new Wisej.Web.Panel();
             this.dataSet1 = new simplepa2.DataSet1();
             this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
-            this.pictureBox1 = new Wisej.Web.PictureBox();
-            this.navigationBarItem4 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.rightPanels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenuBar
@@ -86,11 +84,13 @@
             this.bbsConfigurationBarItems,
             this.bbsHistoryBarItems,
             this.systemConfBarItems});
+            this.mainMenuBar.Logo = "Images\\logo_navBar.png";
             this.mainMenuBar.Name = "mainMenuBar";
             this.mainMenuBar.RightToLeft = Wisej.Web.RightToLeft.No;
             this.mainMenuBar.ShowUser = false;
-            this.mainMenuBar.Size = new System.Drawing.Size(250, 425);
+            this.mainMenuBar.Size = new System.Drawing.Size(250, 554);
             this.mainMenuBar.TabIndex = 0;
+            this.mainMenuBar.Text = "SimplePA";
             this.mainMenuBar.ItemClick += new Wisej.Web.Ext.NavigationBar.NavigationBarItemClickEventHandler(this.mainMenuBar_ItemClick);
             this.mainMenuBar.SelectedItemChanged += new System.EventHandler(this.mainMenuBar_SelectedItemChanged);
             // 
@@ -99,6 +99,7 @@
             this.dashboardBarItems.AccessibleName = "dashboardBarItems";
             this.dashboardBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.dashboardBarItems.ForeColor = System.Drawing.Color.White;
+            this.dashboardBarItems.Icon = "Resources\\clipboard-paste-button.svg";
             this.dashboardBarItems.Name = "NavigationBarItem";
             this.dashboardBarItems.Text = "대쉬보드";
             // 
@@ -107,6 +108,7 @@
             this.bbsManagementBarItem.AccessibleName = "bbsManagementBarItem";
             this.bbsManagementBarItem.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bbsManagementBarItem.ForeColor = System.Drawing.Color.White;
+            this.bbsManagementBarItem.Icon = "resource.wx/simplepa2/Resources/microphone-of-voice.svg";
             this.bbsManagementBarItem.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.anchorBBSBarItem,
             this.reservationBarItem,
@@ -172,6 +174,7 @@
             this.bbsConfigurationBarItems.AccessibleName = "bbsConfigurationBarItems";
             this.bbsConfigurationBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bbsConfigurationBarItems.ForeColor = System.Drawing.Color.White;
+            this.bbsConfigurationBarItems.Icon = "resource.wx/simplepa2/Resources/select-brightness-button.svg";
             this.bbsConfigurationBarItems.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.assetBarItem,
             this.deviceManageBarItem,
@@ -209,6 +212,14 @@
             this.navigationBarItem1.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem1.Name = "NavigationBarItem";
             this.navigationBarItem1.Text = "기본그룹";
+            // 
+            // navigationBarItem4
+            // 
+            this.navigationBarItem4.AccessibleDescription = "";
+            this.navigationBarItem4.AccessibleName = "navigationBarItem4";
+            this.navigationBarItem4.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.navigationBarItem4.Name = "NavigationBarItem";
+            this.navigationBarItem4.Text = "PRESET그룹";
             // 
             // navigationBarItem2
             // 
@@ -278,6 +289,7 @@
             this.bbsHistoryBarItems.AccessibleName = "bbsHistoryBarItems";
             this.bbsHistoryBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bbsHistoryBarItems.ForeColor = System.Drawing.Color.White;
+            this.bbsHistoryBarItems.Icon = "resource.wx/simplepa2/Resources/screen-with-news-sections.svg";
             this.bbsHistoryBarItems.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.bbsHistoryBarItem,
             this.deviceHistoryBarItem,
@@ -327,6 +339,7 @@
             this.systemConfBarItems.AccessibleName = "systemConfBarItems";
             this.systemConfBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.systemConfBarItems.ForeColor = System.Drawing.Color.White;
+            this.systemConfBarItems.Icon = "resource.wx/simplepa2/Resources/users-social-symbol.svg";
             this.systemConfBarItems.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.accountManageBarItem,
             this.emailManageBarItem,
@@ -371,7 +384,7 @@
             this.rightPanels.Dock = Wisej.Web.DockStyle.Fill;
             this.rightPanels.Location = new System.Drawing.Point(250, 0);
             this.rightPanels.Name = "rightPanels";
-            this.rightPanels.Size = new System.Drawing.Size(486, 425);
+            this.rightPanels.Size = new System.Drawing.Size(1293, 554);
             this.rightPanels.TabIndex = 1;
             // 
             // contentsPanel
@@ -381,7 +394,7 @@
             this.contentsPanel.Dock = Wisej.Web.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 66);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(486, 359);
+            this.contentsPanel.Size = new System.Drawing.Size(1293, 488);
             this.contentsPanel.TabIndex = 0;
             // 
             // topPanels
@@ -391,7 +404,7 @@
             this.topPanels.Dock = Wisej.Web.DockStyle.Top;
             this.topPanels.Location = new System.Drawing.Point(0, 0);
             this.topPanels.Name = "topPanels";
-            this.topPanels.Size = new System.Drawing.Size(486, 66);
+            this.topPanels.Size = new System.Drawing.Size(1293, 66);
             this.topPanels.TabIndex = 2;
             // 
             // dataSet1
@@ -403,33 +416,16 @@
             // 
             this.eventvmTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ImageSource = "Images\\left-logo.png";
-            this.pictureBox1.Location = new System.Drawing.Point(58, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 24);
-            // 
-            // navigationBarItem4
-            // 
-            this.navigationBarItem4.AccessibleDescription = "";
-            this.navigationBarItem4.AccessibleName = "navigationBarItem4";
-            this.navigationBarItem4.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.navigationBarItem4.Name = "NavigationBarItem";
-            this.navigationBarItem4.Text = "PRESET그룹";
-            // 
             // PA_MainFrame
             // 
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rightPanels);
             this.Controls.Add(this.mainMenuBar);
             this.Name = "PA_MainFrame";
-            this.Size = new System.Drawing.Size(736, 425);
+            this.Size = new System.Drawing.Size(1543, 554);
             this.Text = "PA_MainFrame";
             this.Load += new System.EventHandler(this.PA_MainFrame_Load);
             this.rightPanels.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,7 +467,6 @@
         public Wisej.Web.Ext.NavigationBar.NavigationBarItem deviceManageBarItem;
         private DataSet1 dataSet1;
         private DataSet1TableAdapters.EventvmTableAdapter eventvmTableAdapter;
-        private Wisej.Web.PictureBox pictureBox1;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem assetBarItem;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem1;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem2;
