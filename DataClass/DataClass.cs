@@ -22,10 +22,11 @@ namespace DataClass
         eVolume = 11,           // 볼륨처리     C2S
         eOutChMove = 12,        // 스피커 이동  C2S
         eScanAll = 13,          // 전체 스캔    C2S
-        eFindDSP = 14,          // Find DSP     S2C
-        eReturn = 15,
-        eInChMove = 16,         // DSP, Sound 이동  C2S
-        eFileDown = 17,         // file download   S2C 
+        eScanEM = 14,           // EM 스캔      S2C, C2S
+        eFindDSP = 15,          // Find DSP     S2C
+        eReturn = 16,
+        eInChMove = 17,         // DSP, Sound 이동  C2S
+        eFileDown = 18,         // file download   S2C 
     }
 
     public enum eEventCode

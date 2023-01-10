@@ -378,6 +378,9 @@ namespace simplepa2.UI.Pages
                     break;
                 case eSignalRMsgType.eLogoutUser:
                     break;
+                case eSignalRMsgType.eScanEM:
+                    view_BBSEMManage2.reDraw();
+                    break;
                 case eSignalRMsgType.eFindDSP:
                     if (msg1.state == 1)
                     {
@@ -484,6 +487,11 @@ namespace simplepa2.UI.Pages
                 case eSignalRMsgType.eScanAll:
                     msg1.Msgtype = eVolume;
                     msg1.message = "Scan All";
+                    break;
+
+                case eSignalRMsgType.eScanEM: // EM 정보 요청
+                    msg1.Msgtype = eVolume;
+                    msg1.message = "Scan EM";
                     break;
             }
 

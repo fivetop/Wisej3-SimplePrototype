@@ -112,6 +112,12 @@ namespace pa
                     g.Log("eFileDown FileName : " + msg.user_data1);
                     downloadFile(msg.user_data1);
                     break;
+                case eSignalRMsgType.eScanEM:
+                    if(dBAccess.EMServerUpdate())
+                        SendSigR(eSignalRMsgType.eScanEM, "처리 완료 입니다.");
+                    else
+                        SendSigR(eSignalRMsgType.eScanEM, "재실행이 필요합니다.");
+                    break;
             }
             return true;
         }

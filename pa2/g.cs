@@ -36,7 +36,13 @@ namespace pa
         public int Pport { get; set; } = 0;
         public int Jigsangbalhwa { get; set; } = 0;
 
+        public string net_dante { get; set; } = "";
+        public string net_local { get; set; } = "";
+        public string dsp_ctrl { get; set; } = "";
+        public string dsp_dante { get; set; } = "";
 
+        internal int com_gpio_state = 0;
+        internal int com_Rtype_state = 0;
 
         public EMClient()
         {

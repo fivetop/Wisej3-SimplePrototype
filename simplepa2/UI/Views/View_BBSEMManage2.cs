@@ -27,7 +27,15 @@ namespace simplepa2.UI.Views
         // EM 상태 요청 처리 
         private void button2_Click(object sender, EventArgs e)
         {
-            reDraw();
+            if (gweb.mainFrame.isSignalR())
+            {
+                gweb.mainFrame.sendSigR(eSignalRMsgType.eScanEM); // dsp, dsp_chno
+            }
+            else
+            {
+                AlertBox.Show("취소되었습니다. - 서버 상태를 확인바랍니다.");
+            }
+
         }
 
 

@@ -1,5 +1,6 @@
 ﻿using DataClass;
 using Newtonsoft.Json;
+using simplepa2;
 using simplepa2.Controller;
 using System;
 using System.Collections.Generic;
@@ -168,6 +169,28 @@ namespace pa
                 Console.WriteLine(e1);
             }
 
+        }
+
+        internal bool EMServerUpdate()
+        {
+            if (g.mainWindow.EMServerRow.EMServerId == 0)
+                return false;
+
+            var t1 = g.mainWindow.EMServerRow;
+            t1.state = "On-Line";
+            t1.state_old = "On-Line";
+            t1.com_gpio = g._EMClient.GPIOPort;
+            t1.com_gpio_state = g._EMClient.com_gpio_state;
+            t1.com_Rtype = g._EMClient.Rport;
+            t1.com_Rtype_state = g._EMClient.com_Rtype_state;
+            t1.net_dante = g._EMClient.net_dante;
+            t1.net_local = g._EMClient.net_local;
+            t1.dsp_ctrl = g._EMClient.dsp_ctrl;
+            t1.dsp_dante = g._EMClient.dsp_dante;
+            Dbupdate<EMServerRow>("EMServers", t1, t1.EMServerId);
+
+            g.XMLEMClient(false);
+            return true;
         }
 
 
@@ -581,6 +604,7 @@ namespace pa
                 return null;
             return ret;
         }
+
         #endregion
     }
 }

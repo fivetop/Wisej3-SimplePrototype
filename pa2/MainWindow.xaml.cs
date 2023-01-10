@@ -281,8 +281,7 @@ namespace pa
                 Resolver.localIP = t3.ipv4;
                 g.resolver = new Resolver();
                 g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
-                if (EMServerRow != null)
-                    EMServerRow.net_dante = t3.ipv4;
+                g._EMClient.net_dante = t3.ipv4;
             }
             catch (Exception e1)
             {
