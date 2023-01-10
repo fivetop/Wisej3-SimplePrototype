@@ -87,8 +87,8 @@
             this.colPath,
             this.colEvent_Text,
             this.colDevicename,
-            this.colIp,
             this.장비종류,
+            this.colIp,
             this.colState,
             this.colAlarm,
             this.카테고리,
@@ -124,21 +124,18 @@
             this.colPath.DataPropertyName = "path";
             this.colPath.HeaderText = "장비위치";
             this.colPath.Name = "colPath";
-            this.colPath.Width = 200;
             // 
             // colEvent_Text
             // 
             this.colEvent_Text.DataPropertyName = "event_text";
             this.colEvent_Text.HeaderText = "event_text";
             this.colEvent_Text.Name = "colEvent_Text";
-            this.colEvent_Text.Width = 200;
             // 
             // colDevicename
             // 
             this.colDevicename.DataPropertyName = "DeviceName";
             this.colDevicename.HeaderText = "장비명";
             this.colDevicename.Name = "colDevicename";
-            this.colDevicename.Width = 140;
             // 
             // 장비종류
             // 

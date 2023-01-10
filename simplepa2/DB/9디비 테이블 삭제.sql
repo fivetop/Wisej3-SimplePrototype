@@ -10,5 +10,4 @@ DELETE FROM [dbo].DeviceChannel
 DELETE FROM [dbo].EMServer
 DELETE FROM [dbo].BSTree
 DELETE FROM [dbo].BSTreeC
-DELETE FROM [dbo].EMBS
 GO
