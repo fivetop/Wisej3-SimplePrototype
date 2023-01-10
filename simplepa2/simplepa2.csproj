@@ -772,9 +772,6 @@
     <EmbeddedResource Include="UI\Views\View_BBCAsset2.resx">
       <DependentUpon>View_BBCAsset2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCDevice2.resx">
-      <DependentUpon>View_BBCDevice2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCEmergency2.resx">
       <DependentUpon>View_BBCEmergency2.cs</DependentUpon>
     </EmbeddedResource>
@@ -1407,12 +1404,6 @@
     </Compile>
     <Compile Include="UI\Views\View_BBCAsset2.Designer.cs">
       <DependentUpon>View_BBCAsset2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Views\View_BBCDevice2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Views\View_BBCDevice2.Designer.cs">
-      <DependentUpon>View_BBCDevice2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBCEmergency2.cs">
       <SubType>UserControl</SubType>

@@ -193,7 +193,6 @@ namespace simplepa2.UI.Pages
         }
 
         View_BBCAsset2 view_BBCAsset2  = new View_BBCAsset2();
-        View_BBCDevice2 view_BBCDevice2  = new View_BBCDevice2();
         View_DashBoard2 view_DashBoard2  = new View_DashBoard2();
         View_BBSAnchor2 view_BBSAnchor2  = new View_BBSAnchor2();
         View_BBSGroupManage2 view_BBSGroupManage2  = new View_BBSGroupManage2();
@@ -383,7 +382,7 @@ namespace simplepa2.UI.Pages
                     if (msg1.state == 1)
                     {
                         dBSqlite.LinkAssetDevice();
-                        view_BBCDevice2.reDraw();
+                        view_BBCDevice.reDraw();
                     }
                     else
                         AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);

@@ -75,6 +75,11 @@ namespace simplepa2
             }
         }
 
+
+        #endregion
+
+
+        #region // 선번장으로 부터 기본 테이블 만들기 
         internal void AssetGroupsSave()
         {
             Tam.AssetsTableAdapter.Fill(Ds1.Assets);
@@ -93,6 +98,8 @@ namespace simplepa2
                 foreach (AssetsRow a1 in Ds1.Assets)
                 {
                     AssetGroupsRow m2 = Ds1.AssetGroups.NewAssetGroupsRow();
+                    if (a1.emServer != em.EMNAME)
+                        continue;
                     m2.Name = ENNAME;
                     m2.AssetId = a1.AssetId;
                     m2.EMNAME = a1.emServer;

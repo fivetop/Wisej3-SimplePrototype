@@ -85,24 +85,28 @@
             this.colBstreeid.HeaderText = "번호";
             this.colBstreeid.Name = "colBstreeid";
             this.colBstreeid.ReadOnly = true;
+            this.colBstreeid.Width = 60;
             // 
             // colEMNAME
             // 
             this.colEMNAME.DataPropertyName = "EMNAME";
             this.colEMNAME.HeaderText = "EM서버";
             this.colEMNAME.Name = "colEMNAME";
+            this.colEMNAME.Width = 140;
             // 
             // colChno
             // 
             this.colChno.DataPropertyName = "chno";
             this.colChno.HeaderText = "채널";
             this.colChno.Name = "colChno";
+            this.colChno.Width = 80;
             // 
             // colPlaying
             // 
             this.colPlaying.DataPropertyName = "playing";
             this.colPlaying.HeaderText = "방송상태";
             this.colPlaying.Name = "colPlaying";
+            this.colPlaying.Width = 120;
             // 
             // colWtime
             // 
@@ -111,6 +115,7 @@
             this.colWtime.DefaultCellStyle = dataGridViewCellStyle1;
             this.colWtime.HeaderText = "시작시간";
             this.colWtime.Name = "colWtime";
+            this.colWtime.Width = 200;
             // 
             // bSTreeBindingSource
             // 

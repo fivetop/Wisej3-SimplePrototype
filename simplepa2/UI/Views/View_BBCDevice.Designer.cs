@@ -74,19 +74,18 @@
             // dg_deviceView
             // 
             this.dg_deviceView.AutoGenerateColumns = false;
-            this.dg_deviceView.AutoSizeColumnsMode = Wisej.Web.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg_deviceView.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.DeviceId,
-            this.device_Category,
             this.device,
+            this.device_Category,
             this.Column0,
-            this.DanteModelName,
-            this.ip,
-            this.ip_dspctrl,
             this.chspk,
+            this.ip,
             this.dsp_name,
+            this.ip_dspctrl,
             this.dsp_chno,
-            this.dsp_vol});
+            this.dsp_vol,
+            this.DanteModelName});
             this.dg_deviceView.Dock = Wisej.Web.DockStyle.Fill;
             this.dg_deviceView.Location = new System.Drawing.Point(20, 72);
             this.dg_deviceView.Name = "dg_deviceView";
@@ -113,19 +112,21 @@
             this.device.DataPropertyName = "path";
             this.device.HeaderText = "지역";
             this.device.Name = "device";
-            this.device.Width = 140;
+            this.device.Width = 200;
             // 
             // Column0
             // 
             this.Column0.DataPropertyName = "DeviceName";
             this.Column0.HeaderText = "장비이름";
             this.Column0.Name = "Column0";
+            this.Column0.Width = 140;
             // 
             // DanteModelName
             // 
             this.DanteModelName.DataPropertyName = "DanteModelName";
             this.DanteModelName.HeaderText = "단테모델명";
             this.DanteModelName.Name = "DanteModelName";
+            this.DanteModelName.Visible = false;
             this.DanteModelName.Width = 200;
             // 
             // ip
@@ -133,39 +134,43 @@
             this.ip.DataPropertyName = "ip";
             this.ip.HeaderText = "IP 주소";
             this.ip.Name = "ip";
-            this.ip.Width = 140;
+            this.ip.Width = 120;
             // 
             // ip_dspctrl
             // 
             this.ip_dspctrl.DataPropertyName = "ip_dspctrl";
             this.ip_dspctrl.HeaderText = "DSP IP주소";
             this.ip_dspctrl.Name = "ip_dspctrl";
+            this.ip_dspctrl.Width = 120;
             // 
             // chspk
             // 
             this.chspk.DataPropertyName = "chspk";
-            this.chspk.HeaderText = "chspk";
+            this.chspk.HeaderText = "채널";
             this.chspk.Name = "chspk";
+            this.chspk.Width = 60;
             // 
             // dsp_name
             // 
             this.dsp_name.DataPropertyName = "dsp_name";
-            this.dsp_name.HeaderText = "관리DSP";
+            this.dsp_name.HeaderText = "관리DSP이름";
             this.dsp_name.Name = "dsp_name";
-            this.dsp_name.Width = 60;
+            this.dsp_name.Width = 140;
             // 
             // dsp_chno
             // 
             this.dsp_chno.DataPropertyName = "dsp_chno";
-            this.dsp_chno.HeaderText = "관리DSP CH";
+            this.dsp_chno.HeaderText = "관리DSP채널";
             this.dsp_chno.Name = "dsp_chno";
-            this.dsp_chno.Width = 200;
+            this.dsp_chno.Visible = false;
+            this.dsp_chno.Width = 80;
             // 
             // dsp_vol
             // 
             this.dsp_vol.DataPropertyName = "dsp_vol";
             this.dsp_vol.HeaderText = "볼륨(비상)";
             this.dsp_vol.Name = "dsp_vol";
+            this.dsp_vol.Visible = false;
             // 
             // panel1
             // 
@@ -188,12 +193,13 @@
             this.bt_reloading.CssStyle = resources.GetString("bt_reloading.CssStyle");
             this.bt_reloading.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_reloading.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_reloading.Location = new System.Drawing.Point(363, 1);
+            this.bt_reloading.Location = new System.Drawing.Point(544, 4);
             this.bt_reloading.Margin = new Wisej.Web.Padding(0);
             this.bt_reloading.Name = "bt_reloading";
             this.bt_reloading.Size = new System.Drawing.Size(100, 32);
             this.bt_reloading.TabIndex = 87;
             this.bt_reloading.Text = "재로딩";
+            this.bt_reloading.Visible = false;
             this.bt_reloading.Click += new System.EventHandler(this.bt_reloading_Click);
             // 
             // cb_siteName
@@ -213,12 +219,12 @@
             this.bt_scanStart.BackColor = System.Drawing.Color.FromName("@button1LeftBG");
             this.bt_scanStart.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.bt_scanStart.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_scanStart.Location = new System.Drawing.Point(1000, 0);
+            this.bt_scanStart.Location = new System.Drawing.Point(1094, 4);
             this.bt_scanStart.Margin = new Wisej.Web.Padding(0);
             this.bt_scanStart.Name = "bt_scanStart";
-            this.bt_scanStart.Size = new System.Drawing.Size(100, 32);
+            this.bt_scanStart.Size = new System.Drawing.Size(226, 32);
             this.bt_scanStart.TabIndex = 85;
-            this.bt_scanStart.Text = "장비스캔";
+            this.bt_scanStart.Text = "전체장비스캔";
             this.bt_scanStart.Click += new System.EventHandler(this.bt_scanStart_Click);
             // 
             // button4
@@ -227,12 +233,13 @@
             this.button4.BackColor = System.Drawing.Color.FromName("@button1BG");
             this.button4.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button4.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button4.Location = new System.Drawing.Point(1110, 0);
+            this.button4.Location = new System.Drawing.Point(654, 4);
             this.button4.Margin = new Wisej.Web.Padding(0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 32);
             this.button4.TabIndex = 84;
             this.button4.Text = "수동변경";
+            this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // popTestButton
@@ -241,12 +248,13 @@
             this.popTestButton.BackColor = System.Drawing.Color.FromName("@button1RightBG");
             this.popTestButton.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popTestButton.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.popTestButton.Location = new System.Drawing.Point(1218, 0);
+            this.popTestButton.Location = new System.Drawing.Point(762, 4);
             this.popTestButton.Margin = new Wisej.Web.Padding(0);
             this.popTestButton.Name = "popTestButton";
             this.popTestButton.Size = new System.Drawing.Size(100, 32);
             this.popTestButton.TabIndex = 83;
             this.popTestButton.Text = "이름변경";
+            this.popTestButton.Visible = false;
             // 
             // label3
             // 

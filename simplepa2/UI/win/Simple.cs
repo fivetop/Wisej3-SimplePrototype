@@ -88,7 +88,6 @@ namespace simplepa2
 		View_DashBoard2 view_DashBoard = new View_DashBoard2();
 		View_BBSAnchor2 view_BBSAnchor = new View_BBSAnchor2();
 		View_BBCAsset2 bSAsset = new View_BBCAsset2();
-		View_BBCDevice2 bSDeviceManager = new View_BBCDevice2();
 
 		View_BBCInput2 bSInManager = new View_BBCInput2();
 		View_BBCOutput2 bSOutManage = new View_BBCOutput2();
@@ -135,12 +134,6 @@ namespace simplepa2
 			tabClients.Controls.Add(bSAsset);
 			bSAsset.Dock = DockStyle.Fill;
 			//BStabControl.TabPages.Add(tabClients);
-			MaintabControl.TabPages.Add(tabClients);
-
-			tabClients = new TabPage(menu_string[6]);
-			tabClients.Name = "tabClients";
-			tabClients.Controls.Add(bSDeviceManager);
-			bSDeviceManager.Dock = DockStyle.Fill;
 			MaintabControl.TabPages.Add(tabClients);
 
 			tabClients = new TabPage(menu_string[7]);
@@ -392,7 +385,6 @@ namespace simplepa2
 					if (msg1.state == 1)
 					{
 						dBSqlite.LinkAssetDevice();
-						bSDeviceManager.reDraw();
 					}
 					else
 						AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);

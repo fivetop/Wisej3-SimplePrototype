@@ -63,7 +63,7 @@ namespace simplepa2.UI.Views
             this.cb_siteName.SelectedIndex = 0;
             // sort by site name
             this.deviceTableAdapter1.Fill(this.dataSet11.Device);
-            dg_deviceView.DataSource = this.dataSet11.Device;
+            this.dg_deviceView.DataSource = dataSet11.Device;
         }
 
         private void dataGridView3_DataUpdated(object sender, DataGridViewDataUpdatedEventArgs e)
@@ -131,8 +131,7 @@ namespace simplepa2.UI.Views
 
         private void bt_reloading_Click(object sender, EventArgs e)
         {
-            this.deviceTableAdapter1.Fill(this.dataSet11.Device);
-            this.dg_deviceView.DataSource = dataSet11.Device;
+            reDraw();
         }
     }
 }
