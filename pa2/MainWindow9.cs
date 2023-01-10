@@ -209,7 +209,7 @@ namespace pa
 
         private void keepMainDSP()
         {
-            var s1 = dBAccess.Device.FirstOrDefault(p => p.device == 2 && p.chCount == 16 && p.EMNAME == g._EMClient.EM_NAME);
+            var s1 = gl.danteDevice._DanteDevice.FirstOrDefault(p => p.device == 2 && p.ch.Count < 17 && p.EMNAME == g._EMClient.EM_NAME);
 
             if (s1 == null) return;
             g._EMClient.dsp_ctrl = s1.ip_dspctrl;
