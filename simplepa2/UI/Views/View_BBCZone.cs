@@ -78,8 +78,8 @@ namespace simplepa2.UI.Views
                 selectedItem = null;
                 return;
             }
-             
 
+            this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
             this.buildPanelDataList = buildingDataUISetup(selectedItem);
         }
 
@@ -170,6 +170,7 @@ namespace simplepa2.UI.Views
             {
                 this.form_BBCZoneImport = new Form_BBCZoneImport();
                 this.form_BBCZoneImport.Disposed += new System.EventHandler(this.formDisposed);
+                this.form_BBCZoneImport.FormClosed += Form_BBCZoneImport_FormClosed;
                 this.form_BBCZoneImport.ShowDialog();
             }
             else
@@ -177,6 +178,12 @@ namespace simplepa2.UI.Views
                 this.form_BBCZoneImport.ShowDialog();
             }      
 
+        }
+
+        private void Form_BBCZoneImport_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dbInit();
+            comboUISetup();
         }
 
         private void formDisposed(object sender, EventArgs e)

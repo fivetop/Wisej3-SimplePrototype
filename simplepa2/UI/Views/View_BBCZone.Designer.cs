@@ -112,12 +112,13 @@
             this.bt_dataDelete.CssStyle = "    color: #fff !important;";
             this.bt_dataDelete.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_dataDelete.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_dataDelete.Location = new System.Drawing.Point(1220, 1);
+            this.bt_dataDelete.Location = new System.Drawing.Point(779, -1);
             this.bt_dataDelete.Margin = new Wisej.Web.Padding(0);
             this.bt_dataDelete.Name = "bt_dataDelete";
             this.bt_dataDelete.Size = new System.Drawing.Size(100, 32);
             this.bt_dataDelete.TabIndex = 93;
             this.bt_dataDelete.Text = "전체 삭제";
+            this.bt_dataDelete.Visible = false;
             this.bt_dataDelete.Click += new System.EventHandler(this.bt_dataDelete_Click);
             // 
             // lb_BuildingName
@@ -149,7 +150,7 @@
             this.bt_StoreData.CssStyle = resources.GetString("bt_StoreData.CssStyle");
             this.bt_StoreData.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_StoreData.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_StoreData.Location = new System.Drawing.Point(503, 0);
+            this.bt_StoreData.Location = new System.Drawing.Point(889, 1);
             this.bt_StoreData.Margin = new Wisej.Web.Padding(0);
             this.bt_StoreData.Name = "bt_StoreData";
             this.bt_StoreData.Size = new System.Drawing.Size(100, 32);
@@ -171,6 +172,7 @@
             this.bt_SelectLoading.Size = new System.Drawing.Size(100, 32);
             this.bt_SelectLoading.TabIndex = 36;
             this.bt_SelectLoading.Text = "재로딩";
+            this.bt_SelectLoading.Visible = false;
             this.bt_SelectLoading.Click += new System.EventHandler(this.bt_SelectLoading_Click);
             // 
             // bt_ImportCSV
@@ -180,7 +182,7 @@
             this.bt_ImportCSV.CssStyle = resources.GetString("bt_ImportCSV.CssStyle");
             this.bt_ImportCSV.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_ImportCSV.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_ImportCSV.Location = new System.Drawing.Point(1113, 1);
+            this.bt_ImportCSV.Location = new System.Drawing.Point(1220, 1);
             this.bt_ImportCSV.Margin = new Wisej.Web.Padding(0);
             this.bt_ImportCSV.Name = "bt_ImportCSV";
             this.bt_ImportCSV.Size = new System.Drawing.Size(100, 32);
