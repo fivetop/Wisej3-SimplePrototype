@@ -77,6 +77,9 @@ namespace simplepa2.UI.Popups
                 inputStream.CopyTo(outputFileStream);
             }
         }
+
+        // 선번장을 읽은후 기본 테이블 만들기 
+        // assets, emserver, bstree, assetgroup, assetpreset
         private void DBInsert(string strFileUploadPath)
         {
             EmSpeakerPositionList _emspl = new EmSpeakerPositionList();
@@ -99,6 +102,7 @@ namespace simplepa2.UI.Popups
                 gweb.mainFrame.dBSqlite.EMServerSave(t1);
                 gweb.mainFrame.dBSqlite.BSTreeSave(t1);
             }
+            gweb.mainFrame.dBSqlite.AssetGroupsSave();
             gweb.mainFrame.dBSqlite.AssetPresetSave();
 
             this.Close();
@@ -125,8 +129,8 @@ namespace simplepa2.UI.Popups
                 m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
                 m2.ch = int.Parse(aa[7]);
                 m2.zpc = aa[8];
-                m2.zpci = int.Parse(aa[9]);
-                m2.zpco = int.Parse(aa[10]);              // max 13
+                m2.zpci = int.Parse(aa[9]=="" ? "0": aa[9]);
+                m2.zpco = int.Parse(aa[10] == "" ? "0" : aa[10]);              // max 13
                 m2.floor = int.Parse(aa[11]) * 100 + int.Parse(aa[12]) * 10 + int.Parse(aa[13]);
                 if (m2.ch == 0)
                     m2.ch = 1;

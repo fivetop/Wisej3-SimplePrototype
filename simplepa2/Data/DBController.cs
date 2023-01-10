@@ -75,6 +75,34 @@ namespace simplepa2
             }
         }
 
+        internal void AssetGroupsSave()
+        {
+            Tam.AssetsTableAdapter.Fill(Ds1.Assets);
+            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+            Tam.AssetPresetGroupsTableAdapter.Fill(Ds1.AssetPresetGroups);
+
+            foreach (var em in Ds1.EMServer)
+            {
+                string ENNAME = em.EMNAME + "GROUP";
+
+                var m3 = Ds1.AssetPresetGroups.FirstOrDefault(p => p.Name == ENNAME);
+
+                if (m3 != null)
+                    return;
+
+                foreach (AssetsRow a1 in Ds1.Assets)
+                {
+                    AssetGroupsRow m2 = Ds1.AssetGroups.NewAssetGroupsRow();
+                    m2.Name = ENNAME;
+                    m2.AssetId = a1.AssetId;
+                    m2.EMNAME = a1.emServer;
+                    Ds1.AssetGroups.Rows.Add(m2);
+                    Tam.AssetGroupsTableAdapter.Update(Ds1.AssetGroups);
+                }
+            }
+        }
+
+
 
         internal void AssetPresetSave()
         {

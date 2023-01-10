@@ -30,6 +30,7 @@
         {
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle10 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
@@ -37,12 +38,11 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle7 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle8 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle9 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle10 = new Wisej.Web.DataGridViewCellStyle();
             this.panel1 = new Wisej.Web.Panel();
             this.dg_assetTextData = new Wisej.Web.DataGridView();
             this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.동 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.층 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.비상방송 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.존이름 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.스피커이름 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.앰프정보 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -85,14 +85,14 @@
             this.dg_assetTextData.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.Column0,
             this.동,
-            this.층,
             this.존이름,
             this.스피커이름,
             this.앰프정보,
             this.채널정보,
             this.ZPC,
             this.ZPC입력,
-            this.ZPC출력});
+            this.ZPC출력,
+            this.비상방송});
             this.dg_assetTextData.Dock = Wisej.Web.DockStyle.Fill;
             this.dg_assetTextData.Location = new System.Drawing.Point(20, 71);
             this.dg_assetTextData.MultiSelect = false;
@@ -113,25 +113,26 @@
             this.동.DataPropertyName = "building";
             dataGridViewCellStyle2.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.동.DefaultCellStyle = dataGridViewCellStyle2;
-            this.동.HeaderText = "건물명";
+            this.동.HeaderText = "건물(층)";
             this.동.Name = "동";
             // 
-            // 층
+            // 비상방송
             // 
-            this.층.DataPropertyName = "floor";
-            dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.층.DefaultCellStyle = dataGridViewCellStyle3;
-            this.층.FillWeight = 70F;
-            this.층.HeaderText = "층";
-            this.층.MinimumWidth = 70;
-            this.층.Name = "층";
-            this.층.Width = 70;
+            this.비상방송.DataPropertyName = "floor";
+            dataGridViewCellStyle10.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.비상방송.DefaultCellStyle = dataGridViewCellStyle10;
+            this.비상방송.FillWeight = 70F;
+            this.비상방송.HeaderText = "비상방송";
+            this.비상방송.MinimumWidth = 70;
+            this.비상방송.Name = "비상방송";
+            this.비상방송.Visible = false;
+            this.비상방송.Width = 70;
             // 
             // 존이름
             // 
             this.존이름.DataPropertyName = "ZoneName";
-            dataGridViewCellStyle4.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.존이름.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.존이름.DefaultCellStyle = dataGridViewCellStyle3;
             this.존이름.FillWeight = 120F;
             this.존이름.HeaderText = "존이름";
             this.존이름.MinimumWidth = 100;
@@ -141,8 +142,8 @@
             // 스피커이름
             // 
             this.스피커이름.DataPropertyName = "SpeakerName";
-            dataGridViewCellStyle5.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.스피커이름.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.스피커이름.DefaultCellStyle = dataGridViewCellStyle4;
             this.스피커이름.FillWeight = 120F;
             this.스피커이름.HeaderText = "스피커이름";
             this.스피커이름.MinimumWidth = 100;
@@ -152,8 +153,8 @@
             // 앰프정보
             // 
             this.앰프정보.DataPropertyName = "DeviceName";
-            dataGridViewCellStyle6.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.앰프정보.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.앰프정보.DefaultCellStyle = dataGridViewCellStyle5;
             this.앰프정보.FillWeight = 120F;
             this.앰프정보.HeaderText = "앰프정보";
             this.앰프정보.MinimumWidth = 100;
@@ -163,8 +164,8 @@
             // 채널정보
             // 
             this.채널정보.DataPropertyName = "ch";
-            dataGridViewCellStyle7.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.채널정보.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.채널정보.DefaultCellStyle = dataGridViewCellStyle6;
             this.채널정보.FillWeight = 70F;
             this.채널정보.HeaderText = "채널정보";
             this.채널정보.MinimumWidth = 70;
@@ -174,8 +175,8 @@
             // ZPC
             // 
             this.ZPC.DataPropertyName = "zpc";
-            dataGridViewCellStyle8.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.ZPC.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC.DefaultCellStyle = dataGridViewCellStyle7;
             this.ZPC.HeaderText = "ZPC";
             this.ZPC.MinimumWidth = 100;
             this.ZPC.Name = "ZPC";
@@ -183,8 +184,8 @@
             // ZPC입력
             // 
             this.ZPC입력.DataPropertyName = "zpci";
-            dataGridViewCellStyle9.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.ZPC입력.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC입력.DefaultCellStyle = dataGridViewCellStyle8;
             this.ZPC입력.FillWeight = 70F;
             this.ZPC입력.HeaderText = "ZPC입력";
             this.ZPC입력.MinimumWidth = 70;
@@ -194,8 +195,8 @@
             // ZPC출력
             // 
             this.ZPC출력.DataPropertyName = "zpco";
-            dataGridViewCellStyle10.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.ZPC출력.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle9.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.ZPC출력.DefaultCellStyle = dataGridViewCellStyle9;
             this.ZPC출력.FillWeight = 70F;
             this.ZPC출력.HeaderText = "ZPC출력";
             this.ZPC출력.MinimumWidth = 70;
@@ -229,7 +230,7 @@
             this.upload1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.upload1.CssStyle = "border-radius:6px;";
             this.upload1.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.upload1.Location = new System.Drawing.Point(112, 0);
+            this.upload1.Location = new System.Drawing.Point(0, 0);
             this.upload1.Name = "upload1";
             this.upload1.Size = new System.Drawing.Size(292, 32);
             this.upload1.TabIndex = 169;
@@ -242,12 +243,13 @@
             this.button1.BackColor = System.Drawing.Color.FromName("@button1BG");
             this.button1.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button1.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Location = new System.Drawing.Point(841, 0);
             this.button1.Margin = new Wisej.Web.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 32);
             this.button1.TabIndex = 36;
             this.button1.Text = "선번 샘플";
+            this.button1.Visible = false;
             // 
             // button5
             // 
@@ -255,7 +257,7 @@
             this.button5.BackColor = System.Drawing.Color.FromName("@button2BG");
             this.button5.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button5.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button5.Location = new System.Drawing.Point(831, 0);
+            this.button5.Location = new System.Drawing.Point(941, 0);
             this.button5.Margin = new Wisej.Web.Padding(0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 32);
@@ -269,7 +271,7 @@
             this.bt_inputDecision.BackColor = System.Drawing.Color.FromName("@button1BG");
             this.bt_inputDecision.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.bt_inputDecision.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_inputDecision.Location = new System.Drawing.Point(941, 0);
+            this.bt_inputDecision.Location = new System.Drawing.Point(304, 0);
             this.bt_inputDecision.Margin = new Wisej.Web.Padding(0);
             this.bt_inputDecision.Name = "bt_inputDecision";
             this.bt_inputDecision.Size = new System.Drawing.Size(100, 32);
@@ -293,7 +295,7 @@
             this.HeaderBackColor = System.Drawing.Color.FromName("@button1BG");
             this.Name = "Form_BBCZoneImport";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterScreen;
-            this.Text = "Zone 정보 Import";            
+            this.Text = "Zone 정보 Import";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_assetTextData)).EndInit();
@@ -317,7 +319,7 @@
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter1;
         private Wisej.Web.DataGridViewTextBoxColumn Column0;
         private Wisej.Web.DataGridViewTextBoxColumn 동;
-        private Wisej.Web.DataGridViewTextBoxColumn 층;
+        private Wisej.Web.DataGridViewTextBoxColumn 비상방송;
         private Wisej.Web.DataGridViewTextBoxColumn 존이름;
         private Wisej.Web.DataGridViewTextBoxColumn 스피커이름;
         private Wisej.Web.DataGridViewTextBoxColumn 앰프정보;
