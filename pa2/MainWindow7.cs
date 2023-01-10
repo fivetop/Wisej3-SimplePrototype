@@ -107,7 +107,7 @@ namespace pa
                         var t4 = t2.Contains(t3.ip);
                         if (t4)
                         {
-                            g.Log("Alive On IP.. : " + t3.ip);
+                            //g.Log("Alive On IP.. : " + t3.ip);
                             t3.state = "On-Line";
                             // 올드가 오프라인이면 
                             if (t3.state_old == "")
@@ -117,7 +117,7 @@ namespace pa
                         }
                         else
                         {
-                            g.Log("Alive Check IP.. : " + t3.ip);
+                            //g.Log("Alive Check IP.. : " + t3.ip);
                             // 온라인이었다가 오프라인이면 
                             if (t3.state != t3.state_old)
                             {
