@@ -686,6 +686,21 @@ namespace pa
 */
         }
 
+        private void _ts8_Click(object sender, RoutedEventArgs e)
+        {
+            // 채널 인 시험 
+            SignalRMsg msg1 = new SignalRMsg();
+            msg1.Msgtype = eSignalRMsgType.eInChMove;
+            msg1.user = "AAA";
+            msg1.EMNAME = "ALL";
+            msg1.message = "DESKTOP-V67ISKJ";
+            msg1.state = 2;
+            msg1.user_data1 = "169.254.208.133";
+            msg1.user_data4 = 16;
+            g.mainWindow.RcvSigR(msg1);
+
+        }
+
 
         public void MakeSpeakerIP()
         {
@@ -764,5 +779,6 @@ namespace pa
             g.XMLEMClient(false);
 
         }
+
     }
 }

@@ -40,8 +40,8 @@ namespace simplepa2.UI.Views
 
             foreach (var t1 in dsp)
             {
-                if (this.colDevicein.Items.Contains(t1.DeviceName) == false)
-                    this.colDevicein.Items.Add(t1.DeviceName);
+                if (this.colDevicein.Items.Contains(t1.DanteModelName) == false)
+                    this.colDevicein.Items.Add(t1.DanteModelName);
             }
         }
 
@@ -90,7 +90,7 @@ namespace simplepa2.UI.Views
 
                 var t5 = dataSet1.Device.FirstOrDefault(p=>p.ip_dspctrl == t4.ip_dspctrl && p.device == 9); 
                 if (t5 == null) continue;
-                t1.Cells["colDevicein"].Value = t5.DeviceName;
+                t1.Cells["colDevicein"].Value = t5.DanteModelName;
                 if(int.Parse(t2.chno) < 25)
                     t1.Cells["colDeviceinch"].Value = (int.Parse(t2.chno) -16).ToString();
             }
