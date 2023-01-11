@@ -612,6 +612,7 @@ namespace pa
                             _maindsp.Text = "Find DSP Controller IP : " + t5.ip_dspctrl + " " + t31[i];
                             MainDSPName = t31[i];
                             MainDSPIP = t5.ip_dspctrl;
+
                             break;
                         }
                     }

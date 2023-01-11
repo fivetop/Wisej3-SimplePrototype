@@ -82,20 +82,20 @@
             this.colEmserverid,
             this.colState,
             this.colEMNAME,
-            this.colCom_Gpio,
-            this.colCom_Gpio_State,
-            this.colCom_Rtype,
-            this.colCom_Rtype_State,
-            this.colNet_Local,
-            this.colNet_Dante,
-            this.colDsp_Ctrl,
-            this.colDsp_Dante,
             this.colSw_All,
             this.colSw_1,
             this.colSw_2,
             this.colSw_3,
             this.colSw_4,
+            this.colNet_Dante,
+            this.colCom_Gpio,
+            this.colCom_Gpio_State,
+            this.colCom_Rtype,
+            this.colCom_Rtype_State,
+            this.colDsp_Ctrl,
+            this.colDsp_Dante,
             this.colState_Old,
+            this.colNet_Local,
             this.colEmtest,
             this.colFire,
             this.colErr});
@@ -158,14 +158,15 @@
             // colNet_Local
             // 
             this.colNet_Local.DataPropertyName = "net_local";
-            this.colNet_Local.HeaderText = "내부IP";
+            this.colNet_Local.HeaderText = "IP(Local)";
             this.colNet_Local.Name = "colNet_Local";
+            this.colNet_Local.Visible = false;
             this.colNet_Local.Width = 110;
             // 
             // colNet_Dante
             // 
             this.colNet_Dante.DataPropertyName = "net_dante";
-            this.colNet_Dante.HeaderText = "단테IP";
+            this.colNet_Dante.HeaderText = "IP(Dante)";
             this.colNet_Dante.Name = "colNet_Dante";
             this.colNet_Dante.Width = 110;
             // 
@@ -186,37 +187,37 @@
             // colSw_All
             // 
             this.colSw_All.DataPropertyName = "sw_all";
-            this.colSw_All.HeaderText = "ALL sw";
+            this.colSw_All.HeaderText = "ALLsw";
             this.colSw_All.Name = "colSw_All";
-            this.colSw_All.Width = 80;
+            this.colSw_All.Width = 60;
             // 
             // colSw_1
             // 
             this.colSw_1.DataPropertyName = "sw_1";
             this.colSw_1.HeaderText = "1번sw";
             this.colSw_1.Name = "colSw_1";
-            this.colSw_1.Width = 80;
+            this.colSw_1.Width = 60;
             // 
             // colSw_2
             // 
             this.colSw_2.DataPropertyName = "sw_2";
             this.colSw_2.HeaderText = "2번sw";
             this.colSw_2.Name = "colSw_2";
-            this.colSw_2.Width = 80;
+            this.colSw_2.Width = 60;
             // 
             // colSw_3
             // 
             this.colSw_3.DataPropertyName = "sw_3";
             this.colSw_3.HeaderText = "3번sw";
             this.colSw_3.Name = "colSw_3";
-            this.colSw_3.Width = 80;
+            this.colSw_3.Width = 60;
             // 
             // colSw_4
             // 
             this.colSw_4.DataPropertyName = "sw_4";
             this.colSw_4.HeaderText = "4번sw";
             this.colSw_4.Name = "colSw_4";
-            this.colSw_4.Width = 80;
+            this.colSw_4.Width = 60;
             // 
             // colState_Old
             // 
