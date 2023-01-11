@@ -26,6 +26,7 @@
                     <MenuItem x:Name="_ts5" Header="EM Test Stop" Click="_but5_Click" />
                     <MenuItem x:Name="_ts6" Header="진단" Click="_but6_Click" />
                     <MenuItem x:Name="_ts7" Header="sigr" Click="_but7_Click" />
+                    <MenuItem x:Name="_ts8" Header="ch in" Click="_ts8_Click" />
                 </MenuItem>
             </Menu>
         </Grid>

@@ -434,7 +434,7 @@ namespace pa
             tt1.hd = "2729";
             tt1.seqn = 0x1f + j;
             tt1.ch = "0100";
-            if (chCount == 16)
+            if (chCount < 17)
                 tt1.ch = String.Format("{0:x2}", j + 1) + "00";
             else
                 tt1.ch = String.Format("{0:x2}", j + 17) + "00";
@@ -603,7 +603,7 @@ namespace pa
                     {
                         t5.ip_dspctrl = t21[i];
 
-                        if (t5.ch.Count > 1)
+                        if (t5.ch.Count > 15)
                         {
                             g.Log("--------------------------------------------------------------------------------");
                             g.Log("Find DSP Controller IP : " + t5.ip_dspctrl + " " + t31[i]);
