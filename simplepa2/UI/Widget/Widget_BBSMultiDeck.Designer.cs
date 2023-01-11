@@ -85,6 +85,8 @@
             // Widget_BBSMultiDeck
             // 
             this.Controls.Add(this.pn_multiDeck);
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.MinimumSize = new System.Drawing.Size(650, 440);
             this.Name = "Widget_BBSMultiDeck";
             this.Size = new System.Drawing.Size(760, 440);
             this.pn_multiDeck.ResumeLayout(false);

@@ -40,6 +40,7 @@
             this.holidayBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.bbsConfigurationBarItems = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.zoneManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.deviceManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.navigationBarItem1 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.navigationBarItem4 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.navigationBarItem2 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
@@ -51,7 +52,6 @@
             this.emergencyManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.ampFailoverBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.assetBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
-            this.deviceManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.bbsHistoryBarItems = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.bbsHistoryBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.deviceHistoryBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
@@ -68,6 +68,7 @@
             this.topPanels = new Wisej.Web.Panel();
             this.dataSet1 = new simplepa2.DataSet1();
             this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
+            this.bsTreeTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeTableAdapter();
             this.rightPanels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +89,7 @@
             this.mainMenuBar.Name = "mainMenuBar";
             this.mainMenuBar.RightToLeft = Wisej.Web.RightToLeft.No;
             this.mainMenuBar.ShowUser = false;
-            this.mainMenuBar.Size = new System.Drawing.Size(250, 354);
+            this.mainMenuBar.Size = new System.Drawing.Size(250, 593);
             this.mainMenuBar.TabIndex = 0;
             this.mainMenuBar.Text = "SimplePA";
             this.mainMenuBar.ItemClick += new Wisej.Web.Ext.NavigationBar.NavigationBarItemClickEventHandler(this.mainMenuBar_ItemClick);
@@ -199,6 +200,13 @@
             this.zoneManageBarItem.Name = "NavigationBarItem";
             this.zoneManageBarItem.Text = "ZONE 관리";
             // 
+            // deviceManageBarItem
+            // 
+            this.deviceManageBarItem.AccessibleName = "deviceManageBarItem";
+            this.deviceManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.deviceManageBarItem.Name = "NavigationBarItem";
+            this.deviceManageBarItem.Text = "장비 관리";
+            // 
             // navigationBarItem1
             // 
             this.navigationBarItem1.AccessibleName = "navigationBarItem1";
@@ -276,13 +284,6 @@
             this.assetBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.assetBarItem.Name = "NavigationBarItem";
             this.assetBarItem.Text = "선번장관리";
-            // 
-            // deviceManageBarItem
-            // 
-            this.deviceManageBarItem.AccessibleName = "deviceManageBarItem";
-            this.deviceManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.deviceManageBarItem.Name = "NavigationBarItem";
-            this.deviceManageBarItem.Text = "장비 관리";
             // 
             // bbsHistoryBarItems
             // 
@@ -384,7 +385,7 @@
             this.rightPanels.Dock = Wisej.Web.DockStyle.Fill;
             this.rightPanels.Location = new System.Drawing.Point(250, 0);
             this.rightPanels.Name = "rightPanels";
-            this.rightPanels.Size = new System.Drawing.Size(519, 354);
+            this.rightPanels.Size = new System.Drawing.Size(819, 593);
             this.rightPanels.TabIndex = 1;
             // 
             // contentsPanel
@@ -394,7 +395,7 @@
             this.contentsPanel.Dock = Wisej.Web.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 66);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(519, 288);
+            this.contentsPanel.Size = new System.Drawing.Size(819, 527);
             this.contentsPanel.TabIndex = 0;
             // 
             // topPanels
@@ -404,7 +405,7 @@
             this.topPanels.Dock = Wisej.Web.DockStyle.Top;
             this.topPanels.Location = new System.Drawing.Point(0, 0);
             this.topPanels.Name = "topPanels";
-            this.topPanels.Size = new System.Drawing.Size(519, 66);
+            this.topPanels.Size = new System.Drawing.Size(819, 66);
             this.topPanels.TabIndex = 2;
             // 
             // dataSet1
@@ -416,12 +417,16 @@
             // 
             this.eventvmTableAdapter.ClearBeforeFill = true;
             // 
+            // bsTreeTableAdapter1
+            // 
+            this.bsTreeTableAdapter1.ClearBeforeFill = true;
+            // 
             // PA_MainFrame
             // 
             this.Controls.Add(this.rightPanels);
             this.Controls.Add(this.mainMenuBar);
             this.Name = "PA_MainFrame";
-            this.Size = new System.Drawing.Size(769, 354);
+            this.Size = new System.Drawing.Size(1069, 593);
             this.Text = "PA_MainFrame";
             this.Load += new System.EventHandler(this.PA_MainFrame_Load);
             this.rightPanels.ResumeLayout(false);
@@ -472,5 +477,6 @@
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem2;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem3;
         private Wisej.Web.Ext.NavigationBar.NavigationBarItem navigationBarItem4;
+        private DataSet1TableAdapters.BSTreeTableAdapter bsTreeTableAdapter1;
     }
 }

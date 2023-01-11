@@ -1430,7 +1430,10 @@ namespace simplepa2 {
                 this.columnAssetGroupId.AllowDBNull = false;
                 this.columnAssetGroupId.ReadOnly = true;
                 this.columnAssetGroupId.Unique = true;
+                this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 2147483647;
+                this.columnAssetId.AllowDBNull = false;
+                this.columnEMNAME.AllowDBNull = false;
                 this.columnEMNAME.MaxLength = 2147483647;
             }
             
@@ -12104,12 +12107,7 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Name {
                 get {
-                    if (this.IsNameNull()) {
-                        return null;
-                    }
-                    else {
-                        return ((string)(this[this.tableAssetGroups.NameColumn]));
-                    }
+                    return ((string)(this[this.tableAssetGroups.NameColumn]));
                 }
                 set {
                     this[this.tableAssetGroups.NameColumn] = value;
@@ -12120,12 +12118,7 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int AssetId {
                 get {
-                    try {
-                        return ((int)(this[this.tableAssetGroups.AssetIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetGroups\' 테이블의 \'AssetId\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((int)(this[this.tableAssetGroups.AssetIdColumn]));
                 }
                 set {
                     this[this.tableAssetGroups.AssetIdColumn] = value;
@@ -12136,52 +12129,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string EMNAME {
                 get {
-                    try {
-                        return ((string)(this[this.tableAssetGroups.EMNAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'AssetGroups\' 테이블의 \'EMNAME\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableAssetGroups.EMNAMEColumn]));
                 }
                 set {
                     this[this.tableAssetGroups.EMNAMEColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNameNull() {
-                return this.IsNull(this.tableAssetGroups.NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNameNull() {
-                this[this.tableAssetGroups.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAssetIdNull() {
-                return this.IsNull(this.tableAssetGroups.AssetIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAssetIdNull() {
-                this[this.tableAssetGroups.AssetIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEMNAMENull() {
-                return this.IsNull(this.tableAssetGroups.EMNAMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEMNAMENull() {
-                this[this.tableAssetGroups.EMNAMEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19892,21 +19844,22 @@ namespace simplepa2.DataSet1TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [AssetGroups] WHERE (([AssetGroupId] = @Original_AssetGroupId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[AssetGroups] WHERE (([AssetGroupId] = @Original_AssetGroupId))" +
+                "";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssetGroupId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetGroupId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [AssetGroups] ([Name], [AssetId], [EMNAME]) VALUES (@Name, @AssetId, " +
-                "@EMNAME)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AssetGroups] ([Name], [AssetId], [EMNAME]) VALUES (@Name, @Ass" +
+                "etId, @EMNAME)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [AssetGroups] SET [Name] = @Name, [AssetId] = @AssetId, [EMNAME] = @EMNAME" +
-                " WHERE (([AssetGroupId] = @Original_AssetGroupId))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[AssetGroups] SET [Name] = @Name, [AssetId] = @AssetId, [EMNAME] = @" +
+                "EMNAME WHERE (([AssetGroupId] = @Original_AssetGroupId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssetId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssetId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19927,7 +19880,7 @@ namespace simplepa2.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  AssetGroupId, Name, AssetId, EMNAME\r\nFROM     AssetGroups";
+            this._commandCollection[0].CommandText = "SELECT AssetGroupId, Name, AssetId, EMNAME FROM dbo.AssetGroups";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -20030,21 +19983,16 @@ namespace simplepa2.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, global::System.Nullable<int> AssetId, string EMNAME) {
+        public virtual int Insert(string Name, int AssetId, string EMNAME) {
             if ((Name == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Name");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
             }
-            if ((AssetId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AssetId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AssetId));
             if ((EMNAME == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("EMNAME");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(EMNAME));
@@ -20069,21 +20017,16 @@ namespace simplepa2.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, global::System.Nullable<int> AssetId, string EMNAME, int Original_AssetGroupId) {
+        public virtual int Update(string Name, int AssetId, string EMNAME, int Original_AssetGroupId) {
             if ((Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Name");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
             }
-            if ((AssetId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AssetId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AssetId));
             if ((EMNAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("EMNAME");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(EMNAME));
@@ -20158,7 +20101,7 @@ namespace simplepa2.DataSet1TableAdapters {
         public virtual global::System.Nullable<int> Find(string Name) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((Name == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Name");
             }
             else {
                 command.Parameters[0].Value = ((string)(Name));
@@ -20193,7 +20136,7 @@ namespace simplepa2.DataSet1TableAdapters {
         public virtual int InsertQuery(string Name) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((Name == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Name");
             }
             else {
                 command.Parameters[0].Value = ((string)(Name));
@@ -21147,7 +21090,7 @@ namespace simplepa2.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT  BSTreeId, wtime, chno, AssetId, MusicId, EMNAME, playing\r\nFROM     BSTree" +
@@ -21157,6 +21100,13 @@ namespace simplepa2.DataSet1TableAdapters {
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "DELETE FROM [BSTree] ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE [BSTree] SET [playing] = \'입장\', [wtime] = GetDate() WHERE (([EMNAME] = @Ori" +
+                "ginal_BSTreeId AND [chno] = @Chno))";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BSTreeId", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Chno", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "chno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21355,6 +21305,41 @@ namespace simplepa2.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteAllQuery() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateStatusToUsageQuery(string Original_BSTreeId, global::System.Nullable<int> Chno) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((Original_BSTreeId == null)) {
+                throw new global::System.ArgumentNullException("Original_BSTreeId");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Original_BSTreeId));
+            }
+            if ((Chno.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(Chno.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using simplepa2.UI.Widget;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using Wisej.Base;
@@ -11,10 +12,14 @@ namespace simplepa2.UI.Views
 		
 		BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
+		private Widget_BBSMultiDeck widget_bbsMultiDeck; 
+
 		public View_DashBoard2()
         {
             InitializeComponent();
-        }
+
+
+		}
 
 		internal void reDraw()
 		{
@@ -36,6 +41,7 @@ namespace simplepa2.UI.Views
 				this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
 				this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 				this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
+				this.bsTreeTableAdapter1.Fill(this.dataSet1.BSTree);
 			}
 			catch (Exception e1)
 			{ 
@@ -45,22 +51,11 @@ namespace simplepa2.UI.Views
 		private void View_DashBoard_Load(object sender, EventArgs e)
         {
 			reDraw();
-        }
 
-        // split 위치 설정 세로, 가로,  세로
-        private void split_위치()
-        {
-            // Main 화면 
-            Cookie d1 = Application.Cookies.Get("d1");
-            Cookie d2 = Application.Cookies.Get("d2");
-            Cookie d3 = Application.Cookies.Get("d3");
-            if (d1 != null)
-            {
-                splitContainer4.SplitterDistance = int.Parse(d1.Value);
-                splitContainer5.SplitterDistance = int.Parse(d2.Value);
-                splitContainer6.SplitterDistance = int.Parse(d3.Value);
-            }
-        }
+			initSetupUI();
+		}
+
+
 
 
 
@@ -76,7 +71,7 @@ namespace simplepa2.UI.Views
 				t4.username = t3.user_name;
 				dataSource.Add(t4);
 			}
-			dataRepeater1.DataSource = dataSource;
+			// dataRepeater1.DataSource = dataSource;
 
 			DevicelistView1.Items.Clear();
 			// 장비 아이콘 보이기 
@@ -124,38 +119,44 @@ namespace simplepa2.UI.Views
 			DevicelistView1.EndUpdate();
 		}
 
+
+
+		private void initSetupUI()
+        {
+			if(widget_bbsMultiDeck == null)
+            {
+				widget_bbsMultiDeck = new Widget_BBSMultiDeck(this.bsTreeBindingSource);
+            }
+			
+			this.split_TopFrame.Panel1.Controls.Add(widget_bbsMultiDeck);
+        }
+
+
+
+		#region //Split 모양 및 이벤트 처리
+		// split 위치 설정 세로, 가로,  세로
+		private void split_위치()
+		{
+			// Main 화면 
+			Cookie d1 = Application.Cookies.Get("d1");
+			Cookie d2 = Application.Cookies.Get("d2");
+			Cookie d3 = Application.Cookies.Get("d3");
+			if (d1 != null)
+			{
+				split_MainFrame.SplitterDistance = int.Parse(d1.Value);
+				split_TopFrame.SplitterDistance = int.Parse(d2.Value);
+				split_BottomFrame.SplitterDistance = int.Parse(d3.Value);
+			}
+		}
+
 		private void splitContainer5_SplitterMoved(object sender, SplitterEventArgs e)
 		{
-			Application.Cookies.Add("d1", splitContainer4.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
-			Application.Cookies.Add("d2", splitContainer5.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
-			Application.Cookies.Add("d3", splitContainer6.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
+			Application.Cookies.Add("d1", split_MainFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
+			Application.Cookies.Add("d2", split_TopFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
+			Application.Cookies.Add("d3", split_BottomFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 		}
+        #endregion
 
 
-        /*
-		// 입장하기 
-        private void btnBS1_Click(object sender, EventArgs e)
-        {
-			var nCurr = dataRepeater1.CurrentItemIndex;
-			string n = Application.Session["user_name"];
-			MaintabControl.SelectedIndex = 1;
-			dataSource[nCurr].state_int = 1;
-			dataSource[nCurr].username = n;
-			dataRepeater1.Refresh();
-			this.bSroomTableAdapter.Update(this.dataSet1.BSroom);
-
-		}
-
-		// 방송 종료 
-		private void btnBS2_Click(object sender, EventArgs e)
-        {
-			var nCurr = dataRepeater1.CurrentItemIndex;
-			dataSource[nCurr].state_int = 0;
-			dataSource[nCurr].username = "";
-			dataRepeater1.Refresh();
-			this.bSroomTableAdapter.Update(this.dataSet1.BSroom);
-		}
-		
-		*/
     }
 }

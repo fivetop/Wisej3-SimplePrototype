@@ -12,13 +12,48 @@ namespace simplepa2.UI.Views
 {
     public partial class View_BBSAnchor2 : Wisej.Web.UserControl
     {
+
+		public string strEMNAME;
+		public int intBBSchno;
+
         public View_BBSAnchor2()
         {
             InitializeComponent();
         }
+		public View_BBSAnchor2(string EMNAME, int bbsChno)
+		{
+			InitializeComponent();
+
+			this.strEMNAME = EMNAME;
+			this.intBBSchno = bbsChno;
+
+			this.tb_Chno.Text = bbsChno.ToString();
+			this.tb_EMNAME.Text = EMNAME;
+		}
+
+		public void setupAnchorBBSInfo(string EMNAME, int bbsChno)
+        {
+			this.strEMNAME = EMNAME;
+			this.intBBSchno = bbsChno;
+
+			this.tb_Chno.Text = bbsChno.ToString();
+			this.tb_EMNAME.Text = EMNAME;
+		}
+
+		public bool isAnchorSetup()
+        {
+			if (strEMNAME == null || intBBSchno == 0)
+			{
+				return false;
+			}
+			return true;
+
+		}
+
 
 		internal void reDraw()
 		{
+
 			View_BBSAnchor_Load(null, null);
 		}
 
@@ -30,12 +65,16 @@ namespace simplepa2.UI.Views
 
 		private void View_BBSAnchor_Load(object sender, EventArgs e)
         {
-            this.btnStart.Enabled = true;
-            this.btnStop.Enabled = false;
-            this.dataGridView2.RowCount = 10;
+			if (isAnchorSetup())
+			{
+				this.btnStart.Enabled = true;
+				this.btnStop.Enabled = false;
+				this.dataGridView2.RowCount = 10;
 
-            this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-
+				this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+			}
+			else
+				this.Dispose();
         }
 
 
