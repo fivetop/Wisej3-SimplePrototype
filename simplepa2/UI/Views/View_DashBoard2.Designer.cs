@@ -80,8 +80,8 @@
             this.label21 = new Wisej.Web.Label();
             this.ItemTemplate = new Wisej.Web.DataRepeaterItem();
             this.bsTreeTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeTableAdapter();
-            this.membs = new Wisej.Web.BindingSource(this.components);
             this.bsTreeBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.membs = new Wisej.Web.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).BeginInit();
@@ -104,8 +104,8 @@
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.evdataGridView3)).BeginInit();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTreeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList3
@@ -200,19 +200,22 @@
             // split_TopFrame
             // 
             this.split_TopFrame.Dock = Wisej.Web.DockStyle.Fill;
+            this.split_TopFrame.FixedPanel = Wisej.Web.FixedPanel.Panel1;
             this.split_TopFrame.Location = new System.Drawing.Point(0, 0);
             this.split_TopFrame.Name = "split_TopFrame";
             // 
             // split_TopFrame.Panel1
             // 
             this.split_TopFrame.Panel1.TabStop = true;
+            this.split_TopFrame.Panel1MinSize = 760;
             // 
             // split_TopFrame.Panel2
             // 
             this.split_TopFrame.Panel2.Controls.Add(this.DevicelistView1);
             this.split_TopFrame.Panel2.TabStop = true;
+            this.split_TopFrame.Panel2MinSize = 100;
             this.split_TopFrame.Size = new System.Drawing.Size(1160, 260);
-            this.split_TopFrame.SplitterDistance = 601;
+            this.split_TopFrame.SplitterDistance = 760;
             this.split_TopFrame.TabIndex = 0;
             this.split_TopFrame.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
             // 
@@ -222,7 +225,7 @@
             this.DevicelistView1.LargeImageList = this.imageList1;
             this.DevicelistView1.Location = new System.Drawing.Point(0, 0);
             this.DevicelistView1.Name = "DevicelistView1";
-            this.DevicelistView1.Size = new System.Drawing.Size(543, 260);
+            this.DevicelistView1.Size = new System.Drawing.Size(384, 260);
             this.DevicelistView1.SmallImageList = this.imageList2;
             this.DevicelistView1.StateImageList = this.imageList1;
             this.DevicelistView1.TabIndex = 0;
@@ -457,14 +460,15 @@
             // 
             this.bsTreeTableAdapter1.ClearBeforeFill = true;
             // 
-            // membs
-            // 
-            this.membs.DataSource = typeof(simplepa2.Bsroom);
-            // 
             // bsTreeBindingSource
             // 
             this.bsTreeBindingSource.DataMember = "BSTree";
             this.bsTreeBindingSource.DataSource = this.dataSet1;
+            this.bsTreeBindingSource.RefreshValueOnChange = true;
+            // 
+            // membs
+            // 
+            this.membs.DataSource = typeof(simplepa2.Bsroom);
             // 
             // View_DashBoard2
             // 
@@ -499,8 +503,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.evdataGridView3)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTreeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             this.ResumeLayout(false);
 
         }

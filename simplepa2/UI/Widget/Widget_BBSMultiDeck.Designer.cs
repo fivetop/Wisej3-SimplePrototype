@@ -41,9 +41,8 @@
             this.pn_multiDeck.BackColor = System.Drawing.Color.White;
             this.pn_multiDeck.Controls.Add(this.pn_deckSpace);
             this.pn_multiDeck.Controls.Add(this.pn_labelSpace);
-            this.pn_multiDeck.Dock = Wisej.Web.DockStyle.Top;
+            this.pn_multiDeck.Dock = Wisej.Web.DockStyle.Fill;
             this.pn_multiDeck.Location = new System.Drawing.Point(0, 0);
-            this.pn_multiDeck.MaximumSize = new System.Drawing.Size(760, 0);
             this.pn_multiDeck.MinimumSize = new System.Drawing.Size(760, 0);
             this.pn_multiDeck.Name = "pn_multiDeck";
             this.pn_multiDeck.Padding = new Wisej.Web.Padding(20);
@@ -53,6 +52,7 @@
             // pn_deckSpace
             // 
             this.pn_deckSpace.AutoScroll = true;
+            this.pn_deckSpace.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
             this.pn_deckSpace.Dock = Wisej.Web.DockStyle.Fill;
             this.pn_deckSpace.Location = new System.Drawing.Point(20, 57);
             this.pn_deckSpace.Name = "pn_deckSpace";

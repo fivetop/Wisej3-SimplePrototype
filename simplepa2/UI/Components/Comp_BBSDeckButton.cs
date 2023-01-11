@@ -103,7 +103,7 @@ namespace simplepa2.UI.Components
             this.label3.Location = new System.Drawing.Point(-2, 20);
             this.label3.Name = "label3";
             this.label3.Padding = new Wisej.Web.Padding(3);
-            this.label3.Size = new System.Drawing.Size(74, 32);
+            this.label3.Size = new System.Drawing.Size(69, 32);
             this.label3.TabIndex = 95;
             this.label3.Text = "사용자명";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -119,7 +119,7 @@ namespace simplepa2.UI.Components
             this.Margin = new Wisej.Web.Padding(2);
             this.Name = "Comp_BBSDeckButton";
             this.Padding = new Wisej.Web.Padding(3);
-            this.Size = new System.Drawing.Size(70, 50);
+            this.Size = new System.Drawing.Size(65, 50);
             this.Text = "Ch1";
             this.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.ResumeLayout(false);

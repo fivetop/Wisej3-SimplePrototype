@@ -10,7 +10,7 @@ namespace simplepa2.UI.Views
 {
     public partial class View_DashBoard : Wisej.Web.UserControl
     {
-        private Widget_BBSMultiDeck bbs_multiDeck = new Widget_BBSMultiDeck();
+        private Widget_BBSMultiDeck bbs_multiDeck;
         private Widget_DeviceHeatMap device_heatMap = new Widget_DeviceHeatMap();
 
         public View_DashBoard()
@@ -31,7 +31,7 @@ namespace simplepa2.UI.Views
         }
         public void setupUI()
         {
-            pn_multiDeck.Controls.Add(bbs_multiDeck);
+            //pn_multiDeck.Controls.Add(bbs_multiDeck);
             pn_heatMap.Controls.Add(device_heatMap);
             
         }

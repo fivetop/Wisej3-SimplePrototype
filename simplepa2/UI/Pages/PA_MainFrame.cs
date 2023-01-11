@@ -304,7 +304,8 @@ namespace simplepa2.UI.Pages
 
             if(result)
             {
-                this.bsTreeTableAdapter1.UpdateStatusToUsageQuery(EMNAME, chno);
+                /*  방입장  처리 필요시  */
+                // this.bsTreeTableAdapter1.UpdateStatusToUsageQuery(EMNAME, chno);
             }
         }
 

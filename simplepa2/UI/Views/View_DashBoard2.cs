@@ -12,13 +12,28 @@ namespace simplepa2.UI.Views
 		
 		BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
-		private Widget_BBSMultiDeck widget_bbsMultiDeck; 
+		private Widget_BBSMultiDeck widget_bbsMultiDeck;
+
+		private Timer timer = new Timer();
+
 
 		public View_DashBoard2()
         {
             InitializeComponent();
 
 
+		}
+
+		public void startTimer()
+		{
+			timer.Interval = 5000;
+			timer.Tick += Timer_Tick;
+			timer.Start();
+		}
+
+		private void Timer_Tick(object sender, EventArgs e)
+		{
+			reDraw();
 		}
 
 		internal void reDraw()
@@ -31,6 +46,8 @@ namespace simplepa2.UI.Views
             Main_Load();
             // split 위치 설정 세로, 가로,  세로
             split_위치();
+			// BBS Widget UI 셋업
+			initMultiBBSWidgetUISetup();
 			evdataGridView1.Refresh();
 		}
 
@@ -52,7 +69,7 @@ namespace simplepa2.UI.Views
         {
 			reDraw();
 
-			initSetupUI();
+			initMultiBBSWidgetUISetup();
 		}
 
 
@@ -121,14 +138,20 @@ namespace simplepa2.UI.Views
 
 
 
-		private void initSetupUI()
+		private void initMultiBBSWidgetUISetup()
         {
 			if(widget_bbsMultiDeck == null)
             {
 				widget_bbsMultiDeck = new Widget_BBSMultiDeck(this.bsTreeBindingSource);
-            }
+				this.split_TopFrame.Panel1.Controls.Add(widget_bbsMultiDeck);
+			}
+            else
+            {
+				widget_bbsMultiDeck.setBindingSource(this.bsTreeBindingSource);
+				widget_bbsMultiDeck.initSetupUI();
+			}
 			
-			this.split_TopFrame.Panel1.Controls.Add(widget_bbsMultiDeck);
+			
         }
 
 
@@ -144,7 +167,7 @@ namespace simplepa2.UI.Views
 			if (d1 != null)
 			{
 				split_MainFrame.SplitterDistance = int.Parse(d1.Value);
-				split_TopFrame.SplitterDistance = int.Parse(d2.Value);
+				split_TopFrame.SplitterDistance = 760;
 				split_BottomFrame.SplitterDistance = int.Parse(d3.Value);
 			}
 		}
