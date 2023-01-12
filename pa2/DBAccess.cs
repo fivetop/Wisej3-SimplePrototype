@@ -563,7 +563,7 @@ namespace pa
             em.path = base_text;
             em.state = state;
             em.alarm = 0;
-            var t2 = Dbsave<Eventbs>("Eventbss", (DataRow)em);
+            var t2 = Dbsave<Eventbs>("Eventbs", (DataRow)em);
         }
 
         public void Eventvms(string event_text, string base_text, string state)
