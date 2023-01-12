@@ -61,12 +61,18 @@ namespace pa
 
         public void DBRead()
         {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return;
+
             Device = Dbread<DeviceDataTable>("Devices");
             DeviceChannel = Dbread<DeviceChannelDataTable>("DeviceChannels");
         }
 
         public T Dbread <T>(string url)
         {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return default(T);
+
             try
             {
                 var url2 = g._EMClient.WebAPIURL + url;
@@ -83,6 +89,8 @@ namespace pa
 
         public T Dbsave<T>(string url, DataRow t1)
         {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return default(T);
             try
             {
                 string jsonEmp = JsonConvert.SerializeObject(t1);
@@ -102,6 +110,8 @@ namespace pa
 
         public void Dbupdate<T>(string url, DataRow te1, int id)
         {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return;
             try
             {
                 /*
@@ -173,6 +183,9 @@ namespace pa
 
         internal bool EMServerUpdate()
         {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return false;
+
             if (g.mainWindow.EMServerRow.EMServerId == 0)
                 return false;
 
@@ -441,6 +454,8 @@ namespace pa
         // 나중에 디비는 모두 몰기 
         public List<AssetBase> db2List(SignalRMsg msg)
         {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return null;
             List<AssetBase> play = new List<AssetBase>();
             var ab1 = Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
             var p1 = from p in ab1
@@ -470,8 +485,10 @@ namespace pa
 
         #region // BSTree 방송 처리 관리 부분 
 
-        public void Delete(int idno, int state)
+        public void BSTreeCDelete(int idno, int state)
         {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return;
             BStree = Dbread<BSTreeDataTable>("BStrees");
             BStreeC = Dbread<BSTreeCDataTable>("BStreeCs");
 
@@ -537,7 +554,8 @@ namespace pa
 
         public void Eventvms(string event_text, string base_text, string state)
         {
-            if (g.mainWindow._DanteDevice == null) return;
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return ;
             EventvmRow em = Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.event_text = event_text;
@@ -550,7 +568,8 @@ namespace pa
 
         public void EventvmIP(DataClass.Device t3)
         {
-            if (g.mainWindow._DanteDevice == null) return;
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return ;
             EventdeviceRow em = Eventdevice.NewEventdeviceRow();
             em.write_time = DateTime.Now;
             em.ip = t3.ip;
@@ -597,6 +616,9 @@ namespace pa
 
         public EMServerRow EMServerGet()
         {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return null;
+
             EMServerRow ret;
             ret = EMServer.FirstOrDefault(p=>p.EMNAME == g._EMClient.EM_NAME);
 

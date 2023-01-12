@@ -174,7 +174,7 @@ namespace pa
                     break;
                 case eSignalRMsgType.ePlayEnd:
                     msg1.message = "ePlayEnd";
-                    g.mainWindow.dBAccess.Delete(msg1.seqno, msg1.state);
+                    g.mainWindow.dBAccess.BSTreeCDelete(msg1.seqno, msg1.state);
                     break;
                 case eSignalRMsgType.eLoginUser:
                     msg1.EMNAME = g._EMClient.EM_NAME;
