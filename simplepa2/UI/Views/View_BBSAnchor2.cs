@@ -20,41 +20,17 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
         }
-		public View_BBSAnchor2(string EMNAME, int bbsChno)
-		{
-			InitializeComponent();
-
-			this.strEMNAME = EMNAME;
-			this.intBBSchno = bbsChno;
-
-			this.tb_Chno.Text = bbsChno.ToString();
-			this.tb_EMNAME.Text = EMNAME;
-		}
-
-		public void setupAnchorBBSInfo(string EMNAME, int bbsChno)
-        {
-			this.strEMNAME = EMNAME;
-			this.intBBSchno = bbsChno;
-
-			this.tb_Chno.Text = bbsChno.ToString();
-			this.tb_EMNAME.Text = EMNAME;
-		}
-
-		public bool isAnchorSetup()
-        {
-			if (strEMNAME == null || intBBSchno == 0)
-			{
-				return false;
-			}
-			return true;
-
-		}
-
 
 		internal void reDraw()
 		{
+			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 
-			View_BBSAnchor_Load(null, null);
+			this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
+			this.cb1_test1.DataSource = this.dataSet11.EMServerWithWholeCol;
+
+			this.btnStart.Enabled = true;
+			this.btnStop.Enabled = false;
+			this.dataGridView2.RowCount = 10;
 		}
 
 		public void refresh()
@@ -65,17 +41,8 @@ namespace simplepa2.UI.Views
 
 		private void View_BBSAnchor_Load(object sender, EventArgs e)
         {
-			if (isAnchorSetup())
-			{
-				this.btnStart.Enabled = true;
-				this.btnStop.Enabled = false;
-				this.dataGridView2.RowCount = 10;
-
-				this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-			}
-			else
-				this.Dispose();
-        }
+			reDraw();
+		}
 
 
 		List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();

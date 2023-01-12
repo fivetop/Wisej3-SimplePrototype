@@ -20,7 +20,8 @@ namespace simplepa2.UI.Components
         {
             InitializeComponent();
 
-            deckDataRow = dr;            
+            deckDataRow = dr;     
+            lb_siteName.Text = EMNAME;
 
             setupUI();
         }

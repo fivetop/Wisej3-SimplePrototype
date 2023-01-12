@@ -30,9 +30,6 @@
         {
             this.panel8 = new Wisej.Web.Panel();
             this.panel38 = new Wisej.Web.Panel();
-            this.panel1 = new Wisej.Web.Panel();
-            this.label1 = new Wisej.Web.Label();
-            this.label3 = new Wisej.Web.Label();
             this.flowLayoutPanel1 = new Wisej.Web.FlowLayoutPanel();
             this.comp_BBSDeckButton3 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.comp_BBSDeckButton1 = new simplepa2.UI.Components.Comp_BBSDeckButton();
@@ -42,10 +39,13 @@
             this.comp_BBSDeckButton6 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.comp_BBSDeckButton7 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.comp_BBSDeckButton8 = new simplepa2.UI.Components.Comp_BBSDeckButton();
+            this.panel1 = new Wisej.Web.Panel();
+            this.label3 = new Wisej.Web.Label();
+            this.lb_siteName = new Wisej.Web.Label();
             this.panel8.SuspendLayout();
             this.panel38.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel8
@@ -69,40 +69,6 @@
             this.panel38.Name = "panel38";
             this.panel38.Size = new System.Drawing.Size(750, 60);
             this.panel38.TabIndex = 165;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = Wisej.Web.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 60);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(3, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 23);
-            this.label1.TabIndex = 79;
-            this.label1.Text = "구미사이트";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.AutoEllipsis = true;
-            this.label3.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
-            this.label3.CssStyle = "border-radius:15px";
-            this.label3.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label3.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label3.Location = new System.Drawing.Point(94, 17);
-            this.label3.Margin = new Wisej.Web.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 30);
-            this.label3.TabIndex = 146;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel1
             // 
@@ -169,6 +135,40 @@
             this.comp_BBSDeckButton8.Name = "comp_BBSDeckButton8";
             this.comp_BBSDeckButton8.TabIndex = 9;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lb_siteName);
+            this.panel1.Dock = Wisej.Web.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(138, 60);
+            this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoEllipsis = true;
+            this.label3.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
+            this.label3.CssStyle = "border-radius:15px";
+            this.label3.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label3.Location = new System.Drawing.Point(94, 17);
+            this.label3.Margin = new Wisej.Web.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 30);
+            this.label3.TabIndex = 146;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lb_siteName
+            // 
+            this.lb_siteName.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_siteName.Location = new System.Drawing.Point(3, 20);
+            this.lb_siteName.Name = "lb_siteName";
+            this.lb_siteName.Size = new System.Drawing.Size(82, 23);
+            this.lb_siteName.TabIndex = 79;
+            this.lb_siteName.Text = "구미사이트";
+            this.lb_siteName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Comp_DashBoardBBSDeck
             // 
             this.Controls.Add(this.panel8);
@@ -177,8 +177,8 @@
             this.Size = new System.Drawing.Size(760, 70);
             this.panel8.ResumeLayout(false);
             this.panel38.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +189,7 @@
         private Wisej.Web.Panel panel8;
         private Wisej.Web.Panel panel38;
         private Wisej.Web.Panel panel1;
-        private Wisej.Web.Label label1;
+        private Wisej.Web.Label lb_siteName;
         private Wisej.Web.Label label3;
         private Wisej.Web.FlowLayoutPanel flowLayoutPanel1;
         private Comp_BBSDeckButton comp_BBSDeckButton3;

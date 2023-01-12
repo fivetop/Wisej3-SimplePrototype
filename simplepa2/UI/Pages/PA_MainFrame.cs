@@ -54,22 +54,22 @@ namespace simplepa2.UI.Pages
         private View_SystemRestAPI view_SystemRestAPI;
 
         private View_BBCAsset2 view_BBCAsset2 = new View_BBCAsset2();
-        private View_DashBoard2 view_DashBoard2;        
-        private View_BBSGroupManage2 view_BBSGroupManage2;
-        private View_BBSHolidayManage2 view_BBSHolidayManage2;
-        private View_BBSMusicManage2 view_BBSMusicManage2;
-        private View_BBCEmergency2 view_BBCEMManager2;
-        private View_GroupManager2 view_GroupManager2;
-        private View_GroupPresetManager2 view_GroupPresetManager2;
-        private View_BBCInput2 view_BBCInput2;
-        private View_BBCMusic2 view_BBCMusic2;
-        private View_BBCOutput2 view_BBCOutput2;
-        private View_SystemAccount2 view_SystemAccount2;
-        private View_BBSEMManage2 view_BBSEMManage2;
-        private View_BBSEMChannel2 view_BBSEMChannel2;
-        private View_BBCEmergency2 view_BBCEmergency2;
+        private View_DashBoard2 view_DashBoard2 = new View_DashBoard2();
+        private View_BBSGroupManage2 view_BBSGroupManage2 = new View_BBSGroupManage2();
+        private View_BBSHolidayManage2 view_BBSHolidayManage2 = new View_BBSHolidayManage2();
+        private View_BBSMusicManage2 view_BBSMusicManage2 = new View_BBSMusicManage2();
+        private View_BBCEmergency2 view_BBCEMManager2 = new View_BBCEmergency2();
+        private View_GroupManager2 view_GroupManager2 = new View_GroupManager2();
+        private View_GroupPresetManager2 view_GroupPresetManager2 = new View_GroupPresetManager2();
+        private View_BBCInput2 view_BBCInput2 = new View_BBCInput2();
+        private View_BBCMusic2 view_BBCMusic2 = new View_BBCMusic2();
+        private View_BBCOutput2 view_BBCOutput2 = new View_BBCOutput2();
+        private View_SystemAccount2 view_SystemAccount2 = new View_SystemAccount2();
+        private View_BBSEMManage2 view_BBSEMManage2 = new View_BBSEMManage2();
+        private View_BBSEMChannel2 view_BBSEMChannel2 = new View_BBSEMChannel2();
+        private View_BBCEmergency2 view_BBCEmergency2 = new View_BBCEmergency2();
 
-        private View_BBSAnchor2 view_BBSAnchor2;
+        private View_BBSAnchor2 view_BBSAnchor2 = new View_BBSAnchor2();
         private List<View_BBSAnchor2> listBBSAnchor = new List<View_BBSAnchor2>();  // 다수 방 관리를 위한 View List
 
 
@@ -219,8 +219,7 @@ namespace simplepa2.UI.Pages
             {
                 // 운영
                 case "dashboardBarItems": view_DashBoard2 = bringFrontView<View_DashBoard2>("View_DashBoard2", true); break;
-                case "anchorBBSBarItem": openBSRoomView();
-                        break;                        
+                case "anchorBBSBarItem": view_BBSAnchor2 = bringFrontView<View_BBSAnchor2>("View_BBSAnchor2", false); break;                               
                 case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;
                 case "presetBarItem": view_BBSPresetManage = bringFrontView<View_BBSPresetManage>("View_BBSPresetManage", false); break;
                 case "groupBarItem": view_BBSGroupManage = bringFrontView<View_BBSGroupManage>("View_BBSGroupManage", false); break;
@@ -254,61 +253,7 @@ namespace simplepa2.UI.Pages
                 case "restAPIRegistrationBarItem": view_SystemRestAPI = bringFrontView<View_SystemRestAPI>("View_SystemRestAPI", false); break;
 
             }
-        }
-
-        public bool openBSRoomView()
-        {            
-            if (view_BBSAnchor2 == null)
-            {
-                MessageBox.Show("LAWTEXT 메시지수정필요 : Anchor 사이트명, 채널번호 셋팅이 되지 않았습니다. DashBoard를 통한 접근만 가능합니다.");
-                return false;
-            }
-            else if (view_BBSAnchor2.isAnchorSetup())
-            {
-                view_BBSAnchor2.Parent = this.contentsPanel;
-
-                view_BBSAnchor2.BringToFront();
-                this.mainMenuBar.CompactView = false;
-                return true;
-            }
-            else  // null 은 아니지만 셋업이 안된경우 
-            {
-                MessageBox.Show("LAWTEXT 메시지수정필요 : Anchor 사이트명, 채널번호 셋팅이 되지 않았습니다. DashBoard를 통한 접근만 가능합니다.");
-                return false;
-            }
-        }
-
-        public void setupBSroomWithOpen(string EMNAME, int chno)
-        {            
-            if(listBBSAnchor.Count == 0)
-            {
-                view_BBSAnchor2 = new View_BBSAnchor2();
-                listBBSAnchor.Add(view_BBSAnchor2); 
-            }
-            else
-            {
-                View_BBSAnchor2 view_BBSAnchorTemp = listBBSAnchor.Find(x => x.strEMNAME == EMNAME && x.intBBSchno == chno);
-                if(view_BBSAnchorTemp == null)
-                {
-                    view_BBSAnchor2 = new View_BBSAnchor2();
-                    listBBSAnchor.Add(view_BBSAnchor2);
-                }
-                else
-                {
-                    view_BBSAnchor2 = view_BBSAnchorTemp;
-                }                
-            }
-
-            view_BBSAnchor2.setupAnchorBBSInfo(EMNAME, chno);
-            bool result = openBSRoomView();
-
-            if(result)
-            {
-                /*  방입장  처리 필요시  */
-                // this.bsTreeTableAdapter1.UpdateStatusToUsageQuery(EMNAME, chno);
-            }
-        }
-
+        } 
         private T bringFrontView<T>(string viewName, Boolean bShinkNavBar)
         {
             

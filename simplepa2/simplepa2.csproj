@@ -190,6 +190,9 @@
     <EmbeddedResource Include="UI\Components\Comp_SiteDetailForm.resx">
       <DependentUpon>Comp_SiteDetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_SiteListComboBox.resx">
+      <DependentUpon>Comp_SiteListComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_ZoneBuildingPanels.resx">
       <DependentUpon>Comp_ZoneBuildingPanels.cs</DependentUpon>
     </EmbeddedResource>
@@ -1020,6 +1023,9 @@
     </Compile>
     <Compile Include="UI\Components\Comp_SiteDetailForm.designer.cs">
       <DependentUpon>Comp_SiteDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_SiteListComboBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Components\Comp_ZoneBuildingPanels.cs">
       <SubType>UserControl</SubType>

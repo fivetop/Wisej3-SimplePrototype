@@ -57,11 +57,6 @@
             this.bSroomTableAdapter = new simplepa2.DataSet1TableAdapters.BSroomTableAdapter();
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.panel4 = new Wisej.Web.Panel();
-            this.tb_description = new Wisej.Web.TextBox();
-            this.tb_Chno = new Wisej.Web.TextBox();
-            this.tb_EMNAME = new Wisej.Web.TextBox();
-            this.label3 = new Wisej.Web.Label();
-            this.label1 = new Wisej.Web.Label();
             this.btnStop = new Wisej.Web.Button();
             this.btnStart = new Wisej.Web.Button();
             this.panel3 = new Wisej.Web.Panel();
@@ -86,8 +81,13 @@
             this.panel41 = new Wisej.Web.Panel();
             this.label17 = new Wisej.Web.Label();
             this.contextMenu2 = new Wisej.Web.ContextMenu(this.components);
-            this.membs = new Wisej.Web.BindingSource(this.components);
             this.bsTreeCTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeCTableAdapter();
+            this.dataSet11 = new simplepa2.DataSet1();
+            this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
+            this.cb1_test1 = new Wisej.Web.ComboBox();
+            this.cb_test2 = new Wisej.Web.ComboBox();
+            this.bindingEMCombo = new Wisej.Web.BindingSource(this.components);
+            this.membs = new Wisej.Web.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).BeginInit();
@@ -104,6 +104,8 @@
             this.panel2.SuspendLayout();
             this.panel35.SuspendLayout();
             this.panel41.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,11 +198,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.tb_description);
-            this.panel4.Controls.Add(this.tb_Chno);
-            this.panel4.Controls.Add(this.tb_EMNAME);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.cb_test2);
+            this.panel4.Controls.Add(this.cb1_test1);
             this.panel4.Controls.Add(this.btnStop);
             this.panel4.Controls.Add(this.btnStart);
             this.panel4.Dock = Wisej.Web.DockStyle.Top;
@@ -210,47 +209,6 @@
             this.panel4.Size = new System.Drawing.Size(1360, 54);
             this.panel4.TabIndex = 11;
             this.panel4.TabStop = true;
-            // 
-            // tb_description
-            // 
-            this.tb_description.Location = new System.Drawing.Point(946, 11);
-            this.tb_description.Name = "tb_description";
-            this.tb_description.Size = new System.Drawing.Size(219, 36);
-            this.tb_description.TabIndex = 13;
-            // 
-            // tb_Chno
-            // 
-            this.tb_Chno.Location = new System.Drawing.Point(604, 11);
-            this.tb_Chno.Name = "tb_Chno";
-            this.tb_Chno.ReadOnly = true;
-            this.tb_Chno.Size = new System.Drawing.Size(178, 36);
-            this.tb_Chno.TabIndex = 12;
-            // 
-            // tb_EMNAME
-            // 
-            this.tb_EMNAME.Location = new System.Drawing.Point(332, 11);
-            this.tb_EMNAME.Name = "tb_EMNAME";
-            this.tb_EMNAME.ReadOnly = true;
-            this.tb_EMNAME.Size = new System.Drawing.Size(148, 36);
-            this.tb_EMNAME.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(526, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "방송방번호";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "사이트 명";
             // 
             // btnStop
             // 
@@ -539,13 +497,44 @@
             // 
             this.contextMenu2.Name = "contextMenu2";
             // 
-            // membs
-            // 
-            this.membs.DataSource = typeof(simplepa2.Bsroom);
-            // 
             // bsTreeCTableAdapter1
             // 
             this.bsTreeCTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // emServerWithWholeColTableAdapter1
+            // 
+            this.emServerWithWholeColTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cb1_test1
+            // 
+            this.cb1_test1.DisplayMember = "EMNAME";
+            this.cb1_test1.Location = new System.Drawing.Point(420, 4);
+            this.cb1_test1.Name = "cb1_test1";
+            this.cb1_test1.Size = new System.Drawing.Size(120, 36);
+            this.cb1_test1.TabIndex = 5;
+            // 
+            // cb_test2
+            // 
+            this.cb_test2.DataSource = this.bindingEMCombo;
+            this.cb_test2.DisplayMember = "EMNAME";
+            this.cb_test2.Location = new System.Drawing.Point(629, 3);
+            this.cb_test2.Name = "cb_test2";
+            this.cb_test2.Size = new System.Drawing.Size(120, 36);
+            this.cb_test2.TabIndex = 6;
+            // 
+            // bindingEMCombo
+            // 
+            this.bindingEMCombo.DataMember = "EMServerWithWholeCol";
+            this.bindingEMCombo.DataSource = this.dataSet1;
+            // 
+            // membs
+            // 
+            this.membs.DataSource = typeof(simplepa2.Bsroom);
             // 
             // View_BBSAnchor2
             // 
@@ -574,6 +563,8 @@
             this.panel2.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             this.ResumeLayout(false);
 
@@ -621,12 +612,12 @@
         private Wisej.Web.Label label17;
         private Wisej.Web.Panel panel1;
         private Wisej.Web.Panel panel5;
-        private Wisej.Web.Label label3;
-        private Wisej.Web.Label label1;
-        private Wisej.Web.TextBox tb_Chno;
-        private Wisej.Web.TextBox tb_EMNAME;
         private Wisej.Web.ContextMenu contextMenu2;
-        private Wisej.Web.TextBox tb_description;
         private DataSet1TableAdapters.BSTreeCTableAdapter bsTreeCTableAdapter1;
+        private DataSet1 dataSet11;
+        private DataSet1TableAdapters.EMServerWithWholeColTableAdapter emServerWithWholeColTableAdapter1;
+        private Wisej.Web.ComboBox cb1_test1;
+        private Wisej.Web.ComboBox cb_test2;
+        private Wisej.Web.BindingSource bindingEMCombo;
     }
 }
