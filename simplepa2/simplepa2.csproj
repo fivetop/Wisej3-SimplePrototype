@@ -890,6 +890,7 @@
     <Compile Include="Controller\Eventbs.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\EventbsController.cs" />
     <Compile Include="Controller\Eventdevice.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
