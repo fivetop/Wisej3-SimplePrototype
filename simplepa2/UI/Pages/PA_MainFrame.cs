@@ -410,26 +410,26 @@ namespace simplepa2.UI.Pages
                     }
                     dBSqlite.EMServerupdatePreset(msg1.EMNAME,msg1.seqno, msg1.state);
                     view_DashBoard2.reDraw2();
-                    view_BBSEMManage2.reDraw();
+                    if(view_BBSEMManage2 != null) view_BBSEMManage2.reDraw();
                     break;
                 case eSignalRMsgType.ePlay:
                     dBSqlite.Eventbs("Play", msg1.message, msg1.seqno.ToString());
-                    view_BBSEMChannel2.reDraw();
+                    if (view_BBSEMChannel2 != null) view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.ePlayCheck :
                     break;
                 case eSignalRMsgType.ePlayEnd:
-                    dBSqlite.Eventbs("PlayEns", msg1.message, msg1.seqno.ToString());
-                    view_BBSEMChannel2.reDraw();
-                    view_BBSAnchor2.refresh();
+                    dBSqlite.Eventbs("PlayEnd", msg1.message, msg1.seqno.ToString());
+                    if (view_BBSEMChannel2 != null) view_BBSEMChannel2.reDraw();
+                    if (view_BBSAnchor2 != null) view_BBSAnchor2.refresh();
                     break;
                 case eSignalRMsgType.ePlaying:
                     dBSqlite.Eventbs("Playing", msg1.message, msg1.seqno.ToString());
-                    view_BBSEMChannel2.reDraw();
+                    if (view_BBSEMChannel2 != null) view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.eStop:
                     dBSqlite.Eventbs("PlayStop", msg1.message, msg1.seqno.ToString());
-                    view_BBSEMChannel2.reDraw();
+                    if (view_BBSEMChannel2 != null) view_BBSEMChannel2.reDraw();
                     break;
                 case eSignalRMsgType.eLoginUser:
                     break;
