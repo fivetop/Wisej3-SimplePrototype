@@ -88,7 +88,7 @@ namespace pa
         }
 
         // **방송종료처리 - 다원 방송 종료
-        public void MBSStop(int p1)
+        public void MBSStop(int p1, int c1 = 0)
         {
             int chno = p1;
             if (chno < 2 || chno > 8) return;
@@ -106,7 +106,10 @@ namespace pa
             string l1 = "다원방송종료";
 
             g.Log(l1 +t1.chno.ToString() + " : "+ t1.idno.ToString());
-            dBAccess.Eventbss(l1, t1.chno.ToString() + "번 채널", t1.idno.ToString());
+            if (c1 == 0)
+            { 
+                dBAccess.Eventbss(l1, t1.chno.ToString() + "번 채널", t1.idno.ToString());
+            }
             SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd , t1.chno, t1.idno);
             g.playItems[chno] = new PlayItem();
         }

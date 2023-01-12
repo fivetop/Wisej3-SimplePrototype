@@ -72,7 +72,7 @@ namespace pa
                     break;
                 case eSignalRMsgType.eStop:
                     //g.chno = getplay(msg.Guid);
-                    MBSStop(msg.chno);
+                    MBSStop(msg.chno, 1);
                     SendSigR("STOP", eSignalRMsgType.eStop, msg.seqno, msg.chno);
                     g.playItems[msg.chno] = new PlayItem();
                     g.Log("다원방송중지" + msg.chno.ToString() + " : " + msg.seqno.ToString());

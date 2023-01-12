@@ -53,6 +53,7 @@ namespace pa
             EMBs = Dbread<EMBsDataTable>("EMBs");
             EMServer = Dbread<EMServerDataTable>("EMServers");
             Eventvm = Dbread<EventvmDataTable>("Eventvms");
+            Eventbs = Dbread<EventbsDataTable>("Eventbs");
             Holidays = Dbread<HolidaysDataTable>("Holidays");
             Musics = Dbread<MusicsDataTable>("Musics");
             PlayItem = Dbread<PlayItemDataTable>("PlayItems");
@@ -105,6 +106,7 @@ namespace pa
             }
             catch (Exception e1)
             {
+                g.Log(e1.Message);
                 return default(T);
             }
         }
@@ -563,6 +565,8 @@ namespace pa
             em.path = base_text;
             em.state = state;
             em.alarm = 0;
+            em.ip = "";
+            em.DeviceName = "";
             var t2 = Dbsave<Eventbs>("Eventbs", (DataRow)em);
         }
 
@@ -576,6 +580,7 @@ namespace pa
             em.path = base_text;
             em.state = state;
             em.alarm = 0;
+            em.ip = "";
             Save(em);
 
         }
