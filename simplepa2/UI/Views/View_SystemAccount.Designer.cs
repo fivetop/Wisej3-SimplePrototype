@@ -189,7 +189,7 @@
             // colUsertreeid
             // 
             this.colUsertreeid.DataPropertyName = "UserTreeId";
-            this.colUsertreeid.HeaderText = "번호";
+            this.colUsertreeid.HeaderText = "No";
             this.colUsertreeid.Name = "colUsertreeid";
             this.colUsertreeid.ReadOnly = true;
             // 

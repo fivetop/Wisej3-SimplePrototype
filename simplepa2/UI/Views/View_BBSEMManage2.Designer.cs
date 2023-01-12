@@ -110,7 +110,7 @@
             // colEmserverid
             // 
             this.colEmserverid.DataPropertyName = "EMServerId";
-            this.colEmserverid.HeaderText = "번호";
+            this.colEmserverid.HeaderText = "No";
             this.colEmserverid.Name = "colEmserverid";
             this.colEmserverid.ReadOnly = true;
             this.colEmserverid.Width = 60;

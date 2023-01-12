@@ -82,7 +82,7 @@
             // colBstreeid
             // 
             this.colBstreeid.DataPropertyName = "BSTreeId";
-            this.colBstreeid.HeaderText = "번호";
+            this.colBstreeid.HeaderText = "No";
             this.colBstreeid.Name = "colBstreeid";
             this.colBstreeid.ReadOnly = true;
             this.colBstreeid.Width = 60;
