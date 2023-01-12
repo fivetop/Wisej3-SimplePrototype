@@ -28,7 +28,7 @@ namespace pa
             if (eM_MODE == EM_MODE.연동정지)
                 return;
 
-            if (_DanteDevice != null)
+            if(signalRClient.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
             {
                 EMMetrixChOn();
                 InitVolume(true);
@@ -142,7 +142,7 @@ namespace pa
 
         private void EMMetrixChOff()
         {
-            if (_DanteDevice == null)
+            if (signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
             {
                 // 서버가 없으면 강제 방송 처리 
                 var splist1 = gl.danteDevice._DanteDevice.Where(p => p.device == 2).ToList();
@@ -176,7 +176,8 @@ namespace pa
 
         public void InitVolume(bool emflag = false)
         {
-            if (_DanteDevice == null) return;
+            if (signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return;
             var splist1 = _DanteDevice.Where(p => p.device == 0).ToList();
 
             foreach (var sp1 in splist1)
