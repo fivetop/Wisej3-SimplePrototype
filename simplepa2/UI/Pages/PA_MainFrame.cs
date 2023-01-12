@@ -53,7 +53,7 @@ namespace simplepa2.UI.Pages
         private View_SystemSMSRegistration view_SystemSMSRegistration;
         private View_SystemRestAPI view_SystemRestAPI;
 
-        private View_BBCAsset2 view_BBCAsset2;
+        private View_BBCAsset2 view_BBCAsset2 = new View_BBCAsset2();
         private View_DashBoard2 view_DashBoard2;        
         private View_BBSGroupManage2 view_BBSGroupManage2;
         private View_BBSHolidayManage2 view_BBSHolidayManage2;

@@ -105,7 +105,7 @@
             // colAssetid
             // 
             this.colAssetid.DataPropertyName = "AssetId";
-            this.colAssetid.HeaderText = "자산No";
+            this.colAssetid.HeaderText = "No";
             this.colAssetid.Name = "colAssetid";
             this.colAssetid.ReadOnly = true;
             this.colAssetid.Width = 60;
@@ -159,7 +159,7 @@
             // colDeviceid
             // 
             this.colDeviceid.DataPropertyName = "DeviceId";
-            this.colDeviceid.HeaderText = "장비No";
+            this.colDeviceid.HeaderText = "No";
             this.colDeviceid.Name = "colDeviceid";
             this.colDeviceid.Width = 60;
             // 

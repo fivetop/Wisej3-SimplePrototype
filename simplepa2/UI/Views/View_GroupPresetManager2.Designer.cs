@@ -86,12 +86,13 @@
             this.colAssetpresetgroupid.HeaderText = "No";
             this.colAssetpresetgroupid.Name = "colAssetpresetgroupid";
             this.colAssetpresetgroupid.ReadOnly = true;
+            this.colAssetpresetgroupid.Width = 60;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "chk";
             this.dataGridViewCheckBoxColumn1.FalseValue = "0";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "ACT";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "선택";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.SortMode = Wisej.Web.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewCheckBoxColumn1.TrueValue = "1";
