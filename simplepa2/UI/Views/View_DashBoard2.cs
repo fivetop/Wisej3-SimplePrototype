@@ -56,8 +56,8 @@ namespace simplepa2.UI.Views
 			try
 			{
 				this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+				this.eventdeviceTableAdapter.Fill(this.dataSet1.Eventdevice);
 				this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-				this.bSroomTableAdapter.Fill(this.dataSet1.BSroom);
 				this.bsTreeTableAdapter1.Fill(this.dataSet1.BSTree);
 			}
 			catch (Exception e1)

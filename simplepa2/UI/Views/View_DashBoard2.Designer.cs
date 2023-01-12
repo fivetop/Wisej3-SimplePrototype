@@ -48,12 +48,10 @@
             this.imageList2 = new Wisej.Web.ImageList(this.components);
             this.Eventbs = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
-            this.Eventbs2 = new Wisej.Web.BindingSource(this.components);
             this.assetsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.assetGroupsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetGroupsTableAdapter();
             this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
-            this.bSroomTableAdapter = new simplepa2.DataSet1TableAdapters.BSroomTableAdapter();
             this.split_MainFrame = new Wisej.Web.SplitContainer();
             this.split_TopFrame = new Wisej.Web.SplitContainer();
             this.DevicelistView1 = new Wisej.Web.ListView();
@@ -70,21 +68,22 @@
             this.label20 = new Wisej.Web.Label();
             this.panel12 = new Wisej.Web.Panel();
             this.evdataGridView3 = new Wisej.Web.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.Eventbs2 = new Wisej.Web.BindingSource(this.components);
             this.panel13 = new Wisej.Web.Panel();
             this.label21 = new Wisej.Web.Label();
             this.ItemTemplate = new Wisej.Web.DataRepeaterItem();
             this.bsTreeTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeTableAdapter();
             this.bsTreeBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.eventdeviceTableAdapter = new simplepa2.DataSet1TableAdapters.EventdeviceTableAdapter();
             this.membs = new Wisej.Web.BindingSource(this.components);
+            this.colEventdeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.split_MainFrame)).BeginInit();
             this.split_MainFrame.Panel1.SuspendLayout();
@@ -103,6 +102,7 @@
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.evdataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).BeginInit();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTreeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
@@ -138,20 +138,13 @@
             // 
             this.Eventbs.DataMember = "Eventvm";
             this.Eventbs.DataSource = this.dataSet1;
-            this.Eventbs.Filter = "[alarm]=0";
+            this.Eventbs.Filter = "";
             this.Eventbs.Sort = "EventVMId DESC";
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // Eventbs2
-            // 
-            this.Eventbs2.DataMember = "Eventvm";
-            this.Eventbs2.DataSource = this.dataSet1;
-            this.Eventbs2.Filter = "[alarm]=2";
-            this.Eventbs2.Sort = "EventVMId DESC";
             // 
             // assetsBindingSource
             // 
@@ -170,10 +163,6 @@
             // eventvmTableAdapter
             // 
             this.eventvmTableAdapter.ClearBeforeFill = true;
-            // 
-            // bSroomTableAdapter
-            // 
-            this.bSroomTableAdapter.ClearBeforeFill = true;
             // 
             // split_MainFrame
             // 
@@ -367,7 +356,7 @@
             // 
             this.evdataGridView3.AutoGenerateColumns = false;
             this.evdataGridView3.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
+            this.colEventdeviceid,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn8,
@@ -384,14 +373,6 @@
             this.evdataGridView3.RowHeadersWidth = 14;
             this.evdataGridView3.Size = new System.Drawing.Size(562, 407);
             this.evdataGridView3.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "EventVMId";
-            this.dataGridViewTextBoxColumn5.HeaderText = "No";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 60;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -430,6 +411,12 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 210;
             // 
+            // Eventbs2
+            // 
+            this.Eventbs2.DataMember = "Eventdevice";
+            this.Eventbs2.DataSource = this.dataSet1;
+            this.Eventbs2.Sort = "EventdeviceID DESC";
+            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.White;
@@ -466,9 +453,21 @@
             this.bsTreeBindingSource.DataSource = this.dataSet1;
             this.bsTreeBindingSource.RefreshValueOnChange = true;
             // 
+            // eventdeviceTableAdapter
+            // 
+            this.eventdeviceTableAdapter.ClearBeforeFill = true;
+            // 
             // membs
             // 
             this.membs.DataSource = typeof(simplepa2.Bsroom);
+            // 
+            // colEventdeviceid
+            // 
+            this.colEventdeviceid.DataPropertyName = "EventdeviceId";
+            this.colEventdeviceid.HeaderText = "No";
+            this.colEventdeviceid.Name = "colEventdeviceid";
+            this.colEventdeviceid.ReadOnly = true;
+            this.colEventdeviceid.Width = 60;
             // 
             // View_DashBoard2
             // 
@@ -481,7 +480,6 @@
             this.Load += new System.EventHandler(this.View_DashBoard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).EndInit();
             this.split_MainFrame.Panel1.ResumeLayout(false);
             this.split_MainFrame.Panel2.ResumeLayout(false);
@@ -501,6 +499,7 @@
             this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.evdataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTreeBindingSource)).EndInit();
@@ -517,12 +516,10 @@
         private Wisej.Web.ImageList imageList2;
         private Wisej.Web.BindingSource Eventbs;
         private DataSet1 dataSet1;
-        private Wisej.Web.BindingSource Eventbs2;
         private Wisej.Web.BindingSource assetsBindingSource;
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
         private DataSet1TableAdapters.AssetGroupsTableAdapter assetGroupsTableAdapter;
         private DataSet1TableAdapters.EventvmTableAdapter eventvmTableAdapter;
-        private DataSet1TableAdapters.BSroomTableAdapter bSroomTableAdapter;
         private Wisej.Web.SplitContainer split_MainFrame;
         private Wisej.Web.SplitContainer split_TopFrame;
         private Wisej.Web.ListView DevicelistView1;
@@ -539,7 +536,6 @@
         private Wisej.Web.Label label20;
         private Wisej.Web.Panel panel12;
         private Wisej.Web.DataGridView evdataGridView3;
-        private Wisej.Web.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private Wisej.Web.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private Wisej.Web.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private Wisej.Web.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
@@ -550,5 +546,8 @@
         private Wisej.Web.DataRepeaterItem ItemTemplate;
         private DataSet1TableAdapters.BSTreeTableAdapter bsTreeTableAdapter1;
         private Wisej.Web.BindingSource bsTreeBindingSource;
+        private Wisej.Web.BindingSource Eventbs2;
+        private DataSet1TableAdapters.EventdeviceTableAdapter eventdeviceTableAdapter;
+        private Wisej.Web.DataGridViewTextBoxColumn colEventdeviceid;
     }
 }
