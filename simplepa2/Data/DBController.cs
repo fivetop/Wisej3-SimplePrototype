@@ -371,7 +371,7 @@ namespace simplepa2
             var m3 = Ds1.BSTree.FirstOrDefault(p => p.EMNAME == t1.emServer);
             if (m3 == null)
             {
-                for (int i = 2; i < 9; i++)
+                for (int i = 1; i < 9; i++)
                 { 
                     BSTreeRow m2 = Ds1.BSTree.NewBSTreeRow();
                     m2.EMNAME = t1.emServer;

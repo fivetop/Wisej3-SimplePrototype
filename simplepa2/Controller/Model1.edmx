@@ -73,6 +73,7 @@
           <Property Name="playing" Type="varchar(max)" />
           <Property Name="AssetId" Type="int" />
           <Property Name="MusicId" Type="int" />
+          <Property Name="user_name" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="BSTreeC">
           <Key>
@@ -448,6 +449,7 @@
           <Property Name="MusicId" Type="Int32" />
           <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="playing" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -785,6 +787,7 @@
           <EntitySetMapping Name="BSTree">
             <EntityTypeMapping TypeName="simplePAModel.BSTree">
               <MappingFragment StoreEntitySet="BSTree">
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
                 <ScalarProperty Name="playing" ColumnName="playing" />
                 <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
                 <ScalarProperty Name="BSTreeId" ColumnName="BSTreeId" />

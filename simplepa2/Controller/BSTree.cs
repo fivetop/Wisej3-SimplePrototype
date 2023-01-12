@@ -21,5 +21,6 @@ namespace simplepa2.Controller
         public Nullable<int> MusicId { get; set; }
         public string EMNAME { get; set; }
         public string playing { get; set; }
+        public string user_name { get; set; }
     }
 }
