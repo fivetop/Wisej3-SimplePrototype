@@ -30,15 +30,22 @@
         {
             this.panel8 = new Wisej.Web.Panel();
             this.panel38 = new Wisej.Web.Panel();
-            this.bt_bbsExit = new Wisej.Web.Button();
-            this.bt_enter = new Wisej.Web.Button();
-            this.pn_button = new Wisej.Web.Panel();
-            this.panel9 = new Wisej.Web.Panel();
-            this.lb_EMNAME = new Wisej.Web.Label();
-            this.label29 = new Wisej.Web.Label();
+            this.panel1 = new Wisej.Web.Panel();
+            this.label1 = new Wisej.Web.Label();
+            this.label3 = new Wisej.Web.Label();
+            this.flowLayoutPanel1 = new Wisej.Web.FlowLayoutPanel();
+            this.comp_BBSDeckButton3 = new simplepa2.UI.Components.Comp_BBSDeckButton();
+            this.comp_BBSDeckButton1 = new simplepa2.UI.Components.Comp_BBSDeckButton();
+            this.comp_BBSDeckButton2 = new simplepa2.UI.Components.Comp_BBSDeckButton();
+            this.comp_BBSDeckButton4 = new simplepa2.UI.Components.Comp_BBSDeckButton();
+            this.comp_BBSDeckButton5 = new simplepa2.UI.Components.Comp_BBSDeckButton();
+            this.comp_BBSDeckButton6 = new simplepa2.UI.Components.Comp_BBSDeckButton();
+            this.comp_BBSDeckButton7 = new simplepa2.UI.Components.Comp_BBSDeckButton();
+            this.comp_BBSDeckButton8 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.panel8.SuspendLayout();
             this.panel38.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel8
@@ -46,109 +53,132 @@
             this.panel8.AutoSize = true;
             this.panel8.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
             this.panel8.Controls.Add(this.panel38);
-            this.panel8.Controls.Add(this.panel9);
             this.panel8.Dock = Wisej.Web.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Padding = new Wisej.Web.Padding(16, 11, 16, 11);
-            this.panel8.Size = new System.Drawing.Size(856, 120);
+            this.panel8.Padding = new Wisej.Web.Padding(5);
+            this.panel8.Size = new System.Drawing.Size(760, 70);
             this.panel8.TabIndex = 135;
             // 
             // panel38
             // 
-            this.panel38.Controls.Add(this.bt_bbsExit);
-            this.panel38.Controls.Add(this.bt_enter);
-            this.panel38.Controls.Add(this.pn_button);
-            this.panel38.Dock = Wisej.Web.DockStyle.Top;
-            this.panel38.Location = new System.Drawing.Point(16, 48);
+            this.panel38.Controls.Add(this.flowLayoutPanel1);
+            this.panel38.Controls.Add(this.panel1);
+            this.panel38.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel38.Location = new System.Drawing.Point(5, 5);
             this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(824, 60);
+            this.panel38.Size = new System.Drawing.Size(750, 60);
             this.panel38.TabIndex = 165;
             // 
-            // bt_bbsExit
+            // panel1
             // 
-            this.bt_bbsExit.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.bt_bbsExit.BackColor = System.Drawing.Color.FromName("@button2BG");
-            this.bt_bbsExit.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.bt_bbsExit.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_bbsExit.Location = new System.Drawing.Point(747, 16);
-            this.bt_bbsExit.Margin = new Wisej.Web.Padding(0);
-            this.bt_bbsExit.Name = "bt_bbsExit";
-            this.bt_bbsExit.Size = new System.Drawing.Size(70, 32);
-            this.bt_bbsExit.TabIndex = 172;
-            this.bt_bbsExit.Text = "강제종료";
-            this.bt_bbsExit.Click += new System.EventHandler(this.bt_bbsExit_Click);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = Wisej.Web.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(138, 60);
+            this.panel1.TabIndex = 0;
             // 
-            // bt_enter
+            // label1
             // 
-            this.bt_enter.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.bt_enter.BackColor = System.Drawing.Color.FromName("@button1BG");
-            this.bt_enter.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.bt_enter.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_enter.Location = new System.Drawing.Point(674, 16);
-            this.bt_enter.Margin = new Wisej.Web.Padding(0);
-            this.bt_enter.Name = "bt_enter";
-            this.bt_enter.Size = new System.Drawing.Size(70, 32);
-            this.bt_enter.TabIndex = 171;
-            this.bt_enter.Text = "입장";
-            this.bt_enter.Click += new System.EventHandler(this.bt_enter_Click);
+            this.label1.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.Location = new System.Drawing.Point(3, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 23);
+            this.label1.TabIndex = 79;
+            this.label1.Text = "구미사이트";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pn_button
+            // label3
             // 
-            this.pn_button.Dock = Wisej.Web.DockStyle.Left;
-            this.pn_button.Location = new System.Drawing.Point(0, 0);
-            this.pn_button.Name = "pn_button";
-            this.pn_button.Padding = new Wisej.Web.Padding(5);
-            this.pn_button.Size = new System.Drawing.Size(651, 60);
-            this.pn_button.TabIndex = 0;
+            this.label3.AutoEllipsis = true;
+            this.label3.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
+            this.label3.CssStyle = "border-radius:15px";
+            this.label3.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label3.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label3.Location = new System.Drawing.Point(94, 17);
+            this.label3.Margin = new Wisej.Web.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 30);
+            this.label3.TabIndex = 146;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel9
+            // flowLayoutPanel1
             // 
-            this.panel9.Controls.Add(this.lb_EMNAME);
-            this.panel9.Controls.Add(this.label29);
-            this.panel9.Dock = Wisej.Web.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(16, 11);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(824, 37);
-            this.panel9.TabIndex = 163;
+            this.flowLayoutPanel1.Controls.Add(this.comp_BBSDeckButton3);
+            this.flowLayoutPanel1.Controls.Add(this.comp_BBSDeckButton1);
+            this.flowLayoutPanel1.Controls.Add(this.comp_BBSDeckButton2);
+            this.flowLayoutPanel1.Controls.Add(this.comp_BBSDeckButton4);
+            this.flowLayoutPanel1.Controls.Add(this.comp_BBSDeckButton5);
+            this.flowLayoutPanel1.Controls.Add(this.comp_BBSDeckButton6);
+            this.flowLayoutPanel1.Controls.Add(this.comp_BBSDeckButton7);
+            this.flowLayoutPanel1.Controls.Add(this.comp_BBSDeckButton8);
+            this.flowLayoutPanel1.Dock = Wisej.Web.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(138, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new Wisej.Web.Padding(5);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 60);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // lb_EMNAME
+            // comp_BBSDeckButton3
             // 
-            this.lb_EMNAME.AutoEllipsis = true;
-            this.lb_EMNAME.BackColor = System.Drawing.Color.Transparent;
-            this.lb_EMNAME.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_EMNAME.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_EMNAME.Location = new System.Drawing.Point(103, 0);
-            this.lb_EMNAME.Margin = new Wisej.Web.Padding(0);
-            this.lb_EMNAME.Name = "lb_EMNAME";
-            this.lb_EMNAME.Size = new System.Drawing.Size(120, 24);
-            this.lb_EMNAME.TabIndex = 135;
-            this.lb_EMNAME.Text = "지역명";
-            this.lb_EMNAME.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.comp_BBSDeckButton3.Location = new System.Drawing.Point(7, 7);
+            this.comp_BBSDeckButton3.Name = "comp_BBSDeckButton3";
+            this.comp_BBSDeckButton3.TabIndex = 2;
             // 
-            // label29
+            // comp_BBSDeckButton1
             // 
-            this.label29.AutoEllipsis = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label29.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label29.Location = new System.Drawing.Point(0, 0);
-            this.label29.Margin = new Wisej.Web.Padding(0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(108, 24);
-            this.label29.TabIndex = 134;
-            this.label29.Text = "방송 사이트 -";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.comp_BBSDeckButton1.Location = new System.Drawing.Point(76, 7);
+            this.comp_BBSDeckButton1.Name = "comp_BBSDeckButton1";
+            this.comp_BBSDeckButton1.TabIndex = 3;
+            // 
+            // comp_BBSDeckButton2
+            // 
+            this.comp_BBSDeckButton2.Location = new System.Drawing.Point(145, 7);
+            this.comp_BBSDeckButton2.Name = "comp_BBSDeckButton2";
+            this.comp_BBSDeckButton2.TabIndex = 4;
+            // 
+            // comp_BBSDeckButton4
+            // 
+            this.comp_BBSDeckButton4.Location = new System.Drawing.Point(214, 7);
+            this.comp_BBSDeckButton4.Name = "comp_BBSDeckButton4";
+            this.comp_BBSDeckButton4.TabIndex = 5;
+            // 
+            // comp_BBSDeckButton5
+            // 
+            this.comp_BBSDeckButton5.Location = new System.Drawing.Point(283, 7);
+            this.comp_BBSDeckButton5.Name = "comp_BBSDeckButton5";
+            this.comp_BBSDeckButton5.TabIndex = 6;
+            // 
+            // comp_BBSDeckButton6
+            // 
+            this.comp_BBSDeckButton6.Location = new System.Drawing.Point(352, 7);
+            this.comp_BBSDeckButton6.Name = "comp_BBSDeckButton6";
+            this.comp_BBSDeckButton6.TabIndex = 7;
+            // 
+            // comp_BBSDeckButton7
+            // 
+            this.comp_BBSDeckButton7.Location = new System.Drawing.Point(421, 7);
+            this.comp_BBSDeckButton7.Name = "comp_BBSDeckButton7";
+            this.comp_BBSDeckButton7.TabIndex = 8;
+            // 
+            // comp_BBSDeckButton8
+            // 
+            this.comp_BBSDeckButton8.Location = new System.Drawing.Point(490, 7);
+            this.comp_BBSDeckButton8.Name = "comp_BBSDeckButton8";
+            this.comp_BBSDeckButton8.TabIndex = 9;
             // 
             // Comp_DashBoardBBSDeck
             // 
             this.Controls.Add(this.panel8);
             this.Dock = Wisej.Web.DockStyle.Top;
             this.Name = "Comp_DashBoardBBSDeck";
-            this.Size = new System.Drawing.Size(856, 120);
+            this.Size = new System.Drawing.Size(760, 70);
             this.panel8.ResumeLayout(false);
             this.panel38.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,11 +188,17 @@
 
         private Wisej.Web.Panel panel8;
         private Wisej.Web.Panel panel38;
-        private Wisej.Web.Button bt_bbsExit;
-        private Wisej.Web.Button bt_enter;
-        private Wisej.Web.Panel panel9;
-        private Wisej.Web.Label label29;
-        private Wisej.Web.Label lb_EMNAME;
-        private Wisej.Web.Panel pn_button;
+        private Wisej.Web.Panel panel1;
+        private Wisej.Web.Label label1;
+        private Wisej.Web.Label label3;
+        private Wisej.Web.FlowLayoutPanel flowLayoutPanel1;
+        private Comp_BBSDeckButton comp_BBSDeckButton3;
+        private Comp_BBSDeckButton comp_BBSDeckButton1;
+        private Comp_BBSDeckButton comp_BBSDeckButton2;
+        private Comp_BBSDeckButton comp_BBSDeckButton4;
+        private Comp_BBSDeckButton comp_BBSDeckButton5;
+        private Comp_BBSDeckButton comp_BBSDeckButton6;
+        private Comp_BBSDeckButton comp_BBSDeckButton7;
+        private Comp_BBSDeckButton comp_BBSDeckButton8;
     }
 }

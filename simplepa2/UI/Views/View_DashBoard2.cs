@@ -68,8 +68,7 @@ namespace simplepa2.UI.Views
 		private void View_DashBoard_Load(object sender, EventArgs e)
         {
 			reDraw();
-
-			initMultiBBSWidgetUISetup();
+			
 		}
 
 
@@ -142,19 +141,10 @@ namespace simplepa2.UI.Views
         {
 			if(widget_bbsMultiDeck == null)
             {
-				widget_bbsMultiDeck = new Widget_BBSMultiDeck(this.bsTreeBindingSource);
+				widget_bbsMultiDeck = new Widget_BBSMultiDeck();
 				this.split_TopFrame.Panel1.Controls.Add(widget_bbsMultiDeck);
-			}
-            else
-            {
-				widget_bbsMultiDeck.setBindingSource(this.bsTreeBindingSource);
-				widget_bbsMultiDeck.initSetupUI();
-			}
-			
-			
+			}			
         }
-
-
 
 		#region //Split 모양 및 이벤트 처리
 		// split 위치 설정 세로, 가로,  세로

@@ -20,51 +20,41 @@ namespace simplepa2.UI.Widget
         //         private Binding 
 
 
-        public Widget_BBSMultiDeck(BindingSource bsSource)
+        public Widget_BBSMultiDeck()
         {
             InitializeComponent();
 
-            bsTreeBindingSource = bsSource;
-            bsTreeBindingSource.RefreshValueOnChange = true;
+            dataBindRefersh();
 
-            if (bsTreeBindingSource == null)
-            {
-                MessageBox.Show("LAWTEXXT : BSTree 위젯의 데이터를 입력받지 못하였습니다. ");
-            }
+            reDraw();
 
-            initSetupUI();
-            // startTimer();
+            startTimer();
         }
-        public void setBindingSource(BindingSource bsSource)
+
+        public void dataBindRefersh()
         {
-            this.bsTreeBindingSource = bsSource;
-        }
-
-
-        /*
+            this.bsTreeTableAdapter1.Fill(this.dataSet11.BSTree);
+        }        
         public void startTimer()
         {           
-            timer.Interval = 5000;
+            timer.Interval = gweb.dashBoardRefreshInterval;
             timer.Tick += Timer_Tick;
-            timer.Start();
+            timer.Start();            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("updateD");
-            
-            initSetupUI();
-        } */
+            dataBindRefersh();
+            reDraw();
+        } 
 
-        public void setBSTreeData(DataSet1.BSTreeDataTable data)
+        public void reDraw()
         {
-            bsTreeData = data;
+            deckUIList.Clear();
+            this.pn_deckSpace.Controls.Clear();
 
-        }
-        public void initSetupUI()
-        {
-            DataTable dt = (bsTreeBindingSource.List as DataView).ToTable();
-                        
+            DataTable dt = dataSet11.BSTree;
+                
             // get EM NAME 추출
             DataRow[] dr = dt.Select();
             List<string> listStr = new List<string>();
@@ -84,9 +74,6 @@ namespace simplepa2.UI.Widget
                 }                
             }
 
-            deckUIList.Clear();
-            this.pn_deckSpace.Controls.Clear();
-
             // EM 데이터 별로 DR 뽑아서 UI 만들어 주기
             foreach (string strENNAME in listStr)
             {                
@@ -96,8 +83,25 @@ namespace simplepa2.UI.Widget
                 this.pn_deckSpace.Controls.Add(tempDeck);
 
                 deckUIList.Add(tempDeck);  // UI Biding 객체저장
-            }        
+            }                    
             
+
+            /* For testing UI 
+             * 
+
+            Comp_DashBoardBBSDeck cd1 = new Comp_DashBoardBBSDeck();
+            Comp_DashBoardBBSDeck cd2 = new Comp_DashBoardBBSDeck();
+            Comp_DashBoardBBSDeck cd3 = new Comp_DashBoardBBSDeck();
+            Comp_DashBoardBBSDeck cd4 = new Comp_DashBoardBBSDeck();
+            Comp_DashBoardBBSDeck cd5 = new Comp_DashBoardBBSDeck();
+
+            pn_deckSpace.Controls.Add(cd1);
+            pn_deckSpace.Controls.Add(cd2);
+            pn_deckSpace.Controls.Add(cd3);
+            pn_deckSpace.Controls.Add(cd4);
+
+            pn_deckSpace.Controls.Add(cd5);
+            */
         }
 
         public Panel newSpacerPanel()
