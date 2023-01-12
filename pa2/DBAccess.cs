@@ -31,6 +31,7 @@ namespace pa
         public EMBsDataTable EMBs { get; set; } = new EMBsDataTable();
         public EMServerDataTable EMServer { get; set; } = new EMServerDataTable();
         public EventvmDataTable Eventvm { get; set; } = new EventvmDataTable();
+        public EventbsDataTable Eventbs { get; set; } = new EventbsDataTable();
         public EventdeviceDataTable Eventdevice { get; set; } = new EventdeviceDataTable();
         public HolidaysDataTable Holidays { get; set; } = new HolidaysDataTable();
         public MusicsDataTable Musics { get; set; } = new MusicsDataTable();
@@ -552,10 +553,23 @@ namespace pa
 
         #region // Eventvm 이벤트처리 관리 부분 
 
+        public void Eventbss(string event_text, string base_text, string state)
+        {
+            if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return;
+            EventbsRow em = Eventbs.NewEventbsRow();
+            em.write_time = DateTime.Now;
+            em.event_text = event_text;
+            em.path = base_text;
+            em.state = state;
+            em.alarm = 0;
+            var t2 = Dbsave<Eventbs>("Eventbss", (DataRow)em);
+        }
+
         public void Eventvms(string event_text, string base_text, string state)
         {
             if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-                return ;
+                return;
             EventvmRow em = Eventvm.NewEventvmRow();
             em.write_time = DateTime.Now;
             em.event_text = event_text;
