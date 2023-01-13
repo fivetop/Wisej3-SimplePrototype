@@ -68,6 +68,7 @@
             this.label20 = new Wisej.Web.Label();
             this.panel12 = new Wisej.Web.Panel();
             this.evdataGridView3 = new Wisej.Web.DataGridView();
+            this.colEventdeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -81,7 +82,6 @@
             this.bsTreeBindingSource = new Wisej.Web.BindingSource(this.components);
             this.eventdeviceTableAdapter = new simplepa2.DataSet1TableAdapters.EventdeviceTableAdapter();
             this.membs = new Wisej.Web.BindingSource(this.components);
-            this.colEventdeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
@@ -166,20 +166,24 @@
             // 
             // split_MainFrame
             // 
+            this.split_MainFrame.BackColor = System.Drawing.Color.White;
+            this.split_MainFrame.BorderStyle = Wisej.Web.BorderStyle.Dotted;
             this.split_MainFrame.Dock = Wisej.Web.DockStyle.Fill;
             this.split_MainFrame.Location = new System.Drawing.Point(20, 20);
-            this.split_MainFrame.Margin = new Wisej.Web.Padding(0);
+            this.split_MainFrame.Margin = new Wisej.Web.Padding(5);
             this.split_MainFrame.Name = "split_MainFrame";
             this.split_MainFrame.Orientation = Wisej.Web.Orientation.Horizontal;
             // 
             // split_MainFrame.Panel1
             // 
             this.split_MainFrame.Panel1.Controls.Add(this.split_TopFrame);
+            this.split_MainFrame.Panel1.Padding = new Wisej.Web.Padding(5);
             this.split_MainFrame.Panel1.TabStop = true;
             // 
             // split_MainFrame.Panel2
             // 
             this.split_MainFrame.Panel2.Controls.Add(this.split_BottomFrame);
+            this.split_MainFrame.Panel2.Padding = new Wisej.Web.Padding(5);
             this.split_MainFrame.Panel2.TabStop = true;
             this.split_MainFrame.Size = new System.Drawing.Size(1160, 728);
             this.split_MainFrame.SplitterDistance = 260;
@@ -190,7 +194,7 @@
             // 
             this.split_TopFrame.Dock = Wisej.Web.DockStyle.Fill;
             this.split_TopFrame.FixedPanel = Wisej.Web.FixedPanel.Panel1;
-            this.split_TopFrame.Location = new System.Drawing.Point(0, 0);
+            this.split_TopFrame.Location = new System.Drawing.Point(5, 5);
             this.split_TopFrame.Name = "split_TopFrame";
             // 
             // split_TopFrame.Panel1
@@ -203,7 +207,7 @@
             this.split_TopFrame.Panel2.Controls.Add(this.DevicelistView1);
             this.split_TopFrame.Panel2.TabStop = true;
             this.split_TopFrame.Panel2MinSize = 100;
-            this.split_TopFrame.Size = new System.Drawing.Size(1160, 260);
+            this.split_TopFrame.Size = new System.Drawing.Size(1148, 248);
             this.split_TopFrame.SplitterDistance = 760;
             this.split_TopFrame.TabIndex = 0;
             this.split_TopFrame.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
@@ -214,7 +218,7 @@
             this.DevicelistView1.LargeImageList = this.imageList1;
             this.DevicelistView1.Location = new System.Drawing.Point(0, 0);
             this.DevicelistView1.Name = "DevicelistView1";
-            this.DevicelistView1.Size = new System.Drawing.Size(384, 260);
+            this.DevicelistView1.Size = new System.Drawing.Size(372, 248);
             this.DevicelistView1.SmallImageList = this.imageList2;
             this.DevicelistView1.StateImageList = this.imageList1;
             this.DevicelistView1.TabIndex = 0;
@@ -222,7 +226,7 @@
             // split_BottomFrame
             // 
             this.split_BottomFrame.Dock = Wisej.Web.DockStyle.Fill;
-            this.split_BottomFrame.Location = new System.Drawing.Point(0, 0);
+            this.split_BottomFrame.Location = new System.Drawing.Point(5, 5);
             this.split_BottomFrame.Name = "split_BottomFrame";
             // 
             // split_BottomFrame.Panel1
@@ -233,10 +237,9 @@
             // split_BottomFrame.Panel2
             // 
             this.split_BottomFrame.Panel2.Controls.Add(this.panel12);
-            this.split_BottomFrame.Panel2.Controls.Add(this.panel13);
             this.split_BottomFrame.Panel2.TabStop = true;
-            this.split_BottomFrame.Size = new System.Drawing.Size(1160, 452);
-            this.split_BottomFrame.SplitterDistance = 580;
+            this.split_BottomFrame.Size = new System.Drawing.Size(1148, 440);
+            this.split_BottomFrame.SplitterDistance = 574;
             this.split_BottomFrame.SplitterWidth = 16;
             this.split_BottomFrame.TabIndex = 3;
             this.split_BottomFrame.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
@@ -248,7 +251,7 @@
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(578, 450);
+            this.panel1.Size = new System.Drawing.Size(572, 438);
             this.panel1.TabIndex = 4;
             this.panel1.TabStop = true;
             // 
@@ -258,7 +261,8 @@
             this.panel9.Dock = Wisej.Web.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 43);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(578, 407);
+            this.panel9.Padding = new Wisej.Web.Padding(5);
+            this.panel9.Size = new System.Drawing.Size(572, 395);
             this.panel9.TabIndex = 4;
             this.panel9.TabStop = true;
             // 
@@ -274,13 +278,13 @@
             this.evdataGridView1.DataSource = this.Eventbs;
             this.evdataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.evdataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.evdataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.evdataGridView1.Location = new System.Drawing.Point(5, 5);
             this.evdataGridView1.Margin = new Wisej.Web.Padding(10);
             this.evdataGridView1.MultiSelect = false;
             this.evdataGridView1.Name = "evdataGridView1";
             this.evdataGridView1.RowHeadersVisible = false;
             this.evdataGridView1.RowHeadersWidth = 14;
-            this.evdataGridView1.Size = new System.Drawing.Size(578, 407);
+            this.evdataGridView1.Size = new System.Drawing.Size(562, 385);
             this.evdataGridView1.TabIndex = 2;
             // 
             // colEventvmid
@@ -328,7 +332,7 @@
             this.panel11.Dock = Wisej.Web.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(578, 43);
+            this.panel11.Size = new System.Drawing.Size(572, 43);
             this.panel11.TabIndex = 5;
             this.panel11.TabStop = true;
             // 
@@ -345,10 +349,12 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.evdataGridView3);
+            this.panel12.Controls.Add(this.panel13);
             this.panel12.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(0, 43);
+            this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(562, 407);
+            this.panel12.Padding = new Wisej.Web.Padding(5);
+            this.panel12.Size = new System.Drawing.Size(556, 438);
             this.panel12.TabIndex = 5;
             this.panel12.TabStop = true;
             // 
@@ -365,14 +371,22 @@
             this.evdataGridView3.DataSource = this.Eventbs2;
             this.evdataGridView3.Dock = Wisej.Web.DockStyle.Fill;
             this.evdataGridView3.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.evdataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.evdataGridView3.Location = new System.Drawing.Point(5, 48);
             this.evdataGridView3.Margin = new Wisej.Web.Padding(10);
             this.evdataGridView3.MultiSelect = false;
             this.evdataGridView3.Name = "evdataGridView3";
             this.evdataGridView3.RowHeadersVisible = false;
             this.evdataGridView3.RowHeadersWidth = 14;
-            this.evdataGridView3.Size = new System.Drawing.Size(562, 407);
+            this.evdataGridView3.Size = new System.Drawing.Size(546, 385);
             this.evdataGridView3.TabIndex = 3;
+            // 
+            // colEventdeviceid
+            // 
+            this.colEventdeviceid.DataPropertyName = "EventdeviceId";
+            this.colEventdeviceid.HeaderText = "No";
+            this.colEventdeviceid.Name = "colEventdeviceid";
+            this.colEventdeviceid.ReadOnly = true;
+            this.colEventdeviceid.Width = 60;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -422,9 +436,9 @@
             this.panel13.BackColor = System.Drawing.Color.White;
             this.panel13.Controls.Add(this.label21);
             this.panel13.Dock = Wisej.Web.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Location = new System.Drawing.Point(5, 5);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(562, 43);
+            this.panel13.Size = new System.Drawing.Size(546, 43);
             this.panel13.TabIndex = 6;
             this.panel13.TabStop = true;
             // 
@@ -460,14 +474,6 @@
             // membs
             // 
             this.membs.DataSource = typeof(simplepa2.Bsroom);
-            // 
-            // colEventdeviceid
-            // 
-            this.colEventdeviceid.DataPropertyName = "EventdeviceId";
-            this.colEventdeviceid.HeaderText = "No";
-            this.colEventdeviceid.Name = "colEventdeviceid";
-            this.colEventdeviceid.ReadOnly = true;
-            this.colEventdeviceid.Width = 60;
             // 
             // View_DashBoard2
             // 
