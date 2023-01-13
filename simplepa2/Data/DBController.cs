@@ -71,7 +71,7 @@ namespace simplepa2
             }
             catch (Exception e1)
             {
-                Console.WriteLine(e1.Message);
+                gweb.Log(e1.Message);
             }
         }
 

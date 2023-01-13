@@ -238,9 +238,6 @@
     <EmbeddedResource Include="UI\Views\View_BBCAmpFailover.resx">
       <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSEMChannel2.resx">
-      <DependentUpon>View_BBSEMChannel2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSEMManage2.resx">
       <DependentUpon>View_BBSEMManage2.cs</DependentUpon>
     </EmbeddedResource>
@@ -1110,12 +1107,6 @@
     </Compile>
     <Compile Include="UI\Views\View_BBCAmpFailover.Designer.cs">
       <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Views\View_BBSEMChannel2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Views\View_BBSEMChannel2.Designer.cs">
-      <DependentUpon>View_BBSEMChannel2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBSEMManage2.cs">
       <SubType>UserControl</SubType>
