@@ -32,8 +32,8 @@
             this.pn_deckSpace = new Wisej.Web.Panel();
             this.pn_labelSpace = new Wisej.Web.Panel();
             this.label1 = new Wisej.Web.Label();
-            this.bsTreeTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeTableAdapter();
             this.dataSet11 = new simplepa2.DataSet1();
+            this.bsTreeWithStatusTableAdapter1 = new simplepa2.DataSet1TableAdapters.BsTreeWithStatusTableAdapter();
             this.pn_multiDeck.SuspendLayout();
             this.pn_labelSpace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -86,14 +86,14 @@
             this.label1.Text = "사이트 및 방송상태";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // bsTreeTableAdapter1
-            // 
-            this.bsTreeTableAdapter1.ClearBeforeFill = true;
-            // 
             // dataSet11
             // 
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bsTreeWithStatusTableAdapter1
+            // 
+            this.bsTreeWithStatusTableAdapter1.ClearBeforeFill = true;
             // 
             // Widget_BBSMultiDeck
             // 
@@ -115,7 +115,7 @@
         private Wisej.Web.Panel pn_deckSpace;
         private Wisej.Web.Panel pn_labelSpace;
         private Wisej.Web.Label label1;
-        private DataSet1TableAdapters.BSTreeTableAdapter bsTreeTableAdapter1;
         private DataSet1 dataSet11;
+        private DataSet1TableAdapters.BsTreeWithStatusTableAdapter bsTreeWithStatusTableAdapter1;
     }
 }

@@ -40,7 +40,7 @@
             this.comp_BBSDeckButton7 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.comp_BBSDeckButton8 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.panel1 = new Wisej.Web.Panel();
-            this.label3 = new Wisej.Web.Label();
+            this.lb_emStatus = new Wisej.Web.Label();
             this.lb_siteName = new Wisej.Web.Label();
             this.panel8.SuspendLayout();
             this.panel38.SuspendLayout();
@@ -137,7 +137,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lb_emStatus);
             this.panel1.Controls.Add(this.lb_siteName);
             this.panel1.Dock = Wisej.Web.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -145,19 +145,19 @@
             this.panel1.Size = new System.Drawing.Size(138, 60);
             this.panel1.TabIndex = 0;
             // 
-            // label3
+            // lb_emStatus
             // 
-            this.label3.AutoEllipsis = true;
-            this.label3.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
-            this.label3.CssStyle = "border-radius:15px";
-            this.label3.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label3.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label3.Location = new System.Drawing.Point(94, 17);
-            this.label3.Margin = new Wisej.Web.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 30);
-            this.label3.TabIndex = 146;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_emStatus.AutoEllipsis = true;
+            this.lb_emStatus.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
+            this.lb_emStatus.CssStyle = "border-radius:15px";
+            this.lb_emStatus.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_emStatus.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_emStatus.Location = new System.Drawing.Point(94, 17);
+            this.lb_emStatus.Margin = new Wisej.Web.Padding(0);
+            this.lb_emStatus.Name = "lb_emStatus";
+            this.lb_emStatus.Size = new System.Drawing.Size(30, 30);
+            this.lb_emStatus.TabIndex = 146;
+            this.lb_emStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lb_siteName
             // 
@@ -190,7 +190,7 @@
         private Wisej.Web.Panel panel38;
         private Wisej.Web.Panel panel1;
         private Wisej.Web.Label lb_siteName;
-        private Wisej.Web.Label label3;
+        private Wisej.Web.Label lb_emStatus;
         private Wisej.Web.FlowLayoutPanel flowLayoutPanel1;
         private Comp_BBSDeckButton comp_BBSDeckButton3;
         private Comp_BBSDeckButton comp_BBSDeckButton1;
