@@ -13,7 +13,10 @@ namespace simplepa2.UI.Views
         internal void reDraw()
         {
             this.eventdeviceTableAdapter.Fill(this.dataSet1.Eventdevice);
+            eventdeviceBindingSource.Sort = "eventdeviceId DESC";
+
         }
+
 
         private void View_HistoryDevice_Load(object sender, EventArgs e)
         {

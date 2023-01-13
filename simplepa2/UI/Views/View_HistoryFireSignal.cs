@@ -13,6 +13,8 @@ namespace simplepa2.UI.Views
         internal void reDraw()
         {
             this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
+            eventvmBindingSource.Sort = "eventvmId DESC";
+
         }
 
         private void View_HistoryFireSignal_Load(object sender, EventArgs e)

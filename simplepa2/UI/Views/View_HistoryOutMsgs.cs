@@ -13,6 +13,8 @@ namespace simplepa2.UI.Views
         internal void reDraw()
         {
             this.eventpresetTableAdapter.Fill(this.dataSet1.Eventpreset);
+            eventpresetBindingSource.Sort = "eventpresetId DESC";
+
         }
 
         private void View_HistoryOutMsgs_Load(object sender, EventArgs e)

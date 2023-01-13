@@ -13,6 +13,8 @@ namespace simplepa2.UI.Views
         internal void reDraw()
         {
             this.eventbsTableAdapter.Fill(this.dataSet1.Eventbs);
+            eventbsBindingSource.Sort = "eventbsId DESC";
+
         }
 
         private void View_HistoryBBS_Load(object sender, EventArgs e)

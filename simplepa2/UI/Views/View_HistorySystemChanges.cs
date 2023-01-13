@@ -20,6 +20,7 @@ namespace simplepa2.UI.Views
         internal void reDraw()
         {
             this.eventsyslogTableAdapter.Fill(this.dataSet1.Eventsyslog);
+            eventsyslogBindingSource.Sort = "eventsyslogId DESC";
         }
 
         private void popTestButton_Click(object sender, EventArgs e)
