@@ -27,23 +27,58 @@ namespace simplepa2.UI.Components
 
             this.chno = chno;
             this.bStatus = bstatus;
-
-            string labelString = userName;
-            if(labelString != null)
-            {
-
-                if (labelString.Length > 3)
-                {
-                    labelString = labelString.Substring(0, 3);
-                    labelString = labelString + "..";                       
-                } 
-            }
-            this.lb_User.Text = labelString;
-
             this.Text = "Ch" + chno;
 
             setupUIRandom(bstatus);
+
+            setupUserText(userName);
         }
+
+        public void setupUserText(string userName)
+        {
+            string labelString = userName;
+
+            if(labelString == null || labelString.Equals(""))
+            {
+                labelString = "준비";
+            }
+            else if (labelString != null)
+            {
+                if(isContainHangul(labelString))
+                {
+                    if (labelString.Length > 3)
+                    {
+                        labelString = labelString.Substring(0, 3);
+                        labelString = labelString + "..";
+                    }
+                }
+                else
+                {
+                    if (labelString.Length > 5)
+                    {
+                        labelString = labelString.Substring(0, 5);
+                        labelString = labelString + "..";
+                    }
+                }
+
+            }
+            this.lb_User.Text = labelString;
+
+        }
+
+        public bool isContainHangul(string s)
+        {
+            char[] charArr = s.ToCharArray();
+            foreach(char c in charArr)
+            {
+                if(char.GetUnicodeCategory(c) == System.Globalization.UnicodeCategory.OtherLetter)
+                {
+                    return true;
+                }
+            }
+            return false; 
+        }
+        
 
         public void setupUIRandom(string bstatus)
         {
@@ -53,13 +88,13 @@ namespace simplepa2.UI.Components
             {
                 setStatusGreen();
             }
-            else if (bstatus.Equals("방송시장") || bstatus.Equals("방송중"))
+            else if (bstatus.Equals("방송시작") || bstatus.Equals("방송중"))
             {
-                setStatusRed();
+                setStatusYellow();             
             }
             else
             {
-                setStatusYellow();
+                setStatusRed();
             }
         }
 

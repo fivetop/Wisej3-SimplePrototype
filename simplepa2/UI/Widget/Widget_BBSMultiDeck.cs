@@ -32,8 +32,9 @@ namespace simplepa2.UI.Widget
         }
 
         public void dataBindRefersh()
-        {
-            this.bsTreeTableAdapter1.Fill(this.dataSet11.BSTree);
+        {            
+            this.bsTreeWithStatusTableAdapter1.Fill(this.dataSet11.BsTreeWithStatus);
+                
         }        
         public void startTimer()
         {           
@@ -53,32 +54,37 @@ namespace simplepa2.UI.Widget
             deckUIList.Clear();
             this.pn_deckSpace.Controls.Clear();
 
-            DataTable dt = dataSet11.BSTree;
+            DataTable dt = dataSet11.BsTreeWithStatus;
                 
             // get EM NAME 추출
             DataRow[] dr = dt.Select();
-            List<string> listStr = new List<string>();
+
+            var dic = new Dictionary<string, string>();
+
             string strTemp = null;
+            
             foreach (DataRow dr2 in dr)
             {
                 if(strTemp == null)
                 {
                     strTemp = dr2["EMNAME"].ToString();
-                    listStr.Add(strTemp);
+                    dic.Add(strTemp, dr2["state"].ToString());
                 }
 
                 if (!strTemp.Equals(dr2["EMNAME"].ToString()))
                 {
                     strTemp = dr2["EMNAME"].ToString();
-                    listStr.Add(strTemp);
+                    dic.Add(strTemp, dr2["state"].ToString());                    
                 }                
             }
 
+            List<string> keys = new List<string>(dic.Keys);
+
             // EM 데이터 별로 DR 뽑아서 UI 만들어 주기
-            foreach (string strENNAME in listStr)
+            foreach (string strENNAME in keys)
             {                
-                DataRow[] drs = dt.Select("EMNAME = '" + strENNAME + "'", "chno DESC");                
-                Comp_DashBoardBBSDeck tempDeck = new Comp_DashBoardBBSDeck(drs, strENNAME);
+                DataRow[] drs = dt.Select("EMNAME = '" + strENNAME + "'", "chno ASC");                
+                Comp_DashBoardBBSDeck tempDeck = new Comp_DashBoardBBSDeck(drs, strENNAME, dic[strENNAME]);
                 tempDeck.Dock = Wisej.Web.DockStyle.Top;
                 this.pn_deckSpace.Controls.Add(tempDeck);
 
