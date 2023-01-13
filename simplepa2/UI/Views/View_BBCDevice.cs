@@ -1,4 +1,5 @@
 ﻿using DataClass;
+using simplepa2.UI.Pages;
 using simplepa2.UI.Popups;
 using System;
 using System.Data;
@@ -43,20 +44,6 @@ namespace simplepa2.UI.Views
             this.cb_siteName.SelectedIndex = 0;
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Simple myDesktop = (Simple)Application.MainPage;
-            if (myDesktop.isSignalR())
-            {
-                //AlertBox.Show("서버에 전체 Scan을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
-                myDesktop.sendSigR(eSignalRMsgType.eScanAll); // dsp, dsp_chno
-            }
-            else
-            {
-                AlertBox.Show("취소되었습니다. - 서버 상태를 확인바랍니다.");
-            }
-        }
 
         internal void reDraw()
         {

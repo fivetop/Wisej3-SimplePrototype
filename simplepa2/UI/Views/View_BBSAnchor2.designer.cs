@@ -57,6 +57,9 @@
             this.bSroomTableAdapter = new simplepa2.DataSet1TableAdapters.BSroomTableAdapter();
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.panel4 = new Wisej.Web.Panel();
+            this.cb_test2 = new Wisej.Web.ComboBox();
+            this.bindingEMCombo = new Wisej.Web.BindingSource(this.components);
+            this.cb1_test1 = new Wisej.Web.ComboBox();
             this.btnStop = new Wisej.Web.Button();
             this.btnStart = new Wisej.Web.Button();
             this.panel3 = new Wisej.Web.Panel();
@@ -84,9 +87,6 @@
             this.bsTreeCTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeCTableAdapter();
             this.dataSet11 = new simplepa2.DataSet1();
             this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
-            this.cb1_test1 = new Wisej.Web.ComboBox();
-            this.cb_test2 = new Wisej.Web.ComboBox();
-            this.bindingEMCombo = new Wisej.Web.BindingSource(this.components);
             this.membs = new Wisej.Web.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -94,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -105,7 +106,6 @@
             this.panel35.SuspendLayout();
             this.panel41.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,6 +209,28 @@
             this.panel4.Size = new System.Drawing.Size(1360, 54);
             this.panel4.TabIndex = 11;
             this.panel4.TabStop = true;
+            // 
+            // cb_test2
+            // 
+            this.cb_test2.DataSource = this.bindingEMCombo;
+            this.cb_test2.DisplayMember = "EMNAME";
+            this.cb_test2.Location = new System.Drawing.Point(629, 3);
+            this.cb_test2.Name = "cb_test2";
+            this.cb_test2.Size = new System.Drawing.Size(120, 36);
+            this.cb_test2.TabIndex = 6;
+            // 
+            // bindingEMCombo
+            // 
+            this.bindingEMCombo.DataMember = "EMServerWithWholeCol";
+            this.bindingEMCombo.DataSource = this.dataSet1;
+            // 
+            // cb1_test1
+            // 
+            this.cb1_test1.DisplayMember = "EMNAME";
+            this.cb1_test1.Location = new System.Drawing.Point(420, 4);
+            this.cb1_test1.Name = "cb1_test1";
+            this.cb1_test1.Size = new System.Drawing.Size(120, 36);
+            this.cb1_test1.TabIndex = 5;
             // 
             // btnStop
             // 
@@ -510,28 +532,6 @@
             // 
             this.emServerWithWholeColTableAdapter1.ClearBeforeFill = true;
             // 
-            // cb1_test1
-            // 
-            this.cb1_test1.DisplayMember = "EMNAME";
-            this.cb1_test1.Location = new System.Drawing.Point(420, 4);
-            this.cb1_test1.Name = "cb1_test1";
-            this.cb1_test1.Size = new System.Drawing.Size(120, 36);
-            this.cb1_test1.TabIndex = 5;
-            // 
-            // cb_test2
-            // 
-            this.cb_test2.DataSource = this.bindingEMCombo;
-            this.cb_test2.DisplayMember = "EMNAME";
-            this.cb_test2.Location = new System.Drawing.Point(629, 3);
-            this.cb_test2.Name = "cb_test2";
-            this.cb_test2.Size = new System.Drawing.Size(120, 36);
-            this.cb_test2.TabIndex = 6;
-            // 
-            // bindingEMCombo
-            // 
-            this.bindingEMCombo.DataMember = "EMServerWithWholeCol";
-            this.bindingEMCombo.DataSource = this.dataSet1;
-            // 
             // membs
             // 
             this.membs.DataSource = typeof(simplepa2.Bsroom);
@@ -553,6 +553,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -564,7 +565,6 @@
             this.panel35.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             this.ResumeLayout(false);
 

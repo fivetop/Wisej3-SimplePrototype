@@ -34,9 +34,9 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.listView1 = new Wisej.Web.ListView();
             this.panel1 = new Wisej.Web.Panel();
-            this.label1 = new Wisej.Web.Label();
             this.panel2 = new Wisej.Web.Panel();
             this.panel3 = new Wisej.Web.Panel();
+            this.label1 = new Wisej.Web.Label();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -80,17 +80,6 @@
             this.panel1.TabIndex = 1;
             this.panel1.TabStop = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = Wisej.Web.BorderStyle.Solid;
-            this.label1.Location = new System.Drawing.Point(4, 12);
-            this.label1.Margin = new Wisej.Web.Padding(20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Aquamarine;
@@ -113,9 +102,20 @@
             this.panel3.TabIndex = 3;
             this.panel3.TabStop = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = Wisej.Web.BorderStyle.Solid;
+            this.label1.Location = new System.Drawing.Point(4, 12);
+            this.label1.Margin = new Wisej.Web.Padding(20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
             // Window1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 423);
             this.Controls.Add(this.panel1);

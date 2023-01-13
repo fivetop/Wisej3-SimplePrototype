@@ -386,11 +386,19 @@ namespace simplepa2
 
         internal async Task<bool> BSTreeUpdate(int BSTreeId, string ps1)
         {
-            Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
-            var drs = Ds1.BSTree.FirstOrDefault(p => p.BSTreeId == BSTreeId);
-            drs.playing = ps1;
-            drs.wtime = DateTime.Now;
-            Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+            try
+            {
+                Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
+                var drs = Ds1.BSTree.FirstOrDefault(p => p.BSTreeId == BSTreeId);
+                drs.playing = ps1;
+                drs.wtime = DateTime.Now;
+                Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
+
             return true;
         }
 
@@ -551,7 +559,9 @@ namespace simplepa2
             Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
 
             var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == t1.emServer);
-            if (m3 == null)
+            if (m3 != null) return;
+
+            try
             {
                 EMServerRow m2 = Ds1.EMServer.NewEMServerRow();
                 m2.EMNAME = t1.emServer;
@@ -579,18 +589,29 @@ namespace simplepa2
                 Ds1.EMServer.Rows.Add(m2);
                 Tam.EMServerTableAdapter.Update(Ds1.EMServer);
             }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
         }
 
         public void EMServerupdate(string EMNAME, string state)
         {
-            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+            try
+            {
+                Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
 
-            var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == EMNAME);
-            if (m3 == null)
-                return;
-            m3.state_old = m3.state;
-            m3.state = state;
-            Tam.EMServerTableAdapter.Update(Ds1.EMServer);
+                var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == EMNAME);
+                if (m3 == null)
+                    return;
+                m3.state_old = m3.state;
+                m3.state = state;
+                Tam.EMServerTableAdapter.Update(Ds1.EMServer);
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
         }
 
         public void EMServerupdatePreset(string EMNAME, int po, int onoff)
