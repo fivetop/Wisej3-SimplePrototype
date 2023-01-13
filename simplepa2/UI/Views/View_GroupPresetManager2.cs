@@ -17,7 +17,7 @@ namespace simplepa2.UI.Views
 
 		private void MGroupManager_Load(object sender, EventArgs e)
 		{
-			gLoadData();
+			reDraw();
 		}
 
 		// 콤보 처리용 
@@ -26,7 +26,7 @@ namespace simplepa2.UI.Views
 		// 선택된 차일드 
 
 		#region // 기본 처리 
-		private void gLoadData()
+		public void reDraw()
 		{
 			this.assetPresetGroupsTableAdapter1.FillBy(this.dataSet1.AssetPresetGroups);
 			var dt1 = this.dataSet1.AssetPresetGroups.Columns;
@@ -114,6 +114,7 @@ namespace simplepa2.UI.Views
 			}
 
 		}
+
 
     }
 }

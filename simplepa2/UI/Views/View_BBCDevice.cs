@@ -60,7 +60,6 @@ namespace simplepa2.UI.Views
 
         internal void reDraw()
         {
-            this.cb_siteName.SelectedIndex = 0;
             // sort by site name
             this.deviceTableAdapter1.Fill(this.dataSet11.Device);
             this.dg_deviceView.DataSource = dataSet11.Device;

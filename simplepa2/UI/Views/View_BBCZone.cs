@@ -184,12 +184,11 @@ namespace simplepa2.UI.Views
         {
             dbInit();
             comboUISetup();
+            gweb.mainFrame.reDraw();
         }
 
         private void formDisposed(object sender, EventArgs e)
         {
-            dbInit();
-            comboUISetup();
         }
 
         private void bt_dataDelete_Click(object sender, EventArgs e)

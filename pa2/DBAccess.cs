@@ -85,6 +85,7 @@ namespace pa
             }
             catch (Exception e1)
             {
+                g.Log(e1.Message);
                 return default(T);
             }
         }
@@ -152,6 +153,7 @@ namespace pa
             }
             catch (Exception e1)
             {
+                g.Log(e1.Message);
                 return;
             }
         }
@@ -178,8 +180,8 @@ namespace pa
                 var res = httpClient.DeleteAsync(url2).Result; //отправляем 
             }
             catch (Exception e1)
-            { 
-                Console.WriteLine(e1);
+            {
+                g.Log(e1.Message);
             }
 
         }
@@ -192,18 +194,25 @@ namespace pa
             if (g.mainWindow.EMServerRow.EMServerId == 0)
                 return false;
 
-            var t1 = g.mainWindow.EMServerRow;
-            t1.state = "On-Line";
-            t1.state_old = "On-Line";
-            t1.com_gpio = g._EMClient.GPIOPort;
-            t1.com_gpio_state = g._EMClient.com_gpio_state;
-            t1.com_Rtype = g._EMClient.Rport;
-            t1.com_Rtype_state = g._EMClient.com_Rtype_state;
-            t1.net_dante = g._EMClient.net_dante;
-            t1.net_local = g._EMClient.net_local;
-            t1.dsp_ctrl = g._EMClient.dsp_ctrl;
-            t1.dsp_dante = g._EMClient.dsp_dante;
-            Dbupdate<EMServerRow>("EMServers", t1, t1.EMServerId);
+            try
+            {
+                var t1 = g.mainWindow.EMServerRow;
+                t1.state = "On-Line";
+                t1.state_old = "On-Line";
+                t1.com_gpio = g._EMClient.GPIOPort;
+                t1.com_gpio_state = g._EMClient.com_gpio_state;
+                t1.com_Rtype = g._EMClient.Rport;
+                t1.com_Rtype_state = g._EMClient.com_Rtype_state;
+                t1.net_dante = g._EMClient.net_dante;
+                t1.net_local = g._EMClient.net_local;
+                t1.dsp_ctrl = g._EMClient.dsp_ctrl;
+                t1.dsp_dante = g._EMClient.dsp_dante;
+                Dbupdate<EMServerRow>("EMServers", t1, t1.EMServerId);
+            }
+            catch (Exception e1)
+            {
+                g.Log(e1.Message);
+            }
 
             g.XMLEMClient(false);
             return true;
@@ -211,145 +220,6 @@ namespace pa
 
 
         #endregion
-
-        /*
-
-                #region // EMServer 부분 
-                public void SaveEMServer(EmSpeakerPosition t1)
-                {
-                    Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
-
-                    var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == t1.emServer);
-                    if (m3 == null)
-                    {
-                        EMServerRow m2 = Ds1.EMServer.NewEMServerRow();
-                        m2.EMNAME = t1.emServer;
-                        m2.state = "";
-                        m2.state_old = "";
-                        Ds1.EMServer.Rows.Add(m2);
-                        Tam.EMServerTableAdapter.Update(Ds1.EMServer);
-                    }
-                }
-
-                public void updateEMServer(string EMNAME, string state)
-                {
-                    Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
-
-                    var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == EMNAME);
-                    if (m3 == null)
-                        return;
-                    m3.state_old = m3.state;
-                    m3.state = state;
-                    Tam.EMServerTableAdapter.Update(Ds1.EMServer);
-                }
-
-                #endregion
-
-
-
-                #region // Assets 자산관리 부분 
-                public void SaveAssets(EmSpeakerPosition t1)
-                {
-                    Tam.AssetsTableAdapter.Fill(Ds1.Assets);
-                    var aa = t1.array;
-
-                    if (aa.Length < 12)
-                        return;
-                    var m3 = Ds1.Assets.FirstOrDefault(p => p.GroupName == aa[1] && p.ZoneName == aa[2] && p.SpeakerName == aa[3] && p.ch == int.Parse(aa[5]));
-                    if (m3 == null)
-                    {
-                        AssetsRow m2 = Ds1.Assets.NewAssetsRow();
-                        m2.seq = int.Parse(aa[0]);
-                        m2.building = aa[2];
-                        m2.floorname = aa[3];
-                        m2.GroupName = aa[2] + aa[3];
-                        m2.ZoneName = aa[4];
-                        m2.SpeakerName = aa[5];
-                        m2.path = aa[1] + " " + aa[2] + " " + aa[3] + " " + aa[4] + " " + aa[5];
-                        m2.ch = int.Parse(t1.ch);
-                        m2.zpc = t1.zpc;
-                        m2.zpci = t1.zpci;
-                        m2.zpco = t1.zpco;
-                        m2.emServer = t1.emServer;
-
-                        if (m2.ch == 0)
-                            m2.ch = 1;
-                        m2.chk = 0;
-                        m2.floor = int.Parse(t1.array[11]) * 100 + int.Parse(t1.array[12]) * 10 + int.Parse(t1.array[13]);
-                        m2.emData = t1.emData;
-                        m2.ip = "";
-                        m2.state = "";
-                        m2.state_old = "";
-                        m2.DeviceId = 0;
-                        if (aa.Count() > 4)
-                            m2.DeviceName = aa[6];
-                        Ds1.Assets.Rows.Add(m2);
-                        Tam.AssetsTableAdapter.Update(Ds1.Assets);
-                    }
-                }
-
-                public void updateAsset()
-                {
-                    Tam.AssetsTableAdapter.Fill(Ds1.Assets);
-                    Tam.DeviceTableAdapter.Fill(Ds1.Device);
-
-                    foreach (var t1 in Ds1.Device)
-                    {
-                        var m1 = Ds1.Assets.FirstOrDefault(p => p.DeviceName == t1.DeviceName && p.ch == t1.chspk);
-                        if (m1 == null)
-                            continue;
-                        m1.DeviceId = t1.DeviceId;
-                        m1.ip = t1.ip;
-                        t1.AssetId = m1.AssetId;
-                        t1.emData = m1.emData;
-                        t1.path = m1.path;
-                    }
-                    Tam.AssetsTableAdapter.Update(Ds1.Assets);
-                    Tam.DeviceTableAdapter.Update(Ds1.Device);
-                }
-
-                // 자산에서 스피커의 현재 상태 체크 
-                public int getSpeakerState(string path)
-                {
-                    var sAsset = Ds1.Assets.First(p => p.path == path);
-                    if (sAsset != null)
-                    {
-                        if (sAsset.state == "On-Line")
-                            return 1;
-                    }
-                    return 0;
-                }
-
-
-                #endregion
-
-                #region // EMBS 비상방송 관리 부분 
-                public void SaveEMBs()
-                {
-                    Tam.EMBsTableAdapter.Fill(Ds1.EMBs);
-
-                    foreach (var t1 in Ds1.Device)
-                    {
-                        if (t1.emData == "")
-                            continue;
-                        var m1 = Ds1.EMBs.FirstOrDefault(p => p.emData == t1.emData && p.DeviceId == t1.DeviceId);
-                        if (m1 != null)
-                            continue;
-                        EMBsRow m2 = Ds1.EMBs.NewEMBsRow();
-                        m2.emData = t1.emData;
-                        m2.DeviceId = t1.DeviceId;
-                        m2.path = t1.path;
-                        Ds1.EMBs.Rows.Add(m2);
-                        Tam.EMBsTableAdapter.Update(Ds1.EMBs);
-                    }
-                }
-
-                #endregion
-
-
-        */
-
-
 
         #region // Device 장치관리 부분 
         // dsp 저장후 상세정보 저장 
@@ -413,41 +283,49 @@ namespace pa
             }
             catch (Exception e1)
             {
-                Console.WriteLine(e1.Message);
+                g.Log(e1.Message);
+                //Console.WriteLine(e1.Message);
             }
         }
 
         // Device ADD
         public void NewDeviceRow(DataClass.Device t1, int v)
         {
-            DeviceRow m1 = Device.NewDeviceRow();
-            m1.DanteModelName = t1.DanteModelName;
-            m1.DeviceName = t1.DeviceName;
-            m1.device = t1.device;
-            m1.ip = t1.ip;
-            m1.name = t1.name;
-            m1.chCount = t1.ch.Count();
-            m1.chspk = v;
-            m1.dsp_chno = 0;
-            m1.ip_dspctrl = t1.ip_dspctrl;
-            m1.dsp_name = "";
-            m1.dsp_vol = 0;
-            m1.dsp_vol_em = 0;
-            m1.emData = "";
-            m1.floor_em = 0;
-            m1.path = "";
-            m1.AssetId = 0;
-            m1.EMNAME = g._EMClient.EM_NAME;
+            try 
+            { 
+                DeviceRow m1 = Device.NewDeviceRow();
+                m1.DanteModelName = t1.DanteModelName;
+                m1.DeviceName = t1.DeviceName;
+                m1.device = t1.device;
+                m1.ip = t1.ip;
+                m1.name = t1.name;
+                m1.chCount = t1.ch.Count();
+                m1.chspk = v;
+                m1.dsp_chno = 0;
+                m1.ip_dspctrl = t1.ip_dspctrl;
+                m1.dsp_name = "";
+                m1.dsp_vol = 0;
+                m1.dsp_vol_em = 0;
+                m1.emData = "";
+                m1.floor_em = 0;
+                m1.path = "";
+                m1.AssetId = 0;
+                m1.EMNAME = g._EMClient.EM_NAME;
 
-            if (g.mainWindow.MainDSPIP != "" && g.mainWindow.MainDSPName != "")
-            {
-                m1.ip_dspctrl = g.mainWindow.MainDSPIP;
-                m1.dsp_name = g.mainWindow.MainDSPName;
+                if (g.mainWindow.MainDSPIP != "" && g.mainWindow.MainDSPName != "")
+                {
+                    m1.ip_dspctrl = g.mainWindow.MainDSPIP;
+                    m1.dsp_name = g.mainWindow.MainDSPName;
+                }
+
+                Device.Rows.Add(m1);
+                var t2 = Dbsave<DeviceRow>("Devices", m1);
+                //Tam.DeviceTableAdapter.Update(Ds1.Device);
             }
-
-            Device.Rows.Add(m1);
-            var t2 = Dbsave<DeviceRow>("Devices", m1);
-            //Tam.DeviceTableAdapter.Update(Ds1.Device);
+            catch (Exception e1)
+            {
+                g.Log(e1.Message);
+            }
         }
 
 
@@ -459,6 +337,7 @@ namespace pa
         {
             if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
                 return null;
+
             List<AssetBase> play = new List<AssetBase>();
             var ab1 = Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
             var p1 = from p in ab1
@@ -511,6 +390,7 @@ namespace pa
             }
             catch (Exception e1)
             {
+                g.Log(e1.Message);
             }
         }
         #endregion
@@ -559,29 +439,45 @@ namespace pa
         {
             if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
                 return;
-            EventbsRow em = Eventbs.NewEventbsRow();
-            em.write_time = DateTime.Now;
-            em.event_text = event_text;
-            em.path = base_text;
-            em.state = state;
-            em.alarm = 0;
-            em.ip = "";
-            em.DeviceName = "";
-            var t2 = Dbsave<Eventbs>("Eventbs", (DataRow)em);
+
+            try
+            {
+                EventbsRow em = Eventbs.NewEventbsRow();
+                em.write_time = DateTime.Now;
+                em.event_text = event_text;
+                em.path = base_text;
+                em.state = state;
+                em.alarm = 0;
+                em.ip = "";
+                em.DeviceName = "";
+                var t2 = Dbsave<Eventbs>("Eventbs", (DataRow)em);
+            }
+            catch (Exception e1)
+            {
+                g.Log(e1.Message);
+            }
+
         }
 
         public void Eventvms(string event_text, string base_text, string state)
         {
             if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
                 return;
-            EventvmRow em = Eventvm.NewEventvmRow();
-            em.write_time = DateTime.Now;
-            em.event_text = event_text;
-            em.path = base_text;
-            em.state = state;
-            em.alarm = 0;
-            em.ip = "";
-            Save(em);
+            try
+            {
+                EventvmRow em = Eventvm.NewEventvmRow();
+                em.write_time = DateTime.Now;
+                em.event_text = event_text;
+                em.path = base_text;
+                em.state = state;
+                em.alarm = 0;
+                em.ip = "";
+                Save(em);
+            }
+            catch (Exception e1)
+            {
+                g.Log(e1.Message);
+            }
 
         }
 
@@ -589,18 +485,27 @@ namespace pa
         {
             if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
                 return ;
-            EventdeviceRow em = Eventdevice.NewEventdeviceRow();
-            em.write_time = DateTime.Now;
-            em.ip = t3.ip;
-            em.path =  Assets.FirstOrDefault(p=>p.ip == t3.ip).path;
-            em.DeviceName = t3.DeviceName;
-            em.state = t3.state;
-            if(t3.state == "")
-                em.state = "Off-Line";
-            em.alarm = 0;
-            em.event_text = t3.ip +" : " + t3.state;
-            //this.Save(em);
-            var t2 = Dbsave<Eventdevice>("Eventdevices", (DataRow)em);
+
+            try
+            {
+                EventdeviceRow em = Eventdevice.NewEventdeviceRow();
+                em.write_time = DateTime.Now;
+                em.ip = t3.ip;
+                em.path =  Assets.FirstOrDefault(p=>p.ip == t3.ip).path;
+                em.DeviceName = t3.DeviceName;
+                em.state = t3.state;
+                if(t3.state == "")
+                    em.state = "Off-Line";
+                em.alarm = 0;
+                em.event_text = t3.ip +" : " + t3.state;
+                //this.Save(em);
+                var t2 = Dbsave<Eventdevice>("Eventdevices", (DataRow)em);
+            }
+            catch (Exception e1)
+            {
+                g.Log(e1.Message);
+            }
+
         }
 
         public void Save(object o1)
@@ -626,7 +531,7 @@ namespace pa
             }
             catch (Exception e1)
             {
-                Console.WriteLine(e1.Message);
+                g.Log(e1.Message);
             }
         }
         #endregion
@@ -647,5 +552,6 @@ namespace pa
         }
 
         #endregion
+
     }
 }

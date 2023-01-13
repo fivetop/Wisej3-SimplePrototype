@@ -15,7 +15,7 @@ namespace simplepa2.UI.Views
 
 		private void MGroupManager_Load(object sender, EventArgs e)
 		{
-			gLoadData();
+			reDraw();
 		}
 
 		// 콤보 처리용 
@@ -23,7 +23,7 @@ namespace simplepa2.UI.Views
 		// 선택된 차일드 
 
 		#region // 기본 처리 
-		private void gLoadData()
+		public void reDraw()
 		{
 			this.gdataGridView1.DataSource = null;
 			this.gdataGridView1.DataSource = gbindingSource2;
@@ -130,7 +130,7 @@ namespace simplepa2.UI.Views
 
 			AlertBox.Show("신규 데이터가 등록 되었습니다." + str1);
 			SetStatusText("Add " + cnt.ToString() + " records.");
-			gLoadData();
+			reDraw();
 		}
 
 		// AssetGroup, AssetBase
@@ -167,7 +167,7 @@ namespace simplepa2.UI.Views
 				SetStatusText("Delete " + cnt.ToString() + " records.");
 
 				gtextBox1.Text = "";
-				gLoadData();
+				reDraw();
 			}
 			catch (Exception ex)
 			{
@@ -207,6 +207,7 @@ namespace simplepa2.UI.Views
 		{
 			DeleteGroup();
 		}
+
 
     }
 }

@@ -640,61 +640,96 @@ namespace simplepa2
 
         public void Eventbs(string event_text, string base_text, string state)
         {
-            EventbsRow em = Ds1.Eventbs.NewEventbsRow();
-            em.write_time = DateTime.Now;
-            em.event_text = event_text;
-            em.path = base_text;
-            em.state = state;
-            em.alarm = 0;
-            Ds1.Eventbs.Rows.Add(em);
-            Tam.EventbsTableAdapter.Update(Ds1.Eventbs);
+            try
+            {
+                EventbsRow em = Ds1.Eventbs.NewEventbsRow();
+                em.write_time = DateTime.Now;
+                em.event_text = event_text;
+                em.path = base_text;
+                em.state = state;
+                em.alarm = 0;
+                Ds1.Eventbs.Rows.Add(em);
+                Tam.EventbsTableAdapter.Update(Ds1.Eventbs);
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
         }
 
         public void Eventsyslog(string event_text, string base_text, string state)
         {
-            EventsyslogRow em = Ds1.Eventsyslog.NewEventsyslogRow();
-            em.write_time = DateTime.Now;
-            em.event_text = event_text;
-            em.path = base_text;
-            em.state = state;
-            em.alarm = 0;
-            Ds1.Eventsyslog.Rows.Add(em);
-            Tam.EventsyslogTableAdapter.Update(Ds1.Eventsyslog);
+            try
+            {
+                EventsyslogRow em = Ds1.Eventsyslog.NewEventsyslogRow();
+                em.write_time = DateTime.Now;
+                em.event_text = event_text;
+                em.path = base_text;
+                em.state = state;
+                em.alarm = 0;
+                Ds1.Eventsyslog.Rows.Add(em);
+                Tam.EventsyslogTableAdapter.Update(Ds1.Eventsyslog);
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
         }
 
         public void Eventpreset(string event_text, string base_text, string state)
         {
-            EventpresetRow em = Ds1.Eventpreset.NewEventpresetRow();
-            em.write_time = DateTime.Now;
-            em.event_text = event_text;
-            em.path = base_text;
-            em.state = state;
-            em.alarm = 0;
-            Ds1.Eventpreset.Rows.Add(em);
-            Tam.EventpresetTableAdapter.Update(Ds1.Eventpreset);
+            try
+            {
+                EventpresetRow em = Ds1.Eventpreset.NewEventpresetRow();
+                em.write_time = DateTime.Now;
+                em.event_text = event_text;
+                em.path = base_text;
+                em.state = state;
+                em.alarm = 0;
+                Ds1.Eventpreset.Rows.Add(em);
+                Tam.EventpresetTableAdapter.Update(Ds1.Eventpreset);
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
         }
         public void Eventvm(string event_text, string base_text, string state)
         {
-            EventvmRow em = Ds1.Eventvm.NewEventvmRow();
-            em.write_time = DateTime.Now;
-            em.event_text = event_text;
-            em.path = base_text;
-            em.state = state;
-            em.alarm = 0;
-            Ds1.Eventvm.Rows.Add(em);
-            Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
+            try
+            {
+                EventvmRow em = Ds1.Eventvm.NewEventvmRow();
+                em.write_time = DateTime.Now;
+                em.event_text = event_text;
+                em.path = base_text;
+                em.state = state;
+                em.alarm = 0;
+                Ds1.Eventvm.Rows.Add(em);
+                Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
         }
         public void Eventdevice(AssetsRow t3)
         {
-            EventdeviceRow em = Ds1.Eventdevice.NewEventdeviceRow();
-            em.write_time = DateTime.Now;
-            em.ip = t3.ip;
-            em.path = t3.path;
-            em.DeviceName = t3.DeviceName;
-            em.state = t3.state;
-            em.alarm = 2;
-            Ds1.Eventdevice.Rows.Add(em);
-            Tam.EventdeviceTableAdapter.Update(Ds1.Eventdevice);
+            try
+            {
+                EventdeviceRow em = Ds1.Eventdevice.NewEventdeviceRow();
+                em.write_time = DateTime.Now;
+                em.ip = t3.ip;
+                em.path = t3.path;
+                em.DeviceName = t3.DeviceName;
+                em.state = t3.state;
+                em.alarm = 2;
+                Ds1.Eventdevice.Rows.Add(em);
+                Tam.EventdeviceTableAdapter.Update(Ds1.Eventdevice);
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
         }
 
         #endregion

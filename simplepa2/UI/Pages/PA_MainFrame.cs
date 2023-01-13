@@ -27,21 +27,16 @@ namespace simplepa2.UI.Pages
         private View_BBSGroupManage view_BBSGroupManage;
         private View_BBSIoTApplication view_BBSIotApplication;
         private View_BBSMusicManage view_BBSMusicManage;
-
         private View_BBSHolidayManage view_BBSHolidayManage;
 
-        private View_BBCDevice view_BBCDevice;
         private View_BBCSite view_BBCSite;
         private View_BBCZone view_BBCZone;
         private View_BBCInput view_BBCInput;
         private View_BBCOutput view_BBCOutput;
         private View_BBCMusic view_BBCMusic;
         private View_BBCEmergency view_BBCEmergency;
-
         private View_BBCAmpFailover view_BBCAmpFailover;
-
         private View_HistoryBBS view_HistoryBBS;
-
 
         private View_HistoryDevice view_HistoryDevice;
         private View_HistoryFireSignal view_HistoryFireSignal;
@@ -53,6 +48,7 @@ namespace simplepa2.UI.Pages
         private View_SystemSMSRegistration view_SystemSMSRegistration;
         private View_SystemRestAPI view_SystemRestAPI;
 
+        private View_BBCDevice view_BBCDevice = new View_BBCDevice();
         private View_BBCAsset2 view_BBCAsset2 = new View_BBCAsset2();
         private View_DashBoard2 view_DashBoard2 = new View_DashBoard2();
         private View_BBSGroupManage2 view_BBSGroupManage2 = new View_BBSGroupManage2();
@@ -68,7 +64,6 @@ namespace simplepa2.UI.Pages
         private View_BBSEMManage2 view_BBSEMManage2 = new View_BBSEMManage2();
         private View_BBSEMChannel2 view_BBSEMChannel2 = new View_BBSEMChannel2();
         private View_BBCEmergency2 view_BBCEmergency2 = new View_BBCEmergency2();
-
         private View_BBSAnchor2 view_BBSAnchor2 = new View_BBSAnchor2();
         private List<View_BBSAnchor2> listBBSAnchor = new List<View_BBSAnchor2>();  // 다수 방 관리를 위한 View List
 
@@ -160,6 +155,19 @@ namespace simplepa2.UI.Pages
 
             openContentsView(barItems.AccessibleName);
 
+        }
+
+        internal void reDraw()
+        {
+            view_BBCDevice.reDraw();
+            view_BBCEmergency2.reDraw();
+            view_BBCInput2.reDraw();
+            view_BBCOutput2.reDraw();
+            view_BBSEMChannel2.reDraw();
+            view_BBSEMManage2.reDraw();
+            view_GroupManager2.reDraw();
+            view_BBSGroupManage2.reDraw();
+            view_GroupPresetManager2.reDraw();
         }
 
         private void shink_NavigationBarItems(NavigationBarItem selectedNavBarItem)
@@ -387,7 +395,7 @@ namespace simplepa2.UI.Pages
                     if (msg1.state == 1)
                     {
                         dBSqlite.LinkAssetDevice();
-                        view_BBCDevice.reDraw();
+                        reDraw();
                     }
                     else
                         AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
