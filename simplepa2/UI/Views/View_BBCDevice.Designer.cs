@@ -32,16 +32,16 @@
             this.panel2 = new Wisej.Web.Panel();
             this.dg_deviceView = new Wisej.Web.DataGridView();
             this.DeviceId = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.device_Category = new Wisej.Web.DataGridViewTextBoxColumn();
             this.device = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.device_Category = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.DanteModelName = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.ip = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.ip_dspctrl = new Wisej.Web.DataGridViewTextBoxColumn();
             this.chspk = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.ip = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_name = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.ip_dspctrl = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_chno = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_vol = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.DanteModelName = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1 = new Wisej.Web.Panel();
             this.bt_reloading = new Wisej.Web.Button();
             this.cb_siteName = new Wisej.Web.ComboBox();
@@ -76,11 +76,11 @@
             this.dg_deviceView.AutoGenerateColumns = false;
             this.dg_deviceView.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.DeviceId,
-            this.device,
             this.device_Category,
             this.Column0,
             this.chspk,
             this.ip,
+            this.device,
             this.dsp_name,
             this.ip_dspctrl,
             this.dsp_chno,
@@ -100,19 +100,19 @@
             this.DeviceId.Name = "DeviceId";
             this.DeviceId.Width = 60;
             // 
-            // device_Category
-            // 
-            this.device_Category.DataPropertyName = "device";
-            this.device_Category.HeaderText = "장비카테고리(DB)";
-            this.device_Category.Name = "device_Category";
-            this.device_Category.Width = 150;
-            // 
             // device
             // 
             this.device.DataPropertyName = "path";
             this.device.HeaderText = "지역";
             this.device.Name = "device";
             this.device.Width = 200;
+            // 
+            // device_Category
+            // 
+            this.device_Category.DataPropertyName = "device";
+            this.device_Category.HeaderText = "장비카테고리(DB)";
+            this.device_Category.Name = "device_Category";
+            this.device_Category.Width = 150;
             // 
             // Column0
             // 
@@ -121,13 +121,12 @@
             this.Column0.Name = "Column0";
             this.Column0.Width = 140;
             // 
-            // DanteModelName
+            // chspk
             // 
-            this.DanteModelName.DataPropertyName = "DanteModelName";
-            this.DanteModelName.HeaderText = "단테모델명";
-            this.DanteModelName.Name = "DanteModelName";
-            this.DanteModelName.Visible = false;
-            this.DanteModelName.Width = 200;
+            this.chspk.DataPropertyName = "chspk";
+            this.chspk.HeaderText = "채널";
+            this.chspk.Name = "chspk";
+            this.chspk.Width = 60;
             // 
             // ip
             // 
@@ -136,26 +135,19 @@
             this.ip.Name = "ip";
             this.ip.Width = 120;
             // 
-            // ip_dspctrl
-            // 
-            this.ip_dspctrl.DataPropertyName = "ip_dspctrl";
-            this.ip_dspctrl.HeaderText = "DSP IP주소";
-            this.ip_dspctrl.Name = "ip_dspctrl";
-            this.ip_dspctrl.Width = 120;
-            // 
-            // chspk
-            // 
-            this.chspk.DataPropertyName = "chspk";
-            this.chspk.HeaderText = "채널";
-            this.chspk.Name = "chspk";
-            this.chspk.Width = 60;
-            // 
             // dsp_name
             // 
             this.dsp_name.DataPropertyName = "dsp_name";
             this.dsp_name.HeaderText = "관리DSP이름";
             this.dsp_name.Name = "dsp_name";
             this.dsp_name.Width = 140;
+            // 
+            // ip_dspctrl
+            // 
+            this.ip_dspctrl.DataPropertyName = "ip_dspctrl";
+            this.ip_dspctrl.HeaderText = "DSP IP주소";
+            this.ip_dspctrl.Name = "ip_dspctrl";
+            this.ip_dspctrl.Width = 120;
             // 
             // dsp_chno
             // 
@@ -171,6 +163,14 @@
             this.dsp_vol.HeaderText = "볼륨(비상)";
             this.dsp_vol.Name = "dsp_vol";
             this.dsp_vol.Visible = false;
+            // 
+            // DanteModelName
+            // 
+            this.DanteModelName.DataPropertyName = "DanteModelName";
+            this.DanteModelName.HeaderText = "단테모델명";
+            this.DanteModelName.Name = "DanteModelName";
+            this.DanteModelName.Visible = false;
+            this.DanteModelName.Width = 200;
             // 
             // panel1
             // 
