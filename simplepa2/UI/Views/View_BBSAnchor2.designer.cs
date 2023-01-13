@@ -57,10 +57,11 @@
             this.bSroomTableAdapter = new simplepa2.DataSet1TableAdapters.BSroomTableAdapter();
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.panel4 = new Wisej.Web.Panel();
-            this.bindingEMCombo = new Wisej.Web.BindingSource(this.components);
-            this.cb1_test1 = new Wisej.Web.ComboBox();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
+            this.dataSet11 = new simplepa2.DataSet1();
             this.btnStop = new Wisej.Web.Button();
             this.btnStart = new Wisej.Web.Button();
+            this.bindingEMCombo = new Wisej.Web.BindingSource(this.components);
             this.panel3 = new Wisej.Web.Panel();
             this.splitContainer2 = new Wisej.Web.SplitContainer();
             this.dataGridView2 = new Wisej.Web.DataGridView();
@@ -84,15 +85,16 @@
             this.label17 = new Wisej.Web.Label();
             this.contextMenu2 = new Wisej.Web.ContextMenu(this.components);
             this.bsTreeCTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeCTableAdapter();
-            this.dataSet11 = new simplepa2.DataSet1();
             this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
             this.membs = new Wisej.Web.BindingSource(this.components);
+            this.dataSet1BindingSource = new Wisej.Web.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -104,8 +106,8 @@
             this.panel2.SuspendLayout();
             this.panel35.SuspendLayout();
             this.panel41.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList3
@@ -197,7 +199,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.cb1_test1);
+            this.panel4.Controls.Add(this.comp_Site1);
             this.panel4.Controls.Add(this.btnStop);
             this.panel4.Controls.Add(this.btnStart);
             this.panel4.Dock = Wisej.Web.DockStyle.Top;
@@ -208,18 +210,16 @@
             this.panel4.TabIndex = 11;
             this.panel4.TabStop = true;
             // 
-            // bindingEMCombo
+            // comp_Site1
             // 
-            this.bindingEMCombo.DataMember = "EMServerWithWholeCol";
-            this.bindingEMCombo.DataSource = this.dataSet1;
+            this.comp_Site1.Location = new System.Drawing.Point(284, 4);
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 5;
             // 
-            // cb1_test1
+            // dataSet11
             // 
-            this.cb1_test1.DisplayMember = "EMNAME";
-            this.cb1_test1.Location = new System.Drawing.Point(350, 12);
-            this.cb1_test1.Name = "cb1_test1";
-            this.cb1_test1.Size = new System.Drawing.Size(120, 36);
-            this.cb1_test1.TabIndex = 5;
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnStop
             // 
@@ -242,6 +242,11 @@
             this.btnStart.Text = "Start";
             this.btnStart.TextImageRelation = Wisej.Web.TextImageRelation.TextBeforeImage;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // bindingEMCombo
+            // 
+            this.bindingEMCombo.DataMember = "EMServerWithWholeCol";
+            this.bindingEMCombo.DataSource = this.dataSet1;
             // 
             // panel3
             // 
@@ -512,11 +517,6 @@
             // 
             this.bsTreeCTableAdapter1.ClearBeforeFill = true;
             // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // emServerWithWholeColTableAdapter1
             // 
             this.emServerWithWholeColTableAdapter1.ClearBeforeFill = true;
@@ -524,6 +524,10 @@
             // membs
             // 
             this.membs.DataSource = typeof(simplepa2.Bsroom);
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
             // 
             // View_BBSAnchor2
             // 
@@ -541,7 +545,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -553,8 +557,8 @@
             this.panel2.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -605,7 +609,8 @@
         private DataSet1TableAdapters.BSTreeCTableAdapter bsTreeCTableAdapter1;
         private DataSet1 dataSet11;
         private DataSet1TableAdapters.EMServerWithWholeColTableAdapter emServerWithWholeColTableAdapter1;
-        private Wisej.Web.ComboBox cb1_test1;
         private Wisej.Web.BindingSource bindingEMCombo;
+        private Wisej.Web.BindingSource dataSet1BindingSource;
+        private Components.Comp_Site comp_Site1;
     }
 }
