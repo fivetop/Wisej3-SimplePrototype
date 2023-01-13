@@ -44,10 +44,10 @@ namespace pa
         // 리스트 출력 
         private void _Status1_Click(object sender, RoutedEventArgs e)
         {
-            if (systemcheck() < 3) return;
+            //if (systemcheck() < 3) return;
             g.Log("L:List");
             g.division();
-            foreach (var t2 in _DanteDevice)
+            foreach (var t2 in gl.danteDevice._DanteDevice)
             {
                 g.Log(t2.ip.ToString() + " : " + t2.DeviceName + " : " + t2.name + " : " + t2.device.ToString() + " : " + t2.ip_dspctrl);
             }

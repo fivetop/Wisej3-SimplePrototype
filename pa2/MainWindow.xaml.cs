@@ -363,10 +363,12 @@ namespace pa
 
         private void SignalRClient_eDisConnect(object sender, EventArgs e)
         {
+            g.Log("SignalR Disconnected!");
         }
 
         private void SignalRClient_eConnect(object sender, EventArgs e)
         {
+            g.Log("SignalR Connected!");
             SendSigR(eSignalRMsgType.eEM, "EM Info : " + g._EMClient.EM_NAME, 1);
         }
 
