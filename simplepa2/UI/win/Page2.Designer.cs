@@ -185,7 +185,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Page2";
-            this.Size = new System.Drawing.Size(1550, 717);
+            this.Size = new System.Drawing.Size(1550, 715);
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.rightPanel.ResumeLayout(false);
