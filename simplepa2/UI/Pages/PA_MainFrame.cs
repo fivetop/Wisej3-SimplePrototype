@@ -163,6 +163,7 @@ namespace simplepa2.UI.Pages
             view_BBCEmergency2.reDraw();
             view_BBCInput2.reDraw();
             view_BBCOutput2.reDraw();
+            view_BBCMusic2.reDraw();
             view_BBSEMChannel2.reDraw();
             view_BBSEMManage2.reDraw();
             view_GroupManager2.reDraw();

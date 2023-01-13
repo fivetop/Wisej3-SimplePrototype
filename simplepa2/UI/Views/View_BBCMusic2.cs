@@ -15,8 +15,7 @@ namespace simplepa2.UI.Views
 
         private void BSLevelManager_Load(object sender, EventArgs e)
         {
-            this.deviceTableAdapter.Fill(this.dataSet1.Device);
-
+            reDraw();
         }
 
         // 일반전체 데이터변경
