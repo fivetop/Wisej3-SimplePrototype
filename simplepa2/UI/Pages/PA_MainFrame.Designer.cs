@@ -41,16 +41,16 @@
             this.bbsConfigurationBarItems = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.zoneManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.deviceManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
-            this.navigationBarItem1 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
-            this.navigationBarItem4 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
-            this.navigationBarItem2 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
-            this.siteManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.inputManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.outputManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.musicManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.emergencyManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
-            this.ampFailoverBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.navigationBarItem1 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.navigationBarItem4 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.navigationBarItem2 = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.assetBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.siteManageBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
+            this.ampFailoverBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.bbsHistoryBarItems = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.bbsHistoryBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
             this.deviceHistoryBarItem = new Wisej.Web.Ext.NavigationBar.NavigationBarItem();
@@ -178,16 +178,16 @@
             this.bbsConfigurationBarItems.Items.AddRange(new Wisej.Web.Ext.NavigationBar.NavigationBarItem[] {
             this.zoneManageBarItem,
             this.deviceManageBarItem,
-            this.navigationBarItem1,
-            this.navigationBarItem4,
-            this.navigationBarItem2,
-            this.siteManageBarItem,
             this.inputManageBarItem,
             this.outputManageBarItem,
             this.musicManageBarItem,
             this.emergencyManageBarItem,
-            this.ampFailoverBarItem,
-            this.assetBarItem});
+            this.navigationBarItem1,
+            this.navigationBarItem4,
+            this.navigationBarItem2,
+            this.assetBarItem,
+            this.siteManageBarItem,
+            this.ampFailoverBarItem});
             this.bbsConfigurationBarItems.Name = "NavigationBarItem";
             this.bbsConfigurationBarItems.Text = "방송설정";
             // 
@@ -204,35 +204,6 @@
             this.deviceManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.deviceManageBarItem.Name = "NavigationBarItem";
             this.deviceManageBarItem.Text = "장비 관리";
-            // 
-            // navigationBarItem1
-            // 
-            this.navigationBarItem1.AccessibleName = "navigationBarItem1";
-            this.navigationBarItem1.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.navigationBarItem1.Name = "NavigationBarItem";
-            this.navigationBarItem1.Text = "기본그룹";
-            // 
-            // navigationBarItem4
-            // 
-            this.navigationBarItem4.AccessibleDescription = "";
-            this.navigationBarItem4.AccessibleName = "navigationBarItem4";
-            this.navigationBarItem4.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.navigationBarItem4.Name = "NavigationBarItem";
-            this.navigationBarItem4.Text = "PRESET그룹";
-            // 
-            // navigationBarItem2
-            // 
-            this.navigationBarItem2.AccessibleName = "navigationBarItem2";
-            this.navigationBarItem2.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.navigationBarItem2.Name = "NavigationBarItem";
-            this.navigationBarItem2.Text = "EM서버모니터링";
-            // 
-            // siteManageBarItem
-            // 
-            this.siteManageBarItem.AccessibleName = "siteManageBarItem";
-            this.siteManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.siteManageBarItem.Name = "NavigationBarItem";
-            this.siteManageBarItem.Text = "사이트 관리";
             // 
             // inputManageBarItem
             // 
@@ -262,12 +233,27 @@
             this.emergencyManageBarItem.Name = "NavigationBarItem";
             this.emergencyManageBarItem.Text = "비상 방송";
             // 
-            // ampFailoverBarItem
+            // navigationBarItem1
             // 
-            this.ampFailoverBarItem.AccessibleName = "ampFailoverBarItem";
-            this.ampFailoverBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ampFailoverBarItem.Name = "NavigationBarItem";
-            this.ampFailoverBarItem.Text = "앰프 Failover";
+            this.navigationBarItem1.AccessibleName = "navigationBarItem1";
+            this.navigationBarItem1.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.navigationBarItem1.Name = "NavigationBarItem";
+            this.navigationBarItem1.Text = "기본그룹";
+            // 
+            // navigationBarItem4
+            // 
+            this.navigationBarItem4.AccessibleDescription = "";
+            this.navigationBarItem4.AccessibleName = "navigationBarItem4";
+            this.navigationBarItem4.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.navigationBarItem4.Name = "NavigationBarItem";
+            this.navigationBarItem4.Text = "PRESET그룹";
+            // 
+            // navigationBarItem2
+            // 
+            this.navigationBarItem2.AccessibleName = "navigationBarItem2";
+            this.navigationBarItem2.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.navigationBarItem2.Name = "NavigationBarItem";
+            this.navigationBarItem2.Text = "EM서버모니터링";
             // 
             // assetBarItem
             // 
@@ -275,6 +261,20 @@
             this.assetBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.assetBarItem.Name = "NavigationBarItem";
             this.assetBarItem.Text = "선번장관리";
+            // 
+            // siteManageBarItem
+            // 
+            this.siteManageBarItem.AccessibleName = "siteManageBarItem";
+            this.siteManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.siteManageBarItem.Name = "NavigationBarItem";
+            this.siteManageBarItem.Text = "사이트 관리";
+            // 
+            // ampFailoverBarItem
+            // 
+            this.ampFailoverBarItem.AccessibleName = "ampFailoverBarItem";
+            this.ampFailoverBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ampFailoverBarItem.Name = "NavigationBarItem";
+            this.ampFailoverBarItem.Text = "앰프 Failover";
             // 
             // bbsHistoryBarItems
             // 

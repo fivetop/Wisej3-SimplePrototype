@@ -77,6 +77,8 @@ namespace simplepa2.UI.Pages
         {
             InitializeComponent();
 
+            dBSqlite.DBInit();
+
             gweb.mainFrame = this;
             gweb.mgf.Add(this);
 
@@ -104,7 +106,6 @@ namespace simplepa2.UI.Pages
         #region // 초기화 처리 
         private void PA_MainFrame_Load(object sender, EventArgs e)
         {
-            dBSqlite.DBInit();
             //signalRClient.owner = this;
             //signalRClient.ConnectToSignalR();
 
@@ -298,11 +299,6 @@ namespace simplepa2.UI.Pages
         #endregion
 
         #region // signal r 처리 
-
-        internal void eRcvSigR(SignalRMsg message)
-        {
-            RcvSigR(message);
-        }
 
         // 프리셋 메시지 올 경우 화면 출력용 
         // 8채널과 링크 출력용 

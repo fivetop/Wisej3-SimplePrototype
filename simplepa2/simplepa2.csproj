@@ -184,6 +184,9 @@
     <EmbeddedResource Include="UI\Components\Comp_PresetNameCard.resx">
       <DependentUpon>Comp_PresetNameCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_Site.resx">
+      <DependentUpon>Comp_Site.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_SiteCard.resx">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -1005,6 +1008,12 @@
     </Compile>
     <Compile Include="UI\Components\Comp_PresetNameCard.Designer.cs">
       <DependentUpon>Comp_PresetNameCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_Site.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_Site.Designer.cs">
+      <DependentUpon>Comp_Site.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.cs">
       <SubType>UserControl</SubType>

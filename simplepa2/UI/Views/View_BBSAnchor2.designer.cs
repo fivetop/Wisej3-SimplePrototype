@@ -57,7 +57,6 @@
             this.bSroomTableAdapter = new simplepa2.DataSet1TableAdapters.BSroomTableAdapter();
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.panel4 = new Wisej.Web.Panel();
-            this.cb_test2 = new Wisej.Web.ComboBox();
             this.bindingEMCombo = new Wisej.Web.BindingSource(this.components);
             this.cb1_test1 = new Wisej.Web.ComboBox();
             this.btnStop = new Wisej.Web.Button();
@@ -198,7 +197,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.cb_test2);
             this.panel4.Controls.Add(this.cb1_test1);
             this.panel4.Controls.Add(this.btnStop);
             this.panel4.Controls.Add(this.btnStart);
@@ -210,15 +208,6 @@
             this.panel4.TabIndex = 11;
             this.panel4.TabStop = true;
             // 
-            // cb_test2
-            // 
-            this.cb_test2.DataSource = this.bindingEMCombo;
-            this.cb_test2.DisplayMember = "EMNAME";
-            this.cb_test2.Location = new System.Drawing.Point(629, 3);
-            this.cb_test2.Name = "cb_test2";
-            this.cb_test2.Size = new System.Drawing.Size(120, 36);
-            this.cb_test2.TabIndex = 6;
-            // 
             // bindingEMCombo
             // 
             this.bindingEMCombo.DataMember = "EMServerWithWholeCol";
@@ -227,7 +216,7 @@
             // cb1_test1
             // 
             this.cb1_test1.DisplayMember = "EMNAME";
-            this.cb1_test1.Location = new System.Drawing.Point(420, 4);
+            this.cb1_test1.Location = new System.Drawing.Point(350, 12);
             this.cb1_test1.Name = "cb1_test1";
             this.cb1_test1.Size = new System.Drawing.Size(120, 36);
             this.cb1_test1.TabIndex = 5;
@@ -617,7 +606,6 @@
         private DataSet1 dataSet11;
         private DataSet1TableAdapters.EMServerWithWholeColTableAdapter emServerWithWholeColTableAdapter1;
         private Wisej.Web.ComboBox cb1_test1;
-        private Wisej.Web.ComboBox cb_test2;
         private Wisej.Web.BindingSource bindingEMCombo;
     }
 }
