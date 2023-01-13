@@ -207,5 +207,9 @@ namespace simplepa2.UI.Views
 		}
         #endregion
 
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
+			var t1 = sender;
+        }
     }
 }

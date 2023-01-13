@@ -39,7 +39,18 @@ namespace simplepa2.UI.Components
 		}
 		private DataTable _dataSet = null;
 
+		[Description("Fired when the user clicks.")]
+		public event EventHandler SelectedValueChanged;
 
+		private void cb_SiteName_SelectedValueChanged(object sender, EventArgs e)
+        {
+			string selectedItem = ((this.cb_SiteName.SelectedItem as DataRowView).Row as DataSet1.EMServerWithWholeColRow).EMNAME;
+			this.SelectedValueChanged?.Invoke(selectedItem, e);
+		}
 
+		protected virtual void OnSelectedValueChanged(EventArgs e)
+		{
+			this.SelectedValueChanged?.Invoke(this, e);
+		}
 	}
 }

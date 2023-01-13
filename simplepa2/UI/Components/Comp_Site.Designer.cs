@@ -46,6 +46,7 @@
             // 
             this.cb_SiteName.AutoSize = false;
             this.cb_SiteName.DisplayMember = "EMNAME";
+            this.cb_SiteName.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
             this.cb_SiteName.Items.AddRange(new object[] {
             "전체"});
             this.cb_SiteName.Location = new System.Drawing.Point(70, 1);
@@ -53,6 +54,7 @@
             this.cb_SiteName.Name = "cb_SiteName";
             this.cb_SiteName.Size = new System.Drawing.Size(200, 32);
             this.cb_SiteName.TabIndex = 93;
+            this.cb_SiteName.SelectedValueChanged += new System.EventHandler(this.cb_SiteName_SelectedValueChanged);
             // 
             // Comp_Site
             // 
