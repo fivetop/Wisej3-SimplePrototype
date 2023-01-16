@@ -21,7 +21,7 @@ namespace simplepa2.UI.Components
             InitializeComponent();
         }
 
-        public Comp_ZoneFloorCardList(Zone_DataList dataList, bool isAddButton)
+        public Comp_ZoneFloorCardList(Zone_DataList dataList, bool isAddButton, bool isCheckBox)
         {
             InitializeComponent();
 
@@ -32,6 +32,8 @@ namespace simplepa2.UI.Components
            // this.zoneData = dataList.aStr_Zonelist;
             this.strFloorName = dataList.floorName;
             this.bAddButton = isAddButton;
+
+            this.ch_floor.Enabled = isCheckBox;
 
             // 02. Zone 리스트를 만들고, Zone의 번호와 Zone명을 입력 > 상기는 예제로 이름을 두번 넣었음 
             zoneList = new List<Comp_ZoneButton>();
@@ -50,10 +52,13 @@ namespace simplepa2.UI.Components
         {
             if (zoneButtonSet == null)
                 return;
-            else if (zoneButtonSet.Count < 3)
+            
+            /*  // Zone 개수에 따라 컴포넌트 크기를 조정할 경우 
+            else if (zoneButtonSet.Count < 3)  // 3보다 작음경우 
                 this.Size = new System.Drawing.Size(1600, 120);
-
+            */ 
             // 02. 개별 컴포넌트 생성
+
             ch_floor.Text = strFloorName;
 
             foreach (Comp_ZoneButton zoneItem in zoneButtonSet)

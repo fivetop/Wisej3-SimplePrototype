@@ -34,7 +34,7 @@
             // 
             this.Dock = Wisej.Web.DockStyle.Top;
             this.Name = "Comp_GroupNameSpacer";
-            this.Size = new System.Drawing.Size(523, 20);
+            this.Size = new System.Drawing.Size(523, 5);
             this.ResumeLayout(false);
 
         }

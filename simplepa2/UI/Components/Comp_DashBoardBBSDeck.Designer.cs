@@ -31,6 +31,9 @@
             this.panel8 = new Wisej.Web.Panel();
             this.panel38 = new Wisej.Web.Panel();
             this.flowLayoutPanel1 = new Wisej.Web.FlowLayoutPanel();
+            this.panel1 = new Wisej.Web.Panel();
+            this.lb_emStatus = new Wisej.Web.Label();
+            this.lb_siteName = new Wisej.Web.Label();
             this.comp_BBSDeckButton3 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.comp_BBSDeckButton1 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.comp_BBSDeckButton2 = new simplepa2.UI.Components.Comp_BBSDeckButton();
@@ -39,9 +42,6 @@
             this.comp_BBSDeckButton6 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.comp_BBSDeckButton7 = new simplepa2.UI.Components.Comp_BBSDeckButton();
             this.comp_BBSDeckButton8 = new simplepa2.UI.Components.Comp_BBSDeckButton();
-            this.panel1 = new Wisej.Web.Panel();
-            this.lb_emStatus = new Wisej.Web.Label();
-            this.lb_siteName = new Wisej.Web.Label();
             this.panel8.SuspendLayout();
             this.panel38.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -86,6 +86,40 @@
             this.flowLayoutPanel1.Padding = new Wisej.Web.Padding(5);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(612, 60);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lb_emStatus);
+            this.panel1.Controls.Add(this.lb_siteName);
+            this.panel1.Dock = Wisej.Web.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(138, 60);
+            this.panel1.TabIndex = 0;
+            // 
+            // lb_emStatus
+            // 
+            this.lb_emStatus.AutoEllipsis = true;
+            this.lb_emStatus.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
+            this.lb_emStatus.CssStyle = "border-radius:15px";
+            this.lb_emStatus.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_emStatus.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.lb_emStatus.Location = new System.Drawing.Point(94, 17);
+            this.lb_emStatus.Margin = new Wisej.Web.Padding(0);
+            this.lb_emStatus.Name = "lb_emStatus";
+            this.lb_emStatus.Size = new System.Drawing.Size(30, 30);
+            this.lb_emStatus.TabIndex = 146;
+            this.lb_emStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lb_siteName
+            // 
+            this.lb_siteName.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_siteName.Location = new System.Drawing.Point(3, 20);
+            this.lb_siteName.Name = "lb_siteName";
+            this.lb_siteName.Size = new System.Drawing.Size(82, 23);
+            this.lb_siteName.TabIndex = 79;
+            this.lb_siteName.Text = "구미사이트";
+            this.lb_siteName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comp_BBSDeckButton3
             // 
@@ -134,40 +168,6 @@
             this.comp_BBSDeckButton8.Location = new System.Drawing.Point(490, 7);
             this.comp_BBSDeckButton8.Name = "comp_BBSDeckButton8";
             this.comp_BBSDeckButton8.TabIndex = 9;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lb_emStatus);
-            this.panel1.Controls.Add(this.lb_siteName);
-            this.panel1.Dock = Wisej.Web.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 60);
-            this.panel1.TabIndex = 0;
-            // 
-            // lb_emStatus
-            // 
-            this.lb_emStatus.AutoEllipsis = true;
-            this.lb_emStatus.BackColor = System.Drawing.Color.FromName("@bStatusGreen");
-            this.lb_emStatus.CssStyle = "border-radius:15px";
-            this.lb_emStatus.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_emStatus.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_emStatus.Location = new System.Drawing.Point(94, 17);
-            this.lb_emStatus.Margin = new Wisej.Web.Padding(0);
-            this.lb_emStatus.Name = "lb_emStatus";
-            this.lb_emStatus.Size = new System.Drawing.Size(30, 30);
-            this.lb_emStatus.TabIndex = 146;
-            this.lb_emStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lb_siteName
-            // 
-            this.lb_siteName.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_siteName.Location = new System.Drawing.Point(3, 20);
-            this.lb_siteName.Name = "lb_siteName";
-            this.lb_siteName.Size = new System.Drawing.Size(82, 23);
-            this.lb_siteName.TabIndex = 79;
-            this.lb_siteName.Text = "구미사이트";
-            this.lb_siteName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Comp_DashBoardBBSDeck
             // 

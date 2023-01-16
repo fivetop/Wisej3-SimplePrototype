@@ -15,14 +15,18 @@ namespace simplepa2.UI.Components
 
         // UI 접근 및 컨트롤 포인터
         private List<Comp_ZoneFloorCardList> zoneFloorCardUIList = new List<Comp_ZoneFloorCardList>();
-               
+
+        private bool ZONE_LIST_WITH_ADD_BUTTON = true;
+        private bool ZONE_LIST_WITHOUT_ADD_BUTTON = false;
+        private bool ZONE_CHECK_BOX_VISIBLE = false;        
+
 
         public Comp_ZoneBuildingPanels()
         {
             InitializeComponent();
         }
 
-        public Comp_ZoneBuildingPanels(string buildingName, DataRow[] buildList)
+        public Comp_ZoneBuildingPanels(string buildingName, DataRow[] buildList, bool isCheckUse)
         {
             InitializeComponent();
 
@@ -30,9 +34,11 @@ namespace simplepa2.UI.Components
 
             lb_buildingName.Text = buildingName;
 
-            this.zoneFloorDataList = prepareFloorZoneData(buildList);
+            ch_floor.Visible = isCheckUse;
 
-            setupUICardData(zoneFloorDataList);
+            this.zoneFloorDataList = prepareFloorZoneData(buildList);            
+
+            setupUICardData(zoneFloorDataList, isCheckUse);
             
         }
 
@@ -47,6 +53,7 @@ namespace simplepa2.UI.Components
             {
                 // 형변환 
                 DataSet1.AssetsRow drType = (dr as DataSet1.AssetsRow);
+
                 // 첫번째 경우 플로어 정보 일단 저장
                 string dataFloorName = drType.floorname;
 
@@ -68,22 +75,29 @@ namespace simplepa2.UI.Components
             return zoneList;
         }
 
-
-        public void setupUICardData(List<Zone_DataList> zoneFloorDataList)
+        public void setupUICardData(List<Zone_DataList> zoneFloorDataList, bool isCheckBoxUse)
         {
+            this.Height = 0;
+            pn_FloorZone.Controls.Clear();
+
+            int index = 0;
             foreach(Zone_DataList zoneFloorData in zoneFloorDataList)
             {
-                Comp_ZoneFloorCardList com_zfc = new Comp_ZoneFloorCardList(zoneFloorData, true);
+                Comp_ZoneFloorCardList com_zfc = new Comp_ZoneFloorCardList(zoneFloorData, ZONE_LIST_WITHOUT_ADD_BUTTON, isCheckBoxUse);
                 // 필요시 이벤트 추가 등록 후 
+                index++;
+
+                // UI 접근자 저장
                 zoneFloorCardUIList.Add(com_zfc);
 
-                pn_main.Controls.Add(com_zfc);
-                pn_main.Controls.Add(new Comp_GroupNameSpacer());
-                this.Height += com_zfc.Height + 20;  //20 spacer height
+                // UI 추가 
+                pn_FloorZone.Controls.Add(com_zfc);
+
+                this.Height += com_zfc.Height;
+                //this.Height += com_zfc.Height + 20;  //20 spacer height
             }
         }
     }
-
 
     }
 

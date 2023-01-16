@@ -23,6 +23,10 @@ namespace simplepa2.UI.Views
         {
             InitializeComponent();
 
+
+        }
+        public void reDraw()
+        {
             // 1. 데이터 로드
             siteDataReLoad();
 
@@ -46,6 +50,13 @@ namespace simplepa2.UI.Views
         
         private void setupSiteCardData()
         {
+            if(this.dataSet11.EMServerNDeviceName.Count == 0)
+                MessageBox.Show("LAWTEXT : 선번장 입력 후 장비스캔이 완료된 경우 사이트 정보가 표시됩니다.");
+            {
+                this.Dispose();
+                return;
+            }
+
             try
             {
                 foreach (var siteData in this.dataSet11.EMServerNDeviceName)
@@ -62,6 +73,11 @@ namespace simplepa2.UI.Views
             {
                 MessageBox.Show("LAW TEXT : BBC 사이트의 카드를 만는 과정에서 예외 발생 - " + e.ToString());
             }            
+        }
+
+        private void View_BBCSite_Load(object sender, EventArgs e)
+        {
+            reDraw();
         }
 
         /*사이트 카드를 셋업 해주는 기능 */
@@ -115,5 +131,7 @@ namespace simplepa2.UI.Views
             MessageBox.Show("구현사항 : 사이트 추가 폼 클린");
             comp_SiteDetailForm.setupNewSiteGeneration();
         }
+
+
     }
 }
