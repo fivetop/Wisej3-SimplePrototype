@@ -26,11 +26,13 @@ namespace simplepa2.UI.Views
 			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 
 			this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
-			this.cb1_test1.DataSource = this.dataSet11.EMServerWithWholeCol;
 
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
 			this.dataGridView2.RowCount = 10;
+
+			this.comp_Site1.dataSet = this.dataSet11.EMServerWithWholeCol;
+			this.comp_Site1.reDraw();
 		}
 
 		public void refresh()
@@ -205,5 +207,9 @@ namespace simplepa2.UI.Views
 		}
         #endregion
 
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
+			var t1 = sender;
+        }
     }
 }

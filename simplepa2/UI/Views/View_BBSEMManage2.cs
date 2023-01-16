@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Text;
 using Wisej.Web;
+using static simplepa2.DataSet1;
 
 namespace simplepa2.UI.Views
 {
@@ -16,11 +17,12 @@ namespace simplepa2.UI.Views
 
         private void BSAsset_Load(object sender, EventArgs e)
         {
-            this.eMServerTableAdapter.Fill(this.dataSet1.EMServer);
+            reDraw();
         }
 
         internal void reDraw()
         {
+            this.bSTreeTableAdapter.Fill(this.dataSet1.BSTree);
             this.eMServerTableAdapter.Fill(this.dataSet1.EMServer);
         }
 
@@ -38,6 +40,22 @@ namespace simplepa2.UI.Views
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //            this.bSTreeTableAdapter.Fill(this.dataSet1.BSTree);
+            //            this.bsTreeCTableAdapter.Fill(this.dataSet1.BSTreeC);
 
+            var t1 = this.dataGridView1.CurrentRow.DataBoundItem;
+            var t2 = (BSTreeRow)((System.Data.DataRowView)t1).Row;
+
+            if (t2 == null)
+                return;
+            gweb.mainFrame.dBSqlite.BSTreeUpdate(t2.BSTreeId, "대기");
+            gweb.mainFrame.dBSqlite.BSTreeCRemove(t2.BSTreeId);
+
+            this.bSTreeTableAdapter.Fill(this.dataSet1.BSTree);
+            this.bsTreeCTableAdapter.Fill(this.dataSet1.BSTreeC);
+
+        }
     }
 }

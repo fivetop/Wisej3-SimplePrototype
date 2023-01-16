@@ -62,7 +62,6 @@ namespace simplepa2.UI.Pages
         private View_BBCOutput2 view_BBCOutput2 = new View_BBCOutput2();
         private View_SystemAccount2 view_SystemAccount2 = new View_SystemAccount2();
         private View_BBSEMManage2 view_BBSEMManage2 = new View_BBSEMManage2();
-        private View_BBSEMChannel2 view_BBSEMChannel2 = new View_BBSEMChannel2();
         private View_BBCEmergency2 view_BBCEmergency2 = new View_BBCEmergency2();
         private View_BBSAnchor2 view_BBSAnchor2 = new View_BBSAnchor2();
         private List<View_BBSAnchor2> listBBSAnchor = new List<View_BBSAnchor2>();  // 다수 방 관리를 위한 View List
@@ -77,6 +76,8 @@ namespace simplepa2.UI.Pages
         public PA_MainFrame()
         {
             InitializeComponent();
+
+            dBSqlite.DBInit();
 
             gweb.mainFrame = this;
             gweb.mgf.Add(this);
@@ -105,7 +106,6 @@ namespace simplepa2.UI.Pages
         #region // 초기화 처리 
         private void PA_MainFrame_Load(object sender, EventArgs e)
         {
-            dBSqlite.DBInit();
             //signalRClient.owner = this;
             //signalRClient.ConnectToSignalR();
 
@@ -164,7 +164,6 @@ namespace simplepa2.UI.Pages
             view_BBCInput2.reDraw();
             view_BBCOutput2.reDraw();
             view_BBCMusic2.reDraw();
-            view_BBSEMChannel2.reDraw();
             view_BBSEMManage2.reDraw();
             view_GroupManager2.reDraw();
             view_BBSGroupManage2.reDraw();
@@ -241,7 +240,6 @@ namespace simplepa2.UI.Pages
                 case "navigationBarItem1": view_GroupManager2 = bringFrontView<View_GroupManager2>("View_GroupManager2", false); break;
                 case "navigationBarItem4": view_GroupPresetManager2 = bringFrontView<View_GroupPresetManager2>("View_GroupPresetManager2", false); break;
                 case "navigationBarItem2": view_BBSEMManage2 = bringFrontView<View_BBSEMManage2>("View_BBSEMManage2", false); break;
-                case "navigationBarItem3": view_BBSEMChannel2 = bringFrontView<View_BBSEMChannel2>("View_BBSEMChannel2", false); break;
                 case "siteManageBarItem": view_BBCSite = bringFrontView<View_BBCSite>("View_BBCSite", false); break;
                 case "zoneManageBarItem": view_BBCZone = bringFrontView<View_BBCZone>("View_BBCZone", false); break;
                 case "inputManageBarItem": view_BBCInput2 = bringFrontView<View_BBCInput2>("View_BBCInput2", false); break;
@@ -301,11 +299,6 @@ namespace simplepa2.UI.Pages
         #endregion
 
         #region // signal r 처리 
-
-        internal void eRcvSigR(SignalRMsg message)
-        {
-            RcvSigR(message);
-        }
 
         // 프리셋 메시지 올 경우 화면 출력용 
         // 8채널과 링크 출력용 
@@ -368,22 +361,22 @@ namespace simplepa2.UI.Pages
                     break;
                 case eSignalRMsgType.ePlay:
                     //dBSqlite.Eventbs("Play", msg1.message, msg1.seqno.ToString());
-                    if (view_BBSEMChannel2 != null) view_BBSEMChannel2.reDraw();
+                    view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.ePlayCheck :
                     break;
                 case eSignalRMsgType.ePlayEnd:
                     //dBSqlite.Eventbs("PlayEnd", msg1.message, msg1.seqno.ToString());
-                    if (view_BBSEMChannel2 != null) view_BBSEMChannel2.reDraw();
-                    if (view_BBSAnchor2 != null) view_BBSAnchor2.refresh();
+                    view_BBCEMManager2.reDraw();
+                    view_BBSAnchor2.refresh();
                     break;
                 case eSignalRMsgType.ePlaying:
                     //dBSqlite.Eventbs("Playing", msg1.message, msg1.seqno.ToString());
-                    if (view_BBSEMChannel2 != null) view_BBSEMChannel2.reDraw();
+                    view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.eStop:
                     //dBSqlite.Eventbs("PlayStop", msg1.message, msg1.seqno.ToString());
-                    if (view_BBSEMChannel2 != null) view_BBSEMChannel2.reDraw();
+                    view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.eLoginUser:
                     break;

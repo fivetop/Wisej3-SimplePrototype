@@ -184,6 +184,9 @@
     <EmbeddedResource Include="UI\Components\Comp_PresetNameCard.resx">
       <DependentUpon>Comp_PresetNameCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_Site.resx">
+      <DependentUpon>Comp_Site.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_SiteCard.resx">
       <DependentUpon>Comp_SiteCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,9 +240,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCAmpFailover.resx">
       <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSEMChannel2.resx">
-      <DependentUpon>View_BBSEMChannel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSEMManage2.resx">
       <DependentUpon>View_BBSEMManage2.cs</DependentUpon>
@@ -1009,6 +1009,12 @@
     <Compile Include="UI\Components\Comp_PresetNameCard.Designer.cs">
       <DependentUpon>Comp_PresetNameCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\Comp_Site.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_Site.Designer.cs">
+      <DependentUpon>Comp_Site.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Comp_SiteCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1110,12 +1116,6 @@
     </Compile>
     <Compile Include="UI\Views\View_BBCAmpFailover.Designer.cs">
       <DependentUpon>View_BBCAmpFailover.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Views\View_BBSEMChannel2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Views\View_BBSEMChannel2.Designer.cs">
-      <DependentUpon>View_BBSEMChannel2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBSEMManage2.cs">
       <SubType>UserControl</SubType>

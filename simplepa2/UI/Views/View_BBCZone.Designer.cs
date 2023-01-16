@@ -32,6 +32,7 @@
             this.pn_ViewMain = new Wisej.Web.Panel();
             this.pn_Contents = new Wisej.Web.Panel();
             this.pn_TopBar = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.bt_WholeSelect = new Wisej.Web.Button();
             this.bt_dataDelete = new Wisej.Web.Button();
             this.lb_BuildingName = new Wisej.Web.Label();
@@ -78,6 +79,7 @@
             // pn_TopBar
             // 
             this.pn_TopBar.BackColor = System.Drawing.Color.Transparent;
+            this.pn_TopBar.Controls.Add(this.comp_Site1);
             this.pn_TopBar.Controls.Add(this.bt_WholeSelect);
             this.pn_TopBar.Controls.Add(this.bt_dataDelete);
             this.pn_TopBar.Controls.Add(this.lb_BuildingName);
@@ -90,6 +92,12 @@
             this.pn_TopBar.Name = "pn_TopBar";
             this.pn_TopBar.Size = new System.Drawing.Size(1320, 52);
             this.pn_TopBar.TabIndex = 51;
+            // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Location = new System.Drawing.Point(399, 3);
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 95;
             // 
             // bt_WholeSelect
             // 
@@ -265,5 +273,6 @@
         private DataSet1TableAdapters.AssetPresetGroupsTableAdapter assetPresetGroupsTableAdapter1;
         private DataSet1TableAdapters.EMServerTableAdapter emServerTableAdapter1;
         private DataSet1TableAdapters.BSTreeTableAdapter bsTreeTableAdapter1;
+        private Components.Comp_Site comp_Site1;
     }
 }
