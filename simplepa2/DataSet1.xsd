@@ -1762,6 +1762,43 @@ FROM  BSTree AS a LEFT OUTER JOIN EMServer AS b ON (a.EMNAME = b.EMNAME)</Comman
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DeviceWithTypeTableAdapter" GeneratorDataComponentClassName="DeviceWithTypeTableAdapter" Name="DeviceWithType" UserDataComponentName="DeviceWithTypeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  a.DeviceId, b.type_contents as deviceType, a.device, a.ip, a.ip_dspctrl, a.name, a.DeviceName, a.DanteModelName, a.chspk, a.dsp_name, a.dsp_chno, a.dsp_vol, a.dsp_vol_em, a.path, a.floor_em, a.emData, a.chCount, c.ZoneName as ZoneName, a.EMNAME
+FROM     Device AS a LEFT OUTER JOIN TypeData AS B ON a.device = b.type_variable LEFT OUTER JOIN Assets AS C on a.AssetID = c.AssetId  WHERE b.type_group = 2
+
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DeviceId" DataSetColumn="DeviceId" />
+              <Mapping SourceColumn="deviceType" DataSetColumn="deviceType" />
+              <Mapping SourceColumn="device" DataSetColumn="device" />
+              <Mapping SourceColumn="ip" DataSetColumn="ip" />
+              <Mapping SourceColumn="ip_dspctrl" DataSetColumn="ip_dspctrl" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="DeviceName" DataSetColumn="DeviceName" />
+              <Mapping SourceColumn="DanteModelName" DataSetColumn="DanteModelName" />
+              <Mapping SourceColumn="chspk" DataSetColumn="chspk" />
+              <Mapping SourceColumn="dsp_name" DataSetColumn="dsp_name" />
+              <Mapping SourceColumn="dsp_chno" DataSetColumn="dsp_chno" />
+              <Mapping SourceColumn="dsp_vol" DataSetColumn="dsp_vol" />
+              <Mapping SourceColumn="dsp_vol_em" DataSetColumn="dsp_vol_em" />
+              <Mapping SourceColumn="path" DataSetColumn="path" />
+              <Mapping SourceColumn="floor_em" DataSetColumn="floor_em" />
+              <Mapping SourceColumn="emData" DataSetColumn="emData" />
+              <Mapping SourceColumn="chCount" DataSetColumn="chCount" />
+              <Mapping SourceColumn="EMNAME" DataSetColumn="EMNAME" />
+              <Mapping SourceColumn="ZoneName" DataSetColumn="ZoneName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -2973,36 +3010,127 @@ FROM  BSTree AS a LEFT OUTER JOIN EMServer AS b ON (a.EMNAME = b.EMNAME)</Comman
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="BsTreeWithStatus" msprop:Generator_RowEvHandlerName="BsTreeWithStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="BsTreeWithStatusRowDeleted" msprop:Generator_RowDeletingName="BsTreeWithStatusRowDeleting" msprop:Generator_RowEvArgName="BsTreeWithStatusRowChangeEvent" msprop:Generator_TablePropName="BsTreeWithStatus" msprop:Generator_RowChangedName="BsTreeWithStatusRowChanged" msprop:Generator_RowChangingName="BsTreeWithStatusRowChanging" msprop:Generator_TableClassName="BsTreeWithStatusDataTable" msprop:Generator_RowClassName="BsTreeWithStatusRow" msprop:Generator_TableVarName="tableBsTreeWithStatus" msprop:Generator_UserTableName="BsTreeWithStatus">
+        <xs:element name="BsTreeWithStatus" msprop:Generator_RowEvHandlerName="BsTreeWithStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="BsTreeWithStatusRowDeleted" msprop:Generator_RowDeletingName="BsTreeWithStatusRowDeleting" msprop:Generator_RowEvArgName="BsTreeWithStatusRowChangeEvent" msprop:Generator_TablePropName="BsTreeWithStatus" msprop:Generator_RowChangedName="BsTreeWithStatusRowChanged" msprop:Generator_UserTableName="BsTreeWithStatus" msprop:Generator_RowChangingName="BsTreeWithStatusRowChanging" msprop:Generator_RowClassName="BsTreeWithStatusRow" msprop:Generator_TableClassName="BsTreeWithStatusDataTable" msprop:Generator_TableVarName="tableBsTreeWithStatus">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="BSTreeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="BSTreeId" msprop:Generator_ColumnPropNameInTable="BSTreeIdColumn" msprop:Generator_ColumnVarNameInTable="columnBSTreeId" msprop:Generator_UserColumnName="BSTreeId" type="xs:int" />
-              <xs:element name="wtime" msprop:Generator_ColumnPropNameInRow="wtime" msprop:Generator_ColumnPropNameInTable="wtimeColumn" msprop:Generator_ColumnVarNameInTable="columnwtime" msprop:Generator_UserColumnName="wtime" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="chno" msprop:Generator_ColumnPropNameInRow="chno" msprop:Generator_ColumnPropNameInTable="chnoColumn" msprop:Generator_ColumnVarNameInTable="columnchno" msprop:Generator_UserColumnName="chno" type="xs:int" minOccurs="0" />
-              <xs:element name="AssetId" msprop:Generator_ColumnPropNameInRow="AssetId" msprop:Generator_ColumnPropNameInTable="AssetIdColumn" msprop:Generator_ColumnVarNameInTable="columnAssetId" msprop:Generator_UserColumnName="AssetId" type="xs:int" minOccurs="0" />
-              <xs:element name="MusicId" msprop:Generator_ColumnPropNameInRow="MusicId" msprop:Generator_ColumnPropNameInTable="MusicIdColumn" msprop:Generator_ColumnVarNameInTable="columnMusicId" msprop:Generator_UserColumnName="MusicId" type="xs:int" minOccurs="0" />
-              <xs:element name="EMNAME" msprop:Generator_ColumnPropNameInRow="EMNAME" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:Generator_ColumnVarNameInTable="columnEMNAME" msprop:Generator_UserColumnName="EMNAME">
+              <xs:element name="BSTreeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="BSTreeIdColumn" msprop:Generator_ColumnPropNameInRow="BSTreeId" msprop:Generator_UserColumnName="BSTreeId" msprop:Generator_ColumnVarNameInTable="columnBSTreeId" type="xs:int" />
+              <xs:element name="wtime" msprop:Generator_ColumnPropNameInTable="wtimeColumn" msprop:Generator_ColumnPropNameInRow="wtime" msprop:Generator_UserColumnName="wtime" msprop:Generator_ColumnVarNameInTable="columnwtime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="chno" msprop:Generator_ColumnPropNameInTable="chnoColumn" msprop:Generator_ColumnPropNameInRow="chno" msprop:Generator_UserColumnName="chno" msprop:Generator_ColumnVarNameInTable="columnchno" type="xs:int" minOccurs="0" />
+              <xs:element name="AssetId" msprop:Generator_ColumnPropNameInTable="AssetIdColumn" msprop:Generator_ColumnPropNameInRow="AssetId" msprop:Generator_UserColumnName="AssetId" msprop:Generator_ColumnVarNameInTable="columnAssetId" type="xs:int" minOccurs="0" />
+              <xs:element name="MusicId" msprop:Generator_ColumnPropNameInTable="MusicIdColumn" msprop:Generator_ColumnPropNameInRow="MusicId" msprop:Generator_UserColumnName="MusicId" msprop:Generator_ColumnVarNameInTable="columnMusicId" type="xs:int" minOccurs="0" />
+              <xs:element name="EMNAME" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:Generator_ColumnPropNameInRow="EMNAME" msprop:Generator_UserColumnName="EMNAME" msprop:Generator_ColumnVarNameInTable="columnEMNAME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="playing" msprop:Generator_ColumnPropNameInRow="playing" msprop:Generator_ColumnPropNameInTable="playingColumn" msprop:Generator_ColumnVarNameInTable="columnplaying" msprop:Generator_UserColumnName="playing" minOccurs="0">
+              <xs:element name="playing" msprop:Generator_ColumnPropNameInTable="playingColumn" msprop:Generator_ColumnPropNameInRow="playing" msprop:Generator_UserColumnName="playing" msprop:Generator_ColumnVarNameInTable="columnplaying" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="state" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_ColumnPropNameInTable="stateColumn" msprop:Generator_ColumnVarNameInTable="columnstate" msprop:Generator_UserColumnName="state" minOccurs="0">
+              <xs:element name="state" msprop:Generator_ColumnPropNameInTable="stateColumn" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_UserColumnName="state" msprop:Generator_ColumnVarNameInTable="columnstate" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="user_name" msprop:Generator_ColumnPropNameInRow="user_name" msprop:Generator_ColumnPropNameInTable="user_nameColumn" msprop:Generator_ColumnVarNameInTable="columnuser_name" msprop:Generator_UserColumnName="user_name" minOccurs="0">
+              <xs:element name="user_name" msprop:Generator_ColumnPropNameInTable="user_nameColumn" msprop:Generator_ColumnPropNameInRow="user_name" msprop:Generator_UserColumnName="user_name" msprop:Generator_ColumnVarNameInTable="columnuser_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DeviceWithType" msprop:Generator_RowClassName="DeviceWithTypeRow" msprop:Generator_RowEvHandlerName="DeviceWithTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="DeviceWithTypeRowDeleted" msprop:Generator_RowDeletingName="DeviceWithTypeRowDeleting" msprop:Generator_RowEvArgName="DeviceWithTypeRowChangeEvent" msprop:Generator_TablePropName="DeviceWithType" msprop:Generator_RowChangedName="DeviceWithTypeRowChanged" msprop:Generator_UserTableName="DeviceWithType" msprop:Generator_RowChangingName="DeviceWithTypeRowChanging" msprop:Generator_TableClassName="DeviceWithTypeDataTable" msprop:Generator_TableVarName="tableDeviceWithType">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DeviceId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="DeviceId" msprop:Generator_ColumnPropNameInTable="DeviceIdColumn" msprop:Generator_ColumnPropNameInRow="DeviceId" msprop:Generator_ColumnVarNameInTable="columnDeviceId" type="xs:int" />
+              <xs:element name="deviceType" msprop:Generator_UserColumnName="deviceType" msprop:Generator_ColumnPropNameInTable="deviceTypeColumn" msprop:Generator_ColumnPropNameInRow="deviceType" msprop:Generator_ColumnVarNameInTable="columndeviceType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="device" msprop:Generator_UserColumnName="device" msprop:Generator_ColumnPropNameInTable="deviceColumn" msprop:Generator_ColumnPropNameInRow="device" msprop:Generator_ColumnVarNameInTable="columndevice" type="xs:int" minOccurs="0" />
+              <xs:element name="ip" msprop:Generator_UserColumnName="ip" msprop:Generator_ColumnPropNameInTable="ipColumn" msprop:Generator_ColumnPropNameInRow="ip" msprop:Generator_ColumnVarNameInTable="columnip" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ip_dspctrl" msprop:Generator_UserColumnName="ip_dspctrl" msprop:Generator_ColumnPropNameInTable="ip_dspctrlColumn" msprop:Generator_ColumnPropNameInRow="ip_dspctrl" msprop:Generator_ColumnVarNameInTable="columnip_dspctrl" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeviceName" msprop:Generator_UserColumnName="DeviceName" msprop:Generator_ColumnPropNameInTable="DeviceNameColumn" msprop:Generator_ColumnPropNameInRow="DeviceName" msprop:Generator_ColumnVarNameInTable="columnDeviceName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DanteModelName" msprop:Generator_UserColumnName="DanteModelName" msprop:Generator_ColumnPropNameInTable="DanteModelNameColumn" msprop:Generator_ColumnPropNameInRow="DanteModelName" msprop:Generator_ColumnVarNameInTable="columnDanteModelName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="chspk" msprop:Generator_UserColumnName="chspk" msprop:Generator_ColumnPropNameInTable="chspkColumn" msprop:Generator_ColumnPropNameInRow="chspk" msprop:Generator_ColumnVarNameInTable="columnchspk" type="xs:int" minOccurs="0" />
+              <xs:element name="dsp_name" msprop:Generator_UserColumnName="dsp_name" msprop:Generator_ColumnPropNameInTable="dsp_nameColumn" msprop:Generator_ColumnPropNameInRow="dsp_name" msprop:Generator_ColumnVarNameInTable="columndsp_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsp_chno" msprop:Generator_UserColumnName="dsp_chno" msprop:Generator_ColumnPropNameInTable="dsp_chnoColumn" msprop:Generator_ColumnPropNameInRow="dsp_chno" msprop:Generator_ColumnVarNameInTable="columndsp_chno" type="xs:int" minOccurs="0" />
+              <xs:element name="dsp_vol" msprop:Generator_UserColumnName="dsp_vol" msprop:Generator_ColumnPropNameInTable="dsp_volColumn" msprop:Generator_ColumnPropNameInRow="dsp_vol" msprop:Generator_ColumnVarNameInTable="columndsp_vol" type="xs:int" minOccurs="0" />
+              <xs:element name="dsp_vol_em" msprop:Generator_UserColumnName="dsp_vol_em" msprop:Generator_ColumnPropNameInTable="dsp_vol_emColumn" msprop:Generator_ColumnPropNameInRow="dsp_vol_em" msprop:Generator_ColumnVarNameInTable="columndsp_vol_em" type="xs:int" minOccurs="0" />
+              <xs:element name="path" msprop:Generator_UserColumnName="path" msprop:Generator_ColumnPropNameInTable="pathColumn" msprop:Generator_ColumnPropNameInRow="path" msprop:Generator_ColumnVarNameInTable="columnpath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="floor_em" msprop:Generator_UserColumnName="floor_em" msprop:Generator_ColumnPropNameInTable="floor_emColumn" msprop:Generator_ColumnPropNameInRow="floor_em" msprop:Generator_ColumnVarNameInTable="columnfloor_em" type="xs:int" minOccurs="0" />
+              <xs:element name="emData" msprop:Generator_UserColumnName="emData" msprop:Generator_ColumnPropNameInTable="emDataColumn" msprop:Generator_ColumnPropNameInRow="emData" msprop:Generator_ColumnVarNameInTable="columnemData" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="chCount" msprop:Generator_UserColumnName="chCount" msprop:Generator_ColumnPropNameInTable="chCountColumn" msprop:Generator_ColumnPropNameInRow="chCount" msprop:Generator_ColumnVarNameInTable="columnchCount" type="xs:int" minOccurs="0" />
+              <xs:element name="EMNAME" msprop:Generator_UserColumnName="EMNAME" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:Generator_ColumnPropNameInRow="EMNAME" msprop:Generator_ColumnVarNameInTable="columnEMNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZoneName" msprop:Generator_ColumnPropNameInRow="ZoneName" msprop:Generator_ColumnPropNameInTable="ZoneNameColumn" msprop:Generator_ColumnVarNameInTable="columnZoneName" msprop:Generator_UserColumnName="ZoneName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
@@ -3109,6 +3237,10 @@ FROM  BSTree AS a LEFT OUTER JOIN EMServer AS b ON (a.EMNAME = b.EMNAME)</Comman
     <xs:unique name="BsTreeWithStatus_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:BsTreeWithStatus" />
       <xs:field xpath="mstns:BSTreeId" />
+    </xs:unique>
+    <xs:unique name="DeviceWithType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DeviceWithType" />
+      <xs:field xpath="mstns:DeviceId" />
     </xs:unique>
   </xs:element>
 </xs:schema>
