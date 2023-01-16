@@ -274,6 +274,11 @@ namespace pa
                         r1.io = 0;
                         r1.devicein = "";
                         r1.deviceinch = 0;
+                        if (num > 16 && num < 25)
+                        {
+                            r1.deviceinch = num - 16;
+                        }
+
                         num++;
                         DeviceChannel.Rows.Add(r1);
                         var t2 = Dbsave<DeviceChannel>("DeviceChannels", (DataRow)r1);

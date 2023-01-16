@@ -480,6 +480,10 @@ namespace simplepa2
                         r1.io = 0;
                         r1.devicein = "";
                         r1.deviceinch = 0;
+                        if (num > 16 && num < 25)
+                        { 
+                            r1.deviceinch = num-16;
+                        }
                         num++;
                         Ds1.DeviceChannel.Rows.Add(r1);
                     }

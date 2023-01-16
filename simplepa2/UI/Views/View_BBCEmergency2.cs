@@ -103,5 +103,10 @@ namespace simplepa2.UI.Views
                 Console.WriteLine(e1.Message);
             }
         }
+
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
