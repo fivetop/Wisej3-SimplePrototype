@@ -429,122 +429,6 @@ namespace simplepa2
 
         #endregion
 
-        #region // Device 장치관리 부분 
-        // dsp 저장후 상세정보 저장 
-        // dsp ch info 저장 
-        public void saveDBDSPCH(IEnumerable<Device> gs1)
-        {
-            Tam.DeviceTableAdapter.Fill(Ds1.Device);
-            Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
-            try
-            {
-                foreach (var t1 in gs1)
-                {
-                    var s1 = Ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
-                    if (s1 == null)
-                        continue;
-                    t1.DeviceId = s1.DeviceId;
-                    if (t1.ch.Count < 2)
-                        continue;
-
-                    var s2 = Ds1.DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
-                    if (s2.Count() > 0)
-                        continue;
-
-                    for (int i = 0; i < t1.ch.Count; i++)
-                    {
-                        DeviceChannelRow r1 = Ds1.DeviceChannel.NewDeviceChannelRow();
-                        r1.chno = t1.ch[i].chno;
-                        r1.chname = t1.ch[i].chname[0];
-                        r1.DeviceId = t1.DeviceId;
-                        r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
-                        r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
-                        r1.io = 1;
-                        r1.devicein = "";
-                        r1.deviceinch = 0;
-                        Ds1.DeviceChannel.Rows.Add(r1);
-                    }
-
-                    int num = 1;
-                    if (t1.ch.Count < 17)
-                        num = 17;
-
-                    for (int i = 0; i < t1.ch.Count; i++)
-                    {
-                        DeviceChannelRow r1 = Ds1.DeviceChannel.NewDeviceChannelRow();
-                        r1.chno = num.ToString();
-                        r1.chname = "IN"+num.ToString();
-                        r1.DeviceId = t1.DeviceId;
-                        r1.dsp_out_ch1 = "";
-                        r1.dsp_out_ch2 = "";
-                        r1.io = 0;
-                        r1.devicein = "";
-                        r1.deviceinch = 0;
-                        if (num > 16 && num < 25)
-                        { 
-                            r1.deviceinch = num-16;
-                        }
-                        num++;
-                        Ds1.DeviceChannel.Rows.Add(r1);
-                    }
-                    Tam.DeviceChannelTableAdapter.Update(Ds1.DeviceChannel);
-                }
-            }
-            catch (Exception e1)
-            {
-                Console.WriteLine(e1.Message);
-            }
-        }
-
-        // Device ADD
-        public void NewDeviceRow(Device t1, int v)
-        {
-            DeviceRow m1 = Ds1.Device.NewDeviceRow();
-            m1.DanteModelName = t1.DanteModelName;
-            m1.DeviceName = t1.DeviceName;
-            m1.device = t1.device;
-            m1.ip = t1.ip;
-            m1.ip_dspctrl = t1.ip_dspctrl;
-            m1.name = t1.name;
-            m1.chCount = t1.ch.Count();
-            m1.chspk = v;
-            m1.dsp_chno = 0;
-            m1.dsp_name = "";
-            m1.dsp_vol = 0;
-            m1.dsp_vol_em = 0;
-            m1.emData = "";
-            m1.floor_em = 0;
-            m1.path = "";
-            Ds1.Device.Rows.Add(m1);
-            Tam.DeviceTableAdapter.Update(Ds1.Device);
-        }
-
-        public void Save(object o1)
-        {
-            var t1 = o1.GetType();
-
-            try
-            {
-                //switch (t1.BaseType.Name)
-                switch (t1.Name)
-                {
-                    case "EventvmRow":
-                        Ds1.Eventvm.Rows.Add((EventvmRow)o1);
-                        Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
-                        break;
-                    case "SimplepaRow":
-                        Ds1.Simplepa.Rows.Add((SimplepaRow)o1);
-                        Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
-                        break;
-                }
-                //g.Log(t1.Name + " Save OK..");
-            }
-            catch (Exception e1)
-            {
-                Console.WriteLine(e1.Message);
-            }
-        }
-        #endregion
 
         #region // EMServer 부분 
 
@@ -904,12 +788,134 @@ namespace simplepa2
 
         #endregion
 
+        #region // not use // Device 장치관리 부분 
+
+        /*
+        // dsp 저장후 상세정보 저장 
+        // dsp ch info 저장 
+        public void saveDBDSPCH(IEnumerable<Device> gs1)
+        {
+            Tam.DeviceTableAdapter.Fill(Ds1.Device);
+            Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
+            try
+            {
+                foreach (var t1 in gs1)
+                {
+                    var s1 = Ds1.Device.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+                    if (s1 == null)
+                        continue;
+                    t1.DeviceId = s1.DeviceId;
+                    if (t1.ch.Count < 2)
+                        continue;
+
+                    var s2 = Ds1.DeviceChannel.Where(p => p.DeviceId == t1.DeviceId).ToList();
+                    if (s2.Count() > 0)
+                        continue;
+
+                    for (int i = 0; i < t1.ch.Count; i++)
+                    {
+                        DeviceChannelRow r1 = Ds1.DeviceChannel.NewDeviceChannelRow();
+                        r1.chno = t1.ch[i].chno;
+                        r1.chname = t1.ch[i].chname[0];
+                        r1.DeviceId = t1.DeviceId;
+                        r1.dsp_out_ch1 = t1.dsp_out_ch1[i];
+                        r1.dsp_out_ch2 = t1.dsp_out_ch2[i];
+                        r1.io = 1;
+                        r1.devicein = "";
+                        r1.deviceinch = 0;
+                        Ds1.DeviceChannel.Rows.Add(r1);
+                    }
+
+                    int num = 1;
+                    if (t1.ch.Count < 17)
+                        num = 17;
+
+                    for (int i = 0; i < t1.ch.Count; i++)
+                    {
+                        DeviceChannelRow r1 = Ds1.DeviceChannel.NewDeviceChannelRow();
+                        r1.chno = num.ToString();
+                        r1.chname = "IN" + num.ToString();
+                        r1.DeviceId = t1.DeviceId;
+                        r1.dsp_out_ch1 = "";
+                        r1.dsp_out_ch2 = "";
+                        r1.io = 0;
+                        r1.devicein = "";
+                        r1.deviceinch = 0;
+                        if (num > 16 && num < 25)
+                        {
+                            r1.deviceinch = num - 16;
+                        }
+                        num++;
+                        Ds1.DeviceChannel.Rows.Add(r1);
+                    }
+                    Tam.DeviceChannelTableAdapter.Update(Ds1.DeviceChannel);
+                }
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.Message);
+            }
+        }
+
+        // Device ADD
+        public void NewDeviceRow(Device t1, int v)
+        {
+            DeviceRow m1 = Ds1.Device.NewDeviceRow();
+            m1.DanteModelName = t1.DanteModelName;
+            m1.DeviceName = t1.DeviceName;
+            m1.device = t1.device;
+            m1.ip = t1.ip;
+            m1.ip_dspctrl = t1.ip_dspctrl;
+            m1.name = t1.name;
+            m1.chCount = t1.ch.Count();
+            m1.chspk = v;
+            m1.dsp_chno = 0;
+            m1.dsp_name = "";
+            m1.dsp_vol = 0;
+            m1.dsp_vol_em = 0;
+            m1.emData = "";
+            m1.floor_em = 0;
+            m1.path = "";
+            Ds1.Device.Rows.Add(m1);
+            Tam.DeviceTableAdapter.Update(Ds1.Device);
+        }
+
+        public void Save(object o1)
+        {
+            var t1 = o1.GetType();
+
+            try
+            {
+                //switch (t1.BaseType.Name)
+                switch (t1.Name)
+                {
+                    case "EventvmRow":
+                        Ds1.Eventvm.Rows.Add((EventvmRow)o1);
+                        Tam.EventvmTableAdapter.Update(Ds1.Eventvm);
+                        break;
+                    case "SimplepaRow":
+                        Ds1.Simplepa.Rows.Add((SimplepaRow)o1);
+                        Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
+                        break;
+                }
+                //g.Log(t1.Name + " Save OK..");
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.Message);
+            }
+        }
+
+        */
+
+
         /*
         var t1 = dbContext.AssetBases.Where(a1 => msg.assetsRows.Contains(a1.AssetBaseId));
         bSTree.AssetBases = t1.ToList(); // .ToList();
         var t2 = dbContext.Musics.Where(a1 => msg.musicsRows.Contains(a1.MusicId));
         bSTree.Musics = t2.ToList();
         */
+        #endregion
 
     }
 }
