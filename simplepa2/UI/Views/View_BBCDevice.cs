@@ -29,8 +29,8 @@ namespace simplepa2.UI.Views
 
         internal void reDraw()
         {
-            this.deviceTableAdapter1.Fill(this.dataSet11.Device);
-            this.dg_deviceView.DataSource = dataSet11.Device;
+            this.deviceWithTypeTableAdapter1.Fill(this.dataSet11.DeviceWithType);            
+            this.dg_deviceView.DataSource = dataSet11.DeviceWithType;
         }
 
         private void dataGridView3_DataUpdated(object sender, DataGridViewDataUpdatedEventArgs e)
@@ -90,13 +90,13 @@ namespace simplepa2.UI.Views
         }
 
         private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
-        {
+        {            
             string selectedItem = sender as string; 
 
             if (!selectedItem.Equals("전체"))
-                this.dg_deviceView.DataSource = dataSet11.Device.Select("EMNAME = '" + selectedItem + "'");
+                this.dg_deviceView.DataSource = dataSet11.DeviceWithType.Select("EMNAME = '" + selectedItem + "'");
             else
-                this.dg_deviceView.DataSource = dataSet11.Device;
+                this.dg_deviceView.DataSource = dataSet11.DeviceWithType;
 
         }
 

@@ -35,8 +35,6 @@
             this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.bt_WholeSelect = new Wisej.Web.Button();
             this.bt_dataDelete = new Wisej.Web.Button();
-            this.lb_BuildingName = new Wisej.Web.Label();
-            this.cb_SiteName = new Wisej.Web.ComboBox();
             this.bt_StoreData = new Wisej.Web.Button();
             this.bt_SelectLoading = new Wisej.Web.Button();
             this.bt_ImportCSV = new Wisej.Web.Button();
@@ -49,6 +47,7 @@
             this.assetPresetGroupsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetPresetGroupsTableAdapter();
             this.emServerTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerTableAdapter();
             this.bsTreeTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeTableAdapter();
+            this.emServerNDeviceNameTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerNDeviceNameTableAdapter();
             this.pn_ViewMain.SuspendLayout();
             this.pn_TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -82,8 +81,6 @@
             this.pn_TopBar.Controls.Add(this.comp_Site1);
             this.pn_TopBar.Controls.Add(this.bt_WholeSelect);
             this.pn_TopBar.Controls.Add(this.bt_dataDelete);
-            this.pn_TopBar.Controls.Add(this.lb_BuildingName);
-            this.pn_TopBar.Controls.Add(this.cb_SiteName);
             this.pn_TopBar.Controls.Add(this.bt_StoreData);
             this.pn_TopBar.Controls.Add(this.bt_SelectLoading);
             this.pn_TopBar.Controls.Add(this.bt_ImportCSV);
@@ -95,9 +92,10 @@
             // 
             // comp_Site1
             // 
-            this.comp_Site1.Location = new System.Drawing.Point(399, 3);
+            this.comp_Site1.Location = new System.Drawing.Point(0, -1);
             this.comp_Site1.Name = "comp_Site1";
             this.comp_Site1.TabIndex = 95;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // bt_WholeSelect
             // 
@@ -128,30 +126,6 @@
             this.bt_dataDelete.TabIndex = 93;
             this.bt_dataDelete.Text = "전체 삭제";
             this.bt_dataDelete.Click += new System.EventHandler(this.bt_dataDelete_Click);
-            // 
-            // lb_BuildingName
-            // 
-            this.lb_BuildingName.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_BuildingName.Location = new System.Drawing.Point(0, 0);
-            this.lb_BuildingName.Name = "lb_BuildingName";
-            this.lb_BuildingName.Size = new System.Drawing.Size(68, 32);
-            this.lb_BuildingName.TabIndex = 92;
-            this.lb_BuildingName.Text = "사이트명";
-            this.lb_BuildingName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cb_SiteName
-            // 
-            this.cb_SiteName.AutoSize = false;
-            this.cb_SiteName.DisplayMember = "EMNAME";
-            this.cb_SiteName.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
-            this.cb_SiteName.Items.AddRange(new object[] {
-            "전체"});
-            this.cb_SiteName.Location = new System.Drawing.Point(71, 0);
-            this.cb_SiteName.Margin = new Wisej.Web.Padding(0);
-            this.cb_SiteName.Name = "cb_SiteName";
-            this.cb_SiteName.Size = new System.Drawing.Size(200, 32);
-            this.cb_SiteName.TabIndex = 91;
-            this.cb_SiteName.SelectedIndexChanged += new System.EventHandler(this.cb_SiteName_SelectedIndexChanged);
             // 
             // bt_StoreData
             // 
@@ -236,6 +210,10 @@
             // 
             this.bsTreeTableAdapter1.ClearBeforeFill = true;
             // 
+            // emServerNDeviceNameTableAdapter1
+            // 
+            this.emServerNDeviceNameTableAdapter1.ClearBeforeFill = true;
+            // 
             // View_BBCZone
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -259,8 +237,6 @@
         private Wisej.Web.Button bt_ImportCSV;
         private Wisej.Web.Button bt_SelectLoading;
         private Wisej.Web.Button bt_StoreData;
-        private Wisej.Web.Label lb_BuildingName;
-        private Wisej.Web.ComboBox cb_SiteName;
         private Wisej.Web.Button bt_dataDelete;
         private Wisej.Web.Panel pn_Contents;
         private Wisej.Web.Button bt_WholeSelect;
@@ -274,5 +250,6 @@
         private DataSet1TableAdapters.EMServerTableAdapter emServerTableAdapter1;
         private DataSet1TableAdapters.BSTreeTableAdapter bsTreeTableAdapter1;
         private Components.Comp_Site comp_Site1;
+        private DataSet1TableAdapters.EMServerNDeviceNameTableAdapter emServerNDeviceNameTableAdapter1;
     }
 }

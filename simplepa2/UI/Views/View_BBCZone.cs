@@ -35,6 +35,8 @@ namespace simplepa2.UI.Views
 
             // Combo Setup, 이후 데이터는 콤보 셋업에 따라 동작함 
             comboUISetup();
+
+
         }
 
         public void dbInit()
@@ -54,8 +56,8 @@ namespace simplepa2.UI.Views
         public void comboUISetup()
         {
             // cb_SiteName
-            cb_SiteName.DataSource = this.dataSet11.EMServerWithWholeCol;            
-            this.cb_SiteName.SelectedIndex = 0;
+            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.reDraw();
         }
 
         /* 로딩 버튼을 누른경우 */
@@ -64,25 +66,6 @@ namespace simplepa2.UI.Views
             dbInit();
 
             comboUISetup();
-        }
-        /*  콤보 돌린 경우 */
-        private void cb_SiteName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedItem;
-
-            if (dataSet11.EMServerWithWholeCol.Count == 0)
-                return;
-
-            try {
-                selectedItem =(((this.cb_SiteName.SelectedItem as DataRowView).Row) as DataSet1.EMServerWithWholeColRow).EMNAME;
-            } catch (Exception e2)
-            {
-                selectedItem = null;
-                return;
-            }
-
-            this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
-            this.buildPanelDataList = buildingDataUISetup(selectedItem, NOT_USE_BUILDING_CHECK_BOX);
         }
 
         private List<Comp_ZoneBuildingPanels> buildingDataUISetup(string selectedItem, bool isCheckBoxSetup)
@@ -233,5 +216,26 @@ namespace simplepa2.UI.Views
  
         }
 
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string selectedItem;
+
+            if (sender == null)
+                return;
+
+            try
+            {
+                selectedItem = sender.ToString();
+            }
+            catch (Exception e2)
+            {
+                selectedItem = null;
+                return;
+            }
+
+            this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
+            this.buildPanelDataList = buildingDataUISetup(selectedItem, NOT_USE_BUILDING_CHECK_BOX);
+
+        }
     }
 }
