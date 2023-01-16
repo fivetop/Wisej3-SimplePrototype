@@ -1,4 +1,5 @@
-﻿using System;
+﻿using simplepa2.UI.Components;
+using System;
 using Wisej.Web;
 
 namespace simplepa2.UI.Views
@@ -10,9 +11,17 @@ namespace simplepa2.UI.Views
             InitializeComponent();
         }
 
-        private void label64_Click(object sender, EventArgs e)
+        public void reDraw()
         {
 
+            this.panel_filePlayerLocation.Controls.Clear();
+            this.panel_filePlayerLocation.Controls.Add(new Comp_FilePlayer());
+            this.panel_filePlayerLocation.Height = 360;
+        }
+
+        private void View_BBSMusicManage_Load(object sender, EventArgs e)
+        {
+            reDraw();
         }
     }
 }

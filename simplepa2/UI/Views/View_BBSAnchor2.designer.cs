@@ -64,14 +64,14 @@
             this.bindingEMCombo = new Wisej.Web.BindingSource(this.components);
             this.panel3 = new Wisej.Web.Panel();
             this.splitContainer2 = new Wisej.Web.SplitContainer();
-            this.dataGridView2 = new Wisej.Web.DataGridView();
-            this.colFilename = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colFilecontent = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.panel1 = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
             this.colSeq = new Wisej.Web.DataGridViewTextBoxColumn();
             this.chk = new Wisej.Web.DataGridViewCheckBoxColumn();
             this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel1 = new Wisej.Web.Panel();
+            this.dataGridView2 = new Wisej.Web.DataGridView();
+            this.colFilename = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colFilecontent = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel5 = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
             this.panel35 = new Wisej.Web.Panel();
@@ -98,11 +98,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel35.SuspendLayout();
             this.panel41.SuspendLayout();
@@ -272,58 +272,15 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.dataGridView2);
             this.splitContainer2.Panel1.TabStop = true;
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer2.Panel2.TabStop = true;
             this.splitContainer2.Size = new System.Drawing.Size(808, 804);
-            this.splitContainer2.SplitterDistance = 354;
+            this.splitContainer2.SplitterDistance = 175;
             this.splitContainer2.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.colFilename,
-            this.colFilecontent});
-            this.dataGridView2.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView2.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 14;
-            this.dataGridView2.Size = new System.Drawing.Size(808, 354);
-            this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.CellMouseClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseClick);
-            // 
-            // colFilename
-            // 
-            this.colFilename.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFilename.DataPropertyName = "FileName";
-            this.colFilename.HeaderText = "방송파일";
-            this.colFilename.Name = "colFilename";
-            this.colFilename.Width = 150;
-            // 
-            // colFilecontent
-            // 
-            this.colFilecontent.DataPropertyName = "duration";
-            this.colFilecontent.HeaderText = "재생시간";
-            this.colFilecontent.Name = "colFilecontent";
-            this.colFilecontent.Width = 120;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = Wisej.Web.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.MaximumSize = new System.Drawing.Size(550, 836);
-            this.panel1.MinimumSize = new System.Drawing.Size(550, 836);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(550, 836);
-            this.panel1.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -335,16 +292,15 @@
             this.dataGridView1.DataSource = this.assetsBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 190);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 14;
             this.dataGridView1.RowHeadersWidthSizeMode = Wisej.Web.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ShowFocusCell = false;
-            this.dataGridView1.Size = new System.Drawing.Size(550, 646);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.Size = new System.Drawing.Size(808, 613);
+            this.dataGridView1.TabIndex = 3;
             // 
             // colSeq
             // 
@@ -370,6 +326,48 @@
             this.colPath.HeaderText = "지역";
             this.colPath.Name = "colPath";
             this.colPath.Width = 300;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = Wisej.Web.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.MaximumSize = new System.Drawing.Size(550, 836);
+            this.panel1.MinimumSize = new System.Drawing.Size(550, 836);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(550, 836);
+            this.panel1.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
+            this.colFilename,
+            this.colFilecontent});
+            this.dataGridView2.Dock = Wisej.Web.DockStyle.Fill;
+            this.dataGridView2.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 190);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 14;
+            this.dataGridView2.Size = new System.Drawing.Size(550, 646);
+            this.dataGridView2.TabIndex = 168;
+            // 
+            // colFilename
+            // 
+            this.colFilename.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFilename.DataPropertyName = "FileName";
+            this.colFilename.HeaderText = "방송파일";
+            this.colFilename.Name = "colFilename";
+            this.colFilename.Width = 150;
+            // 
+            // colFilecontent
+            // 
+            this.colFilecontent.DataPropertyName = "duration";
+            this.colFilecontent.HeaderText = "재생시간";
+            this.colFilecontent.Name = "colFilecontent";
+            this.colFilecontent.Width = 120;
             // 
             // panel5
             // 
@@ -412,7 +410,7 @@
             this.label39.CssStyle = "border-radius:30px";
             this.label39.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(399, 28);
+            this.label39.Location = new System.Drawing.Point(355, 28);
             this.label39.Margin = new Wisej.Web.Padding(0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(60, 60);
@@ -425,7 +423,7 @@
             this.label40.BackColor = System.Drawing.Color.Transparent;
             this.label40.Font = new System.Drawing.Font("ns700", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label40.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label40.Location = new System.Drawing.Point(399, 0);
+            this.label40.Location = new System.Drawing.Point(355, 0);
             this.label40.Margin = new Wisej.Web.Padding(0);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(60, 20);
@@ -435,11 +433,12 @@
             // 
             // label37
             // 
+            this.label37.Anchor = Wisej.Web.AnchorStyles.Left;
             this.label37.BackColor = System.Drawing.Color.FromArgb(7, 216, 21);
             this.label37.CssStyle = "border-radius:30px";
             this.label37.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(280, 28);
+            this.label37.Location = new System.Drawing.Point(219, 28);
             this.label37.Margin = new Wisej.Web.Padding(0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(60, 60);
@@ -452,7 +451,7 @@
             this.label38.BackColor = System.Drawing.Color.Transparent;
             this.label38.Font = new System.Drawing.Font("ns700", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label38.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label38.Location = new System.Drawing.Point(280, 0);
+            this.label38.Location = new System.Drawing.Point(219, 0);
             this.label38.Margin = new Wisej.Web.Padding(0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(60, 20);
@@ -466,7 +465,7 @@
             this.label31.CssStyle = "border-radius:30px";
             this.label31.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(165, 28);
+            this.label31.Location = new System.Drawing.Point(82, 28);
             this.label31.Margin = new Wisej.Web.Padding(0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(60, 60);
@@ -479,7 +478,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("ns700", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label16.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label16.Location = new System.Drawing.Point(165, 0);
+            this.label16.Location = new System.Drawing.Point(82, 0);
             this.label16.Margin = new Wisej.Web.Padding(0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(60, 20);
@@ -549,12 +548,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
@@ -586,14 +585,7 @@
         private Wisej.Web.Button btnStop;
         private Wisej.Web.Button btnStart;
         private Wisej.Web.Panel panel3;
-        private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn colSeq;
-        private Wisej.Web.DataGridViewCheckBoxColumn chk;
-        private Wisej.Web.DataGridViewTextBoxColumn colPath;
         private Wisej.Web.SplitContainer splitContainer2;
-        private Wisej.Web.DataGridView dataGridView2;
-        private Wisej.Web.DataGridViewTextBoxColumn colFilename;
-        private Wisej.Web.DataGridViewTextBoxColumn colFilecontent;
         private Wisej.Web.Panel panel2;
         private Wisej.Web.Panel panel35;
         private Wisej.Web.Label label39;
@@ -613,5 +605,12 @@
         private Wisej.Web.BindingSource bindingEMCombo;
         private Wisej.Web.BindingSource dataSet1BindingSource;
         private Components.Comp_Site comp_Site1;
+        private Wisej.Web.DataGridView dataGridView1;
+        private Wisej.Web.DataGridViewTextBoxColumn colSeq;
+        private Wisej.Web.DataGridViewCheckBoxColumn chk;
+        private Wisej.Web.DataGridViewTextBoxColumn colPath;
+        private Wisej.Web.DataGridView dataGridView2;
+        private Wisej.Web.DataGridViewTextBoxColumn colFilename;
+        private Wisej.Web.DataGridViewTextBoxColumn colFilecontent;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.mbindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
             this.musicsTableAdapter = new simplepa2.DataSet1TableAdapters.MusicsTableAdapter();
@@ -40,6 +41,8 @@
             this.dataGridViewTextBoxColumn2 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1 = new Wisej.Web.Panel();
+            this.재생시간 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.FileContent = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mbindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.ptop.SuspendLayout();
@@ -99,7 +102,9 @@
             this.mdataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colMusicid,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.재생시간,
+            this.FileContent});
             this.mdataGridView1.DataSource = this.mbindingSource1;
             this.mdataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.mdataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
@@ -145,6 +150,25 @@
             this.panel1.Size = new System.Drawing.Size(865, 577);
             this.panel1.TabIndex = 2;
             // 
+            // 재생시간
+            // 
+            this.재생시간.DataPropertyName = "duration";
+            dataGridViewCellStyle1.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.재생시간.DefaultCellStyle = dataGridViewCellStyle1;
+            this.재생시간.HeaderText = "재생시간";
+            this.재생시간.MinimumWidth = 100;
+            this.재생시간.Name = "재생시간";
+            this.재생시간.Width = 120;
+            // 
+            // FileContent
+            // 
+            this.FileContent.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
+            this.FileContent.DataPropertyName = "FileContent";
+            this.FileContent.HeaderText = "부가설명";
+            this.FileContent.MinimumWidth = 140;
+            this.FileContent.Name = "FileContent";
+            this.FileContent.Width = 140;
+            // 
             // View_BBSMusicManage2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -176,5 +200,7 @@
         private Wisej.Web.Button mbuttonAdd;
         private Wisej.Web.Upload mupload1;
         private Wisej.Web.Panel panel1;
+        private Wisej.Web.DataGridViewTextBoxColumn 재생시간;
+        private Wisej.Web.DataGridViewTextBoxColumn FileContent;
     }
 }

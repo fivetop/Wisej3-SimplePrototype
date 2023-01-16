@@ -163,6 +163,9 @@
     <EmbeddedResource Include="UI\Components\Comp_DashBoardBBSDeck.resx">
       <DependentUpon>Comp_DashBoardBBSDeck.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_FilePlayer.resx">
+      <DependentUpon>Comp_FilePlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_GroupDetailPanel.resx">
       <DependentUpon>Comp_GroupDetailPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -966,6 +969,12 @@
     </Compile>
     <Compile Include="UI\Components\Comp_DashBoardBBSDeck.Designer.cs">
       <DependentUpon>Comp_DashBoardBBSDeck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_FilePlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_FilePlayer.Designer.cs">
+      <DependentUpon>Comp_FilePlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_GroupDetailPanel.cs">
       <SubType>UserControl</SubType>

@@ -58,6 +58,7 @@ namespace simplepa2.UI.Views
             // cb_SiteName
             comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
             comp_Site1.reDraw();
+            
         }
 
         /* 로딩 버튼을 누른경우 */
@@ -120,6 +121,7 @@ namespace simplepa2.UI.Views
 
         }
 
+
         private void bt_WholeSelect_Click(object sender, EventArgs e)
         {
             bZoneSelectAll = !bZoneSelectAll;
@@ -155,9 +157,9 @@ namespace simplepa2.UI.Views
             // show the gage popup.
             if (this.form_BBCZoneImport == null)
             {
-                this.form_BBCZoneImport = new Form_BBCZoneImport();
-                this.form_BBCZoneImport.Disposed += new System.EventHandler(this.formDisposed);
-                this.form_BBCZoneImport.FormClosed += Form_BBCZoneImport_FormClosed;
+                this.form_BBCZoneImport = new Form_BBCZoneImport();                
+                this.form_BBCZoneImport.Closed += new System.EventHandler(this.Form_BBCZoneImport_Disposed);
+                //this.form_BBCZoneImport.Disposed += new Form
                 this.form_BBCZoneImport.ShowDialog();
             }
             else
@@ -167,15 +169,9 @@ namespace simplepa2.UI.Views
 
         }
 
-        private void Form_BBCZoneImport_FormClosed(object sender, FormClosedEventArgs e)
+        private void Form_BBCZoneImport_Disposed(object sender, EventArgs e)
         {
-            dbInit();
-            comboUISetup();
             gweb.mainFrame.reDraw();
-        }
-
-        private void formDisposed(object sender, EventArgs e)
-        {
         }
 
         private void bt_dataDelete_Click(object sender, EventArgs e)
@@ -189,36 +185,9 @@ namespace simplepa2.UI.Views
             reDraw();
         }
 
-
-
-        private void DeleteAllZoneRecord()
-        {
-            try
-            {                
-                   if (MessageBox.Show("모든 선번 및 관련 데이터를 모두 삭제하시겠습니까?",
-                        icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                    assetPresetGroupsTableAdapter1.DeleteAllQuery();
-                    assetGroupsTableAdapter1.DeleteAllQuery();
-                    assetsTableAdapter1.DeleteAllQuery();
-                    bsTreeTableAdapter1.DeleteAllQuery();
-                    emServerTableAdapter1.DeleteAllQuery();                        
-                    }
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
-            }
-
-            // DB Call
-            dbInit();
- 
-        }
-
         private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
         {
-            string selectedItem;
+            string selectedItem = null;
 
             if (sender == null)
                 return;
@@ -236,6 +205,31 @@ namespace simplepa2.UI.Views
             this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
             this.buildPanelDataList = buildingDataUISetup(selectedItem, NOT_USE_BUILDING_CHECK_BOX);
 
+        }
+
+        private void DeleteAllZoneRecord()
+        {
+            try
+            {                
+                   if (MessageBox.Show("모든 선번 및 관련 데이터를 모두 삭제하시겠습니까?",
+                        icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                    assetPresetGroupsTableAdapter1.DeleteAllQuery();
+                    assetGroupsTableAdapter1.DeleteAllQuery();
+                    assetsTableAdapter1.DeleteAllQuery();
+                    bsTreeTableAdapter1.DeleteAllQuery();
+                    emServerTableAdapter1.DeleteAllQuery();
+                    
+                }                
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
+            }
+
+            // DB Call, Application 전체 Drawing 필요
+            gweb.mainFrame.reDraw();
         }
     }
 }

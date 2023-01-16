@@ -398,23 +398,23 @@ SET IDENTITY_INSERT [dbo].[UserTrees] OFF
 GO
 
 
+USE [simplePA]
 GO
 SET IDENTITY_INSERT [dbo].[TypeData] ON 
 GO
-INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (1, 1, N'GROUP_LIST', N'1', N'컨텐츠 그룹넘버')
+INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (1, 1, 1, N'GROUP_LIST', N'컨텐츠 그룹넘버')
 GO
-INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (2, 1, N'DEVICE_TYPE', N'2', N'디바이스 그룹 단테번호')
+INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (2, 1, 2, N'DEVICE_TYPE', N'디바이스 그룹 단테번호')
 GO
-INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (3, 2, N'AMP', N'0', N'앰프')
+INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (3, 2, 0, N'AMP', N'앰프')
 GO
-INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (4, 2, N'DSP', N'2', N'DSP')
+INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (4, 2, 2, N'DSP', N'DSP')
 GO
-INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (5, 2, N'AVIO', N'3', N'AVIO')
+INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (5, 2, 3, N'AVIO', N'AVIO')
 GO
-INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (6, 2, N'DMIC', N'4', N'DMIC')
+INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (6, 2, 4, N'DMIC', N'DMIC')
 GO
-INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (7, 2, N'DESKTOP', N'5', N'데스크탑,DVS')
+INSERT [dbo].[TypeData] ([type_index], [type_group], [type_variable], [type_contents], [type_description]) VALUES (7, 2, 5, N'DESKTOP', N'데스크탑,DVS')
 GO
 SET IDENTITY_INSERT [dbo].[TypeData] OFF
 GO
-

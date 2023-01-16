@@ -18,6 +18,7 @@ namespace simplepa2.UI.Components
 
         public void reDraw()
         {
+			this.cb_SiteName.DataSource = null;
 			this.cb_SiteName.DataSource = _dataSet;
 			this.cb_SiteName.SelectedIndex = 0;
 		}

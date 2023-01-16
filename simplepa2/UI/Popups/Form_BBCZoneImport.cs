@@ -57,9 +57,9 @@ namespace simplepa2.UI.Popups
         }        
 
         private void bt_inputDecision_Click(object sender, EventArgs e)
-        {
-            
+        {            
             DBInsert(strFileUploadPath + filename);            
+            
         }
         private void SaveStreamAsFile(string filePath, Stream inputStream, string fileName)
         {
@@ -106,6 +106,7 @@ namespace simplepa2.UI.Popups
             gweb.mainFrame.dBSqlite.AssetPresetSave();
 
             this.Close();
+
         }
 
         public AssetsRow assetsTextParcer(String text)
@@ -146,5 +147,7 @@ namespace simplepa2.UI.Popups
             }
             return m2;
         }
+
+
     }
 }

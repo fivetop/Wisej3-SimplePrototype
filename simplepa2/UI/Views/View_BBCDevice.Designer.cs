@@ -30,6 +30,7 @@
         {
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle6 = new Wisej.Web.DataGridViewCellStyle();
@@ -39,12 +40,11 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle10 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle11 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle12 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle13 = new Wisej.Web.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_BBCDevice));
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
             this.panel2 = new Wisej.Web.Panel();
             this.dg_deviceView = new Wisej.Web.DataGridView();
             this.DeviceId = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.관리EM = new Wisej.Web.DataGridViewTextBoxColumn();
             this.device_Category = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ip = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -52,7 +52,6 @@
             this.dsp_name = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ip_dspctrl = new Wisej.Web.DataGridViewTextBoxColumn();
             this.DSP채널 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.dsp_chno = new Wisej.Web.DataGridViewTextBoxColumn();
             this.설치Zone = new Wisej.Web.DataGridViewTextBoxColumn();
             this.지역 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1 = new Wisej.Web.Panel();
@@ -66,7 +65,6 @@
             this.emServerNDeviceNameTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerNDeviceNameTableAdapter();
             this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
             this.deviceWithTypeTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceWithTypeTableAdapter();
-            this.관리EM = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_deviceView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -98,7 +96,6 @@
             this.dsp_name,
             this.ip_dspctrl,
             this.DSP채널,
-            this.dsp_chno,
             this.설치Zone,
             this.지역});
             this.dg_deviceView.Dock = Wisej.Web.DockStyle.Fill;
@@ -120,35 +117,47 @@
             this.DeviceId.Name = "DeviceId";
             this.DeviceId.Width = 60;
             // 
+            // 관리EM
+            // 
+            this.관리EM.DataPropertyName = "EMNAME";
+            dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.관리EM.DefaultCellStyle = dataGridViewCellStyle3;
+            this.관리EM.HeaderText = "관리EM";
+            this.관리EM.MinimumWidth = 70;
+            this.관리EM.Name = "관리EM";
+            // 
             // device_Category
             // 
             this.device_Category.DataPropertyName = "deviceType";
             dataGridViewCellStyle4.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.device_Category.DefaultCellStyle = dataGridViewCellStyle4;
             this.device_Category.HeaderText = "타입";
-            this.device_Category.MinimumWidth = 130;
+            this.device_Category.MinimumWidth = 60;
             this.device_Category.Name = "device_Category";
             this.device_Category.Width = 150;
             // 
             // Column0
             // 
+            this.Column0.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
             this.Column0.DataPropertyName = "DeviceName";
             dataGridViewCellStyle5.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.Column0.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column0.HeaderText = "장비이름";
+            this.Column0.MaximumWidth = 180;
             this.Column0.MinimumWidth = 120;
             this.Column0.Name = "Column0";
             this.Column0.Width = 140;
             // 
             // ip
             // 
+            this.ip.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
             this.ip.DataPropertyName = "ip";
             dataGridViewCellStyle6.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.ip.DefaultCellStyle = dataGridViewCellStyle6;
             this.ip.HeaderText = "IP 주소";
-            this.ip.MinimumWidth = 120;
+            this.ip.MinimumWidth = 160;
             this.ip.Name = "ip";
-            this.ip.Width = 130;
+            this.ip.Width = 160;
             // 
             // 단테모델명
             // 
@@ -167,16 +176,19 @@
             dataGridViewCellStyle8.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.dsp_name.DefaultCellStyle = dataGridViewCellStyle8;
             this.dsp_name.HeaderText = "연결DSP";
+            this.dsp_name.MaximumWidth = 180;
             this.dsp_name.MinimumWidth = 140;
             this.dsp_name.Name = "dsp_name";
             this.dsp_name.Width = 140;
             // 
             // ip_dspctrl
             // 
+            this.ip_dspctrl.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
             this.ip_dspctrl.DataPropertyName = "ip_dspctrl";
             dataGridViewCellStyle9.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.ip_dspctrl.DefaultCellStyle = dataGridViewCellStyle9;
             this.ip_dspctrl.HeaderText = "DSP IP";
+            this.ip_dspctrl.MaximumWidth = 160;
             this.ip_dspctrl.MinimumWidth = 120;
             this.ip_dspctrl.Name = "ip_dspctrl";
             this.ip_dspctrl.Width = 120;
@@ -187,26 +199,15 @@
             dataGridViewCellStyle10.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.DSP채널.DefaultCellStyle = dataGridViewCellStyle10;
             this.DSP채널.HeaderText = "DSP채널";
-            this.DSP채널.MinimumWidth = 60;
+            this.DSP채널.MinimumWidth = 70;
             this.DSP채널.Name = "DSP채널";
-            this.DSP채널.Width = 60;
-            // 
-            // dsp_chno
-            // 
-            this.dsp_chno.DataPropertyName = "dsp_chno";
-            dataGridViewCellStyle11.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.dsp_chno.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dsp_chno.HeaderText = "관리DSP채널";
-            this.dsp_chno.MinimumWidth = 80;
-            this.dsp_chno.Name = "dsp_chno";
-            this.dsp_chno.Visible = false;
-            this.dsp_chno.Width = 80;
+            this.DSP채널.Width = 70;
             // 
             // 설치Zone
             // 
             this.설치Zone.DataPropertyName = "ZoneName";
-            dataGridViewCellStyle12.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.설치Zone.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle11.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.설치Zone.DefaultCellStyle = dataGridViewCellStyle11;
             this.설치Zone.HeaderText = "설치Zone";
             this.설치Zone.MinimumWidth = 100;
             this.설치Zone.Name = "설치Zone";
@@ -215,9 +216,10 @@
             // 
             this.지역.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
             this.지역.DataPropertyName = "path";
-            dataGridViewCellStyle13.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.지역.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle12.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.지역.DefaultCellStyle = dataGridViewCellStyle12;
             this.지역.HeaderText = "지역";
+            this.지역.MaximumWidth = 300;
             this.지역.MinimumWidth = 200;
             this.지역.Name = "지역";
             this.지역.Width = 200;
@@ -321,15 +323,6 @@
             // 
             this.deviceWithTypeTableAdapter1.ClearBeforeFill = true;
             // 
-            // 관리EM
-            // 
-            this.관리EM.DataPropertyName = "EMNAME";
-            dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.관리EM.DefaultCellStyle = dataGridViewCellStyle3;
-            this.관리EM.HeaderText = "관리EM";
-            this.관리EM.MinimumWidth = 100;
-            this.관리EM.Name = "관리EM";
-            // 
             // View_BBCDevice
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -357,7 +350,6 @@
         private Wisej.Web.DataGridViewTextBoxColumn ip;
         private Wisej.Web.DataGridViewTextBoxColumn device_Category;
         private Wisej.Web.DataGridViewTextBoxColumn dsp_name;
-        private Wisej.Web.DataGridViewTextBoxColumn dsp_chno;
         private Wisej.Web.Panel panel1;
         private Wisej.Web.Button bt_scanStart;
         private Wisej.Web.Button button4;

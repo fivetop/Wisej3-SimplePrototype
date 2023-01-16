@@ -30,7 +30,6 @@
         {
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle10 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
@@ -38,11 +37,11 @@
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle7 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle8 = new Wisej.Web.DataGridViewCellStyle();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle9 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle10 = new Wisej.Web.DataGridViewCellStyle();
             this.panel1 = new Wisej.Web.Panel();
             this.dg_assetTextData = new Wisej.Web.DataGridView();
             this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.동 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.비상방송 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.존이름 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.스피커이름 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.앰프정보 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -50,6 +49,7 @@
             this.ZPC = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ZPC입력 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ZPC출력 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.비상방송 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel2 = new Wisej.Web.Panel();
             this.panel136 = new Wisej.Web.Panel();
             this.upload1 = new Wisej.Web.Upload();
@@ -115,18 +115,6 @@
             this.동.DefaultCellStyle = dataGridViewCellStyle2;
             this.동.HeaderText = "건물(층)";
             this.동.Name = "동";
-            // 
-            // 비상방송
-            // 
-            this.비상방송.DataPropertyName = "floor";
-            dataGridViewCellStyle10.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.비상방송.DefaultCellStyle = dataGridViewCellStyle10;
-            this.비상방송.FillWeight = 70F;
-            this.비상방송.HeaderText = "비상방송";
-            this.비상방송.MinimumWidth = 70;
-            this.비상방송.Name = "비상방송";
-            this.비상방송.Visible = false;
-            this.비상방송.Width = 70;
             // 
             // 존이름
             // 
@@ -202,6 +190,18 @@
             this.ZPC출력.MinimumWidth = 70;
             this.ZPC출력.Name = "ZPC출력";
             this.ZPC출력.Width = 70;
+            // 
+            // 비상방송
+            // 
+            this.비상방송.DataPropertyName = "floor";
+            dataGridViewCellStyle10.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.비상방송.DefaultCellStyle = dataGridViewCellStyle10;
+            this.비상방송.FillWeight = 70F;
+            this.비상방송.HeaderText = "비상방송";
+            this.비상방송.MinimumWidth = 70;
+            this.비상방송.Name = "비상방송";
+            this.비상방송.Visible = false;
+            this.비상방송.Width = 70;
             // 
             // panel2
             // 
@@ -295,7 +295,7 @@
             this.HeaderBackColor = System.Drawing.Color.FromName("@button1BG");
             this.Name = "Form_BBCZoneImport";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterScreen;
-            this.Text = "Zone 정보 Import";
+            this.Text = "Zone 정보 Import";            
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_assetTextData)).EndInit();
