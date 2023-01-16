@@ -57,6 +57,7 @@
             this.bSroomTableAdapter = new simplepa2.DataSet1TableAdapters.BSroomTableAdapter();
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.panel4 = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.btnStop = new Wisej.Web.Button();
             this.btnStart = new Wisej.Web.Button();
             this.dataSet11 = new simplepa2.DataSet1();
@@ -86,7 +87,6 @@
             this.bsTreeCTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeCTableAdapter();
             this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
             this.dataSet1BindingSource = new Wisej.Web.BindingSource(this.components);
-            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.membs = new Wisej.Web.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -209,6 +209,13 @@
             this.panel4.Size = new System.Drawing.Size(1360, 54);
             this.panel4.TabIndex = 11;
             this.panel4.TabStop = true;
+            // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Location = new System.Drawing.Point(284, 4);
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 5;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // btnStop
             // 
@@ -518,13 +525,6 @@
             // dataSet1BindingSource
             // 
             this.dataSet1BindingSource.DataSource = this.dataSet1;
-            // 
-            // comp_Site1
-            // 
-            this.comp_Site1.Location = new System.Drawing.Point(284, 4);
-            this.comp_Site1.Name = "comp_Site1";
-            this.comp_Site1.TabIndex = 5;
-            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // membs
             // 

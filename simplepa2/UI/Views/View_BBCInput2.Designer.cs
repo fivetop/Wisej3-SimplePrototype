@@ -41,6 +41,8 @@
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.deviceChannelBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
+            this.panel2 = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.ptop = new Wisej.Web.Panel();
             this.deviceChannelTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceChannelTableAdapter();
             this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
@@ -48,12 +50,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceChannelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.ptop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(20, 20);
             this.panel1.Name = "panel1";
@@ -76,11 +80,11 @@
             this.colDeviceid});
             this.dataGridView3.DataSource = this.deviceChannelBindingSource;
             this.dataGridView3.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Location = new System.Drawing.Point(0, 52);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(758, 459);
+            this.dataGridView3.Size = new System.Drawing.Size(758, 407);
             this.dataGridView3.TabIndex = 2;
             this.dataGridView3.DataUpdated += new Wisej.Web.DataGridViewDataUpdatedEventHandler(this.dataGridView3_DataUpdated);
             // 
@@ -156,6 +160,22 @@
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.comp_Site1);
+            this.panel2.Dock = Wisej.Web.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.ShowCloseButton = false;
+            this.panel2.Size = new System.Drawing.Size(758, 52);
+            this.panel2.TabIndex = 67;
+            // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 96;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
+            // 
             // ptop
             // 
             this.ptop.BackColor = System.Drawing.Color.White;
@@ -189,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceChannelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ptop.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -211,5 +232,7 @@
         private Wisej.Web.DataGridViewComboBoxColumn colDevicein;
         private Wisej.Web.DataGridViewComboBoxColumn colDeviceinch;
         private Wisej.Web.DataGridViewTextBoxColumn Column2;
+        private Wisej.Web.Panel panel2;
+        private Components.Comp_Site comp_Site1;
     }
 }

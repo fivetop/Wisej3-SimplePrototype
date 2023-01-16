@@ -208,6 +208,9 @@ namespace simplepa2.UI.Views
 			DeleteGroup();
 		}
 
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

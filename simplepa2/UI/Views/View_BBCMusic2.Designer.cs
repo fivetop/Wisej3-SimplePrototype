@@ -49,6 +49,7 @@
             this.colDsp_Vol = new Wisej.Web.DataGridViewNumericUpDownColumn();
             this.colDsp_Vol_Em = new Wisej.Web.DataGridViewNumericUpDownColumn();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.ptop.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // ptop
             // 
+            this.ptop.Controls.Add(this.comp_Site1);
             this.ptop.Controls.Add(this.button3);
             this.ptop.Controls.Add(this.button2);
             this.ptop.Controls.Add(this.button1);
@@ -87,7 +89,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(664, 12);
+            this.button3.Location = new System.Drawing.Point(660, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(160, 30);
             this.button3.TabIndex = 2;
@@ -96,24 +98,25 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(469, 12);
+            this.button2.Location = new System.Drawing.Point(546, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 30);
+            this.button2.Size = new System.Drawing.Size(100, 30);
             this.button2.TabIndex = 2;
-            this.button2.Text = "비상볼륨-데이터변경";
+            this.button2.Text = "비상볼륨";
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(136, 12);
+            this.button1.Location = new System.Drawing.Point(356, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 30);
+            this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 2;
-            this.button1.Text = "일반볼륨-데이터변경";
+            this.button1.Text = "일반볼륨";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox2
             // 
+            this.comboBox2.AutoSize = false;
             this.comboBox2.Items.AddRange(new object[] {
             "1",
             "2",
@@ -125,13 +128,14 @@
             "8",
             "9",
             "10"});
-            this.comboBox2.Location = new System.Drawing.Point(341, 10);
+            this.comboBox2.Location = new System.Drawing.Point(475, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(120, 36);
+            this.comboBox2.Size = new System.Drawing.Size(68, 34);
             this.comboBox2.TabIndex = 1;
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoSize = false;
             this.comboBox1.Items.AddRange(new object[] {
             "1",
             "2",
@@ -143,9 +147,9 @@
             "8",
             "9",
             "10"});
-            this.comboBox1.Location = new System.Drawing.Point(8, 10);
+            this.comboBox1.Location = new System.Drawing.Point(282, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 36);
+            this.comboBox1.Size = new System.Drawing.Size(68, 34);
             this.comboBox1.TabIndex = 1;
             // 
             // panel2
@@ -261,6 +265,12 @@
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
             // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 97;
+            this.comp_Site1.Visible = false;
+            // 
             // View_BBCMusic2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -273,7 +283,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ptop.ResumeLayout(false);
-            this.ptop.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -301,5 +310,6 @@
         private Wisej.Web.DataGridViewNumericUpDownColumn colDsp_Vol_Em;
         private Wisej.Web.DataGridViewTextBoxColumn colPath_1;
         private Wisej.Web.DataGridViewTextBoxColumn 채널;
+        private Components.Comp_Site comp_Site1;
     }
 }

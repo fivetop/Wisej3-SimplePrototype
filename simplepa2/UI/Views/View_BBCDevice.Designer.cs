@@ -32,27 +32,25 @@
             this.panel2 = new Wisej.Web.Panel();
             this.dg_deviceView = new Wisej.Web.DataGridView();
             this.DeviceId = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.device = new Wisej.Web.DataGridViewTextBoxColumn();
             this.device_Category = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Column0 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.chspk = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ip = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.device = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_name = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ip_dspctrl = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_chno = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dsp_vol = new Wisej.Web.DataGridViewTextBoxColumn();
             this.DanteModelName = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1 = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.bt_reloading = new Wisej.Web.Button();
-            this.cb_siteName = new Wisej.Web.ComboBox();
             this.bt_scanStart = new Wisej.Web.Button();
             this.button4 = new Wisej.Web.Button();
             this.popTestButton = new Wisej.Web.Button();
-            this.label3 = new Wisej.Web.Label();
             this.dataSet11 = new simplepa2.DataSet1();
             this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
             this.emServerNDeviceNameTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerNDeviceNameTableAdapter();
-            this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_deviceView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -100,13 +98,6 @@
             this.DeviceId.Name = "DeviceId";
             this.DeviceId.Width = 60;
             // 
-            // device
-            // 
-            this.device.DataPropertyName = "path";
-            this.device.HeaderText = "지역";
-            this.device.Name = "device";
-            this.device.Width = 200;
-            // 
             // device_Category
             // 
             this.device_Category.DataPropertyName = "device";
@@ -134,6 +125,13 @@
             this.ip.HeaderText = "IP 주소";
             this.ip.Name = "ip";
             this.ip.Width = 120;
+            // 
+            // device
+            // 
+            this.device.DataPropertyName = "path";
+            this.device.HeaderText = "지역";
+            this.device.Name = "device";
+            this.device.Width = 200;
             // 
             // dsp_name
             // 
@@ -174,12 +172,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comp_Site1);
             this.panel1.Controls.Add(this.bt_reloading);
-            this.panel1.Controls.Add(this.cb_siteName);
             this.panel1.Controls.Add(this.bt_scanStart);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.popTestButton);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = Wisej.Web.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(20, 20);
             this.panel1.Name = "panel1";
@@ -187,13 +184,19 @@
             this.panel1.Size = new System.Drawing.Size(1320, 52);
             this.panel1.TabIndex = 66;
             // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 96;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
+            // 
             // bt_reloading
             // 
             this.bt_reloading.BackColor = System.Drawing.Color.FromName("@activeCaption");
             this.bt_reloading.CssStyle = resources.GetString("bt_reloading.CssStyle");
             this.bt_reloading.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_reloading.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_reloading.Location = new System.Drawing.Point(544, 4);
+            this.bt_reloading.Location = new System.Drawing.Point(747, 4);
             this.bt_reloading.Margin = new Wisej.Web.Padding(0);
             this.bt_reloading.Name = "bt_reloading";
             this.bt_reloading.Size = new System.Drawing.Size(100, 32);
@@ -201,17 +204,6 @@
             this.bt_reloading.Text = "재로딩";
             this.bt_reloading.Visible = false;
             this.bt_reloading.Click += new System.EventHandler(this.bt_reloading_Click);
-            // 
-            // cb_siteName
-            // 
-            this.cb_siteName.DisplayMember = "EMNAME";
-            this.cb_siteName.Items.AddRange(new object[] {
-            "전체"});
-            this.cb_siteName.Location = new System.Drawing.Point(99, 0);
-            this.cb_siteName.Name = "cb_siteName";
-            this.cb_siteName.Size = new System.Drawing.Size(251, 36);
-            this.cb_siteName.TabIndex = 86;
-            this.cb_siteName.SelectedIndexChanged += new System.EventHandler(this.cb_siteName_SelectedIndexChanged);
             // 
             // bt_scanStart
             // 
@@ -233,7 +225,7 @@
             this.button4.BackColor = System.Drawing.Color.FromName("@button1BG");
             this.button4.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button4.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button4.Location = new System.Drawing.Point(654, 4);
+            this.button4.Location = new System.Drawing.Point(857, 4);
             this.button4.Margin = new Wisej.Web.Padding(0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 32);
@@ -248,23 +240,13 @@
             this.popTestButton.BackColor = System.Drawing.Color.FromName("@button1RightBG");
             this.popTestButton.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.popTestButton.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.popTestButton.Location = new System.Drawing.Point(762, 4);
+            this.popTestButton.Location = new System.Drawing.Point(965, 4);
             this.popTestButton.Margin = new Wisej.Web.Padding(0);
             this.popTestButton.Name = "popTestButton";
             this.popTestButton.Size = new System.Drawing.Size(100, 32);
             this.popTestButton.TabIndex = 83;
             this.popTestButton.Text = "이름변경";
             this.popTestButton.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 32);
-            this.label3.TabIndex = 77;
-            this.label3.Text = "사이트명";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dataSet11
             // 
@@ -279,10 +261,6 @@
             // 
             this.emServerNDeviceNameTableAdapter1.ClearBeforeFill = true;
             // 
-            // emServerWithWholeColTableAdapter1
-            // 
-            this.emServerWithWholeColTableAdapter1.ClearBeforeFill = true;
-            // 
             // View_BBCDevice
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -295,7 +273,6 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_deviceView)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
 
@@ -316,16 +293,14 @@
         private Wisej.Web.Button bt_scanStart;
         private Wisej.Web.Button button4;
         private Wisej.Web.Button popTestButton;
-        private Wisej.Web.Label label3;
         private Wisej.Web.DataGridViewTextBoxColumn dsp_vol;
         private DataSet1 dataSet11;
         private DataSet1TableAdapters.DeviceTableAdapter deviceTableAdapter1;
         private Wisej.Web.DataGridViewTextBoxColumn ip_dspctrl;
         private Wisej.Web.DataGridViewTextBoxColumn chspk;
-        private Wisej.Web.ComboBox cb_siteName;
         private DataSet1TableAdapters.EMServerNDeviceNameTableAdapter emServerNDeviceNameTableAdapter1;
-        private DataSet1TableAdapters.EMServerWithWholeColTableAdapter emServerWithWholeColTableAdapter1;
         private Wisej.Web.DataGridViewTextBoxColumn Column0;
         private Wisej.Web.Button bt_reloading;
+        private Components.Comp_Site comp_Site1;
     }
 }

@@ -15,6 +15,8 @@ namespace simplepa2.UI.Views
             InitializeComponent();
         }
 
+        #region // Init
+
         internal void reDraw()
         {
             //throw new NotImplementedException();
@@ -43,7 +45,15 @@ namespace simplepa2.UI.Views
                 if (this.colDevicein.Items.Contains(t1.DanteModelName) == false)
                     this.colDevicein.Items.Add(t1.DanteModelName);
             }
+
+            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.reDraw();
+
         }
+        #endregion
+
+
+        #region // button 
 
         private void B1_Click(object sender, EventArgs e)
         {
@@ -94,6 +104,12 @@ namespace simplepa2.UI.Views
                 if(int.Parse(t2.chno) < 25)
                     t1.Cells["colDeviceinch"].Value = (int.Parse(t2.chno) -16).ToString();
             }
+        }
+        #endregion
+
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

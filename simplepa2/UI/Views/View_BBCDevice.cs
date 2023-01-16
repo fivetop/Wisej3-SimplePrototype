@@ -11,43 +11,24 @@ namespace simplepa2.UI.Views
     public partial class View_BBCDevice : Wisej.Web.UserControl
     {
         private Popup_BBCDeviceForm popup_bbcDeviceForm;
+
         public View_BBCDevice()
         {
             InitializeComponent();
         }
 
-        /*
-                private void popTestButton_Click(object sender, EventArgs e)
-        {
-            // show the gage popup.
-            if (this.pop_BBCDeviceForm == null)
-                this.pop_BBCDeviceForm = new Popup_BBCDeviceForm()
-                {
-                    Alignment = Placement.BottomRight
-                };
+        #region // init
 
-            if (this.pop_BBCDeviceForm.Visible)
-                this.pop_BBCDeviceForm.Close();
-            else
-                this.pop_BBCDeviceForm.ShowPopup(this);
-
-        }
-        */
         private void BSDeviceManager_Load(object sender, EventArgs e)
         {
-            this.deviceTableAdapter1.Fill(this.dataSet11.Device);
-            this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
-            this.deviceTableAdapter1.Fill(this.dataSet11.Device);
-
-            this.dg_deviceView.DataSource = dataSet11.Device;
-            this.cb_siteName.DataSource = this.dataSet11.EMServerWithWholeCol;
-            this.cb_siteName.SelectedIndex = 0;
+            reDraw();
+            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.reDraw();
         }
 
 
         internal void reDraw()
         {
-            // sort by site name
             this.deviceTableAdapter1.Fill(this.dataSet11.Device);
             this.dg_deviceView.DataSource = dataSet11.Device;
         }
@@ -72,6 +53,9 @@ namespace simplepa2.UI.Views
                 dg_deviceView.EndEdit();
             }
         }
+        #endregion
+
+        #region // button 처리 
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -105,19 +89,40 @@ namespace simplepa2.UI.Views
             }
         }
 
-        private void cb_siteName_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            string selectedItem = ((this.cb_siteName.SelectedItem as DataRowView).Row as DataSet1.EMServerWithWholeColRow).EMNAME;
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string selectedItem = sender as string; 
 
             if (!selectedItem.Equals("전체"))
                 this.dg_deviceView.DataSource = dataSet11.Device.Select("EMNAME = '" + selectedItem + "'");
             else
                 this.dg_deviceView.DataSource = dataSet11.Device;
+
         }
 
         private void bt_reloading_Click(object sender, EventArgs e)
         {
             reDraw();
         }
+        #endregion
+
+/*
+        private void popTestButton_Click(object sender, EventArgs e)
+        {
+            // show the gage popup.
+            if (this.pop_BBCDeviceForm == null)
+                this.pop_BBCDeviceForm = new Popup_BBCDeviceForm()
+                {
+                    Alignment = Placement.BottomRight
+                };
+
+            if (this.pop_BBCDeviceForm.Visible)
+                this.pop_BBCDeviceForm.Close();
+            else
+                this.pop_BBCDeviceForm.ShowPopup(this);
+
+        }
+*/
+
     }
 }

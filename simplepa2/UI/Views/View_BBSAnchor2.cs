@@ -31,8 +31,8 @@ namespace simplepa2.UI.Views
 			this.btnStop.Enabled = false;
 			this.dataGridView2.RowCount = 10;
 
-			this.comp_Site1.dataSet = this.dataSet11.EMServerWithWholeCol;
-			this.comp_Site1.reDraw();
+			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+			comp_Site1.reDraw();
 		}
 
 		public void refresh()

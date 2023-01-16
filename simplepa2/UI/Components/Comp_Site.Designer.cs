@@ -45,7 +45,6 @@
             // cb_SiteName
             // 
             this.cb_SiteName.AutoSize = false;
-            this.cb_SiteName.DisplayMember = "EMNAME";
             this.cb_SiteName.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
             this.cb_SiteName.Items.AddRange(new object[] {
             "전체"});

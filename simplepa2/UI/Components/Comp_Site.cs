@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Windows;
@@ -17,16 +18,16 @@ namespace simplepa2.UI.Components
 
         public void reDraw()
         {
-			EMServerWithWholeColDataTable d1 = (EMServerWithWholeColDataTable)dataSet;
-			this.cb_SiteName.DataSource = d1;
-        }
+			this.cb_SiteName.DataSource = _dataSet;
+			this.cb_SiteName.SelectedIndex = 0;
+		}
 
 		/// <summary>
 		/// Returns or sets the indentation in pixels for child items.
 		/// </summary>
 		[ResponsiveProperty]
 		[DefaultValue(0)]
-		public DataTable dataSet
+		public List<string> dataSet
 		{
 			get { return this._dataSet; }
 			set
@@ -37,7 +38,7 @@ namespace simplepa2.UI.Components
 				}
 			}
 		}
-		private DataTable _dataSet = null;
+		private List<string> _dataSet = null;
 
 		[Description("Fired when the user clicks.")]
 		public event EventHandler SelectedValueChanged;

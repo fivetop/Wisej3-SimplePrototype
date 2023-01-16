@@ -16,6 +16,12 @@ namespace simplepa2.UI.Views
             InitializeComponent();
         }
 
+        #region // Init
+        internal void reDraw()
+        {
+            BSOutManager_Load  (null, null);
+        }
+
         private void BSOutManager_Load(object sender, EventArgs e)
         {
             this.deviceTableAdapter.Fill(this.dataSet1.Device);
@@ -37,7 +43,13 @@ namespace simplepa2.UI.Views
                 if(this.colDsp_Name.Items.Contains(t1.DeviceName) == false)
                     this.colDsp_Name.Items.Add(t1.DeviceName);
             }
+
+            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.reDraw();
+
         }
+
+        #endregion
 
         private void B1_Click(object sender, EventArgs e)
         {
@@ -62,10 +74,11 @@ namespace simplepa2.UI.Views
 
             gweb.mainFrame.sendSigR(eSignalRMsgType.eOutChMove, str2, str1, i2, i3, dataRow.EMNAME); // dsp, dsp_chno
         }
-
-        internal void reDraw()
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
         {
-            BSOutManager_Load  (null, null);
+
         }
+
+
     }
 }

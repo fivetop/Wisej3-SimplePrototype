@@ -43,11 +43,14 @@
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ptop = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
+            this.panel1 = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -80,11 +83,11 @@
             this.colPath_1});
             this.dataGridView3.DataSource = this.deviceBindingSource;
             this.dataGridView3.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Location = new System.Drawing.Point(0, 52);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(756, 434);
+            this.dataGridView3.Size = new System.Drawing.Size(756, 382);
             this.dataGridView3.TabIndex = 2;
             // 
             // colDeviceid
@@ -194,12 +197,29 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView3);
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Dock = Wisej.Web.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(20, 20);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(756, 434);
             this.panel2.TabIndex = 4;
             this.panel2.TabStop = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comp_Site1);
+            this.panel1.Dock = Wisej.Web.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.ShowCloseButton = false;
+            this.panel1.Size = new System.Drawing.Size(756, 52);
+            this.panel1.TabIndex = 68;
+            // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 96;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // View_BBCOutput2
             // 
@@ -215,6 +235,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ptop.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -235,5 +256,7 @@
         private Wisej.Web.Panel panel2;
         private Wisej.Web.DataGridViewButtonColumn Column0;
         private Wisej.Web.DataGridViewTextBoxColumn 채널;
+        private Wisej.Web.Panel panel1;
+        private Components.Comp_Site comp_Site1;
     }
 }

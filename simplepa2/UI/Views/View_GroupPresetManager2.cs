@@ -115,6 +115,9 @@ namespace simplepa2.UI.Views
 
 		}
 
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

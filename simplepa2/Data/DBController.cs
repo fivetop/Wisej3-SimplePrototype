@@ -76,6 +76,7 @@ namespace simplepa2
         }
 
 
+
         #endregion
 
 
@@ -540,8 +541,21 @@ namespace simplepa2
             }
         }
         #endregion
-        
+
         #region // EMServer 부분 
+
+        internal List<string> EMServerWithWholeColLoad()
+        {
+            List<string> list = new List<string>();
+            Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
+            list.Add("전체");
+            foreach (var m1 in Ds1.EMServer)
+            {
+                list.Add(m1.EMNAME);
+            }
+            return list;
+        }
+
 
         internal int EMServerGetState(AssetsRow assetsRow)
         {
