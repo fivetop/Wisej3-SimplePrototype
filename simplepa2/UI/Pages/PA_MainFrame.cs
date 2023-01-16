@@ -30,7 +30,7 @@ namespace simplepa2.UI.Pages
         private View_BBSHolidayManage view_BBSHolidayManage;
 
         private View_BBCSite view_BBCSite;
-        private View_BBCZone view_BBCZone;
+        
         private View_BBCInput view_BBCInput;
         private View_BBCOutput view_BBCOutput;
         private View_BBCMusic view_BBCMusic;
@@ -48,6 +48,7 @@ namespace simplepa2.UI.Pages
         private View_SystemSMSRegistration view_SystemSMSRegistration;
         private View_SystemRestAPI view_SystemRestAPI;
 
+        private View_BBCZone view_BBCZone = new View_BBCZone();
         private View_BBCDevice view_BBCDevice = new View_BBCDevice();
         private View_BBCAsset2 view_BBCAsset2 = new View_BBCAsset2();
         private View_DashBoard2 view_DashBoard2 = new View_DashBoard2();

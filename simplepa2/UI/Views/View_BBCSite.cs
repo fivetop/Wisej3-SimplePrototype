@@ -50,9 +50,9 @@ namespace simplepa2.UI.Views
         
         private void setupSiteCardData()
         {
-            if(this.dataSet11.EMServerNDeviceName.Count == 0)
-                MessageBox.Show("LAWTEXT : 선번장 입력 후 장비스캔이 완료된 경우 사이트 정보가 표시됩니다.");
+            if(this.dataSet11.EMServerNDeviceName.Count == 0)                
             {
+                MessageBox.Show("LAWTEXT : 선번장 입력 후 장비스캔이 완료된 경우 사이트 정보가 표시됩니다.");
                 this.Dispose();
                 return;
             }
