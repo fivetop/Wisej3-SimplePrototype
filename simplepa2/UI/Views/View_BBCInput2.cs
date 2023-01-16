@@ -25,19 +25,17 @@ namespace simplepa2.UI.Views
 
         private void BSInManager_Load(object sender, EventArgs e)
         {
-            this.deviceChannelTableAdapter.Fill(this.dataSet1.DeviceChannel);
+            this.deviceChannelWithDeviceTableAdapter1.Fill(this.dataSet1.DeviceChannelWithDevice);
             this.deviceTableAdapter1.Fill(dataSet1.Device);
 
-            disp_gridview();
             comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
             comp_Site1.reDraw();
 
+            disp_gridview();
         }
 
         private void disp_gridview()
         {
-            dataGridView3.DataSource = this.dataSet1.DeviceChannel.ToList();
-
             foreach (var t1 in dataGridView3.Rows)
             {
                 Button b1 = new Button();
@@ -47,15 +45,6 @@ namespace simplepa2.UI.Views
                 b1.ToolTipText = t1.Index.ToString();
                 t1["chkColumn0"].Control = b1;
             }
-
-            var dsp = this.dataSet1.Device.Where(p => p.device == 9);
-
-            foreach (var t1 in dsp)
-            {
-                if (this.colDevicein.Items.Contains(t1.DanteModelName) == false)
-                    this.colDevicein.Items.Add(t1.DanteModelName);
-            }
-
         }
         #endregion
 
@@ -70,12 +59,13 @@ namespace simplepa2.UI.Views
 
             DataGridViewRow r1 = dataGridView3.Rows[i1];
 
-            DeviceChannelRow dataRow = (DeviceChannelRow)(r1.DataBoundItem as DataRowView).Row;
-
+            DeviceChannelWithDeviceRow dataRow = (DeviceChannelWithDeviceRow)(r1.DataBoundItem as DataRowView).Row;
 
             this.deviceTableAdapter1.Fill(dataSet1.Device);
             var t4 = dataSet1.Device.FindByDeviceId(dataRow.DeviceId);
 
+            if (dataRow.devicein == "")
+                dataRow.devicein = dataRow.DanteModelName;
             string str1 = t4.ip;
             string str2 = dataRow.devicein;
             int i2 = (int)dataRow.deviceinch-1;
@@ -86,31 +76,11 @@ namespace simplepa2.UI.Views
 
             gweb.mainFrame.sendSigR(eSignalRMsgType.eInChMove, str2, str1, i2, i3, t4.EMNAME); // dsp, dsp_chno
             this.deviceChannelBindingSource.EndEdit();
-            this.deviceChannelTableAdapter.Update(this.dataSet1.DeviceChannel);
+            //this.deviceChannelTableAdapter.Update(this.dataSet1.DeviceChannel);
         }
 
         private void dataGridView3_DataUpdated(object sender, DataGridViewDataUpdatedEventArgs e)
         {
-            this.deviceTableAdapter1.Fill(dataSet1.Device);
-
-            foreach (var t1 in dataGridView3.Rows)
-            {
-                var s1 = t1.Cells["DSPColumn1"].Value;
-                if (s1 != null)
-                    continue;
-                var t3 = t1.DataBoundItem;
-                DeviceChannelRow t2 = (DeviceChannelRow)((System.Data.DataRowView)t3).Row;
-                var t4 = dataSet1.Device.FindByDeviceId (t2.DeviceId);
-                if (t4 == null) continue;
-                t1.Cells["Column2"].Value = t4.EMNAME;
-                t1.Cells["DSPColumn1"].Value = t4.DeviceName;
-
-                var t5 = dataSet1.Device.FirstOrDefault(p=>p.ip_dspctrl == t4.ip_dspctrl && p.device == 9); 
-                if (t5 == null) continue;
-                t1.Cells["colDevicein"].Value = t5.DanteModelName;
-                if(int.Parse(t2.chno) < 25)
-                    t1.Cells["colDeviceinch"].Value = (int.Parse(t2.chno) -16).ToString();
-            }
         }
         #endregion
 
@@ -120,20 +90,17 @@ namespace simplepa2.UI.Views
 
             if (!selectedItem.Equals("전체"))
             {
-                var j1 = from d1 in dataSet1.DeviceChannel
-                         join dc1 in dataSet1.Device
-                         on d1.DeviceId equals dc1.DeviceId
-                         where dc1.EMNAME == selectedItem
-                         select d1;
-                deviceChannelBindingSource.DataSource = j1.ToList();
-                //var t2 = dataSet1.DeviceChannel.Where(p => p.DeviceId == t1);
-                //deviceChannelBindingSource.Filter = "DeviceId = '" + t1.de + "'";
+                deviceChannelBindingSource.Filter = "EMNAME = '" + selectedItem + "'";
                 this.dataGridView3.DataSource = deviceChannelBindingSource;
                 disp_gridview();
             }
             else
+            {
+                deviceChannelBindingSource.Filter = "";
                 this.dataGridView3.DataSource = deviceChannelBindingSource;
+            }
 
+            disp_gridview();
         }
     }
 }

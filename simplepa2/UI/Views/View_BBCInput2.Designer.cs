@@ -32,10 +32,10 @@
             this.panel1 = new Wisej.Web.Panel();
             this.dataGridView3 = new Wisej.Web.DataGridView();
             this.colDevicechnnelid = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.Column2 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.DSPColumn1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEMNAME = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colChname = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDevicein = new Wisej.Web.DataGridViewComboBoxColumn();
+            this.colDantemodelname = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDeviceinch = new Wisej.Web.DataGridViewComboBoxColumn();
             this.chkColumn0 = new Wisej.Web.DataGridViewButtonColumn();
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -44,8 +44,8 @@
             this.panel2 = new Wisej.Web.Panel();
             this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.ptop = new Wisej.Web.Panel();
-            this.deviceChannelTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceChannelTableAdapter();
             this.deviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
+            this.deviceChannelWithDeviceTableAdapter1 = new simplepa2.DataSet1TableAdapters.DeviceChannelWithDeviceTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceChannelBindingSource)).BeginInit();
@@ -71,10 +71,10 @@
             this.dataGridView3.AutoGenerateColumns = false;
             this.dataGridView3.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colDevicechnnelid,
-            this.Column2,
-            this.DSPColumn1,
+            this.colEMNAME,
+            this.colDevicename,
             this.colChname,
-            this.colDevicein,
+            this.colDantemodelname,
             this.colDeviceinch,
             this.chkColumn0,
             this.colDeviceid});
@@ -96,29 +96,33 @@
             this.colDevicechnnelid.ReadOnly = true;
             this.colDevicechnnelid.Width = 60;
             // 
-            // Column2
+            // colEMNAME
             // 
-            this.Column2.HeaderText = "지역";
-            this.Column2.Name = "Column2";
+            this.colEMNAME.DataPropertyName = "EMNAME";
+            this.colEMNAME.HeaderText = "지역";
+            this.colEMNAME.Name = "colEMNAME";
+            this.colEMNAME.Width = 120;
             // 
-            // DSPColumn1
+            // colDevicename
             // 
-            this.DSPColumn1.HeaderText = "DSP";
-            this.DSPColumn1.Name = "DSPColumn1";
-            this.DSPColumn1.Width = 120;
+            this.colDevicename.DataPropertyName = "DeviceName";
+            this.colDevicename.HeaderText = "DSP";
+            this.colDevicename.Name = "colDevicename";
+            this.colDevicename.Width = 120;
             // 
             // colChname
             // 
             this.colChname.DataPropertyName = "chname";
             this.colChname.HeaderText = "DSP CH";
             this.colChname.Name = "colChname";
+            this.colChname.Width = 80;
             // 
-            // colDevicein
+            // colDantemodelname
             // 
-            this.colDevicein.DataPropertyName = "devicein";
-            this.colDevicein.HeaderText = "입력장치";
-            this.colDevicein.Name = "colDevicein";
-            this.colDevicein.Width = 150;
+            this.colDantemodelname.DataPropertyName = "DanteModelName";
+            this.colDantemodelname.HeaderText = "입력장치";
+            this.colDantemodelname.Name = "colDantemodelname";
+            this.colDantemodelname.Width = 150;
             // 
             // colDeviceinch
             // 
@@ -151,7 +155,7 @@
             // 
             // deviceChannelBindingSource
             // 
-            this.deviceChannelBindingSource.DataMember = "DeviceChannel";
+            this.deviceChannelBindingSource.DataMember = "DeviceChannelWithDevice";
             this.deviceChannelBindingSource.DataSource = this.dataSet1;
             this.deviceChannelBindingSource.Filter = "";
             // 
@@ -188,13 +192,13 @@
             this.ptop.TabIndex = 6;
             this.ptop.TabStop = true;
             // 
-            // deviceChannelTableAdapter
-            // 
-            this.deviceChannelTableAdapter.ClearBeforeFill = true;
-            // 
             // deviceTableAdapter1
             // 
             this.deviceTableAdapter1.ClearBeforeFill = true;
+            // 
+            // deviceChannelWithDeviceTableAdapter1
+            // 
+            this.deviceChannelWithDeviceTableAdapter1.ClearBeforeFill = true;
             // 
             // View_BBCInput2
             // 
@@ -222,17 +226,17 @@
         private Wisej.Web.DataGridViewButtonColumn chkColumn0;
         private Wisej.Web.Panel ptop;
         private Wisej.Web.DataGridViewTextBoxColumn colDevicechnnelid;
-        private Wisej.Web.DataGridViewTextBoxColumn DSPColumn1;
         private Wisej.Web.DataGridViewTextBoxColumn colChname;
-        private Wisej.Web.BindingSource deviceChannelBindingSource;
         private DataSet1 dataSet1;
-        private DataSet1TableAdapters.DeviceChannelTableAdapter deviceChannelTableAdapter;
         private Wisej.Web.DataGridViewTextBoxColumn colDeviceid;
         private DataSet1TableAdapters.DeviceTableAdapter deviceTableAdapter1;
-        private Wisej.Web.DataGridViewComboBoxColumn colDevicein;
         private Wisej.Web.DataGridViewComboBoxColumn colDeviceinch;
-        private Wisej.Web.DataGridViewTextBoxColumn Column2;
         private Wisej.Web.Panel panel2;
         private Components.Comp_Site comp_Site1;
+        private Wisej.Web.BindingSource deviceChannelBindingSource;
+        private DataSet1TableAdapters.DeviceChannelWithDeviceTableAdapter deviceChannelWithDeviceTableAdapter1;
+        private Wisej.Web.DataGridViewTextBoxColumn colEMNAME;
+        private Wisej.Web.DataGridViewTextBoxColumn colDevicename;
+        private Wisej.Web.DataGridViewTextBoxColumn colDantemodelname;
     }
 }
