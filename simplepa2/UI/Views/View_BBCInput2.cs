@@ -28,6 +28,16 @@ namespace simplepa2.UI.Views
             this.deviceChannelTableAdapter.Fill(this.dataSet1.DeviceChannel);
             this.deviceTableAdapter1.Fill(dataSet1.Device);
 
+            disp_gridview();
+            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.reDraw();
+
+        }
+
+        private void disp_gridview()
+        {
+            dataGridView3.DataSource = this.dataSet1.DeviceChannel.ToList();
+
             foreach (var t1 in dataGridView3.Rows)
             {
                 Button b1 = new Button();
@@ -35,7 +45,7 @@ namespace simplepa2.UI.Views
                 b1.Dock = DockStyle.Fill;
                 b1.Click += B1_Click;
                 b1.ToolTipText = t1.Index.ToString();
-                t1["Column0"].Control = b1;
+                t1["chkColumn0"].Control = b1;
             }
 
             var dsp = this.dataSet1.Device.Where(p => p.device == 9);
@@ -45,9 +55,6 @@ namespace simplepa2.UI.Views
                 if (this.colDevicein.Items.Contains(t1.DanteModelName) == false)
                     this.colDevicein.Items.Add(t1.DanteModelName);
             }
-
-            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
-            comp_Site1.reDraw();
 
         }
         #endregion
@@ -88,7 +95,7 @@ namespace simplepa2.UI.Views
 
             foreach (var t1 in dataGridView3.Rows)
             {
-                var s1 = t1.Cells["Column1"].Value;
+                var s1 = t1.Cells["DSPColumn1"].Value;
                 if (s1 != null)
                     continue;
                 var t3 = t1.DataBoundItem;
@@ -96,7 +103,7 @@ namespace simplepa2.UI.Views
                 var t4 = dataSet1.Device.FindByDeviceId (t2.DeviceId);
                 if (t4 == null) continue;
                 t1.Cells["Column2"].Value = t4.EMNAME;
-                t1.Cells["Column1"].Value = t4.DeviceName;
+                t1.Cells["DSPColumn1"].Value = t4.DeviceName;
 
                 var t5 = dataSet1.Device.FirstOrDefault(p=>p.ip_dspctrl == t4.ip_dspctrl && p.device == 9); 
                 if (t5 == null) continue;
@@ -109,6 +116,23 @@ namespace simplepa2.UI.Views
 
         private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
         {
+            string selectedItem = sender as string;
+
+            if (!selectedItem.Equals("전체"))
+            {
+                var j1 = from d1 in dataSet1.DeviceChannel
+                         join dc1 in dataSet1.Device
+                         on d1.DeviceId equals dc1.DeviceId
+                         where dc1.EMNAME == selectedItem
+                         select d1;
+                deviceChannelBindingSource.DataSource = j1.ToList();
+                //var t2 = dataSet1.DeviceChannel.Where(p => p.DeviceId == t1);
+                //deviceChannelBindingSource.Filter = "DeviceId = '" + t1.de + "'";
+                this.dataGridView3.DataSource = deviceChannelBindingSource;
+                disp_gridview();
+            }
+            else
+                this.dataGridView3.DataSource = deviceChannelBindingSource;
 
         }
     }

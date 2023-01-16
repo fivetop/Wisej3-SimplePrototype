@@ -33,11 +33,11 @@
             this.dataGridView3 = new Wisej.Web.DataGridView();
             this.colDevicechnnelid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Column2 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.Column1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.DSPColumn1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colChname = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDevicein = new Wisej.Web.DataGridViewComboBoxColumn();
             this.colDeviceinch = new Wisej.Web.DataGridViewComboBoxColumn();
-            this.Column0 = new Wisej.Web.DataGridViewButtonColumn();
+            this.chkColumn0 = new Wisej.Web.DataGridViewButtonColumn();
             this.colDeviceid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.deviceChannelBindingSource = new Wisej.Web.BindingSource(this.components);
             this.dataSet1 = new simplepa2.DataSet1();
@@ -72,11 +72,11 @@
             this.dataGridView3.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.colDevicechnnelid,
             this.Column2,
-            this.Column1,
+            this.DSPColumn1,
             this.colChname,
             this.colDevicein,
             this.colDeviceinch,
-            this.Column0,
+            this.chkColumn0,
             this.colDeviceid});
             this.dataGridView3.DataSource = this.deviceChannelBindingSource;
             this.dataGridView3.Dock = Wisej.Web.DockStyle.Fill;
@@ -101,11 +101,11 @@
             this.Column2.HeaderText = "지역";
             this.Column2.Name = "Column2";
             // 
-            // Column1
+            // DSPColumn1
             // 
-            this.Column1.HeaderText = "DSP";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 120;
+            this.DSPColumn1.HeaderText = "DSP";
+            this.DSPColumn1.Name = "DSPColumn1";
+            this.DSPColumn1.Width = 120;
             // 
             // colChname
             // 
@@ -135,12 +135,12 @@
             "8"});
             this.colDeviceinch.Name = "colDeviceinch";
             // 
-            // Column0
+            // chkColumn0
             // 
-            this.Column0.HeaderText = "적용";
-            this.Column0.Name = "Column0";
-            this.Column0.Text = "적용";
-            this.Column0.Width = 120;
+            this.chkColumn0.HeaderText = "적용";
+            this.chkColumn0.Name = "chkColumn0";
+            this.chkColumn0.Text = "적용";
+            this.chkColumn0.Width = 120;
             // 
             // colDeviceid
             // 
@@ -153,7 +153,7 @@
             // 
             this.deviceChannelBindingSource.DataMember = "DeviceChannel";
             this.deviceChannelBindingSource.DataSource = this.dataSet1;
-            this.deviceChannelBindingSource.Filter = "io=0";
+            this.deviceChannelBindingSource.Filter = "";
             // 
             // dataSet1
             // 
@@ -219,10 +219,10 @@
 
         private Wisej.Web.Panel panel1;
         private Wisej.Web.DataGridView dataGridView3;
-        private Wisej.Web.DataGridViewButtonColumn Column0;
+        private Wisej.Web.DataGridViewButtonColumn chkColumn0;
         private Wisej.Web.Panel ptop;
         private Wisej.Web.DataGridViewTextBoxColumn colDevicechnnelid;
-        private Wisej.Web.DataGridViewTextBoxColumn Column1;
+        private Wisej.Web.DataGridViewTextBoxColumn DSPColumn1;
         private Wisej.Web.DataGridViewTextBoxColumn colChname;
         private Wisej.Web.BindingSource deviceChannelBindingSource;
         private DataSet1 dataSet1;

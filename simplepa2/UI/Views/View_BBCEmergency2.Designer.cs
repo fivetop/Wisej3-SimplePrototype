@@ -48,6 +48,7 @@
             this.eMBsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.deviceTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
             this.emBsTableAdapter = new simplepa2.DataSet1TableAdapters.EMBsTableAdapter();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -64,21 +65,24 @@
             // ptop
             // 
             this.ptop.BackColor = System.Drawing.Color.White;
+            this.ptop.Controls.Add(this.comp_Site1);
             this.ptop.Controls.Add(this.comboBox1);
             this.ptop.Dock = Wisej.Web.DockStyle.Top;
             this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
-            this.ptop.Size = new System.Drawing.Size(756, 70);
+            this.ptop.Size = new System.Drawing.Size(756, 52);
             this.ptop.TabIndex = 4;
             this.ptop.TabStop = true;
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoSize = false;
+            this.comboBox1.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.comboBox1.Label.Position = Wisej.Web.LabelPosition.Left;
             this.comboBox1.LabelText = "비상방송 층선택";
-            this.comboBox1.Location = new System.Drawing.Point(16, 12);
+            this.comboBox1.Location = new System.Drawing.Point(334, 0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(361, 36);
+            this.comboBox1.Size = new System.Drawing.Size(361, 34);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -98,7 +102,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = Wisej.Web.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(20, 90);
+            this.splitContainer1.Location = new System.Drawing.Point(20, 72);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -110,7 +114,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer1.Panel2.TabStop = true;
-            this.splitContainer1.Size = new System.Drawing.Size(756, 336);
+            this.splitContainer1.Size = new System.Drawing.Size(756, 354);
             this.splitContainer1.SplitterDistance = 404;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -127,7 +131,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(404, 336);
+            this.dataGridView1.Size = new System.Drawing.Size(404, 354);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellMouseDoubleClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
@@ -184,7 +188,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(336, 336);
+            this.dataGridView2.Size = new System.Drawing.Size(336, 354);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellMouseDoubleClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDoubleClick);
             // 
@@ -233,6 +237,12 @@
             // 
             this.emBsTableAdapter.ClearBeforeFill = true;
             // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 97;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
+            // 
             // View_BBCEmergency2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -243,7 +253,6 @@
             this.Size = new System.Drawing.Size(836, 486);
             this.Load += new System.EventHandler(this.BSEMManager_Load);
             this.ptop.ResumeLayout(false);
-            this.ptop.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -279,5 +288,6 @@
         private Wisej.Web.DataGridViewTextBoxColumn colPath_1;
         private Wisej.Web.DataGridViewTextBoxColumn colEmbsid;
         private Wisej.Web.DataGridViewTextBoxColumn colEmdata_1;
+        private Components.Comp_Site comp_Site1;
     }
 }
