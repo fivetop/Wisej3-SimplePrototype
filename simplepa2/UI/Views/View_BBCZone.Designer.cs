@@ -103,6 +103,7 @@
             this.bt_WholeSelect.Size = new System.Drawing.Size(100, 32);
             this.bt_WholeSelect.TabIndex = 94;
             this.bt_WholeSelect.Text = "전체선택";
+            this.bt_WholeSelect.Visible = false;
             this.bt_WholeSelect.Click += new System.EventHandler(this.bt_WholeSelect_Click);
             // 
             // bt_dataDelete
@@ -112,13 +113,12 @@
             this.bt_dataDelete.CssStyle = "    color: #fff !important;";
             this.bt_dataDelete.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_dataDelete.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_dataDelete.Location = new System.Drawing.Point(779, -1);
+            this.bt_dataDelete.Location = new System.Drawing.Point(1113, 1);
             this.bt_dataDelete.Margin = new Wisej.Web.Padding(0);
             this.bt_dataDelete.Name = "bt_dataDelete";
             this.bt_dataDelete.Size = new System.Drawing.Size(100, 32);
             this.bt_dataDelete.TabIndex = 93;
             this.bt_dataDelete.Text = "전체 삭제";
-            this.bt_dataDelete.Visible = false;
             this.bt_dataDelete.Click += new System.EventHandler(this.bt_dataDelete_Click);
             // 
             // lb_BuildingName
@@ -135,6 +135,7 @@
             // 
             this.cb_SiteName.AutoSize = false;
             this.cb_SiteName.DisplayMember = "EMNAME";
+            this.cb_SiteName.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
             this.cb_SiteName.Items.AddRange(new object[] {
             "전체"});
             this.cb_SiteName.Location = new System.Drawing.Point(71, 0);
@@ -236,6 +237,7 @@
             this.Name = "View_BBCZone";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
+            this.Load += new System.EventHandler(this.View_BBCZone_Load);
             this.pn_ViewMain.ResumeLayout(false);
             this.pn_TopBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();

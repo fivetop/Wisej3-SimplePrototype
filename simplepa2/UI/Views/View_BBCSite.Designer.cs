@@ -132,6 +132,7 @@
             this.Name = "View_BBCSite";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
+            this.Load += new System.EventHandler(this.View_BBCSite_Load);
             this.panel1.ResumeLayout(false);
             this.pn_listFrame.ResumeLayout(false);
             this.pn_siteBar.ResumeLayout(false);

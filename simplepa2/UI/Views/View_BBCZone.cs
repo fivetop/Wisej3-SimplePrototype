@@ -20,19 +20,21 @@ namespace simplepa2.UI.Views
         private string strSelectAll = "모두선택";
         private bool bZoneSelectAll = false; 
 
+        private bool NOT_USE_BUILDING_CHECK_BOX = false;
+
 
         public View_BBCZone()
         {
             InitializeComponent();
+        }
 
+        public void reDraw()
+        {
             // DB Call
             dbInit();
 
-            // Combo Setup
+            // Combo Setup, 이후 데이터는 콤보 셋업에 따라 동작함 
             comboUISetup();
-
-            // List Setup 
-            // zone_list = new List<Zone_DataList>();
         }
 
         public void dbInit()
@@ -80,10 +82,10 @@ namespace simplepa2.UI.Views
             }
 
             this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
-            this.buildPanelDataList = buildingDataUISetup(selectedItem);
+            this.buildPanelDataList = buildingDataUISetup(selectedItem, NOT_USE_BUILDING_CHECK_BOX);
         }
 
-        private List<Comp_ZoneBuildingPanels> buildingDataUISetup(string selectedItem)
+        private List<Comp_ZoneBuildingPanels> buildingDataUISetup(string selectedItem, bool isCheckBoxSetup)
         {
             List<Comp_ZoneBuildingPanels> dataList = new List<Comp_ZoneBuildingPanels>();
 
@@ -107,11 +109,13 @@ namespace simplepa2.UI.Views
             foreach (DataRow dr in buildList)
             {
                 string buildName = (dr as DataSet1.AssetsSitenBuildingRow).building;
-                Comp_ZoneBuildingPanels uiCZB = new Comp_ZoneBuildingPanels(buildName, this.dataSet11.Assets.Select("building = '" + buildName + "'"));
+                Comp_ZoneBuildingPanels uiCZB = new Comp_ZoneBuildingPanels(buildName, this.dataSet11.Assets.Select("building = '" + buildName + "'"), NOT_USE_BUILDING_CHECK_BOX);
 
-                dataList.Add(uiCZB);
+                dataList.Add(uiCZB);                
 
                 this.pn_Contents.Controls.Add(uiCZB);
+                this.pn_Contents.Controls.Add(new Comp_GroupNameSpacer());
+
             }
 
             return dataList;
@@ -195,6 +199,14 @@ namespace simplepa2.UI.Views
         {
             DeleteAllZoneRecord();
         }
+
+
+        private void View_BBCZone_Load(object sender, EventArgs e)
+        {
+            reDraw();
+        }
+
+
 
         private void DeleteAllZoneRecord()
         {

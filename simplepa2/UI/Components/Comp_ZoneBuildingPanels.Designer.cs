@@ -28,71 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pn_main = new Wisej.Web.Panel();
-            this.panel10 = new Wisej.Web.Panel();
+            this.pn_FloorZone = new Wisej.Web.Panel();
+            this.pn_Building = new Wisej.Web.Panel();
+            this.panel1 = new Wisej.Web.Panel();
             this.lb_buildingName = new Wisej.Web.Label();
-            this.label22 = new Wisej.Web.Label();
-            this.panel10.SuspendLayout();
+            this.ch_floor = new Wisej.Web.CheckBox();
+            this.pn_Building.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pn_main
+            // pn_FloorZone
             // 
-            this.pn_main.AutoSize = true;
-            this.pn_main.BackColor = System.Drawing.Color.White;
-            this.pn_main.Dock = Wisej.Web.DockStyle.Fill;
-            this.pn_main.Location = new System.Drawing.Point(0, 40);
-            this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(1380, 1);
-            this.pn_main.TabIndex = 7;
+            this.pn_FloorZone.AutoSize = true;
+            this.pn_FloorZone.BackColor = System.Drawing.Color.White;
+            this.pn_FloorZone.Dock = Wisej.Web.DockStyle.Fill;
+            this.pn_FloorZone.Location = new System.Drawing.Point(100, 0);
+            this.pn_FloorZone.Margin = new Wisej.Web.Padding(0);
+            this.pn_FloorZone.Name = "pn_FloorZone";
+            this.pn_FloorZone.Size = new System.Drawing.Size(1280, 55);
+            this.pn_FloorZone.TabIndex = 7;
             // 
-            // panel10
+            // pn_Building
             // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.Controls.Add(this.lb_buildingName);
-            this.panel10.Controls.Add(this.label22);
-            this.panel10.Dock = Wisej.Web.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1380, 40);
-            this.panel10.TabIndex = 52;
+            this.pn_Building.BackColor = System.Drawing.Color.White;
+            this.pn_Building.Controls.Add(this.panel1);
+            this.pn_Building.Dock = Wisej.Web.DockStyle.Left;
+            this.pn_Building.Location = new System.Drawing.Point(0, 0);
+            this.pn_Building.Margin = new Wisej.Web.Padding(0);
+            this.pn_Building.Name = "pn_Building";
+            this.pn_Building.Padding = new Wisej.Web.Padding(5, 0, 5, 0);
+            this.pn_Building.Size = new System.Drawing.Size(100, 55);
+            this.pn_Building.TabIndex = 52;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel1.Controls.Add(this.lb_buildingName);
+            this.panel1.Controls.Add(this.ch_floor);
+            this.panel1.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(5, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(90, 55);
+            this.panel1.TabIndex = 138;
             // 
             // lb_buildingName
             // 
+            this.lb_buildingName.Anchor = Wisej.Web.AnchorStyles.Left;
             this.lb_buildingName.AutoEllipsis = true;
             this.lb_buildingName.BackColor = System.Drawing.Color.Transparent;
             this.lb_buildingName.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lb_buildingName.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_buildingName.Location = new System.Drawing.Point(39, 7);
+            this.lb_buildingName.Location = new System.Drawing.Point(-1, 2);
             this.lb_buildingName.Margin = new Wisej.Web.Padding(0);
             this.lb_buildingName.Name = "lb_buildingName";
-            this.lb_buildingName.Size = new System.Drawing.Size(344, 24);
+            this.lb_buildingName.Size = new System.Drawing.Size(90, 24);
             this.lb_buildingName.TabIndex = 136;
             this.lb_buildingName.Text = "건물명";
-            this.lb_buildingName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_buildingName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label22
+            // ch_floor
             // 
-            this.label22.AutoEllipsis = true;
-            this.label22.BackColor = System.Drawing.Color.FromArgb(91, 153, 255);
-            this.label22.CssStyle = "border-radius: 11px;";
-            this.label22.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label22.ForeColor = System.Drawing.Color.FromName("@buttonText");
-            this.label22.Location = new System.Drawing.Point(7, 10);
-            this.label22.Margin = new Wisej.Web.Padding(0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(22, 22);
-            this.label22.TabIndex = 135;
-            this.label22.Text = "★";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ch_floor.Anchor = Wisej.Web.AnchorStyles.Left;
+            this.ch_floor.BackColor = System.Drawing.Color.Transparent;
+            this.ch_floor.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
+            this.ch_floor.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.ch_floor.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.ch_floor.Location = new System.Drawing.Point(15, 29);
+            this.ch_floor.Name = "ch_floor";
+            this.ch_floor.Size = new System.Drawing.Size(60, 23);
+            this.ch_floor.TabIndex = 137;
+            this.ch_floor.Text = "선택";
             // 
             // Comp_ZoneBuildingPanels
             // 
-            this.Controls.Add(this.pn_main);
-            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.pn_FloorZone);
+            this.Controls.Add(this.pn_Building);
             this.Dock = Wisej.Web.DockStyle.Top;
+            this.Margin = new Wisej.Web.Padding(0);
             this.Name = "Comp_ZoneBuildingPanels";
-            this.Size = new System.Drawing.Size(1380, 41);
-            this.panel10.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(1380, 55);
+            this.pn_Building.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,9 +117,10 @@
 
         #endregion
 
-        private Wisej.Web.Panel pn_main;
-        private Wisej.Web.Panel panel10;
+        private Wisej.Web.Panel pn_FloorZone;
+        private Wisej.Web.Panel pn_Building;
         private Wisej.Web.Label lb_buildingName;
-        private Wisej.Web.Label label22;
+        private Wisej.Web.CheckBox ch_floor;
+        private Wisej.Web.Panel panel1;
     }
 }
