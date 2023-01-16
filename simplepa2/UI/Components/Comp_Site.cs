@@ -44,8 +44,16 @@ namespace simplepa2.UI.Components
 
 		private void cb_SiteName_SelectedValueChanged(object sender, EventArgs e)
         {
-			string selectedItem = ((this.cb_SiteName.SelectedItem as DataRowView).Row as DataSet1.EMServerWithWholeColRow).EMNAME;
-			this.SelectedValueChanged?.Invoke(selectedItem, e);
+			try
+			{
+				string selectedItem = this.cb_SiteName.SelectedItem as string; 
+				//string selectedItem = ((this.cb_SiteName.SelectedItem as DataRowView).Row as DataSet1.EMServerWithWholeColRow).EMNAME;
+				this.SelectedValueChanged?.Invoke(selectedItem, e);
+			}
+			catch (Exception e1)
+			{ 
+				gweb.Log(e1.Message);
+			}
 		}
 
 		protected virtual void OnSelectedValueChanged(EventArgs e)
