@@ -31,7 +31,6 @@ namespace simplepa2.Controller
         public virtual DbSet<BSTree> BSTree { get; set; }
         public virtual DbSet<Device> Device { get; set; }
         public virtual DbSet<DeviceChannel> DeviceChannel { get; set; }
-        public virtual DbSet<EMBs> EMBs { get; set; }
         public virtual DbSet<EMServer> EMServer { get; set; }
         public virtual DbSet<Eventvm> Eventvm { get; set; }
         public virtual DbSet<Musics> Musics { get; set; }
@@ -48,5 +47,6 @@ namespace simplepa2.Controller
         public virtual DbSet<Eventsyslog> Eventsyslog { get; set; }
         public virtual DbSet<Holidays> Holidays { get; set; }
         public virtual DbSet<TypeData> TypeData { get; set; }
+        public virtual DbSet<EMBs> EMBs { get; set; }
     }
 }

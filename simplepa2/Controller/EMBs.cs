@@ -18,6 +18,6 @@ namespace simplepa2.Controller
         public string emData { get; set; }
         public Nullable<int> DeviceId { get; set; }
         public string path { get; set; }
-        public byte[] EMNAME { get; set; }
+        public string EMNAME { get; set; }
     }
 }

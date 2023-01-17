@@ -881,7 +881,6 @@
     <Compile Include="Controller\DevicesController.cs" />
     <Compile Include="Controller\EMBs.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controller\EMBsController.cs" />
     <Compile Include="Controller\EMServer.cs">

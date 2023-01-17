@@ -130,7 +130,7 @@
           <Property Name="emData" Type="varchar(max)" />
           <Property Name="DeviceId" Type="int" />
           <Property Name="path" Type="varchar(max)" />
-          <Property Name="EMNAME" Type="varbinary(max)" />
+          <Property Name="EMNAME" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="EMServer">
           <Key>
@@ -511,16 +511,6 @@
           <Property Name="devicein" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="deviceinch" Type="Int32" />
         </EntityType>
-        <EntityType Name="EMBs">
-          <Key>
-            <PropertyRef Name="EMBsId" />
-          </Key>
-          <Property Name="EMBsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="emData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DeviceId" Type="Int32" />
-          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="EMNAME" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="EMServer">
           <Key>
             <PropertyRef Name="EMServerId" />
@@ -614,7 +604,6 @@
           <EntitySet Name="BSTree" EntityType="Self.BSTree" />
           <EntitySet Name="Device" EntityType="Self.Device" />
           <EntitySet Name="DeviceChannel" EntityType="Self.DeviceChannel" />
-          <EntitySet Name="EMBs" EntityType="Self.EMBs" />
           <EntitySet Name="EMServer" EntityType="Self.EMServer" />
           <EntitySet Name="Eventvm" EntityType="Self.Eventvm" />
           <EntitySet Name="Musics" EntityType="Self.Musics" />
@@ -631,6 +620,7 @@
           <EntitySet Name="Eventsyslog" EntityType="simplePAModel.Eventsyslog" />
           <EntitySet Name="Holidays" EntityType="simplePAModel.Holidays" />
           <EntitySet Name="TypeData" EntityType="simplePAModel.TypeData" />
+          <EntitySet Name="EMBs" EntityType="simplePAModel.EMBs" />
         </EntityContainer>
         <EntityType Name="BSTreeC">
           <Key>
@@ -764,6 +754,16 @@
           <Property Name="type_contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="type_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="EMBs">
+          <Key>
+            <PropertyRef Name="EMBsId" />
+          </Key>
+          <Property Name="EMBsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceId" Type="Int32" />
+          <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -870,17 +870,6 @@
                 <ScalarProperty Name="io" ColumnName="io" />
                 <ScalarProperty Name="devicein" ColumnName="devicein" />
                 <ScalarProperty Name="deviceinch" ColumnName="deviceinch" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EMBs">
-            <EntityTypeMapping TypeName="simplePAModel.EMBs">
-              <MappingFragment StoreEntitySet="EMBs">
-                <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
-                <ScalarProperty Name="EMBsId" ColumnName="EMBsId" />
-                <ScalarProperty Name="emData" ColumnName="emData" />
-                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
-                <ScalarProperty Name="path" ColumnName="path" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1108,6 +1097,17 @@
                 <ScalarProperty Name="type_variable" ColumnName="type_variable" />
                 <ScalarProperty Name="type_group" ColumnName="type_group" />
                 <ScalarProperty Name="type_index" ColumnName="type_index" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMBs">
+            <EntityTypeMapping TypeName="simplePAModel.EMBs">
+              <MappingFragment StoreEntitySet="EMBs">
+                <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="emData" ColumnName="emData" />
+                <ScalarProperty Name="EMBsId" ColumnName="EMBsId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -26,7 +26,7 @@ namespace simplepa2.UI.Views
             comboBox1.Items.Clear();
             comboBox1.DisplayMember = "emData";
             comboBox1.ValueMember = "emData";
-            comboBox1.DataSource = EMBs;
+            //comboBox1.DataSource = EMBs;
             foreach (var t1 in EMBs)
             {
                 comboBox1.Items.Add(t1);

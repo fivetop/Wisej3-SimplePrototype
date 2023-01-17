@@ -11,7 +11,6 @@
         <EntityTypeShape EntityType="simplePAModel.BSTree" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.Device" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.DeviceChannel" Width="1.5" PointX="2.625" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="simplePAModel.EMBs" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.EMServer" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.Eventvm" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.Musics" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
@@ -28,6 +27,7 @@
         <EntityTypeShape EntityType="simplePAModel.Eventsyslog" Width="1.5" PointX="13.375" PointY="4.75" />
         <EntityTypeShape EntityType="simplePAModel.Holidays" Width="1.5" PointX="5.375" PointY="13.75" />
         <EntityTypeShape EntityType="simplePAModel.TypeData" Width="1.5" PointX="13.375" PointY="8.75" />
+        <EntityTypeShape EntityType="simplePAModel.EMBs" Width="1.5" PointX="13.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
