@@ -81,6 +81,20 @@ namespace simplepa2
 
 
         #region // 선번장으로 부터 기본 테이블 만들기 
+
+        internal object AssetGroupsGet()
+        {
+            Tam.AssetPresetGroupsTableAdapter.Fill(Ds1.AssetPresetGroups);
+
+            
+            foreach (var em in Ds1.AssetPresetGroups)
+            {
+
+            }
+            return null;
+        }
+
+
         internal void AssetGroupsSave()
         {
             Tam.AssetsTableAdapter.Fill(Ds1.Assets);
@@ -432,11 +446,11 @@ namespace simplepa2
 
         #region // EMServer 부분 
 
-        internal List<string> EMServerWithWholeColLoad()
+        internal List<string> EMServerWithWholeColLoad(int k = 0)
         {
             List<string> list = new List<string>();
             Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
-            list.Add("전체");
+            if(k == 0) list.Add("전체");
             foreach (var m1 in Ds1.EMServer)
             {
                 list.Add(m1.EMNAME);

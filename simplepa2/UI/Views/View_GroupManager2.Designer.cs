@@ -42,13 +42,14 @@
             this.gbutton2 = new Wisej.Web.Button();
             this.gbutton1 = new Wisej.Web.Button();
             this.tableLayoutPanel4 = new Wisej.Web.TableLayoutPanel();
-            this.label9 = new Wisej.Web.Label();
-            this.gcomboBox1 = new Wisej.Web.ComboBox();
             this.gtextBox1 = new Wisej.Web.TextBox();
             this.label10 = new Wisej.Web.Label();
+            this.label9 = new Wisej.Web.Label();
+            this.gcomboBox1 = new Wisej.Web.ComboBox();
             this.ptop = new Wisej.Web.Panel();
-            this.panel2 = new Wisej.Web.Panel();
             this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
+            this.panel2 = new Wisej.Web.Panel();
+            this.panel1 = new Wisej.Web.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource1)).BeginInit();
@@ -56,6 +57,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbindingSource2
@@ -91,7 +93,7 @@
             this.gdataGridView1.Name = "gdataGridView1";
             this.gdataGridView1.RowHeadersVisible = false;
             this.gdataGridView1.ShowFocusCell = false;
-            this.gdataGridView1.Size = new System.Drawing.Size(832, 483);
+            this.gdataGridView1.Size = new System.Drawing.Size(832, 475);
             this.gdataGridView1.TabIndex = 12;
             this.gdataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -122,16 +124,20 @@
             // 
             // gbutton3
             // 
-            this.gbutton3.Location = new System.Drawing.Point(744, 3);
+            this.gbutton3.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
+            this.gbutton3.Location = new System.Drawing.Point(449, 3);
             this.gbutton3.Name = "gbutton3";
-            this.gbutton3.Size = new System.Drawing.Size(77, 27);
+            this.gbutton3.Size = new System.Drawing.Size(75, 27);
             this.gbutton3.TabIndex = 15;
             this.gbutton3.Text = "삭제";
             this.gbutton3.Click += new System.EventHandler(this.gbutton3_Click);
             // 
             // gbutton2
             // 
-            this.gbutton2.Location = new System.Drawing.Point(581, 3);
+            this.gbutton2.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
+            this.gbutton2.Location = new System.Drawing.Point(289, 3);
             this.gbutton2.Name = "gbutton2";
             this.gbutton2.Size = new System.Drawing.Size(74, 27);
             this.gbutton2.TabIndex = 14;
@@ -140,52 +146,75 @@
             // 
             // gbutton1
             // 
-            this.gbutton1.Location = new System.Drawing.Point(662, 3);
+            this.gbutton1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
+            this.gbutton1.Location = new System.Drawing.Point(369, 3);
             this.gbutton1.Name = "gbutton1";
-            this.gbutton1.Size = new System.Drawing.Size(76, 27);
+            this.gbutton1.Size = new System.Drawing.Size(74, 27);
             this.gbutton1.TabIndex = 13;
             this.gbutton1.Text = "저장";
             this.gbutton1.Click += new System.EventHandler(this.gbutton1_Click);
             // 
             // tableLayoutPanel4
             // 
+            this.tableLayoutPanel4.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Right)));
             this.tableLayoutPanel4.ColumnCount = 7;
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 8.17F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 25.36F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 5.65F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 30.29F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 9.74F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 9.86F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 10.82F));
-            this.tableLayoutPanel4.Controls.Add(this.gbutton2, 4, 0);
-            this.tableLayoutPanel4.Controls.Add(this.gbutton3, 6, 0);
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 2.19F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 78.67F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 8.74F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 10.49F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 80F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 80F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 80F));
             this.tableLayoutPanel4.Controls.Add(this.gbutton1, 5, 0);
-            this.tableLayoutPanel4.Controls.Add(this.gtextBox1, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label10, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label9, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.gcomboBox1, 1, 1);
-            this.tableLayoutPanel4.Dock = Wisej.Web.DockStyle.Top;
+            this.tableLayoutPanel4.Controls.Add(this.gbutton2, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label10, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.gtextBox1, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.gbutton3, 6, 0);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(20, 20);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(304, 0);
             this.tableLayoutPanel4.Margin = new Wisej.Web.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 47.22F));
             this.tableLayoutPanel4.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 52.78F));
             this.tableLayoutPanel4.ShowCloseButton = false;
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(832, 72);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(527, 78);
             this.tableLayoutPanel4.TabIndex = 11;
             this.tableLayoutPanel4.TabStop = true;
+            // 
+            // gtextBox1
+            // 
+            this.gtextBox1.Anchor = Wisej.Web.AnchorStyles.Left;
+            this.gtextBox1.AutoSize = false;
+            this.gtextBox1.Location = new System.Drawing.Point(6, 40);
+            this.gtextBox1.Margin = new Wisej.Web.Padding(0);
+            this.gtextBox1.Name = "gtextBox1";
+            this.gtextBox1.Size = new System.Drawing.Size(214, 34);
+            this.gtextBox1.TabIndex = 1;
+            this.gtextBox1.Watermark = "Enter a name";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label10.Location = new System.Drawing.Point(6, 0);
+            this.label10.Margin = new Wisej.Web.Padding(0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(166, 30);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "신규 그룹명(등록)";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
             this.label9.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             this.label9.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label9.Location = new System.Drawing.Point(0, 33);
+            this.label9.Location = new System.Drawing.Point(2, 42);
             this.label9.Margin = new Wisej.Web.Padding(0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 30);
+            this.label9.Size = new System.Drawing.Size(73, 30);
             this.label9.TabIndex = 0;
             this.label9.Text = "그룹명";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -195,41 +224,19 @@
             this.gcomboBox1.AutoSize = false;
             this.gcomboBox1.DisplayMember = "Name";
             this.gcomboBox1.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
-            this.gcomboBox1.Location = new System.Drawing.Point(68, 33);
+            this.gcomboBox1.Location = new System.Drawing.Point(72, 38);
             this.gcomboBox1.Margin = new Wisej.Web.Padding(0);
             this.gcomboBox1.Name = "gcomboBox1";
-            this.gcomboBox1.Size = new System.Drawing.Size(203, 34);
+            this.gcomboBox1.Size = new System.Drawing.Size(201, 34);
             this.gcomboBox1.TabIndex = 5;
             this.gcomboBox1.ValueMember = "Name";
             this.gcomboBox1.SelectedIndexChanged += new System.EventHandler(this.gcomboBox1_SelectedIndexChanged);
             // 
-            // gtextBox1
-            // 
-            this.gtextBox1.AutoSize = false;
-            this.gtextBox1.Location = new System.Drawing.Point(326, 33);
-            this.gtextBox1.Margin = new Wisej.Web.Padding(0);
-            this.gtextBox1.Name = "gtextBox1";
-            this.gtextBox1.Size = new System.Drawing.Size(211, 34);
-            this.gtextBox1.TabIndex = 1;
-            this.gtextBox1.Watermark = "Enter a name";
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label10.Location = new System.Drawing.Point(326, 0);
-            this.label10.Margin = new Wisej.Web.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(167, 30);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "신규 그룹명(등록)";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // ptop
             // 
             this.ptop.BackColor = System.Drawing.Color.White;
-            this.ptop.Controls.Add(this.comp_Site1);
             this.ptop.Controls.Add(this.panel2);
-            this.ptop.Controls.Add(this.tableLayoutPanel4);
+            this.ptop.Controls.Add(this.panel1);
             this.ptop.Dock = Wisej.Web.DockStyle.Fill;
             this.ptop.Location = new System.Drawing.Point(20, 20);
             this.ptop.Name = "ptop";
@@ -237,22 +244,34 @@
             this.ptop.Size = new System.Drawing.Size(872, 595);
             this.ptop.TabIndex = 16;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.gdataGridView1);
-            this.panel2.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(20, 92);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(832, 483);
-            this.panel2.TabIndex = 17;
-            // 
             // comp_Site1
             // 
-            this.comp_Site1.Location = new System.Drawing.Point(20, 20);
             this.comp_Site1.Name = "comp_Site1";
             this.comp_Site1.Size = new System.Drawing.Size(281, 34);
             this.comp_Site1.TabIndex = 98;
             this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gdataGridView1);
+            this.panel2.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(20, 100);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(832, 475);
+            this.panel2.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tableLayoutPanel4);
+            this.panel1.Controls.Add(this.comp_Site1);
+            this.panel1.Controls.Add(this.gcomboBox1);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Dock = Wisej.Web.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(20, 20);
+            this.panel1.Margin = new Wisej.Web.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(832, 80);
+            this.panel1.TabIndex = 6;
             // 
             // View_GroupManager2
             // 
@@ -270,6 +289,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.ptop.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -296,5 +316,6 @@
         private Wisej.Web.Panel ptop;
         private Wisej.Web.Panel panel2;
         private Components.Comp_Site comp_Site1;
+        private Wisej.Web.Panel panel1;
     }
 }

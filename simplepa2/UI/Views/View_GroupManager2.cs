@@ -1,5 +1,7 @@
 ﻿using Microsoft.Ajax.Utilities;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
@@ -18,40 +20,26 @@ namespace simplepa2.UI.Views
 			reDraw();
 		}
 
-		// 콤보 처리용 
-		DataListAssetGroup DataList { get; set; } = new DataListAssetGroup();
-		// 선택된 차일드 
-
 		#region // 기본 처리 
 		public void reDraw()
 		{
-			this.gdataGridView1.DataSource = null;
-			this.gdataGridView1.DataSource = gbindingSource2;
 			this.assetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
 			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 
-			var t1 = dataSet1.AssetGroups.GroupBy(p => p.Name).Select(x => x.First()).ToList();
-			DataList.lstAssetGroups = t1.ToList();
-			gbindingSource1.DataSource = DataList;
-			this.gcomboBox1.DataBindings.Clear();
-			this.gcomboBox1.DataBindings.Add(new Wisej.Web.Binding("DataSource", this.gbindingSource1, "lstAssetGroups", true, Wisej.Web.DataSourceUpdateMode.OnPropertyChanged));
-			//comboBox1.DataSource = DataList.lstAssetGroups;
+			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
+			comp_Site1.reDraw();
 		}
-
 		#endregion
 
 
 		#region // 콤보 및 컨트롤 처리 
 
-		private void SetStatusText(string text)
-		{
-		}
 		private void gcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			AssetGroupsRow asset = (AssetGroupsRow)gcomboBox1.SelectedItem;
+			var asset = gcomboBox1.SelectedItem as string;
 			if (asset == null)
 				return;
-			gtextBox1.Text = asset.Name;
+			gtextBox1.Text = asset;
 
 			this.dataSet1.Assets.ForEach(p => p.chk = 0);
 			var s1 = this.dataSet1.AssetGroups.Where(p => p.Name == gtextBox1.Text && p.AssetId != 0).ToList();
@@ -66,6 +54,7 @@ namespace simplepa2.UI.Views
 			}
 		}
 
+
 		#endregion
 
 
@@ -76,31 +65,30 @@ namespace simplepa2.UI.Views
 
 			foreach (var s2 in s1)
 			{
-				this.dataSet1.AssetGroups.RemoveAssetGroupsRow(s2);
+				s2.Delete();
+				//this.dataSet1.AssetGroups.RemoveAssetGroupsRow(s2);
 			}
 
+			string s3 = comp_Site1.selectedItem;
 			foreach (var t1 in this.dataSet1.Assets)
 			{
 				if (t1.chk != 1) continue;
+				if (t1.emServer != s3) return;
 
 				var m1 = this.dataSet1.AssetGroups.NewAssetGroupsRow();
 				m1.AssetId = t1.AssetId;
 				m1.Name = gtextBox1.Text;
+				m1.EMNAME = t1.emServer;
 				this.dataSet1.AssetGroups.Rows.Add(m1);
-				cnt++;
 			}
 			this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
 			this.dataSet1.AcceptChanges();
-			SetStatusText("Update " + cnt.ToString() + " records.");
 		}
 
 		private void AddGroup()
 		{
 			string str1 = gtextBox1.Text;
-			if (str1 == "")
-			{
-				return;
-			}
+			if (str1 == "") return;
 
 			var t1 = this.assetGroupsTableAdapter.Find(str1);
 			if (t1 != null)
@@ -108,36 +96,32 @@ namespace simplepa2.UI.Views
 				AlertBox.Show("동일한 이름이 존재합니다 :" + str1);
 				return;
 			}
-			this.assetGroupsTableAdapter.InsertQuery(str1);
-			this.dataSet1.AcceptChanges();
 			this.assetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
 
 			t1 = this.assetGroupsTableAdapter.Find(str1);
 
-			int cnt = 0;
+			string s1 = comp_Site1.selectedItem;
 			foreach (var a1 in this.dataSet1.Assets)
 			{
 				if (a1.chk != 1) continue;
-
+				if (a1.emServer != s1) return;
 				var m1 = this.dataSet1.AssetGroups.NewAssetGroupsRow();
 				m1.AssetId = a1.AssetId;
 				m1.Name = gtextBox1.Text;
+				m1.EMNAME = a1.emServer;
 				this.dataSet1.AssetGroups.Rows.Add(m1);
 				this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
-				cnt++;
 			}
 			this.dataSet1.AcceptChanges();
-
 			AlertBox.Show("신규 데이터가 등록 되었습니다." + str1);
-			SetStatusText("Add " + cnt.ToString() + " records.");
 			reDraw();
 		}
 
 		// AssetGroup, AssetBase
 		private void DeleteGroup()
 		{
-			AssetGroupsRow asset = (AssetGroupsRow)gcomboBox1.SelectedItem;
-			string str1 = asset.Name;
+			string asset = (string) gcomboBox1.SelectedItem;
+			string str1 = asset;
 
 			if (str1 == "PRESET1" || str1 == "PRESET2" || str1 == "PRESET3" || str1 == "PRESET4")
 			{
@@ -146,8 +130,7 @@ namespace simplepa2.UI.Views
 			}
 
 			// this method shows server-side modal.
-			if (MessageBox.Show(
-					"Are you sure you want to delete this record?", icon: MessageBoxIcon.Question,
+			if (MessageBox.Show("삭제하시겠습니까?", icon: MessageBoxIcon.Question,
 					buttons: MessageBoxButtons.YesNoCancel) == DialogResult.No)
 				return;
 
@@ -160,12 +143,9 @@ namespace simplepa2.UI.Views
 				foreach (var s2 in s1)
 				{
 					s2.Delete();
-					cnt++;
 				}
 				this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
 				this.dataSet1.AcceptChanges();
-				SetStatusText("Delete " + cnt.ToString() + " records.");
-
 				gtextBox1.Text = "";
 				reDraw();
 			}
@@ -210,7 +190,26 @@ namespace simplepa2.UI.Views
 
         private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
         {
+			string selectedItem = sender as string;
+			IEnumerable<AssetGroupsRow> t1;
 
+			if (selectedItem == "") return;
+			gbindingSource2.Filter = ("emServer = '" + selectedItem + "'");
+			t1 = this.dataSet1.AssetGroups.Where(p=>p.EMNAME == selectedItem).DistinctBy(p => p.Name);
+
+			gcomboBox1.Items.Clear();
+			foreach (var a1 in t1)
+			{
+				gcomboBox1.Items.Add(a1.Name);
+			}
+			if (gcomboBox1.Items.Count > 0)
+				gcomboBox1.SelectedIndex = 0;
+
+			disp_gridview();
+		}
+
+        private void disp_gridview()
+        {
         }
     }
 }
