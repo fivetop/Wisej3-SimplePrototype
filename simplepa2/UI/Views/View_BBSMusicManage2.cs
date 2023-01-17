@@ -74,7 +74,7 @@ namespace simplepa2.UI.Views
             }
             else
             {
-                AlertBox.Show("취소되었습니다. - 서버 상태를 확인바랍니다.");
+                AlertBox.Show("Signal R 음원파일 전송이 취소되었습니다. - 서버 상태를 확인바랍니다.");
             }
 
         }
