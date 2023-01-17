@@ -15,12 +15,12 @@ namespace simplepa2.UI.Views
             InitializeComponent();
         }
 
+		#region // 기본 처리 
 		private void MGroupManager_Load(object sender, EventArgs e)
 		{
 			reDraw();
 		}
 
-		#region // 기본 처리 
 		public void reDraw()
 		{
 			this.assetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);

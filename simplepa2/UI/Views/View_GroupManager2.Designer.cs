@@ -33,7 +33,6 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.assetGroupsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetGroupsTableAdapter();
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
-            this.gbindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.gdataGridView1 = new Wisej.Web.DataGridView();
             this.colAssetbaseid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new Wisej.Web.DataGridViewCheckBoxColumn();
@@ -42,17 +41,16 @@
             this.gbutton2 = new Wisej.Web.Button();
             this.gbutton1 = new Wisej.Web.Button();
             this.tableLayoutPanel4 = new Wisej.Web.TableLayoutPanel();
-            this.gtextBox1 = new Wisej.Web.TextBox();
             this.label10 = new Wisej.Web.Label();
+            this.gtextBox1 = new Wisej.Web.TextBox();
             this.label9 = new Wisej.Web.Label();
             this.gcomboBox1 = new Wisej.Web.ComboBox();
             this.ptop = new Wisej.Web.Panel();
-            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.panel2 = new Wisej.Web.Panel();
             this.panel1 = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdataGridView1)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.ptop.SuspendLayout();
@@ -184,17 +182,6 @@
             this.tableLayoutPanel4.TabIndex = 11;
             this.tableLayoutPanel4.TabStop = true;
             // 
-            // gtextBox1
-            // 
-            this.gtextBox1.Anchor = Wisej.Web.AnchorStyles.Left;
-            this.gtextBox1.AutoSize = false;
-            this.gtextBox1.Location = new System.Drawing.Point(6, 40);
-            this.gtextBox1.Margin = new Wisej.Web.Padding(0);
-            this.gtextBox1.Name = "gtextBox1";
-            this.gtextBox1.Size = new System.Drawing.Size(214, 34);
-            this.gtextBox1.TabIndex = 1;
-            this.gtextBox1.Watermark = "Enter a name";
-            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
@@ -205,6 +192,17 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "신규 그룹명(등록)";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gtextBox1
+            // 
+            this.gtextBox1.Anchor = Wisej.Web.AnchorStyles.Left;
+            this.gtextBox1.AutoSize = false;
+            this.gtextBox1.Location = new System.Drawing.Point(6, 40);
+            this.gtextBox1.Margin = new Wisej.Web.Padding(0);
+            this.gtextBox1.Name = "gtextBox1";
+            this.gtextBox1.Size = new System.Drawing.Size(214, 34);
+            this.gtextBox1.TabIndex = 1;
+            this.gtextBox1.Watermark = "Enter a name";
             // 
             // label9
             // 
@@ -244,13 +242,6 @@
             this.ptop.Size = new System.Drawing.Size(872, 595);
             this.ptop.TabIndex = 16;
             // 
-            // comp_Site1
-            // 
-            this.comp_Site1.Name = "comp_Site1";
-            this.comp_Site1.Size = new System.Drawing.Size(281, 34);
-            this.comp_Site1.TabIndex = 98;
-            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.gdataGridView1);
@@ -273,6 +264,13 @@
             this.panel1.Size = new System.Drawing.Size(832, 80);
             this.panel1.TabIndex = 6;
             // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.Size = new System.Drawing.Size(281, 34);
+            this.comp_Site1.TabIndex = 98;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
+            // 
             // View_GroupManager2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -284,7 +282,6 @@
             this.Load += new System.EventHandler(this.MGroupManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gbindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdataGridView1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.ptop.ResumeLayout(false);
@@ -298,7 +295,6 @@
 
         private Wisej.Web.BindingSource gbindingSource2;
         private DataSet1 dataSet1;
-        private Wisej.Web.BindingSource gbindingSource1;
         private DataSet1TableAdapters.AssetGroupsTableAdapter assetGroupsTableAdapter;
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
         private Wisej.Web.DataGridView gdataGridView1;
