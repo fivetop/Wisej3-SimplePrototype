@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             Wisej.Web.DataGridView mdataGridView1;
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle6 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
             this.Col_MusicId = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Col_FileName = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Col_duration = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -113,9 +113,9 @@
             // 
             this.Col_MusicId.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
             this.Col_MusicId.DataPropertyName = "MusicId";
-            dataGridViewCellStyle4.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Col_MusicId.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Col_MusicId.DefaultCellStyle = dataGridViewCellStyle1;
             this.Col_MusicId.HeaderText = "No";
             this.Col_MusicId.MaximumWidth = 100;
             this.Col_MusicId.MinimumWidth = 70;
@@ -127,8 +127,8 @@
             // 
             this.Col_FileName.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
             this.Col_FileName.DataPropertyName = "FileName";
-            dataGridViewCellStyle5.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Col_FileName.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Col_FileName.DefaultCellStyle = dataGridViewCellStyle2;
             this.Col_FileName.HeaderText = "파일명";
             this.Col_FileName.MaximumWidth = 450;
             this.Col_FileName.MinimumWidth = 250;
@@ -138,9 +138,9 @@
             // Col_duration
             // 
             this.Col_duration.DataPropertyName = "duration";
-            dataGridViewCellStyle6.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Col_duration.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Col_duration.DefaultCellStyle = dataGridViewCellStyle3;
             this.Col_duration.HeaderText = "재생시간";
             this.Col_duration.MinimumWidth = 100;
             this.Col_duration.Name = "Col_duration";
@@ -299,6 +299,7 @@
             this.panel83.Controls.Add(this.pn_spacer);
             this.panel83.Controls.Add(this.pn_icon);
             this.panel83.Dock = Wisej.Web.DockStyle.Top;
+            this.panel83.Enabled = false;
             this.panel83.Location = new System.Drawing.Point(0, 0);
             this.panel83.Name = "panel83";
             this.panel83.Padding = new Wisej.Web.Padding(16, 11, 16, 11);
