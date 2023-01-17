@@ -27,6 +27,7 @@
         <EntityTypeShape EntityType="simplePAModel.Eventpreset" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="simplePAModel.Eventsyslog" Width="1.5" PointX="13.375" PointY="4.75" />
         <EntityTypeShape EntityType="simplePAModel.Holidays" Width="1.5" PointX="5.375" PointY="13.75" />
+        <EntityTypeShape EntityType="simplePAModel.TypeData" Width="1.5" PointX="13.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

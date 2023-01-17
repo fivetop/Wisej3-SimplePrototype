@@ -25,7 +25,15 @@ namespace simplepa2.UI.Views
         private void BSOutManager_Load(object sender, EventArgs e)
         {
             this.deviceTableAdapter.Fill(this.dataSet1.Device);
+            disp_gridview();
 
+            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.reDraw();
+
+        }
+
+        private void disp_gridview()
+        {
             foreach (var t1 in dataGridView3.Rows)
             {
                 Button b1 = new Button();
@@ -35,22 +43,12 @@ namespace simplepa2.UI.Views
                 b1.ToolTipText = t1.Index.ToString();
                 t1[6].Control = b1;
             }
-
-            var dsp = this.dataSet1.Device.Where(p=>p.device == 2);
-
-            foreach (var t1 in dsp)
-            {
-                if(this.colDsp_Name.Items.Contains(t1.DeviceName) == false)
-                    this.colDsp_Name.Items.Add(t1.DeviceName);
-            }
-
-            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
-            comp_Site1.reDraw();
-
         }
 
         #endregion
 
+
+        #region // button
         private void B1_Click(object sender, EventArgs e)
         {
             Button t1 = (Button)sender;
@@ -61,24 +59,38 @@ namespace simplepa2.UI.Views
 
             DeviceRow dataRow = (DeviceRow) (r1.DataBoundItem as DataRowView).Row;
 
-            string str1 = dataRow.dsp_name;
-            string str2 = dataRow.DeviceName;
-            int i2 = dataRow.dsp_chno;
-            int i3 = dataRow.chspk;
+            string str1 = dataRow.dsp_name;     // DSP name
+            string str2 = dataRow.DeviceName;   // AMP name
+            int i2 = dataRow.dsp_chno;          // DSP CH 17~31
+            int i3 = dataRow.chspk;             // AMP ch 1 or 2
 
+            if (str1 == "" || i2 == 0) return;
 
-            if (str1 == "" || i2 == 0)
-                return;
-
-            AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
+            AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 1분 정도 소요됩니다.");
 
             gweb.mainFrame.sendSigR(eSignalRMsgType.eOutChMove, str2, str1, i2, i3, dataRow.EMNAME); // dsp, dsp_chno
         }
+
         private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
         {
+            string selectedItem = sender as string;
 
+            if (!selectedItem.Equals("전체"))
+            {
+                deviceBindingSource.Filter = ("EMNAME = '" + selectedItem + "'" + " AND device = 0");
+            }
+            else
+            {
+                deviceBindingSource.Filter = "device=0";
+            }
+            disp_gridview();
         }
+        #endregion
 
+
+        #region // not use
+
+        #endregion
 
     }
 }

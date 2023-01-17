@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ptop = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.comboBox1 = new Wisej.Web.ComboBox();
             this.panel2 = new Wisej.Web.Panel();
             this.splitContainer1 = new Wisej.Web.SplitContainer();
@@ -48,7 +49,6 @@
             this.eMBsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.deviceTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
             this.emBsTableAdapter = new simplepa2.DataSet1TableAdapters.EMBsTableAdapter();
-            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -74,15 +74,24 @@
             this.ptop.TabIndex = 4;
             this.ptop.TabStop = true;
             // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Margin = new Wisej.Web.Padding(0);
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 97;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
+            // 
             // comboBox1
             // 
             this.comboBox1.AutoSize = false;
             this.comboBox1.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.comboBox1.ForeColor = System.Drawing.Color.FromName("@controlText");
             this.comboBox1.Label.Position = Wisej.Web.LabelPosition.Left;
             this.comboBox1.LabelText = "비상방송 층선택";
             this.comboBox1.Location = new System.Drawing.Point(334, 0);
+            this.comboBox1.Margin = new Wisej.Web.Padding(0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(361, 34);
+            this.comboBox1.Size = new System.Drawing.Size(360, 34);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -236,12 +245,6 @@
             // emBsTableAdapter
             // 
             this.emBsTableAdapter.ClearBeforeFill = true;
-            // 
-            // comp_Site1
-            // 
-            this.comp_Site1.Name = "comp_Site1";
-            this.comp_Site1.TabIndex = 97;
-            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // View_BBCEmergency2
             // 

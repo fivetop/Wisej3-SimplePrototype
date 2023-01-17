@@ -37,7 +37,7 @@
             this.colDevicename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.채널 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colIp = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDsp_Name = new Wisej.Web.DataGridViewComboBoxColumn();
+            this.colDsp_Name = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDsp_Chno = new Wisej.Web.DataGridViewComboBoxColumn();
             this.Column0 = new Wisej.Web.DataGridViewButtonColumn();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -62,7 +62,7 @@
             // 
             this.deviceBindingSource.DataMember = "Device";
             this.deviceBindingSource.DataSource = this.dataSet1;
-            this.deviceBindingSource.Filter = "device=0";
+            this.deviceBindingSource.Filter = "device=0 AND EMNAME = \'서울\' ";
             // 
             // deviceTableAdapter
             // 
@@ -166,7 +166,7 @@
             "31",
             "32"});
             this.colDsp_Chno.Name = "colDsp_Chno";
-            this.colDsp_Chno.Width = 60;
+            this.colDsp_Chno.Width = 80;
             // 
             // Column0
             // 
@@ -251,12 +251,12 @@
         private Wisej.Web.DataGridViewTextBoxColumn colIp;
         private Wisej.Web.DataGridViewTextBoxColumn colPath_1;
         private Wisej.Web.DataGridViewComboBoxColumn colDsp_Chno;
-        private Wisej.Web.DataGridViewComboBoxColumn colDsp_Name;
         private Wisej.Web.Panel ptop;
         private Wisej.Web.Panel panel2;
         private Wisej.Web.DataGridViewButtonColumn Column0;
         private Wisej.Web.DataGridViewTextBoxColumn 채널;
         private Wisej.Web.Panel panel1;
         private Components.Comp_Site comp_Site1;
+        private Wisej.Web.DataGridViewTextBoxColumn colDsp_Name;
     }
 }

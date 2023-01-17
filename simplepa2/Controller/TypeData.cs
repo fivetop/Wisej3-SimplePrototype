@@ -12,12 +12,12 @@ namespace simplepa2.Controller
     using System;
     using System.Collections.Generic;
     
-    public partial class EMBs
+    public partial class TypeData
     {
-        public int EMBsId { get; set; }
-        public string emData { get; set; }
-        public Nullable<int> DeviceId { get; set; }
-        public string path { get; set; }
-        public byte[] EMNAME { get; set; }
+        public int type_index { get; set; }
+        public int type_group { get; set; }
+        public Nullable<int> type_variable { get; set; }
+        public string type_contents { get; set; }
+        public string type_description { get; set; }
     }
 }

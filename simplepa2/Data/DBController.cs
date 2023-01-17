@@ -552,6 +552,7 @@ namespace simplepa2
                 m2.emData = t1.emData;
                 m2.DeviceId = t1.DeviceId;
                 m2.path = t1.path;
+                m2.EMNAME = t1.EMNAME;
                 Ds1.EMBs.Rows.Add(m2);
                 Tam.EMBsTableAdapter.Update(Ds1.EMBs);
             }

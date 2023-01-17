@@ -26,12 +26,17 @@ namespace simplepa2.UI.Views
             comboBox1.Items.Clear();
             comboBox1.DisplayMember = "emData";
             comboBox1.ValueMember = "emData";
+            comboBox1.DataSource = EMBs;
             foreach (var t1 in EMBs)
             {
                 comboBox1.Items.Add(t1);
             }
             if(comboBox1.Items.Count > 1)
                 comboBox1.SelectedIndex = 0;
+
+            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.reDraw();
+
         }
 
         internal void reDraw()
@@ -106,7 +111,22 @@ namespace simplepa2.UI.Views
 
         private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
         {
+            string selectedItem = sender as string;
 
+            if (!selectedItem.Equals("전체"))
+            {
+                deviceBindingSource.Filter = ("EMNAME = '" + selectedItem + "'" + " AND device = 0");
+            }
+            else
+            {
+                deviceBindingSource.Filter = "device=0";
+            }
+            disp_gridview();
+
+        }
+
+        private void disp_gridview()
+        {
         }
     }
 }

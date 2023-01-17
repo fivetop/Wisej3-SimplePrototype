@@ -130,6 +130,7 @@
           <Property Name="emData" Type="varchar(max)" />
           <Property Name="DeviceId" Type="int" />
           <Property Name="path" Type="varchar(max)" />
+          <Property Name="EMNAME" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="EMServer">
           <Key>
@@ -311,6 +312,19 @@
           <Property Name="site_images" Type="varchar(max)" />
           <Property Name="is_deleted" Type="bit" />
         </EntityType>
+        <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'simplePA.dbo.TypeData'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+        <EntityType Name="TypeData">
+          <Key>
+            <PropertyRef Name="type_index" />
+            <PropertyRef Name="type_group" />
+          </Key>
+          <Property Name="type_index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type_group" Type="int" Nullable="false" />
+          <Property Name="type_variable" Type="int" />
+          <Property Name="type_contents" Type="varchar(max)" />
+          <Property Name="type_description" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="UserTrees">
           <Key>
             <PropertyRef Name="UserTreeId" />
@@ -385,6 +399,15 @@
     [spa_site].[site_images] AS [site_images], 
     [spa_site].[is_deleted] AS [is_deleted]
     FROM [dbo].[spa_site] AS [spa_site]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TypeData" EntityType="Self.TypeData" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TypeData].[type_index] AS [type_index], 
+    [TypeData].[type_group] AS [type_group], 
+    [TypeData].[type_variable] AS [type_variable], 
+    [TypeData].[type_contents] AS [type_contents], 
+    [TypeData].[type_description] AS [type_description]
+    FROM [dbo].[TypeData] AS [TypeData]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -496,6 +519,7 @@
           <Property Name="emData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DeviceId" Type="Int32" />
           <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EMNAME" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="EMServer">
           <Key>
@@ -606,6 +630,7 @@
           <EntitySet Name="Eventpreset" EntityType="simplePAModel.Eventpreset" />
           <EntitySet Name="Eventsyslog" EntityType="simplePAModel.Eventsyslog" />
           <EntitySet Name="Holidays" EntityType="simplePAModel.Holidays" />
+          <EntitySet Name="TypeData" EntityType="simplePAModel.TypeData" />
         </EntityContainer>
         <EntityType Name="BSTreeC">
           <Key>
@@ -728,6 +753,17 @@
           <Property Name="hDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="TypeData">
+          <Key>
+            <PropertyRef Name="type_index" />
+            <PropertyRef Name="type_group" />
+          </Key>
+          <Property Name="type_index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type_group" Type="Int32" Nullable="false" />
+          <Property Name="type_variable" Type="Int32" />
+          <Property Name="type_contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="type_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -840,6 +876,7 @@
           <EntitySetMapping Name="EMBs">
             <EntityTypeMapping TypeName="simplePAModel.EMBs">
               <MappingFragment StoreEntitySet="EMBs">
+                <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
                 <ScalarProperty Name="EMBsId" ColumnName="EMBsId" />
                 <ScalarProperty Name="emData" ColumnName="emData" />
                 <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
@@ -1060,6 +1097,17 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="hDate" ColumnName="hDate" />
                 <ScalarProperty Name="HolidayId" ColumnName="HolidayId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeData">
+            <EntityTypeMapping TypeName="simplePAModel.TypeData">
+              <MappingFragment StoreEntitySet="TypeData">
+                <ScalarProperty Name="type_description" ColumnName="type_description" />
+                <ScalarProperty Name="type_contents" ColumnName="type_contents" />
+                <ScalarProperty Name="type_variable" ColumnName="type_variable" />
+                <ScalarProperty Name="type_group" ColumnName="type_group" />
+                <ScalarProperty Name="type_index" ColumnName="type_index" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

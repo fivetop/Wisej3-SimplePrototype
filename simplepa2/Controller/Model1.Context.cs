@@ -47,5 +47,6 @@ namespace simplepa2.Controller
         public virtual DbSet<Eventpreset> Eventpreset { get; set; }
         public virtual DbSet<Eventsyslog> Eventsyslog { get; set; }
         public virtual DbSet<Holidays> Holidays { get; set; }
+        public virtual DbSet<TypeData> TypeData { get; set; }
     }
 }
