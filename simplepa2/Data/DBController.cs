@@ -716,7 +716,7 @@ namespace simplepa2
                             if (str2 == "00:00:00")
                                 str2 = "00:00:01";
                             m3.duration = str2;
-                            Tam.MusicsTableAdapter.Update(Ds1.Musics);
+                            Tam.MusicsTableAdapter.InsertWhenTheyHaveNoData(m3.FileName, m3.FileContent, m3.deletable, m3.duration);
                         }
                     }
                     else
@@ -733,7 +733,7 @@ namespace simplepa2
                             str1 = "00:00:01";
                         m2.duration = str1;
                         Ds1.Musics.Rows.Add(m2);
-                        Tam.MusicsTableAdapter.Update(Ds1.Musics);
+                        Tam.MusicsTableAdapter.InsertWhenTheyHaveNoData(m2.FileName, m2.FileContent, m2.deletable, m2.duration);                        
                     }
                 }
             }
