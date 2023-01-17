@@ -41,14 +41,16 @@ namespace simplepa2.UI.Components
 		}
 		private List<string> _dataSet = null;
 
-		[Description("Fired when the user clicks.")]
+        public string selectedItem { get; set; }
+
+        [Description("Fired when the user clicks.")]
 		public event EventHandler SelectedValueChanged;
 
 		private void cb_SiteName_SelectedValueChanged(object sender, EventArgs e)
         {
 			try
 			{
-				string selectedItem = this.cb_SiteName.SelectedItem as string; 
+				selectedItem = this.cb_SiteName.SelectedItem as string; 
 				//string selectedItem = ((this.cb_SiteName.SelectedItem as DataRowView).Row as DataSet1.EMServerWithWholeColRow).EMNAME;
 				this.SelectedValueChanged?.Invoke(selectedItem, e);
 			}

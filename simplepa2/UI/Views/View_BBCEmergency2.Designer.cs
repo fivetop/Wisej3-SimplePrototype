@@ -44,11 +44,12 @@
             this.dataGridView2 = new Wisej.Web.DataGridView();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colDeviceid_1 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colEmbsid = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colEmdata_1 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.eMBsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.deviceTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
             this.emBsTableAdapter = new simplepa2.DataSet1TableAdapters.EMBsTableAdapter();
+            this.colEmbsid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEmdata_1 = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEMNAME = new Wisej.Web.DataGridViewTextBoxColumn();
             this.ptop.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -191,7 +192,8 @@
             this.colPath_1,
             this.colDeviceid_1,
             this.colEmbsid,
-            this.colEmdata_1});
+            this.colEmdata_1,
+            this.colEMNAME});
             this.dataGridView2.DataSource = this.eMBsBindingSource;
             this.dataGridView2.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
@@ -204,7 +206,7 @@
             // colPath_1
             // 
             this.colPath_1.DataPropertyName = "path";
-            this.colPath_1.HeaderText = "path";
+            this.colPath_1.HeaderText = "위치";
             this.colPath_1.Name = "colPath_1";
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 200;
@@ -216,6 +218,19 @@
             this.colDeviceid_1.Name = "colDeviceid_1";
             this.colDeviceid_1.ReadOnly = true;
             this.colDeviceid_1.Width = 60;
+            // 
+            // eMBsBindingSource
+            // 
+            this.eMBsBindingSource.DataMember = "EMBs";
+            this.eMBsBindingSource.DataSource = this.dataSet1;
+            // 
+            // deviceTableAdapter
+            // 
+            this.deviceTableAdapter.ClearBeforeFill = true;
+            // 
+            // emBsTableAdapter
+            // 
+            this.emBsTableAdapter.ClearBeforeFill = true;
             // 
             // colEmbsid
             // 
@@ -230,21 +245,14 @@
             this.colEmdata_1.DataPropertyName = "emData";
             this.colEmdata_1.HeaderText = "emData";
             this.colEmdata_1.Name = "colEmdata_1";
-            this.colEmdata_1.ReadOnly = true;
             this.colEmdata_1.Visible = false;
             // 
-            // eMBsBindingSource
+            // colEMNAME
             // 
-            this.eMBsBindingSource.DataMember = "EMBs";
-            this.eMBsBindingSource.DataSource = this.dataSet1;
-            // 
-            // deviceTableAdapter
-            // 
-            this.deviceTableAdapter.ClearBeforeFill = true;
-            // 
-            // emBsTableAdapter
-            // 
-            this.emBsTableAdapter.ClearBeforeFill = true;
+            this.colEMNAME.DataPropertyName = "EMNAME";
+            this.colEMNAME.HeaderText = "EMNAME";
+            this.colEMNAME.Name = "colEMNAME";
+            this.colEMNAME.Visible = false;
             // 
             // View_BBCEmergency2
             // 
@@ -289,8 +297,9 @@
         private Wisej.Web.DataGridView dataGridView2;
         private DataSet1TableAdapters.EMBsTableAdapter emBsTableAdapter;
         private Wisej.Web.DataGridViewTextBoxColumn colPath_1;
+        private Components.Comp_Site comp_Site1;
         private Wisej.Web.DataGridViewTextBoxColumn colEmbsid;
         private Wisej.Web.DataGridViewTextBoxColumn colEmdata_1;
-        private Components.Comp_Site comp_Site1;
+        private Wisej.Web.DataGridViewTextBoxColumn colEMNAME;
     }
 }
