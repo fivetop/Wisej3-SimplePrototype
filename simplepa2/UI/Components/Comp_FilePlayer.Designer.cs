@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             Wisej.Web.DataGridView mdataGridView1;
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle16 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle17 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle18 = new Wisej.Web.DataGridViewCellStyle();
             this.Col_MusicId = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Col_FileName = new Wisej.Web.DataGridViewTextBoxColumn();
             this.Col_duration = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -51,6 +51,7 @@
             this.panel_player = new Wisej.Web.Panel();
             this.line1 = new Wisej.Web.Line();
             this.panel83 = new Wisej.Web.Panel();
+            this.audioDefault = new Wisej.Web.Audio();
             this.panel14 = new Wisej.Web.Panel();
             this.panel13 = new Wisej.Web.Panel();
             this.panel1 = new Wisej.Web.Panel();
@@ -58,21 +59,11 @@
             this.lb_playerSpacer = new Wisej.Web.Label();
             this.lb_playTimeStart = new Wisej.Web.Label();
             this.lb_selectContetns = new Wisej.Web.Label();
-            this.panel12 = new Wisej.Web.Panel();
-            this.pn_control = new Wisej.Web.Panel();
-            this.panel24 = new Wisej.Web.Panel();
-            this.panel22 = new Wisej.Web.Panel();
-            this.panel23 = new Wisej.Web.Panel();
-            this.panel20 = new Wisej.Web.Panel();
-            this.panel21 = new Wisej.Web.Panel();
-            this.panel18 = new Wisej.Web.Panel();
-            this.panel19 = new Wisej.Web.Panel();
-            this.panel17 = new Wisej.Web.Panel();
-            this.panel16 = new Wisej.Web.Panel();
             this.pn_spacer = new Wisej.Web.Panel();
             this.pn_icon = new Wisej.Web.Panel();
             this.panel85 = new Wisej.Web.Panel();
             this.musicsTableAdapter1 = new simplepa2.DataSet1TableAdapters.MusicsTableAdapter();
+            this.animationTextMoving = new Wisej.Web.Animation(this.components);
             mdataGridView1 = new Wisej.Web.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(mdataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbindingSource1)).BeginInit();
@@ -84,7 +75,6 @@
             this.panel83.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pn_control.SuspendLayout();
             this.pn_icon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,14 +98,15 @@
             mdataGridView1.RowHeadersWidth = 16;
             mdataGridView1.Size = new System.Drawing.Size(990, 359);
             mdataGridView1.TabIndex = 10;
+            mdataGridView1.CellMouseClick += new Wisej.Web.DataGridViewCellMouseEventHandler(this.mdataGridView1_CellMouseClick);
             // 
             // Col_MusicId
             // 
             this.Col_MusicId.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
             this.Col_MusicId.DataPropertyName = "MusicId";
-            dataGridViewCellStyle1.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Col_MusicId.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Col_MusicId.DefaultCellStyle = dataGridViewCellStyle16;
             this.Col_MusicId.HeaderText = "No";
             this.Col_MusicId.MaximumWidth = 100;
             this.Col_MusicId.MinimumWidth = 70;
@@ -127,8 +118,8 @@
             // 
             this.Col_FileName.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
             this.Col_FileName.DataPropertyName = "FileName";
-            dataGridViewCellStyle2.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Col_FileName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Col_FileName.DefaultCellStyle = dataGridViewCellStyle17;
             this.Col_FileName.HeaderText = "파일명";
             this.Col_FileName.MaximumWidth = 450;
             this.Col_FileName.MinimumWidth = 250;
@@ -138,9 +129,9 @@
             // Col_duration
             // 
             this.Col_duration.DataPropertyName = "duration";
-            dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Col_duration.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackgroundImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Col_duration.DefaultCellStyle = dataGridViewCellStyle18;
             this.Col_duration.HeaderText = "재생시간";
             this.Col_duration.MinimumWidth = 100;
             this.Col_duration.Name = "Col_duration";
@@ -292,25 +283,35 @@
             // panel83
             // 
             this.panel83.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
+            this.panel83.Controls.Add(this.audioDefault);
             this.panel83.Controls.Add(this.panel14);
             this.panel83.Controls.Add(this.panel13);
-            this.panel83.Controls.Add(this.panel12);
-            this.panel83.Controls.Add(this.pn_control);
             this.panel83.Controls.Add(this.pn_spacer);
             this.panel83.Controls.Add(this.pn_icon);
             this.panel83.Dock = Wisej.Web.DockStyle.Top;
-            this.panel83.Enabled = false;
             this.panel83.Location = new System.Drawing.Point(0, 0);
             this.panel83.Name = "panel83";
             this.panel83.Padding = new Wisej.Web.Padding(16, 11, 16, 11);
             this.panel83.Size = new System.Drawing.Size(1000, 72);
             this.panel83.TabIndex = 130;
             // 
+            // audioDefault
+            // 
+            this.audioDefault.Dock = Wisej.Web.DockStyle.Left;
+            this.audioDefault.Location = new System.Drawing.Point(266, 11);
+            this.audioDefault.Name = "audioDefault";
+            this.audioDefault.Size = new System.Drawing.Size(417, 50);
+            this.audioDefault.TabIndex = 137;
+            this.audioDefault.Volume = 0.5D;
+            this.audioDefault.VolumeChanged += new System.EventHandler(this.audioDefault_VolumeChanged);
+            this.audioDefault.Paused += new System.EventHandler(this.audioDefault_Paused);
+            this.audioDefault.Playing += new System.EventHandler(this.audioDefault_Playing);
+            // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.Transparent;
             this.panel14.Dock = Wisej.Web.DockStyle.Left;
-            this.panel14.Location = new System.Drawing.Point(423, 11);
+            this.panel14.Location = new System.Drawing.Point(256, 11);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(10, 50);
             this.panel14.TabIndex = 143;
@@ -321,10 +322,10 @@
             this.panel13.Controls.Add(this.panel1);
             this.panel13.Controls.Add(this.lb_selectContetns);
             this.panel13.Dock = Wisej.Web.DockStyle.Left;
-            this.panel13.Location = new System.Drawing.Point(279, 11);
+            this.panel13.Location = new System.Drawing.Point(76, 11);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new Wisej.Web.Padding(6, 0, 0, 0);
-            this.panel13.Size = new System.Drawing.Size(144, 50);
+            this.panel13.Size = new System.Drawing.Size(180, 50);
             this.panel13.TabIndex = 142;
             // 
             // panel1
@@ -335,7 +336,7 @@
             this.panel1.Dock = Wisej.Web.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(6, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(138, 26);
+            this.panel1.Size = new System.Drawing.Size(174, 26);
             this.panel1.TabIndex = 136;
             // 
             // lb_playTimeEnd
@@ -345,9 +346,9 @@
             this.lb_playTimeEnd.Dock = Wisej.Web.DockStyle.Left;
             this.lb_playTimeEnd.Font = new System.Drawing.Font("@ns400", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lb_playTimeEnd.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
-            this.lb_playTimeEnd.Location = new System.Drawing.Point(77, 0);
+            this.lb_playTimeEnd.Location = new System.Drawing.Point(95, 0);
             this.lb_playTimeEnd.Name = "lb_playTimeEnd";
-            this.lb_playTimeEnd.Size = new System.Drawing.Size(62, 26);
+            this.lb_playTimeEnd.Size = new System.Drawing.Size(80, 26);
             this.lb_playTimeEnd.TabIndex = 137;
             this.lb_playTimeEnd.Text = "00:03:12";
             this.lb_playTimeEnd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -359,7 +360,7 @@
             this.lb_playerSpacer.Dock = Wisej.Web.DockStyle.Left;
             this.lb_playerSpacer.Font = new System.Drawing.Font("@ns400", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lb_playerSpacer.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
-            this.lb_playerSpacer.Location = new System.Drawing.Point(62, 0);
+            this.lb_playerSpacer.Location = new System.Drawing.Point(80, 0);
             this.lb_playerSpacer.Name = "lb_playerSpacer";
             this.lb_playerSpacer.Size = new System.Drawing.Size(15, 26);
             this.lb_playerSpacer.TabIndex = 136;
@@ -375,13 +376,15 @@
             this.lb_playTimeStart.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
             this.lb_playTimeStart.Location = new System.Drawing.Point(0, 0);
             this.lb_playTimeStart.Name = "lb_playTimeStart";
-            this.lb_playTimeStart.Size = new System.Drawing.Size(62, 26);
+            this.lb_playTimeStart.Size = new System.Drawing.Size(80, 26);
             this.lb_playTimeStart.TabIndex = 135;
             this.lb_playTimeStart.Text = " 05:12:00";
             this.lb_playTimeStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_selectContetns
             // 
+            this.animationTextMoving.GetAnimation(this.lb_selectContetns).Event = "pointerover";
+            this.animationTextMoving.GetAnimation(this.lb_selectContetns).Name = "popOut";
             this.lb_selectContetns.AutoEllipsis = true;
             this.lb_selectContetns.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
             this.lb_selectContetns.Dock = Wisej.Web.DockStyle.Top;
@@ -389,130 +392,10 @@
             this.lb_selectContetns.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.lb_selectContetns.Location = new System.Drawing.Point(6, 0);
             this.lb_selectContetns.Name = "lb_selectContetns";
-            this.lb_selectContetns.Size = new System.Drawing.Size(138, 24);
+            this.lb_selectContetns.Size = new System.Drawing.Size(174, 24);
             this.lb_selectContetns.TabIndex = 134;
-            this.lb_selectContetns.Text = "Let it be - old pop music";
-            this.lb_selectContetns.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(219, 222, 232);
-            this.panel12.Dock = Wisej.Web.DockStyle.Left;
-            this.panel12.Location = new System.Drawing.Point(278, 11);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1, 50);
-            this.panel12.TabIndex = 141;
-            // 
-            // pn_control
-            // 
-            this.pn_control.BackColor = System.Drawing.Color.Transparent;
-            this.pn_control.Controls.Add(this.panel24);
-            this.pn_control.Controls.Add(this.panel22);
-            this.pn_control.Controls.Add(this.panel23);
-            this.pn_control.Controls.Add(this.panel20);
-            this.pn_control.Controls.Add(this.panel21);
-            this.pn_control.Controls.Add(this.panel18);
-            this.pn_control.Controls.Add(this.panel19);
-            this.pn_control.Controls.Add(this.panel17);
-            this.pn_control.Controls.Add(this.panel16);
-            this.pn_control.Dock = Wisej.Web.DockStyle.Left;
-            this.pn_control.Location = new System.Drawing.Point(76, 11);
-            this.pn_control.Name = "pn_control";
-            this.pn_control.Padding = new Wisej.Web.Padding(0, 8, 0, 8);
-            this.pn_control.Size = new System.Drawing.Size(202, 50);
-            this.pn_control.TabIndex = 144;
-            // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.Color.White;
-            this.panel24.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
-            this.panel24.BackgroundImageSource = "Images/music-crrl-5.png";
-            this.panel24.Dock = Wisej.Web.DockStyle.Left;
-            this.panel24.Location = new System.Drawing.Point(160, 8);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(32, 34);
-            this.panel24.TabIndex = 151;
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.Color.Transparent;
-            this.panel22.Dock = Wisej.Web.DockStyle.Left;
-            this.panel22.Location = new System.Drawing.Point(152, 8);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(8, 34);
-            this.panel22.TabIndex = 150;
-            // 
-            // panel23
-            // 
-            this.panel23.BackColor = System.Drawing.Color.White;
-            this.panel23.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
-            this.panel23.BackgroundImageSource = "Images/music-crrl-4.png";
-            this.panel23.Dock = Wisej.Web.DockStyle.Left;
-            this.panel23.Location = new System.Drawing.Point(120, 8);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(32, 34);
-            this.panel23.TabIndex = 149;
-            // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.Color.Transparent;
-            this.panel20.Dock = Wisej.Web.DockStyle.Left;
-            this.panel20.Location = new System.Drawing.Point(112, 8);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(8, 34);
-            this.panel20.TabIndex = 148;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.White;
-            this.panel21.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
-            this.panel21.BackgroundImageSource = "Images/music-crrl-3.png";
-            this.panel21.Dock = Wisej.Web.DockStyle.Left;
-            this.panel21.Location = new System.Drawing.Point(80, 8);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(32, 34);
-            this.panel21.TabIndex = 147;
-            this.panel21.PanelCollapsed += new System.EventHandler(this.panel21_PanelCollapsed);
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.Transparent;
-            this.panel18.Dock = Wisej.Web.DockStyle.Left;
-            this.panel18.Location = new System.Drawing.Point(72, 8);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(8, 34);
-            this.panel18.TabIndex = 146;
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.White;
-            this.panel19.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
-            this.panel19.BackgroundImageSource = "Images/music-crrl-2.png";
-            this.panel19.Dock = Wisej.Web.DockStyle.Left;
-            this.panel19.Location = new System.Drawing.Point(40, 8);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(32, 34);
-            this.panel19.TabIndex = 145;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.Transparent;
-            this.panel17.Dock = Wisej.Web.DockStyle.Left;
-            this.panel17.Location = new System.Drawing.Point(32, 8);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(8, 34);
-            this.panel17.TabIndex = 144;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.White;
-            this.panel16.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
-            this.panel16.BackgroundImageSource = "Images/music-crrl-1.png";
-            this.panel16.Dock = Wisej.Web.DockStyle.Left;
-            this.panel16.Location = new System.Drawing.Point(0, 8);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(32, 34);
-            this.panel16.TabIndex = 1;
+            this.lb_selectContetns.Text = "Music File Name";
+            this.lb_selectContetns.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pn_spacer
             // 
@@ -566,7 +449,6 @@
             this.panel83.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pn_control.ResumeLayout(false);
             this.pn_icon.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -585,21 +467,7 @@
         private Wisej.Web.Panel panel_player;
         private Wisej.Web.Line line1;
         private Wisej.Web.Panel panel83;
-        private Wisej.Web.Panel pn_control;
-        private Wisej.Web.Panel panel24;
-        private Wisej.Web.Panel panel22;
-        private Wisej.Web.Panel panel23;
-        private Wisej.Web.Panel panel20;
-        private Wisej.Web.Panel panel21;
-        private Wisej.Web.Panel panel18;
-        private Wisej.Web.Panel panel19;
-        private Wisej.Web.Panel panel17;
-        private Wisej.Web.Panel panel16;
         private Wisej.Web.Panel panel14;
-        private Wisej.Web.Panel panel13;
-        private Wisej.Web.Label lb_playTimeStart;
-        private Wisej.Web.Label lb_selectContetns;
-        private Wisej.Web.Panel panel12;
         private Wisej.Web.Panel pn_spacer;
         private Wisej.Web.Panel pn_icon;
         private Wisej.Web.Panel panel85;
@@ -612,8 +480,13 @@
         private Wisej.Web.Label label1;
         private Wisej.Web.TextBox tb_description;
         private Wisej.Web.BindingSource mbindingSource1;
+        private Wisej.Web.Animation animationTextMoving;
+        private Wisej.Web.Audio audioDefault;
+        private Wisej.Web.Panel panel13;
         private Wisej.Web.Panel panel1;
         private Wisej.Web.Label lb_playTimeEnd;
         private Wisej.Web.Label lb_playerSpacer;
+        private Wisej.Web.Label lb_playTimeStart;
+        private Wisej.Web.Label lb_selectContetns;
     }
 }
