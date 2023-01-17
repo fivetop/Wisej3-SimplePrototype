@@ -20738,11 +20738,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string EMNAME {
                 get {
-                    try {
-                        return ((string)(this[this.tableDeviceWithType.EMNAMEColumn]));
+                    if (this.IsEMNAMENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'DeviceWithType\' 테이블의 \'EMNAME\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDeviceWithType.EMNAMEColumn]));
                     }
                 }
                 set {
@@ -20754,11 +20754,11 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string ZoneName {
                 get {
-                    try {
-                        return ((string)(this[this.tableDeviceWithType.ZoneNameColumn]));
+                    if (this.IsZoneNameNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'DeviceWithType\' 테이블의 \'ZoneName\' 열의 값이 DBNull입니다.", e);
+                    else {
+                        return ((string)(this[this.tableDeviceWithType.ZoneNameColumn]));
                     }
                 }
                 set {

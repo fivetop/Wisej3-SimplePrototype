@@ -88,6 +88,8 @@ namespace simplepa2.UI.Views
         {
             string selectedItem = sender as string;
 
+            if (selectedItem == null)
+                return;
             if (!selectedItem.Equals("전체"))
             {
                 deviceChannelBindingSource.Filter = "EMNAME = '" + selectedItem + "'";

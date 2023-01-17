@@ -3157,14 +3157,14 @@ FROM     DeviceChannel INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="chCount" msprop:Generator_ColumnPropNameInTable="chCountColumn" msprop:Generator_ColumnPropNameInRow="chCount" msprop:Generator_UserColumnName="chCount" msprop:Generator_ColumnVarNameInTable="columnchCount" type="xs:int" minOccurs="0" />
-              <xs:element name="EMNAME" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:Generator_ColumnPropNameInRow="EMNAME" msprop:Generator_UserColumnName="EMNAME" msprop:Generator_ColumnVarNameInTable="columnEMNAME" minOccurs="0">
+              <xs:element name="EMNAME" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="EMNAME" msprop:Generator_UserColumnName="EMNAME" msprop:Generator_ColumnVarNameInTable="columnEMNAME" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ZoneName" msprop:Generator_ColumnPropNameInTable="ZoneNameColumn" msprop:Generator_ColumnPropNameInRow="ZoneName" msprop:Generator_UserColumnName="ZoneName" msprop:Generator_ColumnVarNameInTable="columnZoneName" minOccurs="0">
+              <xs:element name="ZoneName" msprop:Generator_ColumnPropNameInTable="ZoneNameColumn" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ZoneName" msprop:Generator_UserColumnName="ZoneName" msprop:Generator_ColumnVarNameInTable="columnZoneName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
