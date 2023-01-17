@@ -82,7 +82,7 @@ namespace simplepa2.UI.Components
 
             if (File.Exists(path))
                 return false;
-
+            
             using (FileStream outputFileStream = new FileStream(path, FileMode.Create))
             {
                 inputStream.CopyTo(outputFileStream);
@@ -93,17 +93,7 @@ namespace simplepa2.UI.Components
         private void Comp_FilePlayer_Load(object sender, EventArgs e)
         {
             strFileUploadPath = @"C:\SimplePA2" + "\\Music\\";
-            /*
-                        this.mupload1.CreateControl();
 
-                        this.mbuttonAdd.Eval(
-                   String.Format(@"
-                        this.uploadButton = Wisej.Core.getComponent(""id_{0}"");
-                        this.addListener(""execute"", function(e)
-                          {{
-                             this.uploadButton.upload();
-                          }});", this.mupload1.Handle));
-            */
             this.musicsTableAdapter1.Fill(this.dataSet11.Musics);
             gweb.mainFrame.dBSqlite.MusicSave();
             this.musicsTableAdapter1.Fill(this.dataSet11.Musics);
@@ -112,7 +102,12 @@ namespace simplepa2.UI.Components
         private void DBInsert(string path)
         {
             gweb.mainFrame.dBSqlite.DBInit();
-            gweb.mainFrame.dBSqlite.MusicFileSave(strFileUploadPath, filename);
+            gweb.mainFrame.dBSqlite.MusicFileSave(strFileUploadPath, filename, tb_description.Text);
+        }
+
+        private void panel21_PanelCollapsed(object sender, EventArgs e)
+        {
+            MessageBox.Show("TODO: 구현 예정입니다.");
         }
     }
 }

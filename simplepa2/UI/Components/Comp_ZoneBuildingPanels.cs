@@ -36,6 +36,11 @@ namespace simplepa2.UI.Components
 
             ch_floor.Visible = isCheckUse;
 
+            if(isCheckUse)  // false; 
+            {
+                this.lb_buildingName.Location = new System.Drawing.Point(-1, 16);
+            }
+
             this.zoneFloorDataList = prepareFloorZoneData(buildList);            
 
             setupUICardData(zoneFloorDataList, isCheckUse);

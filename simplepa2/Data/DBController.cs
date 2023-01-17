@@ -660,7 +660,7 @@ namespace simplepa2
 
         #region // 음원 처리
 
-        internal bool MusicFileSave(string path, string filename)
+        internal bool MusicFileSave(string path, string filename, string FileContent)
         {
 
             string path1 = Path.Combine(path, filename);
@@ -672,6 +672,7 @@ namespace simplepa2
             m2.FileName = filename;
             m2.FileContent = "";
             m2.deletable = "N";
+            m2.FileContent = FileContent;
             Thread.Sleep(50);
             str1 = r1.ToString(@"hh\:mm\:ss");
             if (str1 == "00:00:00")

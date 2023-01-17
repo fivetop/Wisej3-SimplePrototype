@@ -228,7 +228,7 @@
             // upload1
             // 
             this.upload1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
-            this.upload1.CssStyle = "border-radius:6px;";
+            this.upload1.CssStyle = "border-radius:10px;";
             this.upload1.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.upload1.Location = new System.Drawing.Point(0, 0);
             this.upload1.Name = "upload1";
@@ -295,7 +295,7 @@
             this.HeaderBackColor = System.Drawing.Color.FromName("@button1BG");
             this.Name = "Form_BBCZoneImport";
             this.StartPosition = Wisej.Web.FormStartPosition.CenterScreen;
-            this.Text = "Zone 정보 Import";            
+            this.Text = "Zone 정보 Import";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_assetTextData)).EndInit();
