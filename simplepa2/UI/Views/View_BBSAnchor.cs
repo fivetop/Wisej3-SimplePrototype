@@ -1,4 +1,5 @@
 ﻿using DataClass;
+using simplepa2.UI.Components;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,28 +11,67 @@ namespace simplepa2.UI.Views
 {
     public partial class View_BBSAnchor : Wisej.Web.UserControl
     {
-        public View_BBSAnchor()
-        {
-            InitializeComponent();
-        }
 
-        private void View_BBSAnchor_Load(object sender, EventArgs e)
+		public string strEMNAME;
+		public int intBBSchno;
+
+		public View_BBSAnchor()
+		{
+			InitializeComponent();
+		}
+
+		public void setupUIComponent()
         {
+			this.pn_BBSMonitor.Controls.Add(new Comp_BBSAchchorBSStatus());
+			this.pn_playerList.Controls.Add(new Comp_BBSAnchorPlayer());
+			this.splitContainer2.Panel1.Controls.Add(new Comp_BBSAnchorPresetQuick());
+			this.splitContainer2.Panel2.Controls.Add(new View_BBCZone());
+
+		}
+
+		internal void reDraw()
+		{
 			/*
-            this.btnStart.Enabled = true;
-            this.btnStop.Enabled = false;
-            this.dataGridView2.RowCount = 10;
+			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 
-            this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+			this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
+
+			this.btnStart.Enabled = true;
+			this.btnStop.Enabled = false;
+			// this.dg_playList.RowCount = 10;
+
+			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+			comp_Site1.reDraw();
 			*/
+		}
 
-        }
+		public void refresh()
+		{
+			/*
+			this.btnStart.Enabled = true;
+			this.btnStop.Enabled = false;
+			*/
+		}
+
+		private void View_BBSAnchor_Load(object sender, EventArgs e)
+		{
+			setupUIComponent();
+
+			reDraw();
+
+		}
 
 
-		public List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
-		public List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
-		Guid guid { get; set; } = Guid.Empty;
+		List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
+		List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
 
+		int bSTreeid { get; set; } = 0;
+
+		// 방송 시작
+		// 선택내용 확인
+		// 해당 지역 서버 확인
+		// 사용중인 지역이 있는지 점검
+		// 방송 시작
 		private void btnStart_Click(object sender, EventArgs e)
 		{
 			/*
@@ -43,62 +83,91 @@ namespace simplepa2.UI.Views
 					var t1 = row.DataBoundItem;
 					SelAsset.Add((AssetsRow)((System.Data.DataRowView)t1).Row);
 				}
+			
 			}
 
 			if (SelAsset.Count() < 1 || SelMusic.Count() < 1)
 			{
+				AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Error, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Hand, true, ContentAlignment.MiddleCenter);
-				AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Question, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Stop, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Warning, true, ContentAlignment.MiddleCenter);
 				return;
 			}
 
-			guid = gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, SelAsset, SelMusic, Guid.Empty);
+			int ret = gweb.mainFrame.dBSqlite.EMServerGetState(SelAsset[0]);
 
-			if (guid != Guid.Empty)
-			{ 
-				this.btnStart.Enabled = false;
-				this.btnStop.Enabled = true;
+			if (ret == 0)
+			{
+				AlertBox.Show("해당 지역 서버를 확인 바랍니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+				return;
 			}
+
+			// 선택한 지역에 방송중인지 점검 
+			string ret1 = gweb.mainFrame.dBSqlite.BSTreeCCheck(SelAsset);
+
+			if (ret1 != "")
+			{
+				AlertBox.Show(ret1 + "님이 방송중인 지역 입니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+				return;
+			}
+
+			방송처리로직();
 			*/
 		}
-
 		private void btnStop_Click(object sender, EventArgs e)
 		{
 			/*
 			this.btnStart.Enabled = true;
 			this.btnStop.Enabled = false;
-			if (guid != Guid.Empty)
-			{
-				gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, null, null, guid);
-				guid = Guid.Empty;
-			}
+			방송중지로직();
+			bSTreeid = 0;
 			*/
+		}
+
+		// 1. 방송 채널 확보 
+		// 2. 저장전 기존 데이터 있으면 삭제처리 
+		// 3. 지역과 음원 저장 
+		// 4. 해당 지역 서버에 명령 처리 
+		// 5. 버튼 상태 변경 
+		private async void 방송처리로직()
+		{
+			/*
+			bSTreeid = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
+			if (bSTreeid == 0) return;
+			await gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
+			await gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeid, SelAsset, SelMusic, gweb.mainFrame.user_name);
+			await gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "방송시작");
+			gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeid, SelAsset, SelMusic);
+			this.btnStart.Enabled = false;
+			this.btnStop.Enabled = true;
+			*/
+		}
+
+		// 1. 해당지역 서버에 중지 처리 
+		// 2. 방송트리 초기화 
+		// 3. 방송트리 차일드 지우기 
+		private void 방송중지로직()
+		{
+			if (bSTreeid == 0) return;
+			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
+			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
+			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
 		}
 
 		private void Win_EventMusic(object sender, EventArgs e)
 		{
-			/*
-			this.dataGridView2.DataSource = SelMusic;
-			this.dataGridView2.Refresh();
+			//this.dg_playList.DataSource = SelMusic;
+			//this.dg_playList.Refresh();
 
 			if (SelMusic.Count == 0)
 			{
-				this.dataGridView2.DataSource = null;
-				this.dataGridView2.RowCount = 10;
+				//this.dg_playList.DataSource = null;
+				//this.dg_playList.RowCount = 10;
 			}
-			*/
 		}
-
-		internal void reDraw()
-		{
-			//throw new NotImplementedException();
-			View_BBSAnchor_Load(null, null);
-		}
-
 
 
 		#region // 그리드 처리 
@@ -119,9 +188,7 @@ namespace simplepa2.UI.Views
 			{
 				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = false;
 			}
-			dataGridView1.EndEdit();
-
-			*/
+			dataGridView1.EndEdit(); */
 		}
 
 		private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -161,7 +228,12 @@ namespace simplepa2.UI.Views
 			}
 
 		}
-        #endregion
+		#endregion
 
-    }
+		private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+		{
+			var t1 = sender;
+		}
+
+	}
 }

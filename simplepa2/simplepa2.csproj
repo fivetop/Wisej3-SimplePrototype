@@ -157,6 +157,15 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="UI\Components\Comp_BBSAchchorBSStatus.resx">
+      <DependentUpon>Comp_BBSAchchorBSStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_BBSAnchorPlayer.resx">
+      <DependentUpon>Comp_BBSAnchorPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_BBSAnchorPresetQuick.resx">
+      <DependentUpon>Comp_BBSAnchorPresetQuick.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_BBSDeckButton.resx">
       <DependentUpon>Comp_BBSDeckButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -825,6 +834,7 @@
     <Content Include="libman.json" />
     <Content Include="Handler1.ashx" />
     <Content Include="Files\Wisej-Datasheet-V2.3.pdf" />
+    <Content Include="Media\01-cast_of_frozen-frozen_heart.mp3" />
     <Content Include="Themes\LSMaterial-3.theme" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <Content Include="Themes\Wisej-Themes.pdf" />
@@ -963,6 +973,24 @@
     </Compile>
     <Compile Include="global.cs" />
     <Compile Include="SignalR\SignalRHub.cs" />
+    <Compile Include="UI\Components\Comp_BBSAchchorBSStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_BBSAchchorBSStatus.Designer.cs">
+      <DependentUpon>Comp_BBSAchchorBSStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_BBSAnchorPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_BBSAnchorPlayer.Designer.cs">
+      <DependentUpon>Comp_BBSAnchorPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_BBSAnchorPresetQuick.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_BBSAnchorPresetQuick.Designer.cs">
+      <DependentUpon>Comp_BBSAnchorPresetQuick.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Comp_BBSDeckButton.cs">
       <SubType>Component</SubType>
     </Compile>
