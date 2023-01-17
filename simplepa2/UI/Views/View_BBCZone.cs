@@ -198,6 +198,7 @@ namespace simplepa2.UI.Views
             }
             catch (Exception e2)
             {
+                AlertBox.Show("LAW TEXT : 예외 " + this.ToString() +  e2.ToString());
                 selectedItem = null;
                 return;
             }

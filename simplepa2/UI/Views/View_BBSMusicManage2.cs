@@ -112,7 +112,7 @@ namespace simplepa2.UI.Views
         private void DBInsert(string path)
         {
             gweb.mainFrame.dBSqlite.DBInit();
-            gweb.mainFrame.dBSqlite.MusicFileSave(strFileUploadPath, filename);
+            gweb.mainFrame.dBSqlite.MusicFileSave(strFileUploadPath, filename, "");
         }
 
     }

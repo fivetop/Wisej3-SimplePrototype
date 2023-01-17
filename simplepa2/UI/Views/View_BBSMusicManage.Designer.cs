@@ -61,6 +61,7 @@
             this.panel_filePlayerLocation = new Wisej.Web.Panel();
             this.line5 = new Wisej.Web.Line();
             this.panel34 = new Wisej.Web.Panel();
+            this.bt_musicSize = new Wisej.Web.Button();
             this.label23 = new Wisej.Web.Label();
             this.label22 = new Wisej.Web.Label();
             this.panel136 = new Wisej.Web.Panel();
@@ -459,6 +460,7 @@
             // 
             // panel34
             // 
+            this.panel34.Controls.Add(this.bt_musicSize);
             this.panel34.Controls.Add(this.label23);
             this.panel34.Controls.Add(this.label22);
             this.panel34.Dock = Wisej.Web.DockStyle.Top;
@@ -466,6 +468,16 @@
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(1280, 37);
             this.panel34.TabIndex = 161;
+            // 
+            // bt_musicSize
+            // 
+            this.bt_musicSize.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
+            this.bt_musicSize.Location = new System.Drawing.Point(1176, 3);
+            this.bt_musicSize.Name = "bt_musicSize";
+            this.bt_musicSize.Size = new System.Drawing.Size(100, 33);
+            this.bt_musicSize.TabIndex = 135;
+            this.bt_musicSize.Text = "확대";
+            this.bt_musicSize.Click += new System.EventHandler(this.bt_musicSize_Click);
             // 
             // label23
             // 
@@ -584,5 +596,6 @@
         private Wisej.Web.Label label2;
         private Wisej.Web.Label label3;
         private Wisej.Web.Panel panel1;
+        private Wisej.Web.Button bt_musicSize;
     }
 }

@@ -78,7 +78,7 @@
             this.lb_buildingName.BackColor = System.Drawing.Color.Transparent;
             this.lb_buildingName.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lb_buildingName.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_buildingName.Location = new System.Drawing.Point(-1, 2);
+            this.lb_buildingName.Location = new System.Drawing.Point(-1, 5);
             this.lb_buildingName.Margin = new Wisej.Web.Padding(0);
             this.lb_buildingName.Name = "lb_buildingName";
             this.lb_buildingName.Size = new System.Drawing.Size(90, 24);
