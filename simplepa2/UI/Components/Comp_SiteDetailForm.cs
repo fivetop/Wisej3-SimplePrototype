@@ -17,9 +17,6 @@ namespace simplepa2.UI.Components
         // 사이트에서 관리하는 E.M의 장비를 매칭하는 Device List 
         private DataRow[] deviceDataDR;
 
-        // 사이트의 모든 빌딩 정보 
-        private DataSet1.spa_bd_structDataTable dsBuildingListDataTable;
-
         // 사이트의 빌딩 층정보 상세 테이블 
         //private DataSet1.siteDataDetailDataTable dsAllBuildingFloorDetailDataTable;
 
@@ -104,25 +101,11 @@ namespace simplepa2.UI.Components
             // 01. Grid 데이터를 찾고
             var dgv = (DataGridView)sender;
             var r1 = dgv.Rows[e.RowIndex];
-            openSiteFloorPopupWithDataGridIndex(r1.DataBoundItem as DataSet1.spa_bd_structRow);
+            
 
 
         }
 
-        private void openSiteFloorPopupWithDataGridIndex(DataSet1.spa_bd_structRow boundingData)
-        {
-            DataSet1.spa_bd_structRow structRow = boundingData;
-
-            // 02. 층 데이터를 편집
-            //DataRow[] drBuildingFloorData = this.dsAllBuildingFloorDetailDataTable.Select("refer_bd_id= '" + structRow.bd_id + "'");
-
-            // 03. 팝업 열고
-            openBBCSiteFromPopup();
-
-            // 04. Popup 객체에 사전 셋업 
-            //popup_BBCSiteForm.setupUIwithData(structRow, drBuildingFloorData);
-
-        }
 
         /* 빌딩 상세 내역 + Floor 데이터를 편집하는 팝업 열기*/
         public void openBBCSiteFromPopup()

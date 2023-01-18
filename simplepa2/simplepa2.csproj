@@ -229,9 +229,6 @@
     <EmbeddedResource Include="UI\Popups\Form_BBSReservationAdd.resx">
       <DependentUpon>Form_BBSReservationAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Popups\Form_FilePlayerMusicSelector.resx">
-      <DependentUpon>Form_FilePlayerMusicSelector.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Popups\Popup_BBCDeviceForm.resx">
       <DependentUpon>Popup_BBCDeviceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -783,7 +780,7 @@
     <EmbeddedResource Include="UI\Views\View_BBCDevice.resx">
       <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBCAsset2.resx">
+    <EmbeddedResource Include="UI\win\View_BBCAsset2.resx">
       <DependentUpon>View_BBCAsset2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCEmergency2.resx">
@@ -867,11 +864,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controller\AssetsController.cs" />
-    <Compile Include="Controller\BSroom.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Controller\BSroomsController.cs" />
     <Compile Include="Controller\BSTree.cs">
       <DependentUpon>Model1.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -947,22 +939,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controller\MusicsController.cs" />
-    <Compile Include="Controller\PlayItem.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Controller\PlayItemsController.cs" />
     <Compile Include="Controller\Simplepa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controller\SimplepasController.cs" />
-    <Compile Include="Controller\spa_bd_struct.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controller\spa_site.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Controller\TypeData.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -1110,12 +1091,6 @@
     </Compile>
     <Compile Include="UI\Popups\Form_BBSReservationAdd.designer.cs">
       <DependentUpon>Form_BBSReservationAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Popups\Form_FilePlayerMusicSelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Popups\Form_FilePlayerMusicSelector.Designer.cs">
-      <DependentUpon>Form_FilePlayerMusicSelector.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Popups\Popup_BBCDeviceForm.cs">
       <SubType>UserControl</SubType>
@@ -1315,7 +1290,6 @@
     <Compile Include="UI\Views\View_TopPanelBar.Designer.cs">
       <DependentUpon>View_TopPanelBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\Bsroom.cs" />
     <Compile Include="chat\SimpleChatClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1438,10 +1412,10 @@
     <Compile Include="UI\Views\View_BBCDevice.Designer.cs">
       <DependentUpon>View_BBCDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Views\View_BBCAsset2.cs">
+    <Compile Include="UI\win\View_BBCAsset2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Views\View_BBCAsset2.Designer.cs">
+    <Compile Include="UI\win\View_BBCAsset2.Designer.cs">
       <DependentUpon>View_BBCAsset2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBCEmergency2.cs">

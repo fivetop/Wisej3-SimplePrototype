@@ -7,27 +7,23 @@
       <Diagram DiagramId="d2f909d8ea9540de82695e6e560e2aaa" Name="Diagram1">
         <EntityTypeShape EntityType="simplePAModel.AssetGroups" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.Assets" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="simplePAModel.BSroom" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="simplePAModel.BSTree" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="simplePAModel.BSTree" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.Device" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="simplePAModel.DeviceChannel" Width="1.5" PointX="2.625" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="simplePAModel.DeviceChannel" Width="1.5" PointX="6.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.EMServer" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.Eventvm" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="simplePAModel.Musics" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="simplePAModel.Musics" Width="1.5" PointX="8.5" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="simplePAModel.UserTrees" Width="1.5" PointX="4.625" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="simplePAModel.PlayItem" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="simplePAModel.BSTreeC" Width="1.5" PointX="4.75" PointY="6.375" />
-        <EntityTypeShape EntityType="simplePAModel.AssetPresetGroups" Width="1.5" PointX="7.375" PointY="10.75" />
-        <EntityTypeShape EntityType="simplePAModel.spa_bd_struct" Width="1.5" PointX="9.375" PointY="11.75" />
-        <EntityTypeShape EntityType="simplePAModel.spa_site" Width="1.5" PointX="11.375" PointY="11.75" />
+        <EntityTypeShape EntityType="simplePAModel.BSTreeC" Width="1.5" PointX="4.75" PointY="3.625" />
+        <EntityTypeShape EntityType="simplePAModel.AssetPresetGroups" Width="1.5" PointX="6.75" PointY="8.875" />
         <EntityTypeShape EntityType="simplePAModel.Simplepa" Width="1.5" PointX="10.625" PointY="0.625" />
-        <EntityTypeShape EntityType="simplePAModel.Eventbs" Width="1.5" PointX="11.375" PointY="3.75" />
-        <EntityTypeShape EntityType="simplePAModel.Eventdevice" Width="1.5" PointX="11.375" PointY="7.75" />
-        <EntityTypeShape EntityType="simplePAModel.Eventpreset" Width="1.5" PointX="13.375" PointY="0.75" />
-        <EntityTypeShape EntityType="simplePAModel.Eventsyslog" Width="1.5" PointX="13.375" PointY="4.75" />
-        <EntityTypeShape EntityType="simplePAModel.Holidays" Width="1.5" PointX="5.375" PointY="13.75" />
-        <EntityTypeShape EntityType="simplePAModel.TypeData" Width="1.5" PointX="13.375" PointY="8.75" />
-        <EntityTypeShape EntityType="simplePAModel.EMBs" Width="1.5" PointX="13.375" PointY="11.75" />
+        <EntityTypeShape EntityType="simplePAModel.Eventbs" Width="1.5" PointX="8.625" PointY="3.625" />
+        <EntityTypeShape EntityType="simplePAModel.Eventdevice" Width="1.5" PointX="10.25" PointY="6.5" />
+        <EntityTypeShape EntityType="simplePAModel.Eventpreset" Width="1.5" PointX="12" PointY="3.5" />
+        <EntityTypeShape EntityType="simplePAModel.Eventsyslog" Width="1.5" PointX="10.375" PointY="3.625" />
+        <EntityTypeShape EntityType="simplePAModel.Holidays" Width="1.5" PointX="8.625" PointY="11.125" />
+        <EntityTypeShape EntityType="simplePAModel.TypeData" Width="1.5" PointX="4.75" PointY="6.125" />
+        <EntityTypeShape EntityType="simplePAModel.EMBs" Width="1.5" PointX="6.75" PointY="11.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

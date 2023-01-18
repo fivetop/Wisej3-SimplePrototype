@@ -20,7 +20,6 @@ namespace simplepa2.UI.Views
             setupUI();
         }
 
-        BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
 
         public void Refresh()
         {

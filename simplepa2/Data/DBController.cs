@@ -38,7 +38,6 @@ namespace simplepa2
                     AssetPresetGroupsTableAdapter = new AssetPresetGroupsTableAdapter(),
                     BSTreeTableAdapter = new BSTreeTableAdapter(),
                     BSTreeCTableAdapter = new BSTreeCTableAdapter(),
-                    BSroomTableAdapter = new BSroomTableAdapter(),
                     DeviceTableAdapter = new DeviceTableAdapter(),
                     DeviceChannelTableAdapter = new DeviceChannelTableAdapter(),
                     EMBsTableAdapter = new EMBsTableAdapter(),
@@ -58,7 +57,6 @@ namespace simplepa2
                 Tam.AssetPresetGroupsTableAdapter.Fill(Ds1.AssetPresetGroups);
                 Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
                 Tam.BSTreeCTableAdapter.Fill(Ds1.BSTreeC);
-                Tam.BSroomTableAdapter.Fill(Ds1.BSroom);
                 Tam.DeviceTableAdapter.Fill(Ds1.Device);
                 Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
                 Tam.EMBsTableAdapter.Fill(Ds1.EMBs);
@@ -772,16 +770,6 @@ namespace simplepa2
             //s.Pport = 0;
             Ds1.Simplepa.Rows.Add(s);
             Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
-
-
-            for (int i = 0; i < 7; i++)
-            { 
-                var s1 = Ds1.BSroom.NewBSroomRow();
-                s1.state = 0;
-                s1.mode = 0;
-                Ds1.BSroom.Rows.Add(s1);
-                Tam.BSroomTableAdapter.Update(Ds1.BSroom);
-            }
         }
 
         public void Remove(SimplepaRow s2)

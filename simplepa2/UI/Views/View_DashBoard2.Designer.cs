@@ -461,10 +461,6 @@
             // 
             this.eventdeviceTableAdapter.ClearBeforeFill = true;
             // 
-            // membs
-            // 
-            this.membs.DataSource = typeof(simplepa2.Bsroom);
-            // 
             // View_DashBoard2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);

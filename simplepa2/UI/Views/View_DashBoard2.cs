@@ -10,8 +10,6 @@ namespace simplepa2.UI.Views
     public partial class View_DashBoard2 : Wisej.Web.UserControl
     {
 		
-		BindingList<Bsroom> dataSource = new BindingList<Bsroom>();
-
 		private Widget_BBSMultiDeck widget_bbsMultiDeck;
 
 		private Timer timer = new Timer();
@@ -84,18 +82,6 @@ namespace simplepa2.UI.Views
 
 		private void Main_Load()
 		{
-			// 입장하기 처리
-			foreach (var t3 in this.dataSet1.BSroom)
-			{
-				var t4 = new Bsroom();
-				t4.bsroomrow = t3;
-				t4.bsroomid = "방송 스테이션 " + t3.BSroomid.ToString();
-				t4.state_int = t3.state;
-				t4.username = t3.user_name;
-				dataSource.Add(t4);
-			}
-			// dataRepeater1.DataSource = dataSource;
-
 			DevicelistView1.Items.Clear();
 			// 장비 아이콘 보이기 
 			DevicelistView1.View = View.LargeIcon;

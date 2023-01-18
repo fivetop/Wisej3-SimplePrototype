@@ -54,7 +54,6 @@
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.assetGroupsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetGroupsTableAdapter();
             this.eventvmTableAdapter = new simplepa2.DataSet1TableAdapters.EventvmTableAdapter();
-            this.bSroomTableAdapter = new simplepa2.DataSet1TableAdapters.BSroomTableAdapter();
             this.bindingSource1 = new Wisej.Web.BindingSource(this.components);
             this.panel4 = new Wisej.Web.Panel();
             this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
@@ -191,10 +190,6 @@
             // eventvmTableAdapter
             // 
             this.eventvmTableAdapter.ClearBeforeFill = true;
-            // 
-            // bSroomTableAdapter
-            // 
-            this.bSroomTableAdapter.ClearBeforeFill = true;
             // 
             // panel4
             // 
@@ -525,10 +520,6 @@
             // 
             this.dataSet1BindingSource.DataSource = this.dataSet1;
             // 
-            // membs
-            // 
-            this.membs.DataSource = typeof(simplepa2.Bsroom);
-            // 
             // View_BBSAnchor2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -579,7 +570,6 @@
         private DataSet1TableAdapters.AssetsTableAdapter assetsTableAdapter;
         private DataSet1TableAdapters.AssetGroupsTableAdapter assetGroupsTableAdapter;
         private DataSet1TableAdapters.EventvmTableAdapter eventvmTableAdapter;
-        private DataSet1TableAdapters.BSroomTableAdapter bSroomTableAdapter;
         private Wisej.Web.BindingSource bindingSource1;
         private Wisej.Web.Panel panel4;
         private Wisej.Web.Button btnStop;

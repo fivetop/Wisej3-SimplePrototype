@@ -23,7 +23,6 @@ namespace pa
         public AssetPresetGroupsDataTable AssetPresetGroups { get; set; } = new AssetPresetGroupsDataTable();
         public AssetGroupsDataTable AssetGroups { get; set; } = new AssetGroupsDataTable();
         public AssetsDataTable Assets { get; set; } = new AssetsDataTable();
-        public BSroomDataTable BSroom { get; set; } = new BSroomDataTable();
         public BSTreeDataTable BStree { get; set; } = new BSTreeDataTable();
         public BSTreeCDataTable BStreeC { get; set; } = new BSTreeCDataTable();
         public DeviceDataTable Device { get; set; } = new DeviceDataTable();
@@ -35,7 +34,6 @@ namespace pa
         public EventdeviceDataTable Eventdevice { get; set; } = new EventdeviceDataTable();
         public HolidaysDataTable Holidays { get; set; } = new HolidaysDataTable();
         public MusicsDataTable Musics { get; set; } = new MusicsDataTable();
-        public PlayItemDataTable PlayItem { get; set; } = new PlayItemDataTable();
         public SimplepaDataTable Simplepa { get; set; } = new SimplepaDataTable();
         public UserTreesDataTable UserTrees { get; set; } = new UserTreesDataTable();
 
@@ -45,7 +43,6 @@ namespace pa
             AssetPresetGroups = Dbread<AssetPresetGroupsDataTable>("AssetPresetGroups");
             AssetGroups = Dbread<AssetGroupsDataTable>("AssetGroups");
             Assets = Dbread<AssetsDataTable>("Assets");
-            BSroom = Dbread<BSroomDataTable>("BSrooms");
             BStree = Dbread<BSTreeDataTable>("BStrees");
             BStreeC = Dbread<BSTreeCDataTable>("BStreeCs");
             Device = Dbread<DeviceDataTable>("Devices");
@@ -56,7 +53,6 @@ namespace pa
             Eventbs = Dbread<EventbsDataTable>("Eventbs");
             Holidays = Dbread<HolidaysDataTable>("Holidays");
             Musics = Dbread<MusicsDataTable>("Musics");
-            PlayItem = Dbread<PlayItemDataTable>("PlayItems");
             Simplepa = Dbread<SimplepaDataTable>("Simplepas");
             UserTrees = Dbread<UserTreesDataTable>("UserTrees");
         }
@@ -417,16 +413,6 @@ namespace pa
             Simplepa.Rows.Add(s);
             //Tam.SimplepaTableAdapter.Update(Ds1.Simplepa);
             var t2 = Dbsave<Simplepa>("Simplepas", (DataRow)s);
-
-
-            for (int i = 0; i < 7; i++)
-            {
-                var s1 = BSroom.NewBSroomRow();
-                s1.state = 0;
-                s1.mode = 0;
-                BSroom.Rows.Add(s1);
-                //Tam.BSroomTableAdapter.Update(Ds1.BSroom);
-            }
         }
 
         public void Remove(SimplepaRow s2)

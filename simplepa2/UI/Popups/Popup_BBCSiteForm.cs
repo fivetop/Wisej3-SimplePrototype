@@ -8,7 +8,7 @@ namespace simplepa2.UI.Popups
     public partial class Popup_BBCSiteForm : Wisej.Web.UserPopup
     {
         private DataRow[] drFloor;
-        private DataSet1.spa_bd_structRow structRow;
+        
         public Popup_BBCSiteForm()
         {
             InitializeComponent();
@@ -22,18 +22,6 @@ namespace simplepa2.UI.Popups
 
         }
 
-        public void setupUIwithData(DataSet1.spa_bd_structRow structRow, DataRow[] drFloor)
-        {
-            this.structRow = structRow;
-            this.drFloor = drFloor;
-
-            tb_bdName.Text = structRow.bd_name;
-            tb_bdFireID.Text = structRow.bd_fire_id.ToString();
-            tb_bdDescription.Text = structRow.bd_description;
-            tb_bdFloorNo.Text = structRow.num_of_stairs.ToString();
-
-            dg_floorList.DataSource = drFloor;            
-        }
 
         public void setupUItoNewForm()
         {

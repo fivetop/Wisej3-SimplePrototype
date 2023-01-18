@@ -53,15 +53,6 @@
           <Property Name="zpci" Type="int" />
           <Property Name="zpco" Type="int" />
         </EntityType>
-        <EntityType Name="BSroom">
-          <Key>
-            <PropertyRef Name="BSroomid" />
-          </Key>
-          <Property Name="BSroomid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="user_name" Type="varchar(max)" />
-          <Property Name="state" Type="int" />
-          <Property Name="mode" Type="int" />
-        </EntityType>
         <EntityType Name="BSTree">
           <Key>
             <PropertyRef Name="BSTreeId" />
@@ -243,30 +234,6 @@
           <Property Name="deletable" Type="varchar(max)" />
           <Property Name="duration" Type="varchar(max)" />
         </EntityType>
-        <!--생성 중 오류 발생:
-경고 6002: 테이블/뷰 'simplePA.dbo.PlayItem'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
-        <EntityType Name="PlayItem">
-          <Key>
-            <PropertyRef Name="PlayItemId" />
-            <PropertyRef Name="playflag_onair" />
-            <PropertyRef Name="idno" />
-            <PropertyRef Name="chno" />
-            <PropertyRef Name="p_run" />
-          </Key>
-          <Property Name="PlayItemId" Type="int" Nullable="false" />
-          <Property Name="playflag_onair" Type="int" Nullable="false" />
-          <Property Name="idno" Type="int" Nullable="false" />
-          <Property Name="chno" Type="int" Nullable="false" />
-          <Property Name="kind" Type="varchar(max)" />
-          <Property Name="Name" Type="varchar(max)" />
-          <Property Name="Start" Type="datetime" />
-          <Property Name="End" Type="datetime" />
-          <Property Name="state" Type="varchar(max)" />
-          <Property Name="playcnt" Type="int" />
-          <Property Name="current" Type="datetime" />
-          <Property Name="duration" Type="datetime" />
-          <Property Name="p_run" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="Simplepa">
           <Key>
             <PropertyRef Name="SimplePAId" />
@@ -278,39 +245,6 @@
           <Property Name="sms_pw" Type="varchar(max)" />
           <Property Name="sms_rcvno" Type="varchar(max)" />
           <Property Name="EmMusic" Type="varchar(max)" />
-        </EntityType>
-        <!--생성 중 오류 발생:
-경고 6002: 테이블/뷰 'simplePA.dbo.spa_bd_struct'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
-        <EntityType Name="spa_bd_struct">
-          <Key>
-            <PropertyRef Name="bd_id" />
-            <PropertyRef Name="bd_name" />
-            <PropertyRef Name="refer_site_id" />
-          </Key>
-          <Property Name="bd_id" Type="int" Nullable="false" />
-          <Property Name="bd_name" Type="varchar(max)" Nullable="false" />
-          <Property Name="refer_site_id" Type="int" Nullable="false" />
-          <Property Name="max_floor_no" Type="int" />
-          <Property Name="under_floor_no" Type="int" />
-          <Property Name="num_of_stairs" Type="int" />
-          <Property Name="bd_fire_id" Type="int" />
-          <Property Name="bd_description" Type="varchar(max)" />
-        </EntityType>
-        <!--생성 중 오류 발생:
-경고 6002: 테이블/뷰 'simplePA.dbo.spa_site'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
-        <EntityType Name="spa_site">
-          <Key>
-            <PropertyRef Name="site_index" />
-          </Key>
-          <Property Name="site_index" Type="int" Nullable="false" />
-          <Property Name="site_name" Type="varchar(max)" />
-          <Property Name="site_description" Type="varchar(max)" />
-          <Property Name="num_of_bd" Type="int" />
-          <Property Name="em_device_id" Type="int" />
-          <Property Name="site_address" Type="varchar(max)" />
-          <Property Name="site_contact" Type="varchar(max)" />
-          <Property Name="site_images" Type="varchar(max)" />
-          <Property Name="is_deleted" Type="bit" />
         </EntityType>
         <!--생성 중 오류 발생:
 경고 6002: 테이블/뷰 'simplePA.dbo.TypeData'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
@@ -342,7 +276,6 @@
           <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AssetPresetGroups" EntityType="Self.AssetPresetGroups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Assets" EntityType="Self.Assets" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BSroom" EntityType="Self.BSroom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BSTree" EntityType="Self.BSTree" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BSTreeC" EntityType="Self.BSTreeC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
@@ -358,48 +291,6 @@
           <EntitySet Name="Musics" EntityType="Self.Musics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Simplepa" EntityType="Self.Simplepa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserTrees" EntityType="Self.UserTrees" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PlayItem" EntityType="Self.PlayItem" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [PlayItem].[PlayItemId] AS [PlayItemId], 
-    [PlayItem].[playflag_onair] AS [playflag_onair], 
-    [PlayItem].[idno] AS [idno], 
-    [PlayItem].[chno] AS [chno], 
-    [PlayItem].[kind] AS [kind], 
-    [PlayItem].[Name] AS [Name], 
-    [PlayItem].[Start] AS [Start], 
-    [PlayItem].[End] AS [End], 
-    [PlayItem].[state] AS [state], 
-    [PlayItem].[playcnt] AS [playcnt], 
-    [PlayItem].[current] AS [current], 
-    [PlayItem].[duration] AS [duration], 
-    [PlayItem].[p_run] AS [p_run]
-    FROM [dbo].[PlayItem] AS [PlayItem]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="spa_bd_struct" EntityType="Self.spa_bd_struct" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [spa_bd_struct].[bd_id] AS [bd_id], 
-    [spa_bd_struct].[bd_name] AS [bd_name], 
-    [spa_bd_struct].[refer_site_id] AS [refer_site_id], 
-    [spa_bd_struct].[max_floor_no] AS [max_floor_no], 
-    [spa_bd_struct].[under_floor_no] AS [under_floor_no], 
-    [spa_bd_struct].[num_of_stairs] AS [num_of_stairs], 
-    [spa_bd_struct].[bd_fire_id] AS [bd_fire_id], 
-    [spa_bd_struct].[bd_description] AS [bd_description]
-    FROM [dbo].[spa_bd_struct] AS [spa_bd_struct]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="spa_site" EntityType="Self.spa_site" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [spa_site].[site_index] AS [site_index], 
-    [spa_site].[site_name] AS [site_name], 
-    [spa_site].[site_description] AS [site_description], 
-    [spa_site].[num_of_bd] AS [num_of_bd], 
-    [spa_site].[em_device_id] AS [em_device_id], 
-    [spa_site].[site_address] AS [site_address], 
-    [spa_site].[site_contact] AS [site_contact], 
-    [spa_site].[site_images] AS [site_images], 
-    [spa_site].[is_deleted] AS [is_deleted]
-    FROM [dbo].[spa_site] AS [spa_site]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="TypeData" EntityType="Self.TypeData" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [TypeData].[type_index] AS [type_index], 
@@ -451,15 +342,6 @@
           <Property Name="zpc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="zpci" Type="Int32" />
           <Property Name="zpco" Type="Int32" />
-        </EntityType>
-        <EntityType Name="BSroom">
-          <Key>
-            <PropertyRef Name="BSroomid" />
-          </Key>
-          <Property Name="BSroomid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="state" Type="Int32" />
-          <Property Name="mode" Type="Int32" />
         </EntityType>
         <EntityType Name="BSTree">
           <Key>
@@ -575,32 +457,9 @@
           <Property Name="mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="PlayItem">
-          <Key>
-            <PropertyRef Name="PlayItemId" />
-            <PropertyRef Name="playflag_onair" />
-            <PropertyRef Name="idno" />
-            <PropertyRef Name="chno" />
-            <PropertyRef Name="p_run" />
-          </Key>
-          <Property Name="PlayItemId" Type="Int32" Nullable="false" />
-          <Property Name="playflag_onair" Type="Int32" Nullable="false" />
-          <Property Name="idno" Type="Int32" Nullable="false" />
-          <Property Name="chno" Type="Int32" Nullable="false" />
-          <Property Name="kind" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Start" Type="DateTime" Precision="3" />
-          <Property Name="End" Type="DateTime" Precision="3" />
-          <Property Name="state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="playcnt" Type="Int32" />
-          <Property Name="current" Type="DateTime" Precision="3" />
-          <Property Name="duration" Type="DateTime" Precision="3" />
-          <Property Name="p_run" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="simplePAEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" />
           <EntitySet Name="Assets" EntityType="Self.Assets" />
-          <EntitySet Name="BSroom" EntityType="Self.BSroom" />
           <EntitySet Name="BSTree" EntityType="Self.BSTree" />
           <EntitySet Name="Device" EntityType="Self.Device" />
           <EntitySet Name="DeviceChannel" EntityType="Self.DeviceChannel" />
@@ -608,11 +467,8 @@
           <EntitySet Name="Eventvm" EntityType="Self.Eventvm" />
           <EntitySet Name="Musics" EntityType="Self.Musics" />
           <EntitySet Name="UserTrees" EntityType="Self.UserTrees" />
-          <EntitySet Name="PlayItem" EntityType="Self.PlayItem" />
           <EntitySet Name="BSTreeC" EntityType="simplePAModel.BSTreeC" />
           <EntitySet Name="AssetPresetGroups" EntityType="simplePAModel.AssetPresetGroups" />
-          <EntitySet Name="spa_bd_struct" EntityType="simplePAModel.spa_bd_struct" />
-          <EntitySet Name="spa_site" EntityType="simplePAModel.spa_site" />
           <EntitySet Name="Simplepa" EntityType="simplePAModel.Simplepa" />
           <EntitySet Name="Eventbs" EntityType="simplePAModel.Eventbs" />
           <EntitySet Name="Eventdevice" EntityType="simplePAModel.Eventdevice" />
@@ -641,35 +497,6 @@
           <Property Name="AssetId" Type="Int32" />
           <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="chk" Type="Int32" />
-        </EntityType>
-        <EntityType Name="spa_bd_struct">
-          <Key>
-            <PropertyRef Name="bd_id" />
-            <PropertyRef Name="bd_name" />
-            <PropertyRef Name="refer_site_id" />
-          </Key>
-          <Property Name="bd_id" Type="Int32" Nullable="false" />
-          <Property Name="bd_name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="refer_site_id" Type="Int32" Nullable="false" />
-          <Property Name="max_floor_no" Type="Int32" />
-          <Property Name="under_floor_no" Type="Int32" />
-          <Property Name="num_of_stairs" Type="Int32" />
-          <Property Name="bd_fire_id" Type="Int32" />
-          <Property Name="bd_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="spa_site">
-          <Key>
-            <PropertyRef Name="site_index" />
-          </Key>
-          <Property Name="site_index" Type="Int32" Nullable="false" />
-          <Property Name="site_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="site_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="num_of_bd" Type="Int32" />
-          <Property Name="em_device_id" Type="Int32" />
-          <Property Name="site_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="site_contact" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="site_images" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="is_deleted" Type="Boolean" />
         </EntityType>
         <EntityType Name="Simplepa">
           <Key>
@@ -810,16 +637,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BSroom">
-            <EntityTypeMapping TypeName="simplePAModel.BSroom">
-              <MappingFragment StoreEntitySet="BSroom">
-                <ScalarProperty Name="BSroomid" ColumnName="BSroomid" />
-                <ScalarProperty Name="user_name" ColumnName="user_name" />
-                <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="mode" ColumnName="mode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BSTree">
             <EntityTypeMapping TypeName="simplePAModel.BSTree">
               <MappingFragment StoreEntitySet="BSTree">
@@ -941,25 +758,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PlayItem">
-            <EntityTypeMapping TypeName="simplePAModel.PlayItem">
-              <MappingFragment StoreEntitySet="PlayItem">
-                <ScalarProperty Name="PlayItemId" ColumnName="PlayItemId" />
-                <ScalarProperty Name="playflag_onair" ColumnName="playflag_onair" />
-                <ScalarProperty Name="idno" ColumnName="idno" />
-                <ScalarProperty Name="chno" ColumnName="chno" />
-                <ScalarProperty Name="kind" ColumnName="kind" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Start" ColumnName="Start" />
-                <ScalarProperty Name="End" ColumnName="End" />
-                <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="playcnt" ColumnName="playcnt" />
-                <ScalarProperty Name="current" ColumnName="current" />
-                <ScalarProperty Name="duration" ColumnName="duration" />
-                <ScalarProperty Name="p_run" ColumnName="p_run" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="BSTreeC">
             <EntityTypeMapping TypeName="simplePAModel.BSTreeC">
               <MappingFragment StoreEntitySet="BSTreeC">
@@ -979,35 +777,6 @@
                 <ScalarProperty Name="AssetId" ColumnName="AssetId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="AssetPresetGroupId" ColumnName="AssetPresetGroupId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="spa_bd_struct">
-            <EntityTypeMapping TypeName="simplePAModel.spa_bd_struct">
-              <MappingFragment StoreEntitySet="spa_bd_struct">
-                <ScalarProperty Name="bd_description" ColumnName="bd_description" />
-                <ScalarProperty Name="bd_fire_id" ColumnName="bd_fire_id" />
-                <ScalarProperty Name="num_of_stairs" ColumnName="num_of_stairs" />
-                <ScalarProperty Name="under_floor_no" ColumnName="under_floor_no" />
-                <ScalarProperty Name="max_floor_no" ColumnName="max_floor_no" />
-                <ScalarProperty Name="refer_site_id" ColumnName="refer_site_id" />
-                <ScalarProperty Name="bd_name" ColumnName="bd_name" />
-                <ScalarProperty Name="bd_id" ColumnName="bd_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="spa_site">
-            <EntityTypeMapping TypeName="simplePAModel.spa_site">
-              <MappingFragment StoreEntitySet="spa_site">
-                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
-                <ScalarProperty Name="site_images" ColumnName="site_images" />
-                <ScalarProperty Name="site_contact" ColumnName="site_contact" />
-                <ScalarProperty Name="site_address" ColumnName="site_address" />
-                <ScalarProperty Name="em_device_id" ColumnName="em_device_id" />
-                <ScalarProperty Name="num_of_bd" ColumnName="num_of_bd" />
-                <ScalarProperty Name="site_description" ColumnName="site_description" />
-                <ScalarProperty Name="site_name" ColumnName="site_name" />
-                <ScalarProperty Name="site_index" ColumnName="site_index" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

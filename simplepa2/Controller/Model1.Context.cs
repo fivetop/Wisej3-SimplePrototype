@@ -27,7 +27,6 @@ namespace simplepa2.Controller
     
         public virtual DbSet<AssetGroups> AssetGroups { get; set; }
         public virtual DbSet<Assets> Assets { get; set; }
-        public virtual DbSet<BSroom> BSroom { get; set; }
         public virtual DbSet<BSTree> BSTree { get; set; }
         public virtual DbSet<Device> Device { get; set; }
         public virtual DbSet<DeviceChannel> DeviceChannel { get; set; }
@@ -35,11 +34,8 @@ namespace simplepa2.Controller
         public virtual DbSet<Eventvm> Eventvm { get; set; }
         public virtual DbSet<Musics> Musics { get; set; }
         public virtual DbSet<UserTrees> UserTrees { get; set; }
-        public virtual DbSet<PlayItem> PlayItem { get; set; }
         public virtual DbSet<BSTreeC> BSTreeC { get; set; }
         public virtual DbSet<AssetPresetGroups> AssetPresetGroups { get; set; }
-        public virtual DbSet<spa_bd_struct> spa_bd_struct { get; set; }
-        public virtual DbSet<spa_site> spa_site { get; set; }
         public virtual DbSet<Simplepa> Simplepa { get; set; }
         public virtual DbSet<Eventbs> Eventbs { get; set; }
         public virtual DbSet<Eventdevice> Eventdevice { get; set; }
