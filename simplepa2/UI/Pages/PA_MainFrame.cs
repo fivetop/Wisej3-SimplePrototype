@@ -50,7 +50,6 @@ namespace simplepa2.UI.Pages
 
         private View_BBCZone view_BBCZone = new View_BBCZone();
         private View_BBCDevice view_BBCDevice = new View_BBCDevice();
-        private View_BBCAsset2 view_BBCAsset2 = new View_BBCAsset2();
         private View_DashBoard2 view_DashBoard2 = new View_DashBoard2();
         private View_BBSGroupManage2 view_BBSGroupManage2 = new View_BBSGroupManage2();
         private View_BBSHolidayManage2 view_BBSHolidayManage2 = new View_BBSHolidayManage2();
@@ -244,7 +243,6 @@ namespace simplepa2.UI.Pages
                 case "musicConfigurationBarItem": view_BBSMusicManage = bringFrontView<View_BBSMusicManage>("View_BBSMusicManage", false); break;
                 case "holidayBarItem": view_BBSHolidayManage = bringFrontView<View_BBSHolidayManage>("View_BBSHolidayManage", false); break;
                 // 설정 // navigationBarItem1 추가
-                case "assetBarItem": view_BBCAsset2 = bringFrontView<View_BBCAsset2>("View_BBCAsset2", false); break;
                 case "deviceManageBarItem": view_BBCDevice = bringFrontView<View_BBCDevice>("View_BBCDevice", false); break;
                 case "navigationBarItem1": view_GroupManager2 = bringFrontView<View_GroupManager2>("View_GroupManager2", false); break;
                 case "navigationBarItem4": view_GroupPresetManager2 = bringFrontView<View_GroupPresetManager2>("View_GroupPresetManager2", false); break;
@@ -269,7 +267,10 @@ namespace simplepa2.UI.Pages
                 case "restAPIRegistrationBarItem": view_SystemRestAPI = bringFrontView<View_SystemRestAPI>("View_SystemRestAPI", false); break;
 
             }
-        } 
+        }
+
+        public event EventHandler FocusEvent;
+
         private T bringFrontView<T>(string viewName, Boolean bShinkNavBar)
         {
             
@@ -283,6 +284,7 @@ namespace simplepa2.UI.Pages
                 
             }
             ((Wisej.Web.Control)view).BringToFront();
+            FocusEvent?.Invoke(view, null); 
             this.mainMenuBar.CompactView = bShinkNavBar;
 
             return (T)view;

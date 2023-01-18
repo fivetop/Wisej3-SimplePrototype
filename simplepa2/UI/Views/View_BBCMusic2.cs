@@ -13,8 +13,16 @@ namespace simplepa2.UI.Views
             InitializeComponent();
         }
 
+        private void MainFrame_FocusEvent(object sender, EventArgs e)
+        {
+            if(sender == this)
+                this.deviceTableAdapter.Fill(this.dataSet1.Device);
+        }
+
+
         private void BSLevelManager_Load(object sender, EventArgs e)
         {
+            gweb.mainFrame.FocusEvent += MainFrame_FocusEvent;
             reDraw();
         }
 
@@ -22,20 +30,10 @@ namespace simplepa2.UI.Views
         private void button1_Click(object sender, EventArgs e)
         {
             int t1 = comboBox1.SelectedIndex + 1;
-            /*
-            dataGridView1.BeginEdit(true);
-            foreach(var r1 in dataGridView1.Rows)
-            {
-                r1.Cells[5].Value = t1;
-            }
-            dataGridView1.EndEdit();
-            */
-
             foreach (var r1 in this.dataSet1.Device)
             {
                 r1.dsp_vol = t1;
             }
-
         }
 
         // 비상전체 데이터변경
@@ -63,5 +61,16 @@ namespace simplepa2.UI.Views
         {
             this.deviceTableAdapter.Fill(this.dataSet1.Device);
         }
+
+        /*
+        dataGridView1.BeginEdit(true);
+        foreach(var r1 in dataGridView1.Rows)
+        {
+            r1.Cells[5].Value = t1;
+        }
+        dataGridView1.EndEdit();
+        */
+
+
     }
 }

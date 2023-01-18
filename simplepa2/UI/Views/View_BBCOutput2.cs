@@ -19,17 +19,16 @@ namespace simplepa2.UI.Views
         #region // Init
         internal void reDraw()
         {
-            BSOutManager_Load  (null, null);
-        }
-
-        private void BSOutManager_Load(object sender, EventArgs e)
-        {
             this.deviceTableAdapter.Fill(this.dataSet1.Device);
             disp_gridview();
 
             comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
             comp_Site1.reDraw();
+        }
 
+        private void BSOutManager_Load(object sender, EventArgs e)
+        {
+            reDraw();
         }
 
         private void disp_gridview()
@@ -66,8 +65,7 @@ namespace simplepa2.UI.Views
 
             if (str1 == "" || i2 == 0) return;
 
-            AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 1분 정도 소요됩니다.");
-
+            AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5초 정도 소요됩니다.");
             gweb.mainFrame.sendSigR(eSignalRMsgType.eOutChMove, str2, str1, i2, i3, dataRow.EMNAME); // dsp, dsp_chno
         }
 
