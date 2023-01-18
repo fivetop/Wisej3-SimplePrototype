@@ -160,16 +160,23 @@ namespace simplepa2.UI.Pages
 
         internal void reDraw()
         {
-            view_BBCDevice.reDraw();
-            view_BBCEmergency2.reDraw();
-            view_BBCInput2.reDraw();
-            view_BBCOutput2.reDraw();
-            view_BBCMusic2.reDraw();
-            view_BBSEMManage2.reDraw();
-            view_GroupManager2.reDraw();
-            view_BBSGroupManage2.reDraw();
-            view_GroupPresetManager2.reDraw();
-            view_BBCZone.reDraw();
+            try
+            {
+                view_BBCDevice.reDraw();
+                view_BBCEmergency2.reDraw();
+                view_BBCInput2.reDraw();
+                view_BBCOutput2.reDraw();
+                view_BBCMusic2.reDraw();
+                view_BBSEMManage2.reDraw();
+                view_GroupManager2.reDraw();
+                view_BBSGroupManage2.reDraw();
+                view_GroupPresetManager2.reDraw();
+                view_BBCZone.reDraw();
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
         }
 
         private void shink_NavigationBarItems(NavigationBarItem selectedNavBarItem)
