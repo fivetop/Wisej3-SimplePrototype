@@ -236,7 +236,7 @@ namespace simplepa2.UI.Pages
             {
                 // 운영
                 case "dashboardBarItems": view_DashBoard2 = bringFrontView<View_DashBoard2>("View_DashBoard2", true); break;
-                case "anchorBBSBarItem": view_BBSAnchor = bringFrontView<View_BBSAnchor>("View_BBSAnchor", false); break;                               
+                case "anchorBBSBarItem": view_BBSAnchor2 = bringFrontView<View_BBSAnchor2>("View_BBSAnchor2", false); break;                               
                 case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;
                 case "presetBarItem": view_BBSPresetManage = bringFrontView<View_BBSPresetManage>("View_BBSPresetManage", false); break;
                 case "groupBarItem": view_BBSGroupManage = bringFrontView<View_BBSGroupManage>("View_BBSGroupManage", false); break;

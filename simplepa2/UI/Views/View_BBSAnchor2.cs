@@ -10,29 +10,16 @@ using static simplepa2.DataSet1;
 // 앵커방송 처리 
 namespace simplepa2.UI.Views
 {
-    public partial class View_BBSAnchor2 : Wisej.Web.UserControl
-    {
-
-		public string strEMNAME;
-		public int intBBSchno;
-
-        public View_BBSAnchor2()
-        {
-            InitializeComponent();
-        }
+	public partial class View_BBSAnchor2 : Wisej.Web.UserControl
+	{
+		public View_BBSAnchor2()
+		{
+			InitializeComponent();
+		}
 
 		internal void reDraw()
 		{
-			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-
-			this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
-
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-			this.dataGridView2.RowCount = 10;
-
-			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
-			comp_Site1.reDraw();
+			View_BBSAnchor_Load(null, null);
 		}
 
 		public void refresh()
@@ -42,8 +29,13 @@ namespace simplepa2.UI.Views
 		}
 
 		private void View_BBSAnchor_Load(object sender, EventArgs e)
-        {
-			reDraw();
+		{
+			this.btnStart.Enabled = true;
+			this.btnStop.Enabled = false;
+			this.dataGridView2.RowCount = 10;
+
+			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+
 		}
 
 
@@ -93,7 +85,7 @@ namespace simplepa2.UI.Views
 
 			if (ret1 != "")
 			{
-				AlertBox.Show( ret1 + "님이 방송중인 지역 입니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+				AlertBox.Show(ret1 + "님이 방송중인 지역 입니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
 				return;
 			}
 
@@ -112,8 +104,8 @@ namespace simplepa2.UI.Views
 		// 3. 지역과 음원 저장 
 		// 4. 해당 지역 서버에 명령 처리 
 		// 5. 버튼 상태 변경 
-        private async void 방송처리로직()
-        {
+		private async void 방송처리로직()
+		{
 			bSTreeid = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
 			if (bSTreeid == 0) return;
 			await gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
@@ -127,15 +119,15 @@ namespace simplepa2.UI.Views
 		// 1. 해당지역 서버에 중지 처리 
 		// 2. 방송트리 초기화 
 		// 3. 방송트리 차일드 지우기 
-        private void 방송중지로직()
-        {
+		private void 방송중지로직()
+		{
 			if (bSTreeid == 0) return;
 			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
 			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
 			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
-        }
+		}
 
-        private void Win_EventMusic(object sender, EventArgs e)
+		private void Win_EventMusic(object sender, EventArgs e)
 		{
 			this.dataGridView2.DataSource = SelMusic;
 			this.dataGridView2.Refresh();
@@ -205,11 +197,7 @@ namespace simplepa2.UI.Views
 			}
 
 		}
-        #endregion
+		#endregion
 
-        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
-        {
-			var t1 = sender;
-        }
-    }
+	}
 }
