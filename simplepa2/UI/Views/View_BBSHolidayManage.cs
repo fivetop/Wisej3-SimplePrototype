@@ -152,7 +152,17 @@ namespace simplepa2.UI.Views
 
             DateTime t1 = DateTime.Now;
 
-            url2 = t1.Year.ToString() + "&solMonth=" + "0" + selectedMonth + "&ServiceKey=";
+            int getMonth = Convert.ToInt16(selectedMonth);
+
+            if(getMonth > 9)
+            {
+                url2 = t1.Year.ToString() + "&solMonth=" + selectedMonth + "&ServiceKey=";                
+            }
+            else if(getMonth < 10)
+            {
+                url2 = t1.Year.ToString() + "&solMonth=" + "0" + selectedMonth + "&ServiceKey=";                
+            }
+
             url = url1 + url2 + url3;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);

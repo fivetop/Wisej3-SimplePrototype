@@ -424,7 +424,7 @@
             // 
             // 날짜
             // 
-            this.날짜.DataPropertyName = "hDate";
+            this.날짜.DataPropertyName = "hDateExpr1";
             dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
             this.날짜.DefaultCellStyle = dataGridViewCellStyle3;
             this.날짜.HeaderText = "날짜";
