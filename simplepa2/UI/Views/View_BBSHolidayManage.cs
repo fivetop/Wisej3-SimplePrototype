@@ -16,7 +16,10 @@ namespace simplepa2.UI.Views
         public View_BBSHolidayManage()
         {
             InitializeComponent();
+        }
 
+        public void reDraw()
+        {
             holidayDataLoad();
 
             comboSetup();
@@ -39,7 +42,6 @@ namespace simplepa2.UI.Views
 
             this.cb_monthAPI.SelectedIndex = 0;
         }
-
 
         private void cb_year_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -125,7 +127,7 @@ namespace simplepa2.UI.Views
             {
                 this.holidayData.hDate = dt_picker.Value.Date;
                 this.holidayData.Description = tb_holidayDescription.Text;
-                this.holidaysDivideDateTableAdapter1.Update(this.holidayData);
+                this.holidaysTableAdapter1.InsertUpdateQuery(dt_picker.Value.Date, tb_holidayDescription.Text);                
                 AlertBox.Show("데이터를 업데이트 하였습니다.");
             }
 
@@ -179,10 +181,16 @@ namespace simplepa2.UI.Views
                         int day1 = int.Parse(locdate.Substring(6, 2));
                         int month1 = int.Parse(locdate.Substring(4, 2));
 
-                        DateTime dt2 = new DateTime(t1.Year, month1, day1);                        
-                        
-                        this.holidaysTableAdapter1.InsertUpdateQuery(dt2, dateName);
+                        DateTime dt2 = new DateTime(t1.Year, month1, day1);
 
+
+                        try {
+                            this.holidaysTableAdapter1.InsertUpdateQuery(dt2, dateName);
+                        } catch (Exception e1)
+                        {
+                            MessageBox.Show("LAWTEXT : 데이터를 동기화하는 중 예외가 발생 하였습니다.   Message" + e1.ToString());
+                            return;
+                        }
                     }
                 }                
             }
@@ -213,6 +221,11 @@ namespace simplepa2.UI.Views
             this.holidaysDivideDateTableAdapter1.Delete(holidayData.hDate);
 
             holidayDataLoad();
+        }
+
+        private void View_BBSHolidayManage_Load(object sender, EventArgs e)
+        {
+            reDraw();
         }
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle6 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle7 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle8 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
             this.bt_updateoradd = new Wisej.Web.Button();
             this.panel32 = new Wisej.Web.Panel();
             this.bt_openAddNewForm = new Wisej.Web.Button();
@@ -399,8 +399,8 @@
             // 
             this.dg_holidayList.AutoGenerateColumns = false;
             this.dg_holidayList.AutoSize = true;
-            dataGridViewCellStyle5.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.dg_holidayList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.dg_holidayList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_holidayList.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.연도,
             this.날짜,
@@ -416,8 +416,8 @@
             // 연도
             // 
             this.연도.DataPropertyName = "Year";
-            dataGridViewCellStyle6.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.연도.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.연도.DefaultCellStyle = dataGridViewCellStyle2;
             this.연도.HeaderText = "연도";
             this.연도.Name = "연도";
             this.연도.Width = 90;
@@ -425,8 +425,8 @@
             // 날짜
             // 
             this.날짜.DataPropertyName = "hDate";
-            dataGridViewCellStyle7.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.날짜.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.날짜.DefaultCellStyle = dataGridViewCellStyle3;
             this.날짜.HeaderText = "날짜";
             this.날짜.Name = "날짜";
             this.날짜.Width = 200;
@@ -434,8 +434,8 @@
             // 휴일내역
             // 
             this.휴일내역.DataPropertyName = "Description";
-            dataGridViewCellStyle8.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.휴일내역.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.휴일내역.DefaultCellStyle = dataGridViewCellStyle4;
             this.휴일내역.HeaderText = "휴일내역";
             this.휴일내역.Name = "휴일내역";
             this.휴일내역.Width = 230;
@@ -553,6 +553,7 @@
             this.Name = "View_BBSHolidayManage";
             this.Padding = new Wisej.Web.Padding(20);
             this.Size = new System.Drawing.Size(1400, 900);
+            this.Load += new System.EventHandler(this.View_BBSHolidayManage_Load);
             this.panel32.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
