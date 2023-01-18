@@ -38,17 +38,24 @@ namespace simplepa2.UI.Views
 
 		internal void reDraw()
 		{
-			if (Eventbs.DataSource == null) 
-				return;
-			Eventbs.Filter = "alarm=0";
-			Eventbs.Sort = "write_time DESC";
-			reDraw2();
-            Main_Load();
-            // split 위치 설정 세로, 가로,  세로
-            split_위치();
-			// BBS Widget UI 셋업
-			initMultiBBSWidgetUISetup();
-			evdataGridView1.Refresh();
+			//if (this.ActiveControl == null) return;
+			try 
+			{ 
+				if (Eventbs.DataSource == null) return;
+				Eventbs.Filter = "alarm=0";
+				Eventbs.Sort = "write_time DESC";
+				reDraw2();
+				Main_Load();
+				// split 위치 설정 세로, 가로,  세로
+				split_위치();
+				// BBS Widget UI 셋업
+				initMultiBBSWidgetUISetup();
+				evdataGridView1.Refresh();
+			}
+			catch (Exception e1)
+			{
+			}
+
 		}
 
 		internal void reDraw2()

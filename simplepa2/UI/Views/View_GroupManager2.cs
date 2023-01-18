@@ -6,6 +6,9 @@ using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
+// asset 을 베이스로 그룹 데이터를 표현 
+// 변경된 부분만 그룹으로 저장 
+
 namespace simplepa2.UI.Views
 {
     public partial class View_GroupManager2 : Wisej.Web.UserControl
@@ -31,7 +34,6 @@ namespace simplepa2.UI.Views
 		}
 		#endregion
 
-
 		#region // 콤보 및 컨트롤 처리 
 
 		private void gcomboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,34 +57,97 @@ namespace simplepa2.UI.Views
 		}
 
 
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0 || e.ColumnIndex < 1)
+				return;
+			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)gdataGridView1.Rows[e.RowIndex].Cells[1];
+			gdataGridView1.BeginEdit(true);
+
+			if (Convert.ToBoolean(this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value) == false)
+			{
+				this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value = true;
+			}
+			else
+			{
+				this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value = false;
+			}
+			gdataGridView1.EndEdit();
+		}
+		private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+		{
+			string selectedItem = sender as string;
+			IEnumerable<AssetGroupsRow> t1;
+
+			if (selectedItem == "") return;
+			gbindingSource2.Filter = ("emServer = '" + selectedItem + "'");
+			t1 = this.dataSet1.AssetGroups.Where(p => p.EMNAME == selectedItem).DistinctBy(p => p.Name);
+
+			gcomboBox1.Items.Clear();
+			foreach (var a1 in t1)
+			{
+				gcomboBox1.Items.Add(a1.Name);
+			}
+			if (gcomboBox1.Items.Count > 0)
+				gcomboBox1.SelectedIndex = 0;
+
+			disp_gridview();
+		}
+
+		private void disp_gridview()
+		{
+		}
+
 		#endregion
 
+		#region // add, update, delete
 
 		private void UpGroup()
 		{
-			int cnt = 0;
-			var s1 = this.dataSet1.AssetGroups.Where(p => p.Name == gtextBox1.Text && p.AssetId != 0).ToList();
+			this.assetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
+			string gname = gtextBox1.Text;
+			string emname = comp_Site1.selectedItem;
 
-			foreach (var s2 in s1)
+			try
 			{
-				s2.Delete();
-				//this.dataSet1.AssetGroups.RemoveAssetGroupsRow(s2);
-			}
+				if (this.gdataGridView1.RowCount < 1) return;
 
-			string s3 = comp_Site1.selectedItem;
-			foreach (var t1 in this.dataSet1.Assets)
+				foreach (var r1 in this.gdataGridView1.Rows)
+				{
+					var s1 = r1.DataBoundItem;
+					var k1 = (AssetsRow)((System.Data.DataRowView)s1).Row;
+					if (s1 == null) continue;
+					if (k1 == null) continue;
+					if (k1.AssetId < 1) continue;
+					if (k1.emServer != emname) continue;
+
+					var d1 = this.dataSet1.AssetGroups.FirstOrDefault(p => p.Name == gname && p.AssetId == k1.AssetId && p.EMNAME == emname);
+					if (k1.chk != 1)
+					{
+						if (d1 == null) continue; 
+						d1.Delete();
+						this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
+						this.dataSet1.AcceptChanges();
+					}
+					else
+					{
+						if (d1 != null) continue;
+						var m1 = this.dataSet1.AssetGroups.NewAssetGroupsRow();
+						m1.AssetId = k1.AssetId;
+						m1.Name = gname;
+						m1.EMNAME = k1.emServer;
+						this.dataSet1.AssetGroups.Rows.Add(m1);
+						this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
+						this.dataSet1.AcceptChanges();
+					}
+				}
+
+			}
+			catch (Exception e1)
 			{
-				if (t1.chk != 1) continue;
-				if (t1.emServer != s3) return;
-
-				var m1 = this.dataSet1.AssetGroups.NewAssetGroupsRow();
-				m1.AssetId = t1.AssetId;
-				m1.Name = gtextBox1.Text;
-				m1.EMNAME = t1.emServer;
-				this.dataSet1.AssetGroups.Rows.Add(m1);
+				gweb.Log(e1.Message);
 			}
-			this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
-			this.dataSet1.AcceptChanges();
+			this.assetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
 		}
 
 		private void AddGroup()
@@ -130,10 +195,8 @@ namespace simplepa2.UI.Views
 			}
 
 			// this method shows server-side modal.
-			if (MessageBox.Show("삭제하시겠습니까?", icon: MessageBoxIcon.Question,
-					buttons: MessageBoxButtons.YesNoCancel) == DialogResult.No)
+			if (MessageBox.Show("삭제하시겠습니까?", icon: MessageBoxIcon.Question,buttons: MessageBoxButtons.YesNo) == DialogResult.No)
 				return;
-
 
 			try
 			{
@@ -149,29 +212,12 @@ namespace simplepa2.UI.Views
 				gtextBox1.Text = "";
 				reDraw();
 			}
-			catch (Exception ex)
+			catch (Exception e1)
 			{
-				MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
+				gweb.Log(e1.Message);
 			}
 		}
 
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			if (e.RowIndex < 0 || e.ColumnIndex < 1)
-				return;
-			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)gdataGridView1.Rows[e.RowIndex].Cells[1];
-			gdataGridView1.BeginEdit(true);
-
-			if (Convert.ToBoolean(this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value) == false)
-			{
-				this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value = true;
-			}
-			else
-			{
-				this.gdataGridView1.Rows[e.RowIndex].Cells[1].Value = false;
-			}
-			gdataGridView1.EndEdit();
-		}
 
 		private void gbutton1_Click(object sender, EventArgs e)
 		{
@@ -187,29 +233,39 @@ namespace simplepa2.UI.Views
 		{
 			DeleteGroup();
 		}
+		#endregion
 
-        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
-        {
-			string selectedItem = sender as string;
-			IEnumerable<AssetGroupsRow> t1;
+		#region // not use
+		/*
+		var t1 = this.gdataGridView1.CurrentRow.DataBoundItem;
+		var t2 = (EMBsRow)((System.Data.DataRowView)t1).Row;
+		if (t1 == null) return;
+		if (t2 == null) return;
+		t2.Delete();
+		emBsTableAdapter.Update(dataSet1.EMBs);
+		eMBsBindingSource.EndEdit();
+		comboBox1_SelectedIndexChanged(null, null);
+		 * 
+		 * 
+		try
+		{
+			var s1 = this.dataSet1.AssetGroups.Where(p => p.Name == gtextBox1.Text).ToList();
 
-			if (selectedItem == "") return;
-			gbindingSource2.Filter = ("emServer = '" + selectedItem + "'");
-			t1 = this.dataSet1.AssetGroups.Where(p=>p.EMNAME == selectedItem).DistinctBy(p => p.Name);
-
-			gcomboBox1.Items.Clear();
-			foreach (var a1 in t1)
+			foreach (var s2 in s1)
 			{
-				gcomboBox1.Items.Add(a1.Name);
+				s2.Delete();
+				this.assetGroupsTableAdapter.Update(this.dataSet1.AssetGroups);
+				this.dataSet1.AcceptChanges();
 			}
-			if (gcomboBox1.Items.Count > 0)
-				gcomboBox1.SelectedIndex = 0;
-
-			disp_gridview();
 		}
+		catch (Exception e1)
+		{
+			gweb.Log(e1.Message);
+		}
+		*/
 
-        private void disp_gridview()
-        {
-        }
-    }
+
+		#endregion
+
+	}
 }

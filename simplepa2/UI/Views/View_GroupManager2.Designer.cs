@@ -37,18 +37,18 @@
             this.colAssetbaseid = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new Wisej.Web.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.gbutton3 = new Wisej.Web.Button();
             this.gbutton2 = new Wisej.Web.Button();
             this.gbutton1 = new Wisej.Web.Button();
             this.tableLayoutPanel4 = new Wisej.Web.TableLayoutPanel();
             this.label10 = new Wisej.Web.Label();
-            this.gtextBox1 = new Wisej.Web.TextBox();
             this.label9 = new Wisej.Web.Label();
             this.gcomboBox1 = new Wisej.Web.ComboBox();
             this.ptop = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
             this.panel1 = new Wisej.Web.Panel();
             this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
+            this.gbutton3 = new Wisej.Web.Button();
+            this.gtextBox1 = new Wisej.Web.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gbindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdataGridView1)).BeginInit();
@@ -120,22 +120,11 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 300;
             // 
-            // gbutton3
-            // 
-            this.gbutton3.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
-            | Wisej.Web.AnchorStyles.Right)));
-            this.gbutton3.Location = new System.Drawing.Point(449, 3);
-            this.gbutton3.Name = "gbutton3";
-            this.gbutton3.Size = new System.Drawing.Size(75, 27);
-            this.gbutton3.TabIndex = 15;
-            this.gbutton3.Text = "삭제";
-            this.gbutton3.Click += new System.EventHandler(this.gbutton3_Click);
-            // 
             // gbutton2
             // 
             this.gbutton2.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
-            this.gbutton2.Location = new System.Drawing.Point(289, 3);
+            this.gbutton2.Location = new System.Drawing.Point(246, 3);
             this.gbutton2.Name = "gbutton2";
             this.gbutton2.Size = new System.Drawing.Size(74, 27);
             this.gbutton2.TabIndex = 14;
@@ -144,65 +133,48 @@
             // 
             // gbutton1
             // 
-            this.gbutton1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
-            | Wisej.Web.AnchorStyles.Right)));
-            this.gbutton1.Location = new System.Drawing.Point(369, 3);
+            this.gbutton1.Location = new System.Drawing.Point(286, 40);
             this.gbutton1.Name = "gbutton1";
-            this.gbutton1.Size = new System.Drawing.Size(74, 27);
+            this.gbutton1.Size = new System.Drawing.Size(120, 27);
             this.gbutton1.TabIndex = 13;
-            this.gbutton1.Text = "저장";
+            this.gbutton1.Text = "변경내용저장";
             this.gbutton1.Click += new System.EventHandler(this.gbutton1_Click);
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
             | Wisej.Web.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 7;
+            this.tableLayoutPanel4.ColumnCount = 4;
             this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 2.19F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 78.67F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 8.74F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 65.29F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 80F));
             this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Percent, 10.49F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 80F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 80F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new Wisej.Web.ColumnStyle(Wisej.Web.SizeType.Absolute, 80F));
-            this.tableLayoutPanel4.Controls.Add(this.gbutton1, 5, 0);
-            this.tableLayoutPanel4.Controls.Add(this.gbutton2, 4, 0);
             this.tableLayoutPanel4.Controls.Add(this.label10, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.gtextBox1, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.gbutton3, 6, 0);
+            this.tableLayoutPanel4.Controls.Add(this.gbutton2, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.gbutton3, 2, 1);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(304, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(468, 0);
             this.tableLayoutPanel4.Margin = new Wisej.Web.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 47.22F));
             this.tableLayoutPanel4.RowStyles.Add(new Wisej.Web.RowStyle(Wisej.Web.SizeType.Percent, 52.78F));
             this.tableLayoutPanel4.ShowCloseButton = false;
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(527, 78);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(363, 78);
             this.tableLayoutPanel4.TabIndex = 11;
             this.tableLayoutPanel4.TabStop = true;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label10.Location = new System.Drawing.Point(6, 0);
+            this.label10.Location = new System.Drawing.Point(7, 0);
             this.label10.Margin = new Wisej.Web.Padding(0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(166, 30);
             this.label10.TabIndex = 2;
             this.label10.Text = "신규 그룹명(등록)";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // gtextBox1
-            // 
-            this.gtextBox1.Anchor = Wisej.Web.AnchorStyles.Left;
-            this.gtextBox1.AutoSize = false;
-            this.gtextBox1.Location = new System.Drawing.Point(6, 40);
-            this.gtextBox1.Margin = new Wisej.Web.Padding(0);
-            this.gtextBox1.Name = "gtextBox1";
-            this.gtextBox1.Size = new System.Drawing.Size(214, 34);
-            this.gtextBox1.TabIndex = 1;
-            this.gtextBox1.Watermark = "Enter a name";
             // 
             // label9
             // 
@@ -257,6 +229,7 @@
             this.panel1.Controls.Add(this.comp_Site1);
             this.panel1.Controls.Add(this.gcomboBox1);
             this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.gbutton1);
             this.panel1.Dock = Wisej.Web.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(20, 20);
             this.panel1.Margin = new Wisej.Web.Padding(0);
@@ -270,6 +243,28 @@
             this.comp_Site1.Size = new System.Drawing.Size(281, 34);
             this.comp_Site1.TabIndex = 98;
             this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
+            // 
+            // gbutton3
+            // 
+            this.gbutton3.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
+            this.gbutton3.Location = new System.Drawing.Point(246, 39);
+            this.gbutton3.Name = "gbutton3";
+            this.gbutton3.Size = new System.Drawing.Size(74, 27);
+            this.gbutton3.TabIndex = 15;
+            this.gbutton3.Text = "삭제";
+            this.gbutton3.Click += new System.EventHandler(this.gbutton3_Click);
+            // 
+            // gtextBox1
+            // 
+            this.gtextBox1.Anchor = Wisej.Web.AnchorStyles.Left;
+            this.gtextBox1.AutoSize = false;
+            this.gtextBox1.Location = new System.Drawing.Point(7, 40);
+            this.gtextBox1.Margin = new Wisej.Web.Padding(0);
+            this.gtextBox1.Name = "gtextBox1";
+            this.gtextBox1.Size = new System.Drawing.Size(214, 34);
+            this.gtextBox1.TabIndex = 1;
+            this.gtextBox1.Watermark = "Enter a name";
             // 
             // View_GroupManager2
             // 
@@ -301,17 +296,17 @@
         private Wisej.Web.DataGridViewTextBoxColumn colAssetbaseid;
         private Wisej.Web.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private Wisej.Web.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private Wisej.Web.Button gbutton3;
         private Wisej.Web.Button gbutton2;
         private Wisej.Web.Button gbutton1;
         private Wisej.Web.TableLayoutPanel tableLayoutPanel4;
         private Wisej.Web.Label label9;
         private Wisej.Web.Label label10;
-        private Wisej.Web.TextBox gtextBox1;
         private Wisej.Web.ComboBox gcomboBox1;
         private Wisej.Web.Panel ptop;
         private Wisej.Web.Panel panel2;
         private Components.Comp_Site comp_Site1;
         private Wisej.Web.Panel panel1;
+        private Wisej.Web.TextBox gtextBox1;
+        private Wisej.Web.Button gbutton3;
     }
 }
