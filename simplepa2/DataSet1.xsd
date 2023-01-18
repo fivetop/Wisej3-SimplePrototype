@@ -1400,10 +1400,7 @@ FROM     Simplepa</CommandText>
               <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertUpdateQuery" Modifier="Public" Name="InsertUpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertUpdateQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>INSERT INTO [dbo].[Holidays] ([hDate], [Description]) VALUES (@hDate, @Description)
-
-
-IF EXISTS(SELECT hDate FROM Holidays WHERE hDate = @hDate)
+                    <CommandText>IF EXISTS(SELECT hDate FROM Holidays WHERE hDate = @hDate)
     BEGIN
          UPDATE Holidays SET Description = @Description WHERE hDate = @hDate
     END  
@@ -3252,26 +3249,26 @@ FROM     EMBs</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="EMBs" msprop:Generator_RowEvHandlerName="EMBsRowChangeEventHandler" msprop:Generator_RowDeletedName="EMBsRowDeleted" msprop:Generator_RowDeletingName="EMBsRowDeleting" msprop:Generator_RowEvArgName="EMBsRowChangeEvent" msprop:Generator_TablePropName="EMBs" msprop:Generator_RowChangedName="EMBsRowChanged" msprop:Generator_RowChangingName="EMBsRowChanging" msprop:Generator_TableClassName="EMBsDataTable" msprop:Generator_RowClassName="EMBsRow" msprop:Generator_TableVarName="tableEMBs" msprop:Generator_UserTableName="EMBs">
+        <xs:element name="EMBs" msprop:Generator_RowEvHandlerName="EMBsRowChangeEventHandler" msprop:Generator_RowDeletedName="EMBsRowDeleted" msprop:Generator_RowDeletingName="EMBsRowDeleting" msprop:Generator_RowEvArgName="EMBsRowChangeEvent" msprop:Generator_TablePropName="EMBs" msprop:Generator_RowChangedName="EMBsRowChanged" msprop:Generator_UserTableName="EMBs" msprop:Generator_RowChangingName="EMBsRowChanging" msprop:Generator_RowClassName="EMBsRow" msprop:Generator_TableClassName="EMBsDataTable" msprop:Generator_TableVarName="tableEMBs">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="EMBsId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="EMBsId" msprop:Generator_ColumnPropNameInTable="EMBsIdColumn" msprop:Generator_ColumnVarNameInTable="columnEMBsId" msprop:Generator_UserColumnName="EMBsId" type="xs:int" />
-              <xs:element name="emData" msprop:Generator_ColumnPropNameInRow="emData" msprop:Generator_ColumnPropNameInTable="emDataColumn" msprop:Generator_ColumnVarNameInTable="columnemData" msprop:Generator_UserColumnName="emData" minOccurs="0">
+              <xs:element name="EMBsId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="EMBsIdColumn" msprop:Generator_ColumnPropNameInRow="EMBsId" msprop:Generator_UserColumnName="EMBsId" msprop:Generator_ColumnVarNameInTable="columnEMBsId" type="xs:int" />
+              <xs:element name="emData" msprop:Generator_ColumnPropNameInTable="emDataColumn" msprop:Generator_ColumnPropNameInRow="emData" msprop:Generator_UserColumnName="emData" msprop:Generator_ColumnVarNameInTable="columnemData" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DeviceId" msprop:Generator_ColumnPropNameInRow="DeviceId" msprop:Generator_ColumnPropNameInTable="DeviceIdColumn" msprop:Generator_ColumnVarNameInTable="columnDeviceId" msprop:Generator_UserColumnName="DeviceId" type="xs:int" minOccurs="0" />
-              <xs:element name="path" msprop:Generator_ColumnPropNameInRow="path" msprop:Generator_ColumnPropNameInTable="pathColumn" msprop:Generator_ColumnVarNameInTable="columnpath" msprop:Generator_UserColumnName="path" minOccurs="0">
+              <xs:element name="DeviceId" msprop:Generator_ColumnPropNameInTable="DeviceIdColumn" msprop:Generator_ColumnPropNameInRow="DeviceId" msprop:Generator_UserColumnName="DeviceId" msprop:Generator_ColumnVarNameInTable="columnDeviceId" type="xs:int" minOccurs="0" />
+              <xs:element name="path" msprop:Generator_ColumnPropNameInTable="pathColumn" msprop:Generator_ColumnPropNameInRow="path" msprop:Generator_UserColumnName="path" msprop:Generator_ColumnVarNameInTable="columnpath" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EMNAME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:Generator_ColumnVarNameInTable="columnEMNAME" msprop:Generator_UserColumnName="EMNAME" msprop:Generator_ColumnPropNameInRow="EMNAME" minOccurs="0">
+              <xs:element name="EMNAME" msprop:Generator_ColumnPropNameInTable="EMNAMEColumn" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="EMNAME" msprop:Generator_UserColumnName="EMNAME" msprop:Generator_ColumnVarNameInTable="columnEMNAME" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />

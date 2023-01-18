@@ -30812,10 +30812,7 @@ FROM     AssetPresetGroups INNER JOIN
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[Holidays] ([hDate], [Description]) VALUES (@hDate, @Description)
-
-
-IF EXISTS(SELECT hDate FROM Holidays WHERE hDate = @hDate)
+            this._commandCollection[1].CommandText = @"IF EXISTS(SELECT hDate FROM Holidays WHERE hDate = @hDate)
     BEGIN
          UPDATE Holidays SET Description = @Description WHERE hDate = @hDate
     END  
