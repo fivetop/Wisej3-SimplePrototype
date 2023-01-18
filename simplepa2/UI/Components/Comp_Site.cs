@@ -20,7 +20,8 @@ namespace simplepa2.UI.Components
         {
 			this.cb_SiteName.DataSource = null;
 			this.cb_SiteName.DataSource = _dataSet;
-			this.cb_SiteName.SelectedIndex = 0;
+			if(this.cb_SiteName.Items.Count > 0)
+				this.cb_SiteName.SelectedIndex = 0;
 		}
 
 		/// <summary>
