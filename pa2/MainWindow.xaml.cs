@@ -138,33 +138,11 @@ namespace pa
         private void Initialtimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             Initialtimer.Stop();
-            if (signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-            {
-                Initialtimer.Start();
-                return;
-            }
 
-            dBAccess.DBInit();
-            if (dBAccess.Simplepa == null)
+            if (!DBcheck())
             {
                 Initialtimer.Start();
                 return;
-            }
-
-            EMServerRow = dBAccess.EMServerGet();
-            if (EMServerRow == null)
-            {
-                // EMServer 가 없으면 문제 있음 
-                Initialtimer.Start();
-                return;
-            }
-            _DanteDevice = dBAccess.Device;
-            if (_DanteDevice != null)
-            {
-                if (_DanteDevice.Count >= gl.danteDevice._DanteDevice.Count)
-                {
-                    DB2LocalData();
-                }
             }
             g.Log("SignalR Hub Connected ..");
 
@@ -175,6 +153,23 @@ namespace pa
                 // GPIO 상태 받아오기
                 sendErr(0xFF);
             }));
+        }
+
+        private bool DBcheck()
+        {
+            if (signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
+                return false;
+
+            dBAccess.DBInit();
+            if (dBAccess.Simplepa == null)
+                return false;
+
+            EMServerRow = dBAccess.EMServerGet();
+            if (EMServerRow == null)
+                return false;
+            _DanteDevice = dBAccess.Device;
+            g.Log("DB Check..");
+            return true;
         }
 
         private void DB2LocalData()
@@ -369,6 +364,7 @@ namespace pa
         private void SignalRClient_eConnect(object sender, EventArgs e)
         {
             g.Log("SignalR Connected!");
+            DBcheck();
             SendSigR(eSignalRMsgType.eEM, "EM Info : " + g._EMClient.EM_NAME, 1);
         }
 
