@@ -55,6 +55,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\taglib-sharp.dll" />
     <Content Include="DB\0 디비테이블생성.sql" />
     <Content Include="DB\1 디비테이블-기초데이터생성.sql" />
     <Content Include="DB\9디비 테이블 삭제.sql" />
@@ -116,9 +117,6 @@
     <Content Include="Images\wisej-dotnet-57px-height.png" />
     <Content Include="Images\wisej-logo.png" />
     <Content Include="Images\wisej.png" />
-    <Content Include="imgs\dPanel1.jpg" />
-    <Content Include="imgs\dPanel2.jpg" />
-    <Content Include="imgs\dPanel3.jpg" />
     <Content Include="imgs\login2.jpg" />
     <Content Include="fonts\NotoSansKR-Black.otf" />
     <Content Include="fonts\NotoSansKR-Black.woff" />
@@ -836,7 +834,6 @@
     </Content>
     <Content Include="libman.json" />
     <Content Include="Handler1.ashx" />
-    <Content Include="Files\Wisej-Datasheet-V2.3.pdf" />
     <Content Include="Media\01-cast_of_frozen-frozen_heart.mp3" />
     <Content Include="Themes\LSMaterial-3.theme" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
@@ -1338,8 +1335,6 @@
     <Compile Include="Control\UserControl1.designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data\DataList.cs" />
-    <Compile Include="Data\DataListAssetGroup.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
