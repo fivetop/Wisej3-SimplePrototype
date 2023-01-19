@@ -102,7 +102,7 @@ namespace simplepa2.UI.Views
         {
             string selectedItem = sender as string;
 
-            if (selectedItem == "")
+            if (selectedItem == null || selectedItem == "")
                 return;
             if (!selectedItem.Equals("전체"))
             {

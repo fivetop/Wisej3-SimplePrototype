@@ -45,7 +45,7 @@ namespace simplepa2.UI.Views
             //            this.bSTreeTableAdapter.Fill(this.dataSet1.BSTree);
             //            this.bsTreeCTableAdapter.Fill(this.dataSet1.BSTreeC);
 
-            var t1 = this.dataGridView1.CurrentRow.DataBoundItem;
+            var t1 = this.dataGridView2.CurrentRow.DataBoundItem;
             var t2 = (BSTreeRow)((System.Data.DataRowView)t1).Row;
 
             if (t2 == null)

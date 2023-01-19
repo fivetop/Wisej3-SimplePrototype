@@ -241,52 +241,6 @@ namespace simplepa2
         #endregion
 
         #region // AssetBase 자산관리 기초 부분 
-        // 나중에 디비는 모두 몰기 
-        public List<AssetBase> db2List(SignalRMsg msg, int chno)
-        {
-            List<AssetBase> play = new List<AssetBase>();
-            foreach (int t1 in msg.assetsRows)
-            {
-                BSTreeRow bSTree = Ds1.BSTree.NewBSTreeRow();
-                bSTree.chno = 100000 + chno;
-                bSTree.MusicId = 0;
-                bSTree.AssetId = t1;
-                Ds1.BSTree.Rows.Add(bSTree);
-            }
-            foreach (int t1 in msg.musicsRows)
-            {
-                BSTreeRow bSTree = Ds1.BSTree.NewBSTreeRow();
-                bSTree.chno = 100000 + chno;
-                bSTree.MusicId = t1;
-                bSTree.AssetId = 0;
-                Ds1.BSTree.Rows.Add(bSTree);
-            }
-            Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
-            Ds1.BSTree.AcceptChanges();
-
-            var ab1 = Ds1.Assets.Where(a1 => msg.assetsRows.Contains(a1.AssetId));
-            var p1 = from p in ab1
-                     select new AssetBase
-                     {
-                         AssetBaseId = (int)p.AssetId,
-                         ip = p.ip,
-                         GroupName = p.GroupName,
-                         ZoneName = p.ZoneName,
-                         SpeakerName = p.SpeakerName,
-                         path = p.path,
-                         floor = p.floor,
-                         DeviceName = p.DeviceName,
-                         state = p.state,
-                         state_old = p.state_old,
-                         chk = true,
-                         seq = (int)p.seq,
-                         ch = p.ch,
-                     };
-            var t3 = ab1.ToList();
-            play = p1.ToList();
-            return play;
-        }
-
 
         #endregion
 
@@ -347,6 +301,7 @@ namespace simplepa2
                 m2.BSTreeId = bSTreeId;
                 m2.AssetId = 0;
                 m2.MusicId = t1.MusicId;
+                m2.user_name = user_name;
                 Ds1.BSTreeC.Rows.Add(m2);
                 Tam.BSTreeCTableAdapter.Update(Ds1.BSTreeC);
             }
@@ -366,7 +321,8 @@ namespace simplepa2
                 foreach (var m1 in m3)
                 {
                     if (m1.playing == "대기")
-                    { 
+                    {
+                        if (m1.chno == 1) continue; // 비상방송 채널은 사용 안됨 
                         ret = m1;
                         return ret.BSTreeId;
                     }
@@ -390,6 +346,7 @@ namespace simplepa2
                     m2.EMNAME = t1.emServer;
                     m2.chno = i;
                     m2.playing = "대기";
+                    m2.user_name = gweb.mainFrame.user_name;
                     m2.wtime = DateTime.Now;
                     Ds1.BSTree.Rows.Add(m2);
                     Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
@@ -405,6 +362,7 @@ namespace simplepa2
                 var drs = Ds1.BSTree.FirstOrDefault(p => p.BSTreeId == BSTreeId);
                 drs.playing = ps1;
                 drs.wtime = DateTime.Now;
+                drs.user_name = gweb.mainFrame.user_name;
                 Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
             }
             catch (Exception e1)
