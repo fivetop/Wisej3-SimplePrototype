@@ -149,16 +149,16 @@ namespace simplepa2.UI.Views
 			Cookie d3 = Application.Cookies.Get("d3");
 			if (d1 != null)
 			{
+				split_TopFrame.SplitterDistance = 790;
 				split_MainFrame.SplitterDistance = int.Parse(d1.Value);
-				split_TopFrame.SplitterDistance = 760;
 				split_BottomFrame.SplitterDistance = int.Parse(d3.Value);
 			}
 		}
 
 		private void splitContainer5_SplitterMoved(object sender, SplitterEventArgs e)
 		{
+			Application.Cookies.Add("d2", "790", DateTime.Now.AddDays(7));
 			Application.Cookies.Add("d1", split_MainFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
-			Application.Cookies.Add("d2", split_TopFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 			Application.Cookies.Add("d3", split_BottomFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 		}
         #endregion

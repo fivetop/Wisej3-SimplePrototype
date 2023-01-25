@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
-            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
-            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry5 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry6 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry7 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.ImageListEntry imageListEntry8 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry9 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry10 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry11 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry12 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.ImageListEntry imageListEntry49 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
+            Wisej.Web.ImageListEntry imageListEntry50 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
+            Wisej.Web.ImageListEntry imageListEntry51 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry52 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry53 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry54 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry55 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry56 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry57 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry58 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry59 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry60 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle9 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle10 = new Wisej.Web.DataGridViewCellStyle();
             this.imageList3 = new Wisej.Web.ImageList(this.components);
             this.imageList1 = new Wisej.Web.ImageList(this.components);
             this.imageList2 = new Wisej.Web.ImageList(this.components);
@@ -109,27 +109,27 @@
             // imageList3
             // 
             this.imageList3.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry1,
-            imageListEntry2});
+            imageListEntry49,
+            imageListEntry50});
             // 
             // imageList1
             // 
             this.imageList1.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry3,
-            imageListEntry4,
-            imageListEntry5,
-            imageListEntry6,
-            imageListEntry7});
+            imageListEntry51,
+            imageListEntry52,
+            imageListEntry53,
+            imageListEntry54,
+            imageListEntry55});
             this.imageList1.ImageSize = new System.Drawing.Size(64, 64);
             // 
             // imageList2
             // 
             this.imageList2.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry8,
-            imageListEntry9,
-            imageListEntry10,
-            imageListEntry11,
-            imageListEntry12});
+            imageListEntry56,
+            imageListEntry57,
+            imageListEntry58,
+            imageListEntry59,
+            imageListEntry60});
             this.imageList2.ImageSize = new System.Drawing.Size(32, 32);
             // 
             // Eventbs
@@ -198,7 +198,7 @@
             // split_TopFrame.Panel1
             // 
             this.split_TopFrame.Panel1.TabStop = true;
-            this.split_TopFrame.Panel1MinSize = 760;
+            this.split_TopFrame.Panel1MinSize = 790;
             // 
             // split_TopFrame.Panel2
             // 
@@ -206,7 +206,7 @@
             this.split_TopFrame.Panel2.TabStop = true;
             this.split_TopFrame.Panel2MinSize = 100;
             this.split_TopFrame.Size = new System.Drawing.Size(1148, 248);
-            this.split_TopFrame.SplitterDistance = 760;
+            this.split_TopFrame.SplitterDistance = 790;
             this.split_TopFrame.TabIndex = 0;
             this.split_TopFrame.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
             // 
@@ -216,7 +216,7 @@
             this.DevicelistView1.LargeImageList = this.imageList1;
             this.DevicelistView1.Location = new System.Drawing.Point(0, 0);
             this.DevicelistView1.Name = "DevicelistView1";
-            this.DevicelistView1.Size = new System.Drawing.Size(372, 248);
+            this.DevicelistView1.Size = new System.Drawing.Size(342, 248);
             this.DevicelistView1.SmallImageList = this.imageList2;
             this.DevicelistView1.StateImageList = this.imageList1;
             this.DevicelistView1.TabIndex = 0;
@@ -224,6 +224,7 @@
             // split_BottomFrame
             // 
             this.split_BottomFrame.Dock = Wisej.Web.DockStyle.Fill;
+            this.split_BottomFrame.FixedPanel = Wisej.Web.FixedPanel.Panel1;
             this.split_BottomFrame.Location = new System.Drawing.Point(5, 5);
             this.split_BottomFrame.Name = "split_BottomFrame";
             // 
@@ -232,14 +233,16 @@
             this.split_BottomFrame.Panel1.Controls.Add(this.panel1);
             this.split_BottomFrame.Panel1.Padding = new Wisej.Web.Padding(20);
             this.split_BottomFrame.Panel1.TabStop = true;
+            this.split_BottomFrame.Panel1MinSize = 790;
             // 
             // split_BottomFrame.Panel2
             // 
             this.split_BottomFrame.Panel2.Controls.Add(this.panel12);
             this.split_BottomFrame.Panel2.Padding = new Wisej.Web.Padding(20);
             this.split_BottomFrame.Panel2.TabStop = true;
+            this.split_BottomFrame.Panel2MinSize = 100;
             this.split_BottomFrame.Size = new System.Drawing.Size(1148, 440);
-            this.split_BottomFrame.SplitterDistance = 574;
+            this.split_BottomFrame.SplitterDistance = 790;
             this.split_BottomFrame.SplitterWidth = 16;
             this.split_BottomFrame.TabIndex = 3;
             this.split_BottomFrame.SplitterMoved += new Wisej.Web.SplitterEventHandler(this.splitContainer5_SplitterMoved);
@@ -251,7 +254,7 @@
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(20, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(532, 398);
+            this.panel1.Size = new System.Drawing.Size(748, 398);
             this.panel1.TabIndex = 4;
             this.panel1.TabStop = true;
             // 
@@ -273,7 +276,7 @@
             this.evdataGridView1.Name = "evdataGridView1";
             this.evdataGridView1.RowHeadersVisible = false;
             this.evdataGridView1.RowHeadersWidth = 14;
-            this.evdataGridView1.Size = new System.Drawing.Size(532, 355);
+            this.evdataGridView1.Size = new System.Drawing.Size(748, 355);
             this.evdataGridView1.TabIndex = 2;
             // 
             // colEventvmid
@@ -287,9 +290,9 @@
             // colWrite_Time
             // 
             this.colWrite_Time.DataPropertyName = "write_time";
-            dataGridViewCellStyle1.Format = "f";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Format = "f";
+            dataGridViewCellStyle9.NullValue = null;
+            this.colWrite_Time.DefaultCellStyle = dataGridViewCellStyle9;
             this.colWrite_Time.HeaderText = "발생일자";
             this.colWrite_Time.Name = "colWrite_Time";
             this.colWrite_Time.Width = 210;
@@ -321,18 +324,17 @@
             this.panel11.Dock = Wisej.Web.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(532, 43);
+            this.panel11.Size = new System.Drawing.Size(748, 43);
             this.panel11.TabIndex = 5;
             this.panel11.TabStop = true;
             // 
             // label20
             // 
-            this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label20.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label20.Location = new System.Drawing.Point(0, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(226, 20);
+            this.label20.Size = new System.Drawing.Size(226, 30);
             this.label20.TabIndex = 3;
             this.label20.Text = "화재수신/방송 이벤트 정보";
             // 
@@ -343,7 +345,7 @@
             this.panel12.Dock = Wisej.Web.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(20, 20);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(516, 398);
+            this.panel12.Size = new System.Drawing.Size(300, 398);
             this.panel12.TabIndex = 5;
             this.panel12.TabStop = true;
             // 
@@ -366,7 +368,7 @@
             this.evdataGridView3.Name = "evdataGridView3";
             this.evdataGridView3.RowHeadersVisible = false;
             this.evdataGridView3.RowHeadersWidth = 14;
-            this.evdataGridView3.Size = new System.Drawing.Size(516, 355);
+            this.evdataGridView3.Size = new System.Drawing.Size(300, 355);
             this.evdataGridView3.TabIndex = 3;
             // 
             // colEventdeviceid
@@ -407,9 +409,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "write_time";
-            dataGridViewCellStyle2.Format = "f";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Format = "f";
+            dataGridViewCellStyle10.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn6.HeaderText = "변경일자";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 210;
@@ -427,19 +429,18 @@
             this.panel13.Dock = Wisej.Web.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(516, 43);
+            this.panel13.Size = new System.Drawing.Size(300, 43);
             this.panel13.TabIndex = 6;
             this.panel13.TabStop = true;
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.White;
             this.label21.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label21.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.label21.Location = new System.Drawing.Point(0, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(146, 20);
+            this.label21.Size = new System.Drawing.Size(146, 30);
             this.label21.TabIndex = 4;
             this.label21.Text = "장치 이벤트 정보";
             // 
@@ -487,12 +488,10 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.evdataGridView1)).EndInit();
             this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.evdataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).EndInit();
             this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTreeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
             this.ResumeLayout(false);

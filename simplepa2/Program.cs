@@ -49,10 +49,18 @@ namespace simplepa2
 			GlobalConfiguration.Configure(WebApiConfig.Register);
 
 			Application.MainPage = new PA_Login();
-			Application.LoadTheme("LSMaterial-3"); //"Material-3" .
+			Application.LoadTheme("LSMaterial-3");
+			//"Material-3" .
 			//Application.MainPage = new PA_MainFrame();
 			// 	window.open('', '_self').close();
 			//Application.SessionTimeout += Application_SessionTimeout;
+
+			var parentSize = Application.Browser.Size;
+
+			//Application.MainPage.Size = new System.Drawing.Size(1440,1020);
+			//Application.MainPage.Refresh();
+			//Application.Browser.Height = 1050;
+			Application.Eval("window.resizeTo(1440,1020)");
 
 			if (t2 == null)
 			{ 
