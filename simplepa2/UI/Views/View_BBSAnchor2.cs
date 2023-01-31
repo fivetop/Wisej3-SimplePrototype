@@ -19,7 +19,14 @@ namespace simplepa2.UI.Views
 
 		internal void reDraw()
 		{
-			View_BBSAnchor_Load(null, null);
+			this.btnStart.Enabled = true;
+			this.btnStop.Enabled = false;
+			this.dataGridView2.RowCount = 10;
+
+			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+
+			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
+			comp_Site1.reDraw();
 		}
 
 		public void refresh()
@@ -30,12 +37,7 @@ namespace simplepa2.UI.Views
 
 		private void View_BBSAnchor_Load(object sender, EventArgs e)
 		{
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-			this.dataGridView2.RowCount = 10;
-
-			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-
+			reDraw();
 		}
 
 
@@ -197,7 +199,27 @@ namespace simplepa2.UI.Views
 			}
 
 		}
-		#endregion
+        #endregion
 
-	}
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
+			string selectedItem = sender as string;
+			IEnumerable<AssetPresetGroupsRow> t1;
+
+			if (selectedItem == "") return;
+			assetsBindingSource.Filter = ("emserver = '" + selectedItem + "'");
+
+			DrawFloor();
+		}
+
+        private void DrawFloor()
+        {
+			var t1 = Helper.Table(assetsBindingSource);
+
+			//foreach (var t1 in assetsBindingSource.List)
+			//{ 
+			//	//
+			//}
+        }
+    }
 }
