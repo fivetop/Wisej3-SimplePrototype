@@ -270,6 +270,7 @@ namespace simplepa2.UI.Pages
         }
 
         public event EventHandler FocusEvent;
+        //public event EventHandler ReDraw;
 
         private T bringFrontView<T>(string viewName, Boolean bShinkNavBar)
         {
@@ -371,22 +372,18 @@ namespace simplepa2.UI.Pages
                     if(view_BBSEMManage2 != null) view_BBSEMManage2.reDraw();
                     break;
                 case eSignalRMsgType.ePlay:
-                    //dBSqlite.Eventbs("Play", msg1.message, msg1.seqno.ToString());
                     view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.ePlayCheck :
                     break;
                 case eSignalRMsgType.ePlayEnd:
-                    //dBSqlite.Eventbs("PlayEnd", msg1.message, msg1.seqno.ToString());
                     view_BBCEMManager2.reDraw();
                     view_BBSAnchor2.refresh();
                     break;
                 case eSignalRMsgType.ePlaying:
-                    //dBSqlite.Eventbs("Playing", msg1.message, msg1.seqno.ToString());
                     view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.eStop:
-                    //dBSqlite.Eventbs("PlayStop", msg1.message, msg1.seqno.ToString());
                     view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.eLoginUser:
@@ -406,8 +403,6 @@ namespace simplepa2.UI.Pages
                         AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
                     break;
             }
-            //view_Dashboard.Refresh();
-            //this.eventvmTableAdapter.Fill(this.dataSet1.Eventvm);
 
             if (disp)
             {

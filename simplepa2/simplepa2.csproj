@@ -155,6 +155,12 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="Comp_UFloor.resx">
+      <DependentUpon>Comp_UFloor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comp_UZone.resx">
+      <DependentUpon>Comp_UZone.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_BBSAchchorBSStatus.resx">
       <DependentUpon>Comp_BBSAchchorBSStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -850,6 +856,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comp_UFloor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comp_UFloor.designer.cs">
+      <DependentUpon>Comp_UFloor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comp_UZone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comp_UZone.designer.cs">
+      <DependentUpon>Comp_UZone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\AssetGroups.cs">
       <DependentUpon>Model1.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
