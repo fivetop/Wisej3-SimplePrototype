@@ -191,6 +191,9 @@ namespace simplepa2
                 m2.ch = 1;
             m2.chk = 0;
             m2.floor = int.Parse(t1.array[11]) * 100 + int.Parse(t1.array[12]) *10 + int.Parse(t1.array[13]);
+            m2.em1 = 0;
+            m2.em2 = 0;
+            m2.em3 = 0;
             m2.emData = t1.emData;
             m2.ip = "";
             m2.state = "";
