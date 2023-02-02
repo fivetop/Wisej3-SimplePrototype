@@ -20,6 +20,10 @@ namespace simplepa2
 
         internal void reDraw()
         {
+            list.Clear();
+            comp_UFloors.Clear();
+            this.Controls.Clear();
+
             foreach (var t1 in assetsBindingSource.List)
             {
                 var t2 = (AssetsRow)((DataRowView)t1).Row;
