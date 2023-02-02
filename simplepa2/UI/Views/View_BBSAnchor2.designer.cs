@@ -46,6 +46,7 @@
             this.colSeq = new Wisej.Web.DataGridViewTextBoxColumn();
             this.chk = new Wisej.Web.DataGridViewCheckBoxColumn();
             this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.panel7 = new Wisej.Web.Panel();
             this.panel5 = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
             this.panel35 = new Wisej.Web.Panel();
@@ -58,7 +59,7 @@
             this.panel41 = new Wisej.Web.Panel();
             this.label17 = new Wisej.Web.Label();
             this.panel6 = new Wisej.Web.Panel();
-            this.panel7 = new Wisej.Web.Panel();
+            this.comp_UAsset1 = new simplepa2.Comp_UAsset();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
@@ -70,6 +71,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.dataGridView1.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel35.SuspendLayout();
             this.panel41.SuspendLayout();
@@ -256,6 +258,15 @@
             this.colPath.Name = "colPath";
             this.colPath.Width = 300;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.comp_UAsset1);
+            this.panel7.Dock = Wisej.Web.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(548, 279);
+            this.panel7.TabIndex = 0;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -407,13 +418,12 @@
             this.panel6.Size = new System.Drawing.Size(1360, 860);
             this.panel6.TabIndex = 13;
             // 
-            // panel7
+            // comp_UAsset1
             // 
-            this.panel7.Dock = Wisej.Web.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(548, 279);
-            this.panel7.TabIndex = 0;
+            this.comp_UAsset1.Dock = Wisej.Web.DockStyle.Fill;
+            this.comp_UAsset1.Name = "comp_UAsset1";
+            this.comp_UAsset1.Size = new System.Drawing.Size(548, 279);
+            this.comp_UAsset1.TabIndex = 0;
             // 
             // View_BBSAnchor2
             // 
@@ -435,6 +445,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.dataGridView1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
@@ -474,5 +486,6 @@
         private Components.Comp_Site comp_Site1;
         private Wisej.Web.Panel panel6;
         private Wisej.Web.Panel panel7;
+        private Comp_UAsset comp_UAsset1;
     }
 }

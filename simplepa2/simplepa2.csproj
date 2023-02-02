@@ -155,6 +155,9 @@
     <Content Include="imgs\signature-kr.png" />
     <Content Include="imgs\로그인2B.png" />
     <Content Include="index2.html" />
+    <EmbeddedResource Include="Comp_UAsset.resx">
+      <DependentUpon>Comp_UAsset.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comp_UFloor.resx">
       <DependentUpon>Comp_UFloor.cs</DependentUpon>
     </EmbeddedResource>
@@ -1517,6 +1520,12 @@
     </Compile>
     <Compile Include="UI\win\Window1.Designer.cs">
       <DependentUpon>Window1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comp_UAsset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comp_UAsset.Designer.cs">
+      <DependentUpon>Comp_UAsset.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

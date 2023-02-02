@@ -27,6 +27,9 @@ namespace simplepa2.UI.Views
 
 			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
 			comp_Site1.reDraw();
+
+			comp_UAsset1.assetsBindingSource = assetsBindingSource;
+			comp_UAsset1.reDraw();
 		}
 
 		public void refresh()
@@ -62,6 +65,8 @@ namespace simplepa2.UI.Views
 					SelAsset.Add((AssetsRow)((System.Data.DataRowView)t1).Row);
 				}
 			}
+
+			SelAsset = comp_UAsset1.GetSelAssets();
 
 			if (SelAsset.Count() < 1 || SelMusic.Count() < 1)
 			{

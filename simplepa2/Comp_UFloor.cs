@@ -17,16 +17,6 @@ namespace simplepa2
         {
             InitializeComponent();
         }
-
-        internal void 존명(string t1)
-        {
-            Comp_UZone b1 = new Comp_UZone();
-            b1.SetZone(t1);
-            b1.Width = 140;
-            b1.Height = 50;
-            this.f1.Controls.Add(b1);
-        }
-
         private void f1_SizeChanged(object sender, EventArgs e)
         {
             this.Height = f1.Height + 10;
@@ -36,9 +26,35 @@ namespace simplepa2
             //shape1.Location = new System.Drawing.Point(5, 5);
         }
 
-        internal void 지역명(string v)
+        string _지역명;
+
+        public string 지역명 
         {
-            Floor.Text = v;
+            get 
+            {
+                return _지역명;
+            }
+            set 
+            { 
+                _지역명 = value;
+                Floor.Text = _지역명;
+            } 
+        }
+
+        DataSet1.AssetsRow _assetRow;
+
+        public DataSet1.AssetsRow assetRow
+        {
+            get { return _assetRow; }
+            set 
+            { 
+                _assetRow = value;
+                Comp_UZone b1 = new Comp_UZone();
+                b1.assetRow = _assetRow;
+                b1.Width = 140;
+                b1.Height = 50;
+                this.f1.Controls.Add(b1);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -51,7 +67,7 @@ namespace simplepa2
 
                 var t2 = f1.Controls.ToList(); // .ToList();
                 foreach (Comp_UZone t1 in t2)
-                    t1.Zone_Click(true);
+                    t1.Zone_Click(1);
             }
             else
             {
@@ -59,7 +75,7 @@ namespace simplepa2
                 Floor.ForeColor = System.Drawing.Color.Gray;
                 var t2 = f1.Controls.ToList(); // .ToList();
                 foreach (Comp_UZone t1 in t2)
-                    t1.Zone_Click(false);
+                    t1.Zone_Click(0);
             }
         }
 
