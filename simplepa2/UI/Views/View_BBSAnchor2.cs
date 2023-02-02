@@ -56,16 +56,6 @@ namespace simplepa2.UI.Views
 		// 방송 시작
 		private void btnStart_Click(object sender, EventArgs e)
 		{
-			SelAsset.Clear();
-			foreach (DataGridViewRow row in dataGridView1.Rows)
-			{
-				if (row.Cells["chk"].Value.ToString() != "0")
-				{
-					var t1 = row.DataBoundItem;
-					SelAsset.Add((AssetsRow)((System.Data.DataRowView)t1).Row);
-				}
-			}
-
 			SelAsset = comp_UAsset1.GetSelAssets();
 
 			if (SelAsset.Count() < 1 || SelMusic.Count() < 1)
@@ -149,24 +139,6 @@ namespace simplepa2.UI.Views
 
 		#region // 그리드 처리 
 
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			if (e.RowIndex < 0 || e.ColumnIndex < 1)
-				return;
-			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)dataGridView1.Rows[e.RowIndex].Cells["chk"];
-			dataGridView1.BeginEdit(true);
-
-			if (Convert.ToBoolean(this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value) == false)
-			{
-				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = true;
-			}
-			else
-			{
-				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = false;
-			}
-			dataGridView1.EndEdit();
-		}
-
 		private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
 			if (e.Button == MouseButtons.Left)
@@ -213,18 +185,7 @@ namespace simplepa2.UI.Views
 
 			if (selectedItem == "") return;
 			assetsBindingSource.Filter = ("emserver = '" + selectedItem + "'");
-
-			DrawFloor();
 		}
 
-        private void DrawFloor()
-        {
-			var t1 = Helper.Table(assetsBindingSource);
-
-			//foreach (var t1 in assetsBindingSource.List)
-			//{ 
-			//	//
-			//}
-        }
     }
 }

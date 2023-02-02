@@ -33,7 +33,6 @@
             this.assetsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.panel4 = new Wisej.Web.Panel();
-            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.btnStop = new Wisej.Web.Button();
             this.btnStart = new Wisej.Web.Button();
             this.panel3 = new Wisej.Web.Panel();
@@ -42,10 +41,6 @@
             this.colFilename = new Wisej.Web.DataGridViewTextBoxColumn();
             this.colFilecontent = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1 = new Wisej.Web.Panel();
-            this.dataGridView1 = new Wisej.Web.DataGridView();
-            this.colSeq = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.chk = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colPath = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel7 = new Wisej.Web.Panel();
             this.panel5 = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
@@ -60,6 +55,7 @@
             this.label17 = new Wisej.Web.Label();
             this.panel6 = new Wisej.Web.Panel();
             this.comp_UAsset1 = new simplepa2.Comp_UAsset();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
@@ -69,8 +65,6 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.dataGridView1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel35.SuspendLayout();
@@ -106,12 +100,6 @@
             this.panel4.Size = new System.Drawing.Size(1320, 52);
             this.panel4.TabIndex = 11;
             this.panel4.TabStop = true;
-            // 
-            // comp_Site1
-            // 
-            this.comp_Site1.Name = "comp_Site1";
-            this.comp_Site1.TabIndex = 5;
-            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // btnStop
             // 
@@ -200,71 +188,24 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = Wisej.Web.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.MaximumSize = new System.Drawing.Size(550, 836);
-            this.panel1.MinimumSize = new System.Drawing.Size(550, 836);
+            this.panel1.MinimumSize = new System.Drawing.Size(550, 400);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(550, 836);
+            this.panel1.Size = new System.Drawing.Size(550, 766);
             this.panel1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.colSeq,
-            this.chk,
-            this.colPath});
-            this.dataGridView1.Controls.Add(this.panel7);
-            this.dataGridView1.DataSource = this.assetsBindingSource;
-            this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
-            this.dataGridView1.EditMode = Wisej.Web.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 190);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 14;
-            this.dataGridView1.RowHeadersWidthSizeMode = Wisej.Web.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.ShowFocusCell = false;
-            this.dataGridView1.Size = new System.Drawing.Size(550, 646);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // colSeq
-            // 
-            this.colSeq.DataPropertyName = "seq";
-            this.colSeq.HeaderText = "No";
-            this.colSeq.Name = "colSeq";
-            this.colSeq.Width = 60;
-            // 
-            // chk
-            // 
-            this.chk.DataPropertyName = "chk";
-            this.chk.FalseValue = "0";
-            this.chk.HeaderText = "ACT";
-            this.chk.Name = "chk";
-            this.chk.SortMode = Wisej.Web.DataGridViewColumnSortMode.Automatic;
-            this.chk.TrueValue = "1";
-            this.chk.Width = 40;
-            // 
-            // colPath
-            // 
-            this.colPath.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPath.DataPropertyName = "path";
-            this.colPath.HeaderText = "지역";
-            this.colPath.Name = "colPath";
-            this.colPath.Width = 300;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.comp_UAsset1);
-            this.panel7.Dock = Wisej.Web.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Dock = Wisej.Web.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 190);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(548, 279);
+            this.panel7.ShowCloseButton = false;
+            this.panel7.Size = new System.Drawing.Size(550, 576);
             this.panel7.TabIndex = 0;
             // 
             // panel5
@@ -422,8 +363,14 @@
             // 
             this.comp_UAsset1.Dock = Wisej.Web.DockStyle.Fill;
             this.comp_UAsset1.Name = "comp_UAsset1";
-            this.comp_UAsset1.Size = new System.Drawing.Size(548, 279);
+            this.comp_UAsset1.Size = new System.Drawing.Size(550, 576);
             this.comp_UAsset1.TabIndex = 0;
+            // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 5;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // View_BBSAnchor2
             // 
@@ -443,8 +390,6 @@
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.dataGridView1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -463,10 +408,6 @@
         private Wisej.Web.Button btnStop;
         private Wisej.Web.Button btnStart;
         private Wisej.Web.Panel panel3;
-        private Wisej.Web.DataGridView dataGridView1;
-        private Wisej.Web.DataGridViewTextBoxColumn colSeq;
-        private Wisej.Web.DataGridViewCheckBoxColumn chk;
-        private Wisej.Web.DataGridViewTextBoxColumn colPath;
         private Wisej.Web.SplitContainer splitContainer2;
         private Wisej.Web.DataGridView dataGridView2;
         private Wisej.Web.DataGridViewTextBoxColumn colFilename;
