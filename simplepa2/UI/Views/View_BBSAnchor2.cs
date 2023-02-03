@@ -186,6 +186,7 @@ namespace simplepa2.UI.Views
 			if (selectedItem == "") return;
 			assetsBindingSource.Filter = ("emserver = '" + selectedItem + "'");
 
+			comp_UAsset1.Filter = selectedItem;
 			comp_UAsset1.assetsBindingSource = assetsBindingSource;
 			comp_UAsset1.reDraw();
 		}

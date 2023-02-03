@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using Wisej.Web;
+using simplepa2.Controller;
 
 namespace simplepa2
 {
@@ -12,9 +13,9 @@ namespace simplepa2
             InitializeComponent();
         }
 
-        DataSet1.AssetsRow _assetRow;
+        Assets _assetRow;
 
-        public DataSet1.AssetsRow assetRow
+        public Assets assetRow
         {
             get { return _assetRow; }
             set
@@ -33,7 +34,7 @@ namespace simplepa2
             Zone_Click(_assetRow.chk);
         }
 
-        public void Zone_Click(int chk)
+        public void Zone_Click(int? chk)
         {
             if (chk == 1)
             {

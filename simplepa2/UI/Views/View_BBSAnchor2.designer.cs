@@ -33,6 +33,7 @@
             this.assetsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
             this.panel4 = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.btnStop = new Wisej.Web.Button();
             this.btnStart = new Wisej.Web.Button();
             this.panel3 = new Wisej.Web.Panel();
@@ -42,6 +43,7 @@
             this.colFilecontent = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel1 = new Wisej.Web.Panel();
             this.panel7 = new Wisej.Web.Panel();
+            this.comp_UAsset1 = new simplepa2.Comp_UAsset();
             this.panel5 = new Wisej.Web.Panel();
             this.panel2 = new Wisej.Web.Panel();
             this.panel35 = new Wisej.Web.Panel();
@@ -54,8 +56,8 @@
             this.panel41 = new Wisej.Web.Panel();
             this.label17 = new Wisej.Web.Label();
             this.panel6 = new Wisej.Web.Panel();
-            this.comp_UAsset1 = new simplepa2.Comp_UAsset();
-            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
+            this.panel8 = new Wisej.Web.Panel();
+            this.label1 = new Wisej.Web.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
@@ -70,6 +72,7 @@
             this.panel35.SuspendLayout();
             this.panel41.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -100,6 +103,12 @@
             this.panel4.Size = new System.Drawing.Size(1320, 52);
             this.panel4.TabIndex = 11;
             this.panel4.TabStop = true;
+            // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 5;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // btnStop
             // 
@@ -201,12 +210,22 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.comp_UAsset1);
+            this.panel7.Controls.Add(this.panel8);
             this.panel7.Dock = Wisej.Web.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 190);
             this.panel7.Name = "panel7";
+            this.panel7.Padding = new Wisej.Web.Padding(20);
             this.panel7.ShowCloseButton = false;
             this.panel7.Size = new System.Drawing.Size(550, 576);
             this.panel7.TabIndex = 0;
+            // 
+            // comp_UAsset1
+            // 
+            this.comp_UAsset1.Dock = Wisej.Web.DockStyle.Fill;
+            this.comp_UAsset1.Location = new System.Drawing.Point(20, 57);
+            this.comp_UAsset1.Name = "comp_UAsset1";
+            this.comp_UAsset1.Size = new System.Drawing.Size(510, 499);
+            this.comp_UAsset1.TabIndex = 0;
             // 
             // panel5
             // 
@@ -359,18 +378,28 @@
             this.panel6.Size = new System.Drawing.Size(1360, 860);
             this.panel6.TabIndex = 13;
             // 
-            // comp_UAsset1
+            // panel8
             // 
-            this.comp_UAsset1.Dock = Wisej.Web.DockStyle.Fill;
-            this.comp_UAsset1.Name = "comp_UAsset1";
-            this.comp_UAsset1.Size = new System.Drawing.Size(550, 576);
-            this.comp_UAsset1.TabIndex = 0;
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Dock = Wisej.Web.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(20, 20);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(510, 37);
+            this.panel8.TabIndex = 163;
             // 
-            // comp_Site1
+            // label1
             // 
-            this.comp_Site1.Name = "comp_Site1";
-            this.comp_Site1.TabIndex = 5;
-            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
+            this.label1.AutoEllipsis = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new Wisej.Web.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(437, 24);
+            this.label1.TabIndex = 134;
+            this.label1.Text = "방송 지역 선택";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // View_BBSAnchor2
             // 
@@ -396,6 +425,7 @@
             this.panel35.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -428,5 +458,7 @@
         private Wisej.Web.Panel panel6;
         private Wisej.Web.Panel panel7;
         private Comp_UAsset comp_UAsset1;
+        private Wisej.Web.Panel panel8;
+        private Wisej.Web.Label label1;
     }
 }

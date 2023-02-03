@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using simplepa2.Controller;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,8 +12,10 @@ namespace simplepa2
     public partial class Comp_UAsset : Wisej.Web.UserControl
     {
         internal BindingSource assetsBindingSource;
-        List<AssetsRow> list = new List<AssetsRow>();
+        List<Assets> list = new List<Assets>();
         List<Comp_UFloor> comp_UFloors = new List<Comp_UFloor>();
+
+        public string Filter { get; internal set; }
 
         public Comp_UAsset()
         {
@@ -24,11 +28,12 @@ namespace simplepa2
             comp_UFloors.Clear();
             this.Controls.Clear();
 
-            foreach (var t1 in assetsBindingSource.List)
-            {
-                var t2 = (AssetsRow)((DataRowView)t1).Row;
-                list.Add(t2);
-            }
+            // 디비투 이기종 테이블 리스트 복제 
+            var dt1 = Helper.Table(assetsBindingSource);
+            var l2 = Helper.DataTableToList<Assets>(dt1);
+
+            if (l2.Count < 1) return;
+            list = l2.Where(p=>p.emServer == Filter).ToList();
 
             // 그룹으로 층 생성 
             foreach (var t1 in list)
@@ -54,17 +59,23 @@ namespace simplepa2
 
         internal List<AssetsRow> GetSelAssets()
         {
-            List<AssetsRow> selAssets = new List<AssetsRow>();
+            List<Assets> selAssets = new List<Assets>();
+            List<AssetsRow> selAssetsRow = new List<AssetsRow>();
 
             foreach (var t1 in list)
             {
                 if (t1.chk == 1)
                 { 
                     selAssets.Add(t1);
-                    //System.Diagnostics.Debug.WriteLine(t1.ZoneName);
+                    System.Diagnostics.Debug.WriteLine(t1.ZoneName);
                 }
             }
-            return selAssets;
+
+            // 이기종 리스트 복제 
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(selAssets);
+            AssetsDataTable pDt = JsonConvert.DeserializeObject<AssetsDataTable>(json);
+            selAssetsRow = pDt.ToList();
+            return selAssetsRow;
         }
     }
 }

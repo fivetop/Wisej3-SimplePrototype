@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using Wisej.Web;
+using simplepa2.Controller;
 
 namespace simplepa2
 {
@@ -41,9 +42,9 @@ namespace simplepa2
             } 
         }
 
-        DataSet1.AssetsRow _assetRow;
+        Assets _assetRow;
 
-        public DataSet1.AssetsRow assetRow
+        public Assets assetRow
         {
             get { return _assetRow; }
             set 
