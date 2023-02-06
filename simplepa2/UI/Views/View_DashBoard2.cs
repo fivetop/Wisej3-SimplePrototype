@@ -77,20 +77,12 @@ namespace simplepa2.UI.Views
 		}
 
 
-
-
-
 		private void Main_Load()
 		{
 			DevicelistView1.Items.Clear();
 			// 장비 아이콘 보이기 
 			DevicelistView1.View = View.LargeIcon;
-			//DevicelistView1.View = View.Tile;
-			//DevicelistView1.View = View.SmallIcon;
-			//DevicelistView1.ar .AutoResizeColumn(1 ,ColumnHeaderAutoResizeStyle.ColumnContent);
 
-			//DevicelistView1.View = View.Details;
-			DevicelistView1.BeginUpdate();
 			foreach (var t3 in  gweb.mainFrame.dBSqlite.Ds1.Device)
 			{
 				if (!(t3.device == 0 || t3.device == 2))
@@ -98,6 +90,7 @@ namespace simplepa2.UI.Views
 				ListViewItem lvi = new ListViewItem();
 				lvi.Text = t3.DeviceName; // t3.device.ToString();
 				lvi.ToolTipText = t3.DeviceName;
+				
 
 				switch (t3.device)
 				{
@@ -125,7 +118,6 @@ namespace simplepa2.UI.Views
 				}
 				DevicelistView1.Items.Add(lvi);
 			}
-			DevicelistView1.EndUpdate();
 		}
 
 
@@ -161,8 +153,62 @@ namespace simplepa2.UI.Views
 			Application.Cookies.Add("d1", split_MainFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 			Application.Cookies.Add("d3", split_BottomFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 		}
-        #endregion
+		#endregion
 
 
-    }
+		/*
+				private void Main_Load()
+				{
+					DevicelistView1.Items.Clear();
+					// 장비 아이콘 보이기 
+					DevicelistView1.View = View.LargeIcon;
+					//DevicelistView1.View = View.Tile;
+					//DevicelistView1.View = View.SmallIcon;
+					//DevicelistView1.ar .AutoResizeColumn(1 ,ColumnHeaderAutoResizeStyle.ColumnContent);
+
+					//DevicelistView1.View = View.Details;
+					//DevicelistView1.BeginUpdate();
+					foreach (var t3 in  gweb.mainFrame.dBSqlite.Ds1.Device)
+					{
+						if (!(t3.device == 0 || t3.device == 2))
+							continue;
+						ListViewItem lvi = new ListViewItem();
+						lvi.Text = t3.DeviceName; // t3.device.ToString();
+						lvi.ToolTipText = t3.DeviceName;
+
+
+						switch (t3.device)
+						{
+							case 0:
+								lvi.ImageIndex = 0;
+								break;
+							case 2:
+								lvi.ImageIndex = 1;
+								//lvi.BackColor = Color.LightBlue;
+								break;
+							case 3:
+								lvi.ImageIndex = 2;
+								break;
+							case 4:
+								lvi.ImageIndex = 3;
+								lvi.BackColor = Color.Red;
+								break;
+							case 9:
+								lvi.ImageIndex = 4;
+								lvi.BackColor = Color.LightCyan;
+								break;
+							default:
+								lvi.ImageIndex = 0;
+								break;
+						}
+						DevicelistView1.Items.Add(lvi);
+					}
+					//DevicelistView1.EndUpdate();
+				}
+
+
+
+		 */
+
+	}
 }

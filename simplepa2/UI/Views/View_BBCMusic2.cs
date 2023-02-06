@@ -13,10 +13,16 @@ namespace simplepa2.UI.Views
             InitializeComponent();
         }
 
+        internal void reDraw()
+        {
+            this.deviceTableAdapter.Fill(this.dataSet1.Device);
+        }
+
+
         private void MainFrame_FocusEvent(object sender, EventArgs e)
         {
             if(sender == this)
-                this.deviceTableAdapter.Fill(this.dataSet1.Device);
+                reDraw();
         }
 
 
@@ -55,11 +61,6 @@ namespace simplepa2.UI.Views
             AlertBox.Show("서버에 시스템 적용을 요청 하였습니다. - 약 5분 정도 소요됩니다.");
 
             gweb.mainFrame.sendSigR(eSignalRMsgType.eVolume);
-        }
-
-        internal void reDraw()
-        {
-            this.deviceTableAdapter.Fill(this.dataSet1.Device);
         }
 
         /*

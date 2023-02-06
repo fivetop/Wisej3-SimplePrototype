@@ -234,7 +234,7 @@ namespace simplepa2
             var sAsset = Ds1.Assets.First(p => p.path == path);
             if (sAsset != null)
             {
-                if (sAsset.state == "On-Line")
+                if (sAsset.state == "ONLINE")
                     return 1;
             }
             return 0;

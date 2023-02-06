@@ -33,6 +33,7 @@
             this.dataSet1 = new simplepa2.DataSet1();
             this.deviceTableAdapter = new simplepa2.DataSet1TableAdapters.DeviceTableAdapter();
             this.ptop = new Wisej.Web.Panel();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.button3 = new Wisej.Web.Button();
             this.button2 = new Wisej.Web.Button();
             this.button1 = new Wisej.Web.Button();
@@ -49,7 +50,6 @@
             this.colDsp_Vol = new Wisej.Web.DataGridViewNumericUpDownColumn();
             this.colDsp_Vol_Em = new Wisej.Web.DataGridViewNumericUpDownColumn();
             this.colPath_1 = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.ptop.SuspendLayout();
@@ -86,6 +86,12 @@
             this.ptop.Size = new System.Drawing.Size(820, 52);
             this.ptop.TabIndex = 4;
             this.ptop.TabStop = true;
+            // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 97;
+            this.comp_Site1.Visible = false;
             // 
             // button3
             // 
@@ -264,12 +270,6 @@
             this.colPath_1.Name = "colPath_1";
             this.colPath_1.ReadOnly = true;
             this.colPath_1.Width = 180;
-            // 
-            // comp_Site1
-            // 
-            this.comp_Site1.Name = "comp_Site1";
-            this.comp_Site1.TabIndex = 97;
-            this.comp_Site1.Visible = false;
             // 
             // View_BBCMusic2
             // 

@@ -27,9 +27,6 @@ namespace simplepa2.UI.Views
 
 			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
 			comp_Site1.reDraw();
-
-			comp_UAsset1.assetsBindingSource = assetsBindingSource;
-			comp_UAsset1.reDraw();
 		}
 
 		public void refresh()
@@ -141,7 +138,7 @@ namespace simplepa2.UI.Views
 
 		private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			if (e.Button == MouseButtons.Left)
+			if (e.Button == MouseButtons.Right)
 			{
 				var grid = (DataGridView)sender;
 				var ctxMenu = new ContextMenu();
