@@ -224,6 +224,9 @@
     <EmbeddedResource Include="UI\Components\Comp_ZoneFloorCardList.resx">
       <DependentUpon>Comp_ZoneFloorCardList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_PresetNameCard2.resx">
+      <DependentUpon>Comp_PresetNameCard2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Pages\PA_Login.resx">
       <DependentUpon>PA_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +299,9 @@
     <EmbeddedResource Include="UI\Views\View_BBSMusicManage.resx">
       <DependentUpon>View_BBSMusicManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSPresetManage2.resx">
+      <DependentUpon>View_BBSPresetManage2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSPresetManage.resx">
       <DependentUpon>View_BBSPresetManage.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Widget\Widget_DeviceHeatMap.resx">
       <DependentUpon>Widget_DeviceHeatMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\win\Comp_Music.resx">
+      <DependentUpon>Comp_Music.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\Page2.resx">
       <DependentUpon>Page2.cs</DependentUpon>
@@ -1089,6 +1098,12 @@
     <Compile Include="UI\Components\Comp_ZoneFloorCardList.Designer.cs">
       <DependentUpon>Comp_ZoneFloorCardList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\Comp_PresetNameCard2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_PresetNameCard2.Designer.cs">
+      <DependentUpon>Comp_PresetNameCard2.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Pages\PA_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1232,6 +1247,12 @@
     </Compile>
     <Compile Include="UI\Views\View_BBSMusicManage.Designer.cs">
       <DependentUpon>View_BBSMusicManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSPresetManage2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSPresetManage2.Designer.cs">
+      <DependentUpon>View_BBSPresetManage2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBSPresetManage.cs">
       <SubType>UserControl</SubType>
@@ -1396,6 +1417,12 @@
     </Compile>
     <Compile Include="UI\Widget\Widget_HistoryFromOutCall.Designer.cs">
       <DependentUpon>Widget_HistoryFromOutCall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\win\Comp_Music.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\win\Comp_Music.Designer.cs">
+      <DependentUpon>Comp_Music.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\win\Page2.cs">
       <SubType>Form</SubType>

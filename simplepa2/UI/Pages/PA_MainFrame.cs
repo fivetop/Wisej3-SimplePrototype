@@ -64,6 +64,8 @@ namespace simplepa2.UI.Pages
         private View_BBSEMManage2 view_BBSEMManage2 = new View_BBSEMManage2();
         private View_BBCEmergency2 view_BBCEmergency2 = new View_BBCEmergency2();
         private View_BBSAnchor2 view_BBSAnchor2 = new View_BBSAnchor2();
+        private View_BBSPresetManage2 view_BBSPresetManage2 = new View_BBSPresetManage2();
+
         private List<View_BBSAnchor2> listBBSAnchor = new List<View_BBSAnchor2>();  // 다수 방 관리를 위한 View List
 
 
@@ -237,7 +239,8 @@ namespace simplepa2.UI.Pages
                 case "dashboardBarItems": view_DashBoard2 = bringFrontView<View_DashBoard2>("View_DashBoard2", true); break;
                 case "anchorBBSBarItem": view_BBSAnchor2 = bringFrontView<View_BBSAnchor2>("View_BBSAnchor2", false); break;                               
                 case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;
-                case "presetBarItem": view_BBSPresetManage = bringFrontView<View_BBSPresetManage>("View_BBSPresetManage", false); break;
+                //case "presetBarItem": view_BBSPresetManage = bringFrontView<View_BBSPresetManage>("View_BBSPresetManage", false); break;
+                case "presetBarItem": view_BBSPresetManage2 = bringFrontView<View_BBSPresetManage2>("View_BBSPresetManage2", false); break;
                 //case "groupBarItem": view_BBSGroupManage = bringFrontView<View_BBSGroupManage>("View_BBSGroupManage", false); break;
                 case "groupBarItem": view_BBSGroupManage2 = bringFrontView<View_BBSGroupManage2>("View_BBSGroupManage2", false); break;
                 case "iotApplicationBarItem": view_BBSIotApplication = bringFrontView<View_BBSIoTApplication>("View_BBSIoTApplication", false); break;
