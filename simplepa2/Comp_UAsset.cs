@@ -15,6 +15,7 @@ namespace simplepa2
         List<Assets> list = new List<Assets>();
         List<Comp_UFloor> comp_UFloors = new List<Comp_UFloor>();
 
+
         public string Filter { get; internal set; }
 
         public Comp_UAsset()
@@ -54,7 +55,40 @@ namespace simplepa2
                 if (fl == null) continue;
                 fl.assetRow = t1;
             }
+        }
 
+        internal void reDraw2()
+        {
+            list.Clear();
+            comp_UFloors.Clear();
+            this.Controls.Clear();
+
+            // 디비투 이기종 테이블 리스트 복제 
+            var dt1 = gweb.mainFrame.dBSqlite.Ds1.Assets;
+            var l2 = Helper.DataTableToList<Assets>(dt1);
+
+            if (l2.Count < 1) return;
+            list = l2.Where(p => p.emServer == Filter).ToList();
+
+            // 그룹으로 층 생성 
+            foreach (var t1 in list)
+            {
+                var fl = comp_UFloors.FirstOrDefault(p => p.지역명 == t1.GroupName);
+                if (fl != null) continue;
+                Comp_UFloor comp_UFloor = new Comp_UFloor();
+                comp_UFloor.Dock = DockStyle.Top;
+                comp_UFloor.지역명 = t1.GroupName;
+                this.Controls.Add(comp_UFloor);
+                comp_UFloors.Add(comp_UFloor);
+            }
+
+            // 해당 층에 해당 존 전송 
+            foreach (var t1 in list)
+            {
+                var fl = comp_UFloors.FirstOrDefault(p => p.지역명 == t1.GroupName);
+                if (fl == null) continue;
+                fl.assetRow = t1;
+            }
         }
 
         internal List<AssetsRow> GetSelAssets()

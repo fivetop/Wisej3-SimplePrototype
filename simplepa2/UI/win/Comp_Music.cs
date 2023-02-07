@@ -21,7 +21,7 @@ namespace simplepa2.UI.win
 
         public void reDraw()
         { 
-            this.dataGridView2.DataSource = gweb.mainFrame.dBSqlite.Ds1.Musics.ToList();
+            this.dataGridView1.DataSource = gweb.mainFrame.dBSqlite.Ds1.Musics.ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,7 +37,10 @@ namespace simplepa2.UI.win
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var t1 = this.dataGridView1.CurrentRow.DataBoundItem;
-            SelMusic.Add((MusicsRow)((System.Data.DataRowView)t1).Row);
+            SelMusic.Add((MusicsRow)t1);
+            this.dataGridView2.DataSource = null;
+            this.dataGridView2.DataSource = SelMusic;
+            dataGridView2.Refresh();
         }
 
         private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

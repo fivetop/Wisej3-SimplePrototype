@@ -161,6 +161,9 @@
     <EmbeddedResource Include="Comp_UFloor.resx">
       <DependentUpon>Comp_UFloor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Comp_UGroup.resx">
+      <DependentUpon>Comp_UGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comp_UZone.resx">
       <DependentUpon>Comp_UZone.cs</DependentUpon>
     </EmbeddedResource>
@@ -873,6 +876,12 @@
     </Compile>
     <Compile Include="Comp_UFloor.designer.cs">
       <DependentUpon>Comp_UFloor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comp_UGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comp_UGroup.Designer.cs">
+      <DependentUpon>Comp_UGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="Comp_UZone.cs">
       <SubType>UserControl</SubType>
