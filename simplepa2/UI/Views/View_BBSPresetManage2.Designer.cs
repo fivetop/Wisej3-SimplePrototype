@@ -209,10 +209,10 @@
             this.panel45.Controls.Add(this.comp_UGroup1);
             this.panel45.Controls.Add(this.panel91);
             this.panel45.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel45.Location = new System.Drawing.Point(0, 375);
+            this.panel45.Location = new System.Drawing.Point(0, 300);
             this.panel45.Name = "panel45";
             this.panel45.Padding = new Wisej.Web.Padding(20);
-            this.panel45.Size = new System.Drawing.Size(720, 393);
+            this.panel45.Size = new System.Drawing.Size(720, 468);
             this.panel45.TabIndex = 163;
             // 
             // comp_UGroup1
@@ -221,7 +221,7 @@
             this.comp_UGroup1.Dock = Wisej.Web.DockStyle.Fill;
             this.comp_UGroup1.Location = new System.Drawing.Point(20, 57);
             this.comp_UGroup1.Name = "comp_UGroup1";
-            this.comp_UGroup1.Size = new System.Drawing.Size(680, 316);
+            this.comp_UGroup1.Size = new System.Drawing.Size(680, 391);
             this.comp_UGroup1.TabIndex = 162;
             // 
             // panel91
@@ -273,7 +273,7 @@
             this.panel33.Location = new System.Drawing.Point(0, 132);
             this.panel33.Name = "panel33";
             this.panel33.Padding = new Wisej.Web.Padding(20, 20, 20, 0);
-            this.panel33.Size = new System.Drawing.Size(720, 243);
+            this.panel33.Size = new System.Drawing.Size(720, 168);
             this.panel33.TabIndex = 161;
             // 
             // comp_Music1
@@ -281,7 +281,7 @@
             this.comp_Music1.Dock = Wisej.Web.DockStyle.Fill;
             this.comp_Music1.Location = new System.Drawing.Point(20, 58);
             this.comp_Music1.Name = "comp_Music1";
-            this.comp_Music1.Size = new System.Drawing.Size(680, 185);
+            this.comp_Music1.Size = new System.Drawing.Size(680, 110);
             this.comp_Music1.TabIndex = 162;
             // 
             // line1

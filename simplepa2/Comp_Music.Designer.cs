@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView2 = new Wisej.Web.DataGridView();
             this.파일명 = new Wisej.Web.DataGridViewTextBoxColumn();
             this.dataGridView1 = new Wisej.Web.DataGridView();
@@ -115,7 +114,7 @@
             this.button3.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
             this.button3.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
             this.button3.BackgroundImageSource = "Images/music-crrl-1.png";
-            this.button3.Location = new System.Drawing.Point(3, 91);
+            this.button3.Location = new System.Drawing.Point(3, 69);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(33, 33);
             this.button3.TabIndex = 3;
@@ -126,7 +125,7 @@
             this.button2.BackColor = System.Drawing.Color.FromName("@bPanelBGline1");
             this.button2.BackgroundImageLayout = Wisej.Web.ImageLayout.Center;
             this.button2.BackgroundImageSource = "Images/music-crrl-2.png";
-            this.button2.Location = new System.Drawing.Point(3, 49);
+            this.button2.Location = new System.Drawing.Point(3, 27);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(33, 33);
             this.button2.TabIndex = 2;
