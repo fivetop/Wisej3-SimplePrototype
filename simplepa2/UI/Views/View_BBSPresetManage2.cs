@@ -55,11 +55,24 @@ namespace simplepa2.UI.Views
 */
         }
 
+        // 추가 
         private void bt_AddPreset_Click(object sender, EventArgs e)
         {
             comp_Music1.reDraw();
             comp_UGroup1.Filter = comp_Site1.selectedItem;
             comp_UGroup1.reDraw();
+        }
+
+        // 저장
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // 삭제 
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
