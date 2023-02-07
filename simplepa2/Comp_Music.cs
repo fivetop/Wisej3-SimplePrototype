@@ -4,7 +4,7 @@ using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
-namespace simplepa2.UI.win
+namespace simplepa2
 {
     public partial class Comp_Music : Wisej.Web.UserControl
     {

@@ -1,4 +1,4 @@
-﻿namespace simplepa2.UI.win
+﻿namespace simplepa2
 {
     partial class Comp_Music
     {

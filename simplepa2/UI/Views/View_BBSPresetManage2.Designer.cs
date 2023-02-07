@@ -44,7 +44,7 @@
             this.label32 = new Wisej.Web.Label();
             this.label51 = new Wisej.Web.Label();
             this.panel33 = new Wisej.Web.Panel();
-            this.comp_Music1 = new simplepa2.UI.win.Comp_Music();
+            this.comp_Music1 = new simplepa2.Comp_Music();
             this.line1 = new Wisej.Web.Line();
             this.panel43 = new Wisej.Web.Panel();
             this.label20 = new Wisej.Web.Label();
@@ -587,7 +587,7 @@
         private DataSet1TableAdapters.PresetCTableAdapter presetCTableAdapter1;
         private DataSet1 dataSet11;
         private Components.Comp_Site comp_Site1;
-        private win.Comp_Music comp_Music1;
+        private Comp_Music comp_Music1;
         private Comp_UGroup comp_UGroup1;
     }
 }

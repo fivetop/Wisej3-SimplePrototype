@@ -350,7 +350,7 @@
     <EmbeddedResource Include="UI\Widget\Widget_DeviceHeatMap.resx">
       <DependentUpon>Widget_DeviceHeatMap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\win\Comp_Music.resx">
+    <EmbeddedResource Include="Comp_Music.resx">
       <DependentUpon>Comp_Music.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\win\Page2.resx">
@@ -1427,10 +1427,10 @@
     <Compile Include="UI\Widget\Widget_HistoryFromOutCall.Designer.cs">
       <DependentUpon>Widget_HistoryFromOutCall.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\win\Comp_Music.cs">
+    <Compile Include="Comp_Music.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\win\Comp_Music.Designer.cs">
+    <Compile Include="Comp_Music.Designer.cs">
       <DependentUpon>Comp_Music.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\win\Page2.cs">
