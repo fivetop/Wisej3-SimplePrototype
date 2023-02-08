@@ -45,15 +45,15 @@
             this.pn_CardOutline.Controls.Add(this.pn_ImageFrame);
             this.pn_CardOutline.Dock = Wisej.Web.DockStyle.Top;
             this.pn_CardOutline.ForeColor = System.Drawing.Color.FromName("@controlText");
-            this.pn_CardOutline.Location = new System.Drawing.Point(0, 0);
+            this.pn_CardOutline.Location = new System.Drawing.Point(4, 4);
             this.pn_CardOutline.Name = "pn_CardOutline";
-            this.pn_CardOutline.Size = new System.Drawing.Size(540, 72);
+            this.pn_CardOutline.Size = new System.Drawing.Size(532, 72);
             this.pn_CardOutline.TabIndex = 134;
             this.pn_CardOutline.Click += new System.EventHandler(this.pn_CardOutline_Click);
             // 
             // lb_SubText
             // 
-            this.lb_SubText.Font = new System.Drawing.Font("@default", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_SubText.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lb_SubText.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
             this.lb_SubText.Location = new System.Drawing.Point(80, 38);
             this.lb_SubText.Name = "lb_SubText";
@@ -95,12 +95,13 @@
             this.pn_Image.Size = new System.Drawing.Size(24, 24);
             this.pn_Image.TabIndex = 0;
             // 
-            // Comp_PresetNameCard
+            // Comp_PresetNameCard2
             // 
             this.Controls.Add(this.pn_CardOutline);
             this.Dock = Wisej.Web.DockStyle.Top;
-            this.Name = "Comp_PresetNameCard";
-            this.Size = new System.Drawing.Size(540, 72);
+            this.Name = "Comp_PresetNameCard2";
+            this.Padding = new Wisej.Web.Padding(4);
+            this.Size = new System.Drawing.Size(540, 80);
             this.pn_CardOutline.ResumeLayout(false);
             this.pn_ImageFrame.ResumeLayout(false);
             this.ResumeLayout(false);

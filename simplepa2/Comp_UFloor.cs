@@ -44,18 +44,15 @@ namespace simplepa2
 
         Assets _assetRow;
 
-        public Assets assetRow
+        public Comp_UZone assetRow(Assets t1)
         {
-            get { return _assetRow; }
-            set 
-            { 
-                _assetRow = value;
-                Comp_UZone b1 = new Comp_UZone();
-                b1.assetRow = _assetRow;
-                b1.Width = 140;
-                b1.Height = 50;
-                this.f1.Controls.Add(b1);
-            }
+            _assetRow = t1;
+            Comp_UZone b1 = new Comp_UZone();
+            b1.assetRow = _assetRow;
+            b1.Width = 140;
+            b1.Height = 50;
+            this.f1.Controls.Add(b1);
+            return b1;
         }
 
         private void label1_Click(object sender, EventArgs e)

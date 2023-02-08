@@ -15,25 +15,19 @@ namespace simplepa2.UI.Components
             InitializeComponent();
             this.preset_singleData = dSet;
             this.lb_MainText.Text = dSet.Name;
-            //this.lb_SubText.Text = dSet.strPresetSite + "/" + dSet.strSelectAreaCount;
-            //this.pn_Image.BackgroundImageSource = dSet.strPresetImageName;
         }
 
-        public void setCardStatus(bool selectMode)
+        public void setCardStatus(bool sel)
         {
-            if (selectMode)
+            if (sel)
             {
+                selectMode = true;
+                PresetClickedEventHandler?.Invoke(this.preset_singleData.PresetId, null);
                 this.pn_CardOutline.BackColor = System.Drawing.Color.FromArgb(52, 129, 255);   // 파란
                 this.pn_CardOutline.ForeColor = System.Drawing.Color.White; // 흰색
-
                 this.lb_MainText.ForeColor = System.Drawing.Color.White;  // 메인 흰색                
-
                 this.lb_SubText.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
                 this.lb_SubText.BackColor = System.Drawing.Color.Transparent;
-
-                //presetClick(this, new PresetClickedEventArgs(this.dataSet.intPresetID));
-                PresetClickedEventHandler?.Invoke(this, null);
-
             }
             else
             {                
@@ -41,13 +35,13 @@ namespace simplepa2.UI.Components
                 this.pn_CardOutline.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
                 this.lb_MainText.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);                
                 this.lb_SubText.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
+                selectMode = false;
             }
         }
 
         public void cardStatusChange()
         {
             this.selectMode = !selectMode;
-
             setCardStatus(this.selectMode);
         }
         private void lb_MainText_Click(object sender, EventArgs e)

@@ -53,8 +53,8 @@
             this.panel89 = new Wisej.Web.Panel();
             this.panel35 = new Wisej.Web.Panel();
             this.label25 = new Wisej.Web.Label();
-            this.textBox6 = new Wisej.Web.TextBox();
-            this.textBox5 = new Wisej.Web.TextBox();
+            this.puser_name = new Wisej.Web.TextBox();
+            this.pName = new Wisej.Web.TextBox();
             this.label24 = new Wisej.Web.Label();
             this.line2 = new Wisej.Web.Line();
             this.panel34 = new Wisej.Web.Panel();
@@ -355,8 +355,8 @@
             // panel35
             // 
             this.panel35.Controls.Add(this.label25);
-            this.panel35.Controls.Add(this.textBox6);
-            this.panel35.Controls.Add(this.textBox5);
+            this.panel35.Controls.Add(this.puser_name);
+            this.panel35.Controls.Add(this.pName);
             this.panel35.Controls.Add(this.label24);
             this.panel35.Dock = Wisej.Web.DockStyle.Top;
             this.panel35.Location = new System.Drawing.Point(20, 58);
@@ -379,21 +379,22 @@
             this.label25.Text = "프리셋 작성자";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox6
+            // puser_name
             // 
-            this.textBox6.AutoSize = false;
-            this.textBox6.Location = new System.Drawing.Point(472, 11);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(165, 36);
-            this.textBox6.TabIndex = 137;
+            this.puser_name.AutoSize = false;
+            this.puser_name.Location = new System.Drawing.Point(472, 11);
+            this.puser_name.Name = "puser_name";
+            this.puser_name.ReadOnly = true;
+            this.puser_name.Size = new System.Drawing.Size(165, 36);
+            this.puser_name.TabIndex = 137;
             // 
-            // textBox5
+            // pName
             // 
-            this.textBox5.AutoSize = false;
-            this.textBox5.Location = new System.Drawing.Point(95, 10);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(240, 36);
-            this.textBox5.TabIndex = 137;
+            this.pName.AutoSize = false;
+            this.pName.Location = new System.Drawing.Point(95, 10);
+            this.pName.Name = "pName";
+            this.pName.Size = new System.Drawing.Size(240, 36);
+            this.pName.TabIndex = 137;
             // 
             // label24
             // 
@@ -572,10 +573,10 @@
         private Wisej.Web.Label label21;
         private Wisej.Web.Panel panel46;
         private Wisej.Web.Panel panel89;
-        private Wisej.Web.TextBox textBox6;
+        private Wisej.Web.TextBox puser_name;
         private Wisej.Web.Label label25;
         private Wisej.Web.Panel panel35;
-        private Wisej.Web.TextBox textBox5;
+        private Wisej.Web.TextBox pName;
         private Wisej.Web.Label label24;
         private Wisej.Web.Line line2;
         private Wisej.Web.Panel panel34;

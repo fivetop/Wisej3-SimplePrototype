@@ -1,13 +1,25 @@
 ﻿using Microsoft.Ajax.Utilities;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using Wisej.Web;
+using static simplepa2.DataSet1;
 
 namespace simplepa2
 {
     public partial class Comp_UGroup : Wisej.Web.UserControl
     {
         public string Filter { get; internal set; }
+        public string GroupFilter { get; internal set; }
+
+        public List<AssetsRow> SelAssets
+        {
+            get 
+            {
+                return comp_UAsset1.GetSelAssets();
+            } 
+        }
+
 
         public Comp_UGroup()
         {
@@ -16,14 +28,10 @@ namespace simplepa2
 
         public void reDraw()
         {
-            comp_UAsset1.Filter = Filter;
-            comp_UAsset1.reDraw2();
-
             combo_init();
-
         }
 
-		public void combo_init()
+        public void combo_init()
 		{
 			if (Filter == "") return;
 			var t1 = gweb.mainFrame.dBSqlite.Ds1.AssetGroups.Where(p => p.EMNAME == Filter).DistinctBy(p => p.Name);
@@ -39,6 +47,12 @@ namespace simplepa2
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            GroupFilter = (string)comboBox2.SelectedItem;
+            if (GroupFilter == "") return;
+            comp_UAsset1.Filter = Filter;
+            comp_UAsset1.GroupFilter = GroupFilter;
+            comp_UAsset1.reDraw2();
 
         }
     }

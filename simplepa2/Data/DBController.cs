@@ -46,11 +46,13 @@ namespace simplepa2
                     EventdeviceTableAdapter = new EventdeviceTableAdapter(),
                     EventpresetTableAdapter = new EventpresetTableAdapter(),
                     EventbsTableAdapter = new EventbsTableAdapter(),
+                    EMServerTableAdapter = new EMServerTableAdapter(),
                     HolidaysTableAdapter = new HolidaysTableAdapter(),
                     MusicsTableAdapter = new MusicsTableAdapter(),
+                    PresetTableAdapter = new PresetTableAdapter(),
+                    PresetCTableAdapter = new PresetCTableAdapter(),
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
                     UserTreesTableAdapter = new UserTreesTableAdapter(),
-                    EMServerTableAdapter = new EMServerTableAdapter(),
                 };
                 Tam.AssetsTableAdapter.Fill(Ds1.Assets);
                 Tam.AssetGroupsTableAdapter.Fill(Ds1.AssetGroups);
@@ -61,11 +63,13 @@ namespace simplepa2
                 Tam.DeviceChannelTableAdapter.Fill(Ds1.DeviceChannel);
                 Tam.EMBsTableAdapter.Fill(Ds1.EMBs);
                 Tam.EventvmTableAdapter.Fill(Ds1.Eventvm);
+                Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
                 Tam.HolidaysTableAdapter.Fill(Ds1.Holidays);
                 Tam.MusicsTableAdapter.Fill(Ds1.Musics);
                 Tam.SimplepaTableAdapter.Fill(Ds1.Simplepa);
+                Tam.PresetTableAdapter.Fill (Ds1.Preset);
+                Tam.PresetCTableAdapter.Fill(Ds1.PresetC);
                 Tam.UserTreesTableAdapter.Fill(Ds1.UserTrees);
-                Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
             }
             catch (Exception e1)
             {
@@ -73,6 +77,58 @@ namespace simplepa2
             }
         }
 
+
+
+        #endregion
+
+
+        #region // Preset 관리 부분 
+
+        internal async Task<PresetRow> PresetSave(PresetRow r1)
+        {
+            Ds1.Preset.Rows.Add(r1);
+            Tam.PresetTableAdapter.Update(Ds1.Preset);
+
+            var m1 = Ds1.Preset.FirstOrDefault(p => p.Name == r1.Name);
+            if (m1 == null) return null;
+            return m1;
+        }
+
+        internal Task<bool> PresetGet(string text)
+        {
+            Tam.PresetTableAdapter.Fill(Ds1.Preset);
+            var m3 = Ds1.Preset.FirstOrDefault(p => p.Name == text);
+            if (m3 != null) return Task.FromResult(true);
+            return Task.FromResult(false);
+        }
+
+        internal async Task<int> PresetCSave(PresetRow r1, List<MusicsRow> selMusic, List<AssetsRow> selAssets)
+        {
+            if (r1.PresetId < 1) return 0;
+            Tam.PresetCTableAdapter.Fill(Ds1.PresetC);
+           
+            foreach (var t1 in selAssets)
+            {
+                PresetCRow m2 = Ds1.PresetC.NewPresetCRow();
+                m2.PresetId = r1.PresetId;
+                m2.AssetId = t1.AssetId;
+                m2.MusicId = 0;
+                Ds1.PresetC.Rows.Add(m2);
+                Tam.PresetCTableAdapter.Update(Ds1.PresetC);
+            }
+
+            foreach (var t1 in selMusic)
+            {
+                PresetCRow m2 = Ds1.PresetC.NewPresetCRow();
+                m2.PresetId = r1.PresetId;
+                m2.AssetId = 0;
+                m2.MusicId = t1.MusicId;
+                Ds1.PresetC.Rows.Add(m2);
+                Tam.PresetCTableAdapter.Update(Ds1.PresetC);
+            }
+
+            return 1;
+        }
 
 
         #endregion

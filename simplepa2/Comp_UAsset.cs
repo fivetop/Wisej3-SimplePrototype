@@ -12,11 +12,13 @@ namespace simplepa2
     public partial class Comp_UAsset : Wisej.Web.UserControl
     {
         internal BindingSource assetsBindingSource;
-        List<Assets> list = new List<Assets>();
-        List<Comp_UFloor> comp_UFloors = new List<Comp_UFloor>();
+        List<Comp_UFloor> comp_UFloors = new List<Comp_UFloor>(); // 층 컨트롤
+        List<Comp_UZone> comp_Zone = new List<Comp_UZone>(); // 존 컨트롤
+        public List<AssetsRow> selAssetsRow = new List<AssetsRow>();
 
 
         public string Filter { get; internal set; }
+        public string GroupFilter { get; internal set; }
 
         public Comp_UAsset()
         {
@@ -25,6 +27,7 @@ namespace simplepa2
 
         internal void reDraw()
         {
+            List<Assets> list = new List<Assets>();
             list.Clear();
             comp_UFloors.Clear();
             this.Controls.Clear();
@@ -53,18 +56,21 @@ namespace simplepa2
             {
                 var fl = comp_UFloors.FirstOrDefault(p => p.지역명 == t1.GroupName);
                 if (fl == null) continue;
-                fl.assetRow = t1;
+                fl.assetRow( t1);
             }
         }
 
         internal void reDraw2()
         {
+            List<Assets> list = new List<Assets>();
             list.Clear();
             comp_UFloors.Clear();
+            comp_Zone.Clear();
             this.Controls.Clear();
 
             // 디비투 이기종 테이블 리스트 복제 
             var dt1 = gweb.mainFrame.dBSqlite.Ds1.Assets;
+            var dt2 = gweb.mainFrame.dBSqlite.Ds1.AssetGroups.Where(p=>p.Name == GroupFilter);
             var l2 = Helper.DataTableToList<Assets>(dt1);
 
             if (l2.Count < 1) return;
@@ -87,21 +93,28 @@ namespace simplepa2
             {
                 var fl = comp_UFloors.FirstOrDefault(p => p.지역명 == t1.GroupName);
                 if (fl == null) continue;
-                fl.assetRow = t1;
+                var t2 = fl.assetRow(t1);
+                comp_Zone.Add(t2);
+            }
+
+            foreach (var t1 in dt2)
+            {
+                var z1 = comp_Zone.FirstOrDefault(p => p.assetRow.AssetId == t1.AssetId);
+                if (z1 == null) continue;
+                z1.Zone_Click(1);
             }
         }
 
         internal List<AssetsRow> GetSelAssets()
         {
             List<Assets> selAssets = new List<Assets>();
-            List<AssetsRow> selAssetsRow = new List<AssetsRow>();
 
-            foreach (var t1 in list)
+            foreach (var t1 in comp_Zone)
             {
-                if (t1.chk == 1)
+                if (t1.assetRow.chk == 1)
                 { 
-                    selAssets.Add(t1);
-                    System.Diagnostics.Debug.WriteLine(t1.ZoneName);
+                    selAssets.Add(t1.assetRow);
+                    System.Diagnostics.Debug.WriteLine(t1.assetRow.ZoneName);
                 }
             }
 
