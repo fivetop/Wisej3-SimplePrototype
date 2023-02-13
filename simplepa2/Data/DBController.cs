@@ -88,18 +88,15 @@ namespace simplepa2
         {
             Ds1.Preset.Rows.Add(r1);
             Tam.PresetTableAdapter.Update(Ds1.Preset);
-
-            var m1 = Ds1.Preset.FirstOrDefault(p => p.Name == r1.Name);
-            if (m1 == null) return null;
-            return m1;
+            return r1;
         }
 
-        internal Task<bool> PresetGet(string text)
+        internal async Task<PresetRow> PresetGet(string text)
         {
             Tam.PresetTableAdapter.Fill(Ds1.Preset);
             var m3 = Ds1.Preset.FirstOrDefault(p => p.Name == text);
-            if (m3 != null) return Task.FromResult(true);
-            return Task.FromResult(false);
+            if (m3 != null) return m3;
+            return null;
         }
 
         internal async Task<int> PresetCSave(PresetRow r1, List<MusicsRow> selMusic, List<AssetsRow> selAssets)
@@ -130,6 +127,40 @@ namespace simplepa2
             return 1;
         }
 
+        internal async Task<bool> PresetDelete(PresetRow r1)
+        {
+            r1.Delete();
+            Tam.PresetTableAdapter.Update(Ds1.Preset);
+            return true;
+
+        }
+
+        internal async Task<bool> PresetCDelete(int presetId)
+        {
+            if (presetId < 1) return false;
+            Tam.PresetCTableAdapter.Fill(Ds1.PresetC);
+            var drs = Ds1.PresetC.Where(p => p.PresetId == presetId);
+
+            if (drs != null && drs.Count() > 0)
+            {
+                foreach (PresetCRow row in drs)
+                {
+                    //Ds1.BSTreeC.Rows.Remove(row);
+                    row.Delete();
+                }
+            }
+            Tam.PresetCTableAdapter.Update(Ds1.PresetC);
+            return true;
+        }
+
+        internal async Task PresetCUpdate(PresetRow r1, List<MusicsRow> selMusic, List<AssetsRow> selAssets)
+        {
+        }
+
+        internal async Task PresetUpdate(PresetRow r1)
+        {
+            Tam.PresetTableAdapter.Update(Ds1.Preset);
+        }
 
         #endregion
 
@@ -210,7 +241,6 @@ namespace simplepa2
                 }
             }
         }
-
 
 
         #endregion

@@ -22,6 +22,13 @@ namespace simplepa2
         public void reDraw()
         { 
             this.dataGridView1.DataSource = gweb.mainFrame.dBSqlite.Ds1.Musics.ToList();
+
+            if (SelMusic.Count() > 0)
+            {
+                this.dataGridView2.DataSource = null;
+                this.dataGridView2.DataSource = SelMusic;
+                dataGridView2.Refresh();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,5 +67,11 @@ namespace simplepa2
             }
         }
 
+        internal void clear()
+        {
+            SelMusic.Clear();
+            this.dataGridView2.DataSource = null;
+            dataGridView2.Refresh();
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace simplepa2.UI.Views
             data.portName = Convert.ToInt32(this.tb_PortNumber.Text);
             data.timeout = Convert.ToInt32(this.tb_Timeout.Text);
             data.senderEmail = this.tb_SenderEmail.Text;
-            data.receiverEmail = this.tb_SenderEmail.Text;
+            data.receiverEmail = this.tb_ReceiverEmail.Text;
             data.certificationName = this.tb_CertifyName.Text;
             data.certificationPasswd = this.tb_CertifyPasswd.Text;
 
@@ -90,7 +90,8 @@ namespace simplepa2.UI.Views
         {
             // Debug
             AlertBox.Show("Email Test Function for Test");
-            
+
+            this.email_DataSet = packData();
             if(SendTestEmail(this.email_DataSet))
             {
                 MessageBox.Show("Mail 송신이 성공했습니다");
@@ -126,6 +127,7 @@ namespace simplepa2.UI.Views
                     Body = "<h1>Hello, SimplePA Network Server register your email  </h1>",
                     IsBodyHtml = true,
                 };
+                email_data.receiverEmail = this.tb_ReceiverEmail.Text;
                 mailMessage.To.Add(email_data.receiverEmail);
                 smtpClient.Send(mailMessage);
             } catch(Exception e)
@@ -211,11 +213,10 @@ namespace simplepa2.UI.Views
             edl.emailName = "smtp.naver.com";
             edl.portName = 587;
             edl.timeout = 1000;
-            edl.senderEmail = "lscnstest@naver.com";
-            edl.receiverEmail = "conculer@lscns.com";
-
             edl.spareEmailName = "";
 
+            edl.senderEmail = "lscnstest@naver.com";
+            edl.receiverEmail = "conculer@lscns.com";
             edl.certificationName = "lscnstest";
             edl.certificationPasswd = "123edsw@@#";
 

@@ -7,6 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using static simplepa2.DataSet1;
+using System.Net;
+using System.Net.Mail;
+
 
 namespace simplepa2
 {
@@ -57,6 +60,33 @@ namespace simplepa2
 
 
         #region // 기타 공통 유틸
+
+        public static void SendTestEmail(string rcvmail,string sub, string id, string pw)
+        {
+            try
+            {
+                var smtpClient = new SmtpClient("smtp.naver.com")
+                {
+                    UseDefaultCredentials = false, Port = 587, EnableSsl = true, Timeout = 1000,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    Credentials = new NetworkCredential(id, pw),
+                };
+
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress("fivetop@naver.com"),
+                    Subject = "SimplePA Network Server.",
+                    Body = "<h1> your password : " + sub + " </h1>",
+                    IsBodyHtml = true,
+                };
+                mailMessage.To.Add(rcvmail);
+                smtpClient.Send(mailMessage);
+            }
+            catch (Exception e)
+            {
+                Log("Mail Error :" + e.Message);
+            }
+        }
 
         #endregion
     }

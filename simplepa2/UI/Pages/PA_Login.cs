@@ -59,12 +59,6 @@ namespace simplepa2.UI.Pages
 			this.Dispose();
 		}
 
-		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			// 메일 쓰레드 준비 필요 
-			AlertBox.Show("이메일로 패스워드를 전송 하였습니다.");
-		}
-
 		private void LoginPage_Load(object sender, EventArgs e)
 		{
 			Application.Session["isloggedon"] = "false";
@@ -87,5 +81,22 @@ namespace simplepa2.UI.Pages
 			}
 		}
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+			string loginid = tloginid.Text;
+			if (loginid == "")
+			{
+				AlertBox.Show("ID 를 확인 바랍니다.");
+				return;
+			}
+			var t1 = this.dataSet1.UserTrees.FirstOrDefault(p=>p.login_id == loginid);
+
+			if (t1.email != "")
+			{
+				gweb.SendTestEmail(t1.email, t1.login_password, "", ""); // id 와 보내는 사람 동일 처리 
+				AlertBox.Show("이메일로 패스워드를 전송 하였습니다.");
+			}
+
+		}
 	}
 }

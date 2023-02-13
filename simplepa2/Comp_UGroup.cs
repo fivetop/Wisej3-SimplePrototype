@@ -12,12 +12,18 @@ namespace simplepa2
         public string Filter { get; internal set; }
         public string GroupFilter { get; internal set; }
 
+        List<AssetsRow> _SelAssets;
         public List<AssetsRow> SelAssets
         {
             get 
             {
                 return comp_UAsset1.GetSelAssets();
-            } 
+            }
+            set
+            {
+                _SelAssets = value;
+                comp_UAsset1.selAssetsRow = value;
+            }
         }
 
 
@@ -49,11 +55,19 @@ namespace simplepa2
         {
 
             GroupFilter = (string)comboBox2.SelectedItem;
-            if (GroupFilter == "") return;
             comp_UAsset1.Filter = Filter;
             comp_UAsset1.GroupFilter = GroupFilter;
+            if (Filter == "" || GroupFilter == "") return;
+            if (Filter == null || GroupFilter == null) return;
             comp_UAsset1.reDraw2();
 
         }
+
+        internal void clear()
+        {
+            SelAssets.Clear();
+            comp_UAsset1.clear();
+        }
+
     }
 }

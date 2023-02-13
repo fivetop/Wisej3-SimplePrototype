@@ -75,7 +75,7 @@
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.linkLabel2);
             this.panel2.CssStyle = "border-radius:30px;";
-            this.panel2.Location = new System.Drawing.Point(309, 145);
+            this.panel2.Location = new System.Drawing.Point(610, 84);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new Wisej.Web.Padding(48);
             this.panel2.Size = new System.Drawing.Size(392, 476);
@@ -173,6 +173,7 @@
             this.linkLabel2.Size = new System.Drawing.Size(185, 24);
             this.linkLabel2.TabIndex = 4;
             this.linkLabel2.Text = "비밀번호를 잊으셨습니까?";
+            this.linkLabel2.LinkClicked += new Wisej.Web.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // panel3
             // 
@@ -181,7 +182,7 @@
             this.panel3.CssStyle = "background: url(../images/login-logo.png) center no-repeat;\r\nbackground-size: 300" +
     "px 72px;";
             this.panel3.HeaderForeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(357, 22);
+            this.panel3.Location = new System.Drawing.Point(658, -39);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 72);
             this.panel3.TabIndex = 3;
@@ -195,7 +196,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "PA_Login";
-            this.Size = new System.Drawing.Size(945, 599);
+            this.Size = new System.Drawing.Size(1547, 476);
             this.Load += new System.EventHandler(this.LoginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userTreesBindingSource)).EndInit();
