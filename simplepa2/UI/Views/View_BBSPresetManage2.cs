@@ -42,9 +42,9 @@ namespace simplepa2.UI.Views
         // 프리셋 그리기 
         public void setupPresetListUI()
         {
-            this.pn_PresetItemList.Controls.Clear();
+            itemClear();
 
-            foreach(var preset_singleData in this.dataSet11.Preset)
+            foreach (var preset_singleData in this.dataSet11.Preset)
             {
                 if (preset_singleData.EMNAME != comp_Site1.selectedItem) continue;
                 Comp_PresetNameCard2 ui = new Comp_PresetNameCard2(preset_singleData);
@@ -53,8 +53,24 @@ namespace simplepa2.UI.Views
             }
         }
 
+        // 화면 클리어 
+        private void itemClear()
+        {
+            this.pn_PresetItemList.Controls.Clear();
+            pName.Text = "";
+            puser_name.Text = "";
+            comp_UGroup1.Filter = "";
+            comp_UGroup1.GroupFilter = "";
+
+            comp_UGroup1.clear();
+            comp_Music1.clear();
+            SelPresetId = 0;
+            oldSelPresetId = 0;
+        }
+
         // 프리셋 선택 
         int SelPresetId = 0;
+        int oldSelPresetId = 0;
         private void Ui_PresetClickedEventHandler(object sender, EventArgs e)
         {
             SelPresetId = (int)sender;
@@ -70,6 +86,8 @@ namespace simplepa2.UI.Views
         // 카드 선택을 하면 프리셋 차일드를 우측에 보여준다.
         private void dispDetail()
         {
+            if (SelPresetId == oldSelPresetId) return;
+            oldSelPresetId = SelPresetId;
             PresetRow r1 = gweb.mainFrame.dBSqlite.Ds1.Preset.FirstOrDefault(p=>p.PresetId == SelPresetId);
             pName.Text = r1.Name;
             puser_name.Text = r1.user_name;
@@ -88,6 +106,7 @@ namespace simplepa2.UI.Views
             comp_Music1.reDraw();
         }
 
+        // 해당 프리셋의 차일드 가져오기 
         private List<AssetsRow> PresetCGetAssets()
         {
             List<AssetsRow> list = new List<AssetsRow>();
@@ -102,6 +121,7 @@ namespace simplepa2.UI.Views
             return list;
         }
 
+        // 해당 프리셋의 차일드 가져오기 
         private List<MusicsRow> PresetCGetMusic()
         {
             List<MusicsRow> list = new List<MusicsRow>();

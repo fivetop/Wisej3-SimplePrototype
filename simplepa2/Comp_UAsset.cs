@@ -62,6 +62,8 @@ namespace simplepa2
 
         internal void clear()
         {
+            comp_UFloors.Clear();
+            this.Controls.Clear();
         }
 
         internal void reDraw2()

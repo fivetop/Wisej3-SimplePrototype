@@ -70,7 +70,9 @@ namespace simplepa2
         internal void clear()
         {
             SelMusic.Clear();
+            this.dataGridView1.DataSource = null;
             this.dataGridView2.DataSource = null;
+            dataGridView1.Refresh();
             dataGridView2.Refresh();
         }
     }

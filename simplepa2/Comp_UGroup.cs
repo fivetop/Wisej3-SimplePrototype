@@ -67,6 +67,7 @@ namespace simplepa2
         {
             SelAssets.Clear();
             comp_UAsset1.clear();
+            comboBox2.Items.Clear();
         }
 
     }
