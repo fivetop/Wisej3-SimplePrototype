@@ -16,24 +16,28 @@ namespace simplepa2.UI.Views
         }
 
         #region // init 
-        public void reDraw()
+        private void View_BBSPresetManage2_Load(object sender, EventArgs e)
+        {
+            init();
+        }
+
+        public void init()
         {
             this.presetTableAdapter1.Fill(this.dataSet11.Preset);
             this.presetCTableAdapter1.Fill(this.dataSet11.PresetC);
 
             comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
             comp_Site1.reDraw();
-
-            setupPresetListUI();
-        }
-        private void View_BBSPresetManage2_Load(object sender, EventArgs e)
-        {
-            reDraw();
         }
 
         #endregion
 
         #region // 프리셋 선택 처리 
+        // 좌측 프리셋 리스트 그리기 
+        public void reDraw()
+        {
+            setupPresetListUI();
+        }
 
         // 프리셋 그리기 
         public void setupPresetListUI()
@@ -42,6 +46,7 @@ namespace simplepa2.UI.Views
 
             foreach(var preset_singleData in this.dataSet11.Preset)
             {
+                if (preset_singleData.EMNAME != comp_Site1.selectedItem) continue;
                 Comp_PresetNameCard2 ui = new Comp_PresetNameCard2(preset_singleData);
                 ui.PresetClickedEventHandler += Ui_PresetClickedEventHandler;
                 this.pn_PresetItemList.Controls.Add(ui);
@@ -110,6 +115,12 @@ namespace simplepa2.UI.Views
             }
             return list;
         }
+
+        private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            reDraw();
+        }
+
         #endregion
 
 

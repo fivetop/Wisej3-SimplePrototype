@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_BBSPresetManage2));
             this.pn_PresetList = new Wisej.Web.Panel();
             this.pn_PresetItemList = new Wisej.Web.Panel();
             this.pn_PresetTopPanel = new Wisej.Web.Panel();
@@ -126,6 +127,7 @@
             this.comp_Site1.Name = "comp_Site1";
             this.comp_Site1.Size = new System.Drawing.Size(285, 34);
             this.comp_Site1.TabIndex = 99;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // bt_AddPreset
             // 
