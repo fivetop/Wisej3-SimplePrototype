@@ -36,12 +36,6 @@ namespace simplepa2.UI.Views
         // 좌측 프리셋 리스트 그리기 
         public void reDraw()
         {
-            setupPresetListUI();
-        }
-
-        // 프리셋 그리기 
-        public void setupPresetListUI()
-        {
             itemClear();
 
             foreach (var preset_singleData in this.dataSet11.Preset)
@@ -75,6 +69,9 @@ namespace simplepa2.UI.Views
         {
             SelPresetId = (int)sender;
             if (SelPresetId == 0) return;
+            if (SelPresetId == oldSelPresetId) return;
+            oldSelPresetId = SelPresetId;
+
             // 선택된 카드외에는 리셋해주고 
             foreach(Comp_PresetNameCard2 ui in pn_PresetItemList.Controls)
             {
@@ -86,8 +83,6 @@ namespace simplepa2.UI.Views
         // 카드 선택을 하면 프리셋 차일드를 우측에 보여준다.
         private void dispDetail()
         {
-            if (SelPresetId == oldSelPresetId) return;
-            oldSelPresetId = SelPresetId;
             PresetRow r1 = gweb.mainFrame.dBSqlite.Ds1.Preset.FirstOrDefault(p=>p.PresetId == SelPresetId);
             pName.Text = r1.Name;
             puser_name.Text = r1.user_name;
