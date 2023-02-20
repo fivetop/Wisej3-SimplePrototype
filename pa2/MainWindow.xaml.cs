@@ -245,6 +245,10 @@ namespace pa
 
             systemcheck();
 
+            // 처음 한번은 디비 맟추기 처리 
+            makeDB();
+            MakePlayList(_db); // 예약방송 업데이트
+
             T1Reservedtimer.Elapsed += T1Reservedtimer_Elapsed;
             T1Reservedtimer.Start();
 
