@@ -94,7 +94,7 @@ namespace simplepa2.UI.Views
             comp_UGroup1.clear();
             comp_Music1.clear();
 
-            comp_UGroup1.SelAssets = PresetCGetAssets();
+            comp_UGroup1.SetSelAssets(PresetCGetAssets());
             comp_Music1.SelMusic = PresetCGetMusic();
 
             comp_UGroup1.reDraw();
@@ -175,7 +175,7 @@ namespace simplepa2.UI.Views
         private async void PresetUpdate()
         {
             gweb.mainFrame.dBSqlite.DBInit();
-            if (comp_Music1.SelMusic.Count < 1 || comp_UGroup1.SelAssets.Count < 1)
+            if (comp_Music1.SelMusic.Count < 1 || comp_UGroup1.SelAssets().Count < 1)
             {
                 AlertBox.Show("음원이나 지역이 선택 되어야 합니다.");
                 return;
@@ -184,7 +184,7 @@ namespace simplepa2.UI.Views
             r1.GroupName = comp_UGroup1.GroupFilter;
             await gweb.mainFrame.dBSqlite.PresetUpdate(r1);
             await gweb.mainFrame.dBSqlite.PresetCDelete(r1.PresetId);
-            await gweb.mainFrame.dBSqlite.PresetCSave(r1, comp_Music1.SelMusic, comp_UGroup1.SelAssets);
+            await gweb.mainFrame.dBSqlite.PresetCSave(r1, comp_Music1.SelMusic, comp_UGroup1.SelAssets());
         }
 
         private async void PresetSave()
@@ -196,7 +196,7 @@ namespace simplepa2.UI.Views
                 return;
             }
 
-            if (comp_Music1.SelMusic.Count < 1 || comp_UGroup1.SelAssets.Count < 1)
+            if (comp_Music1.SelMusic.Count < 1 || comp_UGroup1.SelAssets().Count < 1)
             {
                 AlertBox.Show("음원이나 지역이 선택 되어야 합니다.");
                 return;
@@ -214,7 +214,7 @@ namespace simplepa2.UI.Views
                 AlertBox.Show("네트웍 상태를 확인 바랍니다.");
                 return;
             }
-            await gweb.mainFrame.dBSqlite.PresetCSave(r2, comp_Music1.SelMusic, comp_UGroup1.SelAssets);
+            await gweb.mainFrame.dBSqlite.PresetCSave(r2, comp_Music1.SelMusic, comp_UGroup1.SelAssets());
         }
 
         // 삭제 
