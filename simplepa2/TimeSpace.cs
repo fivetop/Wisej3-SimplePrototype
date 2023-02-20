@@ -1,4 +1,5 @@
-﻿using simplepa2.Controller;
+﻿using DataClass;
+using simplepa2.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,16 @@ namespace simplepa2
     {
         public List<SchduleMem> child { get; set; } = new List<SchduleMem>();
     }
+
+    public class PlayList
+    {
+        public List<PlayItem> child { get; set; }
+        public PlayList()
+        {
+            child = new List<PlayItem>();
+        }
+    }
+
 
     public class TimeSpace
     {
@@ -371,6 +382,8 @@ namespace simplepa2
                     r1.Add(m1);
             }
         }
+
+
 
         #region // 사용안함 , 멀티에서 디비 검색 
         // 멀티에서 호출 

@@ -23,6 +23,7 @@ using System.Windows.Threading;
 using simplepa2;
 using simplepa2.DataSet1TableAdapters;
 using static simplepa2.DataSet1;
+using System.Timers;
 
 namespace pa
 {
@@ -63,6 +64,10 @@ namespace pa
         int SelfTest { get; set; } = 0;
 
         public static SignalRClient signalRClient { get; set; } = new SignalRClient();
+
+        // 예약 방송 관리 타이머 
+        System.Timers.Timer T1Reservedtimer = new System.Timers.Timer(1000); // (1000*60);
+
 
         public MainWindow()
         {
@@ -239,9 +244,191 @@ namespace pa
             bThread.Start();
 
             systemcheck();
+
+            T1Reservedtimer.Elapsed += T1Reservedtimer_Elapsed;
+            T1Reservedtimer.Start();
+
             g.Log("Initialize OK..");
             dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
         }
+
+
+        int test_timer = 0;
+        bool T1Reservedtimer_ON = false;
+
+
+        private void T1Reservedtimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            DateTime today1 = DateTime.Now;
+            DateTime sup = DateTime.Now;
+            DateTime sdn = DateTime.Now;
+
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
+            {
+                DateTime t1 = DateTime.Now;
+                //if (t1.Minute == 0 && t1.Second == 1)
+                if (t1.Hour == 0 && t1.Minute == 0 && t1.Second == 1)
+                {
+                    // 새벽 0시에 스케쥴 조정 처리 
+                    makeDB();
+                    MakePlayList(_db); // 예약방송 업데이트
+                    g.Log("Update Schedule..");
+                }
+                // 한달에 한번 자동으로 타임 서버 연동하기 
+                if (t1.Day == 1 && t1.Hour == 0 && t1.Minute == 0 && t1.Second == 1)
+                {
+                    //gl.call_time();
+                }
+            }));
+
+            if (T1Reservedtimer_ON)
+                return;
+            T1Reservedtimer_ON = true;
+
+            try
+            {
+                today1 = DateTime.Now;
+                sup = new DateTime(today1.Year, today1.Month, today1.Day) + new TimeSpan(today1.Hour, today1.Minute, today1.Second);
+                sdn = new DateTime(today1.Year, today1.Month, today1.Day) + new TimeSpan(today1.Hour, today1.Minute - 1, 59);
+                // 시험용 1시간 
+                if (test_timer == 1)
+                {
+                    //sdn = new DateTime(today1.Year, today1.Month, today1.Day) + new TimeSpan(today1.Hour, today1.Minute - 59, 59);
+                    sdn = new DateTime(today1.Year, today1.Month, today1.Day) + new TimeSpan(today1.Hour, today1.Minute - 50, 59);
+                    test_timer = 0;
+                }
+
+                var tpl1 = playList.child.Where(e1 => ((e1.kind == "예약방송") || (e1.kind == "정규방송"))
+                            && (e1.state == "대기")
+                            && (e1.Start < sup && e1.Start > sdn)).OrderBy(e1 => e1.Start);
+                var pl2 = tpl1.ToList();
+
+                if (pl2.Count == 0)
+                {
+                    T1Reservedtimer_ON = false;
+                    return;
+                }
+
+                foreach (PlayItem pl3 in pl2)
+                {
+                    int chno = pl3.chno;
+                    if (g.playItems[chno].state == "방송중")
+                        return;
+                    g.playItems[chno] = pl3;
+                    g.Log(": 예약 : " + pl3.idno.ToString());
+                }
+                Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
+                {
+                    g.mainWindow.MultiBS();
+                }));
+            }
+            catch (Exception e1)
+            {
+                T1Reservedtimer_ON = false;
+            }
+            T1Reservedtimer_ON = false;
+        }
+
+        public SchduleMemList _db { get; set; } = new SchduleMemList(); //디비 
+
+        public void makeDB()
+        {
+            // 디비투 이기종 테이블 리스트 복제 
+            var s1 = Helper.DataTableToList<SchduleMem>(dBAccess.schdules);
+            var sc1 = Helper.DataTableToList<simplepa2.Controller.SchduleC>(dBAccess.schduleCs);
+
+            foreach (var t1 in s1)
+            {
+                SchduleMem mem = new SchduleMem();
+                mem = t1;
+                TimeSpan st = new TimeSpan();
+                TimeSpan.TryParseExact(mem.tss, @"hh\:mm", null, out st);
+                TimeSpan et = new TimeSpan();
+                TimeSpan.TryParseExact(mem.tse, @"hh\:mm", null, out et);
+                mem.tss1 = st;
+                mem.tse1 = et;
+                mem.schduleC = sc1.Where(p => p.SchduleId == t1.SchduleId).ToList();
+                _db.child.Add(mem);
+            }
+        }
+
+        public static PlayList playList = new PlayList();
+
+        public static void MakePlayList(SchduleMemList _db)
+        {
+            DateTime t1 = DateTime.Now;
+            DateTime t2 = new DateTime(t1.Year, t1.Month, t1.Day, 0, 0, 0);
+
+            string st1 = "";
+
+            List<SchduleMem> list1 = new List<SchduleMem>();
+
+            switch (t1.DayOfWeek)
+            {
+                case DayOfWeek.Monday: list1 = _db.child.Where(e1 => (e1.day1 == true)).ToList(); break;
+                case DayOfWeek.Tuesday: list1 = _db.child.Where(e1 => (e1.day2 == true)).ToList(); break;
+                case DayOfWeek.Wednesday: list1 = _db.child.Where(e1 => (e1.day3 == true)).ToList(); break;
+                case DayOfWeek.Thursday: list1 = _db.child.Where(e1 => (e1.day4 == true)).ToList(); break;
+                case DayOfWeek.Friday: list1 = _db.child.Where(e1 => (e1.day5 == true)).ToList(); break;
+                case DayOfWeek.Saturday: list1 = _db.child.Where(e1 => (e1.day6 == true)).ToList(); break;
+                case DayOfWeek.Sunday: list1 = _db.child.Where(e1 => (e1.day7 == true)).ToList(); break;
+            }
+            var list2 = list1.Where(e1 => e1.week == true).OrderBy(e1 => e1.tss);
+
+            foreach (SchduleMem e1 in list2)
+            {
+                t2 = new DateTime(t1.Year, t1.Month, t1.Day, e1.tss1.Hours, e1.tss1.Minutes, e1.tss1.Seconds);
+                var tt1 = playList.child.Find(p => p.Start == t2 && p.kind == "정규방송");
+                if (tt1 != null)
+                {
+                    playList.child.Add(tt1);
+                    continue;
+                }
+                PlayItem play1 = new PlayItem();
+                play1.kind = "정규방송";
+                play1.Start = t2;
+                play1.Name = e1.Name;
+                play1.idno = e1.SchduleId;
+                play1.chno = e1.chno;
+                TimeSpan st = new TimeSpan();
+                TimeSpan.TryParseExact(e1.duration, @"hh\:mm\:ss", null, out st);
+                play1.duration = st;
+                playList.child.Add(play1);
+            }
+
+            var list3 = _db.child.Where(e1 => (e1.week == false) && (e1.stime.DayOfWeek == t1.DayOfWeek)).OrderBy(e1 => e1.tss1);
+
+            foreach (SchduleMem e1 in list3)
+            {
+                DateTime dt1 = e1.stime;
+                DateTime sup = new DateTime(dt1.Year, dt1.Month, dt1.Day) + new TimeSpan(23, 59, 59);
+                DateTime sdn = new DateTime(dt1.Year, dt1.Month, dt1.Day) + new TimeSpan(0, 0, 0);
+
+                t2 = new DateTime(t1.Year, t1.Month, t1.Day, e1.stime.Hour, e1.stime.Minute, e1.stime.Second);
+                if (!(sup > t2 && t2 > sdn))
+                    continue;
+
+                var tt1 = playList.child.Find(p => p.Start == t2 && p.kind == "예약방송");
+                if (tt1 != null)
+                {
+                    playList.child.Add(tt1);
+                    continue;
+                }
+
+                var tt2 = playList.child.Find(p => p.Start == t2 && p.kind == "정규방송");
+                PlayItem play1 = new PlayItem();
+                play1.kind = "예약방송";
+                play1.Start = t2;
+                play1.Name = e1.Name;
+                play1.idno = e1.SchduleId;
+                play1.chno = e1.chno;
+                TimeSpan st = new TimeSpan();
+                TimeSpan.TryParseExact(e1.duration, @"hh\:mm\:ss", null, out st);
+                play1.duration = st;
+                playList.child.Add(play1);
+            }
+        }
+
 
         private void Network_Initial()
         {

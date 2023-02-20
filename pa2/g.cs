@@ -9,6 +9,7 @@ using pa.Windows;
 using System.ComponentModel;
 using System.Threading;
 using static simplepa2.DataSet1;
+using simplepa2;
 
 /*
 <sms_server>http://sms.nicesms.co.kr/cpsms_utf8/cpsms.aspx</sms_server>
@@ -192,6 +193,9 @@ namespace pa
 
         #endregion
 
+        #region // 방송 처리 
+
+
         // 방송 디비에서 해당 음원과 지역 데이터를 가져온다. 
         public static List<AssetBase> GetAssetList(PlayItem play1)
         {
@@ -263,6 +267,10 @@ namespace pa
             }
             BSThreadClass.AddData(bsa);
         }
+
+        #endregion
+
+        #region // Util
 
 
         // 동일 시간 예약이나 방송 송출시 지역 점검 
@@ -346,7 +354,7 @@ namespace pa
             {
             }
         }
-
+        #endregion
     }
 
 }
