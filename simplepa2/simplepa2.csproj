@@ -796,9 +796,6 @@
     <EmbeddedResource Include="UI\Views\View_BBSGroupManage2.resx">
       <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\ASchedule.resx">
-      <DependentUpon>ASchedule.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCZone.resx">
       <DependentUpon>View_BBCZone.cs</DependentUpon>
     </EmbeddedResource>
@@ -993,6 +990,8 @@
     <Compile Include="Controller\SchduleC.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\SchduleCsController.cs" />
+    <Compile Include="Controller\SchdulesController.cs" />
     <Compile Include="Controller\Simplepa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1476,12 +1475,6 @@
     </Compile>
     <Compile Include="UI\Views\View_BBSGroupManage2.Designer.cs">
       <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Views\ASchedule.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Views\ASchedule.Designer.cs">
-      <DependentUpon>ASchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBCZone.cs">
       <SubType>UserControl</SubType>
