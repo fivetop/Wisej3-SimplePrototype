@@ -14,7 +14,7 @@ namespace simplepa2
         internal BindingSource assetsBindingSource;
         List<Comp_UFloor> comp_UFloors = new List<Comp_UFloor>(); // 층 컨트롤
         List<Comp_UZone> comp_Zone = new List<Comp_UZone>(); // 존 컨트롤
-        public List<AssetsRow> selAssetsRow = new List<AssetsRow>();
+        public List<AssetsRow> selAssetsRow { get; set; } = new List<AssetsRow>();
 
 
         public string Filter { get; internal set; }
@@ -75,8 +75,8 @@ namespace simplepa2
             this.Controls.Clear();
 
             // 디비투 이기종 테이블 리스트 복제 
-            var dt1 = gweb.mainFrame.dBSqlite.Ds1.Assets;
-            var dt2 = gweb.mainFrame.dBSqlite.Ds1.AssetGroups.Where(p=>p.Name == GroupFilter);
+            var dt1 = gweb.dBSqlite.Ds1.Assets;
+            var dt2 = gweb.dBSqlite.Ds1.AssetGroups.Where(p=>p.Name == GroupFilter);
             // 메모리 복사 
             list = AssetRow2Asset(dt1, Filter);
 

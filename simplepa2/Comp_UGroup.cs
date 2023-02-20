@@ -17,9 +17,10 @@ namespace simplepa2
             return comp_UAsset1.GetSelAssets();
         }
 
-        public void SetSelAssets(List<AssetsRow> v)
+        public void SetSelAssets(List<AssetsRow>  v)
         {
-            comp_UAsset1.selAssetsRow = v;
+            if (comp_UAsset1.selAssetsRow != null)
+                comp_UAsset1.selAssetsRow = v;
         }
 
 
@@ -36,7 +37,7 @@ namespace simplepa2
         public void combo_init()
 		{
 			if (Filter == "") return;
-			var t1 = gweb.mainFrame.dBSqlite.Ds1.AssetGroups.Where(p => p.EMNAME == Filter).DistinctBy(p => p.Name);
+			var t1 = gweb.dBSqlite.Ds1.AssetGroups.Where(p => p.EMNAME == Filter).DistinctBy(p => p.Name);
 
 			comboBox2.Items.Clear();
 			foreach (var a1 in t1)
