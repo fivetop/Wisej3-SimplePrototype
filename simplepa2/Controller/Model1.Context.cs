@@ -44,5 +44,9 @@ namespace simplepa2.Controller
         public virtual DbSet<Holidays> Holidays { get; set; }
         public virtual DbSet<TypeData> TypeData { get; set; }
         public virtual DbSet<EMBs> EMBs { get; set; }
+        public virtual DbSet<Preset> Preset { get; set; }
+        public virtual DbSet<PresetC> PresetC { get; set; }
+        public virtual DbSet<Schdule> Schdule { get; set; }
+        public virtual DbSet<SchduleC> SchduleC { get; set; }
     }
 }

@@ -22,6 +22,9 @@ namespace simplepa2
 
         public static int dashBoardRefreshInterval = 5000;
 
+        public static DBController dBSqlite { get; set; } = new DBController(); // DB 처리용 
+
+
         #region // 로그 처리 
         static string old_string = "";
         public static void Log(string str1)

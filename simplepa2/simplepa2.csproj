@@ -344,6 +344,9 @@
     <EmbeddedResource Include="UI\Views\View_TopPanelBar.resx">
       <DependentUpon>View_TopPanelBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSSchduleManage2.resx">
+      <DependentUpon>View_BBSSchduleManage2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Widget\Widget_BBSMultiDeck.resx">
       <DependentUpon>Widget_BBSMultiDeck.cs</DependentUpon>
     </EmbeddedResource>
@@ -978,6 +981,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controller\MusicsController.cs" />
+    <Compile Include="Controller\Preset.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\PresetC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Schdule.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\SchduleC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controller\Simplepa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -996,6 +1011,7 @@
     </Compile>
     <Compile Include="global.cs" />
     <Compile Include="SignalR\SignalRHub.cs" />
+    <Compile Include="TimeSpace.cs" />
     <Compile Include="UI\Components\Comp_BBSAchchorBSStatus.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1397,6 +1413,12 @@
       <DependentUpon>Handler1.ashx</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="UI\Views\View_BBSSchduleManage2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSSchduleManage2.designer.cs">
+      <DependentUpon>View_BBSSchduleManage2.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Widget\Widget_BBSForecastList.cs">
       <SubType>UserControl</SubType>
     </Compile>

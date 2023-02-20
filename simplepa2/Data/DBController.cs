@@ -51,6 +51,8 @@ namespace simplepa2
                     MusicsTableAdapter = new MusicsTableAdapter(),
                     PresetTableAdapter = new PresetTableAdapter(),
                     PresetCTableAdapter = new PresetCTableAdapter(),
+                    SchduleTableAdapter = new SchduleTableAdapter(),
+                    SchduleCTableAdapter = new SchduleCTableAdapter(),
                     SimplepaTableAdapter = new SimplepaTableAdapter(),
                     UserTreesTableAdapter = new UserTreesTableAdapter(),
                 };
@@ -69,6 +71,8 @@ namespace simplepa2
                 Tam.SimplepaTableAdapter.Fill(Ds1.Simplepa);
                 Tam.PresetTableAdapter.Fill (Ds1.Preset);
                 Tam.PresetCTableAdapter.Fill(Ds1.PresetC);
+                Tam.SchduleTableAdapter.Fill(Ds1.Schdule);
+                Tam.SchduleCTableAdapter.Fill(Ds1.SchduleC);
                 Tam.UserTreesTableAdapter.Fill(Ds1.UserTrees);
             }
             catch (Exception e1)
@@ -81,6 +85,96 @@ namespace simplepa2
 
         #endregion
 
+
+        #region // Schdule 관리 부분 
+
+        internal async Task<SchduleRow> SchduleSave(SchduleRow r1)
+        {
+            Ds1.Schdule.Rows.Add(r1);
+            Tam.SchduleTableAdapter.Update(Ds1.Schdule);
+            return r1;
+        }
+
+        internal async Task<SchduleRow> SchduleGet(string text)
+        {
+            Tam.SchduleTableAdapter.Fill(Ds1.Schdule);
+            var m3 = Ds1.Schdule.FirstOrDefault(p => p.Name == text);
+            if (m3 != null) return m3;
+            return null;
+        }
+
+        internal async Task<int> SchduleCSave(SchduleRow r1, List<MusicsRow> selMusic, List<AssetsRow> selAssets)
+        {
+            if (r1.SchduleId < 1) return 0;
+            Tam.SchduleCTableAdapter.Fill(Ds1.SchduleC);
+
+            foreach (var t1 in selAssets)
+            {
+                SchduleCRow m2 = Ds1.SchduleC.NewSchduleCRow();
+                m2.SchduleId = r1.SchduleId;
+                m2.AssetId = t1.AssetId;
+                m2.MusicId = 0;
+                Ds1.SchduleC.Rows.Add(m2);
+                Tam.SchduleCTableAdapter.Update(Ds1.SchduleC);
+            }
+
+            foreach (var t1 in selMusic)
+            {
+                SchduleCRow m2 = Ds1.SchduleC.NewSchduleCRow();
+                m2.SchduleId = r1.SchduleId;
+                m2.AssetId = 0;
+                m2.MusicId = t1.MusicId;
+                Ds1.SchduleC.Rows.Add(m2);
+                Tam.SchduleCTableAdapter.Update(Ds1.SchduleC);
+            }
+
+            return 1;
+        }
+
+        internal string AssetName(int? assetId)
+        {
+            Tam.AssetsTableAdapter.Fill(Ds1.Assets);
+            var m3 = Ds1.Assets.FirstOrDefault(p => p.AssetId == assetId);
+            if (m3 != null) return m3.ZoneName;  //m3.path; // m3.Zone;
+            return "";
+        }
+
+        internal async Task<bool> SchduleDelete(SchduleRow r1)
+        {
+            r1.Delete();
+            Tam.SchduleTableAdapter.Update(Ds1.Schdule);
+            return true;
+
+        }
+
+        internal async Task<bool> SchduleCDelete(int SchduleId)
+        {
+            if (SchduleId < 1) return false;
+            Tam.SchduleCTableAdapter.Fill(Ds1.SchduleC);
+            var drs = Ds1.SchduleC.Where(p => p.SchduleId == SchduleId);
+
+            if (drs != null && drs.Count() > 0)
+            {
+                foreach (SchduleCRow row in drs)
+                {
+                    //Ds1.BSTreeC.Rows.Remove(row);
+                    row.Delete();
+                }
+            }
+            Tam.SchduleCTableAdapter.Update(Ds1.SchduleC);
+            return true;
+        }
+
+        internal async Task SchduleCUpdate(SchduleRow r1, List<MusicsRow> selMusic, List<AssetsRow> selAssets)
+        {
+        }
+
+        internal async Task SchduleUpdate(SchduleRow r1)
+        {
+            Tam.SchduleTableAdapter.Update(Ds1.Schdule);
+        }
+
+        #endregion
 
         #region // Preset 관리 부분 
 

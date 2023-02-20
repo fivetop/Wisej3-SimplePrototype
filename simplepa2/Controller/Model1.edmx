@@ -234,6 +234,59 @@
           <Property Name="deletable" Type="varchar(max)" />
           <Property Name="duration" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="Preset">
+          <Key>
+            <PropertyRef Name="PresetId" />
+          </Key>
+          <Property Name="PresetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="EMNAME" Type="varchar(max)" />
+          <Property Name="GroupName" Type="varchar(max)" />
+          <Property Name="user_name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PresetC">
+          <Key>
+            <PropertyRef Name="PresetCId" />
+          </Key>
+          <Property Name="PresetCId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PresetId" Type="int" />
+          <Property Name="AssetId" Type="int" />
+          <Property Name="MusicId" Type="int" />
+        </EntityType>
+        <EntityType Name="Schdule">
+          <Key>
+            <PropertyRef Name="SchduleId" />
+          </Key>
+          <Property Name="SchduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="EMNAME" Type="varchar(max)" />
+          <Property Name="GroupName" Type="varchar(max)" />
+          <Property Name="user_name" Type="nvarchar(max)" />
+          <Property Name="stime" Type="datetime" Nullable="false" />
+          <Property Name="etime" Type="datetime" Nullable="false" />
+          <Property Name="sdate" Type="datetime" Nullable="false" />
+          <Property Name="day1" Type="bit" Nullable="false" />
+          <Property Name="day2" Type="bit" Nullable="false" />
+          <Property Name="day3" Type="bit" Nullable="false" />
+          <Property Name="day4" Type="bit" Nullable="false" />
+          <Property Name="day5" Type="bit" Nullable="false" />
+          <Property Name="day6" Type="bit" Nullable="false" />
+          <Property Name="day7" Type="bit" Nullable="false" />
+          <Property Name="week" Type="bit" Nullable="false" />
+          <Property Name="chno" Type="int" Nullable="false" />
+          <Property Name="duration" Type="varchar" MaxLength="50" />
+          <Property Name="tss" Type="varchar" MaxLength="50" />
+          <Property Name="tse" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SchduleC">
+          <Key>
+            <PropertyRef Name="SchduleCId" />
+          </Key>
+          <Property Name="SchduleCId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SchduleId" Type="int" Nullable="false" />
+          <Property Name="AssetId" Type="int" />
+          <Property Name="MusicId" Type="int" />
+        </EntityType>
         <EntityType Name="Simplepa">
           <Key>
             <PropertyRef Name="SimplePAId" />
@@ -289,6 +342,10 @@
           <EntitySet Name="Eventvm" EntityType="Self.Eventvm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Holidays" EntityType="Self.Holidays" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Musics" EntityType="Self.Musics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Preset" EntityType="Self.Preset" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PresetC" EntityType="Self.PresetC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schdule" EntityType="Self.Schdule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SchduleC" EntityType="Self.SchduleC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Simplepa" EntityType="Self.Simplepa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserTrees" EntityType="Self.UserTrees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeData" EntityType="Self.TypeData" store:Type="Tables" store:Schema="dbo">
@@ -477,6 +534,10 @@
           <EntitySet Name="Holidays" EntityType="simplePAModel.Holidays" />
           <EntitySet Name="TypeData" EntityType="simplePAModel.TypeData" />
           <EntitySet Name="EMBs" EntityType="simplePAModel.EMBs" />
+          <EntitySet Name="Preset" EntityType="simplePAModel.Preset" />
+          <EntitySet Name="PresetC" EntityType="simplePAModel.PresetC" />
+          <EntitySet Name="Schdule" EntityType="simplePAModel.Schdule" />
+          <EntitySet Name="SchduleC" EntityType="simplePAModel.SchduleC" />
         </EntityContainer>
         <EntityType Name="BSTreeC">
           <Key>
@@ -590,6 +651,59 @@
           <Property Name="DeviceId" Type="Int32" />
           <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Preset">
+          <Key>
+            <PropertyRef Name="PresetId" />
+          </Key>
+          <Property Name="PresetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PresetC">
+          <Key>
+            <PropertyRef Name="PresetCId" />
+          </Key>
+          <Property Name="PresetCId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PresetId" Type="Int32" />
+          <Property Name="AssetId" Type="Int32" />
+          <Property Name="MusicId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Schdule">
+          <Key>
+            <PropertyRef Name="SchduleId" />
+          </Key>
+          <Property Name="SchduleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EMNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="stime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="etime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="day1" Type="Boolean" Nullable="false" />
+          <Property Name="day2" Type="Boolean" Nullable="false" />
+          <Property Name="day3" Type="Boolean" Nullable="false" />
+          <Property Name="day4" Type="Boolean" Nullable="false" />
+          <Property Name="day5" Type="Boolean" Nullable="false" />
+          <Property Name="day6" Type="Boolean" Nullable="false" />
+          <Property Name="day7" Type="Boolean" Nullable="false" />
+          <Property Name="week" Type="Boolean" Nullable="false" />
+          <Property Name="chno" Type="Int32" Nullable="false" />
+          <Property Name="duration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tss" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SchduleC">
+          <Key>
+            <PropertyRef Name="SchduleCId" />
+          </Key>
+          <Property Name="SchduleCId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchduleId" Type="Int32" Nullable="false" />
+          <Property Name="AssetId" Type="Int32" />
+          <Property Name="MusicId" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -877,6 +991,63 @@
                 <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
                 <ScalarProperty Name="emData" ColumnName="emData" />
                 <ScalarProperty Name="EMBsId" ColumnName="EMBsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Preset">
+            <EntityTypeMapping TypeName="simplePAModel.Preset">
+              <MappingFragment StoreEntitySet="Preset">
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PresetId" ColumnName="PresetId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PresetC">
+            <EntityTypeMapping TypeName="simplePAModel.PresetC">
+              <MappingFragment StoreEntitySet="PresetC">
+                <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+                <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+                <ScalarProperty Name="PresetId" ColumnName="PresetId" />
+                <ScalarProperty Name="PresetCId" ColumnName="PresetCId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schdule">
+            <EntityTypeMapping TypeName="simplePAModel.Schdule">
+              <MappingFragment StoreEntitySet="Schdule">
+                <ScalarProperty Name="tse" ColumnName="tse" />
+                <ScalarProperty Name="tss" ColumnName="tss" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="chno" ColumnName="chno" />
+                <ScalarProperty Name="week" ColumnName="week" />
+                <ScalarProperty Name="day7" ColumnName="day7" />
+                <ScalarProperty Name="day6" ColumnName="day6" />
+                <ScalarProperty Name="day5" ColumnName="day5" />
+                <ScalarProperty Name="day4" ColumnName="day4" />
+                <ScalarProperty Name="day3" ColumnName="day3" />
+                <ScalarProperty Name="day2" ColumnName="day2" />
+                <ScalarProperty Name="day1" ColumnName="day1" />
+                <ScalarProperty Name="sdate" ColumnName="sdate" />
+                <ScalarProperty Name="etime" ColumnName="etime" />
+                <ScalarProperty Name="stime" ColumnName="stime" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="EMNAME" ColumnName="EMNAME" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SchduleId" ColumnName="SchduleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchduleC">
+            <EntityTypeMapping TypeName="simplePAModel.SchduleC">
+              <MappingFragment StoreEntitySet="SchduleC">
+                <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+                <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+                <ScalarProperty Name="SchduleId" ColumnName="SchduleId" />
+                <ScalarProperty Name="SchduleCId" ColumnName="SchduleCId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

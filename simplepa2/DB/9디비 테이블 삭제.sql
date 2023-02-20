@@ -10,4 +10,8 @@ DELETE FROM [dbo].Device
 DELETE FROM [dbo].DeviceChannel
 DELETE FROM [dbo].EMBS
 DELETE FROM [dbo].EMServer
+DELETE FROM [dbo].Preset
+DELETE FROM [dbo].PresetC
+DELETE FROM [dbo].Schdule
+DELETE FROM [dbo].SchduleC
 GO
