@@ -28,6 +28,7 @@ namespace simplepa2
         #region // Database 초기화 처리
         public void DBInit()
         {
+            gweb.dBSqlite = this;
             try
             {
                 Ds1 = new DataSet1();

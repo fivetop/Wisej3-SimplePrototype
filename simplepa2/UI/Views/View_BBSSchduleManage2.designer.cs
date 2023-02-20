@@ -1,4 +1,4 @@
-﻿namespace simplepa2
+﻿namespace simplepa2.UI.Views
 {
     partial class View_BBSSchduleManage2
     {

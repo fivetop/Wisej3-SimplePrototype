@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
-namespace simplepa2
+namespace simplepa2.UI.Views
 {    
     public partial class View_BBSSchduleManage2 : Wisej.Web.UserControl
     {
