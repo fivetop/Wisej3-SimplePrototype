@@ -24,10 +24,10 @@
         <EntityTypeShape EntityType="simplePAModel.Holidays" Width="1.5" PointX="8.625" PointY="11.125" />
         <EntityTypeShape EntityType="simplePAModel.TypeData" Width="1.5" PointX="4.75" PointY="6.125" />
         <EntityTypeShape EntityType="simplePAModel.EMBs" Width="1.5" PointX="6.75" PointY="11.125" />
-        <EntityTypeShape EntityType="simplePAModel.Preset" Width="1.5" PointX="11.75" PointY="10.75" />
-        <EntityTypeShape EntityType="simplePAModel.PresetC" Width="1.5" PointX="3.75" PointY="12.75" />
-        <EntityTypeShape EntityType="simplePAModel.Schdule" Width="1.5" PointX="0.75" PointY="13.75" />
-        <EntityTypeShape EntityType="simplePAModel.SchduleC" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="simplePAModel.Preset" Width="1.5" PointX="10.625" PointY="9.875" />
+        <EntityTypeShape EntityType="simplePAModel.PresetC" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="simplePAModel.Schdule" Width="1.5" PointX="2.625" PointY="12.375" />
+        <EntityTypeShape EntityType="simplePAModel.SchduleC" Width="1.5" PointX="12.625" PointY="6.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

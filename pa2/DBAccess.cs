@@ -36,6 +36,8 @@ namespace pa
         public MusicsDataTable Musics { get; set; } = new MusicsDataTable();
         public SimplepaDataTable Simplepa { get; set; } = new SimplepaDataTable();
         public UserTreesDataTable UserTrees { get; set; } = new UserTreesDataTable();
+        public DataSet1.SchduleDataTable schdules { get; set; } = new DataSet1.SchduleDataTable();
+        public DataSet1.SchduleCDataTable schduleCs { get; set; } = new DataSet1.SchduleCDataTable();
 
         #region // Database 초기화 처리
         public void DBInit()
@@ -55,6 +57,8 @@ namespace pa
             Musics = Dbread<MusicsDataTable>("Musics");
             Simplepa = Dbread<SimplepaDataTable>("Simplepas");
             UserTrees = Dbread<UserTreesDataTable>("UserTrees");
+            schdules = Dbread<DataSet1.SchduleDataTable>("schdules");
+            schduleCs = Dbread<DataSet1.SchduleCDataTable>("schdulecs");
         }
 
         public void DBRead()
