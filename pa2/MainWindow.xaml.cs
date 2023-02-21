@@ -309,6 +309,7 @@ namespace pa
 
         public void makeDB()
         {
+            dBAccess.DBSchdule();
             // 디비투 이기종 테이블 리스트 복제 
             var s1 = Helper.DataTableToList<SchduleMem>(dBAccess.schdules);
             var sc1 = Helper.DataTableToList<simplepa2.Controller.SchduleC>(dBAccess.schduleCs);
@@ -382,6 +383,10 @@ namespace pa
                 t2 = new DateTime(t1.Year, t1.Month, t1.Day, e1.stime.Hour, e1.stime.Minute, e1.stime.Second);
                 if (!(sup > t2 && t2 > sdn))
                     continue;
+                DateTime today1 = DateTime.Now;
+
+                if (dt1 < today1)
+                    continue;
 
                 var tt1 = playList.child.Find(p => p.Start == t2 && p.kind == "예약방송");
                 if (tt1 != null)
@@ -398,6 +403,7 @@ namespace pa
                 play1.Play = dBAccess.db2ListSch(e1.schduleC);
                 playList.child.Add(play1);
             }
+            g.Log("PlayList : " + playList.child.Count.ToString());
         }
 
 

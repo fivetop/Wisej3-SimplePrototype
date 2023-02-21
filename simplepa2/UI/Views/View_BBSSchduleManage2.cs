@@ -1,4 +1,5 @@
-﻿using simplepa2.Controller;
+﻿using DataClass;
+using simplepa2.Controller;
 using simplepa2.UI.Components;
 using System;
 using System.Collections.Generic;
@@ -257,6 +258,7 @@ namespace simplepa2.UI.Views
                 return false;
             }
             await gweb.dBSqlite.SchduleCSave(r2, comp_Music1.SelMusic, comp_UGroup1.SelAssets());
+            gweb.mainFrame.sendSigR(eSignalRMsgType.eScheduleDown);
             return true;
         }
 
@@ -371,6 +373,8 @@ namespace simplepa2.UI.Views
                     icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.YesNo) == DialogResult.No) return;
                 DeleteData();
                 reDraw();
+                gweb.mainFrame.sendSigR(eSignalRMsgType.eScheduleDown);
+
             }
             catch (Exception ex)
             {

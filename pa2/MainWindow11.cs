@@ -119,10 +119,15 @@ namespace pa
                         g.Log("eScanEM : 처리 완료 입니다.");
                     }
                     else
-                    { 
+                    {
                         SendSigR(eSignalRMsgType.eScanEM, "재실행이 필요합니다.");
                         g.Log("eScanEM : 재실행이 필요합니다.");
                     }
+                    break;
+                case eSignalRMsgType.eScheduleDown:
+                    g.Log("Schedule Down");
+                    makeDB();
+                    MakePlayList(_db); // 예약방송 업데이트
                     break;
             }
             return true;

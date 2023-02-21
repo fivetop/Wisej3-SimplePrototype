@@ -27,6 +27,7 @@ namespace DataClass
         eReturn = 16,
         eInChMove = 17,         // DSP, Sound 이동  C2S
         eFileDown = 18,         // file download   S2C 
+        eScheduleDown = 19,     // Schedule change  S2C
     }
 
     public enum eEventCode

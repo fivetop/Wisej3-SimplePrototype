@@ -81,8 +81,19 @@ namespace simplepa2
 					{
 						try
 						{
-							PropertyInfo propertyInfo = obj.GetType().GetProperty(prop.Name);
-							propertyInfo.SetValue(obj, Convert.ChangeType(row[prop.Name], propertyInfo.PropertyType), null);
+							//PropertyInfo propertyInfo = obj.GetType().GetProperty(prop.Name);
+							//propertyInfo.SetValue(obj, Convert.ChangeType(row[prop.Name], propertyInfo.PropertyType), null);
+
+							PropertyInfo p = obj.GetType().GetProperty(prop.Name);
+							Type columnType = p.PropertyType;
+
+							if (p.PropertyType.IsGenericType && p.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
+							{
+								// If it is NULLABLE, then get the underlying type. eg if "Nullable<int>" then this will return just "int"
+								columnType = p.PropertyType.GetGenericArguments()[0];
+							}
+
+							p.SetValue(obj, Convert.ChangeType(row[prop.Name], columnType), null);
 						}
 						catch
 						{

@@ -463,29 +463,29 @@ namespace simplepa2.UI.Pages
             return true;
         }
 
-        internal void sendSigR(eSignalRMsgType eVolume, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0, string emname = "")
+        internal void sendSigR(eSignalRMsgType msgtype, string device_name = "", string dsp = "", int dsp_ch = 0, int device_ch = 0, string emname = "")
         {
             SignalRMsg msg1 = new SignalRMsg();
             msg1.user = Application.Session["login_id"];
             msg1.EMNAME = "ALL";
 
-            switch (eVolume)
+            switch (msgtype)
             {
                 case eSignalRMsgType.eVolume:
                     msg1.message = "Volume";
-                    msg1.Msgtype = eVolume;
+                    msg1.Msgtype = msgtype;
                     break;
 
                 case eSignalRMsgType.eFileDown:
                     msg1.message = "eFileDown";
-                    msg1.Msgtype = eVolume;
+                    msg1.Msgtype = msgtype;
                     msg1.user_data1 = device_name;
                     break;
 
                 case eSignalRMsgType.eOutChMove:
                     msg1.EMNAME = emname;
                     msg1.message = device_name;
-                    msg1.Msgtype = eVolume;
+                    msg1.Msgtype = msgtype;
                     msg1.state = dsp_ch;
                     msg1.user_data1 = dsp;
                     msg1.user_data4 = device_ch;
@@ -494,20 +494,25 @@ namespace simplepa2.UI.Pages
                 case eSignalRMsgType.eInChMove:
                     msg1.EMNAME = emname;
                     msg1.message = device_name; // pc
-                    msg1.Msgtype = eVolume;
+                    msg1.Msgtype = msgtype;
                     msg1.state = dsp_ch; // no
                     msg1.user_data1 = dsp; // ip
                     msg1.user_data4 = device_ch; // dsp ch cnt
                     break;
 
                 case eSignalRMsgType.eScanAll:
-                    msg1.Msgtype = eVolume;
+                    msg1.Msgtype = msgtype;
                     msg1.message = "Scan All";
                     break;
 
                 case eSignalRMsgType.eScanEM: // EM 정보 요청
-                    msg1.Msgtype = eVolume;
+                    msg1.Msgtype = msgtype;
                     msg1.message = "Scan EM";
+                    break;
+
+                case eSignalRMsgType.eScheduleDown: // EM 정보 요청
+                    msg1.Msgtype = msgtype;
+                    msg1.message = "eScheduleDown";
                     break;
             }
 

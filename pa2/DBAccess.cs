@@ -61,6 +61,13 @@ namespace pa
             schduleCs = Dbread<DataSet1.SchduleCDataTable>("schdulecs");
         }
 
+        public void DBSchdule()
+        {
+            schdules = Dbread<DataSet1.SchduleDataTable>("schdules");
+            schduleCs = Dbread<DataSet1.SchduleCDataTable>("schdulecs");
+        }
+
+
         public void DBRead()
         {
             if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)

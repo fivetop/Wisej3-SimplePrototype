@@ -152,6 +152,8 @@ namespace pa
             lockF = true;
             foreach (PlayItem pl1 in g.playItems)
             {
+                if (pl1 == null)
+                    continue;
                 if (pl1.p_run)
                     continue;
                 if (pl1.chno == 0 || pl1.idno == 0)
