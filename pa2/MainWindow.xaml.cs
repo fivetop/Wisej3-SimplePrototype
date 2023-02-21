@@ -367,7 +367,7 @@ namespace pa
                 TimeSpan st = new TimeSpan();
                 TimeSpan.TryParseExact(e1.duration, @"hh\:mm\:ss", null, out st);
                 play1.duration = st;
-                play1.Play = dBAccess.db2List(e1.schduleC);
+                play1.Play = dBAccess.db2ListSch(e1.schduleC);
                 playList.child.Add(play1);
             }
 
@@ -395,7 +395,7 @@ namespace pa
                 TimeSpan st = new TimeSpan();
                 TimeSpan.TryParseExact(e1.duration, @"hh\:mm\:ss", null, out st);
                 play1.duration = st;
-                play1.Play = dBAccess.db2List(e1.schduleC);
+                play1.Play = dBAccess.db2ListSch(e1.schduleC);
                 playList.child.Add(play1);
             }
         }

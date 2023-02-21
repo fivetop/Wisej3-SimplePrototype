@@ -368,10 +368,10 @@ namespace pa
             return play;
         }
 
-        internal List<AssetBase> db2List(List<SchduleC> schduleC)
+        internal List<AssetBase> db2ListSch(List<simplepa2.Controller.SchduleC> schduleC)
         {
             List<int> assetsRows = new List<int>();
-            foreach (SchduleC schdule in schduleC)
+            foreach (var schdule in schduleC)
             {
                 int assetId = (int)schdule.AssetId;
                 if(assetId > 0)

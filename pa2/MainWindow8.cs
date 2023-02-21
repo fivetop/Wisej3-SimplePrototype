@@ -188,6 +188,7 @@ namespace pa
                 g.Log(sch_play.idno.ToString() + "번의 방송은 해당 지역에 스피커가 존재하지 않으므로 취소 됩니다.");
                 return;
             }
+            g.DSP_MakeGroupSpeaker(sch_play.Play, 1, BS_DSP_STATE.MUL_BS, sch_play.chno);
             PlayChildProcess(sch_play.chno, sch_play.idno);
             /*
             ExtProcess ep1 = new ExtProcess(sch_play.idno, sch_play.chno);
