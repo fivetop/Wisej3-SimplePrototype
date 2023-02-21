@@ -334,6 +334,7 @@ namespace pa
         }
 
 
+
         #endregion
 
         #region // AssetBase 자산관리 기초 부분 
@@ -367,6 +368,39 @@ namespace pa
             return play;
         }
 
+        internal List<AssetBase> db2List(List<SchduleC> schduleC)
+        {
+            List<int> assetsRows = new List<int>();
+            foreach (SchduleC schdule in schduleC)
+            {
+                int assetId = (int)schdule.AssetId;
+                if(assetId > 0)
+                    assetsRows.Add(assetId);
+            }
+
+            List<AssetBase> play = new List<AssetBase>();
+            var ab1 = Assets.Where(a1 => assetsRows.Contains(a1.AssetId));
+            var p1 = from p in ab1
+                     select new AssetBase
+                     {
+                         AssetBaseId = (int)p.AssetId,
+                         ip = p.ip,
+                         GroupName = p.GroupName,
+                         ZoneName = p.ZoneName,
+                         SpeakerName = p.SpeakerName,
+                         path = p.path,
+                         floor = p.floor,
+                         DeviceName = p.DeviceName,
+                         state = p.state,
+                         state_old = p.state_old,
+                         chk = true,
+                         seq = (int)p.seq,
+                         ch = p.ch,
+                     };
+            var t3 = ab1.ToList();
+            play = p1.ToList();
+            return play;
+        }
 
         #endregion
 

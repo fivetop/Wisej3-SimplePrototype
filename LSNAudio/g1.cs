@@ -29,6 +29,14 @@ namespace pa
         public Nullable<int> MusicId { get; set; }
     }
 
+    public partial class SchduleC
+    {
+        public int SchduleCId { get; set; }
+        public int SchduleId { get; set; }
+        public Nullable<int> AssetId { get; set; }
+        public Nullable<int> MusicId { get; set; }
+    }
+
     [Serializable]
     public class EMClient
     {
@@ -54,6 +62,7 @@ namespace pa
 
         static public List<Music> _music { get; set; } = new List<Music>();
         static public List<BSTreeC> _bstreec { get; set; } = new List<BSTreeC>();
+        static public List<SchduleC> _schdulec { get; set; } = new List<SchduleC>();
 
 
         static public void init()

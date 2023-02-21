@@ -177,38 +177,6 @@ namespace pa
             return true;
         }
 
-        private void DB2LocalData()
-        {
-            foreach (var t1 in _DanteDevice)
-            {
-                var t2 = gl.danteDevice._DanteDevice.FirstOrDefault(p=>p.DeviceName == t1.DeviceName);
-
-                if (t2 == null)
-                {
-                    Device d1 = new Device();
-                    d1.DeviceName = t1.DeviceName;
-                    d1.chspk = t1.chspk;
-                    d1.EMNAME = t1.EMNAME;
-                    d1.ip_dspctrl = t1.ip_dspctrl;
-                    d1.DanteModelName = t1.DanteModelName;
-                    d1.device = t1.device;
-                    d1.ip = t1.ip;
-                    d1.ip_dspctrl = t1.ip_dspctrl;
-                    d1.name = t1.name;
-
-                    //gl.danteDevice._DanteDevice.Add(d1);
-                    //gl.XMLDanteDevice(false);
-                }
-                else 
-                {
-                    t2.chspk = t1.chspk;
-                    t2.EMNAME = t1.EMNAME;
-                    t2.dsp_chno = t1.dsp_chno;
-                    gl.XMLDanteDevice(false);
-                }
-            }
-        }
-
 
         // 서버 연결후 처리 
         public void Initial_P3()
@@ -360,10 +328,11 @@ namespace pa
             }
         }
 
-        public static PlayList playList = new PlayList();
+        public PlayList playList = new PlayList();
 
-        public static void MakePlayList(SchduleMemList _db)
+        public void MakePlayList(SchduleMemList _db)
         {
+            playList.child.Clear();
             DateTime t1 = DateTime.Now;
             DateTime t2 = new DateTime(t1.Year, t1.Month, t1.Day, 0, 0, 0);
 
@@ -388,19 +357,17 @@ namespace pa
                 t2 = new DateTime(t1.Year, t1.Month, t1.Day, e1.tss1.Hours, e1.tss1.Minutes, e1.tss1.Seconds);
                 var tt1 = playList.child.Find(p => p.Start == t2 && p.kind == "정규방송");
                 if (tt1 != null)
-                {
-                    playList.child.Add(tt1);
                     continue;
-                }
                 PlayItem play1 = new PlayItem();
                 play1.kind = "정규방송";
                 play1.Start = t2;
                 play1.Name = e1.Name;
-                play1.idno = e1.SchduleId;
+                play1.idno = 200000 + e1.SchduleId;
                 play1.chno = e1.chno;
                 TimeSpan st = new TimeSpan();
                 TimeSpan.TryParseExact(e1.duration, @"hh\:mm\:ss", null, out st);
                 play1.duration = st;
+                play1.Play = dBAccess.db2List(e1.schduleC);
                 playList.child.Add(play1);
             }
 
@@ -418,21 +385,17 @@ namespace pa
 
                 var tt1 = playList.child.Find(p => p.Start == t2 && p.kind == "예약방송");
                 if (tt1 != null)
-                {
-                    playList.child.Add(tt1);
                     continue;
-                }
-
-                var tt2 = playList.child.Find(p => p.Start == t2 && p.kind == "정규방송");
                 PlayItem play1 = new PlayItem();
                 play1.kind = "예약방송";
                 play1.Start = t2;
                 play1.Name = e1.Name;
-                play1.idno = e1.SchduleId;
+                play1.idno = 200000 + e1.SchduleId;
                 play1.chno = e1.chno;
                 TimeSpan st = new TimeSpan();
                 TimeSpan.TryParseExact(e1.duration, @"hh\:mm\:ss", null, out st);
                 play1.duration = st;
+                play1.Play = dBAccess.db2List(e1.schduleC);
                 playList.child.Add(play1);
             }
         }
@@ -960,6 +923,39 @@ namespace pa
                 }
             }
         }
+
+        private void DB2LocalData()
+        {
+            foreach (var t1 in _DanteDevice)
+            {
+                var t2 = gl.danteDevice._DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName);
+
+                if (t2 == null)
+                {
+                    Device d1 = new Device();
+                    d1.DeviceName = t1.DeviceName;
+                    d1.chspk = t1.chspk;
+                    d1.EMNAME = t1.EMNAME;
+                    d1.ip_dspctrl = t1.ip_dspctrl;
+                    d1.DanteModelName = t1.DanteModelName;
+                    d1.device = t1.device;
+                    d1.ip = t1.ip;
+                    d1.ip_dspctrl = t1.ip_dspctrl;
+                    d1.name = t1.name;
+
+                    //gl.danteDevice._DanteDevice.Add(d1);
+                    //gl.XMLDanteDevice(false);
+                }
+                else
+                {
+                    t2.chspk = t1.chspk;
+                    t2.EMNAME = t1.EMNAME;
+                    t2.dsp_chno = t1.dsp_chno;
+                    gl.XMLDanteDevice(false);
+                }
+            }
+        }
+
 
         #endregion
 

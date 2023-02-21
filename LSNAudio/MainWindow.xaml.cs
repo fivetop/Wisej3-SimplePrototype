@@ -134,6 +134,7 @@ namespace LSNAudio
                 if (g1._music != null)
                 {
                     g1._bstreec = g1.dBSqlite.Dbread<List<BSTreeC>>("BSTreeCs");
+                    g1._schdulec = g1.dBSqlite.Dbread<List<SchduleC>>("Schdulecs");
                     string str2 = g1._music.Count().ToString() + " : " + g1._music.Count().ToString();
                     g1.Log("Server music&tree count :" + str2);
                 }
@@ -159,12 +160,32 @@ namespace LSNAudio
             var t3 = g1._music;
 
             var t2 = from p in t1
-                     join p2 in t3 on p.MusicId equals p2.MusicId 
+                     join p2 in t3 on p.MusicId equals p2.MusicId
                      select new Music
                      {
-                        FileName = p2.FileName,
-                        FileContent = p2.FileContent,
-                        duration = p2.duration,
+                         FileName = p2.FileName,
+                         FileContent = p2.FileContent,
+                         duration = p2.duration,
+                     };
+            m1 = t2.ToList();
+        }
+
+        private void ReadMultiSch()
+        {
+            m1.Clear();
+            g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
+            g1._schdulec = g1.dBSqlite.Dbread<List<SchduleC>>("SchduleCs");
+            int bstreeid = idno - 200000;
+            var t1 = g1._schdulec.Where(p => p.SchduleId == bstreeid);
+            var t3 = g1._music;
+
+            var t2 = from p in t1
+                     join p2 in t3 on p.MusicId equals p2.MusicId
+                     select new Music
+                     {
+                         FileName = p2.FileName,
+                         FileContent = p2.FileContent,
+                         duration = p2.duration,
                      };
             m1 = t2.ToList();
         }
@@ -182,7 +203,14 @@ namespace LSNAudio
             SoundCard soundCard = null;
             IntPtr t2 = new IntPtr(Audiochno);
 
-            ReadMulti();
+            if (idno > 200000)
+            {
+                ReadMultiSch();
+            }
+            else
+            { 
+                ReadMulti();
+            }
 
             if (m1.Count < 1)
             {
