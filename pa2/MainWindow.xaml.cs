@@ -309,6 +309,7 @@ namespace pa
 
         public void makeDB()
         {
+            _db.child.Clear();
             dBAccess.DBSchdule();
             // 디비투 이기종 테이블 리스트 복제 
             var s1 = Helper.DataTableToList<SchduleMem>(dBAccess.schdules);
