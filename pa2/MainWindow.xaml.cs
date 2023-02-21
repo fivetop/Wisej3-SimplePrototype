@@ -263,6 +263,13 @@ namespace pa
 
         private void T1Reservedtimer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            if (playList.child.Count < 1)
+                return;
+            if (T1Reservedtimer_ON)
+                return;
+            T1Reservedtimer_ON = true;
+
+
             DateTime today1 = DateTime.Now;
             DateTime sup = DateTime.Now;
             DateTime sdn = DateTime.Now;
@@ -285,9 +292,6 @@ namespace pa
                 }
             }));
 
-            if (T1Reservedtimer_ON)
-                return;
-            T1Reservedtimer_ON = true;
 
             try
             {

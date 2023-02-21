@@ -99,10 +99,10 @@ namespace pa
                 string jsonEmp = JsonConvert.SerializeObject(t1);
 
                 var url2 = g._EMClient.WebAPIURL + url;
-                StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
-                var res = httpClient.PostAsync(url2, stringC).Result; //отправляем 
+                StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); 
+                var res = httpClient.PostAsync(url2, stringC).Result;  
 
-                var ret = JsonConvert.DeserializeObject<T>(res.Content.ReadAsStringAsync().Result); //Получаем полученый объект в ходе выполнения записи в базу данных
+                var ret = JsonConvert.DeserializeObject<T>(res.Content.ReadAsStringAsync().Result); 
                 return (T)ret;
             }
             catch (Exception e1)
@@ -144,7 +144,7 @@ namespace pa
 
                 string jsonEmp = JsonConvert.SerializeObject(te1);
                 var url2 = g._EMClient.WebAPIURL + url +"/" + id.ToString(); 
-                StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
+                StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); 
                 var res = httpClient.PutAsync(url2, stringC).Result;
                 if (res.StatusCode == HttpStatusCode.OK)
                 {
@@ -165,11 +165,11 @@ namespace pa
             a.user_name = "cccccccc";
 
             var jsonEmp = JsonConvert.SerializeObject(a);
-            var url2 = @"http://localhost:9921/api/UserTrees/5"; //Строка по которой производиться обращение к таблице
+            var url2 = @"http://localhost:9921/api/UserTrees/5"; 
 
             //var url2 = g._EMClient.WebAPIURL + "UserTrees" + "/" + a.UserTreeId.ToString();
-            StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); //Строка которая будет передаваться web сервису
-            var res = httpClient.PutAsync(url2, stringC).Result; //отправляем 
+            StringContent stringC = new StringContent(jsonEmp, Encoding.UTF8, "application/json"); 
+            var res = httpClient.PutAsync(url2, stringC).Result;
         }
 
         public void RemoveEMServer(string url, int id)
@@ -177,7 +177,7 @@ namespace pa
             try
             {
                 var url2 = g._EMClient.WebAPIURL + url + "/" + id.ToString();
-                var res = httpClient.DeleteAsync(url2).Result; //отправляем 
+                var res = httpClient.DeleteAsync(url2).Result;  
             }
             catch (Exception e1)
             {
