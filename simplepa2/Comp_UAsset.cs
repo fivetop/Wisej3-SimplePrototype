@@ -141,12 +141,12 @@ namespace simplepa2
                 m2.path = t1.path;
                 m2.ch = t1.ch;
                 m2.chk = 0; // t1.chk;
+                m2.emServer = t1.emServer;
                 list.Add(m2);
                 /*
                 m2.zpc = t1.zpc;
                 m2.zpci = t1.zpci;
                 m2.zpco = t1.zpco;
-                m2.emServer = t1.emServer;
                 if (m2.ch == 0)
                     m2.ch = 1;
                 m2.floor = int.Parse(t1.array[11]) * 100 + int.Parse(t1.array[12]) * 10 + int.Parse(t1.array[13]);

@@ -185,7 +185,7 @@ namespace simplepa2.UI.Views
 
 			comp_UAsset1.Filter = selectedItem;
 			comp_UAsset1.assetsBindingSource = assetsBindingSource;
-			comp_UAsset1.reDraw();
+			comp_UAsset1.reDraw2();
 		}
 
 	}
