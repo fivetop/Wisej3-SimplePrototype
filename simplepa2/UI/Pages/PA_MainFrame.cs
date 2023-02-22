@@ -243,8 +243,8 @@ namespace simplepa2.UI.Pages
                 case "reservationBarItem": view_BBSSchduleManage2 = bringFrontView<View_BBSSchduleManage2>("View_BBSSchduleManage2", false); break;
                 //case "presetBarItem": view_BBSPresetManage = bringFrontView<View_BBSPresetManage>("View_BBSPresetManage", false); break;
                 case "presetBarItem": view_BBSPresetManage2 = bringFrontView<View_BBSPresetManage2>("View_BBSPresetManage2", false); break;
-                //case "groupBarItem": view_BBSGroupManage = bringFrontView<View_BBSGroupManage>("View_BBSGroupManage", false); break;
-                case "groupBarItem": view_BBSGroupManage2 = bringFrontView<View_BBSGroupManage2>("View_BBSGroupManage2", false); break;
+                case "groupBarItem": view_BBSGroupManage = bringFrontView<View_BBSGroupManage>("View_BBSGroupManage", false); break;
+                //case "groupBarItem": view_BBSGroupManage2 = bringFrontView<View_BBSGroupManage2>("View_BBSGroupManage2", false); break;
                 case "iotApplicationBarItem": view_BBSIotApplication = bringFrontView<View_BBSIoTApplication>("View_BBSIoTApplication", false); break;
                 case "musicConfigurationBarItem": view_BBSMusicManage = bringFrontView<View_BBSMusicManage>("View_BBSMusicManage", false); break;
                 case "holidayBarItem": view_BBSHolidayManage = bringFrontView<View_BBSHolidayManage>("View_BBSHolidayManage", false); break;
