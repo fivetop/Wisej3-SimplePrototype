@@ -204,8 +204,8 @@ namespace pa
             try
             {
                 var t1 = g.mainWindow.EMServerRow;
-                t1.state = "On-Line";
-                t1.state_old = "On-Line";
+                t1.state = "ONLINE";
+                t1.state_old = "ONLINE";
                 t1.com_gpio = g._EMClient.GPIOPort;
                 t1.com_gpio_state = g._EMClient.com_gpio_state;
                 t1.com_Rtype = g._EMClient.Rport;
