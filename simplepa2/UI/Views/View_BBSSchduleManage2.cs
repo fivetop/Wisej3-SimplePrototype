@@ -155,6 +155,11 @@ namespace simplepa2.UI.Views
 
         private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
         {
+            string site = comp_Site1.selectedItem;
+
+            string f2 = "EMNAME='" + site + "'";
+            schduleBindingSource.Filter = f2;
+
             reDraw();
         }
 
