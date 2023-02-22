@@ -11,17 +11,21 @@ namespace simplepa2.UI.Views
     {
         private Popup_BBCZoneForm pop_BBCZoneForm;
         private Form_BBCZoneImport form_BBCZoneImport;
+        private Comp_ZoneBasePanel comp_ZoneBasePanel;
 
-        private List<Comp_ZoneBuildingPanels> buildPanelDataList;
+        private List<Comp_ZoneBuildingPanels> buildingPanelPointerList;
 
 
         private string comboWholeText = "전체";
         private string strSelectRelease = "선택해제";
         private string strSelectAll = "모두선택";
-        private bool bZoneSelectAll = false; 
+        private bool bZoneSelectAll = false;
 
-        private bool NOT_USE_BUILDING_CHECK_BOX = false;
+        private bool ZONE_CHECK_BOX_VISIBLE = true;
+        private bool ZONE_CHECK_BOX_UNVISIBLE = false;
 
+        private bool ZONE_LIST_WITH_ADD_BUTTON = true;
+        private bool ZONE_LIST_WITH_NO_ADD_BUTTON = false;
 
         public View_BBCZone()
         {
@@ -30,22 +34,22 @@ namespace simplepa2.UI.Views
 
         public void reDraw()
         {
-            // DB Call
+            // DB Call for Combo only 
             dbInit();
 
             // Combo Setup, 이후 데이터는 콤보 셋업에 따라 동작함 
             comboUISetup();
 
+            // Zone Base 로드 
+            zoneUISetup();
 
         }
 
         public void dbInit()
         {
             try
-            {
-                this.assetsTableAdapter1.Fill(this.dataSet11.Assets);
-                this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
-                this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
+            {                
+                this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);             
             }
             catch(Exception e)
             {
@@ -61,6 +65,38 @@ namespace simplepa2.UI.Views
             
         }
 
+        public void zoneUISetup()
+        {
+            if(comp_ZoneBasePanel == null)
+            {
+                comp_ZoneBasePanel = new Comp_ZoneBasePanel();
+            }
+            this.pn_Contents.Controls.Add(comp_ZoneBasePanel);
+        }
+
+        private void DeleteAllZoneRecord()
+        {
+            try
+            {
+                if (MessageBox.Show("모든 선번 및 관련 데이터를 모두 삭제하시겠습니까?",
+                     icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    assetPresetGroupsTableAdapter1.DeleteAllQuery();
+                    assetGroupsTableAdapter1.DeleteAllQuery();
+                    assetsTableAdapter1.DeleteAllQuery();
+                    bsTreeTableAdapter1.DeleteAllQuery();
+                    emServerTableAdapter1.DeleteAllQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
+            }
+
+            // DB Call, Application 전체 Drawing 필요
+            gweb.mainFrame.reDraw();
+        }
+
         /* 로딩 버튼을 누른경우 */
         private void bt_SelectLoading_Click(object sender, EventArgs e)
         {
@@ -69,40 +105,15 @@ namespace simplepa2.UI.Views
             comboUISetup();
         }
 
-        private List<Comp_ZoneBuildingPanels> buildingDataUISetup(string selectedItem, bool isCheckBoxSetup)
+        private void buildingDataUISetup(string selectedItem, bool isCheckBoxSetup, bool isAddButtonSetup)
         {
-            List<Comp_ZoneBuildingPanels> dataList = new List<Comp_ZoneBuildingPanels>();
-
-            // 빌딩 데이터 가져오기
-            DataRow[] buildList;
-            
-            if(selectedItem.Equals("전체"))
+            if(comp_ZoneBasePanel == null)
             {
-                buildList = this.dataSet11.AssetsSitenBuilding.Select();
-            }
-            else
-            {
-                buildList = this.dataSet11.AssetsSitenBuilding.Select("emServer = '" + selectedItem + "'");
-            }
-            
-            
-            // 기존 패널 클리어
-            this.pn_Contents.Controls.Clear();
-
-            // 각 빌딩 데이터 셋을 Building UI에 넣고 Panel에 생성 
-            foreach (DataRow dr in buildList)
-            {
-                string buildName = (dr as DataSet1.AssetsSitenBuildingRow).building;
-                Comp_ZoneBuildingPanels uiCZB = new Comp_ZoneBuildingPanels(buildName, this.dataSet11.Assets.Select("building = '" + buildName + "'"), NOT_USE_BUILDING_CHECK_BOX);
-
-                dataList.Add(uiCZB);                
-
-                this.pn_Contents.Controls.Add(uiCZB);
-                this.pn_Contents.Controls.Add(new Comp_GroupNameSpacer());
-
+                comp_ZoneBasePanel = new Comp_ZoneBasePanel();
             }
 
-            return dataList;
+           comp_ZoneBasePanel.buildingDataUISetup(selectedItem, isCheckBoxSetup, isAddButtonSetup);               
+            
         }        
 
         private void popTestButton_Click(object sender, EventArgs e)
@@ -201,36 +212,12 @@ namespace simplepa2.UI.Views
                 AlertBox.Show("LAW TEXT : 예외 " + this.ToString() +  e2.ToString());
                 selectedItem = null;
                 return;
-            }
-
-            this.assetsSitenBuildingTableAdapter1.Fill(this.dataSet11.AssetsSitenBuilding);
-            this.buildPanelDataList = buildingDataUISetup(selectedItem, NOT_USE_BUILDING_CHECK_BOX);
+            }            
+            
+            buildingDataUISetup(selectedItem, ZONE_CHECK_BOX_UNVISIBLE, ZONE_LIST_WITH_NO_ADD_BUTTON);
 
         }
 
-        private void DeleteAllZoneRecord()
-        {
-            try
-            {                
-                   if (MessageBox.Show("모든 선번 및 관련 데이터를 모두 삭제하시겠습니까?",
-                        icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                    assetPresetGroupsTableAdapter1.DeleteAllQuery();
-                    assetGroupsTableAdapter1.DeleteAllQuery();
-                    assetsTableAdapter1.DeleteAllQuery();
-                    bsTreeTableAdapter1.DeleteAllQuery();
-                    emServerTableAdapter1.DeleteAllQuery();
-                    
-                }                
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", icon: MessageBoxIcon.Error, modal: false);
-            }
 
-            // DB Call, Application 전체 Drawing 필요
-            gweb.mainFrame.reDraw();
-        }
     }
 }

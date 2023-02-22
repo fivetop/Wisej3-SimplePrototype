@@ -32,7 +32,7 @@
             this.pn_Building = new Wisej.Web.Panel();
             this.panel1 = new Wisej.Web.Panel();
             this.lb_buildingName = new Wisej.Web.Label();
-            this.ch_floor = new Wisej.Web.CheckBox();
+            this.ch_building = new Wisej.Web.CheckBox();
             this.pn_Building.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
             this.panel1.Controls.Add(this.lb_buildingName);
-            this.panel1.Controls.Add(this.ch_floor);
+            this.panel1.Controls.Add(this.ch_building);
             this.panel1.Dock = Wisej.Web.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(5, 0);
             this.panel1.Name = "panel1";
@@ -78,7 +78,7 @@
             this.lb_buildingName.BackColor = System.Drawing.Color.Transparent;
             this.lb_buildingName.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lb_buildingName.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.lb_buildingName.Location = new System.Drawing.Point(-1, 5);
+            this.lb_buildingName.Location = new System.Drawing.Point(-1, 4);
             this.lb_buildingName.Margin = new Wisej.Web.Padding(0);
             this.lb_buildingName.Name = "lb_buildingName";
             this.lb_buildingName.Size = new System.Drawing.Size(90, 24);
@@ -86,18 +86,19 @@
             this.lb_buildingName.Text = "건물명";
             this.lb_buildingName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ch_floor
+            // ch_building
             // 
-            this.ch_floor.Anchor = Wisej.Web.AnchorStyles.Left;
-            this.ch_floor.BackColor = System.Drawing.Color.Transparent;
-            this.ch_floor.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.ch_floor.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.ch_floor.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.ch_floor.Location = new System.Drawing.Point(15, 29);
-            this.ch_floor.Name = "ch_floor";
-            this.ch_floor.Size = new System.Drawing.Size(60, 23);
-            this.ch_floor.TabIndex = 137;
-            this.ch_floor.Text = "선택";
+            this.ch_building.Anchor = Wisej.Web.AnchorStyles.Left;
+            this.ch_building.BackColor = System.Drawing.Color.Transparent;
+            this.ch_building.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
+            this.ch_building.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.ch_building.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
+            this.ch_building.Location = new System.Drawing.Point(15, 29);
+            this.ch_building.Name = "ch_building";
+            this.ch_building.Size = new System.Drawing.Size(60, 23);
+            this.ch_building.TabIndex = 137;
+            this.ch_building.Text = "선택";
+            this.ch_building.CheckedChanged += new System.EventHandler(this.ch_building_CheckedChanged);
             // 
             // Comp_ZoneBuildingPanels
             // 
@@ -120,7 +121,7 @@
         private Wisej.Web.Panel pn_FloorZone;
         private Wisej.Web.Panel pn_Building;
         private Wisej.Web.Label lb_buildingName;
-        private Wisej.Web.CheckBox ch_floor;
+        private Wisej.Web.CheckBox ch_building;
         private Wisej.Web.Panel panel1;
     }
 }

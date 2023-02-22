@@ -1,4 +1,5 @@
-﻿using simplepa2.UI.Popups;
+﻿using simplepa2.UI.Pages;
+using simplepa2.UI.Popups;
 using simplepa2.UI.Views;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,9 @@ namespace simplepa2.UI.Components
     public partial class Comp_ZoneFloorCardList : Wisej.Web.UserControl
     {
         private Popup_BBCZoneForm pop_BBCZoneForm;
+
+        private object dockObject;
+
 
         private List<Comp_ZoneButton> zoneList;
         private bool bAddButton = false;
@@ -21,9 +25,11 @@ namespace simplepa2.UI.Components
             InitializeComponent();
         }
 
-        public Comp_ZoneFloorCardList(Zone_DataList dataList, bool isAddButton, bool isCheckBox)
+        public Comp_ZoneFloorCardList(object popupDockObject, Zone_DataList dataList, bool isAddButton, bool isCheckBox)
         {
             InitializeComponent();
+
+            this.dockObject = popupDockObject;
 
             if (dataList == null)
                 return;
@@ -85,16 +91,15 @@ namespace simplepa2.UI.Components
             if (this.pop_BBCZoneForm == null)
                 this.pop_BBCZoneForm = new Popup_BBCZoneForm()
                 {
-                    Alignment = Placement.BottomRight,
-                    Height = this.Parent.Parent.Height
+                    Alignment = Placement.BottomRight                    
                 };
 
             if (this.pop_BBCZoneForm.Visible)
                 this.pop_BBCZoneForm.Close();
             else
             {
-                this.pop_BBCZoneForm.Height = this.Parent.Parent.Parent.Parent.Parent.Height;
-                this.pop_BBCZoneForm.ShowPopup(this.Parent.Parent.Parent.Parent);
+                this.pop_BBCZoneForm.Height = Application.MainPage.Height;
+                this.pop_BBCZoneForm.ShowPopup(this.dockObject as Comp_ZoneBasePanel);
             }
 
         }

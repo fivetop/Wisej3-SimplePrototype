@@ -32,7 +32,6 @@
             this.pn_ViewMain = new Wisej.Web.Panel();
             this.pn_Contents = new Wisej.Web.Panel();
             this.pn_TopBar = new Wisej.Web.Panel();
-            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.bt_WholeSelect = new Wisej.Web.Button();
             this.bt_dataDelete = new Wisej.Web.Button();
             this.bt_StoreData = new Wisej.Web.Button();
@@ -48,6 +47,7 @@
             this.emServerTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerTableAdapter();
             this.bsTreeTableAdapter1 = new simplepa2.DataSet1TableAdapters.BSTreeTableAdapter();
             this.emServerNDeviceNameTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerNDeviceNameTableAdapter();
+            this.comp_Site1 = new simplepa2.UI.Components.Comp_Site();
             this.pn_ViewMain.SuspendLayout();
             this.pn_TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -89,13 +89,6 @@
             this.pn_TopBar.Name = "pn_TopBar";
             this.pn_TopBar.Size = new System.Drawing.Size(1320, 52);
             this.pn_TopBar.TabIndex = 51;
-            // 
-            // comp_Site1
-            // 
-            this.comp_Site1.Location = new System.Drawing.Point(0, -1);
-            this.comp_Site1.Name = "comp_Site1";
-            this.comp_Site1.TabIndex = 95;
-            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // bt_WholeSelect
             // 
@@ -213,6 +206,13 @@
             // emServerNDeviceNameTableAdapter1
             // 
             this.emServerNDeviceNameTableAdapter1.ClearBeforeFill = true;
+            // 
+            // comp_Site1
+            // 
+            this.comp_Site1.Location = new System.Drawing.Point(0, -1);
+            this.comp_Site1.Name = "comp_Site1";
+            this.comp_Site1.TabIndex = 95;
+            this.comp_Site1.SelectedValueChanged += new System.EventHandler(this.comp_Site1_SelectedValueChanged);
             // 
             // View_BBCZone
             // 

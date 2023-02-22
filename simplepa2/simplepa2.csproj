@@ -176,6 +176,9 @@
     <EmbeddedResource Include="UI\Components\Comp_BBSAnchorPresetQuick.resx">
       <DependentUpon>Comp_BBSAnchorPresetQuick.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_BBSAnchorZone.resx">
+      <DependentUpon>Comp_BBSAnchorZone.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_BBSDeckButton.resx">
       <DependentUpon>Comp_BBSDeckButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -1031,6 +1034,12 @@
     </Compile>
     <Compile Include="UI\Components\Comp_BBSAnchorPresetQuick.Designer.cs">
       <DependentUpon>Comp_BBSAnchorPresetQuick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_BBSAnchorZone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_BBSAnchorZone.Designer.cs">
+      <DependentUpon>Comp_BBSAnchorZone.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_BBSDeckButton.cs">
       <SubType>Component</SubType>
