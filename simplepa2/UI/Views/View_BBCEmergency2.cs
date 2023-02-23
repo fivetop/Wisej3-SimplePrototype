@@ -17,7 +17,10 @@ namespace simplepa2.UI.Views
 
         private void BSEMManager_Load(object sender, EventArgs e)
         {
+            gweb.mainFrame.dBSqlite.SaveEMBs();
             reDraw();
+            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.reDraw();
         }
 
         private void disp_gridview()
@@ -26,14 +29,8 @@ namespace simplepa2.UI.Views
 
         internal void reDraw()
         {
-            gweb.mainFrame.dBSqlite.SaveEMBs();
             this.deviceTableAdapter.Fill(this.dataSet1.Device);
             this.emBsTableAdapter.Fill(this.dataSet1.EMBs);
-
-            disp_gridview();
-
-            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
-            comp_Site1.reDraw();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

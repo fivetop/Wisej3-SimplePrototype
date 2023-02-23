@@ -31,7 +31,7 @@ namespace simplepa2.UI.Views
 
 		private void Timer_Tick(object sender, EventArgs e)
 		{
-			reDraw();
+			//reDraw();
 		}
 
 		internal void reDraw()
