@@ -60,6 +60,8 @@ namespace LSNAudio
             playcnt++;
             int musiccnt = m1.Count;
 
+            g1.Log("play count : " + m1.Count.ToString() + " : "+playcnt.ToString());
+
             if (playcnt >= musiccnt)
             {
                 m1.Clear();
@@ -152,7 +154,9 @@ namespace LSNAudio
 
         private void ReadMulti()
         {
-            m1.Clear();
+            if (m1.Count > 0)
+                return;
+            //m1.Clear();
             g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
             g1._bstreec = g1.dBSqlite.Dbread<List<BSTreeC>>("BSTreeCs");
             int bstreeid = idno - 100000;
@@ -168,11 +172,14 @@ namespace LSNAudio
                          duration = p2.duration,
                      };
             m1 = t2.ToList();
+            g1.Log("play count : " + m1.Count.ToString());
         }
 
         private void ReadMultiSch()
         {
-            m1.Clear();
+            if (m1.Count > 0)
+                return;
+            //m1.Clear();
             g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
             g1._schdulec = g1.dBSqlite.Dbread<List<SchduleC>>("SchduleCs");
             int bstreeid = idno - 200000;

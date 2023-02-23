@@ -318,24 +318,10 @@ namespace simplepa2.UI.Pages
 
         #region // signal r 처리 
 
-        // 프리셋 메시지 올 경우 화면 출력용 
-        // 8채널과 링크 출력용 
-        public void LabelON(int id, bool v)
-        {
-            if (id == 9 && v == false)
-            {
-                //AlertBox.Show("SignalR Client Disconnected.");
-                AlertBox.Show("<b>SignalR Client</b> Disconnected.", icon: MessageBoxIcon.Warning, alignment: ContentAlignment.MiddleCenter);
-
-            }
-        }
-
-
         internal void RcvSigR(SignalRMsg msg1)
         {
             string addinfo = msg1.EMNAME;
             bool disp = true;
-            LabelON(9, true);
 
             switch (msg1.Msgtype)
             {
@@ -533,8 +519,13 @@ namespace simplepa2.UI.Pages
             return true;
         }
 
+
         #endregion
 
+        private void mainMenuBar_TitleClick(object sender, EventArgs e)
+        {
+            this.mainMenuBar.CompactView = !this.mainMenuBar.CompactView;
 
+        }
     }
 }
