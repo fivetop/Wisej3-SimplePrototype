@@ -495,6 +495,7 @@ namespace pa
 
         }
 
+        // 화재발생 이벤트 
         public void Eventvms(string event_text, string base_text, string state)
         {
             if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)

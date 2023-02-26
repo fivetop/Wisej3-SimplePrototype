@@ -55,6 +55,8 @@
             this.split_MainFrame = new Wisej.Web.SplitContainer();
             this.split_TopFrame = new Wisej.Web.SplitContainer();
             this.DevicelistView1 = new Wisej.Web.ListView();
+            this.panel2 = new Wisej.Web.Panel();
+            this.label1 = new Wisej.Web.Label();
             this.split_BottomFrame = new Wisej.Web.SplitContainer();
             this.panel1 = new Wisej.Web.Panel();
             this.evdataGridView1 = new Wisej.Web.DataGridView();
@@ -81,8 +83,6 @@
             this.bsTreeBindingSource = new Wisej.Web.BindingSource(this.components);
             this.eventdeviceTableAdapter = new simplepa2.DataSet1TableAdapters.EventdeviceTableAdapter();
             this.membs = new Wisej.Web.BindingSource(this.components);
-            this.panel2 = new Wisej.Web.Panel();
-            this.label1 = new Wisej.Web.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
@@ -93,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.split_TopFrame)).BeginInit();
             this.split_TopFrame.Panel2.SuspendLayout();
             this.split_TopFrame.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.split_BottomFrame)).BeginInit();
             this.split_BottomFrame.Panel1.SuspendLayout();
             this.split_BottomFrame.Panel2.SuspendLayout();
@@ -106,7 +107,6 @@
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTreeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList3
@@ -227,6 +227,25 @@
             this.DevicelistView1.StateImageList = this.imageList1;
             this.DevicelistView1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = Wisej.Web.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(20, 20);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 43);
+            this.panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 30);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "장비 정보";
+            // 
             // split_BottomFrame
             // 
             this.split_BottomFrame.Dock = Wisej.Web.DockStyle.Fill;
@@ -308,20 +327,21 @@
             this.colEvent_Text.DataPropertyName = "event_text";
             this.colEvent_Text.HeaderText = "발생 내용";
             this.colEvent_Text.Name = "colEvent_Text";
-            this.colEvent_Text.Width = 150;
+            this.colEvent_Text.Width = 100;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "path";
             this.dataGridViewTextBoxColumn4.HeaderText = "발생 지역";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 150;
+            this.dataGridViewTextBoxColumn4.Width = 100;
             // 
             // colState
             // 
             this.colState.DataPropertyName = "state";
             this.colState.HeaderText = "상태";
             this.colState.Name = "colState";
+            this.colState.Width = 220;
             // 
             // panel11
             // 
@@ -468,25 +488,6 @@
             // 
             this.eventdeviceTableAdapter.ClearBeforeFill = true;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = Wisej.Web.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(20, 20);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 43);
-            this.panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 30);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "장비 정보";
-            // 
             // View_DashBoard2
             // 
             this.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
@@ -506,6 +507,7 @@
             this.split_TopFrame.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.split_TopFrame)).EndInit();
             this.split_TopFrame.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.split_BottomFrame.Panel1.ResumeLayout(false);
             this.split_BottomFrame.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.split_BottomFrame)).EndInit();
@@ -519,7 +521,6 @@
             this.panel13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsTreeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

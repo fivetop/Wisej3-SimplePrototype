@@ -164,7 +164,7 @@ namespace pa
                 case 6:
                     break;
             }
-
+            /*
             string type1 = "";
             switch (v2)
             {
@@ -191,6 +191,7 @@ namespace pa
             {
                 Console.WriteLine(e1.Message);
             }
+            */
         }
 
 

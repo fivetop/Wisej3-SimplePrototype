@@ -335,7 +335,21 @@ namespace simplepa2.UI.Pages
                     view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
-                    dBSqlite.Eventvm("EM_FIRE", msg1.message, msg1.seqno.ToString());
+                    switch (msg1.seqno)
+                    {
+                        case 1:
+                            dBSqlite.Eventvm("화재발생수신", msg1.state +"층", msg1.message);
+                            break;
+                        case 2:
+                            dBSqlite.Eventvm("화재복구수신", msg1.state + "층", msg1.message);
+                            break;
+                        case 3:
+                            dBSqlite.Eventvm("시험화재발생", "0층 시험", msg1.message);
+                            break;
+                        case 4:
+                            dBSqlite.Eventvm("시험화재복구", "0층 시험", msg1.message );
+                            break;
+                    }
                     view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_PRESET_SW:
