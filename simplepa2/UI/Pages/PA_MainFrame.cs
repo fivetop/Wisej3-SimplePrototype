@@ -382,13 +382,16 @@ namespace simplepa2.UI.Pages
                     view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.ePlayCheck :
+                    disp = false;
                     break;
                 case eSignalRMsgType.ePlayEnd:
+                    disp = false;
                     view_DashBoard2.reDraw2();
                     view_BBSAnchor2.refresh();
                     view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.ePlaying:
+                    disp = false;
                     view_DashBoard2.reDraw2();
                     view_BBCEMManager2.reDraw();
                     break;
@@ -398,6 +401,7 @@ namespace simplepa2.UI.Pages
                 case eSignalRMsgType.eLoginUser:
                     break;
                 case eSignalRMsgType.eLogoutUser:
+                    disp = false;
                     break;
                 case eSignalRMsgType.eScanEM:
                     view_BBSEMManage2.reDraw();

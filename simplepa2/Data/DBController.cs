@@ -81,9 +81,6 @@ namespace simplepa2
                 gweb.Log(e1.Message);
             }
         }
-
-
-
         #endregion
 
 

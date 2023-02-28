@@ -24,6 +24,7 @@ namespace simplepa2.UI.Views
 			this.dataGridView2.RowCount = 10;
 
 			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
+			this.schduleTableAdapter1.Fill(this.dataSet1.Schdule);
 
 			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
 			comp_Site1.reDraw();
@@ -182,6 +183,8 @@ namespace simplepa2.UI.Views
 
 			if (selectedItem == "") return;
 			assetsBindingSource.Filter = ("emserver = '" + selectedItem + "'");
+			schduleBindingSource.Filter = ("emname = '" + selectedItem + "'");
+			schduleBindingSource.Sort = "tss";
 
 			comp_UAsset1.Filter = selectedItem;
 			comp_UAsset1.assetsBindingSource = assetsBindingSource;
