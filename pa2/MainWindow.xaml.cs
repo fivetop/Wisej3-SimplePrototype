@@ -317,6 +317,7 @@ namespace pa
 
             foreach (var t1 in s1)
             {
+                if (t1.EMNAME != g._EMClient.EM_NAME) continue;
                 SchduleMem mem = new SchduleMem();
                 mem = t1;
                 TimeSpan st = new TimeSpan();

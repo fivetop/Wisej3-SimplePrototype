@@ -5,6 +5,7 @@ using System;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace pa
@@ -15,6 +16,7 @@ namespace pa
         //public PA_MainFrame owner { get; set; } = null;
 		private HubConnection hubConnection;
         private bool Hub_Disconnect_Flag = false;
+        private int retry = 0;
 
         public event EventHandler<SignalRMsg> eRcvSigR;
         public event EventHandler eConnect;
@@ -182,6 +184,13 @@ namespace pa
 
         void Run()
         {
+            retry++;
+            if (retry > 3)
+            {
+                //Application.Current.Shutdown();
+                System.Environment.Exit(0);
+                return;
+            }
             Thread.Sleep(10000); // 30000
             ConnectToSignalR();
             t1.Abort();
@@ -201,9 +210,9 @@ namespace pa
 
         public void MessageC2S2(SignalRMsg message)
         {
-            if (this.State == Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
-                this.proxy.Invoke("MessageC2S2", message);
+            if (this.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected) return;
+            retry = 0;
+            this.proxy.Invoke("MessageC2S2", message);
         }
-
     }
 }

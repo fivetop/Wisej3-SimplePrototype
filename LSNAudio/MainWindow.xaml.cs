@@ -157,8 +157,6 @@ namespace LSNAudio
             if (m1.Count > 0)
                 return;
             //m1.Clear();
-            g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
-            g1._bstreec = g1.dBSqlite.Dbread<List<BSTreeC>>("BSTreeCs");
             int bstreeid = idno - 100000;
             var t1 = g1._bstreec.Where(p => p.BSTreeId == bstreeid);
             var t3 = g1._music;
@@ -180,8 +178,6 @@ namespace LSNAudio
             if (m1.Count > 0)
                 return;
             //m1.Clear();
-            g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
-            g1._schdulec = g1.dBSqlite.Dbread<List<SchduleC>>("SchduleCs");
             int bstreeid = idno - 200000;
             var t1 = g1._schdulec.Where(p => p.SchduleId == bstreeid);
             var t3 = g1._music;
@@ -209,6 +205,10 @@ namespace LSNAudio
         {
             SoundCard soundCard = null;
             IntPtr t2 = new IntPtr(Audiochno);
+
+            g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
+            if (g1._music == null) return false;
+            g1._schdulec = g1.dBSqlite.Dbread<List<SchduleC>>("SchduleCs");
 
             if (idno > 200000)
             {
