@@ -170,7 +170,7 @@ namespace LSNAudio
                          duration = p2.duration,
                      };
             m1 = t2.ToList();
-            g1.Log("play count : " + m1.Count.ToString());
+            g1.Log("play count : " + m1.Count.ToString() + " : " + bstreeid.ToString());
         }
 
         private void ReadMultiSch()
@@ -208,16 +208,19 @@ namespace LSNAudio
 
             g1._music = g1.dBSqlite.Dbread<List<Music>>("Musics");
             if (g1._music == null) return false;
-            g1._schdulec = g1.dBSqlite.Dbread<List<SchduleC>>("SchduleCs");
+
 
             if (idno > 200000)
             {
+                g1._schdulec = g1.dBSqlite.Dbread<List<SchduleC>>("SchduleCs");
                 ReadMultiSch();
             }
             else
             { 
+                g1._bstreec = g1.dBSqlite.Dbread<List<BSTreeC>>("BSTreeCs");
                 ReadMulti();
             }
+            //g1.Log("music & schedulec & btreec : " + g1._music.Count.ToString() + " : " + g1._schdulec.Count.ToString() +" : "+ g1._bstreec.Count.ToString());
 
             if (m1.Count < 1)
             {
