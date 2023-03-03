@@ -3,12 +3,6 @@ using System.IO;
 using System.Threading;
 using System.Windows;
 using gClass;
-using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
-using Microsoft.Owin;
-using Microsoft.Owin.Cors;
-using Microsoft.Owin.Hosting;
-using Owin;
 
 namespace pa
 {
@@ -54,7 +48,7 @@ namespace pa
         {
             g.XMLEMClient(true);
             string str1 = g._EMClient.apppath;
-
+            gl.appPathServer = str1;    
             var directoryInfo = new DirectoryInfo(str1 + "\\" + "Log");
             if (directoryInfo.Exists == false)
                 directoryInfo.Create();
