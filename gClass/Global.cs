@@ -187,7 +187,7 @@ namespace gClass
             try
             {
                 string fn = "svr_" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString();
-                StreamWriter writer = new StreamWriter(File.Open("C:\\SimplePA\\Log\\" + fn + ".txt", FileMode.Append));
+                StreamWriter writer = new StreamWriter(File.Open(appPathServer + "Log\\" + fn + ".txt", FileMode.Append));
                 TextWriterTraceListener listener = new TextWriterTraceListener(writer);
                 //Debug.Listeners.Add(listener);
                 //Debug.WriteLine(string.Format("{0} : {1}", DateTime.Now, str1));

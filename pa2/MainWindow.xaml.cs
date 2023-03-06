@@ -181,47 +181,55 @@ namespace pa
         // 서버 연결후 처리 
         public void Initial_P3()
         {
-            MakeSpeakerIP();
-            ReadMusic();
-            _tray = new TrayIcon();
-            //BSqlite.DBCopy();
+            try
+            {
+                MakeSpeakerIP();
+                ReadMusic();
+                _tray = new TrayIcon();
+                //BSqlite.DBCopy();
 
-            gl.XMLDanteDevice(true);
+                gl.XMLDanteDevice(true);
 
-            //DBCopy();
+                //DBCopy();
 
-            g.Log("DataBase Initial..");
-            //g.Load("SimplePA EM Server가 로딩중입니다..");
-            g.dsp.OnReceiveMessage += Dsp_OnReceiveMessage;
-            // ComPort_Initial();
-            DSPDeviceCheck();
+                g.Log("DataBase Initial..");
+                //g.Load("SimplePA EM Server가 로딩중입니다..");
+                g.dsp.OnReceiveMessage += Dsp_OnReceiveMessage;
+                // ComPort_Initial();
+                DSPDeviceCheck();
 
-            g.Log("Volume Initial..");
-            // 볼륨 초기화 처리  
-            g.Log("multiBS Thread running..");
-            InitVolume();
-            // 다중 방송 초기화 처리 // 시험을 위해 막음 - 서비스시 오픈 처리 
-            //InitMultiBS();
-            //Network_Initial();
-            g.Log("DSP Thread Initial..");
-            // DSP thread start
-            BSThreadClass.Start();
-            UI_Initial();
-            //Networkcard_initial();
-            aThread.Start();
-            bThread.Start();
+                g.Log("Volume Initial..");
+                // 볼륨 초기화 처리  
+                g.Log("multiBS Thread running..");
+                InitVolume();
+                // 다중 방송 초기화 처리 // 시험을 위해 막음 - 서비스시 오픈 처리 
+                //InitMultiBS();
+                //Network_Initial();
+                g.Log("DSP Thread Initial..");
+                // DSP thread start
+                BSThreadClass.Start();
+                UI_Initial();
+                //Networkcard_initial();
+                aThread.Start();
+                bThread.Start();
 
-            systemcheck();
+                systemcheck();
 
-            // 처음 한번은 디비 맟추기 처리 
-            makeDB();
-            MakePlayList(_db); // 예약방송 업데이트
+                // 처음 한번은 디비 맟추기 처리 
+                makeDB();
+                MakePlayList(_db); // 예약방송 업데이트
 
-            T1Reservedtimer.Elapsed += T1Reservedtimer_Elapsed;
-            T1Reservedtimer.Start();
+                T1Reservedtimer.Elapsed += T1Reservedtimer_Elapsed;
+                T1Reservedtimer.Start();
 
-            g.Log("Initialize OK..");
-            dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
+                g.Log("Initialize OK..");
+                dBAccess.Dbupdate<EMServerRow>("EMServers", EMServerRow, EMServerRow.EMServerId);
+            }
+            catch (Exception e1)
+            {
+                g.Log(e1.Message);
+            }
+
         }
 
 
@@ -301,6 +309,7 @@ namespace pa
             catch (Exception e1)
             {
                 T1Reservedtimer_ON = false;
+                g.Log(e1.Message);
             }
             T1Reservedtimer_ON = false;
         }
