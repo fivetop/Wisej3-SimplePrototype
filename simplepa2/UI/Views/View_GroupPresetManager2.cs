@@ -27,7 +27,7 @@ namespace simplepa2.UI.Views
 			var t1 = this.dataSet1.AssetPresetGroups.ToList();
 
 			//gdataGridView1.DataSource = t1;
-			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
+			comp_Site1.dataSet = gweb.dBSqlite.EMServerWithWholeColLoad(1);
 			comp_Site1.reDraw();
 		}
 		#endregion

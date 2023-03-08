@@ -126,14 +126,14 @@ namespace simplepa2.UI.Components
             strFileUploadPath = @"C:\SimplePA2" + "\\Music\\";
 
             this.musicsTableAdapter1.Fill(this.dataSet11.Musics);
-            gweb.mainFrame.dBSqlite.MusicSave();
+            gweb.dBSqlite.MusicSave();
             this.musicsTableAdapter1.Fill(this.dataSet11.Musics);
         }
 
         private void DBInsert(string path)
         {
-            gweb.mainFrame.dBSqlite.DBInit();
-            gweb.mainFrame.dBSqlite.MusicFileSave(strFileUploadPath, filename, tb_description.Text);
+            gweb.dBSqlite.DBInit();
+            gweb.dBSqlite.MusicFileSave(strFileUploadPath, filename, tb_description.Text);
         }
 
         private void mdataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

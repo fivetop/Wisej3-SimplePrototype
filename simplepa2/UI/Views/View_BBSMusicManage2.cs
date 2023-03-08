@@ -31,7 +31,7 @@ namespace simplepa2.UI.Views
               }});", this.mupload1.Handle));
 */
 			this.musicsTableAdapter.Fill(this.dataSet1.Musics);
-			gweb.mainFrame.dBSqlite.MusicSave();
+			gweb.dBSqlite.MusicSave();
 			this.musicsTableAdapter.Fill(this.dataSet1.Musics);
 		}
 
@@ -111,8 +111,8 @@ namespace simplepa2.UI.Views
 
         private void DBInsert(string path)
         {
-            gweb.mainFrame.dBSqlite.DBInit();
-            gweb.mainFrame.dBSqlite.MusicFileSave(strFileUploadPath, filename, "");
+            gweb.dBSqlite.DBInit();
+            gweb.dBSqlite.MusicFileSave(strFileUploadPath, filename, "");
         }
 
     }

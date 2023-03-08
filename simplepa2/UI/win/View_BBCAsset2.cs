@@ -69,7 +69,7 @@ namespace simplepa2.UI.Views
         private void DBInsert(string strFileUploadPath)
         {
             EmSpeakerPositionList _emspl = new EmSpeakerPositionList();
-            gweb.mainFrame.dBSqlite.DBInit();
+            gweb.dBSqlite.DBInit();
 
             string[] d1 = System.IO.File.ReadAllLines(strFileUploadPath, Encoding.GetEncoding(949));
 
@@ -84,11 +84,11 @@ namespace simplepa2.UI.Views
 
             foreach (var t1 in _emspl.child)
             {
-                gweb.mainFrame.dBSqlite.SaveAssets(t1);
-                gweb.mainFrame.dBSqlite.EMServerSave(t1);
-                gweb.mainFrame.dBSqlite.BSTreeSave(t1);
+                gweb.dBSqlite.SaveAssets(t1);
+                gweb.dBSqlite.EMServerSave(t1);
+                gweb.dBSqlite.BSTreeSave(t1);
             }
-            gweb.mainFrame.dBSqlite.AssetPresetSave();
+            gweb.dBSqlite.AssetPresetSave();
         }
 
         private void button1_Click(object sender, EventArgs e)

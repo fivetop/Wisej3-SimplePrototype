@@ -532,7 +532,7 @@ namespace pa
                 em.DeviceName = t3.DeviceName;
                 em.state = t3.state;
                 if(t3.state == "")
-                    em.state = "Off-Line";
+                    em.state = "OFFLINE";
                 em.alarm = 0;
                 em.event_text = t3.ip +" : " + t3.state;
                 //this.Save(em);

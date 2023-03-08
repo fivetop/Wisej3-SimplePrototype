@@ -887,7 +887,7 @@ namespace pa
                 var t2 = _DanteDevice.FirstOrDefault(p => p.DeviceName == t1.DeviceName && p.chspk == t1.ch);
                 if (t2 != null)
                 {
-                    t1.state = "On-Line";
+                    t1.state = "ONLINE";
                     t1.ip = t2.ip;
                     // 4440 포트는 사용치 않을 예정임  2021.01.26 romee
                     //AliveChk(t1.ip);

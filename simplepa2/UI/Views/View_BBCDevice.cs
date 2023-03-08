@@ -22,7 +22,7 @@ namespace simplepa2.UI.Views
         private void BSDeviceManager_Load(object sender, EventArgs e)
         {
             reDraw();
-            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.dataSet = gweb.dBSqlite.EMServerWithWholeColLoad();
             comp_Site1.reDraw();
         }
 

@@ -152,8 +152,8 @@ namespace simplepa2.UI.Views
 		private void 방송중지로직()
 		{
 			if (bSTreeid == 0) return;
-			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
-			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
+			gweb.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
+			gweb.dBSqlite.BSTreeCRemove(bSTreeid);
 			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
 		}
 

@@ -26,7 +26,7 @@ namespace simplepa2.UI.Views
             this.presetTableAdapter1.Fill(this.dataSet11.Preset);
             this.presetCTableAdapter1.Fill(this.dataSet11.PresetC);
 
-            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
+            comp_Site1.dataSet = gweb.dBSqlite.EMServerWithWholeColLoad(1);
             comp_Site1.reDraw();
         }
 
@@ -83,7 +83,7 @@ namespace simplepa2.UI.Views
         // 카드 선택을 하면 프리셋 차일드를 우측에 보여준다.
         private void dispDetail()
         {
-            PresetRow r1 = gweb.mainFrame.dBSqlite.Ds1.Preset.FirstOrDefault(p=>p.PresetId == SelPresetId);
+            PresetRow r1 = gweb.dBSqlite.Ds1.Preset.FirstOrDefault(p=>p.PresetId == SelPresetId);
             pName.Text = r1.Name;
             puser_name.Text = r1.user_name;
             comp_Site1.selectedItem = r1.EMNAME;
@@ -105,11 +105,11 @@ namespace simplepa2.UI.Views
         private List<AssetsRow> PresetCGetAssets()
         {
             List<AssetsRow> list = new List<AssetsRow>();
-            var rt1 = gweb.mainFrame.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == SelPresetId && p.MusicId == 0);
+            var rt1 = gweb.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == SelPresetId && p.MusicId == 0);
 
             foreach (var r in rt1)
             {
-                var m1 = gweb.mainFrame.dBSqlite.Ds1.Assets.FirstOrDefault(p => p.AssetId == r.AssetId);
+                var m1 = gweb.dBSqlite.Ds1.Assets.FirstOrDefault(p => p.AssetId == r.AssetId);
                 if(m1 == null) continue;
                 list.Add(m1);
             }
@@ -120,11 +120,11 @@ namespace simplepa2.UI.Views
         private List<MusicsRow> PresetCGetMusic()
         {
             List<MusicsRow> list = new List<MusicsRow>();
-            var rt1 = gweb.mainFrame.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == SelPresetId && p.AssetId == 0);
+            var rt1 = gweb.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == SelPresetId && p.AssetId == 0);
 
             foreach (var r in rt1)
             {
-                var m1 = gweb.mainFrame.dBSqlite.Ds1.Musics.FirstOrDefault(p => p.MusicId == r.MusicId);
+                var m1 = gweb.dBSqlite.Ds1.Musics.FirstOrDefault(p => p.MusicId == r.MusicId);
                 if (m1 == null) continue;
                 list.Add(m1);
             }
@@ -174,23 +174,23 @@ namespace simplepa2.UI.Views
 
         private async void PresetUpdate()
         {
-            gweb.mainFrame.dBSqlite.DBInit();
+            gweb.dBSqlite.DBInit();
             if (comp_Music1.SelMusic.Count < 1 || comp_UGroup1.SelAssets().Count < 1)
             {
                 AlertBox.Show("음원이나 지역이 선택 되어야 합니다.");
                 return;
             }
-            PresetRow r1 = await gweb.mainFrame.dBSqlite.PresetGet(pName.Text);
+            PresetRow r1 = await gweb.dBSqlite.PresetGet(pName.Text);
             r1.GroupName = comp_UGroup1.GroupFilter;
-            await gweb.mainFrame.dBSqlite.PresetUpdate(r1);
-            await gweb.mainFrame.dBSqlite.PresetCDelete(r1.PresetId);
-            await gweb.mainFrame.dBSqlite.PresetCSave(r1, comp_Music1.SelMusic, comp_UGroup1.SelAssets());
+            await gweb.dBSqlite.PresetUpdate(r1);
+            await gweb.dBSqlite.PresetCDelete(r1.PresetId);
+            await gweb.dBSqlite.PresetCSave(r1, comp_Music1.SelMusic, comp_UGroup1.SelAssets());
         }
 
         private async void PresetSave()
         {
-            gweb.mainFrame.dBSqlite.DBInit();
-            if (await gweb.mainFrame.dBSqlite.PresetGet(pName.Text) != null)
+            gweb.dBSqlite.DBInit();
+            if (await gweb.dBSqlite.PresetGet(pName.Text) != null)
             {
                 AlertBox.Show("동일한 이름이 존재 합니다.");
                 return;
@@ -202,19 +202,19 @@ namespace simplepa2.UI.Views
                 return;
             }
 
-            PresetRow r1 = gweb.mainFrame.dBSqlite.Ds1.Preset.NewPresetRow();
+            PresetRow r1 = gweb.dBSqlite.Ds1.Preset.NewPresetRow();
             r1.Name = pName.Text;
             r1.user_name = puser_name.Text;
             r1.EMNAME = comp_Site1.selectedItem;
             r1.GroupName = comp_UGroup1.GroupFilter;
-            await gweb.mainFrame.dBSqlite.PresetSave(r1);
-            PresetRow r2 = await gweb.mainFrame.dBSqlite.PresetGet(pName.Text);
+            await gweb.dBSqlite.PresetSave(r1);
+            PresetRow r2 = await gweb.dBSqlite.PresetGet(pName.Text);
             if (r2 == null)
             {
                 AlertBox.Show("네트웍 상태를 확인 바랍니다.");
                 return;
             }
-            await gweb.mainFrame.dBSqlite.PresetCSave(r2, comp_Music1.SelMusic, comp_UGroup1.SelAssets());
+            await gweb.dBSqlite.PresetCSave(r2, comp_Music1.SelMusic, comp_UGroup1.SelAssets());
         }
 
         // 삭제 
@@ -236,11 +236,11 @@ namespace simplepa2.UI.Views
 
         private async void DeleteData()
         {
-            PresetRow r1 = await gweb.mainFrame.dBSqlite.PresetGet(pName.Text);
+            PresetRow r1 = await gweb.dBSqlite.PresetGet(pName.Text);
             if (r1 == null) return;
-            if (await gweb.mainFrame.dBSqlite.PresetCDelete(r1.PresetId))
+            if (await gweb.dBSqlite.PresetCDelete(r1.PresetId))
             { 
-                await gweb.mainFrame.dBSqlite.PresetDelete(r1);
+                await gweb.dBSqlite.PresetDelete(r1);
             }
         }
         #endregion

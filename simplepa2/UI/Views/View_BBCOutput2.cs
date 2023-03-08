@@ -22,7 +22,7 @@ namespace simplepa2.UI.Views
             this.deviceTableAdapter.Fill(this.dataSet1.Device);
             disp_gridview();
 
-            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.dataSet = gweb.dBSqlite.EMServerWithWholeColLoad();
             comp_Site1.reDraw();
         }
 

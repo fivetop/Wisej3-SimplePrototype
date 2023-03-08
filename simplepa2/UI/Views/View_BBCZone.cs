@@ -60,7 +60,7 @@ namespace simplepa2.UI.Views
         public void comboUISetup()
         {
             // cb_SiteName
-            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.dataSet = gweb.dBSqlite.EMServerWithWholeColLoad();
             comp_Site1.reDraw();
             
         }

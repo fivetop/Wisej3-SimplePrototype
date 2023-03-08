@@ -28,7 +28,7 @@ namespace simplepa2.UI.Views
             this.deviceChannelWithDeviceTableAdapter1.Fill(this.dataSet1.DeviceChannelWithDevice);
             this.deviceTableAdapter1.Fill(dataSet1.Device);
 
-            comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
+            comp_Site1.dataSet = gweb.dBSqlite.EMServerWithWholeColLoad();
             comp_Site1.reDraw();
 
             disp_gridview();

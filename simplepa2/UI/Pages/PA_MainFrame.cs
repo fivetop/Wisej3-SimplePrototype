@@ -70,7 +70,7 @@ namespace simplepa2.UI.Pages
         private List<View_BBSAnchor2> listBBSAnchor = new List<View_BBSAnchor2>();  // 다수 방 관리를 위한 View List
 
 
-        public DBController dBSqlite { get; set; } = new DBController(); // DB 처리용 
+        //public DBController dBSqlite { get; set; } = new DBController(); // DB 처리용 
 
         public string user_name { get; set; }
         public string login_id { get; set; }
@@ -80,8 +80,7 @@ namespace simplepa2.UI.Pages
         {
             InitializeComponent();
 
-            dBSqlite.DBInit();
-
+            gweb.dBSqlite.DBInit();
             gweb.mainFrame = this;
             gweb.mgf.Add(this);
 
@@ -124,10 +123,10 @@ namespace simplepa2.UI.Pages
 
             login_id = Application.Session["login_id"];
             user_name = Application.Session["user_name"];
-            dBSqlite.UsertreeGet(login_id);
+            gweb.dBSqlite.UsertreeGet(login_id);
             view_topPanelBar.User(user_name);
             AlertBox.Show("Log-In : " + user_name +"("+ login_id +")");
-            dBSqlite.Eventsyslog("Log-In", user_name, login_id);
+            gweb.dBSqlite.Eventsyslog("Log-In", user_name, login_id);
             openContentsView("dashboardBarItems");
         }
         #endregion
@@ -330,24 +329,24 @@ namespace simplepa2.UI.Pages
                         addinfo = "ONLINE";
                     else
                         addinfo = "OFFLINE";
-                    dBSqlite.Eventsyslog(addinfo, msg1.EMNAME, addinfo);
-                    dBSqlite.EMServerupdate(msg1.EMNAME, addinfo);
+                    gweb.dBSqlite.Eventsyslog(addinfo, msg1.EMNAME, addinfo);
+                    gweb.dBSqlite.EMServerupdate(msg1.EMNAME, addinfo);
                     view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
                     switch (msg1.seqno)
                     {
                         case 1:
-                            dBSqlite.Eventvm("화재발생수신", msg1.state +"층", msg1.message);
+                            gweb.dBSqlite.Eventvm("화재발생수신", msg1.state +"층", msg1.message);
                             break;
                         case 2:
-                            dBSqlite.Eventvm("화재복구수신", msg1.state + "층", msg1.message);
+                            gweb.dBSqlite.Eventvm("화재복구수신", msg1.state + "층", msg1.message);
                             break;
                         case 3:
-                            dBSqlite.Eventvm("시험화재발생", "0층 시험", msg1.message);
+                            gweb.dBSqlite.Eventvm("시험화재발생", "0층 시험", msg1.message);
                             break;
                         case 4:
-                            dBSqlite.Eventvm("시험화재복구", "0층 시험", msg1.message );
+                            gweb.dBSqlite.Eventvm("시험화재복구", "0층 시험", msg1.message );
                             break;
                     }
                     view_DashBoard2.reDraw();
@@ -364,16 +363,16 @@ namespace simplepa2.UI.Pages
                     switch (msg1.seqno)
                     {
                         case 0:
-                            dBSqlite.Eventpreset(m0, m1, m2);
+                            gweb.dBSqlite.Eventpreset(m0, m1, m2);
                             break;
                         case 1:
                         case 2:
                         case 3:
                         case 4:
-                            dBSqlite.Eventpreset(m0, m1, m2);
+                            gweb.dBSqlite.Eventpreset(m0, m1, m2);
                             break;
                     }
-                    dBSqlite.EMServerupdatePreset(msg1.EMNAME,msg1.seqno, msg1.state);
+                    gweb.dBSqlite.EMServerupdatePreset(msg1.EMNAME,msg1.seqno, msg1.state);
                     view_DashBoard2.reDraw2();
                     if(view_BBSEMManage2 != null) view_BBSEMManage2.reDraw();
                     break;
@@ -409,7 +408,7 @@ namespace simplepa2.UI.Pages
                 case eSignalRMsgType.eFindDSP:
                     if (msg1.state == 1)
                     {
-                        dBSqlite.LinkAssetDevice();
+                        gweb.dBSqlite.LinkAssetDevice();
                         reDraw();
                     }
                     else
@@ -437,7 +436,7 @@ namespace simplepa2.UI.Pages
                 return false;
             }
 
-            var bSTreeRow = gweb.mainFrame.dBSqlite.BSTreeGet(BSTreeId);
+            var bSTreeRow = gweb.dBSqlite.BSTreeGet(BSTreeId);
             SignalRMsg msg1 = new SignalRMsg();
             msg1.user = Application.Session["login_id"];
             msg1.EMNAME = bSTreeRow.EMNAME;

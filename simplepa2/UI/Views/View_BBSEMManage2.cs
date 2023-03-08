@@ -50,8 +50,8 @@ namespace simplepa2.UI.Views
 
             if (t2 == null)
                 return;
-            gweb.mainFrame.dBSqlite.BSTreeUpdate(t2.BSTreeId, "대기");
-            gweb.mainFrame.dBSqlite.BSTreeCRemove(t2.BSTreeId);
+            gweb.dBSqlite.BSTreeUpdate(t2.BSTreeId, "대기");
+            gweb.dBSqlite.BSTreeCRemove(t2.BSTreeId);
 
             this.bSTreeTableAdapter.Fill(this.dataSet1.BSTree);
             this.bsTreeCTableAdapter.Fill(this.dataSet1.BSTreeC);

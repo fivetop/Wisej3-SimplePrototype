@@ -29,7 +29,7 @@ namespace simplepa2.UI.Views
 			this.assetGroupsTableAdapter.Fill(this.dataSet1.AssetGroups);
 			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 
-			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
+			comp_Site1.dataSet = gweb.dBSqlite.EMServerWithWholeColLoad(1);
 			comp_Site1.reDraw();
 		}
 		#endregion

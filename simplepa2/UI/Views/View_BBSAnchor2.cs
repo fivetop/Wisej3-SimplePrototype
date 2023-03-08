@@ -26,7 +26,7 @@ namespace simplepa2.UI.Views
 			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 			this.schduleTableAdapter1.Fill(this.dataSet1.Schdule);
 
-			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad(1);
+			comp_Site1.dataSet = gweb.dBSqlite.EMServerWithWholeColLoad(1);
 			comp_Site1.reDraw();
 		}
 
@@ -67,7 +67,7 @@ namespace simplepa2.UI.Views
 				return;
 			}
 
-			int ret = gweb.mainFrame.dBSqlite.EMServerGetState(SelAsset[0]);
+			int ret = gweb.dBSqlite.EMServerGetState(SelAsset[0]);
 
 			if (ret == 0)
 			{
@@ -76,7 +76,7 @@ namespace simplepa2.UI.Views
 			}
 
 			// 선택한 지역에 방송중인지 점검 
-			string ret1 = gweb.mainFrame.dBSqlite.BSTreeCCheck(SelAsset);
+			string ret1 = gweb.dBSqlite.BSTreeCCheck(SelAsset);
 
 			if (ret1 != "")
 			{
@@ -101,11 +101,11 @@ namespace simplepa2.UI.Views
 		// 5. 버튼 상태 변경 
 		private async void 방송처리로직()
 		{
-			bSTreeid = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
+			bSTreeid = gweb.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
 			if (bSTreeid == 0) return;
-			await gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
-			await gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeid, SelAsset, SelMusic, gweb.mainFrame.user_name);
-			await gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "방송시작");
+			await gweb.dBSqlite.BSTreeCRemove(bSTreeid);
+			await gweb.dBSqlite.BSTreeCSave(bSTreeid, SelAsset, SelMusic, gweb.mainFrame.user_name);
+			await gweb.dBSqlite.BSTreeUpdate(bSTreeid, "방송시작");
 			gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeid, SelAsset, SelMusic);
 			this.btnStart.Enabled = false;
 			this.btnStop.Enabled = true;
@@ -117,8 +117,8 @@ namespace simplepa2.UI.Views
 		private void 방송중지로직()
 		{
 			if (bSTreeid == 0) return;
-			gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
-			gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
+			gweb.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
+			gweb.dBSqlite.BSTreeCRemove(bSTreeid);
 			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
 		}
 

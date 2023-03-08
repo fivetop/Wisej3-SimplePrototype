@@ -83,7 +83,7 @@ namespace simplepa2.UI.Views
 			// 장비 아이콘 보이기 
 			DevicelistView1.View = View.LargeIcon;
 
-			foreach (var t3 in  gweb.mainFrame.dBSqlite.Ds1.Device)
+			foreach (var t3 in  gweb.dBSqlite.Ds1.Device)
 			{
 				if (!(t3.device == 0 || t3.device == 2))
 					continue;

@@ -35,17 +35,17 @@ namespace pa
 
             if (v == 1)
             {
-                if (t3.state == "On-Line" && t3.state_old == "On-Line") return;
-                t3.state = "On-Line";
-                t3.state_old = "On-Line";
-                g.Log("On-Line :" + str2);
+                if (t3.state == "ONLINE" && t3.state_old == "ONLINE") return;
+                t3.state = "ONLINE";
+                t3.state_old = "ONLINE";
+                g.Log("ONLINE :" + str2);
             }
             else
             {
                 if (t3.state == "" && t3.state_old == "") return;
                 t3.state = "";
                 t3.state_old = "";
-                g.Log("Off-Line:" + str2);
+                g.Log("OFFLINE:" + str2);
             }
 
             dBAccess.EventvmIP(t3);
@@ -75,7 +75,7 @@ namespace pa
                 }
                 catch (Exception e1)
                 {
-                    //Console.WriteLine(e1.Message);
+                    g.Log(e1.Message);
                 }
                 check1 = false;
             }));
@@ -108,7 +108,7 @@ namespace pa
                         if (t4)
                         {
                             //g.Log("Alive On IP.. : " + t3.ip);
-                            t3.state = "On-Line";
+                            t3.state = "ONLINE";
                             // 올드가 오프라인이면 
                             if (t3.state_old == "")
                             {
@@ -137,7 +137,7 @@ namespace pa
                 catch (Exception e1)
                 {
                     //Console.WriteLine(e1.Message);
-
+                    g.Log(e1.Message);
                 }
                 check2 = false;
             }));
