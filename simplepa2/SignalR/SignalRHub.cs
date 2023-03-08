@@ -72,6 +72,7 @@ namespace simplepa2.SignalR
         public void MessageC2S2(SignalRMsg message)
         {
             Clients.All.MessageC2S2(message);
+            gweb.RcvSigR(message);
             eRcvSignlR?.Invoke(this, message);
 //            if (gweb.mainFrame != null)
 //                gweb.mainFrame.eRcvSigR(message);

@@ -69,9 +69,6 @@ namespace simplepa2.UI.Pages
 
         private List<View_BBSAnchor2> listBBSAnchor = new List<View_BBSAnchor2>();  // 다수 방 관리를 위한 View List
 
-
-        //public DBController dBSqlite { get; set; } = new DBController(); // DB 처리용 
-
         public string user_name { get; set; }
         public string login_id { get; set; }
         #endregion
@@ -80,7 +77,6 @@ namespace simplepa2.UI.Pages
         {
             InitializeComponent();
 
-            gweb.dBSqlite.DBInit();
             gweb.mainFrame = this;
             gweb.mgf.Add(this);
 
@@ -325,54 +321,12 @@ namespace simplepa2.UI.Pages
             switch (msg1.Msgtype)
             {
                 case eSignalRMsgType.eEM:
-                    if (msg1.state == 1)
-                        addinfo = "ONLINE";
-                    else
-                        addinfo = "OFFLINE";
-                    gweb.dBSqlite.Eventsyslog(addinfo, msg1.EMNAME, addinfo);
-                    gweb.dBSqlite.EMServerupdate(msg1.EMNAME, addinfo);
                     view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_FIRE:
-                    switch (msg1.seqno)
-                    {
-                        case 1:
-                            gweb.dBSqlite.Eventvm("화재발생수신", msg1.state +"층", msg1.message);
-                            break;
-                        case 2:
-                            gweb.dBSqlite.Eventvm("화재복구수신", msg1.state + "층", msg1.message);
-                            break;
-                        case 3:
-                            gweb.dBSqlite.Eventvm("시험화재발생", "0층 시험", msg1.message);
-                            break;
-                        case 4:
-                            gweb.dBSqlite.Eventvm("시험화재복구", "0층 시험", msg1.message );
-                            break;
-                    }
                     view_DashBoard2.reDraw();
                     break;
                 case eSignalRMsgType.eEM_PRESET_SW:
-                    string m0 = "PRESET_SW";
-                    string m1 = msg1.EMNAME +":"+ msg1.seqno.ToString() + "번 프리셋 버튼";
-                    string m2 = "OFF";
-
-                    if (msg1.state == 1) m2 = "ON";
-                    if (msg1.seqno == 0)
-                        m1 = msg1.EMNAME + ":" + "All 프리셋 버튼";
-
-                    switch (msg1.seqno)
-                    {
-                        case 0:
-                            gweb.dBSqlite.Eventpreset(m0, m1, m2);
-                            break;
-                        case 1:
-                        case 2:
-                        case 3:
-                        case 4:
-                            gweb.dBSqlite.Eventpreset(m0, m1, m2);
-                            break;
-                    }
-                    gweb.dBSqlite.EMServerupdatePreset(msg1.EMNAME,msg1.seqno, msg1.state);
                     view_DashBoard2.reDraw2();
                     if(view_BBSEMManage2 != null) view_BBSEMManage2.reDraw();
                     break;
@@ -407,10 +361,7 @@ namespace simplepa2.UI.Pages
                     break;
                 case eSignalRMsgType.eFindDSP:
                     if (msg1.state == 1)
-                    {
-                        gweb.dBSqlite.LinkAssetDevice();
                         reDraw();
-                    }
                     else
                         AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
                     break;
@@ -426,7 +377,6 @@ namespace simplepa2.UI.Pages
                 });
             }
         }
-
 
         internal async Task<bool> sendSigR(eSignalRMsgType v1, int BSTreeId, List<AssetsRow> selAsset, List<MusicsRow> selMusic)
         {
