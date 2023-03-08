@@ -1,5 +1,6 @@
 ﻿using System;
 using Wisej.Web;
+using static simplepa2.DataSet1;
 
 namespace simplepa2.UI.Components
 {
@@ -8,14 +9,17 @@ namespace simplepa2.UI.Components
         private Boolean clicked { get; set; }
         private string strName { get; set; }
         private string strText { get; set; }
-        public Comp_ZoneButton(string strName, string strText)
+
+        private AssetsRow myAssetRow;
+
+        public Comp_ZoneButton(string strName, string strText, AssetsRow ar)
         {
             this.strName = strName;
             this.strText = strText;
+            this.myAssetRow = ar;
 
             InitializeComponent();
-            setupButton(strText);
-            
+            setupButton(strText);            
         }
 
         #region Wisej Designer generated code
@@ -73,6 +77,13 @@ namespace simplepa2.UI.Components
                 
                
             }
+        }
+        public AssetsRow getAssetRowIfSelected()
+        {
+            if (clicked)
+                return myAssetRow;
+            else
+                return null;
         }
     }
 }

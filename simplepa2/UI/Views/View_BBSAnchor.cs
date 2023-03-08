@@ -11,6 +11,20 @@ namespace simplepa2.UI.Views
 {
     public partial class View_BBSAnchor : Wisej.Web.UserControl
     {
+		private Comp_BBSAchchorBSStatus comp_BBSAnchorBSStatus;
+		private Comp_BBSAnchorPlayer comp_BBSAnchorPlayer;
+		private Comp_BBSAnchorPresetQuick comp_BBSAnchorPresetQuick;
+		private Comp_BBSAnchorZone comp_BBSAnchorZone;
+
+		private int MUSIC_FIRST_FILE = 0;
+
+		List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
+		List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
+		int bSTreeid { get; set; } = 0;
+
+
+		// private Comp_BB
+
 
 		public string strEMNAME;
 		public int intBBSchno;
@@ -20,72 +34,59 @@ namespace simplepa2.UI.Views
 			InitializeComponent();
 		}
 
-		public void setupUIComponent()
-        {
-			this.pn_BBSMonitor.Controls.Add(new Comp_BBSAchchorBSStatus());
-			this.pn_playerList.Controls.Add(new Comp_BBSAnchorPlayer());
-			this.splitContainer2.Panel1.Controls.Add(new Comp_BBSAnchorPresetQuick());
-			this.splitContainer2.Panel2.Controls.Add(new View_BBCZone());
+		private void View_BBSAnchor_Load(object sender, EventArgs e)
+		{
+			reDraw();
 
 		}
 
 		internal void reDraw()
 		{
-			/*
-			this.assetsTableAdapter.Fill(this.dataSet1.Assets);
-
-			this.emServerWithWholeColTableAdapter1.Fill(this.dataSet11.EMServerWithWholeCol);
-
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-			// this.dg_playList.RowCount = 10;
-
-			comp_Site1.dataSet = gweb.mainFrame.dBSqlite.EMServerWithWholeColLoad();
-			comp_Site1.reDraw();
-			*/
-		}
-
-		public void refresh()
-		{
-			/*
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-			*/
-		}
-
-		private void View_BBSAnchor_Load(object sender, EventArgs e)
-		{
 			setupUIComponent();
 
-			reDraw();
-
 		}
 
-
-		List<AssetsRow> SelAsset { get; set; } = new List<AssetsRow>();
-		List<MusicsRow> SelMusic { get; set; } = new List<MusicsRow>();
-
-		int bSTreeid { get; set; } = 0;
-
-		// 방송 시작
-		// 선택내용 확인
-		// 해당 지역 서버 확인
-		// 사용중인 지역이 있는지 점검
-		// 방송 시작
-		private void btnStart_Click(object sender, EventArgs e)
+		public void setupUIComponent()
 		{
-			/*
-			SelAsset.Clear();
-			foreach (DataGridViewRow row in dataGridView1.Rows)
-			{
-				if (row.Cells["chk"].Value.ToString() != "0")
-				{
-					var t1 = row.DataBoundItem;
-					SelAsset.Add((AssetsRow)((System.Data.DataRowView)t1).Row);
-				}
-			
-			}
+			comp_BBSAnchorBSStatus = new Comp_BBSAchchorBSStatus();
+			comp_BBSAnchorPlayer = new Comp_BBSAnchorPlayer();
+            comp_BBSAnchorPlayer.PlayerStarter += Comp_BBSAnchorPlayer_PlayerStarter;
+            comp_BBSAnchorPlayer.PlayerStop += Comp_BBSAnchorPlayer_PlayerStop;
+			comp_BBSAnchorPresetQuick = new Comp_BBSAnchorPresetQuick();
+			comp_BBSAnchorZone = new Comp_BBSAnchorZone();
 
+			this.pn_BBSMonitor.Controls.Add(comp_BBSAnchorBSStatus);
+			this.pn_playerList.Controls.Add(comp_BBSAnchorPlayer);
+			this.splitContainer2.Panel1.Controls.Add(comp_BBSAnchorPresetQuick);
+			this.splitContainer2.Panel2.Controls.Add(comp_BBSAnchorZone);
+		}
+
+        private void Comp_BBSAnchorPlayer_PlayerStop(object sender, Comp_BBSAnchorPlayer.CompBBSAnchorPlayerStopEventArgs e)
+        {
+			this.comp_BBSAnchorPlayer.audioPlayerStop();
+			// 프로그램 음원 종료 처리  및 뒷정리
+
+			// 플레이어 초기화 (재검토 같은 곡 초기화 안됨) 
+			this.comp_BBSAnchorPlayer.setupFirstFileForPlay(MUSIC_FIRST_FILE);
+
+			// 방송 상태 변경
+			this.comp_BBSAnchorBSStatus.setb_bsOutput(false);
+
+			// 오차장님 코드
+			방송중지로직();
+			bSTreeid = 0;
+		}
+
+        private void Comp_BBSAnchorPlayer_PlayerStarter(object sender, Comp_BBSAnchorPlayer.CompBBSAnchorPlayerPlayEventArgs e)
+        {			
+
+			// 00. 음원 리스트 셋업
+			SelMusic = e.SelMusic;
+
+			// 01 방송 지역 리스트를 불러오기
+			SelAsset = this.comp_BBSAnchorZone.getSelectedAssetList();
+			
+			// 02. 오차장님 서버 : Validation
 			if (SelAsset.Count() < 1 || SelMusic.Count() < 1)
 			{
 				AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
@@ -94,58 +95,51 @@ namespace simplepa2.UI.Views
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Question, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Stop, true, ContentAlignment.MiddleCenter);
 				//AlertBox.Show("지역과 음원을 선택하여 주세요.", MessageBoxIcon.Warning, true, ContentAlignment.MiddleCenter);
+
+				this.comp_BBSAnchorPlayer.audioPlayerStop();
 				return;
 			}
 
-			int ret = gweb.mainFrame.dBSqlite.EMServerGetState(SelAsset[0]);
+			// 03. EMSERVER GET STATE
+			int ret = gweb.dBSqlite.EMServerGetState(SelAsset[0]);
 
 			if (ret == 0)
 			{
 				AlertBox.Show("해당 지역 서버를 확인 바랍니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+				this.comp_BBSAnchorPlayer.audioPlayerStop();
 				return;
 			}
 
 			// 선택한 지역에 방송중인지 점검 
-			string ret1 = gweb.mainFrame.dBSqlite.BSTreeCCheck(SelAsset);
+			string ret1 = gweb.dBSqlite.BSTreeCCheck(SelAsset);
 
 			if (ret1 != "")
 			{
 				AlertBox.Show(ret1 + "님이 방송중인 지역 입니다.", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+				this.comp_BBSAnchorPlayer.audioPlayerStop();
 				return;
 			}
 
-			방송처리로직();
-			*/
-		}
-		private void btnStop_Click(object sender, EventArgs e)
-		{
-			/*
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-			방송중지로직();
-			bSTreeid = 0;
-			*/
+			//04. 이상없이 플레이되는 경우 웹 Player 프로그램 스타트 하고 맞춰서 웹 플레이 시작 			
+			this.comp_BBSAnchorPlayer.audioPlayerStart();
+
+			// BS 방송 Status 변경
+			this.comp_BBSAnchorBSStatus.setb_bsOutput(true);
+
+			// 서버로직처리
+			방송처리로직();			
 		}
 
-		// 1. 방송 채널 확보 
-		// 2. 저장전 기존 데이터 있으면 삭제처리 
-		// 3. 지역과 음원 저장 
-		// 4. 해당 지역 서버에 명령 처리 
-		// 5. 버튼 상태 변경 
 		private async void 방송처리로직()
 		{
-			/*
-			bSTreeid = gweb.mainFrame.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
+			bSTreeid = gweb.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
 			if (bSTreeid == 0) return;
-			await gweb.mainFrame.dBSqlite.BSTreeCRemove(bSTreeid);
-			await gweb.mainFrame.dBSqlite.BSTreeCSave(bSTreeid, SelAsset, SelMusic, gweb.mainFrame.user_name);
-			await gweb.mainFrame.dBSqlite.BSTreeUpdate(bSTreeid, "방송시작");
-			gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeid, SelAsset, SelMusic);
-			this.btnStart.Enabled = false;
-			this.btnStop.Enabled = true;
-			*/
+			if (bSTreeid == 0) return;
+			gweb.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
+			gweb.dBSqlite.BSTreeCRemove(bSTreeid);
+			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
 		}
-
+	
 		// 1. 해당지역 서버에 중지 처리 
 		// 2. 방송트리 초기화 
 		// 3. 방송트리 차일드 지우기 
@@ -156,84 +150,5 @@ namespace simplepa2.UI.Views
 			gweb.dBSqlite.BSTreeCRemove(bSTreeid);
 			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
 		}
-
-		private void Win_EventMusic(object sender, EventArgs e)
-		{
-			//this.dg_playList.DataSource = SelMusic;
-			//this.dg_playList.Refresh();
-
-			if (SelMusic.Count == 0)
-			{
-				//this.dg_playList.DataSource = null;
-				//this.dg_playList.RowCount = 10;
-			}
-		}
-
-
-		#region // 그리드 처리 
-
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			/*
-			if (e.RowIndex < 0 || e.ColumnIndex < 1)
-				return;
-			DataGridViewCheckBoxCell checkedCell = (DataGridViewCheckBoxCell)dataGridView1.Rows[e.RowIndex].Cells["chk"];
-			dataGridView1.BeginEdit(true);
-
-			if (Convert.ToBoolean(this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value) == false)
-			{
-				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = true;
-			}
-			else
-			{
-				this.dataGridView1.Rows[e.RowIndex].Cells["chk"].Value = false;
-			}
-			dataGridView1.EndEdit(); */
-		}
-
-		private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-		{
-			if (e.Button == MouseButtons.Left)
-			{
-				var grid = (DataGridView)sender;
-				var ctxMenu = new ContextMenu();
-				var menu1 = ctxMenu.MenuItems.Add("음원 추가");
-				var menu2 = ctxMenu.MenuItems.Add("선택음원 삭제");
-				var menu3 = ctxMenu.MenuItems.Add("인터넷방송추가");
-				var menu4 = ctxMenu.MenuItems.Add("미리듣기");
-				var position = grid.PointToClient(Cursor.Position);
-				ctxMenu.Show((Wisej.Web.Control)sender, position);
-
-				menu1.Click += (s, e1) =>
-				{
-					PMusicSel win = new PMusicSel();
-					win.EventMusic += Win_EventMusic;
-					win.SelMusic = SelMusic;
-					win.Show();
-				};
-
-				menu2.Click += (s, e1) =>
-				{
-					grid.CurrentCell.Style.ForeColor = Color.Blue;
-				};
-				menu3.Click += (s, e1) =>
-				{
-					grid.CurrentCell.Style.BackColor = Color.Beige;
-				};
-
-				menu4.Click += (s, e1) =>
-				{
-					grid.CurrentCell.Style.ForeColor = Color.Blue;
-				};
-			}
-
-		}
-		#endregion
-
-		private void comp_Site1_SelectedValueChanged(object sender, EventArgs e)
-		{
-			var t1 = sender;
-		}
-
-	}
+	}	
 }

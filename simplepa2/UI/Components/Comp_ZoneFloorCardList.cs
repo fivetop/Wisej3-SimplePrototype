@@ -4,6 +4,7 @@ using simplepa2.UI.Views;
 using System;
 using System.Collections.Generic;
 using Wisej.Web;
+using static simplepa2.DataSet1;
 
 namespace simplepa2.UI.Components
 {
@@ -11,10 +12,10 @@ namespace simplepa2.UI.Components
     {
         private Popup_BBCZoneForm pop_BBCZoneForm;
 
-        private object dockObject;
-
+        private object dockObject;    // 팝업용 Main 뷰 포인터
 
         private List<Comp_ZoneButton> zoneList;
+        
         private bool bAddButton = false;
 
         private string strFloorName;
@@ -44,10 +45,10 @@ namespace simplepa2.UI.Components
             // 02. Zone 리스트를 만들고, Zone의 번호와 Zone명을 입력 > 상기는 예제로 이름을 두번 넣었음 
             zoneList = new List<Comp_ZoneButton>();
 
-            foreach (var zoneItem in dataList.zoneListArray)
+            foreach (AssetsRow zoneItem in dataList.zoneListArray)
             {
                 string zoneNo = Convert.ToString(zoneItem.AssetId);
-                zoneList.Add(new Comp_ZoneButton(zoneNo, zoneItem.ZoneName));
+                zoneList.Add(new Comp_ZoneButton(zoneNo, zoneItem.ZoneName, zoneItem));
             }
 
             // 03 .UI 구현 처리 
@@ -131,5 +132,20 @@ namespace simplepa2.UI.Components
         {
             this.ch_floor.Checked = false;
         }
+
+        public List<AssetsRow> getSelectedAssetRowInFloor()
+        {
+            List<AssetsRow> packFloorRow = new List<AssetsRow>();
+
+            foreach(Comp_ZoneButton comp_bt in zoneList)
+            {
+                AssetsRow tempRow = comp_bt.getAssetRowIfSelected();
+                if(tempRow != null)
+                {
+                    packFloorRow.Add(tempRow);
+                }
+            }
+            return packFloorRow;
+        }        
     }
 }

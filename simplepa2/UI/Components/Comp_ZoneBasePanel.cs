@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using Wisej.Web;
+using static simplepa2.DataSet1;
 
 namespace simplepa2.UI.Components
 {
@@ -57,6 +58,24 @@ namespace simplepa2.UI.Components
             this.buildPanelDataList = dataList;                  
         }
 
-        
+        public List<AssetsRow> getAllSelectedAssetRow()
+        {
+            List<AssetsRow> fulltAssetsRowlList = new List<AssetsRow>();
+
+            if (buildPanelDataList == null)
+                return null;
+
+            foreach(Comp_ZoneBuildingPanels buildPanelSet in buildPanelDataList)
+            {
+                List<AssetsRow> tempRow = buildPanelSet.getAllSelectedAssetsRowInBuilding();
+                if(tempRow.Count > 0)
+                {
+                    fulltAssetsRowlList.AddRange(tempRow);
+                }
+            }
+            return fulltAssetsRowlList;
+        }
+
+
     }
 }

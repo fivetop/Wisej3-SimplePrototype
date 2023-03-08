@@ -204,7 +204,7 @@
             // 
             this.splitContainer2.Panel2.TabStop = true;
             this.splitContainer2.Size = new System.Drawing.Size(708, 858);
-            this.splitContainer2.SplitterDistance = 186;
+            this.splitContainer2.SplitterDistance = 165;
             this.splitContainer2.TabIndex = 0;
             // 
             // pn_leftMain

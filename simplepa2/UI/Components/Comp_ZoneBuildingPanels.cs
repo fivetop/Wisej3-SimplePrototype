@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using Wisej.Web;
+using static simplepa2.DataSet1;
 
 namespace simplepa2.UI.Components
 {    
@@ -18,9 +19,7 @@ namespace simplepa2.UI.Components
         // UI 접근 및 컨트롤 포인터
         private List<Comp_ZoneFloorCardList> zoneFloorCardUIList = new List<Comp_ZoneFloorCardList>();
 
-        private bool ZONE_LIST_ADD_BUTTON_SETUP = true;
-        
-        
+        private bool ZONE_LIST_ADD_BUTTON_SETUP = true;        
 
 
         public Comp_ZoneBuildingPanels()
@@ -113,15 +112,37 @@ namespace simplepa2.UI.Components
         private void ch_building_CheckedChanged(object sender, EventArgs e)
         {
             var buildChecked = (sender as CheckBox).Checked;
-            if(buildChecked)
+
+            foreach (Comp_ZoneFloorCardList zoneFC in zoneFloorCardUIList)
             {
-                AlertBox.Show("Building 전체를 선택합니다");
+                if (buildChecked)
+                {
+                    zoneFC.ch_floor_ChangeToChecked();
+                }
+                else
+                {
+                    zoneFC.ch_floor_ChangeToUnChecked();
+                }
             }
-            else
-            {
-                AlertBox.Show("Building 전체를 선택해제 합니다.");
-            }            
+
         }
+
+        public List<AssetsRow> getAllSelectedAssetsRowInBuilding()
+        {
+            List<AssetsRow> packBuildingAssetRow = new List<AssetsRow>();
+
+            foreach (Comp_ZoneFloorCardList zoneFC in zoneFloorCardUIList)
+            {
+                List<AssetsRow> tempList = zoneFC.getSelectedAssetRowInFloor();
+
+                if(tempList.Count > 0)
+                {
+                    packBuildingAssetRow.AddRange(tempList);
+                }
+            }
+            return packBuildingAssetRow;
+        }
+
     }
 
     }

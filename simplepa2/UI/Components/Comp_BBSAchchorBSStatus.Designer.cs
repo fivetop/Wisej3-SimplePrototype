@@ -30,11 +30,11 @@
         {
             this.pn_BBSMonitor = new Wisej.Web.Panel();
             this.panel35 = new Wisej.Web.Panel();
-            this.label39 = new Wisej.Web.Label();
+            this.lb_embStatus = new Wisej.Web.Label();
             this.label40 = new Wisej.Web.Label();
-            this.label37 = new Wisej.Web.Label();
+            this.lb_deviceStatus = new Wisej.Web.Label();
             this.label38 = new Wisej.Web.Label();
-            this.label31 = new Wisej.Web.Label();
+            this.lb_bsOutput = new Wisej.Web.Label();
             this.label16 = new Wisej.Web.Label();
             this.panel41 = new Wisej.Web.Panel();
             this.label17 = new Wisej.Web.Label();
@@ -57,11 +57,11 @@
             // 
             // panel35
             // 
-            this.panel35.Controls.Add(this.label39);
+            this.panel35.Controls.Add(this.lb_embStatus);
             this.panel35.Controls.Add(this.label40);
-            this.panel35.Controls.Add(this.label37);
+            this.panel35.Controls.Add(this.lb_deviceStatus);
             this.panel35.Controls.Add(this.label38);
-            this.panel35.Controls.Add(this.label31);
+            this.panel35.Controls.Add(this.lb_bsOutput);
             this.panel35.Controls.Add(this.label16);
             this.panel35.Dock = Wisej.Web.DockStyle.Fill;
             this.panel35.Location = new System.Drawing.Point(20, 50);
@@ -69,19 +69,19 @@
             this.panel35.Size = new System.Drawing.Size(590, 100);
             this.panel35.TabIndex = 163;
             // 
-            // label39
+            // lb_embStatus
             // 
-            this.label39.BackColor = System.Drawing.Color.FromArgb(255, 84, 84);
-            this.label39.CssStyle = "border-radius:30px";
-            this.label39.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(387, 33);
-            this.label39.Margin = new Wisej.Web.Padding(0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(60, 60);
-            this.label39.TabIndex = 139;
-            this.label39.Text = "대기";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_embStatus.BackColor = System.Drawing.Color.FromArgb(255, 84, 84);
+            this.lb_embStatus.CssStyle = "border-radius:30px";
+            this.lb_embStatus.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_embStatus.ForeColor = System.Drawing.Color.White;
+            this.lb_embStatus.Location = new System.Drawing.Point(387, 33);
+            this.lb_embStatus.Margin = new Wisej.Web.Padding(0);
+            this.lb_embStatus.Name = "lb_embStatus";
+            this.lb_embStatus.Size = new System.Drawing.Size(60, 60);
+            this.lb_embStatus.TabIndex = 139;
+            this.lb_embStatus.Text = "대기";
+            this.lb_embStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label40
             // 
@@ -96,20 +96,20 @@
             this.label40.Text = "비상 방송";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label37
+            // lb_deviceStatus
             // 
-            this.label37.Anchor = Wisej.Web.AnchorStyles.Left;
-            this.label37.BackColor = System.Drawing.Color.FromArgb(7, 216, 21);
-            this.label37.CssStyle = "border-radius:30px";
-            this.label37.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label37.ForeColor = System.Drawing.Color.White;
-            this.label37.Location = new System.Drawing.Point(251, 37);
-            this.label37.Margin = new Wisej.Web.Padding(0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(60, 60);
-            this.label37.TabIndex = 137;
-            this.label37.Text = "대기";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_deviceStatus.Anchor = Wisej.Web.AnchorStyles.Left;
+            this.lb_deviceStatus.BackColor = System.Drawing.Color.FromArgb(7, 216, 21);
+            this.lb_deviceStatus.CssStyle = "border-radius:30px";
+            this.lb_deviceStatus.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_deviceStatus.ForeColor = System.Drawing.Color.White;
+            this.lb_deviceStatus.Location = new System.Drawing.Point(251, 37);
+            this.lb_deviceStatus.Margin = new Wisej.Web.Padding(0);
+            this.lb_deviceStatus.Name = "lb_deviceStatus";
+            this.lb_deviceStatus.Size = new System.Drawing.Size(60, 60);
+            this.lb_deviceStatus.TabIndex = 137;
+            this.lb_deviceStatus.Text = "정상";
+            this.lb_deviceStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label38
             // 
@@ -121,22 +121,22 @@
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(60, 20);
             this.label38.TabIndex = 136;
-            this.label38.Text = "정비 상태";
+            this.label38.Text = "장비 상태";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label31
+            // lb_bsOutput
             // 
-            this.label31.BackColor = System.Drawing.Color.FromArgb(255, 84, 84);
-            this.label31.CssStyle = "border-radius:30px";
-            this.label31.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(114, 33);
-            this.label31.Margin = new Wisej.Web.Padding(0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(60, 60);
-            this.label31.TabIndex = 135;
-            this.label31.Text = "대기";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_bsOutput.BackColor = System.Drawing.Color.FromArgb(255, 84, 84);
+            this.lb_bsOutput.CssStyle = "border-radius:30px";
+            this.lb_bsOutput.Font = new System.Drawing.Font("default", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_bsOutput.ForeColor = System.Drawing.Color.White;
+            this.lb_bsOutput.Location = new System.Drawing.Point(114, 33);
+            this.lb_bsOutput.Margin = new Wisej.Web.Padding(0);
+            this.lb_bsOutput.Name = "lb_bsOutput";
+            this.lb_bsOutput.Size = new System.Drawing.Size(60, 60);
+            this.lb_bsOutput.TabIndex = 135;
+            this.lb_bsOutput.Text = "대기";
+            this.lb_bsOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
             // 
@@ -191,11 +191,11 @@
 
         private Wisej.Web.Panel pn_BBSMonitor;
         private Wisej.Web.Panel panel35;
-        private Wisej.Web.Label label39;
+        private Wisej.Web.Label lb_embStatus;
         private Wisej.Web.Label label40;
-        private Wisej.Web.Label label37;
+        private Wisej.Web.Label lb_deviceStatus;
         private Wisej.Web.Label label38;
-        private Wisej.Web.Label label31;
+        private Wisej.Web.Label lb_bsOutput;
         private Wisej.Web.Label label16;
         private Wisej.Web.Panel panel41;
         private Wisej.Web.Label label17;

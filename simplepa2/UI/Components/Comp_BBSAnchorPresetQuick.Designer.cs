@@ -340,6 +340,7 @@
             // Comp_BBSAnchorPresetQuick
             // 
             this.Controls.Add(this.panel34);
+            this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "Comp_BBSAnchorPresetQuick";
             this.Size = new System.Drawing.Size(806, 170);
             this.panel34.ResumeLayout(false);

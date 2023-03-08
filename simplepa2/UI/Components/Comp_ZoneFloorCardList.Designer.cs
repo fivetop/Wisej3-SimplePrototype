@@ -92,11 +92,11 @@
             this.ch_floor.Anchor = Wisej.Web.AnchorStyles.Left;
             this.ch_floor.BackColor = System.Drawing.Color.Transparent;
             this.ch_floor.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.ch_floor.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.ch_floor.Font = new System.Drawing.Font("default", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.ch_floor.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.ch_floor.Location = new System.Drawing.Point(3, 8);
+            this.ch_floor.Location = new System.Drawing.Point(5, 10);
             this.ch_floor.Name = "ch_floor";
-            this.ch_floor.Size = new System.Drawing.Size(52, 23);
+            this.ch_floor.Size = new System.Drawing.Size(50, 22);
             this.ch_floor.TabIndex = 3;
             this.ch_floor.Text = "1층";
             this.ch_floor.CheckedChanged += new System.EventHandler(this.ch_floor_CheckedChanged);

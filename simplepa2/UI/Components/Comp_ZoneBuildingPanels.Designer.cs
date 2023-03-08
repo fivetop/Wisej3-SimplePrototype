@@ -76,7 +76,7 @@
             this.lb_buildingName.Anchor = Wisej.Web.AnchorStyles.Left;
             this.lb_buildingName.AutoEllipsis = true;
             this.lb_buildingName.BackColor = System.Drawing.Color.Transparent;
-            this.lb_buildingName.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lb_buildingName.Font = new System.Drawing.Font("@defaultBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lb_buildingName.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
             this.lb_buildingName.Location = new System.Drawing.Point(-1, 4);
             this.lb_buildingName.Margin = new Wisej.Web.Padding(0);
@@ -91,13 +91,13 @@
             this.ch_building.Anchor = Wisej.Web.AnchorStyles.Left;
             this.ch_building.BackColor = System.Drawing.Color.Transparent;
             this.ch_building.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.ch_building.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.ch_building.Font = new System.Drawing.Font("defaultBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.ch_building.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.ch_building.Location = new System.Drawing.Point(15, 29);
+            this.ch_building.Location = new System.Drawing.Point(15, 27);
             this.ch_building.Name = "ch_building";
-            this.ch_building.Size = new System.Drawing.Size(60, 23);
+            this.ch_building.Size = new System.Drawing.Size(53, 20);
             this.ch_building.TabIndex = 137;
-            this.ch_building.Text = "선택";
+            this.ch_building.Text = "전체";
             this.ch_building.CheckedChanged += new System.EventHandler(this.ch_building_CheckedChanged);
             // 
             // Comp_ZoneBuildingPanels
