@@ -102,6 +102,7 @@
             this.MinimumSize = new System.Drawing.Size(650, 440);
             this.Name = "Widget_BBSMultiDeck";
             this.Size = new System.Drawing.Size(760, 440);
+            this.Load += new System.EventHandler(this.Widget_BBSMultiDeck_Load);
             this.pn_multiDeck.ResumeLayout(false);
             this.pn_labelSpace.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
