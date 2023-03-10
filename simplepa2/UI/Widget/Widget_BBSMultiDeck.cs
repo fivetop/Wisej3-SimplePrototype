@@ -16,41 +16,16 @@ namespace simplepa2.UI.Widget
 
         private List<Comp_DashBoardBBSDeck> deckUIList = new List<Comp_DashBoardBBSDeck>();
 
-        private Timer timer = new Timer();
-        //         private Binding 
-
 
         public Widget_BBSMultiDeck()
         {
             InitializeComponent();
-
-            dataBindRefersh();
-
-            reDraw();
-
-            startTimer();
         }
-
-        public void dataBindRefersh()
-        {            
-            this.bsTreeWithStatusTableAdapter1.Fill(this.dataSet11.BsTreeWithStatus);
-                
-        }        
-        public void startTimer()
-        {           
-            timer.Interval = gweb.dashBoardRefreshInterval;
-            timer.Tick += Timer_Tick;
-            timer.Start();            
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            dataBindRefersh();
-            reDraw();
-        } 
 
         public void reDraw()
         {
+            this.bsTreeWithStatusTableAdapter1.Fill(this.dataSet11.BsTreeWithStatus);
+
             deckUIList.Clear();
             this.pn_deckSpace.Controls.Clear();
 
@@ -75,7 +50,7 @@ namespace simplepa2.UI.Widget
                 {
                     strTemp = dr2["EMNAME"].ToString();
                     dic.Add(strTemp, dr2["state"].ToString());                    
-                }                
+                }
             }
 
             List<string> keys = new List<string>(dic.Keys);
@@ -118,6 +93,11 @@ namespace simplepa2.UI.Widget
             spacer.BackColor = System.Drawing.Color.White;
 
             return spacer;
+        }
+
+        private void Widget_BBSMultiDeck_Load(object sender, EventArgs e)
+        {
+            reDraw();
         }
     }
 }

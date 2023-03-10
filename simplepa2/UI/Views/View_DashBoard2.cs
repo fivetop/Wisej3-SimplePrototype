@@ -49,6 +49,7 @@ namespace simplepa2.UI.Views
 				// BBS Widget UI 셋업
 				initMultiBBSWidgetUISetup();
 				evdataGridView1.Refresh();
+				widget_bbsMultiDeck.reDraw(); // BBS Widget Reload 
 			}
 			catch (Exception e1)
 			{
