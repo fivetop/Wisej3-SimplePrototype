@@ -188,7 +188,6 @@ namespace pa
             {
                 //Application.Current.Shutdown();
                 g.mainWindow.Exit();
-                t1.Abort();
                 System.Environment.Exit(0);
                 return;
             }
