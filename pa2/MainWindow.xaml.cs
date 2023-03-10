@@ -557,7 +557,18 @@ namespace pa
         #endregion
 
         #region // 종료 처리 
-        
+
+        // 서버 접속 에러시 강제 종료 처리 
+        internal void Exit()
+        {
+            foreach (ExtProcess p1 in BSpro)
+            {
+                p1.Kill();
+            }
+            BSpro.Clear();
+            Thread.Sleep(200);
+        }
+
         // 종료시 처리 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

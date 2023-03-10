@@ -179,7 +179,6 @@ namespace pa
                 t1 = new Thread(new ThreadStart(Run));
                 t1.Start();
             }
-
         }
 
         void Run()
@@ -188,6 +187,8 @@ namespace pa
             if (retry > 3)
             {
                 //Application.Current.Shutdown();
+                g.mainWindow.Exit();
+                t1.Abort();
                 System.Environment.Exit(0);
                 return;
             }
