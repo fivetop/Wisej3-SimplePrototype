@@ -11,7 +11,7 @@ namespace simplepa2.UI.Popups
     public partial class Form_BBCZoneImport : Wisej.Web.Form
     {
 
-        string  strFileUploadPath = @"C:\SimplePA2" + "\\Uploaded_Files\\";
+        string  strFileUploadPath = Application.StartupPath +@"\Uploaded_Files\";
         Stream stream;
         String filename;
 
