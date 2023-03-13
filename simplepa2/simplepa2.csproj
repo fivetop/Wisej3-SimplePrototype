@@ -59,6 +59,7 @@
     <Content Include="DB\0 디비테이블생성.sql" />
     <Content Include="DB\1 디비테이블-기초데이터생성.sql" />
     <Content Include="DB\9디비 테이블 삭제.sql" />
+    <Content Include="DB\iis.sql" />
     <Content Include="Default.html" />
     <Content Include="Default.json" />
     <Content Include="favicon.ico" />
