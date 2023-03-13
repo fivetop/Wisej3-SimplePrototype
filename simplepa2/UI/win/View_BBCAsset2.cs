@@ -21,7 +21,7 @@ namespace simplepa2.UI.Views
 
         private void BSAsset_Load(object sender, EventArgs e)
         {
-            strFileUploadPath = @"C:\SimplePA2" + "\\Uploaded_Files\\";
+            strFileUploadPath = Application.StartupPath + @"\Uploaded_Files\";
             this.assetsTableAdapter.Fill(this.dataSet1.Assets);
         }
 

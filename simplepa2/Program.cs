@@ -52,23 +52,13 @@ namespace simplepa2
 
 			Application.MainPage = new PA_Login();
 			Application.LoadTheme("LSMaterial-3");
-			//"Material-3" .
-			//Application.MainPage = new PA_MainFrame();
-			// 	window.open('', '_self').close();
-			//Application.SessionTimeout += Application_SessionTimeout;
-
-			var parentSize = Application.Browser.Size;
-
-			//Application.MainPage.Size = new System.Drawing.Size(1440,1020);
-			//Application.MainPage.Refresh();
-			//Application.Browser.Height = 1050;
-			Application.Eval("window.resizeTo(1440,1020)");
-
+			/*
 			if (t2 == null)
 			{ 
 				t2 = new Thread(new ThreadStart(DoSignalRThread));
 				t2.Start();
 			}
+			*/
 		}
 
         private static void Application_SessionTimeout(object sender, HandledEventArgs e)
@@ -87,6 +77,14 @@ namespace simplepa2
 			{
 				while (true)
 					Thread.Sleep(10);
+			}
+
+			try
+			{
+			}
+			catch (Exception e1)
+			{
+				gweb.Log(e1.Message);
 			}
 		}
 

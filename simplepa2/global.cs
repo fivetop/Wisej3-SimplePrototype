@@ -10,6 +10,7 @@ using static simplepa2.DataSet1;
 using System.Net;
 using System.Net.Mail;
 using DataClass;
+using Wisej.Web;
 
 namespace simplepa2
 {
@@ -136,7 +137,7 @@ namespace simplepa2
             try
             {
                 string fn = "svr_" + DateTime.Now.ToString("yyyy_MM_dd");
-                StreamWriter writer = new StreamWriter(File.Open("C:\\SimplePA2\\Log\\" + fn + ".txt", FileMode.Append));
+                StreamWriter writer = new StreamWriter(File.Open(Application.StartupPath + @"\Log\" + fn + ".txt", FileMode.Append));
                 TextWriterTraceListener listener = new TextWriterTraceListener(writer);
                 //Debug.Listeners.Add(listener);
                 //Debug.WriteLine(string.Format("{0} : {1}", DateTime.Now, str1));
