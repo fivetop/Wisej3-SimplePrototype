@@ -24,7 +24,7 @@ namespace simplepa2.UI.Pages
         private View_BBSAnchor view_BBSAnchor = new View_BBSAnchor();
         private View_BBSReservation view_BBSReservation;
         private View_BBSPresetManage view_BBSPresetManage;
-        private View_BBSGroupManage view_BBSGroupManage;
+        
         private View_BBSIoTApplication view_BBSIotApplication;
         private View_BBSMusicManage view_BBSMusicManage = new View_BBSMusicManage();
         private View_BBSHolidayManage view_BBSHolidayManage;
@@ -51,6 +51,7 @@ namespace simplepa2.UI.Pages
         private View_BBCZone view_BBCZone = new View_BBCZone();
         private View_BBCDevice view_BBCDevice = new View_BBCDevice();
         private View_DashBoard2 view_DashBoard2 = new View_DashBoard2();
+        private View_BBSGroupManage view_BBSGroupManage = new View_BBSGroupManage();
         private View_BBSGroupManage2 view_BBSGroupManage2 = new View_BBSGroupManage2();
         private View_BBSHolidayManage2 view_BBSHolidayManage2 = new View_BBSHolidayManage2();
         private View_BBSMusicManage2 view_BBSMusicManage2 = new View_BBSMusicManage2();
@@ -165,7 +166,8 @@ namespace simplepa2.UI.Pages
                 view_BBCOutput2.reDraw();
                 view_BBCMusic2.reDraw();
                 view_BBSEMManage2.reDraw();
-                view_GroupManager2.reDraw();
+                view_GroupManager2.reDraw();  // test version delete when release 
+                view_BBSGroupManage.reDraw();
                 view_BBSGroupManage2.reDraw();
                 view_GroupPresetManager2.reDraw();
                 view_BBCZone.reDraw();
@@ -233,7 +235,7 @@ namespace simplepa2.UI.Pages
             {
                 // 운영
                 case "dashboardBarItems": view_DashBoard2 = bringFrontView<View_DashBoard2>("View_DashBoard2", true); break;
-                case "anchorBBSBarItem": view_BBSAnchor2 = bringFrontView<View_BBSAnchor2>("View_BBSAnchor2", false); break;
+                case "anchorBBSBarItem": view_BBSAnchor = bringFrontView<View_BBSAnchor>("View_BBSAnchor", false); break;
                 //case "reservationBarItem": view_BBSReservation = bringFrontView<View_BBSReservation>("View_BBSReservation", false); break;
                 case "reservationBarItem": view_BBSSchduleManage2 = bringFrontView<View_BBSSchduleManage2>("View_BBSSchduleManage2", false); break;
                 //case "presetBarItem": view_BBSPresetManage = bringFrontView<View_BBSPresetManage>("View_BBSPresetManage", false); break;

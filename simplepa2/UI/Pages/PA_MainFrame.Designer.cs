@@ -87,7 +87,7 @@
             this.mainMenuBar.Name = "mainMenuBar";
             this.mainMenuBar.RightToLeft = Wisej.Web.RightToLeft.No;
             this.mainMenuBar.ShowUser = false;
-            this.mainMenuBar.Size = new System.Drawing.Size(250, 332);
+            this.mainMenuBar.Size = new System.Drawing.Size(250, 444);
             this.mainMenuBar.TabIndex = 0;
             this.mainMenuBar.Text = "SimplePA";
             this.mainMenuBar.TitleClick += new System.EventHandler(this.mainMenuBar_TitleClick);
@@ -97,7 +97,6 @@
             // dashboardBarItems
             // 
             this.dashboardBarItems.AccessibleName = "dashboardBarItems";
-            this.dashboardBarItems.BackColor = System.Drawing.Color.Transparent;
             this.dashboardBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.dashboardBarItems.ForeColor = System.Drawing.Color.White;
             this.dashboardBarItems.Icon = "Resources\\clipboard-paste-button.svg";
@@ -107,7 +106,6 @@
             // bbsManagementBarItem
             // 
             this.bbsManagementBarItem.AccessibleName = "bbsManagementBarItem";
-            this.bbsManagementBarItem.BackColor = System.Drawing.Color.Transparent;
             this.bbsManagementBarItem.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bbsManagementBarItem.ForeColor = System.Drawing.Color.White;
             this.bbsManagementBarItem.Icon = "resource.wx/simplepa2/Resources/microphone-of-voice.svg";
@@ -125,7 +123,6 @@
             // anchorBBSBarItem
             // 
             this.anchorBBSBarItem.AccessibleName = "anchorBBSBarItem";
-            this.anchorBBSBarItem.BackColor = System.Drawing.Color.Transparent;
             this.anchorBBSBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.anchorBBSBarItem.Name = "NavigationBarItem";
             this.anchorBBSBarItem.Text = "앵커방송";
@@ -133,7 +130,6 @@
             // reservationBarItem
             // 
             this.reservationBarItem.AccessibleName = "reservationBarItem";
-            this.reservationBarItem.BackColor = System.Drawing.Color.Transparent;
             this.reservationBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.reservationBarItem.Name = "NavigationBarItem";
             this.reservationBarItem.Text = "예약방송";
@@ -141,7 +137,6 @@
             // presetBarItem
             // 
             this.presetBarItem.AccessibleName = "presetBarItem";
-            this.presetBarItem.BackColor = System.Drawing.Color.Transparent;
             this.presetBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.presetBarItem.Name = "NavigationBarItem";
             this.presetBarItem.Text = "프리셋편집";
@@ -149,7 +144,6 @@
             // groupBarItem
             // 
             this.groupBarItem.AccessibleName = "groupBarItem";
-            this.groupBarItem.BackColor = System.Drawing.Color.Transparent;
             this.groupBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.groupBarItem.Name = "NavigationBarItem";
             this.groupBarItem.Text = "그룹편집";
@@ -157,7 +151,6 @@
             // iotApplicationBarItem
             // 
             this.iotApplicationBarItem.AccessibleName = "iotApplicationBarItem";
-            this.iotApplicationBarItem.BackColor = System.Drawing.Color.Transparent;
             this.iotApplicationBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.iotApplicationBarItem.Name = "NavigationBarItem";
             this.iotApplicationBarItem.Text = "IoT Application 방송";
@@ -165,7 +158,6 @@
             // musicConfigurationBarItem
             // 
             this.musicConfigurationBarItem.AccessibleName = "musicConfigurationBarItem";
-            this.musicConfigurationBarItem.BackColor = System.Drawing.Color.Transparent;
             this.musicConfigurationBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.musicConfigurationBarItem.Name = "NavigationBarItem";
             this.musicConfigurationBarItem.Text = "음원 설정";
@@ -173,7 +165,6 @@
             // holidayBarItem
             // 
             this.holidayBarItem.AccessibleName = "holidayBarItem";
-            this.holidayBarItem.BackColor = System.Drawing.Color.Transparent;
             this.holidayBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.holidayBarItem.Name = "NavigationBarItem";
             this.holidayBarItem.Text = "휴일 관리";
@@ -181,7 +172,6 @@
             // bbsConfigurationBarItems
             // 
             this.bbsConfigurationBarItems.AccessibleName = "bbsConfigurationBarItems";
-            this.bbsConfigurationBarItems.BackColor = System.Drawing.Color.Transparent;
             this.bbsConfigurationBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bbsConfigurationBarItems.ForeColor = System.Drawing.Color.White;
             this.bbsConfigurationBarItems.Icon = "resource.wx/simplepa2/Resources/select-brightness-button.svg";
@@ -203,7 +193,6 @@
             // zoneManageBarItem
             // 
             this.zoneManageBarItem.AccessibleName = "zoneManageBarItem";
-            this.zoneManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.zoneManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.zoneManageBarItem.Name = "NavigationBarItem";
             this.zoneManageBarItem.Text = "ZONE 관리";
@@ -211,7 +200,6 @@
             // deviceManageBarItem
             // 
             this.deviceManageBarItem.AccessibleName = "deviceManageBarItem";
-            this.deviceManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.deviceManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.deviceManageBarItem.Name = "NavigationBarItem";
             this.deviceManageBarItem.Text = "장비 관리";
@@ -219,7 +207,6 @@
             // inputManageBarItem
             // 
             this.inputManageBarItem.AccessibleName = "inputManageBarItem";
-            this.inputManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.inputManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.inputManageBarItem.Name = "NavigationBarItem";
             this.inputManageBarItem.Text = "입력 관리";
@@ -227,7 +214,6 @@
             // outputManageBarItem
             // 
             this.outputManageBarItem.AccessibleName = "outputManageBarItem";
-            this.outputManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.outputManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.outputManageBarItem.Name = "NavigationBarItem";
             this.outputManageBarItem.Text = "출력 관리";
@@ -235,7 +221,6 @@
             // musicManageBarItem
             // 
             this.musicManageBarItem.AccessibleName = "musicManageBarItem";
-            this.musicManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.musicManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.musicManageBarItem.Name = "NavigationBarItem";
             this.musicManageBarItem.Text = "음량 관리";
@@ -243,7 +228,6 @@
             // emergencyManageBarItem
             // 
             this.emergencyManageBarItem.AccessibleName = "emergencyManageBarItem";
-            this.emergencyManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.emergencyManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.emergencyManageBarItem.Name = "NavigationBarItem";
             this.emergencyManageBarItem.Text = "비상 방송";
@@ -251,7 +235,6 @@
             // navigationBarItem1
             // 
             this.navigationBarItem1.AccessibleName = "navigationBarItem1";
-            this.navigationBarItem1.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem1.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem1.Name = "NavigationBarItem";
             this.navigationBarItem1.Text = "기본그룹";
@@ -260,7 +243,6 @@
             // 
             this.navigationBarItem4.AccessibleDescription = "";
             this.navigationBarItem4.AccessibleName = "navigationBarItem4";
-            this.navigationBarItem4.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem4.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem4.Name = "NavigationBarItem";
             this.navigationBarItem4.Text = "PRESET그룹";
@@ -268,7 +250,6 @@
             // navigationBarItem2
             // 
             this.navigationBarItem2.AccessibleName = "navigationBarItem2";
-            this.navigationBarItem2.BackColor = System.Drawing.Color.Transparent;
             this.navigationBarItem2.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.navigationBarItem2.Name = "NavigationBarItem";
             this.navigationBarItem2.Text = "EM서버모니터링";
@@ -276,7 +257,6 @@
             // siteManageBarItem
             // 
             this.siteManageBarItem.AccessibleName = "siteManageBarItem";
-            this.siteManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.siteManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.siteManageBarItem.Name = "NavigationBarItem";
             this.siteManageBarItem.Text = "사이트 관리";
@@ -284,7 +264,6 @@
             // ampFailoverBarItem
             // 
             this.ampFailoverBarItem.AccessibleName = "ampFailoverBarItem";
-            this.ampFailoverBarItem.BackColor = System.Drawing.Color.Transparent;
             this.ampFailoverBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ampFailoverBarItem.Name = "NavigationBarItem";
             this.ampFailoverBarItem.Text = "앰프 Failover";
@@ -292,7 +271,6 @@
             // bbsHistoryBarItems
             // 
             this.bbsHistoryBarItems.AccessibleName = "bbsHistoryBarItems";
-            this.bbsHistoryBarItems.BackColor = System.Drawing.Color.Transparent;
             this.bbsHistoryBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bbsHistoryBarItems.ForeColor = System.Drawing.Color.White;
             this.bbsHistoryBarItems.Icon = "resource.wx/simplepa2/Resources/screen-with-news-sections.svg";
@@ -308,7 +286,6 @@
             // bbsHistoryBarItem
             // 
             this.bbsHistoryBarItem.AccessibleName = "bbsHistoryBarItem";
-            this.bbsHistoryBarItem.BackColor = System.Drawing.Color.Transparent;
             this.bbsHistoryBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.bbsHistoryBarItem.Name = "NavigationBarItem";
             this.bbsHistoryBarItem.Text = "방송 이력";
@@ -316,7 +293,6 @@
             // deviceHistoryBarItem
             // 
             this.deviceHistoryBarItem.AccessibleName = "deviceHistoryBarItem";
-            this.deviceHistoryBarItem.BackColor = System.Drawing.Color.Transparent;
             this.deviceHistoryBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.deviceHistoryBarItem.Name = "NavigationBarItem";
             this.deviceHistoryBarItem.Text = "장비 이력";
@@ -324,7 +300,6 @@
             // fireCallHistoryBarItem
             // 
             this.fireCallHistoryBarItem.AccessibleName = "fireCallHistoryBarItem";
-            this.fireCallHistoryBarItem.BackColor = System.Drawing.Color.Transparent;
             this.fireCallHistoryBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.fireCallHistoryBarItem.Name = "NavigationBarItem";
             this.fireCallHistoryBarItem.Text = "화재수신 이력";
@@ -332,7 +307,6 @@
             // outCallHistoryBarItem
             // 
             this.outCallHistoryBarItem.AccessibleName = "outCallHistoryBarItem";
-            this.outCallHistoryBarItem.BackColor = System.Drawing.Color.Transparent;
             this.outCallHistoryBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.outCallHistoryBarItem.Name = "NavigationBarItem";
             this.outCallHistoryBarItem.Text = "외부수신 이력";
@@ -340,7 +314,6 @@
             // systemVerifyHistoryBarItem
             // 
             this.systemVerifyHistoryBarItem.AccessibleName = "systemVerifyHistoryBarItem";
-            this.systemVerifyHistoryBarItem.BackColor = System.Drawing.Color.Transparent;
             this.systemVerifyHistoryBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.systemVerifyHistoryBarItem.Name = "NavigationBarItem";
             this.systemVerifyHistoryBarItem.Text = "시스템변경 이력";
@@ -348,7 +321,6 @@
             // systemConfBarItems
             // 
             this.systemConfBarItems.AccessibleName = "systemConfBarItems";
-            this.systemConfBarItems.BackColor = System.Drawing.Color.Transparent;
             this.systemConfBarItems.Font = new System.Drawing.Font("ns700", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.systemConfBarItems.ForeColor = System.Drawing.Color.White;
             this.systemConfBarItems.Icon = "resource.wx/simplepa2/Resources/users-social-symbol.svg";
@@ -363,7 +335,6 @@
             // accountManageBarItem
             // 
             this.accountManageBarItem.AccessibleName = "accountManageBarItem";
-            this.accountManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.accountManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.accountManageBarItem.Name = "NavigationBarItem";
             this.accountManageBarItem.Text = "계정 등록 관리";
@@ -371,7 +342,6 @@
             // emailManageBarItem
             // 
             this.emailManageBarItem.AccessibleName = "emailManageBarItem";
-            this.emailManageBarItem.BackColor = System.Drawing.Color.Transparent;
             this.emailManageBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.emailManageBarItem.Name = "NavigationBarItem";
             this.emailManageBarItem.Text = "시스템 이메일 등록";
@@ -379,7 +349,6 @@
             // smsRegistrationBarItem
             // 
             this.smsRegistrationBarItem.AccessibleName = "smsRegistrationBarItem";
-            this.smsRegistrationBarItem.BackColor = System.Drawing.Color.Transparent;
             this.smsRegistrationBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.smsRegistrationBarItem.Name = "NavigationBarItem";
             this.smsRegistrationBarItem.Text = "SMS 등록";
@@ -387,7 +356,6 @@
             // restAPIRegistrationBarItem
             // 
             this.restAPIRegistrationBarItem.AccessibleName = "restAPIRegistrationBarItem";
-            this.restAPIRegistrationBarItem.BackColor = System.Drawing.Color.Transparent;
             this.restAPIRegistrationBarItem.Font = new System.Drawing.Font("ns500", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.restAPIRegistrationBarItem.Name = "NavigationBarItem";
             this.restAPIRegistrationBarItem.Text = "REST API";
@@ -400,7 +368,7 @@
             this.rightPanels.Dock = Wisej.Web.DockStyle.Fill;
             this.rightPanels.Location = new System.Drawing.Point(250, 0);
             this.rightPanels.Name = "rightPanels";
-            this.rightPanels.Size = new System.Drawing.Size(526, 332);
+            this.rightPanels.Size = new System.Drawing.Size(893, 444);
             this.rightPanels.TabIndex = 1;
             // 
             // contentsPanel
@@ -410,7 +378,7 @@
             this.contentsPanel.Dock = Wisej.Web.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 66);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(526, 266);
+            this.contentsPanel.Size = new System.Drawing.Size(893, 378);
             this.contentsPanel.TabIndex = 0;
             // 
             // topPanels
@@ -420,7 +388,7 @@
             this.topPanels.Dock = Wisej.Web.DockStyle.Top;
             this.topPanels.Location = new System.Drawing.Point(0, 0);
             this.topPanels.Name = "topPanels";
-            this.topPanels.Size = new System.Drawing.Size(526, 66);
+            this.topPanels.Size = new System.Drawing.Size(893, 66);
             this.topPanels.TabIndex = 2;
             // 
             // dataSet1
@@ -441,7 +409,7 @@
             this.Controls.Add(this.rightPanels);
             this.Controls.Add(this.mainMenuBar);
             this.Name = "PA_MainFrame";
-            this.Size = new System.Drawing.Size(776, 332);
+            this.Size = new System.Drawing.Size(1143, 444);
             this.Text = "PA_MainFrame";
             this.Load += new System.EventHandler(this.PA_MainFrame_Load);
             this.rightPanels.ResumeLayout(false);

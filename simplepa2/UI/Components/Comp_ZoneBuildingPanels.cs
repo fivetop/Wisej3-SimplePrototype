@@ -143,6 +143,17 @@ namespace simplepa2.UI.Components
             return packBuildingAssetRow;
         }
 
+        public void setAssetsRowSelectedByID(List<int> assetID)
+        {
+            foreach (Comp_ZoneFloorCardList zoneFC in zoneFloorCardUIList)
+            {
+                zoneFC.setAssetRowSelectedByAssetId(assetID);
+            }
+
+            return;
+
+        }
+
     }
 
     }

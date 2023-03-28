@@ -7,15 +7,24 @@ namespace simplepa2.UI.Components
     {
         public bool cardClicked = false;
         public int intCardNo;
+        public int intRegionNo;
+        public string strGroupName;
 
         public event GroupClickedEventHandler groupClick;
 
-        public Comp_GroupNameCard(string cardName, int cardNo, bool bClicked)
+        public Comp_GroupNameCard(string cardName, int cardNo, int regionCount, bool bClicked)
         {
             InitializeComponent();
 
             this.intCardNo = cardNo;
+            this.lb_cardNo.Text = cardNo.ToString() + ".";
+
+            this.intRegionNo = regionCount;
+            this.lb_regionNo.Text = regionCount.ToString() + "개 존";
+                 
+            this.strGroupName = cardName;
             this.label_GroupName.Text = cardName;
+
             this.cardClicked = bClicked;
 
 
@@ -36,7 +45,7 @@ namespace simplepa2.UI.Components
             cardClicked = !cardClicked;
 
             // 카드가 클릭된 것이면 이벤트 발생
-            if (cardClicked) { groupClick(this, new GroupClickedEventArgs(this.intCardNo));  }
+            if (cardClicked) { groupClick(this, new GroupClickedEventArgs(this.strGroupName));  }
 
             // 상태 변경 
             setCardStatus(cardClicked);            
@@ -60,19 +69,18 @@ namespace simplepa2.UI.Components
 
         private void label_GroupName_Click(object sender, EventArgs e)
         {
-            cardClicked = !cardClicked;
-            setCardStatus(cardClicked);
+            panelCardBack_Click(this, null);
         }
     }
 
     public class GroupClickedEventArgs : EventArgs
     {
-        internal GroupClickedEventArgs(int groupID)
+        internal GroupClickedEventArgs(string groupName)
         {
-            this.groupID = groupID;
+            this.groupName = groupName;
         }
 
-        public int groupID
+        public string groupName
         {
             get;
             private set;

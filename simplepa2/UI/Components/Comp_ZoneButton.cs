@@ -85,5 +85,15 @@ namespace simplepa2.UI.Components
             else
                 return null;
         }
+
+        public int getAssetID()
+        {
+            return myAssetRow.AssetId;
+        }
+
+        public void setButtonClicked()
+        {
+            Comp_ZoneButton_Click(this, null);
+        }
     }
 }

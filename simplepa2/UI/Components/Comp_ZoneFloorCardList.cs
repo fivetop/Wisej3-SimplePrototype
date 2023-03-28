@@ -146,6 +146,19 @@ namespace simplepa2.UI.Components
                 }
             }
             return packFloorRow;
-        }        
+        }
+
+        public void setAssetRowSelectedByAssetId(List<int> assetId)
+        {
+            foreach (Comp_ZoneButton comp_bt in zoneList)
+            {
+                int result = assetId.Find(x => x == comp_bt.getAssetID());
+                if(result != 0)
+                {
+                    comp_bt.setButtonClicked();
+                }
+                // asset id 와 같은경우 selected 로 처리
+            }
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace simplepa2.UI.Components
             InitializeComponent();            
         }     
 
-        public void buildingDataUISetup(string selectedItem, bool isCheckBoxSetup, bool isZoneAddButton)
+        public void buildingDataUISetup(string selectedEMNAME, bool isCheckBoxSetup, bool isZoneAddButton)
         {
 
             this.assetsTableAdapter1.Fill(this.dataSet11.Assets);
@@ -29,13 +29,13 @@ namespace simplepa2.UI.Components
             // 빌딩 데이터 가져오기
             DataRow[] buildList;
 
-            if (selectedItem.Equals("전체"))
+            if (selectedEMNAME.Equals("전체"))
             {
                 buildList = this.dataSet11.AssetsSitenBuilding.Select();
             }
             else
             {
-                buildList = this.dataSet11.AssetsSitenBuilding.Select("emServer = '" + selectedItem + "'");
+                buildList = this.dataSet11.AssetsSitenBuilding.Select("emServer = '" + selectedEMNAME + "'");
             }
 
 
@@ -74,6 +74,15 @@ namespace simplepa2.UI.Components
                 }
             }
             return fulltAssetsRowlList;
+        }
+
+        public void setAssetSelectedByAssetID(List<int> assetID)
+        {
+            foreach (Comp_ZoneBuildingPanels buildPanelSet in buildPanelDataList)
+            {
+                buildPanelSet.setAssetsRowSelectedByID(assetID);
+            }
+            return;
         }
 
 

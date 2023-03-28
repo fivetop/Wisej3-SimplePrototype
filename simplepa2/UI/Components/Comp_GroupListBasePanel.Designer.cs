@@ -1,6 +1,6 @@
 ﻿namespace simplepa2.UI.Components
 {
-    partial class Comp_GroupNameSpacer
+    partial class Comp_GroupListBasePanel
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Comp_GroupNameSpacer
+            // Comp_GroupListBasePanel
             // 
-            this.Dock = Wisej.Web.DockStyle.Top;
-            this.Name = "Comp_GroupNameSpacer";
-            this.Size = new System.Drawing.Size(440, 5);
+            this.AutoScroll = true;
+            this.Dock = Wisej.Web.DockStyle.Fill;
+            this.Name = "Comp_GroupListBasePanel";
+            this.Size = new System.Drawing.Size(480, 587);
+            this.Load += new System.EventHandler(this.Comp_GroupListBasePanel_Load);
             this.ResumeLayout(false);
 
         }
