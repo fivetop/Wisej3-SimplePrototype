@@ -193,6 +193,9 @@
     <EmbeddedResource Include="UI\Components\Comp_GroupDetailPanel.resx">
       <DependentUpon>Comp_GroupDetailPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_GroupListBasePanel.resx">
+      <DependentUpon>Comp_GroupListBasePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_GroupNameCard.resx">
       <DependentUpon>Comp_GroupNameCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -1063,6 +1066,12 @@
     </Compile>
     <Compile Include="UI\Components\Comp_GroupDetailPanel.Designer.cs">
       <DependentUpon>Comp_GroupDetailPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\Comp_GroupListBasePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_GroupListBasePanel.Designer.cs">
+      <DependentUpon>Comp_GroupListBasePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\Comp_GroupNameCard.cs">
       <SubType>UserControl</SubType>

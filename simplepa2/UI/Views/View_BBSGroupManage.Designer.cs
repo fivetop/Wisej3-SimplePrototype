@@ -41,7 +41,6 @@
             this.assetGroupsTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetGroupsTableAdapter();
             this.assetGroupsListTableAdapter1 = new simplepa2.DataSet1TableAdapters.AssetGroupsListTableAdapter();
             this.assetGroupsTableAdapter2 = new simplepa2.DataSet1TableAdapters.AssetGroupsTableAdapter();
-            this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.userTreesTableAdapter1 = new simplepa2.DataSet1TableAdapters.UserTreesTableAdapter();
             this.pn_GroupListMain.SuspendLayout();
             this.pn_GroupListTop.SuspendLayout();
@@ -195,7 +194,6 @@
         private DataSet1TableAdapters.AssetGroupsTableAdapter assetGroupsTableAdapter1;
         private DataSet1TableAdapters.AssetGroupsListTableAdapter assetGroupsListTableAdapter1;
         private DataSet1TableAdapters.AssetGroupsTableAdapter assetGroupsTableAdapter2;
-        private System.ServiceProcess.ServiceController serviceController1;
         private DataSet1TableAdapters.UserTreesTableAdapter userTreesTableAdapter1;
     }
 }
