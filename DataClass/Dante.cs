@@ -9,7 +9,22 @@ using System.Threading.Tasks;
 
 namespace DataClass
 {
-	[Serializable]
+    [Serializable]
+    public class DSPMatrix
+    {
+        public int min { get; set; } = 0;
+        public int mout { get; set; } = 0;
+        public int mstate { get; set; } = 0;
+        public string ip { get; set; } = "";
+
+        public string toString()
+        {
+            return ip.ToString() + " : " + min.ToString() + " : " + mout.ToString() + " : " + mstate.ToString();
+        }
+
+    }
+
+    [Serializable]
 	public class DSPChnnel
 	{
 		public int chno { get; set; }

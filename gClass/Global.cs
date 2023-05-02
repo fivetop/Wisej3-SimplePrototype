@@ -29,6 +29,10 @@ namespace gClass
         // dante 
         static public DanteDevice danteDevice { get; set; } = new DanteDevice();
 
+        // 앰프 메트릭스 명령후 실행 안됨 메트릭스 찾기 
+        static public object QueueLock { get; set; } = new object();
+
+        public static List<DSPMatrix> SvsR { get; set; } = new List<DSPMatrix>();
 
         static public List<NetworkCard> networkCardList { get; set; } = new List<NetworkCard>();
         static public string NetworkCardName { get; set; } = "이더넷";

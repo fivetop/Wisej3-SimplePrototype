@@ -19,7 +19,6 @@ namespace pa
         private static List<BSAsset> DataQueue { get; set; } = new List<BSAsset>();
 
         private static bool EMClear { get; set; } = false;
-        private static BS_STATE Cur_bS_STATE { get; set; } = BS_STATE.STOP;
 
         private static int[] MetrixChIn = { 0, 16, 17, 18, 19, 20, 21, 22, 23 }; // 입력채널 번호 
 
@@ -188,6 +187,7 @@ namespace pa
                             {
                             }
                         }
+                        g.dsp.retry.Start();
                         break;
 
                     case BS_DSP_STATE.PRESET:
@@ -203,13 +203,14 @@ namespace pa
                                 if (sst1 == null) continue;
                                 if (sst1.ip == "" || sst1.ip_dspctrl == "") continue;
                                 Console.WriteLine("--" + "DSP Metrix Out ==> In :" + sst1.ip_dspctrl + " : " + t1.path + " : " + data.onoff.ToString());
-                                g.dsp.Matrix(0, sst1.dsp_chno, data.onoff, sst1.ip_dspctrl);
+                                g.dsp.Matrix(30, sst1.dsp_chno, data.onoff, sst1.ip_dspctrl); // 0 -> 30
                                 //g.dsp.makeVolumn(sst1.dsp_chno, sst1.dsp_vol, sst1.ip_dspctrl);
                             }
                             catch (Exception e1)
                             {
                             }
                         }
+                        g.dsp.retry.Start();
                         break;
 
                     case BS_DSP_STATE.MUL_BS:
@@ -238,6 +239,7 @@ namespace pa
                             {
                             }
                         }
+                        g.dsp.retry.Start();
                         break;
                     case BS_DSP_STATE.GEN_BS:
                         Console.WriteLine("GEN_BS" + " : " + data.onoff.ToString());
@@ -258,6 +260,7 @@ namespace pa
                             {
                             }
                         }
+                        g.dsp.retry.Start();
                         break;
 
                     case BS_DSP_STATE.PRESET_ALL:
@@ -273,11 +276,12 @@ namespace pa
                             Console.WriteLine("--" + "DSP Metrix Out ==> In :" + t1.ip_dspctrl);
                             for (int j = 1; j < 32; j++)
                             {
-                                g.dsp.Matrix(0, j, data.onoff, t1.ip_dspctrl);
+                                g.dsp.Matrix(30, j, data.onoff, t1.ip_dspctrl); // 0 -> 30
                             }
                             // 시스템 예약 - 아날로그 지원 용 
                             g.dsp.Matrix(0, 32, 1, t1.ip_dspctrl);
                         }
+                        g.dsp.retry.Start();
                         break;
 
                     case BS_DSP_STATE.INIT :

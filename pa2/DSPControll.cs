@@ -1,10 +1,12 @@
-﻿using gClass;
+﻿using DataClass;
+using gClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace pa
 {
@@ -19,14 +21,11 @@ namespace pa
 		public List<string> muteOutOFF = new List<string>();
 		public List<string> vol = new List<string>();
 
-		// 앰프 메트릭스 명령후 실행 안됨 메트릭스 찾기 
-		public object QueueLock { get; set; } = new object();
-		// 실행 안됨 명령 모음 
-		public List<string> SvsR { get; set; } = new List<string>();
-		// 실행할 메트릭스 카운트
-		public int MetrixCount { get; set; } = 0;
+        public static List<DSPMatrix> rcv = new List<DSPMatrix>();
 
-		public DSPControll()
+        public System.Timers.Timer retry = new System.Timers.Timer(500);
+
+        public DSPControll()
         {
 			makePacket();
 
@@ -35,9 +34,60 @@ namespace pa
 			udpc1.buf2.Clear();
 			udpc1.rcv();
 
-		}
+            retry.Elapsed += Retry_Elapsed;
+        }
 
-		public void Close()
+        public delegate void ResultMessageHandler(string message);
+        public event ResultMessageHandler OnResult;
+
+
+        private void Retry_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            retry.Stop();
+
+            foreach (var t1 in rcv)
+            {
+                var t2 = gl.SvsR.FirstOrDefault(p => p.min == t1.min && p.mout == (t1.mout + 1) && p.mstate == t1.mstate);
+                if (t2 != null)
+                {
+                    gl.SvsR.Remove(t2);
+                }
+            }
+            rcv.Clear();
+
+            if (gl.SvsR.Count == 0)
+            {
+                Console.WriteLine("DSP Metrix check OK..");
+                OnResult("1");
+                return;
+            }
+            // retry 처리 
+            try
+            {
+                foreach (var t1 in gl.SvsR)
+                {
+                    Matrix(t1.min, t1.mout, t1.mstate, t1.ip);
+                    Console.WriteLine(t1.toString());
+                }
+                foreach (var t1 in gl.SvsR)
+                {
+                    Matrix(t1.min, t1.mout, t1.mstate, t1.ip);
+                }
+                foreach (var t1 in gl.SvsR)
+                {
+                    Matrix(t1.min, t1.mout, t1.mstate, t1.ip);
+                }
+                OnResult("0");
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1.Message);
+            }
+            //gl.SvsR.Clear();
+            retry.Start();
+        }
+
+        public void Close()
 		{
 			udpc1.Close();
 		}
@@ -45,11 +95,10 @@ namespace pa
 		// 통신전 버퍼 클리어 
 		public void BufferClear()
 		{
-			lock (QueueLock)
+			lock (gl.QueueLock)
 			{ 
 				udpc1.buf2.Clear();
-				SvsR.Clear();
-				MetrixCount = 0;
+				gl.SvsR.Clear();
 			}
 		}
 
@@ -58,33 +107,23 @@ namespace pa
 
 		private void Udpc1_OnReceiveMessage(string message)
         {
-			//Console.WriteLine(message);
-			lock (QueueLock)
-			{
-				if (SvsR.Count == 0)
-					return;
-				try
-				{
-					foreach (byte[] b1 in udpc1.buf2)
-					{
-						string m1 = gl.bytetostring(b1);
-						string m2 = m1.ToUpper();
-						string m3 = gl.RePlaceAt(m2, 6, 2, "00");
-						if (SvsR.Remove(m3))
-						{
-							//if(gl.SvsR.Count > 0)
-							//	Console.WriteLine(gl.MetrixCount.ToString() +" / "+ gl.SvsR.Count().ToString());
-						}
-					}
-				}
-				catch (Exception e1)
-				{
-					return;
-				}
-				//SvsR.LastOrDefault
-				//udpc1.buf2.Clear();
-			}
-		}
+            //OnReceiveMessage(message);
+            if (message.Length > 24)
+                return;
+
+            if (message.Contains("B322") == false)
+                return;
+            ///*
+            DSPMatrix dmc = new DSPMatrix();
+            string s1 = "0x" + message.Substring(16, 2);
+            string s2 = "0x" + message.Substring(18, 2);
+            string s3 = "0x" + message.Substring(20, 2);
+            dmc.min = Convert.ToInt32(s1, 16);
+            dmc.mout = Convert.ToInt32(s2, 16);
+            dmc.mstate = Convert.ToInt32(s3, 16);
+            rcv.Add(dmc);
+            Console.WriteLine(dmc.toString());
+        }
 
 
 		#region // DSP 뮤트 볼륨 초기화 처리 
@@ -249,18 +288,26 @@ namespace pa
 			string str4 = String.Format("{0:x2}", onoff); // on off
 			string str5 = str1 + str2 + str3 + str4 + "00";
 
-			lock (QueueLock)
-			{
-				string str6 = str5.ToUpper();
-				//Console.WriteLine(str6);
-				SvsR.Add(str6);
-				MetrixCount++;
-			}
 			byte[] bytes1 = gl.hexatobyte(str5);
 			udpc1.send(ip, 50000, bytes1);
 			Thread.Sleep(sleeptime);
 
+            lock (gl.QueueLock)
+            {
+                DSPMatrix dm = new DSPMatrix();
+                dm.min = m_in;
+                dm.mout = m_out;
+                dm.mstate = onoff;
+                dm.ip = ip;
+                if (gl.SvsR.Exists(p => p.min == dm.min && p.mout == dm.mout && p.mstate == dm.mstate && p.ip == dm.ip) == false)
+                    gl.SvsR.Add(dm);
+            }
 
-		}
+            str1 = "B3227D00A6000100";
+            str5 = str1 + str2 + str3 + str4 + "00";
+            bytes1 = gl.hexatobyte(str5);
+            udpc1.send(ip, 50000, bytes1);
+            Thread.Sleep(10); // *2
+        }
 	}
 }
