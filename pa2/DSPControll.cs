@@ -55,15 +55,15 @@ namespace pa
             }
             rcv.Clear();
 
-            if (gl.SvsR.Count == 0)
-            {
-                Console.WriteLine("DSP Metrix check OK..");
-                OnResult("1");
-                return;
-            }
             // retry 처리 
             try
             {
+				if (gl.SvsR.Count == 0)
+				{
+					Console.WriteLine("DSP Metrix check OK..");
+					OnResult?.Invoke("1");
+					return;
+				}
                 foreach (var t1 in gl.SvsR)
                 {
                     Matrix(t1.min, t1.mout, t1.mstate, t1.ip);
@@ -77,7 +77,7 @@ namespace pa
                 {
                     Matrix(t1.min, t1.mout, t1.mstate, t1.ip);
                 }
-                OnResult("0");
+                OnResult?.Invoke("0");
             }
             catch (Exception e1)
             {

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle6 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle7 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle8 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle9 = new Wisej.Web.DataGridViewCellStyle();
             this.pn_PresetList = new Wisej.Web.Panel();
             this.pn_PresetItemList = new Wisej.Web.Panel();
             this.dataGridView1 = new Wisej.Web.DataGridView();
@@ -268,9 +268,9 @@
             // colSdate
             // 
             this.colSdate.DataPropertyName = "sdate";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colSdate.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Format = "d";
+            dataGridViewCellStyle7.NullValue = null;
+            this.colSdate.DefaultCellStyle = dataGridViewCellStyle7;
             this.colSdate.HeaderText = "일자";
             this.colSdate.Name = "colSdate";
             this.colSdate.ReadOnly = true;
@@ -355,8 +355,8 @@
             // colStime_1
             // 
             this.colStime_1.DataPropertyName = "stime";
-            dataGridViewCellStyle5.Format = "G";
-            this.colStime_1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Format = "G";
+            this.colStime_1.DefaultCellStyle = dataGridViewCellStyle8;
             this.colStime_1.HeaderText = "stime";
             this.colStime_1.Name = "colStime_1";
             this.colStime_1.Visible = false;
@@ -364,8 +364,8 @@
             // colEtime_1
             // 
             this.colEtime_1.DataPropertyName = "etime";
-            dataGridViewCellStyle6.Format = "G";
-            this.colEtime_1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Format = "G";
+            this.colEtime_1.DefaultCellStyle = dataGridViewCellStyle9;
             this.colEtime_1.HeaderText = "etime";
             this.colEtime_1.Name = "colEtime_1";
             this.colEtime_1.Visible = false;
@@ -626,10 +626,10 @@
             this.panel특정일자.Controls.Add(this.dateTime일자);
             this.panel특정일자.Controls.Add(this.label5);
             this.panel특정일자.Dock = Wisej.Web.DockStyle.Fill;
-            this.panel특정일자.Location = new System.Drawing.Point(435, 0);
+            this.panel특정일자.Location = new System.Drawing.Point(438, 0);
             this.panel특정일자.Name = "panel특정일자";
             this.panel특정일자.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
-            this.panel특정일자.Size = new System.Drawing.Size(200, 44);
+            this.panel특정일자.Size = new System.Drawing.Size(197, 44);
             this.panel특정일자.TabIndex = 167;
             // 
             // dateTime일자
@@ -665,32 +665,34 @@
             this.panel주간.Controls.Add(this.check화);
             this.panel주간.Controls.Add(this.check월);
             this.panel주간.Dock = Wisej.Web.DockStyle.Left;
-            this.panel주간.Location = new System.Drawing.Point(111, 0);
+            this.panel주간.Location = new System.Drawing.Point(114, 0);
             this.panel주간.Name = "panel주간";
             this.panel주간.Size = new System.Drawing.Size(324, 44);
             this.panel주간.TabIndex = 174;
             // 
             // check일
             // 
+            this.check일.AutoSize = false;
             this.check일.BackColor = System.Drawing.Color.Transparent;
             this.check일.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
             this.check일.Dock = Wisej.Web.DockStyle.Left;
             this.check일.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.check일.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.check일.Location = new System.Drawing.Point(264, 0);
+            this.check일.Location = new System.Drawing.Point(258, 0);
             this.check일.Name = "check일";
-            this.check일.Size = new System.Drawing.Size(44, 44);
+            this.check일.Size = new System.Drawing.Size(38, 44);
             this.check일.TabIndex = 173;
             this.check일.Text = "일";
             // 
             // check토
             // 
+            this.check토.AutoSize = false;
             this.check토.BackColor = System.Drawing.Color.Transparent;
             this.check토.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
             this.check토.Dock = Wisej.Web.DockStyle.Left;
             this.check토.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.check토.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.check토.Location = new System.Drawing.Point(220, 0);
+            this.check토.Location = new System.Drawing.Point(214, 0);
             this.check토.Name = "check토";
             this.check토.Size = new System.Drawing.Size(44, 44);
             this.check토.TabIndex = 173;
@@ -698,13 +700,14 @@
             // 
             // check금
             // 
+            this.check금.AutoSize = false;
             this.check금.BackColor = System.Drawing.Color.Transparent;
             this.check금.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.check금.Checked = true;
+            this.check금.CheckState = Wisej.Web.CheckState.Checked;
             this.check금.Dock = Wisej.Web.DockStyle.Left;
             this.check금.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.check금.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.check금.Location = new System.Drawing.Point(176, 0);
+            this.check금.Location = new System.Drawing.Point(170, 0);
             this.check금.Name = "check금";
             this.check금.Size = new System.Drawing.Size(44, 44);
             this.check금.TabIndex = 171;
@@ -712,13 +715,14 @@
             // 
             // check목
             // 
+            this.check목.AutoSize = false;
             this.check목.BackColor = System.Drawing.Color.Transparent;
             this.check목.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.check목.Checked = true;
+            this.check목.CheckState = Wisej.Web.CheckState.Checked;
             this.check목.Dock = Wisej.Web.DockStyle.Left;
             this.check목.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.check목.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.check목.Location = new System.Drawing.Point(132, 0);
+            this.check목.Location = new System.Drawing.Point(126, 0);
             this.check목.Name = "check목";
             this.check목.Size = new System.Drawing.Size(44, 44);
             this.check목.TabIndex = 169;
@@ -726,13 +730,14 @@
             // 
             // check수
             // 
+            this.check수.AutoSize = false;
             this.check수.BackColor = System.Drawing.Color.Transparent;
             this.check수.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.check수.Checked = true;
+            this.check수.CheckState = Wisej.Web.CheckState.Checked;
             this.check수.Dock = Wisej.Web.DockStyle.Left;
             this.check수.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.check수.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.check수.Location = new System.Drawing.Point(88, 0);
+            this.check수.Location = new System.Drawing.Point(82, 0);
             this.check수.Name = "check수";
             this.check수.Size = new System.Drawing.Size(44, 44);
             this.check수.TabIndex = 167;
@@ -740,13 +745,14 @@
             // 
             // check화
             // 
+            this.check화.AutoSize = false;
             this.check화.BackColor = System.Drawing.Color.Transparent;
             this.check화.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.check화.Checked = true;
+            this.check화.CheckState = Wisej.Web.CheckState.Checked;
             this.check화.Dock = Wisej.Web.DockStyle.Left;
             this.check화.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.check화.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
-            this.check화.Location = new System.Drawing.Point(44, 0);
+            this.check화.Location = new System.Drawing.Point(38, 0);
             this.check화.Name = "check화";
             this.check화.Size = new System.Drawing.Size(44, 44);
             this.check화.TabIndex = 165;
@@ -754,29 +760,31 @@
             // 
             // check월
             // 
+            this.check월.AutoSize = false;
             this.check월.BackColor = System.Drawing.Color.Transparent;
             this.check월.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.check월.Checked = true;
+            this.check월.CheckState = Wisej.Web.CheckState.Checked;
             this.check월.Dock = Wisej.Web.DockStyle.Left;
             this.check월.Font = new System.Drawing.Font("@default", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.check월.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.check월.Location = new System.Drawing.Point(0, 0);
             this.check월.Name = "check월";
-            this.check월.Size = new System.Drawing.Size(44, 44);
+            this.check월.Size = new System.Drawing.Size(38, 44);
             this.check월.TabIndex = 163;
             this.check월.Text = "월";
             // 
             // check주간반복
             // 
+            this.check주간반복.AutoSize = false;
             this.check주간반복.BackColor = System.Drawing.Color.Transparent;
             this.check주간반복.BackgroundImageLayout = Wisej.Web.ImageLayout.OriginalSize;
-            this.check주간반복.Checked = true;
+            this.check주간반복.CheckState = Wisej.Web.CheckState.Checked;
             this.check주간반복.Dock = Wisej.Web.DockStyle.Left;
             this.check주간반복.Font = new System.Drawing.Font("default", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.check주간반복.ForeColor = System.Drawing.Color.FromArgb(17, 17, 17);
             this.check주간반복.Location = new System.Drawing.Point(20, 0);
             this.check주간반복.Name = "check주간반복";
-            this.check주간반복.Size = new System.Drawing.Size(91, 44);
+            this.check주간반복.Size = new System.Drawing.Size(94, 44);
             this.check주간반복.TabIndex = 137;
             this.check주간반복.Text = "주간반복";
             this.check주간반복.CheckedChanged += new System.EventHandler(this.check주간반복_CheckedChanged);
@@ -1049,10 +1057,8 @@
             this.panel43.ResumeLayout(false);
             this.panel89.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel특정일자.ResumeLayout(false);
             this.panel주간.ResumeLayout(false);
-            this.panel주간.PerformLayout();
             this.panel37.ResumeLayout(false);
             this.panel35.ResumeLayout(false);
             this.panel34.ResumeLayout(false);

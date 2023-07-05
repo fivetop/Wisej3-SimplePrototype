@@ -52,13 +52,13 @@ namespace simplepa2
 
 			Application.MainPage = new PA_Login();
 			Application.LoadTheme("LSMaterial-3");
-			/*
+			///*
 			if (t2 == null)
 			{ 
 				t2 = new Thread(new ThreadStart(DoSignalRThread));
 				t2.Start();
 			}
-			*/
+			//*/
 		}
 
         private static void Application_SessionTimeout(object sender, HandledEventArgs e)

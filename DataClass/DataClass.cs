@@ -28,6 +28,7 @@ namespace DataClass
         eInChMove = 17,         // DSP, Sound 이동  C2S
         eFileDown = 18,         // file download   S2C 
         eScheduleDown = 19,     // Schedule change  S2C
+        eReserved = 20,         // 예약방송 시작    C2S
     }
 
     public enum eEventCode

@@ -192,6 +192,7 @@ namespace pa
             }
             g.DSP_MakeGroupSpeaker(sch_play.Play, 1, BS_DSP_STATE.MUL_BS, sch_play.chno);
             PlayChildProcess(sch_play.chno, sch_play.idno);
+            SendSigR("예약방송", eSignalRMsgType.eReserved, sch_play.chno, sch_play.idno);
             /*
             ExtProcess ep1 = new ExtProcess(sch_play.idno, sch_play.chno);
             BSpro.Add(ep1);
