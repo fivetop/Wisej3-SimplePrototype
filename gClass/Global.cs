@@ -39,7 +39,6 @@ namespace gClass
         static public int NetworkCardNo { get; set; } = 0;
         static public int NetworkCardmDNS { get; set; } = 0;
 
-
         public static void NetWorkCardFind()
         {
             if (System.IO.File.Exists("NetworkCardName.ini") == false)
@@ -49,45 +48,32 @@ namespace gClass
             string n2 = System.IO.File.ReadAllText("NetworkCardName.ini");
 
             string[] ar = n2.Split(':');
-            gl.NetworkCardName = ar[2];
             gl.NetworkCardNo = int.Parse(ar[0]);
             gl.NetworkCardmDNS = int.Parse(ar[1]);
+            gl.NetworkCardName = ar[2];
             gl.BestInterfaceIndex();
 
-            if (gl.NetworkCardmDNS != 0)
+            string t2 = "";
+            foreach (var nc in gl.networkCardList)
             {
-                var nc1 = gl.networkCardList.First(p=>p.NetworkCardName == gl.NetworkCardName);
-                if(nc1 != null)
+                int no = 0;
+                foreach (var t1 in CaptureDeviceList.Instance)
                 {
-                    gl.NetworkCardNo = nc1.NetworkCardNo;
-                    gl.NetworkCardmDNS = nc1.NetworkCardmDNS;
-                }
-            }
-
-            if (gl.NetworkCardmDNS == 0)
-            { 
-                foreach (var nc in gl.networkCardList)
-                {
-                    int no = 0;
-                    foreach (var t1 in CaptureDeviceList.Instance)
+                    string s1 = ((LibPcapLiveDevice)t1).Interface.FriendlyName;
+                    if (nc.NetworkCardName == s1 && nc.ipv4.Contains("169"))
                     {
-                        string s1 = ((LibPcapLiveDevice)t1).Interface.FriendlyName;
-                        if (nc.NetworkCardName == s1)
-                        {
-                            nc.NetworkCardNo = no;
-                            if (gl.NetworkCardName == "이더넷")
-                            {
-                                gl.NetworkCardNo = nc.NetworkCardNo;
-                                gl.NetworkCardmDNS = nc.NetworkCardmDNS;
-                                gl.NetworkCardName = nc.NetworkCardName;
-                            }
-                        }
-                        no++;
+                        nc.NetworkCardNo = no;
+                        gl.NetworkCardNo = no;
+                        gl.NetworkCardmDNS = nc.NetworkCardmDNS;
+                        gl.NetworkCardName = nc.NetworkCardName;
+                        t2 = gl.NetworkCardNo + ":" + gl.NetworkCardmDNS + ":" + gl.NetworkCardName;
+                        Console.WriteLine(t2);
+                        System.IO.File.WriteAllText("NetworkCardName.ini", t2);
                     }
+                    no++;
                 }
             }
         }
-
 
         static public int BestInterfaceIndex()
         {
@@ -105,6 +91,8 @@ namespace gClass
                 {
                     if (t1.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
                     {
+                        string t2 = "Interface No : " + v4_props.Index + " : " + nic.Name + " : " + t1.Address.ToString();
+                        Console.WriteLine(t2);
                         //g.Log(t1.Address.ToString());
                         networkCardList.Add(new NetworkCard(v4_props.Index, nic.Name, t1.Address.ToString()));
 

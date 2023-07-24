@@ -392,9 +392,12 @@ namespace pa
 		ArrayList resources = new ArrayList();
 		IAsyncResult ar_ = null;
 
-		public static int intfindx = 0;
-		public static string localIP = "127.0.0.1";
-		public Resolver() 
+        public static int intfindx { get; set; } = 0;
+        public static string localIP { get; set; } = "127.0.0.1";
+
+        public static bool stop { get; set; } = false;
+
+        public Resolver() 
 		{
             socket = new UdpClient();
 
@@ -513,22 +516,52 @@ namespace pa
 				return null;
 		}
 
+		static bool running = false;
 		public void GatherResponses() 
 		{
-			//Response response;
-			while (true) 
+            if (running) return;
+            running = true;
+            //Response response;
+            while (true) 
 			{
 				var response = Receive();
 				var t1 = response.GetResources();
-				if (t1.Count > 0)
-				{ 
-					//Console.WriteLine(response.ToString());
-					resources.AddRange(t1);
-				}
-			}
-		}
+                if (stop)
+                {
+                    running = false;
+                    return;
+                }
 
-		private static void ReceiverThread( Object arg ) 
+                if (t1.Count > 0)
+				{
+                    foreach (var t2 in t1)
+                    {
+                        try
+                        {
+                            if (!resources.Contains(t2))
+                            {
+                                resources.Add(t2);
+                                Console.WriteLine(t2.ToString());
+                            }
+                            //resources.AddRange(t1);
+                        }
+                        catch (Exception e)
+                        {
+                            // ignore
+                            //System.Console.WriteLine( "resolver thread aborted" );
+                            //System.Console.WriteLine( "message: {0}", e.Message );
+                            //System.Console.WriteLine( "source: {0}", e.Source );
+                            //System.Console.WriteLine( "stack: {0}", e.StackTrace );
+                            //System.Console.WriteLine( "data: {0}", e.Data );
+
+                        }
+                    }
+                }
+            }
+            running = false;
+        }
+
+        private static void ReceiverThread( Object arg ) 
 		{
 			Thread.CurrentThread.Name = "ResolveListenerThread";
 			Resolver receiver = (Resolver)arg;
@@ -538,13 +571,6 @@ namespace pa
 			} 
 			catch (Exception e ) 
 			{
-				// ignore
-				//System.Console.WriteLine( "resolver thread aborted" );
-				//System.Console.WriteLine( "message: {0}", e.Message );
-				//System.Console.WriteLine( "source: {0}", e.Source );
-				//System.Console.WriteLine( "stack: {0}", e.StackTrace );
-				//System.Console.WriteLine( "data: {0}", e.Data );
-
 			}
 		}
 
@@ -554,9 +580,9 @@ namespace pa
 			{
 				Thread thread = new Thread( ReceiverThread );
 				thread.Start( this );
-				Thread.Sleep(5000);
-				thread.Abort();
-				thread.Join();
+				Thread.Sleep(2000);
+				//thread.Abort();
+				//thread.Join();
 			}
 			catch (System.Threading.ThreadAbortException e)
 			{
@@ -678,31 +704,44 @@ namespace pa
 			return SRVs( domain );
 		}
 
-		public IPEndPoint[] ResolveServiceName(string service_name)
+        ArrayList ptrs_t = new ArrayList();
+
+        public IPEndPoint[] ResolveServiceName(string service_name)
 		{
 			ArrayList endpoints = new ArrayList();
 
-			//string[] ptrs1 = GetCNAME(service_name);
-			//System.Console.WriteLine("Found {0} PTR RRs for {1}", ptrs1.Length, service_name);
-			//string[] ptrs1 = GetAAAA(service_name);
-			//System.Console.WriteLine("Found {0} PTR RRs for {1}", ptrs1.Length, service_name);
+            //string[] ptrs1 = GetCNAME(service_name);
+            //System.Console.WriteLine("Found {0} PTR RRs for {1}", ptrs1.Length, service_name);
+            //string[] ptrs1 = GetAAAA(service_name);
+            //System.Console.WriteLine("Found {0} PTR RRs for {1}", ptrs1.Length, service_name);
 
-			string[] ptrs = GetPTR(service_name);
-			if (ptrs.Length < 1)
-				return null;
-			g.Log("Find Device Step 2 : " + ptrs.Length.ToString());
+            string[] ptrs = GetPTR(service_name);
+            ArrayList ptrs_o = new ArrayList();
 
-			foreach (string ptr in ptrs)
+            foreach (var p1 in ptrs)
+            {
+                if (!ptrs_t.Contains(p1))
+                {
+                    ptrs_t.Add(p1);
+                    ptrs_o.Add(p1);
+                }
+            }
+            if (ptrs_o.Count < 1)
+                return null;
+            g.Log("mDNS => Find Device Chnnel : " + ptrs_o.Count.ToString());
+            ptrs = (string[])ptrs_o.ToArray(typeof(string));
+
+            foreach (string ptr in ptrs)
 			{
-				Service[] srvs = SRVs(ptr);
+                if (stop) return null;
+                Service[] srvs = SRVs(ptr);
 				if (srvs.Length == 0)
 				{
 					srvs = GetSRV(ptr);
 				}
-				// g.Log("Find Device Step 2 : " + srvs.Length.ToString());
-				// System.Console.WriteLine( "Found {0} SRV RRs for {1}", srvs.Length, ptr );
+                g.Log("mDNS => Found SRV RRs " + ptr.ToString());
 
-				foreach (Service srv in srvs)
+                foreach (Service srv in srvs)
 				{
 					// System.Console.WriteLine( "SRV: {0}:{1}", srv.target, srv.port );
 					IPAddress[] addresses = As(srv.target);
@@ -735,7 +774,7 @@ namespace pa
 			string[] ptrs = GetPTR(service_name);
 			if (ptrs.Length < 1)
 				return null;
-			g.Log("Find Device Step 1 : " + ptrs.Length.ToString());
+            g.Log("mDNS => Find Device : " + ptrs.Length.ToString());
 
 			return null;
 		}

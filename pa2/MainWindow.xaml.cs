@@ -24,6 +24,7 @@ using simplepa2;
 using simplepa2.DataSet1TableAdapters;
 using static simplepa2.DataSet1;
 using System.Timers;
+using System.Net;
 
 namespace pa
 {
@@ -107,6 +108,7 @@ namespace pa
 
                 Initialtimer.Elapsed += Initialtimer_Elapsed; ;
                 Initialtimer.AutoReset = true;
+                Initialtimer.Interval = 5000;
                 Initialtimer.Start();
 
             }
@@ -452,6 +454,16 @@ namespace pa
                 g.resolver = new Resolver();
                 g.resolver.OnEventNewDevice += Resolver_OnEventNewDevice;
                 g._EMClient.net_dante = t3.ipv4;
+
+                // dsp find 
+                IPEndPoint ReceiveEndPoint1 = new IPEndPoint(System.Net.IPAddress.Parse(t3.ipv4), 6001);
+                udpc1 = new udpClient();
+                udpc1.udp.Client.Bind(ReceiveEndPoint1);
+                udpc1.option(IPAddress.Parse("239.16.0.8"), Resolver.intfindx);
+                udpc1.OnReceiveMessage += Udpc1_OnReceiveMessage;
+                udpc1.buf2.Clear();
+                udpc1.rcv();
+
             }
             catch (Exception e1)
             {
@@ -473,6 +485,12 @@ namespace pa
                     wireShark.CheckStart();
                 }
             }
+        }
+
+        private static void Udpc1_OnReceiveMessage(string message)
+        {
+            Console.WriteLine("Rcv.." + udpc1.buf2.Count.ToString());
+            udpc1.buf2.Clear();
         }
 
         private int systemcheck()
@@ -607,6 +625,7 @@ namespace pa
                 _tray.Dispose();
                 _tray = null;
             }
+            udpc1.Close();
             LScap.g.LSpcapStop();// .LSpcap .CloseCap();
             Thread.Sleep(1000);
         }

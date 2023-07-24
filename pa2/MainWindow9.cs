@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -58,6 +59,7 @@ namespace pa
         private void _Status2_Click(object sender, RoutedEventArgs e)
         {
             if (systemcheck() < 2) return;
+            Resolver.stop = false;
             ScanAll();
         }
 
@@ -75,8 +77,11 @@ namespace pa
 
         static int case1 { get; set; } = 0;
 
+        static bool timer_running = false;
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            if (timer_running) return;
+            timer_running = true;
             Devicetimer.Interval = 1000 * 10;
             try
             {
@@ -107,8 +112,11 @@ namespace pa
 
                         Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
                         {
-                            g.division();
-                            FindDSP();
+                            if (MainDSPName == "")
+                            { 
+                                g.division();
+                                FindDSP();
+                            }
                         }));
                         break;
                 }
@@ -116,12 +124,9 @@ namespace pa
             catch (Exception e1)
             {
             }
-
-
-            //timer.Close();
-            //timer.Dispose();
             g.resolver.GetDevice();
             GC.Collect();
+            timer_running = false;
         }
 
         // 저장 처리 
@@ -526,6 +531,7 @@ namespace pa
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //if (systemcheck() < 2) return;
+            Resolver.stop = true;
             Devicetimer.Stop();
             //g.resolver.ResolveServiceName2(g._netaudio_arc);
             g.Log("Find DSP Running..");
@@ -533,6 +539,8 @@ namespace pa
             gl.XMLDanteDevice(false);
             g.Log("Find DSP End..");
         }
+
+        static udpClient udpc1 = null;
 
         static bool findDSP = false;
 
@@ -543,8 +551,7 @@ namespace pa
         // 처음 설치시 한번 필요 
         public void FindDSP()
         {
-            if (findDSP)
-                return;
+            if (findDSP) return;
 
             findDSP = true;
             bool Dsp_detection = false;
@@ -556,24 +563,18 @@ namespace pa
             //LScap.g.capData2.Clear();
             LScap.g.OpenCap();
 
+            CaptureMode_Initial();
+            Thread.Sleep(3000);
+
             string str1 = "a55a100000000000011200010000000000000000000000000000000000000000";
-            byte[] b1 = gl.hexatobyte(str1);
-
-            udpClient udpc1;
-            udpc1 = new udpClient();
-
-            // 네트웍카드 인덱스 잡기 위함 
-            IPAddress a1 = IPAddress.Parse("239.16.0.8");
-            var o1 = new MulticastOption(a1, gl.NetworkCardmDNS);
-            //udpc1.udp.Client.Bind( ); // .SetSocketOption( );
-            udpc1.udp.Client.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, o1);
-            //udpc1.udp.EnableBroadcast = true;
-            udpc1.send("239.16.0.8", 6001, b1);
-            //Thread.Sleep(500);
-            Console.WriteLine("End...");
-            udpc1.Close();
-
+            byte[] bytes1 = gl.hexatobyte(str1);
+            udpc1.send("239.16.0.8", 6001, bytes1);
+            g.Log("UDP Scan 239.16.0.8 => 239.16.0.9");
             Thread.Sleep(1000);
+
+            if (process1.HasExited == false) process1.Kill();
+            if (process2.HasExited == false) process2.Kill();
+            if (process3.HasExited == false) process3.Kill();
 
             //LScap.g.CloseCap();
             var t2 = LScap.g.capData1;
@@ -622,5 +623,29 @@ namespace pa
                 SaveDB();
             findDSP = false;
         }
+
+        System.Diagnostics.Process process1 = new System.Diagnostics.Process();
+        System.Diagnostics.Process process2 = new System.Diagnostics.Process();
+        System.Diagnostics.Process process3 = new System.Diagnostics.Process();
+
+        private void CaptureMode_Initial()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo(@"C:\Program Files\Wireshark\tshark.exe");
+
+            startInfo.UseShellExecute = true;
+            startInfo.Arguments = "-i 1";
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            process1.StartInfo = startInfo;
+            process1.Start();
+
+            startInfo.Arguments = "-i 2";
+            process2.StartInfo = startInfo;
+            process2.Start();
+
+            startInfo.Arguments = "-i 3";
+            process3.StartInfo = startInfo;
+            process3.Start();
+        }
+
     }
 }

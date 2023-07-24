@@ -82,9 +82,9 @@ namespace pa
             if (MainWindow.signalRClient.State != Microsoft.AspNet.SignalR.Client.ConnectionState.Connected)
                 return default(T);
 
+            var url2 = g._EMClient.WebAPIURL + url;
             try
             {
-                var url2 = g._EMClient.WebAPIURL + url;
                 httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
                 var res = httpClient.GetStringAsync(url2).Result;
                 var ret = JsonConvert.DeserializeObject<T>(res);
@@ -92,7 +92,7 @@ namespace pa
             }
             catch (Exception e1)
             {
-                g.Log(e1.Message);
+                g.Log(url2 +" : "+ e1.Message);
                 return default(T);
             }
         }
@@ -528,7 +528,9 @@ namespace pa
                 EventdeviceRow em = Eventdevice.NewEventdeviceRow();
                 em.write_time = DateTime.Now;
                 em.ip = t3.ip;
-                em.path =  Assets.FirstOrDefault(p=>p.ip == t3.ip).path;
+                var ret  = Assets.FirstOrDefault(p => p.ip == t3.ip);
+                if (ret == null) return;
+                em.path =  ret.path;
                 em.DeviceName = t3.DeviceName;
                 em.state = t3.state;
                 if(t3.state == "")
