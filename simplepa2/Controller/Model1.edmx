@@ -277,6 +277,7 @@
           <Property Name="duration" Type="varchar" MaxLength="50" />
           <Property Name="tss" Type="varchar" MaxLength="50" />
           <Property Name="tse" Type="varchar" MaxLength="50" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SchduleC">
           <Key>
@@ -695,6 +696,7 @@
           <Property Name="duration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="tss" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="tse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SchduleC">
           <Key>
@@ -1018,6 +1020,7 @@
           <EntitySetMapping Name="Schdule">
             <EntityTypeMapping TypeName="simplePAModel.Schdule">
               <MappingFragment StoreEntitySet="Schdule">
+                <ScalarProperty Name="state" ColumnName="state" />
                 <ScalarProperty Name="tse" ColumnName="tse" />
                 <ScalarProperty Name="tss" ColumnName="tss" />
                 <ScalarProperty Name="duration" ColumnName="duration" />

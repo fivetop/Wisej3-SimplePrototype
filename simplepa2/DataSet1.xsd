@@ -62,7 +62,7 @@
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteAssetGroupsByAssetGroupName" Modifier="Public" Name="DeleteAssetGroupsByAssetGroupName" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="DeleteAssetGroupsByAssetGroupName">
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteAssetGroupsByAssetGroupName" Modifier="Public" Name="DeleteAssetGroupsByAssetGroupName" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteAssetGroupsByAssetGroupName">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[AssetGroups] WHERE (([Name] = @GroupName))</CommandText>
@@ -72,7 +72,7 @@
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[AssetGroups] WHERE (([AssetGroupId] = @Original_AssetGroupId))</CommandText>
@@ -82,7 +82,7 @@
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="simplePA.dbo.AssetGroups" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="Find" Modifier="Public" Name="Find" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Find">
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="simplePA.dbo.AssetGroups" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="Find" Modifier="Public" Name="Find" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Find">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT  AssetGroupId
@@ -94,7 +94,7 @@ WHERE  (Name LIKE @Name)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="insertAssetGroupsRow" Modifier="Public" Name="insertAssetGroupsRow" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="insertAssetGroupsRow">
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="insertAssetGroupsRow" Modifier="Public" Name="insertAssetGroupsRow" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="insertAssetGroupsRow">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[AssetGroups] ([Name], [AssetId], [EMNAME]) VALUES (@Name, @AssetId, @EMNAME)</CommandText>
@@ -106,7 +106,7 @@ WHERE  (Name LIKE @Name)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[AssetGroups] ([Name]) VALUES (@Name)</CommandText>
@@ -2033,7 +2033,7 @@ FROM     EMBs</CommandText>
               <DbSource ConnectionRef="simplePAConnectionString (Web.config)" DbObjectName="simplePA.dbo.Schdule" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Schdule] WHERE (([SchduleId] = @Original_SchduleId))</CommandText>
+                    <CommandText>DELETE FROM [Schdule] WHERE (([SchduleId] = @Original_SchduleId))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SchduleId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SchduleId" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -2041,7 +2041,7 @@ FROM     EMBs</CommandText>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Schdule] ([Name], [EMNAME], [GroupName], [user_name], [stime], [etime], [sdate], [day1], [day2], [day3], [day4], [day5], [day6], [day7], [week], [chno], [duration], [tss], [tse]) VALUES (@Name, @EMNAME, @GroupName, @user_name, @stime, @etime, @sdate, @day1, @day2, @day3, @day4, @day5, @day6, @day7, @week, @chno, @duration, @tss, @tse)</CommandText>
+                    <CommandText>INSERT INTO [Schdule] ([Name], [EMNAME], [GroupName], [user_name], [stime], [etime], [sdate], [day1], [day2], [day3], [day4], [day5], [day6], [day7], [week], [chno], [duration], [tss], [tse], [state]) VALUES (@Name, @EMNAME, @GroupName, @user_name, @stime, @etime, @sdate, @day1, @day2, @day3, @day4, @day5, @day6, @day7, @week, @chno, @duration, @tss, @tse, @state)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EMNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EMNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -2062,18 +2062,20 @@ FROM     EMBs</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@duration" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="duration" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tss" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tss" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@state" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="state" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT SchduleId, Name, EMNAME, GroupName, user_name, stime, etime, sdate, day1, day2, day3, day4, day5, day6, day7, week, chno, duration, tss, tse FROM dbo.Schdule</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  SchduleId, Name, EMNAME, GroupName, user_name, stime, etime, sdate, day1, day2, day3, day4, day5, day6, day7, week, chno, duration, tss, tse, state
+FROM     Schdule</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Schdule] SET [Name] = @Name, [EMNAME] = @EMNAME, [GroupName] = @GroupName, [user_name] = @user_name, [stime] = @stime, [etime] = @etime, [sdate] = @sdate, [day1] = @day1, [day2] = @day2, [day3] = @day3, [day4] = @day4, [day5] = @day5, [day6] = @day6, [day7] = @day7, [week] = @week, [chno] = @chno, [duration] = @duration, [tss] = @tss, [tse] = @tse WHERE (([SchduleId] = @Original_SchduleId))</CommandText>
+                    <CommandText>UPDATE [Schdule] SET [Name] = @Name, [EMNAME] = @EMNAME, [GroupName] = @GroupName, [user_name] = @user_name, [stime] = @stime, [etime] = @etime, [sdate] = @sdate, [day1] = @day1, [day2] = @day2, [day3] = @day3, [day4] = @day4, [day5] = @day5, [day6] = @day6, [day7] = @day7, [week] = @week, [chno] = @chno, [duration] = @duration, [tss] = @tss, [tse] = @tse, [state] = @state WHERE (([SchduleId] = @Original_SchduleId))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Name" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Name" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EMNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EMNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -2094,6 +2096,7 @@ FROM     EMBs</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@duration" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="duration" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tss" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tss" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@state" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="state" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SchduleId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SchduleId" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
@@ -2121,6 +2124,7 @@ FROM     EMBs</CommandText>
               <Mapping SourceColumn="duration" DataSetColumn="duration" />
               <Mapping SourceColumn="tss" DataSetColumn="tss" />
               <Mapping SourceColumn="tse" DataSetColumn="tse" />
+              <Mapping SourceColumn="state" DataSetColumn="state" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -3685,6 +3689,13 @@ FROM     EMBs</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="tse" msprop:Generator_ColumnPropNameInTable="tseColumn" msprop:Generator_ColumnPropNameInRow="tse" msprop:Generator_UserColumnName="tse" msprop:Generator_ColumnVarNameInTable="columntse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="state" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_ColumnPropNameInTable="stateColumn" msprop:Generator_ColumnVarNameInTable="columnstate" msprop:Generator_UserColumnName="state" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

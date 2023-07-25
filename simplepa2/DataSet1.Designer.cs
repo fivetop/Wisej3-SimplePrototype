@@ -14745,6 +14745,8 @@ namespace simplepa2 {
             
             private global::System.Data.DataColumn columntse;
             
+            private global::System.Data.DataColumn columnstate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SchduleDataTable() {
@@ -14940,6 +14942,14 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn stateColumn {
+                get {
+                    return this.columnstate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -14994,7 +15004,8 @@ namespace simplepa2 {
                         int chno, 
                         string duration, 
                         string tss, 
-                        string tse) {
+                        string tse, 
+                        string state) {
                 SchduleRow rowSchduleRow = ((SchduleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -15016,7 +15027,8 @@ namespace simplepa2 {
                         chno,
                         duration,
                         tss,
-                        tse};
+                        tse,
+                        state};
                 rowSchduleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSchduleRow);
                 return rowSchduleRow;
@@ -15066,6 +15078,7 @@ namespace simplepa2 {
                 this.columnduration = base.Columns["duration"];
                 this.columntss = base.Columns["tss"];
                 this.columntse = base.Columns["tse"];
+                this.columnstate = base.Columns["state"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15111,6 +15124,8 @@ namespace simplepa2 {
                 base.Columns.Add(this.columntss);
                 this.columntse = new global::System.Data.DataColumn("tse", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntse);
+                this.columnstate = new global::System.Data.DataColumn("state", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSchduleId}, true));
                 this.columnSchduleId.AutoIncrement = true;
@@ -15138,6 +15153,7 @@ namespace simplepa2 {
                 this.columnduration.MaxLength = 50;
                 this.columntss.MaxLength = 50;
                 this.columntse.MaxLength = 50;
+                this.columnstate.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23962,6 +23978,22 @@ namespace simplepa2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string state {
+                get {
+                    try {
+                        return ((string)(this[this.tableSchdule.stateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'Schdule\' 테이블의 \'state\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSchdule.stateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNameNull() {
                 return this.IsNull(this.tableSchdule.NameColumn);
             }
@@ -24042,6 +24074,18 @@ namespace simplepa2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SettseNull() {
                 this[this.tableSchdule.tseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsstateNull() {
+                return this.IsNull(this.tableSchdule.stateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetstateNull() {
+                this[this.tableSchdule.stateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -37720,15 +37764,16 @@ FROM     DeviceChannel INNER JOIN
             tableMapping.ColumnMappings.Add("duration", "duration");
             tableMapping.ColumnMappings.Add("tss", "tss");
             tableMapping.ColumnMappings.Add("tse", "tse");
+            tableMapping.ColumnMappings.Add("state", "state");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Schdule] WHERE (([SchduleId] = @Original_SchduleId))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Schdule] WHERE (([SchduleId] = @Original_SchduleId))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SchduleId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SchduleId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Schdule] ([Name], [EMNAME], [GroupName], [user_name], [stime], [etime], [sdate], [day1], [day2], [day3], [day4], [day5], [day6], [day7], [week], [chno], [duration], [tss], [tse]) VALUES (@Name, @EMNAME, @GroupName, @user_name, @stime, @etime, @sdate, @day1, @day2, @day3, @day4, @day5, @day6, @day7, @week, @chno, @duration, @tss, @tse)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Schdule] ([Name], [EMNAME], [GroupName], [user_name], [stime], [etime], [sdate], [day1], [day2], [day3], [day4], [day5], [day6], [day7], [week], [chno], [duration], [tss], [tse], [state]) VALUES (@Name, @EMNAME, @GroupName, @user_name, @stime, @etime, @sdate, @day1, @day2, @day3, @day4, @day5, @day6, @day7, @week, @chno, @duration, @tss, @tse, @state)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -37749,9 +37794,10 @@ FROM     DeviceChannel INNER JOIN
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@duration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tss", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tss", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tse", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Schdule] SET [Name] = @Name, [EMNAME] = @EMNAME, [GroupName] = @GroupName, [user_name] = @user_name, [stime] = @stime, [etime] = @etime, [sdate] = @sdate, [day1] = @day1, [day2] = @day2, [day3] = @day3, [day4] = @day4, [day5] = @day5, [day6] = @day6, [day7] = @day7, [week] = @week, [chno] = @chno, [duration] = @duration, [tss] = @tss, [tse] = @tse WHERE (([SchduleId] = @Original_SchduleId))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Schdule] SET [Name] = @Name, [EMNAME] = @EMNAME, [GroupName] = @GroupName, [user_name] = @user_name, [stime] = @stime, [etime] = @etime, [sdate] = @sdate, [day1] = @day1, [day2] = @day2, [day3] = @day3, [day4] = @day4, [day5] = @day5, [day6] = @day6, [day7] = @day7, [week] = @week, [chno] = @chno, [duration] = @duration, [tss] = @tss, [tse] = @tse, [state] = @state WHERE (([SchduleId] = @Original_SchduleId))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EMNAME", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EMNAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -37772,6 +37818,7 @@ FROM     DeviceChannel INNER JOIN
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@duration", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tss", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tss", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tse", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@state", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "state", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SchduleId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SchduleId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -37788,9 +37835,9 @@ FROM     DeviceChannel INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT SchduleId, Name, EMNAME, GroupName, user_name, stime, etime, sdate, day1, " +
-                "day2, day3, day4, day5, day6, day7, week, chno, duration, tss, tse FROM dbo.Schd" +
-                "ule";
+            this._commandCollection[0].CommandText = "SELECT  SchduleId, Name, EMNAME, GroupName, user_name, stime, etime, sdate, day1," +
+                " day2, day3, day4, day5, day6, day7, week, chno, duration, tss, tse, state\r\nFROM" +
+                "     Schdule";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -37892,7 +37939,8 @@ FROM     DeviceChannel INNER JOIN
                     int chno, 
                     string duration, 
                     string tss, 
-                    string tse) {
+                    string tse, 
+                    string state) {
             if ((Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -37947,6 +37995,12 @@ FROM     DeviceChannel INNER JOIN
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = ((string)(tse));
             }
+            if ((state == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(state));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -37987,6 +38041,7 @@ FROM     DeviceChannel INNER JOIN
                     string duration, 
                     string tss, 
                     string tse, 
+                    string state, 
                     int Original_SchduleId) {
             if ((Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -38042,7 +38097,13 @@ FROM     DeviceChannel INNER JOIN
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(tse));
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_SchduleId));
+            if ((state == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(state));
+            }
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_SchduleId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

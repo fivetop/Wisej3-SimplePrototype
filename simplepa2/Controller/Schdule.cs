@@ -34,5 +34,6 @@ namespace simplepa2.Controller
         public string duration { get; set; }
         public string tss { get; set; }
         public string tse { get; set; }
+        public string state { get; set; }
     }
 }

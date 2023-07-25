@@ -250,6 +250,7 @@ namespace simplepa2.UI.Views
             r1.etime = r1.sdate + et;
             r1.duration = comp_Music1.GetDuration(); 
             r1.chno = 4;
+            r1.state = "방송대기";
 
             // 방송 시간과 지역을 갖고 사용중인지 점검 하기 
             if (CheckTimeSpace(r1) == false) 
