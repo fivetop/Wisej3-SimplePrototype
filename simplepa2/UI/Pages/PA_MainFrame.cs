@@ -343,6 +343,11 @@ namespace simplepa2.UI.Pages
                 case eSignalRMsgType.ePlayEnd:
                     disp = false;
                     view_DashBoard2.reDraw2();
+                    if (msg1.state > 200000) // 예약방송 종료인 경우 => 방송종료 
+                    { 
+                        view_BBSAnchor2.UpdateSchedule(msg1.state, "방송종료");
+                        view_BBSAnchor2.refresh2();
+                    }
                     view_BBSAnchor2.refresh();
                     view_BBCEMManager2.reDraw();
                     break;
@@ -367,6 +372,11 @@ namespace simplepa2.UI.Pages
                         reDraw();
                     else
                         AlertBox.Show("DSP 혹은 버철사운드를 확인 바랍니다..", MessageBoxIcon.Information, true, ContentAlignment.MiddleCenter);
+                    break;
+                case eSignalRMsgType.eReserved: // 예약방송 시작  => 방송중
+                    view_BBSAnchor2.UpdateSchedule(msg1.state, "방송중");
+                    view_BBSAnchor2.refresh2();
+                    view_BBSAnchor2.refresh();
                     break;
             }
 

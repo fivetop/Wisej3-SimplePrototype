@@ -415,6 +415,7 @@ namespace simplepa2.UI.Views
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            button저장.Visible = false;
             try
             {
                 var t1 = this.dataGridView1.CurrentRow.DataBoundItem;

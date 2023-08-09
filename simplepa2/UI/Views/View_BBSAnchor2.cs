@@ -30,13 +30,27 @@ namespace simplepa2.UI.Views
 			comp_Site1.reDraw();
 		}
 
-		public void refresh()
-		{
-			this.btnStart.Enabled = true;
-			this.btnStop.Enabled = false;
-		}
+        public void refresh()
+        {
+            this.btnStart.Enabled = true;
+            this.btnStop.Enabled = false;
+        }
 
-		private void View_BBSAnchor_Load(object sender, EventArgs e)
+        public void refresh2()
+        {
+            this.schduleTableAdapter1.Fill(this.dataSet1.Schdule);
+        }
+
+        // C2S 예약방송 시작 
+        // db update -> idno
+        internal void UpdateSchedule(int idno, string state)
+        {
+			if (idno < 200000) return;
+			int schid = idno - 200000;
+			gweb.dBSqlite.SchduleUpdate(schid, state);
+        }
+
+        private void View_BBSAnchor_Load(object sender, EventArgs e)
 		{
 			reDraw();
 		}
@@ -191,5 +205,5 @@ namespace simplepa2.UI.Views
 			comp_UAsset1.reDraw2();
 		}
 
-	}
+    }
 }

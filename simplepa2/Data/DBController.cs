@@ -12,6 +12,7 @@ using static simplepa2.DataSet1;
 using System.Windows.Forms;
 using System.Data;
 using System.Web.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace simplepa2
 {
@@ -169,6 +170,15 @@ namespace simplepa2
 
         internal async Task SchduleUpdate(SchduleRow r1)
         {
+            Tam.SchduleTableAdapter.Update(Ds1.Schdule);
+        }
+
+        internal void SchduleUpdate(int schid, string state)
+        {
+            Tam.SchduleTableAdapter.Fill(Ds1.Schdule);
+            var m3 = Ds1.Schdule.FirstOrDefault(p => p.SchduleId == schid);
+            if (m3 == null) return;
+            m3.state = state;
             Tam.SchduleTableAdapter.Update(Ds1.Schdule);
         }
 
@@ -928,6 +938,7 @@ namespace simplepa2
             var m1 = Ds1.UserTrees.FirstOrDefault(p => p.login_id == t2);
             return m1;
         }
+
 
         #endregion
 
