@@ -1802,11 +1802,12 @@ FROM     Device AS a LEFT OUTER JOIN TypeData AS B ON a.device = b.type_variable
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT  Device_1.EMNAME, Device_1.DeviceName, DeviceChannel.DeviceChnnelId, DeviceChannel.chno, DeviceChannel.chname, DeviceChannel.dsp_out_ch1, DeviceChannel.dsp_out_ch2, 
                DeviceChannel.DeviceId, DeviceChannel.io, DeviceChannel.devicein, DeviceChannel.deviceinch, Device_1.ip_dspctrl,
-                   (SELECT  DanteModelName
+                   (SELECT top 1 DanteModelName
                     FROM     Device
                     WHERE  (ip_dspctrl = Device_1.ip_dspctrl) AND (device = 9)) AS DanteModelName
 FROM     DeviceChannel INNER JOIN
-               Device AS Device_1 ON DeviceChannel.DeviceId = Device_1.DeviceId</CommandText>
+               Device AS Device_1 ON DeviceChannel.DeviceId = Device_1.DeviceId
+where DeviceChannel.chname like 'IN%'</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -3695,7 +3696,7 @@ FROM     Schdule</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="state" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_ColumnPropNameInTable="stateColumn" msprop:Generator_ColumnVarNameInTable="columnstate" msprop:Generator_UserColumnName="state" minOccurs="0">
+              <xs:element name="state" msprop:Generator_ColumnPropNameInTable="stateColumn" msprop:Generator_ColumnPropNameInRow="state" msprop:Generator_UserColumnName="state" msprop:Generator_ColumnVarNameInTable="columnstate" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

@@ -36282,11 +36282,12 @@ FROM     Device AS a LEFT OUTER JOIN TypeData AS B ON a.device = b.type_variable
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT  Device_1.EMNAME, Device_1.DeviceName, DeviceChannel.DeviceChnnelId, DeviceChannel.chno, DeviceChannel.chname, DeviceChannel.dsp_out_ch1, DeviceChannel.dsp_out_ch2, 
                DeviceChannel.DeviceId, DeviceChannel.io, DeviceChannel.devicein, DeviceChannel.deviceinch, Device_1.ip_dspctrl,
-                   (SELECT  DanteModelName
+                   (SELECT top 1 DanteModelName
                     FROM     Device
                     WHERE  (ip_dspctrl = Device_1.ip_dspctrl) AND (device = 9)) AS DanteModelName
 FROM     DeviceChannel INNER JOIN
-               Device AS Device_1 ON DeviceChannel.DeviceId = Device_1.DeviceId";
+               Device AS Device_1 ON DeviceChannel.DeviceId = Device_1.DeviceId
+where DeviceChannel.chname like 'IN%'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
