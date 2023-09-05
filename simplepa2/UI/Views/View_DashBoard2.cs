@@ -34,22 +34,30 @@ namespace simplepa2.UI.Views
 			//reDraw();
 		}
 
-		internal void reDraw()
+		public void Init()
+		{
+            if (Eventbs.DataSource == null) return;
+            Eventbs.Filter = "alarm=0";
+            Eventbs.Sort = "write_time DESC";
+            reDraw2();
+            Main_Load();
+            // split 위치 설정 세로, 가로,  세로
+            split_위치();
+            // BBS Widget UI 셋업
+            initMultiBBSWidgetUISetup();
+            evdataGridView1.Refresh();
+        }
+
+        internal void reDraw()
 		{
 			//if (this.ActiveControl == null) return;
 			try 
 			{ 
 				if (Eventbs.DataSource == null) return;
-				Eventbs.Filter = "alarm=0";
-				Eventbs.Sort = "write_time DESC";
-				reDraw2();
-				Main_Load();
-				// split 위치 설정 세로, 가로,  세로
-				split_위치();
 				// BBS Widget UI 셋업
 				initMultiBBSWidgetUISetup();
 				evdataGridView1.Refresh();
-				widget_bbsMultiDeck.reDraw(); // BBS Widget Reload 
+				//widget_bbsMultiDeck.reDraw(); // BBS Widget Reload 
 			}
 			catch (Exception e1)
 			{
@@ -65,14 +73,21 @@ namespace simplepa2.UI.Views
 				this.eventdeviceTableAdapter.Fill(this.dataSet1.Eventdevice);
 				this.assetsTableAdapter.Fill(this.dataSet1.Assets);
 				this.bsTreeTableAdapter1.Fill(this.dataSet1.BSTree);
-			}
-			catch (Exception e1)
+            }
+            catch (Exception e1)
 			{ 
 			}
 		}
 
-		private void View_DashBoard_Load(object sender, EventArgs e)
+        internal void reDraw3(string eMNAME, int seqno, string v)
         {
+            if (widget_bbsMultiDeck != null)
+                widget_bbsMultiDeck.reDraw(eMNAME, seqno, v); // BBS Widget Reload 
+        }
+
+        private void View_DashBoard_Load(object sender, EventArgs e)
+        {
+			Init();
 			reDraw();
 			
 		}
@@ -154,10 +169,11 @@ namespace simplepa2.UI.Views
 			Application.Cookies.Add("d1", split_MainFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 			Application.Cookies.Add("d3", split_BottomFrame.SplitterDistance.ToString(), DateTime.Now.AddDays(7));
 		}
-		#endregion
+
+        #endregion
 
 
-		/*
+        /*
 				private void Main_Load()
 				{
 					DevicelistView1.Items.Clear();
@@ -211,5 +227,5 @@ namespace simplepa2.UI.Views
 
 		 */
 
-	}
+    }
 }

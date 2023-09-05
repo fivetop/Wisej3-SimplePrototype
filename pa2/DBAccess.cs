@@ -85,6 +85,8 @@ namespace pa
             var url2 = g._EMClient.WebAPIURL + url;
             try
             {
+                HttpClient httpClient = new HttpClient();
+
                 httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
                 var res = httpClient.GetStringAsync(url2).Result;
                 var ret = JsonConvert.DeserializeObject<T>(res);
@@ -384,6 +386,36 @@ namespace pa
                 if(assetId > 0)
                     assetsRows.Add(assetId);
             }
+
+            List<AssetBase> play = new List<AssetBase>();
+            var ab1 = Assets.Where(a1 => assetsRows.Contains(a1.AssetId));
+            var p1 = from p in ab1
+                     select new AssetBase
+                     {
+                         AssetBaseId = (int)p.AssetId,
+                         ip = p.ip,
+                         GroupName = p.GroupName,
+                         ZoneName = p.ZoneName,
+                         SpeakerName = p.SpeakerName,
+                         path = p.path,
+                         floor = p.floor,
+                         DeviceName = p.DeviceName,
+                         state = p.state,
+                         state_old = p.state_old,
+                         chk = true,
+                         seq = (int)p.seq,
+                         ch = p.ch,
+                     };
+            var t3 = ab1.ToList();
+            play = p1.ToList();
+            return play;
+        }
+
+        internal List<AssetBase> db2ListTest()
+        {
+            List<int> assetsRows = new List<int>();
+            assetsRows.Add(143);
+            assetsRows.Add(144);
 
             List<AssetBase> play = new List<AssetBase>();
             var ab1 = Assets.Where(a1 => assetsRows.Contains(a1.AssetId));

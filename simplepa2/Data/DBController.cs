@@ -564,6 +564,24 @@ namespace simplepa2
             return true;
         }
 
+        internal void BSTreeUpdate(string eMNAME, int chno, string v)
+        {
+            try
+            {
+                Tam.BSTreeTableAdapter.Fill(Ds1.BSTree);
+                var drs = Ds1.BSTree.FirstOrDefault(p => p.EMNAME == eMNAME && p.chno == chno);
+                drs.playing = v;
+                drs.wtime = DateTime.Now;
+                drs.user_name = gweb.mainFrame.user_name;
+                Tam.BSTreeTableAdapter.Update(Ds1.BSTree);
+            }
+            catch (Exception e1)
+            {
+                gweb.Log(e1.Message);
+            }
+
+        }
+
 
         public void BSTreeDelete(int idno)
         {

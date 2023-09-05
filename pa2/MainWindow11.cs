@@ -61,7 +61,7 @@ namespace pa
                     string line = line1 + " : " + line2;
                     string l1 = "다원방송시작";
                     g.Log(l1 + p.chno.ToString() + " : " + line);
-                    dBAccess.Eventbss(l1, msg.chno.ToString() + "번 채널", line);
+                    dBAccess.Eventbss(l1,  g._EMClient.EM_NAME + " " +msg.chno.ToString() + "번 채널", line);
                     SendSigR("PLAYCHECK", eSignalRMsgType.ePlayCheck, msg.seqno, msg.chno);
 
                     // window3 처리 
@@ -76,7 +76,7 @@ namespace pa
                     SendSigR("STOP", eSignalRMsgType.eStop, msg.seqno, msg.chno);
                     g.playItems[msg.chno] = new PlayItem();
                     g.Log("다원방송중지" + msg.chno.ToString() + " : " + msg.seqno.ToString());
-                    dBAccess.Eventbss("다원방송중지", msg.chno.ToString() + "번 채널", msg.seqno.ToString());
+                    dBAccess.Eventbss("다원방송중지", g._EMClient.EM_NAME + " " + msg.chno.ToString() + "번 채널", msg.seqno.ToString());
                     break;
                 case eSignalRMsgType.eVolume:
                     // db 처리 선행 필요 
@@ -182,6 +182,7 @@ namespace pa
                     break;
                 case eSignalRMsgType.ePlaying:
                     msg1.message = "ePlaying";
+                    // 예약방송 btree update 필요 
                     break;
                 case eSignalRMsgType.ePlayEnd:
                     msg1.message = "ePlayEnd";

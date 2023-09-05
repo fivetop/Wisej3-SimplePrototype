@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle2 = new Wisej.Web.DataGridViewCellStyle();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle3 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle4 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle5 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle6 = new Wisej.Web.DataGridViewCellStyle();
             this.dataSet1 = new simplepa2.DataSet1();
             this.assetsBindingSource = new Wisej.Web.BindingSource(this.components);
             this.assetsTableAdapter = new simplepa2.DataSet1TableAdapters.AssetsTableAdapter();
@@ -46,6 +46,30 @@
             this.colFilecontent = new Wisej.Web.DataGridViewTextBoxColumn();
             this.panel9 = new Wisej.Web.Panel();
             this.label2 = new Wisej.Web.Label();
+            this.dgvSchedule = new Wisej.Web.DataGridView();
+            this.colName = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colStime = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colEtime = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colDuration = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colChno = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colWeek = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colEMNAME = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colGroupname = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colSdate = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.colDay1 = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colDay2 = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colDay3 = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colDay4 = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colDay5 = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colDay6 = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colDay7 = new Wisej.Web.DataGridViewCheckBoxColumn();
+            this.colUser_Name = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colSchduleid = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colTss = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colTse = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.colStime_1 = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.colEtime_1 = new Wisej.Web.DataGridViewDateTimePickerColumn();
+            this.schduleBindingSource = new Wisej.Web.BindingSource(this.components);
             this.panel10 = new Wisej.Web.Panel();
             this.label3 = new Wisej.Web.Label();
             this.panel1 = new Wisej.Web.Panel();
@@ -65,34 +89,8 @@
             this.panel41 = new Wisej.Web.Panel();
             this.label17 = new Wisej.Web.Label();
             this.panel6 = new Wisej.Web.Panel();
-            this.splitContainer1 = new Wisej.Web.SplitContainer();
-            this.panel11 = new Wisej.Web.Panel();
-            this.label4 = new Wisej.Web.Label();
             this.schduleTableAdapter1 = new simplepa2.DataSet1TableAdapters.SchduleTableAdapter();
-            this.dgvSchedule = new Wisej.Web.DataGridView();
-            this.colSchduleid = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colName = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colEMNAME = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colGroupname = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colChno = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colDuration = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colWeek = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colStime = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colEtime = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colSdate = new Wisej.Web.DataGridViewDateTimePickerColumn();
-            this.colDay1 = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colDay2 = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colDay3 = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colDay4 = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colDay5 = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colDay6 = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colDay7 = new Wisej.Web.DataGridViewCheckBoxColumn();
-            this.colUser_Name = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colTss = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colTse = new Wisej.Web.DataGridViewTextBoxColumn();
-            this.colStime_1 = new Wisej.Web.DataGridViewDateTimePickerColumn();
-            this.colEtime_1 = new Wisej.Web.DataGridViewDateTimePickerColumn();
-            this.schduleBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             this.panel4.SuspendLayout();
@@ -100,9 +98,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schduleBindingSource)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -111,13 +110,6 @@
             this.panel35.SuspendLayout();
             this.panel41.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schduleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -207,7 +199,9 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
+            this.splitContainer2.Panel2.Controls.Add(this.dgvSchedule);
+            this.splitContainer2.Panel2.Controls.Add(this.panel10);
+            this.splitContainer2.Panel2.Padding = new Wisej.Web.Padding(20);
             this.splitContainer2.Panel2.TabStop = true;
             this.splitContainer2.Size = new System.Drawing.Size(768, 766);
             this.splitContainer2.SplitterDistance = 289;
@@ -266,13 +260,258 @@
             this.label2.Text = "방송 음원 선택";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dgvSchedule
+            // 
+            this.dgvSchedule.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
+            this.colName,
+            this.colStime,
+            this.colEtime,
+            this.colDuration,
+            this.colChno,
+            this.colWeek,
+            this.colEMNAME,
+            this.colGroupname,
+            this.colSdate,
+            this.colDay1,
+            this.colDay2,
+            this.colDay3,
+            this.colDay4,
+            this.colDay5,
+            this.colDay6,
+            this.colDay7,
+            this.colUser_Name,
+            this.colSchduleid,
+            this.colTss,
+            this.colTse,
+            this.colStime_1,
+            this.colEtime_1,
+            this.colState});
+            this.dgvSchedule.DataSource = this.schduleBindingSource;
+            this.dgvSchedule.Dock = Wisej.Web.DockStyle.Fill;
+            this.dgvSchedule.Location = new System.Drawing.Point(20, 57);
+            this.dgvSchedule.Name = "dgvSchedule";
+            this.dgvSchedule.ReadOnly = true;
+            this.dgvSchedule.RowHeadersVisible = false;
+            this.dgvSchedule.Size = new System.Drawing.Size(726, 382);
+            this.dgvSchedule.TabIndex = 166;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "이름";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.ValueType = typeof(string);
+            // 
+            // colStime
+            // 
+            this.colStime.DataPropertyName = "tss";
+            this.colStime.HeaderText = "시작";
+            this.colStime.Name = "colStime";
+            this.colStime.ReadOnly = true;
+            this.colStime.ValueType = typeof(string);
+            this.colStime.Width = 60;
+            // 
+            // colEtime
+            // 
+            this.colEtime.DataPropertyName = "tse";
+            this.colEtime.HeaderText = "종료";
+            this.colEtime.Name = "colEtime";
+            this.colEtime.ReadOnly = true;
+            this.colEtime.ValueType = typeof(string);
+            this.colEtime.Width = 60;
+            // 
+            // colDuration
+            // 
+            this.colDuration.DataPropertyName = "duration";
+            this.colDuration.HeaderText = "재생";
+            this.colDuration.Name = "colDuration";
+            this.colDuration.ValueType = typeof(string);
+            this.colDuration.Width = 60;
+            // 
+            // colChno
+            // 
+            this.colChno.DataPropertyName = "chno";
+            this.colChno.HeaderText = "채널";
+            this.colChno.Name = "colChno";
+            this.colChno.ValueType = typeof(int);
+            this.colChno.Width = 50;
+            // 
+            // colWeek
+            // 
+            this.colWeek.DataPropertyName = "week";
+            this.colWeek.HeaderText = "반복";
+            this.colWeek.Name = "colWeek";
+            this.colWeek.ReadOnly = true;
+            this.colWeek.ValueType = typeof(bool);
+            this.colWeek.Width = 50;
+            // 
+            // colEMNAME
+            // 
+            this.colEMNAME.DataPropertyName = "EMNAME";
+            this.colEMNAME.HeaderText = "지역";
+            this.colEMNAME.Name = "colEMNAME";
+            this.colEMNAME.ReadOnly = true;
+            this.colEMNAME.ValueType = typeof(string);
+            // 
+            // colGroupname
+            // 
+            this.colGroupname.DataPropertyName = "GroupName";
+            this.colGroupname.HeaderText = "그룹";
+            this.colGroupname.Name = "colGroupname";
+            this.colGroupname.ReadOnly = true;
+            this.colGroupname.ValueType = typeof(string);
+            this.colGroupname.Visible = false;
+            // 
+            // colSdate
+            // 
+            this.colSdate.DataPropertyName = "sdate";
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colSdate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colSdate.HeaderText = "일자";
+            this.colSdate.Name = "colSdate";
+            this.colSdate.ReadOnly = true;
+            this.colSdate.ValueType = typeof(System.DateTime);
+            this.colSdate.Visible = false;
+            // 
+            // colDay1
+            // 
+            this.colDay1.DataPropertyName = "day1";
+            this.colDay1.HeaderText = "월";
+            this.colDay1.Name = "colDay1";
+            this.colDay1.ReadOnly = true;
+            this.colDay1.ValueType = typeof(bool);
+            this.colDay1.Visible = false;
+            this.colDay1.Width = 40;
+            // 
+            // colDay2
+            // 
+            this.colDay2.DataPropertyName = "day2";
+            this.colDay2.HeaderText = "화";
+            this.colDay2.Name = "colDay2";
+            this.colDay2.ReadOnly = true;
+            this.colDay2.ValueType = typeof(bool);
+            this.colDay2.Visible = false;
+            this.colDay2.Width = 40;
+            // 
+            // colDay3
+            // 
+            this.colDay3.DataPropertyName = "day3";
+            this.colDay3.HeaderText = "수";
+            this.colDay3.Name = "colDay3";
+            this.colDay3.ReadOnly = true;
+            this.colDay3.ValueType = typeof(bool);
+            this.colDay3.Visible = false;
+            this.colDay3.Width = 40;
+            // 
+            // colDay4
+            // 
+            this.colDay4.DataPropertyName = "day4";
+            this.colDay4.HeaderText = "목";
+            this.colDay4.Name = "colDay4";
+            this.colDay4.ReadOnly = true;
+            this.colDay4.ValueType = typeof(bool);
+            this.colDay4.Visible = false;
+            this.colDay4.Width = 40;
+            // 
+            // colDay5
+            // 
+            this.colDay5.DataPropertyName = "day5";
+            this.colDay5.HeaderText = "금";
+            this.colDay5.Name = "colDay5";
+            this.colDay5.ReadOnly = true;
+            this.colDay5.ValueType = typeof(bool);
+            this.colDay5.Visible = false;
+            this.colDay5.Width = 40;
+            // 
+            // colDay6
+            // 
+            this.colDay6.DataPropertyName = "day6";
+            this.colDay6.HeaderText = "토";
+            this.colDay6.Name = "colDay6";
+            this.colDay6.ReadOnly = true;
+            this.colDay6.ValueType = typeof(bool);
+            this.colDay6.Visible = false;
+            this.colDay6.Width = 40;
+            // 
+            // colDay7
+            // 
+            this.colDay7.DataPropertyName = "day7";
+            this.colDay7.HeaderText = "일";
+            this.colDay7.Name = "colDay7";
+            this.colDay7.ReadOnly = true;
+            this.colDay7.ValueType = typeof(bool);
+            this.colDay7.Visible = false;
+            this.colDay7.Width = 40;
+            // 
+            // colUser_Name
+            // 
+            this.colUser_Name.DataPropertyName = "user_name";
+            this.colUser_Name.HeaderText = "작성자";
+            this.colUser_Name.Name = "colUser_Name";
+            this.colUser_Name.ReadOnly = true;
+            this.colUser_Name.ValueType = typeof(string);
+            this.colUser_Name.Visible = false;
+            // 
+            // colSchduleid
+            // 
+            this.colSchduleid.DataPropertyName = "SchduleId";
+            this.colSchduleid.HeaderText = "번호";
+            this.colSchduleid.Name = "colSchduleid";
+            this.colSchduleid.ReadOnly = true;
+            this.colSchduleid.ValueType = typeof(int);
+            this.colSchduleid.Visible = false;
+            this.colSchduleid.Width = 60;
+            // 
+            // colTss
+            // 
+            this.colTss.DataPropertyName = "tss";
+            this.colTss.HeaderText = "tss";
+            this.colTss.Name = "colTss";
+            this.colTss.ValueType = typeof(string);
+            this.colTss.Visible = false;
+            // 
+            // colTse
+            // 
+            this.colTse.DataPropertyName = "tse";
+            this.colTse.HeaderText = "tse";
+            this.colTse.Name = "colTse";
+            this.colTse.ValueType = typeof(string);
+            this.colTse.Visible = false;
+            // 
+            // colStime_1
+            // 
+            this.colStime_1.DataPropertyName = "stime";
+            dataGridViewCellStyle5.Format = "G";
+            this.colStime_1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colStime_1.HeaderText = "stime";
+            this.colStime_1.Name = "colStime_1";
+            this.colStime_1.ValueType = typeof(System.DateTime);
+            this.colStime_1.Visible = false;
+            // 
+            // colEtime_1
+            // 
+            this.colEtime_1.DataPropertyName = "etime";
+            dataGridViewCellStyle6.Format = "G";
+            this.colEtime_1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colEtime_1.HeaderText = "etime";
+            this.colEtime_1.Name = "colEtime_1";
+            this.colEtime_1.ValueType = typeof(System.DateTime);
+            this.colEtime_1.Visible = false;
+            // 
+            // schduleBindingSource
+            // 
+            this.schduleBindingSource.DataMember = "Schdule";
+            this.schduleBindingSource.DataSource = this.dataSet1;
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.label3);
             this.panel10.Dock = Wisej.Web.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Location = new System.Drawing.Point(20, 20);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(766, 37);
+            this.panel10.Size = new System.Drawing.Size(726, 37);
             this.panel10.TabIndex = 165;
             // 
             // label3
@@ -499,273 +738,16 @@
             this.panel6.Size = new System.Drawing.Size(1360, 860);
             this.panel6.TabIndex = 13;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = Wisej.Web.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = Wisej.Web.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.dgvSchedule);
-            this.splitContainer1.Panel1.Controls.Add(this.panel10);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.panel11);
-            this.splitContainer1.Size = new System.Drawing.Size(768, 461);
-            this.splitContainer1.SplitterDistance = 230;
-            this.splitContainer1.TabIndex = 166;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label4);
-            this.panel11.Dock = Wisej.Web.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(766, 37);
-            this.panel11.TabIndex = 166;
-            // 
-            // label4
-            // 
-            this.label4.AutoEllipsis = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label4.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Margin = new Wisej.Web.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(437, 24);
-            this.label4.TabIndex = 134;
-            this.label4.Text = "그룹 방송 선택";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // schduleTableAdapter1
             // 
             this.schduleTableAdapter1.ClearBeforeFill = true;
             // 
-            // dgvSchedule
+            // colState
             // 
-            this.dgvSchedule.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
-            this.colName,
-            this.colStime,
-            this.colEtime,
-            this.colDuration,
-            this.colChno,
-            this.colWeek,
-            this.colEMNAME,
-            this.colGroupname,
-            this.colSdate,
-            this.colDay1,
-            this.colDay2,
-            this.colDay3,
-            this.colDay4,
-            this.colDay5,
-            this.colDay6,
-            this.colDay7,
-            this.colUser_Name,
-            this.colSchduleid,
-            this.colTss,
-            this.colTse,
-            this.colStime_1,
-            this.colEtime_1});
-            this.dgvSchedule.DataSource = this.schduleBindingSource;
-            this.dgvSchedule.Dock = Wisej.Web.DockStyle.Fill;
-            this.dgvSchedule.Location = new System.Drawing.Point(0, 37);
-            this.dgvSchedule.Name = "dgvSchedule";
-            this.dgvSchedule.ReadOnly = true;
-            this.dgvSchedule.RowHeadersVisible = false;
-            this.dgvSchedule.Size = new System.Drawing.Size(766, 191);
-            this.dgvSchedule.TabIndex = 166;
-            // 
-            // colSchduleid
-            // 
-            this.colSchduleid.DataPropertyName = "SchduleId";
-            this.colSchduleid.HeaderText = "번호";
-            this.colSchduleid.Name = "colSchduleid";
-            this.colSchduleid.ReadOnly = true;
-            this.colSchduleid.Visible = false;
-            this.colSchduleid.Width = 60;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "Name";
-            this.colName.HeaderText = "이름";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colEMNAME
-            // 
-            this.colEMNAME.DataPropertyName = "EMNAME";
-            this.colEMNAME.HeaderText = "지역";
-            this.colEMNAME.Name = "colEMNAME";
-            this.colEMNAME.ReadOnly = true;
-            // 
-            // colGroupname
-            // 
-            this.colGroupname.DataPropertyName = "GroupName";
-            this.colGroupname.HeaderText = "그룹";
-            this.colGroupname.Name = "colGroupname";
-            this.colGroupname.ReadOnly = true;
-            this.colGroupname.Visible = false;
-            // 
-            // colChno
-            // 
-            this.colChno.DataPropertyName = "chno";
-            this.colChno.HeaderText = "채널";
-            this.colChno.Name = "colChno";
-            this.colChno.Width = 50;
-            // 
-            // colDuration
-            // 
-            this.colDuration.DataPropertyName = "duration";
-            this.colDuration.HeaderText = "재생";
-            this.colDuration.Name = "colDuration";
-            this.colDuration.Width = 60;
-            // 
-            // colWeek
-            // 
-            this.colWeek.DataPropertyName = "week";
-            this.colWeek.HeaderText = "반복";
-            this.colWeek.Name = "colWeek";
-            this.colWeek.ReadOnly = true;
-            this.colWeek.Width = 50;
-            // 
-            // colStime
-            // 
-            this.colStime.DataPropertyName = "tss";
-            this.colStime.HeaderText = "시작";
-            this.colStime.Name = "colStime";
-            this.colStime.ReadOnly = true;
-            this.colStime.Width = 60;
-            // 
-            // colEtime
-            // 
-            this.colEtime.DataPropertyName = "tse";
-            this.colEtime.HeaderText = "종료";
-            this.colEtime.Name = "colEtime";
-            this.colEtime.ReadOnly = true;
-            this.colEtime.Width = 60;
-            // 
-            // colSdate
-            // 
-            this.colSdate.DataPropertyName = "sdate";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colSdate.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colSdate.HeaderText = "일자";
-            this.colSdate.Name = "colSdate";
-            this.colSdate.ReadOnly = true;
-            this.colSdate.Visible = false;
-            // 
-            // colDay1
-            // 
-            this.colDay1.DataPropertyName = "day1";
-            this.colDay1.HeaderText = "월";
-            this.colDay1.Name = "colDay1";
-            this.colDay1.ReadOnly = true;
-            this.colDay1.Visible = false;
-            this.colDay1.Width = 40;
-            // 
-            // colDay2
-            // 
-            this.colDay2.DataPropertyName = "day2";
-            this.colDay2.HeaderText = "화";
-            this.colDay2.Name = "colDay2";
-            this.colDay2.ReadOnly = true;
-            this.colDay2.Visible = false;
-            this.colDay2.Width = 40;
-            // 
-            // colDay3
-            // 
-            this.colDay3.DataPropertyName = "day3";
-            this.colDay3.HeaderText = "수";
-            this.colDay3.Name = "colDay3";
-            this.colDay3.ReadOnly = true;
-            this.colDay3.Visible = false;
-            this.colDay3.Width = 40;
-            // 
-            // colDay4
-            // 
-            this.colDay4.DataPropertyName = "day4";
-            this.colDay4.HeaderText = "목";
-            this.colDay4.Name = "colDay4";
-            this.colDay4.ReadOnly = true;
-            this.colDay4.Visible = false;
-            this.colDay4.Width = 40;
-            // 
-            // colDay5
-            // 
-            this.colDay5.DataPropertyName = "day5";
-            this.colDay5.HeaderText = "금";
-            this.colDay5.Name = "colDay5";
-            this.colDay5.ReadOnly = true;
-            this.colDay5.Visible = false;
-            this.colDay5.Width = 40;
-            // 
-            // colDay6
-            // 
-            this.colDay6.DataPropertyName = "day6";
-            this.colDay6.HeaderText = "토";
-            this.colDay6.Name = "colDay6";
-            this.colDay6.ReadOnly = true;
-            this.colDay6.Visible = false;
-            this.colDay6.Width = 40;
-            // 
-            // colDay7
-            // 
-            this.colDay7.DataPropertyName = "day7";
-            this.colDay7.HeaderText = "일";
-            this.colDay7.Name = "colDay7";
-            this.colDay7.ReadOnly = true;
-            this.colDay7.Visible = false;
-            this.colDay7.Width = 40;
-            // 
-            // colUser_Name
-            // 
-            this.colUser_Name.DataPropertyName = "user_name";
-            this.colUser_Name.HeaderText = "작성자";
-            this.colUser_Name.Name = "colUser_Name";
-            this.colUser_Name.ReadOnly = true;
-            this.colUser_Name.Visible = false;
-            // 
-            // colTss
-            // 
-            this.colTss.DataPropertyName = "tss";
-            this.colTss.HeaderText = "tss";
-            this.colTss.Name = "colTss";
-            this.colTss.Visible = false;
-            // 
-            // colTse
-            // 
-            this.colTse.DataPropertyName = "tse";
-            this.colTse.HeaderText = "tse";
-            this.colTse.Name = "colTse";
-            this.colTse.Visible = false;
-            // 
-            // colStime_1
-            // 
-            this.colStime_1.DataPropertyName = "stime";
-            dataGridViewCellStyle2.Format = "G";
-            this.colStime_1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colStime_1.HeaderText = "stime";
-            this.colStime_1.Name = "colStime_1";
-            this.colStime_1.Visible = false;
-            // 
-            // colEtime_1
-            // 
-            this.colEtime_1.DataPropertyName = "etime";
-            dataGridViewCellStyle3.Format = "G";
-            this.colEtime_1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colEtime_1.HeaderText = "etime";
-            this.colEtime_1.Name = "colEtime_1";
-            this.colEtime_1.Visible = false;
-            // 
-            // schduleBindingSource
-            // 
-            this.schduleBindingSource.DataMember = "Schdule";
-            this.schduleBindingSource.DataSource = this.dataSet1;
+            this.colState.DataPropertyName = "state";
+            this.colState.HeaderText = "state";
+            this.colState.Name = "colState";
+            this.colState.ValueType = typeof(string);
             // 
             // View_BBSAnchor2
             // 
@@ -783,9 +765,10 @@
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schduleBindingSource)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -795,13 +778,6 @@
             this.panel35.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schduleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,9 +816,6 @@
         private Wisej.Web.Label label2;
         private Wisej.Web.Panel panel10;
         private Wisej.Web.Label label3;
-        private Wisej.Web.SplitContainer splitContainer1;
-        private Wisej.Web.Panel panel11;
-        private Wisej.Web.Label label4;
         private DataSet1TableAdapters.SchduleTableAdapter schduleTableAdapter1;
         private Wisej.Web.DataGridView dgvSchedule;
         private Wisej.Web.DataGridViewTextBoxColumn colSchduleid;
@@ -868,5 +841,6 @@
         private Wisej.Web.DataGridViewDateTimePickerColumn colStime_1;
         private Wisej.Web.DataGridViewDateTimePickerColumn colEtime_1;
         private Wisej.Web.BindingSource schduleBindingSource;
+        private Wisej.Web.DataGridViewTextBoxColumn colState;
     }
 }

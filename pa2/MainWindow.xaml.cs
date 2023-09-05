@@ -551,7 +551,7 @@ namespace pa
 
         private void SignalRClient_eDisConnect(object sender, EventArgs e)
         {
-            g.Log("SignalR Disconnected!");
+            g.Log("SignalR Disconnected! " + g._EMClient.HubURL);
         }
 
         private void SignalRClient_eConnect(object sender, EventArgs e)
@@ -902,6 +902,11 @@ namespace pa
             msg1.user_data4 = 16;
             g.mainWindow.RcvSigR(msg1);
 
+        }
+
+        // em 서버에서는 직접적으로 naudio 가 제어가 안됨 서버를 통해서 시험 필요 
+        private async void _ts9_Click(object sender, RoutedEventArgs e)
+        {
         }
 
 

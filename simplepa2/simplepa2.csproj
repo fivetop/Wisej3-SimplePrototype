@@ -352,6 +352,9 @@
     <EmbeddedResource Include="Control\gPanel.resx">
       <DependentUpon>gPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_SystemTest.resx">
+      <DependentUpon>View_SystemTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_TopPanelBar.resx">
       <DependentUpon>View_TopPanelBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -1372,6 +1375,12 @@
     </Compile>
     <Compile Include="UI\Views\View_SystemEmail.Designer.cs">
       <DependentUpon>View_SystemEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_SystemTest.Designer.cs">
+      <DependentUpon>View_SystemTest.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_SystemRestAPI.cs">
       <SubType>UserControl</SubType>

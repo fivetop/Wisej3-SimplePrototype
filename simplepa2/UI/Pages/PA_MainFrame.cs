@@ -47,6 +47,7 @@ namespace simplepa2.UI.Pages
         private View_SystemEmail view_SystemEmail;
         private View_SystemSMSRegistration view_SystemSMSRegistration;
         private View_SystemRestAPI view_SystemRestAPI;
+        private View_SystemTest view_SystemTest;
 
         private View_BBCZone view_BBCZone = new View_BBCZone();
         private View_BBCDevice view_BBCDevice = new View_BBCDevice();
@@ -268,7 +269,9 @@ namespace simplepa2.UI.Pages
                 case "accountManageBarItem": view_SystemAccount = bringFrontView<View_SystemAccount>("View_SystemAccount", false); break;
                 case "emailManageBarItem": view_SystemEmail = bringFrontView<View_SystemEmail>("View_SystemEmail", false); break;
                 case "smsRegistrationBarItem": view_SystemSMSRegistration = bringFrontView<View_SystemSMSRegistration>("View_SystemSMSRegistration", false); break;
-                case "restAPIRegistrationBarItem": view_SystemRestAPI = bringFrontView<View_SystemRestAPI>("View_SystemRestAPI", false); break;
+                //case "restAPIRegistrationBarItem": view_SystemRestAPI = bringFrontView<View_SystemRestAPI>("View_SystemRestAPI", false); break;
+                // 시험을 위하여 사용함 
+                case "restAPIRegistrationBarItem": view_SystemTest = bringFrontView<View_SystemTest>("View_SystemTest", false); break;
 
             }
         }
@@ -338,6 +341,7 @@ namespace simplepa2.UI.Pages
                     view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.ePlayCheck :
+                    view_DashBoard2.reDraw2();
                     disp = false;
                     break;
                 case eSignalRMsgType.ePlayEnd:
@@ -348,11 +352,17 @@ namespace simplepa2.UI.Pages
                         view_BBSAnchor2.UpdateSchedule(msg1.state, "방송종료");
                         view_BBSAnchor2.refresh2();
                     }
+                    view_DashBoard2.reDraw3(msg1.EMNAME, msg1.seqno, "방송종료");
                     view_BBSAnchor2.refresh();
                     view_BBCEMManager2.reDraw();
                     break;
                 case eSignalRMsgType.ePlaying:
                     disp = false;
+                    if (msg1.state > 200000 && msg1.seqno > 1) // 예약방송 시작인 경우 => 방송시작 
+                    {
+                        gweb.dBSqlite.BSTreeUpdate(msg1.EMNAME, msg1.seqno, "방송시작");
+                    }
+                    view_DashBoard2.reDraw3(msg1.EMNAME, msg1.seqno, "방송시작");
                     view_DashBoard2.reDraw2();
                     view_BBCEMManager2.reDraw();
                     break;

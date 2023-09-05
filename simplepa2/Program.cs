@@ -38,20 +38,37 @@ namespace simplepa2
 
 	static class Program
 	{
-		static Thread t2;
+        static Thread t2;
+        static Page appMainPage;
 
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		static void Main()
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        static void Main()
 		{
 			// Microsoft.AspNet.WebApi.WebHost 참조 필요 
 			GlobalConfiguration.Configure(WebApiConfig.Register);
 
 			gweb.dBSqlite.DBInit();
 
-			Application.MainPage = new PA_Login();
-			Application.LoadTheme("LSMaterial-3");
+            appMainPage = new PA_Login();
+            Application.MainPage = appMainPage; // new PA_Login(); 
+
+/*
+            if (appMainPage == null)
+			{
+				appMainPage = new PA_Login();
+				Application.MainPage = appMainPage; // new PA_Login(); 
+			}
+			else
+			{
+
+                PA_Login pA_Login = (PA_Login)appMainPage;
+				pA_Login.Show();
+                //pA_MainFrame.Logout();
+            }
+*/
+            Application.LoadTheme("LSMaterial-3");
 			///*
 			if (t2 == null)
 			{ 

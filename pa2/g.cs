@@ -121,7 +121,7 @@ namespace pa
             string path = string.Empty;
             string xmlData = string.Empty;
 
-            path = AppDomain.CurrentDomain.BaseDirectory + "EMClient.xml";
+            path = g._EMClient.apppath + @"bin\EMClient.xml";
 
             try
             {

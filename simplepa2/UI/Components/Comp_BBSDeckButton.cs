@@ -7,6 +7,7 @@ namespace simplepa2.UI.Components
     {
         public string bStatus;
         public int chno;
+        public string emName;
         private Label lb_User;
         public bool selectButton = false;
 
@@ -21,10 +22,11 @@ namespace simplepa2.UI.Components
             InitializeComponent();
 
         }
-        public Comp_BBSDeckButton(int chno, string bstatus, string userName)
+        public Comp_BBSDeckButton(string emName, int chno, string bstatus, string userName)
         {
             InitializeComponent();
 
+            this.emName = emName;
             this.chno = chno;
             this.bStatus = bstatus;
             this.Text = "Ch" + chno;
@@ -102,13 +104,16 @@ namespace simplepa2.UI.Components
         {
             this.BackColor = System.Drawing.Color.FromName("@button3BG");
             this.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.Dock = DockStyle.Top;
+            this.Refresh();
         }
 
         public void setStatusYellow()
         {
             this.BackColor = System.Drawing.Color.FromName("@bStatusYellolw");
             this.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-
+            this.Dock = DockStyle.Top;
+            this.Refresh();
         }
 
         public void setStatusRed()
@@ -148,12 +153,12 @@ namespace simplepa2.UI.Components
             this.lb_User = new Wisej.Web.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_User
             // 
             this.lb_User.Dock = Wisej.Web.DockStyle.Bottom;
             this.lb_User.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lb_User.Location = new System.Drawing.Point(2, 24);
-            this.lb_User.Name = "label1";
+            this.lb_User.Name = "lb_User";
             this.lb_User.Size = new System.Drawing.Size(61, 24);
             this.lb_User.TabIndex = 0;
             this.lb_User.Text = "사용자";
@@ -164,7 +169,7 @@ namespace simplepa2.UI.Components
             this.BackColor = System.Drawing.Color.FromName("@button3BG");
             this.BorderStyle = Wisej.Web.BorderStyle.None;
             this.Controls.Add(this.lb_User);
-            this.CssStyle = "    width: 50px;\r\n    height: 50px;\r\n    border-radius: 15px;\r\n    border: 1px so" +
+            this.CssStyle = "    width: 65px;\r\n    height: 50px;\r\n    border-radius: 15px;\r\n    border: 1px so" +
     "lid /*#E0E3EB*/#dde4f3;";
             this.Font = new System.Drawing.Font("@topLabel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.ForeColor = System.Drawing.Color.FromName("@bTextNormal");

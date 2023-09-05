@@ -84,7 +84,7 @@ namespace pa
             if (t1.state == "방송중") return;
             t1.state = "방송중";
             //_T3.SchBS(t1.idno);
-            SendSigR("PLAYING", eSignalRMsgType.ePlaying, chno, 0);
+            SendSigR("PLAYING", eSignalRMsgType.ePlaying, chno, t1.idno);
         }
 
         // **방송종료처리 - 다원 방송 종료
@@ -103,12 +103,18 @@ namespace pa
             GlobalMessage.Send(MultiSoundReg, chno, 1); // 중지처리 
             t1.p_run = false;
 
-            string l1 = "다원방송종료";
-
-            g.Log(l1 +t1.chno.ToString() + " : "+ t1.idno.ToString());
             if (c1 == 0)
-            { 
-                dBAccess.Eventbss(l1, t1.chno.ToString() + "번 채널", t1.idno.ToString());
+            {
+                if (t1.idno > 200000)
+                { 
+                    dBAccess.Eventbss("예약방송종료", g._EMClient.EM_NAME + " " +t1.chno.ToString() + "번 채널", t1.idno.ToString());
+                    g.Log("예약방송종료" + t1.chno.ToString() + " : "+ t1.idno.ToString());
+                }
+                else
+                { 
+                    dBAccess.Eventbss("다원방송종료", g._EMClient.EM_NAME + " " + t1.chno.ToString() + "번 채널", t1.idno.ToString());
+                    g.Log("다원방송종료" + t1.chno.ToString() + " : " + t1.idno.ToString());
+                }
             }
             SendSigR("PLAYEND", eSignalRMsgType.ePlayEnd , t1.chno, t1.idno);
             g.playItems[chno] = new PlayItem();

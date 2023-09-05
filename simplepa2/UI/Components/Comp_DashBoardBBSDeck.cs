@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Xml.Linq;
 using Wisej.Web;
 
 namespace simplepa2.UI.Components
 {
     public partial class Comp_DashBoardBBSDeck : Wisej.Web.UserControl
     {
-        private DataRow[] deckDataRow;
+        public DataRow[] deckDataRow;
         private List<Comp_BBSDeckButton> btList = new List<Comp_BBSDeckButton>();
         private int selectChno;
+        public string emName;
 
         public Comp_DashBoardBBSDeck()
         {
@@ -20,8 +22,9 @@ namespace simplepa2.UI.Components
         {
             InitializeComponent();
 
-            deckDataRow = dr;     
+            deckDataRow = dr;
             // deckDataRow.
+            emName = EMNAME;
             lb_siteName.Text = EMNAME;
 
             setupEMStatus(emState);
@@ -75,7 +78,7 @@ namespace simplepa2.UI.Components
             {
                 foreach (DataRow row in deckDataRow)
                 {                    
-                    Comp_BBSDeckButton bt = new Comp_BBSDeckButton(Convert.ToInt16(row["chno"].ToString()), row["playing"].ToString(), row["user_name"].ToString());
+                    Comp_BBSDeckButton bt = new Comp_BBSDeckButton(emName ,Convert.ToInt16(row["chno"].ToString()), row["playing"].ToString(), row["user_name"].ToString());
                     flowLayoutPanel1.Controls.Add(bt);
                 }
             }
@@ -83,7 +86,7 @@ namespace simplepa2.UI.Components
             {
                 foreach (DataRow row in deckDataRow)
                 {
-                    Comp_BBSDeckButton bt = new Comp_BBSDeckButton(Convert.ToInt16(row["chno"].ToString()), "알수없음", "확인");
+                    Comp_BBSDeckButton bt = new Comp_BBSDeckButton(emName,Convert.ToInt16(row["chno"].ToString()), "알수없음", "확인");
                     flowLayoutPanel1.Controls.Add(bt);
                 }
             }
@@ -100,5 +103,15 @@ namespace simplepa2.UI.Components
             return spacer;
         }
 
+        internal void reDraw(string eMNAME, int seqno, string v)
+        {
+            foreach (Comp_BBSDeckButton t1 in flowLayoutPanel1.Controls)
+            {
+                if (t1.chno != seqno || t1.emName != emName) continue;
+                t1.setupUIRandom(v);
+                t1.Refresh();
+            }
+
+        }
     }
 }

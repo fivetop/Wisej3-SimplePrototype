@@ -85,6 +85,23 @@ namespace simplepa2.UI.Widget
             */
         }
 
+        // 채널 개별 디스플레이 처리 -> redraw 에서 채널 색상만 변경 처리 
+        internal void reDraw(string eMNAME, int seqno, string v)
+        {
+            foreach (var t1 in deckUIList)
+            {
+                foreach (var t2 in t1.deckDataRow)
+                { 
+                    string str1 = (string)t2["EMNAME"];
+                    int int1 = (int)t2["chno"];
+                    if (str1 != eMNAME || int1 == seqno) continue;
+                    t1.reDraw(eMNAME, seqno, v);
+                    break;
+                }
+            }
+        }
+
+
         public Panel newSpacerPanel()
         {
             Panel spacer = new Panel();
@@ -99,5 +116,6 @@ namespace simplepa2.UI.Widget
         {
             reDraw();
         }
+
     }
 }
