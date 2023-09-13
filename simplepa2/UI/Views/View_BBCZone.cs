@@ -13,9 +13,6 @@ namespace simplepa2.UI.Views
         private Form_BBCZoneImport form_BBCZoneImport;
         private Comp_ZoneBasePanel comp_ZoneBasePanel;
 
-        private List<Comp_ZoneBuildingPanels> buildingPanelPointerList;
-
-
         private string comboWholeText = "전체";
         private string strSelectRelease = "선택해제";
         private string strSelectAll = "모두선택";

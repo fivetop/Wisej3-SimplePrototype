@@ -1,5 +1,6 @@
 ﻿using DataClass;
 using Microsoft.AspNet.SignalR;
+using Newtonsoft.Json.Linq;
 using simplepa2.SignalR;
 using simplepa2.UI.Views;
 using simplepa2.win;
@@ -75,12 +76,16 @@ namespace simplepa2.UI.Pages
         public string login_id { get; set; }
         #endregion
 
+        public string guidstring { get; set; }
+
         public PA_MainFrame()
         {
             InitializeComponent();
 
             gweb.mainFrame = this;
             gweb.mgf.Add(this);
+            guidstring = Guid.NewGuid().ToString();
+            Application.Browser.LocalStorage.SetValue<string>("MainFrame", guidstring);
 
             // 초기화 탑
             if (view_topPanelBar == null)
@@ -519,6 +524,20 @@ namespace simplepa2.UI.Pages
         {
             this.mainMenuBar.CompactView = !this.mainMenuBar.CompactView;
 
+        }
+
+        // Close 처리 
+        private void PA_MainFrame_Disposed(object sender, EventArgs e)
+        {
+            //Application.Browser.LocalStorage.RemoveValue("MainFrame");
+            this.Dispose(true);
+
+        }
+
+        internal void Close()
+        {
+            MessageBox.Show("Server Disconnected..");
+            this.Dispose(true);
         }
     }
 }

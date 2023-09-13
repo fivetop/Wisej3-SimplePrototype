@@ -126,7 +126,7 @@ namespace pa
                     break;
                 case eSignalRMsgType.eScheduleDown:
                     g.Log("Schedule Down");
-                    makeDB();
+                    makeDBSchdule();
                     MakePlayList(_db); // 예약방송 업데이트
                     break;
             }

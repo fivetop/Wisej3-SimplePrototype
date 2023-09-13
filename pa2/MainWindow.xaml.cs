@@ -218,7 +218,7 @@ namespace pa
                 systemcheck();
 
                 // 처음 한번은 디비 맟추기 처리 
-                makeDB();
+                makeDBSchdule();
                 MakePlayList(_db); // 예약방송 업데이트
 
                 T1Reservedtimer.Elapsed += T1Reservedtimer_Elapsed;
@@ -259,7 +259,7 @@ namespace pa
                 if (t1.Hour == 0 && t1.Minute == 0 && t1.Second == 1)
                 {
                     // 새벽 0시에 스케쥴 조정 처리 
-                    makeDB();
+                    makeDBSchdule();
                     MakePlayList(_db); // 예약방송 업데이트
                     g.Log("Update Schedule..");
                 }
@@ -318,7 +318,7 @@ namespace pa
 
         public SchduleMemList _db { get; set; } = new SchduleMemList(); //디비 
 
-        public void makeDB()
+        public void makeDBSchdule()
         {
             _db.child.Clear();
             dBAccess.DBSchdule();

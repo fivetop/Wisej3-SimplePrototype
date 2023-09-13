@@ -87,7 +87,7 @@
             this.mainMenuBar.Name = "mainMenuBar";
             this.mainMenuBar.RightToLeft = Wisej.Web.RightToLeft.No;
             this.mainMenuBar.ShowUser = false;
-            this.mainMenuBar.Size = new System.Drawing.Size(250, 444);
+            this.mainMenuBar.Size = new System.Drawing.Size(250, 458);
             this.mainMenuBar.TabIndex = 0;
             this.mainMenuBar.Text = "SimplePA";
             this.mainMenuBar.TitleClick += new System.EventHandler(this.mainMenuBar_TitleClick);
@@ -368,7 +368,7 @@
             this.rightPanels.Dock = Wisej.Web.DockStyle.Fill;
             this.rightPanels.Location = new System.Drawing.Point(250, 0);
             this.rightPanels.Name = "rightPanels";
-            this.rightPanels.Size = new System.Drawing.Size(893, 444);
+            this.rightPanels.Size = new System.Drawing.Size(795, 458);
             this.rightPanels.TabIndex = 1;
             // 
             // contentsPanel
@@ -378,7 +378,7 @@
             this.contentsPanel.Dock = Wisej.Web.DockStyle.Fill;
             this.contentsPanel.Location = new System.Drawing.Point(0, 66);
             this.contentsPanel.Name = "contentsPanel";
-            this.contentsPanel.Size = new System.Drawing.Size(893, 378);
+            this.contentsPanel.Size = new System.Drawing.Size(795, 392);
             this.contentsPanel.TabIndex = 0;
             // 
             // topPanels
@@ -388,7 +388,7 @@
             this.topPanels.Dock = Wisej.Web.DockStyle.Top;
             this.topPanels.Location = new System.Drawing.Point(0, 0);
             this.topPanels.Name = "topPanels";
-            this.topPanels.Size = new System.Drawing.Size(893, 66);
+            this.topPanels.Size = new System.Drawing.Size(795, 66);
             this.topPanels.TabIndex = 2;
             // 
             // dataSet1
@@ -409,9 +409,10 @@
             this.Controls.Add(this.rightPanels);
             this.Controls.Add(this.mainMenuBar);
             this.Name = "PA_MainFrame";
-            this.Size = new System.Drawing.Size(1143, 444);
+            this.Size = new System.Drawing.Size(1045, 458);
             this.Text = "PA_MainFrame";
             this.Load += new System.EventHandler(this.PA_MainFrame_Load);
+            this.Disposed += new System.EventHandler(this.PA_MainFrame_Disposed);
             this.rightPanels.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);

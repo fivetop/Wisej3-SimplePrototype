@@ -1,6 +1,8 @@
-﻿using System;
+﻿using simplepa2.Controller;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Wisej.Web;
 using static simplepa2.DataSet1;
 
@@ -46,7 +48,10 @@ namespace simplepa2.UI.Components
             foreach (DataRow dr in buildList)
             {
                 string buildName = (dr as DataSet1.AssetsSitenBuildingRow).building;
-                Comp_ZoneBuildingPanels uiCZBP = new Comp_ZoneBuildingPanels(this, buildName, this.dataSet11.Assets.Select("building = '" + buildName + "'"), isCheckBoxSetup, isZoneAddButton);
+                string siteName = (dr as DataSet1.AssetsSitenBuildingRow).emServer;
+                var assets = this.dataSet11.Assets.Select("building = '" + buildName + "' AND " + "emServer = '" + siteName + "'");
+                //Comp_ZoneBuildingPanels uiCZBP = new Comp_ZoneBuildingPanels(this, buildName, this.dataSet11.Assets.Select("building = '" + buildName + "'"), isCheckBoxSetup, isZoneAddButton);
+                Comp_ZoneBuildingPanels uiCZBP = new Comp_ZoneBuildingPanels(this, selectedEMNAME, buildName, assets, isCheckBoxSetup, isZoneAddButton);
 
                 dataList.Add(uiCZBP);
 

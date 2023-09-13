@@ -8,6 +8,8 @@ namespace simplepa2.UI.Components
 {    
     public partial class Comp_ZoneBuildingPanels : Wisej.Web.UserControl
     {
+        public string siteName = "";
+        public string buildingName = "";
         // original  data
         private DataRow[] buildList;
 
@@ -53,6 +55,34 @@ namespace simplepa2.UI.Components
             
         }
 
+        public Comp_ZoneBuildingPanels(object popupDockObject, string siteName, string buildingName, DataRow[] buildList, bool isCheckUse, bool isZoneAddButton)
+        {
+            InitializeComponent();
+
+            this.siteName = siteName;
+            this.buildingName = buildingName;
+            this.dockObject = popupDockObject;  // 팝업용 포인터
+
+            this.buildList = buildList;
+
+            this.ZONE_LIST_ADD_BUTTON_SETUP = isZoneAddButton;
+
+            // inital UI 
+
+            lb_buildingName.Text = buildingName;
+
+            /* Label 과 체크박스 위치 */
+            var hSize = this.Height / 2;
+            this.lb_buildingName.Location = new System.Drawing.Point(-1, hSize - 25);
+            this.ch_building.Location = new System.Drawing.Point(11, hSize);
+            ch_building.Visible = isCheckUse;
+
+            this.zoneFloorDataList = prepareFloorZoneData(buildList);
+
+            setupUICardData(zoneFloorDataList, isCheckUse);
+
+        }
+
         public List<Zone_DataList> prepareFloorZoneData(DataRow[] assetsSpecificBuildingList)
         {
             List<Zone_DataList> zoneList = new List<Zone_DataList>();
@@ -65,24 +95,21 @@ namespace simplepa2.UI.Components
                 // 형변환 
                 DataSet1.AssetsRow drType = (dr as DataSet1.AssetsRow);
 
+                if (drType.emServer != siteName && siteName != "전체") continue;
                 // 첫번째 경우 플로어 정보 일단 저장
                 string dataFloorName = drType.floorname;
 
-                Zone_DataList zDresult = zoneList.Find(x => x.floorName == dataFloorName);
+                Zone_DataList zDresult = zoneList.Find(x => x.floorName == dataFloorName && x.path == drType.path);
 
                 if(zDresult == null)
                 {
                     Zone_DataList zdData = new Zone_DataList();
+                    zdData.path = drType.path;
                     zdData.floorName = dataFloorName;
                     zdData.zoneListArray.Add(drType);
                     zoneList.Add(zdData);
                 }
-                else
-                {
-                    zDresult.zoneListArray.Add(drType);
-                }
             }
-
             return zoneList;
         }
 
@@ -159,7 +186,8 @@ namespace simplepa2.UI.Components
     }
 
     public class Zone_DataList
-    {        
+    {
+        public string path;
         public string floorName;
         public List<simplepa2.DataSet1.AssetsRow> zoneListArray = new List<simplepa2.DataSet1.AssetsRow>();
     }

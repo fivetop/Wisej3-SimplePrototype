@@ -198,6 +198,7 @@ namespace pa
             }
             g.DSP_MakeGroupSpeaker(sch_play.Play, 1, BS_DSP_STATE.MUL_BS, sch_play.chno);
             PlayChildProcess(sch_play.chno, sch_play.idno);
+            dBAccess.Eventbss("예약방송시작", g._EMClient.EM_NAME + " " + sch_play.chno.ToString() + "번 채널", sch_play.idno.ToString());
             SendSigR("예약방송", eSignalRMsgType.eReserved, sch_play.chno, sch_play.idno);
             /*
             ExtProcess ep1 = new ExtProcess(sch_play.idno, sch_play.chno);

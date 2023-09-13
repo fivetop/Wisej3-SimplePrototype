@@ -39,7 +39,6 @@ namespace simplepa2
 	static class Program
 	{
         static Thread t2;
-        static Page appMainPage;
 
         /// <summary>
         /// The main entry point for the application.
@@ -51,23 +50,8 @@ namespace simplepa2
 
 			gweb.dBSqlite.DBInit();
 
-            appMainPage = new PA_Login();
-            Application.MainPage = appMainPage; // new PA_Login(); 
+			Application.MainPage = new PA_Login(); 
 
-/*
-            if (appMainPage == null)
-			{
-				appMainPage = new PA_Login();
-				Application.MainPage = appMainPage; // new PA_Login(); 
-			}
-			else
-			{
-
-                PA_Login pA_Login = (PA_Login)appMainPage;
-				pA_Login.Show();
-                //pA_MainFrame.Logout();
-            }
-*/
             Application.LoadTheme("LSMaterial-3");
 			///*
 			if (t2 == null)
