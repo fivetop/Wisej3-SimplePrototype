@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
-            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
-            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry5 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry6 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry7 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
-            Wisej.Web.ImageListEntry imageListEntry8 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
-            Wisej.Web.ImageListEntry imageListEntry9 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
-            Wisej.Web.ImageListEntry imageListEntry10 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
-            Wisej.Web.ImageListEntry imageListEntry11 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
-            Wisej.Web.ImageListEntry imageListEntry12 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry49 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/user-outline.svg", "user-outline");
+            Wisej.Web.ImageListEntry imageListEntry50 = new Wisej.Web.ImageListEntry("resource.wx/simplepa2/Resources/location-arrow.svg", "location-arrow");
+            Wisej.Web.ImageListEntry imageListEntry51 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry52 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry53 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry54 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry55 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
+            Wisej.Web.ImageListEntry imageListEntry56 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.speakerphone.svg", "automatic-brightness");
+            Wisej.Web.ImageListEntry imageListEntry57 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.network.server.svg", "auto-white-balance");
+            Wisej.Web.ImageListEntry imageListEntry58 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.usb.drive.svg", "automatic-flash-symbol");
+            Wisej.Web.ImageListEntry imageListEntry59 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.microphone.svg", "appbar.arrow.right");
+            Wisej.Web.ImageListEntry imageListEntry60 = new Wisej.Web.ImageListEntry("resource.wx/Wisej.Ext.ModernUI/appbar.laptop.svg", "appbar.at");
             this.imageList3 = new Wisej.Web.ImageList(this.components);
             this.imageList1 = new Wisej.Web.ImageList(this.components);
             this.imageList2 = new Wisej.Web.ImageList(this.components);
@@ -68,6 +68,7 @@
             this.emServerWithWholeColTableAdapter1 = new simplepa2.DataSet1TableAdapters.EMServerWithWholeColTableAdapter();
             this.dataSet1BindingSource = new Wisej.Web.BindingSource(this.components);
             this.membs = new Wisej.Web.BindingSource(this.components);
+            this.pn_Spacer = new Wisej.Web.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Eventbs2)).BeginInit();
@@ -77,7 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.SuspendLayout();
             this.pn_leftMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).BeginInit();
@@ -86,27 +86,27 @@
             // imageList3
             // 
             this.imageList3.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry1,
-            imageListEntry2});
+            imageListEntry49,
+            imageListEntry50});
             // 
             // imageList1
             // 
             this.imageList1.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry3,
-            imageListEntry4,
-            imageListEntry5,
-            imageListEntry6,
-            imageListEntry7});
+            imageListEntry51,
+            imageListEntry52,
+            imageListEntry53,
+            imageListEntry54,
+            imageListEntry55});
             this.imageList1.ImageSize = new System.Drawing.Size(64, 64);
             // 
             // imageList2
             // 
             this.imageList2.Images.AddRange(new Wisej.Web.ImageListEntry[] {
-            imageListEntry8,
-            imageListEntry9,
-            imageListEntry10,
-            imageListEntry11,
-            imageListEntry12});
+            imageListEntry56,
+            imageListEntry57,
+            imageListEntry58,
+            imageListEntry59,
+            imageListEntry60});
             this.imageList2.ImageSize = new System.Drawing.Size(32, 32);
             // 
             // Eventbs
@@ -179,6 +179,7 @@
             // 
             this.panel3.BorderStyle = Wisej.Web.BorderStyle.Solid;
             this.panel3.Controls.Add(this.splitContainer2);
+            this.panel3.Controls.Add(this.pn_Spacer);
             this.panel3.Controls.Add(this.pn_leftMain);
             this.panel3.Dock = Wisej.Web.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(20, 20);
@@ -192,7 +193,7 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = Wisej.Web.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(650, 0);
+            this.splitContainer2.Location = new System.Drawing.Point(670, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = Wisej.Web.Orientation.Horizontal;
             // 
@@ -203,22 +204,22 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.TabStop = true;
-            this.splitContainer2.Size = new System.Drawing.Size(708, 858);
+            this.splitContainer2.Size = new System.Drawing.Size(688, 858);
             this.splitContainer2.SplitterDistance = 165;
             this.splitContainer2.TabIndex = 0;
             // 
             // pn_leftMain
             // 
+            this.pn_leftMain.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
             this.pn_leftMain.Controls.Add(this.pn_playerList);
             this.pn_leftMain.Controls.Add(this.pn_leftMainSpacer);
             this.pn_leftMain.Controls.Add(this.pn_BBSMonitor);
             this.pn_leftMain.Dock = Wisej.Web.DockStyle.Left;
             this.pn_leftMain.Location = new System.Drawing.Point(0, 0);
-            this.pn_leftMain.MaximumSize = new System.Drawing.Size(650, 836);
-            this.pn_leftMain.MinimumSize = new System.Drawing.Size(650, 836);
             this.pn_leftMain.Name = "pn_leftMain";
-            this.pn_leftMain.Padding = new Wisej.Web.Padding(0, 0, 20, 0);
-            this.pn_leftMain.Size = new System.Drawing.Size(650, 836);
+            this.pn_leftMain.ScrollBars = Wisej.Web.ScrollBars.None;
+            this.pn_leftMain.ShowCloseButton = false;
+            this.pn_leftMain.Size = new System.Drawing.Size(650, 858);
             this.pn_leftMain.TabIndex = 0;
             // 
             // pn_playerList
@@ -227,7 +228,9 @@
             this.pn_playerList.Dock = Wisej.Web.DockStyle.Fill;
             this.pn_playerList.Location = new System.Drawing.Point(0, 190);
             this.pn_playerList.Name = "pn_playerList";
-            this.pn_playerList.Size = new System.Drawing.Size(630, 646);
+            this.pn_playerList.ScrollBars = Wisej.Web.ScrollBars.None;
+            this.pn_playerList.ShowCloseButton = false;
+            this.pn_playerList.Size = new System.Drawing.Size(650, 668);
             this.pn_playerList.TabIndex = 169;
             // 
             // pn_leftMainSpacer
@@ -236,7 +239,7 @@
             this.pn_leftMainSpacer.Dock = Wisej.Web.DockStyle.Top;
             this.pn_leftMainSpacer.Location = new System.Drawing.Point(0, 170);
             this.pn_leftMainSpacer.Name = "pn_leftMainSpacer";
-            this.pn_leftMainSpacer.Size = new System.Drawing.Size(630, 20);
+            this.pn_leftMainSpacer.Size = new System.Drawing.Size(650, 20);
             this.pn_leftMainSpacer.TabIndex = 167;
             // 
             // pn_BBSMonitor
@@ -245,7 +248,7 @@
             this.pn_BBSMonitor.Dock = Wisej.Web.DockStyle.Top;
             this.pn_BBSMonitor.Location = new System.Drawing.Point(0, 0);
             this.pn_BBSMonitor.Name = "pn_BBSMonitor";
-            this.pn_BBSMonitor.Size = new System.Drawing.Size(630, 170);
+            this.pn_BBSMonitor.Size = new System.Drawing.Size(650, 170);
             this.pn_BBSMonitor.TabIndex = 51;
             // 
             // contextMenu2
@@ -263,6 +266,15 @@
             // dataSet1BindingSource
             // 
             this.dataSet1BindingSource.DataSource = this.dataSet1;
+            // 
+            // pn_Spacer
+            // 
+            this.pn_Spacer.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Spacer.Dock = Wisej.Web.DockStyle.Left;
+            this.pn_Spacer.Location = new System.Drawing.Point(650, 0);
+            this.pn_Spacer.Name = "pn_Spacer";
+            this.pn_Spacer.Size = new System.Drawing.Size(20, 858);
+            this.pn_Spacer.TabIndex = 48;
             // 
             // View_BBSAnchor
             // 
@@ -282,7 +294,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingEMCombo)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             this.pn_leftMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.membs)).EndInit();
@@ -319,5 +330,6 @@
         private Wisej.Web.BindingSource bindingEMCombo;
         private Wisej.Web.BindingSource dataSet1BindingSource;
         private Wisej.Web.Panel pn_playerList;
+        private Wisej.Web.Panel pn_Spacer;
     }
 }

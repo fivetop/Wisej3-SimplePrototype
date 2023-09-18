@@ -225,6 +225,10 @@ namespace LSNAudio
             if (m1.Count < 1)
             {
                 statetext();
+                string str11 = e1[0];
+                IntPtr t12 = new IntPtr(Int16.Parse(str11));
+                PostMessage((IntPtr)HWND_BROADCAST, message, t12, new IntPtr(5000)); // 
+                g1.Log("Naudio err : CanPlay = false : " + str11);
                 return false;
             }
 

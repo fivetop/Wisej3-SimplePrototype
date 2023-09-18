@@ -680,6 +680,10 @@ namespace simplepa2
         {
             try
             {
+                if (Tam == null) return;
+                if (Tam.EMServerTableAdapter == null) return;
+                if (Ds1 == null) return;
+                if (Ds1.EMServer == null) return;
                 Tam.EMServerTableAdapter.Fill(Ds1.EMServer);
 
                 var m3 = Ds1.EMServer.FirstOrDefault(p => p.EMNAME == EMNAME);

@@ -108,9 +108,11 @@
             this.button5 = new Wisej.Web.Button();
             this.button저장 = new Wisej.Web.Button();
             this.label66 = new Wisej.Web.Label();
-            this.splitContainer1 = new Wisej.Web.SplitContainer();
             this.schduleTableAdapter1 = new simplepa2.DataSet1TableAdapters.SchduleTableAdapter();
             this.schduleCTableAdapter1 = new simplepa2.DataSet1TableAdapters.SchduleCTableAdapter();
+            this.colState = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.pn_PresetWrapper = new Wisej.Web.Panel();
+            this.pn_Spacer = new Wisej.Web.Panel();
             this.pn_PresetList.SuspendLayout();
             this.pn_PresetItemList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -131,10 +133,7 @@
             this.panel35.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel136.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.pn_PresetWrapper.SuspendLayout();
             this.SuspendLayout();
             // 
             // pn_PresetList
@@ -142,11 +141,11 @@
             this.pn_PresetList.BackColor = System.Drawing.Color.White;
             this.pn_PresetList.Controls.Add(this.pn_PresetItemList);
             this.pn_PresetList.Controls.Add(this.pn_PresetTopPanel);
-            this.pn_PresetList.Dock = Wisej.Web.DockStyle.Fill;
+            this.pn_PresetList.Dock = Wisej.Web.DockStyle.Left;
             this.pn_PresetList.Location = new System.Drawing.Point(20, 20);
             this.pn_PresetList.Name = "pn_PresetList";
             this.pn_PresetList.Padding = new Wisej.Web.Padding(20);
-            this.pn_PresetList.Size = new System.Drawing.Size(585, 858);
+            this.pn_PresetList.Size = new System.Drawing.Size(585, 860);
             this.pn_PresetList.TabIndex = 41;
             // 
             // pn_PresetItemList
@@ -159,7 +158,7 @@
             this.pn_PresetItemList.Name = "pn_PresetItemList";
             this.pn_PresetItemList.Selectable = true;
             this.pn_PresetItemList.ShowCloseButton = false;
-            this.pn_PresetItemList.Size = new System.Drawing.Size(545, 766);
+            this.pn_PresetItemList.Size = new System.Drawing.Size(545, 768);
             this.pn_PresetItemList.TabIndex = 51;
             this.pn_PresetItemList.Text = "listPanel";
             // 
@@ -187,14 +186,15 @@
             this.colTss,
             this.colTse,
             this.colStime_1,
-            this.colEtime_1});
+            this.colEtime_1,
+            this.colState});
             this.dataGridView1.DataSource = this.schduleBindingSource;
             this.dataGridView1.Dock = Wisej.Web.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(545, 766);
+            this.dataGridView1.Size = new System.Drawing.Size(545, 768);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new Wisej.Web.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -204,6 +204,7 @@
             this.colSchduleid.HeaderText = "번호";
             this.colSchduleid.Name = "colSchduleid";
             this.colSchduleid.ReadOnly = true;
+            this.colSchduleid.ValueType = typeof(int);
             this.colSchduleid.Width = 60;
             // 
             // colName
@@ -212,6 +213,7 @@
             this.colName.HeaderText = "이름";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
+            this.colName.ValueType = typeof(string);
             // 
             // colEMNAME
             // 
@@ -219,6 +221,7 @@
             this.colEMNAME.HeaderText = "지역";
             this.colEMNAME.Name = "colEMNAME";
             this.colEMNAME.ReadOnly = true;
+            this.colEMNAME.ValueType = typeof(string);
             // 
             // colGroupname
             // 
@@ -226,12 +229,14 @@
             this.colGroupname.HeaderText = "그룹";
             this.colGroupname.Name = "colGroupname";
             this.colGroupname.ReadOnly = true;
+            this.colGroupname.ValueType = typeof(string);
             // 
             // colChno
             // 
             this.colChno.DataPropertyName = "chno";
             this.colChno.HeaderText = "채널";
             this.colChno.Name = "colChno";
+            this.colChno.ValueType = typeof(int);
             this.colChno.Width = 50;
             // 
             // colDuration
@@ -239,6 +244,7 @@
             this.colDuration.DataPropertyName = "duration";
             this.colDuration.HeaderText = "재생";
             this.colDuration.Name = "colDuration";
+            this.colDuration.ValueType = typeof(string);
             this.colDuration.Width = 60;
             // 
             // colWeek
@@ -247,6 +253,7 @@
             this.colWeek.HeaderText = "반복";
             this.colWeek.Name = "colWeek";
             this.colWeek.ReadOnly = true;
+            this.colWeek.ValueType = typeof(bool);
             this.colWeek.Width = 50;
             // 
             // colStime
@@ -255,6 +262,7 @@
             this.colStime.HeaderText = "시작";
             this.colStime.Name = "colStime";
             this.colStime.ReadOnly = true;
+            this.colStime.ValueType = typeof(string);
             this.colStime.Width = 60;
             // 
             // colEtime
@@ -263,6 +271,7 @@
             this.colEtime.HeaderText = "종료";
             this.colEtime.Name = "colEtime";
             this.colEtime.ReadOnly = true;
+            this.colEtime.ValueType = typeof(string);
             this.colEtime.Width = 60;
             // 
             // colSdate
@@ -274,6 +283,7 @@
             this.colSdate.HeaderText = "일자";
             this.colSdate.Name = "colSdate";
             this.colSdate.ReadOnly = true;
+            this.colSdate.ValueType = typeof(System.DateTime);
             // 
             // colDay1
             // 
@@ -281,6 +291,7 @@
             this.colDay1.HeaderText = "월";
             this.colDay1.Name = "colDay1";
             this.colDay1.ReadOnly = true;
+            this.colDay1.ValueType = typeof(bool);
             this.colDay1.Width = 40;
             // 
             // colDay2
@@ -289,6 +300,7 @@
             this.colDay2.HeaderText = "화";
             this.colDay2.Name = "colDay2";
             this.colDay2.ReadOnly = true;
+            this.colDay2.ValueType = typeof(bool);
             this.colDay2.Width = 40;
             // 
             // colDay3
@@ -297,6 +309,7 @@
             this.colDay3.HeaderText = "수";
             this.colDay3.Name = "colDay3";
             this.colDay3.ReadOnly = true;
+            this.colDay3.ValueType = typeof(bool);
             this.colDay3.Width = 40;
             // 
             // colDay4
@@ -305,6 +318,7 @@
             this.colDay4.HeaderText = "목";
             this.colDay4.Name = "colDay4";
             this.colDay4.ReadOnly = true;
+            this.colDay4.ValueType = typeof(bool);
             this.colDay4.Width = 40;
             // 
             // colDay5
@@ -313,6 +327,7 @@
             this.colDay5.HeaderText = "금";
             this.colDay5.Name = "colDay5";
             this.colDay5.ReadOnly = true;
+            this.colDay5.ValueType = typeof(bool);
             this.colDay5.Width = 40;
             // 
             // colDay6
@@ -321,6 +336,7 @@
             this.colDay6.HeaderText = "토";
             this.colDay6.Name = "colDay6";
             this.colDay6.ReadOnly = true;
+            this.colDay6.ValueType = typeof(bool);
             this.colDay6.Width = 40;
             // 
             // colDay7
@@ -329,6 +345,7 @@
             this.colDay7.HeaderText = "일";
             this.colDay7.Name = "colDay7";
             this.colDay7.ReadOnly = true;
+            this.colDay7.ValueType = typeof(bool);
             this.colDay7.Width = 40;
             // 
             // colUser_Name
@@ -337,12 +354,14 @@
             this.colUser_Name.HeaderText = "작성자";
             this.colUser_Name.Name = "colUser_Name";
             this.colUser_Name.ReadOnly = true;
+            this.colUser_Name.ValueType = typeof(string);
             // 
             // colTss
             // 
             this.colTss.DataPropertyName = "tss";
             this.colTss.HeaderText = "tss";
             this.colTss.Name = "colTss";
+            this.colTss.ValueType = typeof(string);
             this.colTss.Visible = false;
             // 
             // colTse
@@ -350,6 +369,7 @@
             this.colTse.DataPropertyName = "tse";
             this.colTse.HeaderText = "tse";
             this.colTse.Name = "colTse";
+            this.colTse.ValueType = typeof(string);
             this.colTse.Visible = false;
             // 
             // colStime_1
@@ -359,6 +379,7 @@
             this.colStime_1.DefaultCellStyle = dataGridViewCellStyle8;
             this.colStime_1.HeaderText = "stime";
             this.colStime_1.Name = "colStime_1";
+            this.colStime_1.ValueType = typeof(System.DateTime);
             this.colStime_1.Visible = false;
             // 
             // colEtime_1
@@ -368,6 +389,7 @@
             this.colEtime_1.DefaultCellStyle = dataGridViewCellStyle9;
             this.colEtime_1.HeaderText = "etime";
             this.colEtime_1.Name = "colEtime_1";
+            this.colEtime_1.ValueType = typeof(System.DateTime);
             this.colEtime_1.Visible = false;
             // 
             // schduleBindingSource
@@ -431,10 +453,10 @@
             this.pn_PresetDetails.Controls.Add(this.panel32);
             this.pn_PresetDetails.Controls.Add(this.panel136);
             this.pn_PresetDetails.Dock = Wisej.Web.DockStyle.Fill;
-            this.pn_PresetDetails.Location = new System.Drawing.Point(20, 20);
+            this.pn_PresetDetails.Location = new System.Drawing.Point(625, 20);
             this.pn_PresetDetails.Name = "pn_PresetDetails";
             this.pn_PresetDetails.Padding = new Wisej.Web.Padding(20);
-            this.pn_PresetDetails.Size = new System.Drawing.Size(715, 858);
+            this.pn_PresetDetails.Size = new System.Drawing.Size(755, 860);
             this.pn_PresetDetails.TabIndex = 47;
             // 
             // panel32
@@ -448,7 +470,7 @@
             this.panel32.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
             this.panel32.Location = new System.Drawing.Point(20, 72);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(675, 766);
+            this.panel32.Size = new System.Drawing.Size(715, 768);
             this.panel32.TabIndex = 51;
             this.panel32.Text = "listPanel";
             // 
@@ -462,7 +484,7 @@
             this.panel45.Location = new System.Drawing.Point(0, 367);
             this.panel45.Name = "panel45";
             this.panel45.Padding = new Wisej.Web.Padding(20, 10, 20, 10);
-            this.panel45.Size = new System.Drawing.Size(675, 399);
+            this.panel45.Size = new System.Drawing.Size(715, 401);
             this.panel45.TabIndex = 163;
             // 
             // comp_UGroup1
@@ -471,7 +493,7 @@
             this.comp_UGroup1.Dock = Wisej.Web.DockStyle.Fill;
             this.comp_UGroup1.Location = new System.Drawing.Point(20, 47);
             this.comp_UGroup1.Name = "comp_UGroup1";
-            this.comp_UGroup1.Size = new System.Drawing.Size(635, 342);
+            this.comp_UGroup1.Size = new System.Drawing.Size(675, 344);
             this.comp_UGroup1.TabIndex = 162;
             // 
             // panel91
@@ -481,7 +503,7 @@
             this.panel91.Dock = Wisej.Web.DockStyle.Top;
             this.panel91.Location = new System.Drawing.Point(20, 10);
             this.panel91.Name = "panel91";
-            this.panel91.Size = new System.Drawing.Size(635, 37);
+            this.panel91.Size = new System.Drawing.Size(675, 37);
             this.panel91.TabIndex = 161;
             // 
             // label32
@@ -522,7 +544,7 @@
             this.panel33.Location = new System.Drawing.Point(0, 199);
             this.panel33.Name = "panel33";
             this.panel33.Padding = new Wisej.Web.Padding(20, 10, 20, 0);
-            this.panel33.Size = new System.Drawing.Size(675, 168);
+            this.panel33.Size = new System.Drawing.Size(715, 168);
             this.panel33.TabIndex = 161;
             // 
             // comp_Music1
@@ -530,7 +552,7 @@
             this.comp_Music1.Dock = Wisej.Web.DockStyle.Fill;
             this.comp_Music1.Location = new System.Drawing.Point(20, 47);
             this.comp_Music1.Name = "comp_Music1";
-            this.comp_Music1.Size = new System.Drawing.Size(635, 121);
+            this.comp_Music1.Size = new System.Drawing.Size(675, 121);
             this.comp_Music1.TabIndex = 162;
             // 
             // panel43
@@ -541,7 +563,7 @@
             this.panel43.Dock = Wisej.Web.DockStyle.Top;
             this.panel43.Location = new System.Drawing.Point(20, 10);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(635, 37);
+            this.panel43.Size = new System.Drawing.Size(675, 37);
             this.panel43.TabIndex = 161;
             // 
             // label20
@@ -578,7 +600,7 @@
             this.maskedDuration.AutoSize = false;
             this.maskedDuration.BackColor = System.Drawing.Color.FromName("@bReadonly");
             this.maskedDuration.Dock = Wisej.Web.DockStyle.Right;
-            this.maskedDuration.Location = new System.Drawing.Point(573, 0);
+            this.maskedDuration.Location = new System.Drawing.Point(613, 0);
             this.maskedDuration.Mask = "90:00";
             this.maskedDuration.Name = "maskedDuration";
             this.maskedDuration.ReadOnly = true;
@@ -591,7 +613,7 @@
             this.panel46.Dock = Wisej.Web.DockStyle.Top;
             this.panel46.Location = new System.Drawing.Point(0, 189);
             this.panel46.Name = "panel46";
-            this.panel46.Size = new System.Drawing.Size(675, 10);
+            this.panel46.Size = new System.Drawing.Size(715, 10);
             this.panel46.TabIndex = 160;
             // 
             // panel89
@@ -606,7 +628,7 @@
             this.panel89.Location = new System.Drawing.Point(0, 0);
             this.panel89.Name = "panel89";
             this.panel89.Padding = new Wisej.Web.Padding(20, 10, 20, 10);
-            this.panel89.Size = new System.Drawing.Size(675, 189);
+            this.panel89.Size = new System.Drawing.Size(715, 189);
             this.panel89.TabIndex = 159;
             // 
             // panel2
@@ -618,7 +640,7 @@
             this.panel2.Location = new System.Drawing.Point(20, 135);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new Wisej.Web.Padding(20, 0, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(635, 44);
+            this.panel2.Size = new System.Drawing.Size(675, 44);
             this.panel2.TabIndex = 168;
             // 
             // panel특정일자
@@ -629,7 +651,7 @@
             this.panel특정일자.Location = new System.Drawing.Point(438, 0);
             this.panel특정일자.Name = "panel특정일자";
             this.panel특정일자.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
-            this.panel특정일자.Size = new System.Drawing.Size(197, 44);
+            this.panel특정일자.Size = new System.Drawing.Size(237, 44);
             this.panel특정일자.TabIndex = 167;
             // 
             // dateTime일자
@@ -798,7 +820,7 @@
             this.panel37.Dock = Wisej.Web.DockStyle.Top;
             this.panel37.Location = new System.Drawing.Point(20, 91);
             this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(635, 44);
+            this.panel37.Size = new System.Drawing.Size(675, 44);
             this.panel37.TabIndex = 166;
             // 
             // label2
@@ -863,7 +885,7 @@
             this.panel35.Location = new System.Drawing.Point(20, 47);
             this.panel35.Name = "panel35";
             this.panel35.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
-            this.panel35.Size = new System.Drawing.Size(635, 44);
+            this.panel35.Size = new System.Drawing.Size(675, 44);
             this.panel35.TabIndex = 164;
             // 
             // label25
@@ -919,7 +941,7 @@
             this.panel34.Dock = Wisej.Web.DockStyle.Top;
             this.panel34.Location = new System.Drawing.Point(20, 10);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(635, 37);
+            this.panel34.Size = new System.Drawing.Size(675, 37);
             this.panel34.TabIndex = 161;
             // 
             // label23
@@ -960,7 +982,7 @@
             this.panel136.Dock = Wisej.Web.DockStyle.Top;
             this.panel136.Location = new System.Drawing.Point(20, 20);
             this.panel136.Name = "panel136";
-            this.panel136.Size = new System.Drawing.Size(675, 52);
+            this.panel136.Size = new System.Drawing.Size(715, 52);
             this.panel136.TabIndex = 50;
             // 
             // button5
@@ -969,7 +991,7 @@
             this.button5.BackColor = System.Drawing.Color.FromName("@button2BG");
             this.button5.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button5.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button5.Location = new System.Drawing.Point(575, 2);
+            this.button5.Location = new System.Drawing.Point(615, 2);
             this.button5.Margin = new Wisej.Web.Padding(0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 32);
@@ -983,7 +1005,7 @@
             this.button저장.BackColor = System.Drawing.Color.FromName("@button1BG");
             this.button저장.Font = new System.Drawing.Font("@buttonTxt", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.button저장.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.button저장.Location = new System.Drawing.Point(458, 2);
+            this.button저장.Location = new System.Drawing.Point(498, 2);
             this.button저장.Margin = new Wisej.Web.Padding(0);
             this.button저장.Name = "button저장";
             this.button저장.Size = new System.Drawing.Size(100, 32);
@@ -1002,27 +1024,6 @@
             this.label66.Text = "예약방송 상세";
             this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
-            this.splitContainer1.Dock = Wisej.Web.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.pn_PresetList);
-            this.splitContainer1.Panel1.Padding = new Wisej.Web.Padding(20);
-            this.splitContainer1.Panel1MinSize = 625;
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.pn_PresetDetails);
-            this.splitContainer1.Panel2.Padding = new Wisej.Web.Padding(20);
-            this.splitContainer1.Size = new System.Drawing.Size(1400, 900);
-            this.splitContainer1.SplitterDistance = 627;
-            this.splitContainer1.TabIndex = 52;
-            // 
             // schduleTableAdapter1
             // 
             this.schduleTableAdapter1.ClearBeforeFill = true;
@@ -1031,10 +1032,40 @@
             // 
             this.schduleCTableAdapter1.ClearBeforeFill = true;
             // 
+            // colState
+            // 
+            this.colState.DataPropertyName = "state";
+            this.colState.HeaderText = "state";
+            this.colState.Name = "colState";
+            this.colState.ValueType = typeof(string);
+            // 
+            // pn_PresetWrapper
+            // 
+            this.pn_PresetWrapper.BackColor = System.Drawing.Color.FromArgb(238, 239, 248);
+            this.pn_PresetWrapper.Controls.Add(this.pn_PresetDetails);
+            this.pn_PresetWrapper.Controls.Add(this.pn_Spacer);
+            this.pn_PresetWrapper.Controls.Add(this.pn_PresetList);
+            this.pn_PresetWrapper.Dock = Wisej.Web.DockStyle.Fill;
+            this.pn_PresetWrapper.Location = new System.Drawing.Point(0, 0);
+            this.pn_PresetWrapper.Margin = new Wisej.Web.Padding(0);
+            this.pn_PresetWrapper.Name = "pn_PresetWrapper";
+            this.pn_PresetWrapper.Padding = new Wisej.Web.Padding(20);
+            this.pn_PresetWrapper.Size = new System.Drawing.Size(1400, 900);
+            this.pn_PresetWrapper.TabIndex = 48;
+            // 
+            // pn_Spacer
+            // 
+            this.pn_Spacer.BackColor = System.Drawing.Color.Transparent;
+            this.pn_Spacer.Dock = Wisej.Web.DockStyle.Left;
+            this.pn_Spacer.Location = new System.Drawing.Point(605, 20);
+            this.pn_Spacer.Name = "pn_Spacer";
+            this.pn_Spacer.Size = new System.Drawing.Size(20, 860);
+            this.pn_Spacer.TabIndex = 46;
+            // 
             // View_BBSSchduleManage2
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.pn_PresetWrapper);
             this.CssStyle = "background: /*#F0F0F0*/#eeeff8;";
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "View_BBSSchduleManage2";
@@ -1063,10 +1094,7 @@
             this.panel35.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
             this.panel136.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.pn_PresetWrapper.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1123,7 +1151,6 @@
         private Wisej.Web.Label label1;
         private Wisej.Web.MaskedTextBox masked종료시간;
         private Wisej.Web.MaskedTextBox masked시작시간;
-        private Wisej.Web.SplitContainer splitContainer1;
         private Wisej.Web.Panel panel주간;
         private DataSet1TableAdapters.SchduleTableAdapter schduleTableAdapter1;
         private DataSet1TableAdapters.SchduleCTableAdapter schduleCTableAdapter1;
@@ -1152,5 +1179,8 @@
         private Wisej.Web.DataGridViewDateTimePickerColumn colStime_1;
         private Wisej.Web.DataGridViewDateTimePickerColumn colEtime_1;
         private Wisej.Web.MaskedTextBox maskedDuration;
+        private Wisej.Web.DataGridViewTextBoxColumn colState;
+        private Wisej.Web.Panel pn_Spacer;
+        private Wisej.Web.Panel pn_PresetWrapper;
     }
 }

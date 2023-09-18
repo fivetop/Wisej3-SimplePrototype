@@ -52,7 +52,8 @@ namespace simplepa2.UI.Views
 			comp_BBSAnchorPlayer = new Comp_BBSAnchorPlayer();
             comp_BBSAnchorPlayer.PlayerStarter += Comp_BBSAnchorPlayer_PlayerStarter;
             comp_BBSAnchorPlayer.PlayerStop += Comp_BBSAnchorPlayer_PlayerStop;
-			comp_BBSAnchorPresetQuick = new Comp_BBSAnchorPresetQuick();
+            comp_BBSAnchorPlayer.Dock = DockStyle.Fill;
+            comp_BBSAnchorPresetQuick = new Comp_BBSAnchorPresetQuick();
 			comp_BBSAnchorZone = new Comp_BBSAnchorZone();
 
 			this.pn_BBSMonitor.Controls.Add(comp_BBSAnchorBSStatus);
@@ -132,18 +133,26 @@ namespace simplepa2.UI.Views
 
 		private async void 방송처리로직()
 		{
-			bSTreeid = gweb.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
-			if (bSTreeid == 0) return;
-			if (bSTreeid == 0) return;
-			gweb.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
-			gweb.dBSqlite.BSTreeCRemove(bSTreeid);
-			gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
-		}
-	
-		// 1. 해당지역 서버에 중지 처리 
-		// 2. 방송트리 초기화 
-		// 3. 방송트리 차일드 지우기 
-		private void 방송중지로직()
+            /*
+                        bSTreeid = gweb.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
+                        if (bSTreeid == 0) return;
+                        gweb.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
+                        gweb.dBSqlite.BSTreeCRemove(bSTreeid);
+                        gweb.mainFrame.sendSigR(eSignalRMsgType.eStop, bSTreeid, null, null);
+            */
+            bSTreeid = gweb.dBSqlite.BSTreeGetFreeCh(SelAsset[0]);
+            if (bSTreeid == 0) return;
+            await gweb.dBSqlite.BSTreeCRemove(bSTreeid);
+            await gweb.dBSqlite.BSTreeCSave(bSTreeid, SelAsset, SelMusic, gweb.mainFrame.user_name);
+            await gweb.dBSqlite.BSTreeUpdate(bSTreeid, "방송시작");
+            gweb.mainFrame.sendSigR(eSignalRMsgType.ePlay, bSTreeid, SelAsset, SelMusic);
+
+        }
+
+        // 1. 해당지역 서버에 중지 처리 
+        // 2. 방송트리 초기화 
+        // 3. 방송트리 차일드 지우기 
+        private void 방송중지로직()
 		{
 			if (bSTreeid == 0) return;
 			gweb.dBSqlite.BSTreeUpdate(bSTreeid, "대기");
