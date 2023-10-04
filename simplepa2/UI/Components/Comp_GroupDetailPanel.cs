@@ -35,9 +35,6 @@ namespace simplepa2.UI.Components
             this.thisGroupName = groupName;
 
             tb_groupName.Text = groupName;
-            setComboEMNAME(EMNAME);
-            this.cb_emname.Enabled = false;
-
             
             this.pn_zone.Controls.Clear(); // 삭제 후             
 
@@ -54,9 +51,6 @@ namespace simplepa2.UI.Components
         {         
             this.thisEMNAME = EMNAME;
             tb_groupName.Text = "신규 그룹 생성";
-
-            setComboEMNAME(EMNAME);
-            this.cb_emname.Enabled = false;
 
             Comp_ZoneBasePanel czp = new Comp_ZoneBasePanel();
             this.pn_zone.Controls.Clear(); // 삭제 후 
@@ -77,16 +71,9 @@ namespace simplepa2.UI.Components
 
         }
 
-        public void setComboEMNAME(string EMNAME)
-        {
-            this.cb_emname.Text = EMNAME;
-        }
-
-
         private void Comp_GroupDetailPanel_Load(object sender, EventArgs e)
         {
             this.emServerTableAdapter1.Fill(this.dataSet11.EMServer);
-            this.cb_emname.DataSource = this.dataSet11.EMServer;
         }
 
         private void bt_reset_Click(object sender, EventArgs e)

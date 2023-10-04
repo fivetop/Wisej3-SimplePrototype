@@ -38,11 +38,18 @@ namespace simplepa2.UI.Views
         {
             itemClear();
 
-            foreach (var preset_singleData in this.dataSet11.Preset)
+            foreach (var p1 in this.dataSet11.Preset)
             {
-                if (preset_singleData.EMNAME != comp_Site1.selectedItem) continue;
-                Comp_PresetNameCard2 ui = new Comp_PresetNameCard2(preset_singleData);
-                ui.PresetClickedEventHandler += Ui_PresetClickedEventHandler;
+                if (p1.EMNAME != comp_Site1.selectedItem) continue;
+                Comp_PresetNameCard2 ui = new Comp_PresetNameCard2(p1);
+                var t1 = PresetCGetAssets(p1.PresetId);
+                var t2 = PresetCGetMusic(p1.PresetId);
+                ui.ZoneName = t1[0].ZoneName;
+                ui.MusicName = t2[0].FileName;
+                ui.ZoneCount = t1.Count();
+                ui.MusicCount = t2.Count();
+                ui.setCardText();
+                ui.ClickedEventHandler += Ui_PresetClickedEventHandler;
                 this.pn_PresetItemList.Controls.Add(ui);
             }
         }
@@ -58,19 +65,19 @@ namespace simplepa2.UI.Views
 
             comp_UGroup1.clear();
             comp_Music1.clear();
-            SelPresetId = 0;
-            oldSelPresetId = 0;
+            SelId = 0;
+            oldId = 0;
         }
 
         // 프리셋 선택 
-        int SelPresetId = 0;
-        int oldSelPresetId = 0;
+        int SelId = 0;
+        int oldId = 0;
         private void Ui_PresetClickedEventHandler(object sender, EventArgs e)
         {
-            SelPresetId = (int)sender;
-            if (SelPresetId == 0) return;
-            if (SelPresetId == oldSelPresetId) return;
-            oldSelPresetId = SelPresetId;
+            SelId = (int)sender;
+            if (SelId == 0) return;
+            if (SelId == oldId) return;
+            oldId = SelId;
 
             // 선택된 카드외에는 리셋해주고 
             foreach(Comp_PresetNameCard2 ui in pn_PresetItemList.Controls)
@@ -83,7 +90,7 @@ namespace simplepa2.UI.Views
         // 카드 선택을 하면 프리셋 차일드를 우측에 보여준다.
         private void dispDetail()
         {
-            PresetRow r1 = gweb.dBSqlite.Ds1.Preset.FirstOrDefault(p=>p.PresetId == SelPresetId);
+            PresetRow r1 = gweb.dBSqlite.Ds1.Preset.FirstOrDefault(p=>p.PresetId == SelId);
             pName.Text = r1.Name;
             puser_name.Text = r1.user_name;
             comp_Site1.selectedItem = r1.EMNAME;
@@ -94,18 +101,18 @@ namespace simplepa2.UI.Views
             comp_UGroup1.clear();
             comp_Music1.clear();
 
-            comp_UGroup1.SetSelAssets(PresetCGetAssets());
-            comp_Music1.SelMusic = PresetCGetMusic();
+            comp_UGroup1.SetSelAssets(PresetCGetAssets(SelId));
+            comp_Music1.SelMusic = PresetCGetMusic(SelId);
 
             comp_UGroup1.reDraw();
             comp_Music1.reDraw();
         }
 
         // 해당 프리셋의 차일드 가져오기 
-        private List<AssetsRow> PresetCGetAssets()
+        private List<AssetsRow> PresetCGetAssets(int id)
         {
             List<AssetsRow> list = new List<AssetsRow>();
-            var rt1 = gweb.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == SelPresetId && p.MusicId == 0);
+            var rt1 = gweb.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == id && p.MusicId == 0);
 
             foreach (var r in rt1)
             {
@@ -117,10 +124,10 @@ namespace simplepa2.UI.Views
         }
 
         // 해당 프리셋의 차일드 가져오기 
-        private List<MusicsRow> PresetCGetMusic()
+        private List<MusicsRow> PresetCGetMusic(int id)
         {
             List<MusicsRow> list = new List<MusicsRow>();
-            var rt1 = gweb.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == SelPresetId && p.AssetId == 0);
+            var rt1 = gweb.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == id && p.AssetId == 0);
 
             foreach (var r in rt1)
             {

@@ -563,7 +563,7 @@ namespace pa
             //LScap.g.capData2.Clear();
             LScap.g.OpenCap();
 
-            CaptureMode_Initial();
+            //CaptureMode_Initial();
             Thread.Sleep(3000);
 
             string str1 = "a55a100000000000011200010000000000000000000000000000000000000000";

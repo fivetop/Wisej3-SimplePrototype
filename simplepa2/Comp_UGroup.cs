@@ -11,6 +11,7 @@ namespace simplepa2
     {
         public string Filter { get; internal set; }
         public string GroupFilter { get; internal set; }
+        public bool GroupUse { get; internal set; } = true;
 
         public List<AssetsRow> SelAssets()
         {
@@ -31,6 +32,8 @@ namespace simplepa2
 
         public void reDraw()
         {
+            if(!GroupUse)
+                comboBox2.Visible = false;
             combo_init();
         }
 

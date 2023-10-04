@@ -55,7 +55,7 @@ namespace pa
         private void T2chktimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             T2chktimer.Stop();
-            wireshark();
+            //wireshark();
         }
     }
 }

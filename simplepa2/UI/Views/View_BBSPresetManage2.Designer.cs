@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_BBSPresetManage2));
             this.pn_PresetList = new Wisej.Web.Panel();
             this.pn_PresetItemList = new Wisej.Web.Panel();
             this.pn_PresetTopPanel = new Wisej.Web.Panel();
@@ -93,6 +92,8 @@
             this.pn_PresetList.Location = new System.Drawing.Point(20, 20);
             this.pn_PresetList.Name = "pn_PresetList";
             this.pn_PresetList.Padding = new Wisej.Web.Padding(20);
+            this.pn_PresetList.ScrollBars = Wisej.Web.ScrollBars.None;
+            this.pn_PresetList.ShowCloseButton = false;
             this.pn_PresetList.Size = new System.Drawing.Size(580, 860);
             this.pn_PresetList.TabIndex = 41;
             // 
@@ -102,6 +103,7 @@
             this.pn_PresetItemList.Dock = Wisej.Web.DockStyle.Fill;
             this.pn_PresetItemList.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
             this.pn_PresetItemList.Location = new System.Drawing.Point(20, 72);
+            this.pn_PresetItemList.Margin = new Wisej.Web.Padding(0);
             this.pn_PresetItemList.Name = "pn_PresetItemList";
             this.pn_PresetItemList.Selectable = true;
             this.pn_PresetItemList.ShowCloseButton = false;
@@ -373,18 +375,18 @@
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("@boxLabel", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.label25.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label25.Location = new System.Drawing.Point(376, 10);
+            this.label25.Location = new System.Drawing.Point(309, 10);
             this.label25.Margin = new Wisej.Web.Padding(0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(93, 36);
+            this.label25.Size = new System.Drawing.Size(54, 36);
             this.label25.TabIndex = 136;
-            this.label25.Text = "프리셋 작성자";
+            this.label25.Text = "작성자";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // puser_name
             // 
             this.puser_name.AutoSize = false;
-            this.puser_name.Location = new System.Drawing.Point(472, 11);
+            this.puser_name.Location = new System.Drawing.Point(368, 11);
             this.puser_name.Name = "puser_name";
             this.puser_name.ReadOnly = true;
             this.puser_name.Size = new System.Drawing.Size(165, 36);
@@ -393,7 +395,7 @@
             // pName
             // 
             this.pName.AutoSize = false;
-            this.pName.Location = new System.Drawing.Point(95, 10);
+            this.pName.Location = new System.Drawing.Point(50, 10);
             this.pName.Name = "pName";
             this.pName.Size = new System.Drawing.Size(240, 36);
             this.pName.TabIndex = 137;
@@ -407,9 +409,9 @@
             this.label24.Location = new System.Drawing.Point(0, 11);
             this.label24.Margin = new Wisej.Web.Padding(0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(123, 36);
+            this.label24.Size = new System.Drawing.Size(55, 36);
             this.label24.TabIndex = 136;
-            this.label24.Text = "프리셋 이름";
+            this.label24.Text = "이름";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // line2

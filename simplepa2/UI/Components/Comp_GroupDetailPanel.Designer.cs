@@ -35,12 +35,9 @@
             this.pn_zone = new Wisej.Web.Panel();
             this.panel37 = new Wisej.Web.Panel();
             this.lb_zone = new Wisej.Web.Label();
-            this.panel35 = new Wisej.Web.Panel();
+            this.panel36 = new Wisej.Web.Panel();
             this.tb_groupName = new Wisej.Web.TextBox();
             this.label24 = new Wisej.Web.Label();
-            this.panel36 = new Wisej.Web.Panel();
-            this.cb_emname = new Wisej.Web.ComboBox();
-            this.label25 = new Wisej.Web.Label();
             this.line2 = new Wisej.Web.Line();
             this.panel34 = new Wisej.Web.Panel();
             this.label23 = new Wisej.Web.Label();
@@ -60,7 +57,6 @@
             this.panel32.SuspendLayout();
             this.panel89.SuspendLayout();
             this.panel37.SuspendLayout();
-            this.panel35.SuspendLayout();
             this.panel36.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel136.SuspendLayout();
@@ -99,7 +95,6 @@
             this.panel89.BackColor = System.Drawing.Color.FromArgb(244, 245, 251);
             this.panel89.Controls.Add(this.pn_zone);
             this.panel89.Controls.Add(this.panel37);
-            this.panel89.Controls.Add(this.panel35);
             this.panel89.Controls.Add(this.panel36);
             this.panel89.Controls.Add(this.line2);
             this.panel89.Controls.Add(this.panel34);
@@ -115,17 +110,17 @@
             this.pn_zone.AutoSize = true;
             this.pn_zone.BackColor = System.Drawing.Color.FromName("@bgCardinCard");
             this.pn_zone.Dock = Wisej.Web.DockStyle.Fill;
-            this.pn_zone.Location = new System.Drawing.Point(20, 226);
+            this.pn_zone.Location = new System.Drawing.Point(20, 170);
             this.pn_zone.Name = "pn_zone";
             this.pn_zone.Padding = new Wisej.Web.Padding(12);
-            this.pn_zone.Size = new System.Drawing.Size(680, 522);
+            this.pn_zone.Size = new System.Drawing.Size(680, 578);
             this.pn_zone.TabIndex = 173;
             // 
             // panel37
             // 
             this.panel37.Controls.Add(this.lb_zone);
             this.panel37.Dock = Wisej.Web.DockStyle.Top;
-            this.panel37.Location = new System.Drawing.Point(20, 170);
+            this.panel37.Location = new System.Drawing.Point(20, 114);
             this.panel37.Name = "panel37";
             this.panel37.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
             this.panel37.Size = new System.Drawing.Size(680, 56);
@@ -146,45 +141,10 @@
             this.lb_zone.Text = "지역 선택";
             this.lb_zone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel35
-            // 
-            this.panel35.Controls.Add(this.tb_groupName);
-            this.panel35.Controls.Add(this.label24);
-            this.panel35.Dock = Wisej.Web.DockStyle.Top;
-            this.panel35.Location = new System.Drawing.Point(20, 114);
-            this.panel35.Name = "panel35";
-            this.panel35.Padding = new Wisej.Web.Padding(0, 20, 0, 0);
-            this.panel35.Size = new System.Drawing.Size(680, 56);
-            this.panel35.TabIndex = 164;
-            // 
-            // tb_groupName
-            // 
-            this.tb_groupName.AutoSize = false;
-            this.tb_groupName.Location = new System.Drawing.Point(123, 20);
-            this.tb_groupName.Name = "tb_groupName";
-            this.tb_groupName.Size = new System.Drawing.Size(557, 36);
-            this.tb_groupName.TabIndex = 137;
-            this.tb_groupName.Validating += new System.ComponentModel.CancelEventHandler(this.tb_groupName_Validating);
-            // 
-            // label24
-            // 
-            this.label24.AutoEllipsis = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Dock = Wisej.Web.DockStyle.Left;
-            this.label24.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label24.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label24.Location = new System.Drawing.Point(0, 20);
-            this.label24.Margin = new Wisej.Web.Padding(0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(123, 36);
-            this.label24.TabIndex = 136;
-            this.label24.Text = "그룹명";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panel36
             // 
-            this.panel36.Controls.Add(this.cb_emname);
-            this.panel36.Controls.Add(this.label25);
+            this.panel36.Controls.Add(this.tb_groupName);
+            this.panel36.Controls.Add(this.label24);
             this.panel36.Dock = Wisej.Web.DockStyle.Top;
             this.panel36.Location = new System.Drawing.Point(20, 58);
             this.panel36.Name = "panel36";
@@ -192,31 +152,28 @@
             this.panel36.Size = new System.Drawing.Size(680, 56);
             this.panel36.TabIndex = 165;
             // 
-            // cb_emname
+            // tb_groupName
             // 
-            this.cb_emname.AutoSize = false;
-            this.cb_emname.DisplayMember = "EMNAME";
-            this.cb_emname.Dock = Wisej.Web.DockStyle.Left;
-            this.cb_emname.Location = new System.Drawing.Point(123, 20);
-            this.cb_emname.Margin = new Wisej.Web.Padding(0);
-            this.cb_emname.Name = "cb_emname";
-            this.cb_emname.Size = new System.Drawing.Size(240, 36);
-            this.cb_emname.TabIndex = 138;
+            this.tb_groupName.AutoSize = false;
+            this.tb_groupName.Location = new System.Drawing.Point(57, 14);
+            this.tb_groupName.Name = "tb_groupName";
+            this.tb_groupName.Size = new System.Drawing.Size(321, 36);
+            this.tb_groupName.TabIndex = 137;
+            this.tb_groupName.Validating += new System.ComponentModel.CancelEventHandler(this.tb_groupName_Validating);
             // 
-            // label25
+            // label24
             // 
-            this.label25.AutoEllipsis = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Dock = Wisej.Web.DockStyle.Left;
-            this.label25.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label25.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label25.Location = new System.Drawing.Point(0, 20);
-            this.label25.Margin = new Wisej.Web.Padding(0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(123, 36);
-            this.label25.TabIndex = 136;
-            this.label25.Text = "지역";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label24.AutoEllipsis = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.label24.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
+            this.label24.Location = new System.Drawing.Point(0, 14);
+            this.label24.Margin = new Wisej.Web.Padding(0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(75, 36);
+            this.label24.TabIndex = 136;
+            this.label24.Text = "그룹명";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // line2
             // 
@@ -304,6 +261,7 @@
             this.bt_reset.Size = new System.Drawing.Size(100, 32);
             this.bt_reset.TabIndex = 35;
             this.bt_reset.Text = "초기화";
+            this.bt_reset.Visible = false;
             this.bt_reset.Click += new System.EventHandler(this.bt_reset_Click);
             // 
             // bt_store
@@ -366,7 +324,6 @@
             this.panel89.ResumeLayout(false);
             this.panel89.PerformLayout();
             this.panel37.ResumeLayout(false);
-            this.panel35.ResumeLayout(false);
             this.panel36.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
             this.panel136.ResumeLayout(false);
@@ -386,8 +343,6 @@
         private Wisej.Web.Panel panel37;
         private Wisej.Web.Label lb_zone;
         private Wisej.Web.Panel panel36;
-        private Wisej.Web.Label label25;
-        private Wisej.Web.Panel panel35;
         private Wisej.Web.TextBox tb_groupName;
         private Wisej.Web.Label label24;
         private Wisej.Web.Line line2;
@@ -398,7 +353,6 @@
         private Wisej.Web.Button bt_reset;
         private Wisej.Web.Button bt_store;
         private Wisej.Web.Label label66;
-        private Wisej.Web.ComboBox cb_emname;
         private DataSet1TableAdapters.EMServerTableAdapter emServerTableAdapter1;
         private DataSet1 dataSet11;
         private DataSet1 dataSet12;

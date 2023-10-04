@@ -7,13 +7,19 @@ namespace simplepa2.UI.Components
     public partial class Comp_PresetNameCard2 : Wisej.Web.UserControl
     {
         public bool selectMode = false;
-        public DataSet1.PresetRow preset_singleData;
-        public event EventHandler PresetClickedEventHandler;            
+        public DataSet1.PresetRow singleData;
+        public event EventHandler ClickedEventHandler;
+
+        // 화면에 표기할 내용 로비외 23곳/음원3개 
+        public string ZoneName { get; set; }
+        public int ZoneCount { get; set; }
+        public string MusicName { get; set; }
+        public int MusicCount { get; set; }
 
         public Comp_PresetNameCard2(DataSet1.PresetRow dSet)
         {
             InitializeComponent();
-            this.preset_singleData = dSet;
+            this.singleData = dSet;
             this.lb_MainText.Text = dSet.Name;
         }
 
@@ -22,7 +28,7 @@ namespace simplepa2.UI.Components
             if (sel)
             {
                 selectMode = true;
-                PresetClickedEventHandler?.Invoke(this.preset_singleData.PresetId, null);
+                ClickedEventHandler?.Invoke(this.singleData.PresetId, null);
                 this.pn_CardOutline.BackColor = System.Drawing.Color.FromArgb(52, 129, 255);   // 파란
                 this.pn_CardOutline.ForeColor = System.Drawing.Color.White; // 흰색
                 this.lb_MainText.ForeColor = System.Drawing.Color.White;  // 메인 흰색                
@@ -37,6 +43,11 @@ namespace simplepa2.UI.Components
                 this.lb_SubText.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
                 selectMode = false;
             }
+        }
+
+        public void setCardText()
+        {
+            this.lb_SubText.Text = ZoneName + " 포함 " + ZoneCount + "곳 / 음원" +MusicCount.ToString() + "개";
         }
 
         public void cardStatusChange()

@@ -196,6 +196,9 @@
     <EmbeddedResource Include="UI\Components\Comp_GroupListBasePanel.resx">
       <DependentUpon>Comp_GroupListBasePanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Comp_GroupNameCard2.resx">
+      <DependentUpon>Comp_GroupNameCard2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Comp_GroupNameCard.resx">
       <DependentUpon>Comp_GroupNameCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSAnchor.resx">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Views\View_BBSGroupManage2.resx">
+      <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBSGroupManage.resx">
       <DependentUpon>View_BBSGroupManage.cs</DependentUpon>
@@ -807,9 +813,6 @@
     <EmbeddedResource Include="UI\Views\View_SystemSMSRegistration.resx">
       <DependentUpon>View_SystemSMSRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Views\View_BBSGroupManage2.resx">
-      <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Views\View_BBCZone.resx">
       <DependentUpon>View_BBCZone.cs</DependentUpon>
     </EmbeddedResource>
@@ -1076,6 +1079,12 @@
     <Compile Include="UI\Components\Comp_GroupListBasePanel.Designer.cs">
       <DependentUpon>Comp_GroupListBasePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\Comp_GroupNameCard2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Comp_GroupNameCard2.designer.cs">
+      <DependentUpon>Comp_GroupNameCard2.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Comp_GroupNameCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1279,6 +1288,12 @@
     </Compile>
     <Compile Include="UI\Views\View_BBSAnchor.Designer.cs">
       <DependentUpon>View_BBSAnchor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSGroupManage2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Views\View_BBSGroupManage2.Designer.cs">
+      <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Views\View_BBSGroupManage.cs">
       <SubType>UserControl</SubType>
@@ -1508,12 +1523,6 @@
     <Compile Include="SignalR\webapi\ApiController1.cs" />
     <Compile Include="SignalR\webapi\Encryption.cs" />
     <Compile Include="SignalR\webapi\MessageHandler.cs" />
-    <Compile Include="UI\Views\View_BBSGroupManage2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Views\View_BBSGroupManage2.Designer.cs">
-      <DependentUpon>View_BBSGroupManage2.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Views\View_BBCZone.cs">
       <SubType>UserControl</SubType>
     </Compile>

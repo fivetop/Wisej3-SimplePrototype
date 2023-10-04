@@ -49,10 +49,12 @@
             this.lb_BuildingName = new Wisej.Web.Label();
             this.bt_WholeSelect = new Wisej.Web.Button();
             this.pn_ViewMain = new Wisej.Web.Panel();
+            this.panel1 = new Wisej.Web.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.pn_TopBar.SuspendLayout();
             this.pn_musicTitle.SuspendLayout();
             this.pn_ViewMain.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // emServerNDeviceNameTableAdapter1
@@ -101,10 +103,10 @@
             this.pn_Contents.AutoScroll = true;
             this.pn_Contents.Dock = Wisej.Web.DockStyle.Fill;
             this.pn_Contents.ForeColor = System.Drawing.Color.FromArgb(171, 171, 171);
-            this.pn_Contents.Location = new System.Drawing.Point(20, 72);
+            this.pn_Contents.Location = new System.Drawing.Point(20, 100);
             this.pn_Contents.Name = "pn_Contents";
             this.pn_Contents.Padding = new Wisej.Web.Padding(5);
-            this.pn_Contents.Size = new System.Drawing.Size(960, 608);
+            this.pn_Contents.Size = new System.Drawing.Size(660, 580);
             this.pn_Contents.TabIndex = 52;
             this.pn_Contents.Text = "listPanel";
             // 
@@ -115,46 +117,41 @@
             this.pn_TopBar.Dock = Wisej.Web.DockStyle.Top;
             this.pn_TopBar.Location = new System.Drawing.Point(20, 20);
             this.pn_TopBar.Name = "pn_TopBar";
-            this.pn_TopBar.Size = new System.Drawing.Size(960, 52);
+            this.pn_TopBar.Size = new System.Drawing.Size(660, 40);
             this.pn_TopBar.TabIndex = 51;
             // 
             // pn_musicTitle
             // 
             this.pn_musicTitle.Controls.Add(this.label2);
-            this.pn_musicTitle.Controls.Add(this.comp_Site1);
-            this.pn_musicTitle.Controls.Add(this.label1);
-            this.pn_musicTitle.Controls.Add(this.cb_groupList);
-            this.pn_musicTitle.Controls.Add(this.lb_BuildingName);
-            this.pn_musicTitle.Controls.Add(this.bt_WholeSelect);
             this.pn_musicTitle.Dock = Wisej.Web.DockStyle.Top;
             this.pn_musicTitle.Location = new System.Drawing.Point(0, 0);
             this.pn_musicTitle.Name = "pn_musicTitle";
-            this.pn_musicTitle.Size = new System.Drawing.Size(960, 50);
+            this.pn_musicTitle.Size = new System.Drawing.Size(660, 40);
             this.pn_musicTitle.TabIndex = 163;
             // 
             // label2
             // 
             this.label2.AutoEllipsis = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Dock = Wisej.Web.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("@boxMTitle", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.label2.ForeColor = System.Drawing.Color.FromName("@bTextNormal");
-            this.label2.Location = new System.Drawing.Point(0, 8);
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new Wisej.Web.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 24);
+            this.label2.Size = new System.Drawing.Size(87, 40);
             this.label2.TabIndex = 134;
             this.label2.Text = "방송 구역";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comp_Site1
             // 
-            this.comp_Site1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.comp_Site1.AutoSize = false;
             this.comp_Site1.DisplayMember = "EMNAME";
             this.comp_Site1.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
             this.comp_Site1.Items.AddRange(new object[] {
             "전체"});
-            this.comp_Site1.Location = new System.Drawing.Point(460, 13);
+            this.comp_Site1.Location = new System.Drawing.Point(62, 3);
             this.comp_Site1.Margin = new Wisej.Web.Padding(0);
             this.comp_Site1.Name = "comp_Site1";
             this.comp_Site1.Size = new System.Drawing.Size(151, 32);
@@ -163,9 +160,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(404, 13);
+            this.label1.Location = new System.Drawing.Point(6, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 32);
             this.label1.TabIndex = 98;
@@ -174,12 +170,11 @@
             // 
             // cb_groupList
             // 
-            this.cb_groupList.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.cb_groupList.AutoSize = false;
             this.cb_groupList.DropDownStyle = Wisej.Web.ComboBoxStyle.DropDownList;
             this.cb_groupList.Items.AddRange(new object[] {
             "전체"});
-            this.cb_groupList.Location = new System.Drawing.Point(710, 13);
+            this.cb_groupList.Location = new System.Drawing.Point(291, 3);
             this.cb_groupList.Margin = new Wisej.Web.Padding(0);
             this.cb_groupList.Name = "cb_groupList";
             this.cb_groupList.Size = new System.Drawing.Size(139, 32);
@@ -187,9 +182,8 @@
             // 
             // lb_BuildingName
             // 
-            this.lb_BuildingName.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.lb_BuildingName.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_BuildingName.Location = new System.Drawing.Point(647, 13);
+            this.lb_BuildingName.Location = new System.Drawing.Point(228, 3);
             this.lb_BuildingName.Name = "lb_BuildingName";
             this.lb_BuildingName.Size = new System.Drawing.Size(68, 32);
             this.lb_BuildingName.TabIndex = 96;
@@ -198,12 +192,11 @@
             // 
             // bt_WholeSelect
             // 
-            this.bt_WholeSelect.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.bt_WholeSelect.BackColor = System.Drawing.Color.FromName("@activeCaption");
             this.bt_WholeSelect.CssStyle = resources.GetString("bt_WholeSelect.CssStyle");
             this.bt_WholeSelect.Font = new System.Drawing.Font("default", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.bt_WholeSelect.ForeColor = System.Drawing.Color.FromName("@activeCaptionText");
-            this.bt_WholeSelect.Location = new System.Drawing.Point(860, 13);
+            this.bt_WholeSelect.Location = new System.Drawing.Point(448, 2);
             this.bt_WholeSelect.Margin = new Wisej.Web.Padding(0);
             this.bt_WholeSelect.Name = "bt_WholeSelect";
             this.bt_WholeSelect.Size = new System.Drawing.Size(100, 32);
@@ -215,25 +208,40 @@
             // 
             this.pn_ViewMain.BackColor = System.Drawing.Color.White;
             this.pn_ViewMain.Controls.Add(this.pn_Contents);
+            this.pn_ViewMain.Controls.Add(this.panel1);
             this.pn_ViewMain.Controls.Add(this.pn_TopBar);
             this.pn_ViewMain.Dock = Wisej.Web.DockStyle.Fill;
             this.pn_ViewMain.Location = new System.Drawing.Point(0, 0);
             this.pn_ViewMain.Name = "pn_ViewMain";
             this.pn_ViewMain.Padding = new Wisej.Web.Padding(20);
-            this.pn_ViewMain.Size = new System.Drawing.Size(1000, 700);
+            this.pn_ViewMain.Size = new System.Drawing.Size(700, 700);
             this.pn_ViewMain.TabIndex = 45;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comp_Site1);
+            this.panel1.Controls.Add(this.bt_WholeSelect);
+            this.panel1.Controls.Add(this.cb_groupList);
+            this.panel1.Controls.Add(this.lb_BuildingName);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = Wisej.Web.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(20, 60);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(660, 40);
+            this.panel1.TabIndex = 53;
             // 
             // Comp_BBSAnchorZone
             // 
             this.Controls.Add(this.pn_ViewMain);
             this.Dock = Wisej.Web.DockStyle.Fill;
             this.Name = "Comp_BBSAnchorZone";
-            this.Size = new System.Drawing.Size(1000, 700);
+            this.Size = new System.Drawing.Size(700, 700);
             this.Load += new System.EventHandler(this.Comp_BBSAnchorZone_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.pn_TopBar.ResumeLayout(false);
             this.pn_musicTitle.ResumeLayout(false);
             this.pn_ViewMain.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -260,5 +268,6 @@
         private Wisej.Web.Label label1;
         private Wisej.Web.Panel pn_musicTitle;
         private Wisej.Web.Label label2;
+        private Wisej.Web.Panel panel1;
     }
 }
