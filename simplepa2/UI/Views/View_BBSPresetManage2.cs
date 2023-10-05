@@ -44,6 +44,7 @@ namespace simplepa2.UI.Views
                 Comp_PresetNameCard2 ui = new Comp_PresetNameCard2(p1);
                 var t1 = PresetCGetAssets(p1.PresetId);
                 var t2 = PresetCGetMusic(p1.PresetId);
+                ui.EMName = t1[0].emServer;
                 ui.ZoneName = t1[0].ZoneName;
                 ui.MusicName = t2[0].FileName;
                 ui.ZoneCount = t1.Count();

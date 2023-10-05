@@ -42,7 +42,19 @@ namespace simplepa2.UI.Components
 		}
 		private List<string> _dataSet = null;
 
-        public string selectedItem { get; set; }
+		private string _selectedItem = "";
+        public string selectedItem
+        {
+            get { return _selectedItem; }
+			set 
+			{
+                if (this._selectedItem != value)
+                {
+                    this._selectedItem = value;
+                    this.cb_SiteName.SelectedItem = value;
+                }
+            }
+        }
 
         [Description("Fired when the user clicks.")]
 		public event EventHandler SelectedValueChanged;

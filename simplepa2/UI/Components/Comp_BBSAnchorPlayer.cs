@@ -285,10 +285,17 @@ namespace simplepa2.UI.Components
             sleeptimer.Start();
         }
 
+        internal void SetMusic(List<MusicsRow> musicsRows)
+        {
+            SelMusic = musicsRows;
+            this.dg_playList.DataSource = null;
+            this.dg_playList.DataSource = SelMusic;
+        }
+
 
         #endregion
 
-    
+
 
 
         #region // Event ARGS 선언

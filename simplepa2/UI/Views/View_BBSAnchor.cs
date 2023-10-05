@@ -13,8 +13,6 @@ namespace simplepa2.UI.Views
     {
 		private Comp_BBSAchchorBSStatus comp_BBSAnchorBSStatus;
 		private Comp_BBSAnchorPlayer comp_BBSAnchorPlayer;
-		private Comp_BBSAnchorPresetQuick comp_BBSAnchorPresetQuick;
-		private Comp_BBSAnchorZone comp_BBSAnchorZone;
 
 		private int MUSIC_FIRST_FILE = 0;
 
@@ -36,7 +34,10 @@ namespace simplepa2.UI.Views
 
 		private void View_BBSAnchor_Load(object sender, EventArgs e)
 		{
-			reDraw();
+            this.presetTableAdapter1.Fill(this.dataSet11.Preset);
+            this.presetCTableAdapter1.Fill(this.dataSet11.PresetC);
+
+            reDraw();
 
 		}
 
@@ -44,22 +45,94 @@ namespace simplepa2.UI.Views
 		{
 			setupUIComponent();
 
-		}
+            foreach (var p1 in this.dataSet11.Preset)
+            {
+                Comp_PresetNameCard2 ui = new Comp_PresetNameCard2(p1);
+                var t1 = PresetCGetAssets(p1.PresetId);
+                var t2 = PresetCGetMusic(p1.PresetId);
+                ui.EMName = t1[0].emServer;
+                ui.ZoneName = t1[0].ZoneName;
+                ui.MusicName = t2[0].FileName;
+                ui.ZoneCount = t1.Count();
+                ui.MusicCount = t2.Count();
+                ui.setCardText();
+                ui.ClickedEventHandler += Ui_PresetClickedEventHandler;
+                this.panelList.Controls.Add(ui);
+            }
 
-		public void setupUIComponent()
+        }
+
+        // 프리셋 선택 
+        int SelId = 0;
+        int oldId = 0;
+        private void Ui_PresetClickedEventHandler(object sender, EventArgs e)
+        {
+            SelId = (int)sender;
+            if (SelId == 0) return;
+            if (SelId == oldId) return;
+            oldId = SelId;
+
+            // 선택된 카드외에는 리셋해주고 
+            foreach (Comp_PresetNameCard2 ui in panelList.Controls)
+            {
+                ui.setCardStatus(false);
+            }
+            dispDetail();
+        }
+
+        // 카드 선택을 하면 프리셋 차일드를 우측에 보여준다.
+        private void dispDetail()
+        {
+            PresetRow r1 = gweb.dBSqlite.Ds1.Preset.FirstOrDefault(p => p.PresetId == SelId);
+            comp_UGroup1.clear();
+            comp_UGroup1.Filter = r1.EMNAME;
+            comp_UGroup1.GroupFilter = r1.GroupName;
+            comp_UGroup1.setFilter();
+            comp_UGroup1.SetSelAssets(PresetCGetAssets(SelId));
+            comp_UGroup1.reDraw();
+            comp_BBSAnchorPlayer.SetMusic(PresetCGetMusic(SelId));
+        }
+
+        // 해당 프리셋의 차일드 가져오기 
+        private List<AssetsRow> PresetCGetAssets(int id)
+        {
+            List<AssetsRow> list = new List<AssetsRow>();
+            var rt1 = gweb.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == id && p.MusicId == 0);
+
+            foreach (var r in rt1)
+            {
+                var m1 = gweb.dBSqlite.Ds1.Assets.FirstOrDefault(p => p.AssetId == r.AssetId);
+                if (m1 == null) continue;
+                list.Add(m1);
+            }
+            return list;
+        }
+
+        // 해당 프리셋의 차일드 가져오기 
+        private List<MusicsRow> PresetCGetMusic(int id)
+        {
+            List<MusicsRow> list = new List<MusicsRow>();
+            var rt1 = gweb.dBSqlite.Ds1.PresetC.Where(p => p.PresetId == id && p.AssetId == 0);
+
+            foreach (var r in rt1)
+            {
+                var m1 = gweb.dBSqlite.Ds1.Musics.FirstOrDefault(p => p.MusicId == r.MusicId);
+                if (m1 == null) continue;
+                list.Add(m1);
+            }
+            return list;
+        }
+
+        public void setupUIComponent()
 		{
 			comp_BBSAnchorBSStatus = new Comp_BBSAchchorBSStatus();
 			comp_BBSAnchorPlayer = new Comp_BBSAnchorPlayer();
             comp_BBSAnchorPlayer.PlayerStarter += Comp_BBSAnchorPlayer_PlayerStarter;
             comp_BBSAnchorPlayer.PlayerStop += Comp_BBSAnchorPlayer_PlayerStop;
             comp_BBSAnchorPlayer.Dock = DockStyle.Fill;
-            comp_BBSAnchorPresetQuick = new Comp_BBSAnchorPresetQuick();
-			comp_BBSAnchorZone = new Comp_BBSAnchorZone();
 
 			this.pn_BBSMonitor.Controls.Add(comp_BBSAnchorBSStatus);
 			this.pn_playerList.Controls.Add(comp_BBSAnchorPlayer);
-			this.splitContainer2.Panel1.Controls.Add(comp_BBSAnchorPresetQuick);
-			this.splitContainer2.Panel2.Controls.Add(comp_BBSAnchorZone);
 		}
 
         private void Comp_BBSAnchorPlayer_PlayerStop(object sender, Comp_BBSAnchorPlayer.CompBBSAnchorPlayerStopEventArgs e)
@@ -84,8 +157,8 @@ namespace simplepa2.UI.Views
 			// 00. 음원 리스트 셋업
 			SelMusic = e.SelMusic;
 
-			// 01 방송 지역 리스트를 불러오기
-			SelAsset = this.comp_BBSAnchorZone.getSelectedAssetList();
+            // 01 방송 지역 리스트를 불러오기
+            SelAsset = comp_UGroup1.SelAssets(); // this.comp_BBSAnchorZone.getSelectedAssetList();
 			
 			// 02. 오차장님 서버 : Validation
 			if (SelAsset.Count() < 1 || SelMusic.Count() < 1)

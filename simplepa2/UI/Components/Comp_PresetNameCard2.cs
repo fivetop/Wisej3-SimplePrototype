@@ -11,6 +11,7 @@ namespace simplepa2.UI.Components
         public event EventHandler ClickedEventHandler;
 
         // 화면에 표기할 내용 로비외 23곳/음원3개 
+        public string EMName { get; set; }
         public string ZoneName { get; set; }
         public int ZoneCount { get; set; }
         public string MusicName { get; set; }
@@ -47,7 +48,7 @@ namespace simplepa2.UI.Components
 
         public void setCardText()
         {
-            this.lb_SubText.Text = ZoneName + " 포함 " + ZoneCount + "곳 / 음원" +MusicCount.ToString() + "개";
+            this.lb_SubText.Text = EMName + " " + ZoneName + " 포함 " + ZoneCount + "곳 / 음원" +MusicCount.ToString() + "개";
         }
 
         public void cardStatusChange()
