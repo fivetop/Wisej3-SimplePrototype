@@ -290,6 +290,7 @@ namespace simplepa2.UI.Components
             SelMusic = musicsRows;
             this.dg_playList.DataSource = null;
             this.dg_playList.DataSource = SelMusic;
+            setupFirstFileForPlay(MUSIC_FIRST_FILE);
         }
 
 
