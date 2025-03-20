@@ -1,4 +1,4 @@
-Simple PA(public Address)
+Simple PA(public Address) Audinate(Dante)
 ====
 
 ![image](https://user-images.githubusercontent.com/50413/186357307-26fa3521-39fb-4d7b-8fd6-a9ad3a5e0547.png)
